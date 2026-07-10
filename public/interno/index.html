@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GestHall Suite · Sezione Interna</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+:root {
+  --teal: #00c391;
+  --teal-dk: #008f6a;
+  --teal-dim: rgba(0,195,145,0.10);
+  --teal-dim2: rgba(0,195,145,0.18);
+  --bg: #0b1410;
+  --surface: #111a16;
+  --surface2: #162119;
+  --border: #1e3028;
+  --text: #ddf0e8;
+  --muted: #6aaa8e;
+  --faint: #2f4d40;
+  --r: 8px;
+}
+[data-theme="light"] {
+  --bg: #f5f7f6; --surface: #fff; --surface2: #f0f4f2;
+  --border: #dde8e3; --text: #0c1c17; --muted: #506b5f; --faint: #8eaaa0;
+}
+*,*::before,*::after { box-sizing:border-box;margin:0;padding:0 }
+html { scroll-behavior:smooth }
+body { font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6 }
+a { text-decoration:none }
+
+/* TOPBAR */
+.topbar {
+  position:sticky;top:0;z-index:10;height:52px;
+  background:var(--surface);border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:12px;padding:0 24px;
+}
+.tb-logo { display:flex;align-items:center;gap:8px;color:var(--text);font-weight:700;font-size:15px;letter-spacing:-.01em }
+.tb-mark { width:24px;height:24px;border-radius:5px;flex-shrink:0 }
+.tb-sep { color:var(--faint);margin:0 2px }
+.tb-section { font-size:13px;font-weight:500;color:var(--muted) }
+.tb-spacer { flex:1 }
+.tb-badge { font-size:11px;background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.25);border-radius:20px;padding:2px 10px;font-weight:600;letter-spacing:.01em }
+.theme-btn { width:30px;height:30px;border-radius:6px;border:1px solid var(--border);background:var(--surface2);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:background .15s }
+.theme-btn:hover { background:var(--teal-dim) }
+
+/* MAIN */
+.main { max-width:1000px;margin:0 auto;padding:48px 24px 80px }
+
+.page-head { margin-bottom:48px }
+.page-eye { font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px }
+.page-h1 { font-size:clamp(26px,4vw,36px);font-weight:800;letter-spacing:-.02em;margin-bottom:10px;text-wrap:balance }
+.page-sub { font-size:15px;color:var(--muted);max-width:540px;line-height:1.7 }
+
+/* STATUS GRID */
+.status-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px;margin:32px 0 48px }
+.s-item { background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:11px 13px;display:flex;align-items:center;gap:10px }
+.s-dot { width:7px;height:7px;border-radius:50%;flex-shrink:0 }
+.s-dot.done { background:#22c55e }
+.s-dot.wip  { background:var(--teal);animation:pulse 2s infinite }
+.s-dot.todo { background:var(--faint) }
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(0,195,145,.2)} 50%{box-shadow:0 0 0 4px rgba(0,195,145,.2)} }
+.s-label { font-size:13px;font-weight:600 }
+.s-note  { font-size:11px;color:var(--muted);margin-top:1px }
+
+/* SECTION HEADING */
+.sec-h { font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:16px }
+
+/* DOC CARDS */
+.doc-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:48px }
+.doc-card {
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
+  padding:24px;display:flex;flex-direction:column;gap:10px;
+  transition:border-color .15s,background .15s;
+}
+.doc-card:hover { border-color:var(--teal);background:var(--surface2) }
+.dc-icon { font-size:28px;line-height:1 }
+.dc-title { font-size:17px;font-weight:700;letter-spacing:-.01em;color:var(--text) }
+.dc-desc { font-size:13.5px;color:var(--muted);line-height:1.6;flex:1 }
+.dc-tags { display:flex;flex-wrap:wrap;gap:6px;margin-top:4px }
+.dc-tag { font-size:11px;background:var(--surface2);color:var(--muted);border:1px solid var(--border);border-radius:4px;padding:2px 8px;font-weight:500 }
+.dc-link {
+  display:inline-flex;align-items:center;gap:6px;margin-top:8px;
+  font-size:13px;font-weight:600;color:var(--teal-dk);
+  background:var(--teal-dim);border:1px solid var(--teal-dim2);
+  border-radius:6px;padding:7px 14px;width:fit-content;
+  transition:background .15s;
+}
+.dc-link:hover { background:var(--teal-dim2) }
+
+/* QUICK ACCESS */
+.quick-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-bottom:48px }
+.quick-link {
+  display:flex;align-items:center;gap:8px;padding:11px 13px;
+  background:var(--surface);border:1px solid var(--border);border-radius:7px;
+  font-size:13px;color:var(--muted);transition:border-color .15s,color .15s;
+}
+.quick-link:hover { border-color:var(--teal);color:var(--text) }
+.ql-icon { font-size:15px;flex-shrink:0 }
+
+/* FOOTER */
+.int-footer { text-align:center;color:var(--faint);font-size:12px;padding-top:32px;border-top:1px solid var(--border) }
+  </style>
+  <script>(function(){var t=localStorage.getItem('gd-theme');if(t)document.documentElement.dataset.theme=t;})()</script>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="tb-logo" href="/">
+    <svg class="tb-mark" viewBox="0 0 34 34">
+      <rect width="34" height="34" rx="8" fill="#00c391"/>
+      <rect x="6" y="6" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
+      <rect x="19" y="6" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
+      <rect x="6" y="19" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
+      <rect x="19" y="19" width="9" height="10" rx="2" fill="rgba(0,0,0,0.72)"/>
+    </svg>
+    GestHall Suite
+  </a>
+  <span class="tb-sep">/</span>
+  <span class="tb-section">Sezione Interna</span>
+  <div class="tb-spacer"></div>
+  <span class="tb-badge">Accesso riservato</span>
+  <button class="theme-btn" onclick="toggleTheme()" aria-label="Cambia tema">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+  </button>
+</div>
+
+<div class="main">
+
+  <div class="page-head">
+    <div class="page-eye">Sezione interna · Luglio 2026</div>
+    <h1 class="page-h1">GestHall Suite</h1>
+    <p class="page-sub">Documentazione tecnica, strategia e stato del progetto. Riservato a team e partner.</p>
+  </div>
+
+  <!-- STATUS -->
+  <div class="sec-h">Stato componenti</div>
+  <div class="status-grid">
+    <div class="s-item"><div class="s-dot done"></div><div><div class="s-label">Suite (app)</div><div class="s-note">Tutti i moduli attivi</div></div></div>
+    <div class="s-item"><div class="s-dot done"></div><div><div class="s-label">Hub v1</div><div class="s-note">Installazioni + rivenditori</div></div></div>
+    <div class="s-item"><div class="s-dot done"></div><div><div class="s-label">Remember-me</div><div class="s-note">Token rotante 30gg</div></div></div>
+    <div class="s-item"><div class="s-dot done"></div><div><div class="s-label">QR segnalazione</div><div class="s-note">Standalone, no-auth</div></div></div>
+    <div class="s-item"><div class="s-dot done"></div><div><div class="s-label">Chat + vocali</div><div class="s-note">MediaRecorder, nativa</div></div></div>
+    <div class="s-item"><div class="s-dot done"></div><div><div class="s-label">Privacy + Termini</div><div class="s-note">GDPR, luglio 2026</div></div></div>
+    <div class="s-item"><div class="s-dot done"></div><div><div class="s-label">Sito marketing</div><div class="s-note">Astro, in deploy</div></div></div>
+    <div class="s-item"><div class="s-dot wip"></div><div><div class="s-label">License check</div><div class="s-note">Da integrare in auth.php</div></div></div>
+    <div class="s-item"><div class="s-dot wip"></div><div><div class="s-label">Deploy produzione</div><div class="s-note">DNS + VPS in corso</div></div></div>
+    <div class="s-item"><div class="s-dot todo"></div><div><div class="s-label">Stripe Billing</div><div class="s-note">Fase 2, Q4 2026</div></div></div>
+    <div class="s-item"><div class="s-dot todo"></div><div><div class="s-label">Provisioning auto</div><div class="s-note">Script CLI, Fase 2</div></div></div>
+    <div class="s-item"><div class="s-dot todo"></div><div><div class="s-label">Primo cliente</div><div class="s-note">Obiettivo Q3 2026</div></div></div>
+  </div>
+
+  <!-- MAIN DOCS -->
+  <div class="sec-h">Documenti</div>
+  <div class="doc-grid">
+
+    <div class="doc-card">
+      <div class="dc-icon">📚</div>
+      <div class="dc-title">Documentazione tecnica</div>
+      <p class="dc-desc">Guida completa: architettura, login, cassa, chat vocali, hub rivenditori, license API, deploy SiteGround, roadmap.</p>
+      <div class="dc-tags">
+        <span class="dc-tag">Suite</span>
+        <span class="dc-tag">Hub</span>
+        <span class="dc-tag">Deploy</span>
+        <span class="dc-tag">Architettura</span>
+      </div>
+      <a class="dc-link" href="docs.html">Apri documentazione &rarr;</a>
+    </div>
+
+    <div class="doc-card">
+      <div class="dc-icon">📊</div>
+      <div class="dc-title">Business Plan 2026</div>
+      <p class="dc-desc">Mercato, pricing, proiezioni MRR, struttura dei costi, roadmap e executive summary per investitori e partner.</p>
+      <div class="dc-tags">
+        <span class="dc-tag">Mercato</span>
+        <span class="dc-tag">Proiezioni</span>
+        <span class="dc-tag">Investor</span>
+      </div>
+      <a class="dc-link" href="business-plan.html">Apri business plan &rarr;</a>
+    </div>
+
+  </div>
+
+  <!-- QUICK ACCESS -->
+  <div class="sec-h">Accesso rapido sezioni</div>
+  <div class="quick-grid">
+    <a class="quick-link" href="docs.html#overview"><span class="ql-icon">🏠</span> Stato componenti</a>
+    <a class="quick-link" href="docs.html#changelog"><span class="ql-icon">📋</span> Changelog</a>
+    <a class="quick-link" href="docs.html#login"><span class="ql-icon">🔐</span> Login e remember-me</a>
+    <a class="quick-link" href="docs.html#chat"><span class="ql-icon">💬</span> Chat vocali</a>
+    <a class="quick-link" href="docs.html#hub-overview"><span class="ql-icon">🛠</span> Hub admin</a>
+    <a class="quick-link" href="docs.html#hub-rivenditori"><span class="ql-icon">🤝</span> Rivenditori</a>
+    <a class="quick-link" href="docs.html#hub-license"><span class="ql-icon">🔑</span> License API</a>
+    <a class="quick-link" href="docs.html#superadmin"><span class="ql-icon">⚡</span> Super admin</a>
+    <a class="quick-link" href="docs.html#deploy"><span class="ql-icon">🚀</span> Deploy SiteGround</a>
+    <a class="quick-link" href="docs.html#architettura"><span class="ql-icon">🏗</span> Architettura</a>
+    <a class="quick-link" href="docs.html#roadmap"><span class="ql-icon">🗺</span> Roadmap</a>
+    <a class="quick-link" href="business-plan.html#proiezioni"><span class="ql-icon">📈</span> Proiezioni MRR</a>
+  </div>
+
+  <div class="int-footer">
+    GestHall Suite &nbsp;·&nbsp; Sezione interna &nbsp;·&nbsp; Luglio 2026 &nbsp;·&nbsp; Riservato
+  </div>
+
+</div>
+
+<script>
+function toggleTheme() {
+  var r = document.documentElement;
+  var cur = r.dataset.theme || 'dark';
+  var next = cur === 'dark' ? 'light' : 'dark';
+  r.dataset.theme = next;
+  localStorage.setItem('gd-theme', next);
+}
+</script>
+</body>
+</html>

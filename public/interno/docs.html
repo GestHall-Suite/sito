@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GestHall Suite · Documentazione Interna</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+:root {
+  --teal: #00c391;
+  --teal-dk: #008f6a;
+  --teal-dim: rgba(0,195,145,0.10);
+  --teal-dim2: rgba(0,195,145,0.18);
+  --bg: #f5f7f6;
+  --surface: #ffffff;
+  --surface2: #f0f4f2;
+  --border: #dde8e3;
+  --text: #0c1c17;
+  --muted: #506b5f;
+  --faint: #8eaaa0;
+  --code-bg: #f0f4f2;
+  --code-text: #1a3d30;
+  --sidebar-w: 252px;
+  --r: 8px;
+}
+@media (prefers-color-scheme: dark) { :root {
+  --bg:#0b1410;--surface:#111a16;--surface2:#162119;
+  --border:#1e3028;--text:#ddf0e8;--muted:#6aaa8e;
+  --faint:#2f4d40;--code-bg:#0d1f18;--code-text:#7fd8b0;
+}}
+:root[data-theme="dark"]  { --bg:#0b1410;--surface:#111a16;--surface2:#162119;--border:#1e3028;--text:#ddf0e8;--muted:#6aaa8e;--faint:#2f4d40;--code-bg:#0d1f18;--code-text:#7fd8b0; }
+:root[data-theme="light"] { --bg:#f5f7f6;--surface:#ffffff;--surface2:#f0f4f2;--border:#dde8e3;--text:#0c1c17;--muted:#506b5f;--faint:#8eaaa0;--code-bg:#f0f4f2;--code-text:#1a3d30; }
+
+*,*::before,*::after { box-sizing:border-box;margin:0;padding:0 }
+html { scroll-behavior:smooth; scroll-padding-top:72px }
+body { font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.65;min-height:100vh }
+
+.topbar {
+  position:fixed;top:0;left:0;right:0;z-index:40;height:52px;
+  background:var(--surface);border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:12px;padding:0 20px;
+}
+.tb-back { display:flex;align-items:center;gap:6px;text-decoration:none;font-size:13px;color:var(--muted);padding:4px 8px;border-radius:5px;transition:background .12s }
+.tb-back:hover { background:var(--teal-dim);color:var(--text) }
+.tb-logo { display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--text);font-weight:700;font-size:15px;letter-spacing:-.01em }
+.tb-mark { width:26px;height:26px;border-radius:6px;flex-shrink:0 }
+.tb-spacer { flex:1 }
+.tb-badge { font-size:11px;background:var(--teal-dim);color:var(--teal-dk);border:1px solid var(--teal-dim2);border-radius:20px;padding:2px 10px;font-weight:600 }
+.theme-btn { width:32px;height:32px;border-radius:6px;border:1px solid var(--border);background:var(--surface2);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:background .15s }
+.theme-btn:hover { background:var(--teal-dim) }
+.ham-btn { display:none;width:32px;height:32px;border-radius:6px;border:1px solid var(--border);background:var(--surface2);cursor:pointer;align-items:center;justify-content:center;color:var(--muted) }
+@media(max-width:800px) { .ham-btn { display:flex } }
+
+.layout { display:flex;padding-top:52px;min-height:100vh }
+
+.sidebar {
+  width:var(--sidebar-w);flex-shrink:0;
+  position:fixed;top:52px;bottom:0;overflow-y:auto;
+  background:var(--surface);border-right:1px solid var(--border);
+  padding:20px 0 40px;z-index:30;transition:transform .22s ease;
+}
+.sidebar::-webkit-scrollbar { width:4px }
+.sidebar::-webkit-scrollbar-thumb { background:var(--border);border-radius:4px }
+.sb-group { padding:0 12px;margin-bottom:6px }
+.sb-group-label { font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);padding:10px 8px 4px;display:block }
+.sb-link { display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;font-size:13px;text-decoration:none;color:var(--muted);transition:background .12s,color .12s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis }
+.sb-link:hover { background:var(--teal-dim);color:var(--text) }
+.sb-link.active { background:var(--teal-dim2);color:var(--teal-dk);font-weight:600 }
+.sb-icon { flex-shrink:0;opacity:.6;font-size:14px }
+.sb-link.active .sb-icon { opacity:1 }
+@media(max-width:800px) { .sidebar { transform:translateX(-100%) } .sidebar.open { transform:none } }
+
+.overlay { display:none;position:fixed;inset:0;z-index:29;background:rgba(0,0,0,.4) }
+.overlay.show { display:block }
+
+.main { flex:1;margin-left:var(--sidebar-w);min-width:0 }
+@media(max-width:800px) { .main { margin-left:0 } }
+
+.section { max-width:860px;margin:0 auto;padding:52px clamp(16px,4vw,48px) 20px;border-bottom:1px solid var(--border) }
+.section:last-child { border-bottom:none }
+
+.section-hero { background:linear-gradient(135deg,var(--teal) 0%,var(--teal-dk) 100%);color:#fff;padding:clamp(36px,6vw,64px) clamp(16px,4vw,48px);text-align:center }
+.sh-eyebrow { font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:10px }
+.sh-h1 { font-size:clamp(26px,5vw,42px);font-weight:800;letter-spacing:-.02em;margin-bottom:12px;text-wrap:balance }
+.sh-sub { font-size:clamp(14px,2vw,16px);opacity:.82;max-width:560px;margin:0 auto;line-height:1.7 }
+.sh-chips { display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px }
+.sh-chip { background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500 }
+
+.sec-h2 { font-size:clamp(20px,3vw,26px);font-weight:800;letter-spacing:-.02em;margin-bottom:8px;display:flex;align-items:center;gap:10px }
+.sec-h2 .sec-num { font-size:12px;font-weight:600;background:var(--teal-dim);color:var(--teal-dk);border-radius:5px;padding:2px 8px;letter-spacing:.02em }
+.sec-lead { font-size:15px;color:var(--muted);margin-bottom:28px;line-height:1.7 }
+.sec-h3 { font-size:16px;font-weight:700;margin:28px 0 10px;letter-spacing:-.01em }
+
+p { margin-bottom:14px;font-size:14.5px;line-height:1.7 }
+p:last-child { margin-bottom:0 }
+
+code { font-family:"SF Mono","Fira Code",monospace;font-size:.85em;background:var(--code-bg);color:var(--code-text);padding:2px 6px;border-radius:4px;border:1px solid var(--border) }
+pre { background:var(--code-bg);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;overflow-x:auto;margin:14px 0 }
+pre code { background:none;border:none;padding:0;font-size:13px;line-height:1.6;color:var(--code-text) }
+
+.tbl-wrap { overflow-x:auto;margin:14px 0;border-radius:var(--r);border:1px solid var(--border) }
+table { width:100%;border-collapse:collapse;font-size:13.5px }
+th { background:var(--surface2);font-weight:600;padding:10px 14px;text-align:left;color:var(--muted);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid var(--border) }
+td { padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top }
+tr:last-child td { border-bottom:none }
+tr:hover td { background:var(--teal-dim) }
+
+.badge { display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;letter-spacing:.02em }
+.badge.done  { background:#dcfce7;color:#166534 }
+.badge.wip   { background:var(--teal-dim);color:var(--teal-dk) }
+.badge.todo  { background:var(--surface2);color:var(--muted) }
+.badge.suite { background:rgba(99,102,241,.1);color:#4f46e5 }
+.badge.pro   { background:rgba(59,130,246,.1);color:#2563eb }
+.badge.ess   { background:var(--surface2);color:var(--muted) }
+@media(prefers-color-scheme:dark) {
+  .badge.done { background:rgba(22,163,74,.15);color:#4ade80 }
+  .badge.suite { background:rgba(99,102,241,.15);color:#818cf8 }
+  .badge.pro   { background:rgba(59,130,246,.15);color:#60a5fa }
+}
+
+.callout { border-radius:var(--r);padding:14px 16px;margin:16px 0;font-size:13.5px;line-height:1.6;display:flex;gap:12px;align-items:flex-start }
+.callout.info  { background:var(--teal-dim);border:1px solid var(--teal-dim2) }
+.callout.warn  { background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.22) }
+.callout.danger{ background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.22) }
+.callout-ico { font-size:16px;flex-shrink:0;line-height:1.4 }
+.callout p { margin:0 }
+
+.steps { counter-reset:step;display:flex;flex-direction:column;gap:0 }
+.step { display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--border) }
+.step:last-child { border-bottom:none }
+.step-num { width:28px;height:28px;border-radius:50%;background:var(--teal);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px }
+.step-content { flex:1 }
+.step-title { font-weight:700;font-size:14px;margin-bottom:4px }
+.step-desc { font-size:13.5px;color:var(--muted);line-height:1.6 }
+
+.status-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:14px 0 }
+.status-item { background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:12px 14px;display:flex;align-items:center;gap:10px }
+.s-dot { width:8px;height:8px;border-radius:50%;flex-shrink:0 }
+.s-dot.done { background:#22c55e }
+.s-dot.wip  { background:var(--teal);animation:pulse 2s infinite }
+.s-dot.todo { background:var(--faint) }
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(0,195,145,.2)} 50%{box-shadow:0 0 0 4px rgba(0,195,145,.2)} }
+.s-label { font-size:13px;font-weight:600 }
+.s-note  { font-size:11px;color:var(--muted);margin-top:1px }
+
+.pricing-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:14px 0 }
+.price-card { background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:10px }
+.price-card.featured { border-color:var(--teal);box-shadow:0 0 0 1px var(--teal) }
+.price-name { font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted) }
+.price-amount { font-size:30px;font-weight:800;letter-spacing:-.02em }
+.price-amount span { font-size:15px;font-weight:500;color:var(--muted) }
+.price-features { list-style:none;display:flex;flex-direction:column;gap:6px;flex:1 }
+.price-features li { font-size:13px;display:flex;gap:6px;align-items:flex-start }
+.price-features li::before { content:"✓";color:var(--teal);font-weight:700;flex-shrink:0 }
+.price-features li.dim::before { content:"—";color:var(--faint) }
+.price-features li.dim { color:var(--faint) }
+
+.cl-item { display:grid;grid-template-columns:80px 1fr auto;gap:12px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--border);font-size:13.5px }
+.cl-item:last-child { border-bottom:none }
+.cl-date { color:var(--faint);font-size:12px }
+
+.feat-row { display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 }
+.feat-tag { font-size:12px;font-weight:500;padding:3px 10px;border-radius:5px;background:var(--surface2);color:var(--muted);border:1px solid var(--border) }
+.feat-tag.teal { background:var(--teal-dim);color:var(--teal-dk);border-color:var(--teal-dim2) }
+
+ul.plain { margin:8px 0 16px 20px;display:flex;flex-direction:column;gap:6px;font-size:14px }
+  </style>
+  <script>(function(){var t=localStorage.getItem('gd-theme');if(t)document.documentElement.dataset.theme=t;})()</script>
+</head>
+<body>
+
+<div class="topbar">
+  <button class="ham-btn" onclick="toggleSidebar()" aria-label="Menu">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <a class="tb-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Interno
+  </a>
+  <a class="tb-logo" href="index.html">
+    <svg class="tb-mark" viewBox="0 0 34 34">
+      <rect width="34" height="34" rx="8" fill="#00c391"/>
+      <rect x="6" y="6" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
+      <rect x="19" y="6" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
+      <rect x="6" y="19" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
+      <rect x="19" y="19" width="9" height="10" rx="2" fill="rgba(0,0,0,0.72)"/>
+    </svg>
+    GestHall Suite
+  </a>
+  <div class="tb-spacer"></div>
+  <span class="tb-badge">Docs · Luglio 2026</span>
+  <button class="theme-btn" onclick="toggleTheme()" aria-label="Tema">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+  </button>
+</div>
+
+<div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<div class="layout">
+<nav class="sidebar" id="sidebar">
+  <div class="sb-group">
+    <span class="sb-group-label">Panoramica</span>
+    <a class="sb-link" href="#overview" onclick="closeMobile()"><span class="sb-icon">🏠</span> Stato componenti</a>
+    <a class="sb-link" href="#changelog" onclick="closeMobile()"><span class="sb-icon">📋</span> Changelog</a>
+  </div>
+  <div class="sb-group">
+    <span class="sb-group-label">Suite — App</span>
+    <a class="sb-link" href="#login" onclick="closeMobile()"><span class="sb-icon">🔐</span> Login &amp; sessione</a>
+    <a class="sb-link" href="#operatore" onclick="closeMobile()"><span class="sb-icon">👷</span> Guida operatore</a>
+    <a class="sb-link" href="#chat" onclick="closeMobile()"><span class="sb-icon">💬</span> Chat operatori</a>
+    <a class="sb-link" href="#responsabile" onclick="closeMobile()"><span class="sb-icon">🧑‍💼</span> Guida responsabile</a>
+    <a class="sb-link" href="#revisore" onclick="closeMobile()"><span class="sb-icon">👁</span> Guida revisore</a>
+    <a class="sb-link" href="#moduli" onclick="closeMobile()"><span class="sb-icon">🧩</span> Moduli opzionali</a>
+    <a class="sb-link" href="#piani" onclick="closeMobile()"><span class="sb-icon">💎</span> Piani &amp; feature</a>
+  </div>
+  <div class="sb-group">
+    <span class="sb-group-label">Hub Admin</span>
+    <a class="sb-link" href="#hub-overview" onclick="closeMobile()"><span class="sb-icon">🛠</span> Panoramica hub</a>
+    <a class="sb-link" href="#hub-installazioni" onclick="closeMobile()"><span class="sb-icon">🖥</span> Installazioni</a>
+    <a class="sb-link" href="#hub-rivenditori" onclick="closeMobile()"><span class="sb-icon">🤝</span> Rivenditori</a>
+    <a class="sb-link" href="#hub-license" onclick="closeMobile()"><span class="sb-icon">🔑</span> License API</a>
+  </div>
+  <div class="sb-group">
+    <span class="sb-group-label">Tecnico</span>
+    <a class="sb-link" href="#superadmin" onclick="closeMobile()"><span class="sb-icon">⚡</span> Super admin</a>
+    <a class="sb-link" href="#deploy" onclick="closeMobile()"><span class="sb-icon">🚀</span> Deploy SiteGround</a>
+    <a class="sb-link" href="#architettura" onclick="closeMobile()"><span class="sb-icon">🏗</span> Architettura</a>
+  </div>
+  <div class="sb-group">
+    <span class="sb-group-label">Roadmap</span>
+    <a class="sb-link" href="#roadmap" onclick="closeMobile()"><span class="sb-icon">🗺</span> Roadmap</a>
+    <a class="sb-link" href="business-plan.html"><span class="sb-icon">📊</span> Business plan &rarr;</a>
+  </div>
+</nav>
+
+<main class="main" id="top">
+
+<div class="section-hero">
+  <div class="sh-eyebrow">Documentazione interna</div>
+  <h1 class="sh-h1">GestHall Suite</h1>
+  <p class="sh-sub">Gestionale PHP+MySQL per sale giochi VLT/AWP italiane. White-label, PWA-first, senza framework. Tutto in un'unica pagina.</p>
+  <div class="sh-chips">
+    <span class="sh-chip">PHP 8+ · MySQL · Vanilla JS</span>
+    <span class="sh-chip">3 piani · Essenziale / Pro / Suite</span>
+    <span class="sh-chip">Hub admin · License server v1</span>
+    <span class="sh-chip">Luglio 2026</span>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<div class="section" id="overview">
+  <div class="sec-h2"><span class="sec-num">01</span> Stato componenti</div>
+  <p class="sec-lead">Snapshot dello stato attuale del progetto. Tutto ciò che è marcato con punto verde è in produzione.</p>
+  <div class="status-grid">
+    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Suite (app)</div><div class="s-note">Tutti i moduli attivi</div></div></div>
+    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Hub v1</div><div class="s-note">Installazioni + rivenditori</div></div></div>
+    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Remember-me</div><div class="s-note">Token rotante 30gg</div></div></div>
+    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">QR Segnalazione</div><div class="s-note">Standalone, no-auth</div></div></div>
+    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Ghost login</div><div class="s-note">HMAC-SHA256, 15min</div></div></div>
+    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Chat + vocali</div><div class="s-note">MediaRecorder, nativa</div></div></div>
+    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Privacy + Termini</div><div class="s-note">GDPR, luglio 2026</div></div></div>
+    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">GitHub Organization</div><div class="s-note">github.com/gesthall-suite</div></div></div>
+    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Sito marketing</div><div class="s-note">Astro, in deploy</div></div></div>
+    <div class="status-item"><div class="s-dot wip"></div><div><div class="s-label">License check</div><div class="s-note">Da integrare in auth.php</div></div></div>
+    <div class="status-item"><div class="s-dot wip"></div><div><div class="s-label">Deploy produzione</div><div class="s-note">VPS + DNS in corso</div></div></div>
+    <div class="status-item"><div class="s-dot todo"></div><div><div class="s-label">Stripe Billing</div><div class="s-note">Fase 2 · Q4 2026</div></div></div>
+    <div class="status-item"><div class="s-dot todo"></div><div><div class="s-label">Provisioning auto</div><div class="s-note">Script CLI · Fase 2</div></div></div>
+    <div class="status-item"><div class="s-dot todo"></div><div><div class="s-label">Primo cliente</div><div class="s-note">Obiettivo Q3 2026</div></div></div>
+  </div>
+  <div class="sec-h3">Struttura del progetto</div>
+  <pre><code>gesthall-suite/
+  suite/   ← app PHP gestionale
+  hub/     ← pannello admin
+  sito/    ← marketing Astro + docs
+  docs/    ← documentazione strategica e guide</code></pre>
+  <div class="callout info">
+    <span class="callout-ico">ℹ️</span>
+    <p>I tre sotto-progetti hanno ognuno il proprio <code>.git</code>. La root <code>gesthall-suite/</code> non ha git: è solo un contenitore locale.</p>
+  </div>
+</div>
+
+<!-- CHANGELOG -->
+<div class="section" id="changelog">
+  <div class="sec-h2"><span class="sec-num">02</span> Changelog recente</div>
+  <p class="sec-lead">Modifiche più significative, luglio 2026.</p>
+  <div class="cl-item"><span class="cl-date">lug 2026</span><span><strong>Privacy Policy + Termini di Servizio</strong> — GDPR completa su sito, suite e hub. Placeholder <code>[TITOLARE]</code> e <code>[CITTÀ]</code> da completare alla costituzione della struttura legale</span><span class="badge done">legal</span></div>
+  <div class="cl-item"><span class="cl-date">lug 2026</span><span><strong>Docs site integrato nel sito</strong> — <code>/docs</code> (guida utente pubblica) e <code>/interno</code> (documentazione tecnica + business plan, accesso htpasswd) integrati nell'Astro sito</span><span class="badge done">feature</span></div>
+  <div class="cl-item"><span class="cl-date">lug 2026</span><span><strong>Chat + messaggi vocali</strong> — <code>sala/chat.php</code>: messaggi testo, emoji, immagini e audio in tempo reale. Vocali via MediaRecorder API (WebM/OGG/MP4, max 5 MB)</span><span class="badge done">feature</span></div>
+  <div class="cl-item"><span class="cl-date">lug 2026</span><span><strong>QR segnalazione guasto</strong> — <code>sala/segnala_guasto.php</code> standalone, no-auth. QR punta qui invece di <code>ticket.php</code>; salva ticket + invia email</span><span class="badge done">feature</span></div>
+  <div class="cl-item"><span class="cl-date">lug 2026</span><span><strong>Resta connesso</strong> — remember-me token SHA-256 rotante, per-dispositivo, cookie HttpOnly/Secure/SameSite=Lax, tabella <code>remember_tokens</code></span><span class="badge done">security</span></div>
+  <div class="cl-item"><span class="cl-date">lug 2026</span><span><strong>Hub rivenditori</strong> — CRUD rivenditori, collegamento installazione ↔ rivenditore, vista rivenditore filtrata, KPI revenue share</span><span class="badge done">feature</span></div>
+  <div class="cl-item"><span class="cl-date">lug 2026</span><span><strong>Login redirect</strong> — <code>require_login()</code> salva <code>login_next</code> in sessione; post-login redirect all'URL originale</span><span class="badge done">fix</span></div>
+  <div class="cl-item"><span class="cl-date">giu 2026</span><span><strong>Hub v1</strong> — schema DB, autenticazione super admin + rivenditori, license API, dashboard KPI, gestione installazioni, ghost login da UI, setup wizard</span><span class="badge done">feature</span></div>
+</div>
+
+<!-- LOGIN -->
+<div class="section" id="login">
+  <div class="sec-h2"><span class="sec-num">03</span> Login &amp; sessione</div>
+  <p class="sec-lead">Accesso su <code>account/login.php</code>. Supporta username o email, rate limiting, remember-me e redirect post-login.</p>
+  <div class="sec-h3">Autenticazione</div>
+  <p>Il form accetta sia <strong>username</strong> sia <strong>indirizzo email</strong>. Se il campo contiene <code>@</code> viene tentata la ricerca per email (solo se univoca). Rate limiting: 5 tentativi in 15 minuti per IP.</p>
+  <div class="sec-h3">Resta connesso (remember-me)</div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Aspetto</th><th>Dettaglio</th></tr>
+    <tr><td>Cookie</td><td><code>gh_rm</code> — HttpOnly, Secure, SameSite=Lax</td></tr>
+    <tr><td>Storage DB</td><td>Hash SHA-256 del token (raw token solo nel cookie)</td></tr>
+    <tr><td>Scadenza</td><td>30 giorni, rolling (si rinnova ad ogni accesso automatico)</td></tr>
+    <tr><td>Per-dispositivo</td><td>Ogni tablet/telefono ha il proprio token indipendente</td></tr>
+    <tr><td>Logout</td><td>Cancella solo il token del dispositivo corrente</td></tr>
+  </table></div>
+  <div class="callout warn">
+    <span class="callout-ico">⚠️</span>
+    <p>Per installazioni esistenti: <code>CREATE TABLE IF NOT EXISTS remember_tokens (...)</code> — vedi <code>suite/install/schema.sql</code>.</p>
+  </div>
+  <div class="sec-h3">Redirect post-login</div>
+  <p>Se un utente non autenticato accede a una pagina protetta (es. link QR), <code>require_login()</code> salva l'URL in <code>$_SESSION['login_next']</code> e lo usa dopo il login invece della dashboard.</p>
+  <div class="sec-h3">White label nel login</div>
+  <ul class="plain">
+    <li><strong>Suite con logo</strong>: mostra il logo caricato in Impostazioni → Identità</li>
+    <li><strong>Suite senza logo</strong>: mostra iniziali in gradiente brand accent</li>
+    <li><strong>Pro/Essenziale</strong>: mostra il logo GestHall SVG</li>
+  </ul>
+</div>
+
+<!-- OPERATORE -->
+<div class="section" id="operatore">
+  <div class="sec-h2"><span class="sec-num">04</span> Guida operatore</div>
+  <p class="sec-lead">Cosa può fare un operatore: compilare la cassa, gestire i turni, segnalare guasti, registrare prestiti.</p>
+  <div class="sec-h3">Cassa giornaliera</div>
+  <p>Pagina principale: <code>cassa/giornaliero.php</code>. Struttura a tab per turno (fino a 3). Swipe touch tra i turni su mobile. Banner colorato per scostamento: verde &lt;4€, giallo 4–5€, rosso &gt;5€.</p>
+  <div class="feat-row">
+    <span class="feat-tag teal">Contanti per taglio</span>
+    <span class="feat-tag teal">Scassettamenti VLT</span>
+    <span class="feat-tag teal">Ticket pagati</span>
+    <span class="feat-tag teal">Refill AWP</span>
+    <span class="feat-tag teal">Fondo cassa / Monete / Bancomat</span>
+    <span class="feat-tag teal">Note turno</span>
+  </div>
+  <pre><code>cassetto   = contanti + refill_awp + differenze - ii_cassa - rientri
+versamento = scassettamenti - bancomat - ticket
+scostamento= (cassetto + monete) - fondo_cassa - versamento</code></pre>
+  <div class="sec-h3">QR segnalazione guasto</div>
+  <p>Ogni macchina ha un QR code fisico stampabile da <code>sala/print_qr.php</code>. Il QR punta a <code>sala/segnala_guasto.php</code>: pagina standalone <strong>senza login</strong>, accessibile da qualsiasi scanner.</p>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Scannerizza il QR</div><div class="step-desc">Con la fotocamera del telefono. Si apre automaticamente la pagina segnalazione, nessun login richiesto.</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Descrivi il problema</div><div class="step-desc">Campo obbligatorio. Opzionalmente inserisci il tuo nome.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Invia</div><div class="step-desc">Ticket salvato nel DB + email automatica all'assistenza configurata in Impostazioni.</div></div></div>
+  </div>
+</div>
+
+<!-- CHAT -->
+<div class="section" id="chat">
+  <div class="sec-h2"><span class="sec-num">04b</span> Chat operatori</div>
+  <p class="sec-lead"><code>sala/chat.php</code> — messaggistica in tempo reale tra tutti gli utenti autenticati. Supporta testo, emoji, immagini e vocali senza dipendenze esterne.</p>
+  <div class="feat-row">
+    <span class="feat-tag teal">Testo libero</span>
+    <span class="feat-tag teal">Emoji (250+ in 7 categorie)</span>
+    <span class="feat-tag teal">Immagini (JPG/PNG/WebP)</span>
+    <span class="feat-tag teal">Messaggi vocali</span>
+  </div>
+  <div class="sec-h3">Messaggi vocali</div>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Avvia registrazione</div><div class="step-desc">Clicca icona microfono 🎤. Compare la recording bar con timer in tempo reale.</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Ferma o annulla</div><div class="step-desc">Clicca di nuovo 🎤 per fermare. Clicca ✕ per scartare senza inviare.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Anteprima e invio</div><div class="step-desc">Player <code>&lt;audio controls&gt;</code> per ascoltare prima di inviare. Clicca "Invia" per pubblicare.</div></div></div>
+  </div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Aspetto</th><th>Dettaglio</th></tr>
+    <tr><td>Registrazione</td><td>MediaRecorder API, nessuna dipendenza npm</td></tr>
+    <tr><td>Formati audio</td><td><code>audio/webm</code>, <code>audio/ogg</code>, <code>audio/mp4</code></td></tr>
+    <tr><td>Storage</td><td><code>account/uploads/chat/</code> — <code>{msg_id}_{hex8}.{ext}</code></td></tr>
+    <tr><td>Accesso file</td><td>Solo via <code>sala/chat_img.php?id=N</code> (autenticazione + whitelist MIME)</td></tr>
+    <tr><td>API endpoint vocale</td><td><code>az=invia_audio</code> — POST multipart: <code>audio</code>, <code>conv</code>, <code>csrf</code></td></tr>
+    <tr><td>Immagini max</td><td>8 MB pre-compressione; compresso a WebP prima dell'upload</td></tr>
+  </table></div>
+  <div class="callout warn">
+    <span class="callout-ico">⚠️</span>
+    <p>Per installazioni esistenti: <code>ALTER TABLE chat_messaggi ADD COLUMN IF NOT EXISTS media_path VARCHAR(120) DEFAULT NULL;</code></p>
+  </div>
+</div>
+
+<!-- RESPONSABILE -->
+<div class="section" id="responsabile">
+  <div class="sec-h2"><span class="sec-num">05</span> Guida responsabile</div>
+  <p class="sec-lead">Accesso completo: impostazioni, utenti, macchine, tutti i report, conferma versamenti.</p>
+  <div class="sec-h3">Dashboard responsabile</div>
+  <p>KPI in tempo reale (polling ogni 30s): stato giornata, incasso VLT odierno, MRR mensile. Grafico 30 giorni e grafico 6 mesi. Versamenti in sospeso e statistiche operatori.</p>
+  <div class="sec-h3">Impostazioni</div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Sezione</th><th>Cosa configura</th></tr>
+    <tr><td>Identità</td><td>Nome sala, slogan, logo, brand accent color</td></tr>
+    <tr><td>Turni</td><td>Numero turni (1–3), nomi, orari, prezzi stipendio</td></tr>
+    <tr><td>Permessi</td><td>Operatori modifica turni, mobile giornaliero, revisori vedi turni</td></tr>
+    <tr><td>Moduli</td><td>Attiva/disattiva assistenze, prestiti, documenti, SONOS, passaggio, firma</td></tr>
+    <tr><td>Assistenza</td><td>Telefono tecnico, lock, password — visibili nel form ticket</td></tr>
+    <tr><td>Sistema</td><td>Fuso orario, retention log, email mittente</td></tr>
+    <tr><td>Piano</td><td>Cambia piano (Essenziale/Pro/Suite)</td></tr>
+  </table></div>
+  <div class="sec-h3">Macchine e fornitori</div>
+  <p>In <code>account/admin/macchine.php</code>: CRUD macchine VLT/AWP (codice, tipo, fornitore, seriale, CIV, ordine), drag-and-drop riordino fornitori. Stampa QR per ogni macchina.</p>
+  <div class="sec-h3">Report</div>
+  <div class="feat-row">
+    <span class="feat-tag">Settimanale Bet/Win</span>
+    <span class="feat-tag">Mensile (CSV + XLSX)</span>
+    <span class="feat-tag">Annuale</span>
+    <span class="feat-tag teal">Confronto periodi (Piano Pro+)</span>
+  </div>
+</div>
+
+<!-- REVISORE -->
+<div class="section" id="revisore">
+  <div class="sec-h2"><span class="sec-num">06</span> Guida revisore</div>
+  <p class="sec-lead">Conferma versamenti, storico KPI mensili. Accesso in sola lettura.</p>
+  <div class="sec-h3">Conferma versamento</div>
+  <p>Clic su "Conferma ritiro" → (se <code>modulo_firma_ritiro</code> attivo) canvas firma a mano libera → firma PNG salvata in <code>versamenti_confermati.firma_img</code>. La conferma registra chi ha ritirato, quando e da che IP.</p>
+  <div class="sec-h3">Cosa il revisore NON può fare</div>
+  <ul class="plain">
+    <li>Aprire/chiudere ticket assistenza</li>
+    <li>Modificare la cassa giornaliera</li>
+    <li>Accedere a impostazioni, macchine, utenti, audit</li>
+    <li>Registrare prestiti o rientri</li>
+  </ul>
+</div>
+
+<!-- MODULI -->
+<div class="section" id="moduli">
+  <div class="sec-h2"><span class="sec-num">07</span> Moduli opzionali</div>
+  <p class="sec-lead">Funzionalità attivabili/disattivabili da Impostazioni → Moduli. Alcuni richiedono un piano specifico.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Modulo</th><th>Chiave</th><th>Default</th><th>Piano min.</th><th>Cosa fa</th></tr>
+    <tr><td>Ticket assistenza</td><td><code>modulo_assistenze</code></td><td>ON</td><td><span class="badge pro">Pro</span></td><td>CRUD guasti macchine, email tecnico, QR segnalazione no-auth</td></tr>
+    <tr><td>Prestiti</td><td><code>modulo_prestiti</code></td><td>ON</td><td><span class="badge pro">Pro</span></td><td>Prestiti a persone, rientri, riflesso automatico sul giornaliero</td></tr>
+    <tr><td>Anagrafica</td><td><code>modulo_anagrafica</code></td><td>ON</td><td><span class="badge pro">Pro</span></td><td>Registro giocatori con dati anagrafici e link a prestiti</td></tr>
+    <tr><td>Documenti</td><td><code>modulo_documenti</code></td><td>ON</td><td><span class="badge pro">Pro</span></td><td>Gestione file (PDF, Office, immagini) con cartelle e drag&amp;drop</td></tr>
+    <tr><td>Notifiche push</td><td><code>vapid_public</code></td><td>OFF</td><td><span class="badge pro">Pro</span></td><td>Push WebPush su nuovo ticket e conferma versamento</td></tr>
+    <tr><td>Firma digitale</td><td><code>modulo_firma_ritiro</code></td><td>OFF</td><td><span class="badge pro">Pro</span></td><td>Canvas firma a mano sulla conferma versamento</td></tr>
+    <tr><td>Confronto periodi</td><td>—</td><td>ON</td><td><span class="badge pro">Pro</span></td><td>Comparazione due range di date, 5 metriche, grafico</td></tr>
+    <tr><td>SONOS</td><td><code>modulo_sonos</code></td><td>OFF</td><td><span class="badge suite">Suite</span></td><td>Controllo musica SONOS via UPnP locale</td></tr>
+    <tr><td>Passaggio consegne</td><td><code>modulo_passaggio</code></td><td>OFF</td><td><span class="badge suite">Suite</span></td><td>Checklist configurabile + messaggi tra turni</td></tr>
+  </table></div>
+</div>
+
+<!-- PIANI -->
+<div class="section" id="piani">
+  <div class="sec-h2"><span class="sec-num">08</span> Piani &amp; feature</div>
+  <p class="sec-lead">Il piano è in <code>impostazioni.piano</code>. I gate vengono applicati in <code>nav.php</code> tramite <code>piano_can()</code>.</p>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-name">Essenziale</div>
+      <div class="price-amount">€39<span>/mese</span></div>
+      <ul class="price-features">
+        <li>Cassa giornaliera</li><li>Refill AWP</li><li>Turni programmati</li>
+        <li>Dashboard</li><li>Report mensile/annuale</li><li>Chat (testo + vocali)</li>
+        <li class="dim">Contatti, assistenze, documenti</li>
+        <li class="dim">Notifiche push, firma</li>
+        <li class="dim">White label, SONOS</li>
+      </ul>
+      <div style="margin-top:auto;padding-top:12px;font-size:12px;color:var(--muted)">Max 4 utenti attivi</div>
+    </div>
+    <div class="price-card featured">
+      <div class="price-name" style="color:var(--teal-dk)">Pro — consigliato</div>
+      <div class="price-amount">€69<span>/mese</span></div>
+      <ul class="price-features">
+        <li>Tutto Essenziale</li><li>Contatti rubrica</li><li>Ticket assistenza + QR guasti</li>
+        <li>Anagrafica giocatori</li><li>Prestiti e rientri</li><li>Documenti (PDF, Office)</li>
+        <li>Notifiche push VAPID</li><li>Firma digitale versamento</li><li>Confronto periodi</li>
+        <li class="dim">White label, SONOS, passaggio</li>
+      </ul>
+      <div style="margin-top:auto;padding-top:12px;font-size:12px;color:var(--muted)">Utenti illimitati</div>
+    </div>
+    <div class="price-card">
+      <div class="price-name">Suite</div>
+      <div class="price-amount">€99<span>/mese</span></div>
+      <ul class="price-features">
+        <li>Tutto Pro</li><li>White label (logo + colori)</li>
+        <li>SONOS controller</li><li>Passaggio consegne</li><li>Supporto prioritario</li>
+      </ul>
+      <div style="margin-top:auto;padding-top:12px;font-size:12px;color:var(--muted)">Utenti illimitati</div>
+    </div>
+  </div>
+  <div class="callout info">
+    <span class="callout-ico">🔧</span>
+    <p>Per cambiare piano manualmente: <code>UPDATE impostazioni SET valore='pro' WHERE chiave='piano';</code> — valori: <code>essenziale</code>, <code>pro</code>, <code>suite</code>.</p>
+  </div>
+</div>
+
+<!-- HUB OVERVIEW -->
+<div class="section" id="hub-overview">
+  <div class="sec-h2"><span class="sec-num">09</span> Pannello Hub</div>
+  <p class="sec-lead">License server + pannello admin centrale su <code>hub.gesthallsuite.it</code>. Due ruoli: super admin e rivenditore.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Ruolo</th><th>Come accede</th><th>Cosa vede</th></tr>
+    <tr><td><strong>Super admin</strong></td><td>Email + password da <code>hub/install/config.php</code></td><td>Tutto: KPI, tutte le installazioni, rivenditori, ghost login</td></tr>
+    <tr><td><strong>Rivenditore</strong></td><td>Email + password create nel pannello</td><td>Solo le proprie installazioni; KPI filtrati; nessun ghost login</td></tr>
+  </table></div>
+  <div class="sec-h3">Setup iniziale hub</div>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Deploy e DB</div><div class="step-desc">Crea DB <code>gesthall_hub</code>, importa <code>hub/install/schema.sql</code>, copia e compila <code>hub/install/config.php</code>.</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Setup wizard</div><div class="step-desc">Visita <code>hub.gesthallsuite.it/install/setup.php</code> per impostare la password super admin.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Blocca setup</div><div class="step-desc">Rinomina o rimuovi <code>install/setup.php</code> dopo il completamento.</div></div></div>
+  </div>
+</div>
+
+<!-- HUB INSTALLAZIONI -->
+<div class="section" id="hub-installazioni">
+  <div class="sec-h2"><span class="sec-num">10</span> Gestione installazioni</div>
+  <p class="sec-lead">Da Hub → Dashboard → "Nuova installazione". Ogni installazione ha una chiave univoca e può essere associata a un rivenditore.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Campo</th><th>Descrizione</th></tr>
+    <tr><td>Nome sala</td><td>Etichetta interna nell'hub</td></tr>
+    <tr><td>URL</td><td>URL completo dell'installazione</td></tr>
+    <tr><td>Piano</td><td>Essenziale / Pro / Suite</td></tr>
+    <tr><td>Data scadenza</td><td>Default: +1 anno dalla creazione</td></tr>
+    <tr><td>Chiave installazione</td><td>64 hex auto-generata → va in <code>config.php</code> come <code>INSTALLATION_KEY</code></td></tr>
+    <tr><td>Superadmin key</td><td>Necessaria per ghost login. Prima occorrenza in <code>ghost_generate.php</code>.</td></tr>
+    <tr><td>Rivenditore</td><td>Assegnazione opzionale</td></tr>
+  </table></div>
+  <div class="sec-h3">Ghost login da hub</div>
+  <p>Scheda installazione (con <code>superadmin_key</code> configurata) → <strong>Genera ghost login</strong> → link firmato HMAC valido 15 minuti. Ogni accesso è loggato in <code>audit_log</code> con prefisso <code>[GHOST]</code>.</p>
+</div>
+
+<!-- HUB RIVENDITORI -->
+<div class="section" id="hub-rivenditori">
+  <div class="sec-h2"><span class="sec-num">11</span> Rivenditori</div>
+  <p class="sec-lead">I rivenditori accedono con proprie credenziali e vedono solo le installazioni assegnate. Nessun ghost login, nessuna modifica piani.</p>
+  <div class="sec-h3">Creare un rivenditore</div>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Hub → sidebar "Rivenditori"</div><div class="step-desc">Solo super admin. Clicca "+ Nuovo rivenditore".</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Compila i dati</div><div class="step-desc">Nome, email, password, revenue share % (es. 30).</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Comunica le credenziali</div><div class="step-desc">Non c'è invito automatico: comunicare email e password manualmente.</div></div></div>
+  </div>
+  <div class="sec-h3">Assegnare installazioni</div>
+  <p>Nel form "Nuova installazione" scegli il rivenditore dal menu, oppure modifica una installazione esistente. Il rivenditore vede automaticamente tutte le installazioni con il suo ID.</p>
+</div>
+
+<!-- LICENSE API -->
+<div class="section" id="hub-license">
+  <div class="sec-h2"><span class="sec-num">12</span> License API</div>
+  <p class="sec-lead">Endpoint pubblico che le installazioni interrogano per verificare piano e scadenza.</p>
+  <pre><code>GET https://hub.gesthallsuite.it/api/license?key=INSTALLATION_KEY</code></pre>
+  <div class="sec-h3">Risposta valida</div>
+  <pre><code>{
+  "valida": true,
+  "piano": "pro",
+  "scadenza": "2027-07-01",
+  "nome_sala": "Sala dei Cristalli",
+  "features": ["cassa","awp","turni","dashboard","contatti",
+               "assistenze","anagrafica","prestiti","documenti",
+               "push","firma","confronto"],
+  "user_limit": 0
+}</code></pre>
+  <div class="callout warn">
+    <span class="callout-ico">⚠️</span>
+    <p>Il check license in <code>suite/includes/auth.php</code> (<code>get_license()</code> con cache 24h su file) è ancora da implementare. Attualmente il piano viene letto da <code>impostazioni.piano</code> nel DB locale.</p>
+  </div>
+</div>
+
+<!-- SUPER ADMIN -->
+<div class="section" id="superadmin">
+  <div class="sec-h2"><span class="sec-num">13</span> Super admin</div>
+  <p class="sec-lead">Strumenti per la gestione remota delle installazioni: ghost login diretto, accesso DB, backup.</p>
+  <div class="sec-h3">Ghost login diretto (senza hub)</div>
+  <p>Vai su <code>https://[url]/account/ghost_generate.php</code> e inserisci la <code>superadmin_key</code>. Il link firmato è valido 15 minuti.</p>
+  <div class="callout danger">
+    <span class="callout-ico">🔒</span>
+    <p>La <code>superadmin_key</code> è in <code>impostazioni</code> nel DB. Conservarla nel password manager con etichetta chiara per ogni sala. Non condividere i link ghost.</p>
+  </div>
+  <div class="sec-h3">Cambiare piano manualmente</div>
+  <pre><code>mysql -u gh_sala -p gh_sala
+UPDATE impostazioni SET valore='suite' WHERE chiave='piano';
+-- valori: 'essenziale', 'pro', 'suite'</code></pre>
+  <div class="sec-h3">Backup DB</div>
+  <pre><code># Backup singola installazione
+mysqldump -u root -p gh_nomesala > /backup/gh_nomesala_$(date +%Y%m%d).sql
+
+# Backup tutti i DB GestHall
+for db in $(mysql -u root -p -e "SHOW DATABASES LIKE 'gh_%'" -s --skip-column-names); do
+  mysqldump -u root -p $db > /backup/${db}_$(date +%Y%m%d).sql
+done</code></pre>
+  <div class="sec-h3">Sicurezza — riepilogo accessi</div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Risorsa</th><th>Come accedere</th><th>Note</th></tr>
+    <tr><td><code>ghost_generate.php</code></td><td>URL non indicizzato + superadmin_key</td><td>Trattare come URL segreto</td></tr>
+    <tr><td>DB MySQL</td><td>SSH + mysql CLI</td><td>Credenziali in <code>config.php</code></td></tr>
+    <tr><td>Hub</td><td><code>hub.gesthallsuite.it</code> + email + password</td><td>Solo account super admin</td></tr>
+    <tr><td>License API</td><td>HTTPS + installation_key</td><td>Chiave auto-generata al setup</td></tr>
+  </table></div>
+</div>
+
+<!-- DEPLOY -->
+<div class="section" id="deploy">
+  <div class="sec-h2"><span class="sec-num">14</span> Deploy su SiteGround</div>
+  <p class="sec-lead">Come configurare N installazioni su sottodomini <code>*.gesthallsuite.it</code> con un unico codebase condiviso.</p>
+  <div class="sec-h3">Struttura domini</div>
+  <pre><code>gesthallsuite.it          → Astro sito marketing (public_html/)
+hub.gesthallsuite.it      → Pannello hub PHP (public_html/hub.gesthallsuite.it/)
+demo.gesthallsuite.it     → Installazione demo suite
+nomesala.gesthallsuite.it → Installazione cliente</code></pre>
+  <div class="sec-h3">Prima installazione suite</div>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Clone repository</div><div class="step-desc"><code>cd /home/[utente]/ && git clone git@github.com:gesthall-suite/suite.git gestHall-suite</code></div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Crea sottodominio in SiteGround</div><div class="step-desc">Site Tools → Domains → Subdomains → Crea <code>demo.gesthallsuite.it</code></div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Symlink document root</div><div class="step-desc"><code>ln -s /home/[u]/gestHall-suite/suite /home/[u]/www/demo.gesthallsuite.it/public</code></div></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">Crea DB MySQL</div><div class="step-desc">Site Tools → MySQL: crea DB <code>gh_demo</code>, crea utente, assegna privilegi ALL.</div></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-content"><div class="step-title">Isolamento config via .htaccess</div><div class="step-desc">Crea <code>/home/[u]/www/demo.gesthallsuite.it/.htaccess</code> con <code>SetEnv GH_DB_NAME "gh_demo"</code> ecc. Il <code>config.php</code> condiviso legge da <code>getenv()</code>.</div></div></div>
+    <div class="step"><div class="step-num">6</div><div class="step-content"><div class="step-title">Wizard setup + SSL</div><div class="step-desc">Visita <code>/install/setup.php</code>, completa, rinomina il file. SSL da Site Tools → Security → SSL Manager.</div></div></div>
+  </div>
+  <div class="sec-h3">Seconda installazione in poi</div>
+  <p>Ripeti solo i passi 2, 4 (nuovo DB), 5 (nuovo .htaccess), 6 (wizard). Tempo stimato: <strong>10–15 minuti</strong>.</p>
+  <div class="sec-h3">Aggiornare tutte le installazioni</div>
+  <pre><code>cd /home/[utente]/gestHall-suite
+git pull origin main
+# Un solo pull aggiorna tutti i vhost contemporaneamente</code></pre>
+  <div class="sec-h3">Deploy sito Astro</div>
+  <pre><code>cd sito/
+npm run build        # genera dist/
+rsync -avz dist/ user@server:/home/user/public_html/
+# oppure: npm run build e upload manuale via File Manager SiteGround</code></pre>
+</div>
+
+<!-- ARCHITETTURA -->
+<div class="section" id="architettura">
+  <div class="sec-h2"><span class="sec-num">15</span> Architettura</div>
+  <p class="sec-lead">Modello C — ibrido subdomain: stesso codebase PHP, DB MySQL separato per cliente, vhost diverso per ogni sottodominio.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Modello</th><th>Descrizione</th><th>Verdict</th></tr>
+    <tr><td>A — Isolato</td><td>Server+DB separati per cliente</td><td>Non scala gli aggiornamenti</td></tr>
+    <tr><td>B — Multitenant</td><td>Un'app, un DB, colonna sala_id</td><td>Riscrittura massiva + rischio data leakage</td></tr>
+    <tr><td><strong>C — Ibrido subdomain</strong></td><td><strong>Stesso codebase, DB separati, vhost diversi</strong></td><td><span class="badge done">Scelto</span></td></tr>
+  </table></div>
+  <div class="sec-h3">DNS layout</div>
+  <pre><code>*.gesthallsuite.it      → server principale (wildcard A record)
+  roma.gesthallsuite.it   → DB: gh_roma
+  napoli.gesthallsuite.it → DB: gh_napoli
+hub.gesthallsuite.it    → pannello admin separato</code></pre>
+  <div class="sec-h3">Stack tecnologico</div>
+  <div class="feat-row">
+    <span class="feat-tag teal">PHP 8+ · PDO</span>
+    <span class="feat-tag teal">MySQL 8 / MariaDB 10.6+</span>
+    <span class="feat-tag teal">HTML/CSS/JS Vanilla</span>
+    <span class="feat-tag teal">PWA · Web Push VAPID</span>
+    <span class="feat-tag">Chart.js (CDN)</span>
+    <span class="feat-tag">Astro 7 (marketing)</span>
+  </div>
+  <div class="sec-h3">File principali</div>
+  <div class="tbl-wrap"><table>
+    <tr><th>File</th><th>Responsabilità</th></tr>
+    <tr><td><code>includes/auth.php</code></td><td>Autenticazione, sessione, CSRF, rate limiting, remember-me, setup guard</td></tr>
+    <tr><td><code>includes/lib.php</code></td><td>Helper: <code>piano_can()</code>, <code>brand_derive()</code>, <code>riepilogo_giornata()</code>, <code>audit()</code></td></tr>
+    <tr><td><code>includes/db.php</code></td><td>Singleton PDO + <code>config()</code></td></tr>
+    <tr><td><code>includes/nav.php</code></td><td>Sidebar, tab bar mobile, white label, PWA tags, PJAX</td></tr>
+    <tr><td><code>install/schema.sql</code></td><td>Unica fonte di verità per lo schema DB</td></tr>
+    <tr><td><code>sala/chat.php</code></td><td>Chat real-time: testo, emoji, immagini, messaggi vocali (MediaRecorder)</td></tr>
+    <tr><td><code>sala/segnala_guasto.php</code></td><td>Pagina standalone no-auth per segnalazione guasto via QR</td></tr>
+  </table></div>
+  <div class="callout info">
+    <span class="callout-ico">📌</span>
+    <p>Regola: nessun file di migration. Aggiornare solo <code>schema.sql</code>. Per installazioni esistenti, dettare la query al cliente o eseguirla via ghost login.</p>
+  </div>
+</div>
+
+<!-- ROADMAP -->
+<div class="section" id="roadmap">
+  <div class="sec-h2"><span class="sec-num">16</span> Roadmap</div>
+  <p class="sec-lead">Tre fasi. La Fase 0 è completata. La Fase 1 è in corso (Q3 2026).</p>
+
+  <div class="sec-h3"><span class="badge done">Fase 0 — Completata</span></div>
+  <div class="feat-row" style="margin-top:10px">
+    <span class="feat-tag teal">Core gestionale</span>
+    <span class="feat-tag teal">Tutti i moduli opzionali</span>
+    <span class="feat-tag teal">Piano tier completo</span>
+    <span class="feat-tag teal">Ghost login</span>
+    <span class="feat-tag teal">Hub v1 + rivenditori</span>
+    <span class="feat-tag teal">Remember-me</span>
+    <span class="feat-tag teal">QR segnalazione no-auth</span>
+    <span class="feat-tag teal">Chat + messaggi vocali</span>
+    <span class="feat-tag teal">Privacy Policy GDPR</span>
+    <span class="feat-tag teal">Termini di Servizio</span>
+    <span class="feat-tag teal">Guida utente completa</span>
+    <span class="feat-tag teal">GitHub Organization</span>
+    <span class="feat-tag teal">Sito marketing Astro</span>
+    <span class="feat-tag teal">Docs site integrato</span>
+  </div>
+
+  <div class="sec-h3" style="margin-top:24px"><span class="badge wip">Fase 1 — Q3 2026 (in corso)</span></div>
+  <div class="feat-row" style="margin-top:10px">
+    <span class="feat-tag">License check in auth.php</span>
+    <span class="feat-tag">Deploy hub su VPS</span>
+    <span class="feat-tag">Deploy sito su SiteGround</span>
+    <span class="feat-tag">Form contatti Formspree</span>
+    <span class="feat-tag">Registrare video promo</span>
+    <span class="feat-tag">Primo cliente pagante</span>
+  </div>
+
+  <div class="sec-h3" style="margin-top:24px"><span class="badge todo">Fase 2 — Q4 2026</span></div>
+  <div class="feat-row" style="margin-top:10px">
+    <span class="feat-tag">Stripe Billing webhook</span>
+    <span class="feat-tag">Provisioning automatico</span>
+    <span class="feat-tag">Dashboard revenue share avanzata</span>
+    <span class="feat-tag">Self-service rivenditore</span>
+  </div>
+
+  <div class="sec-h3" style="margin-top:24px"><span class="badge todo">Fase 3 — 2027+</span></div>
+  <div class="feat-row" style="margin-top:10px">
+    <span class="feat-tag">Multi-sala dashboard aggregata</span>
+    <span class="feat-tag">API pubblica integrazioni</span>
+    <span class="feat-tag">Integrazione SNAI/Sisal automatica</span>
+  </div>
+
+  <div style="margin-top:40px;padding-top:24px;border-top:1px solid var(--border);text-align:center;color:var(--faint);font-size:12px">
+    GestHall Suite &nbsp;·&nbsp; PHP 8+ / MySQL / Vanilla JS &nbsp;·&nbsp; Documentazione interna &nbsp;·&nbsp; luglio 2026
+    &nbsp;·&nbsp; <a href="index.html" style="color:var(--teal-dk)">Sezione interna</a>
+    &nbsp;·&nbsp; <a href="business-plan.html" style="color:var(--teal-dk)">Business plan</a>
+  </div>
+</div>
+
+</main>
+</div>
+
+<script>
+function toggleTheme() {
+  var r = document.documentElement;
+  var cur = r.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  var next = cur === 'dark' ? 'light' : 'dark';
+  r.dataset.theme = next;
+  localStorage.setItem('gd-theme', next);
+}
+function toggleSidebar() {
+  var sb = document.getElementById('sidebar');
+  var ov = document.getElementById('overlay');
+  var open = sb.classList.toggle('open');
+  ov.classList.toggle('show', open);
+}
+function closeMobile() {
+  if (window.innerWidth <= 800) toggleSidebar();
+}
+(function() {
+  var links = document.querySelectorAll('.sb-link[href^="#"]');
+  var sections = Array.from(links).map(function(l) {
+    return document.getElementById(l.getAttribute('href').slice(1));
+  }).filter(Boolean);
+  function onScroll() {
+    var y = window.scrollY + 80;
+    var active = sections[0];
+    for (var i = 0; i < sections.length; i++) {
+      if (sections[i] && sections[i].offsetTop <= y) active = sections[i];
+    }
+    links.forEach(function(l) {
+      l.classList.toggle('active', active && l.getAttribute('href') === '#' + active.id);
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+</body>
+</html>

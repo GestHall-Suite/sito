@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GestHall Suite · Guida Utente</title>
+  <meta name="description" content="Guida utente completa di GestHall Suite: cassa giornaliera, turni, dashboard, report, chat, macchine e altro.">
+  <style>
+:root {
+  --teal: #00c391;
+  --teal-dk: #008f6a;
+  --teal-dim: rgba(0,195,145,0.10);
+  --teal-dim2: rgba(0,195,145,0.18);
+  --bg: #f5f7f6;
+  --surface: #ffffff;
+  --surface2: #f0f4f2;
+  --border: #dde8e3;
+  --text: #0c1c17;
+  --muted: #506b5f;
+  --faint: #8eaaa0;
+  --code-bg: #f0f4f2;
+  --code-text: #1a3d30;
+  --sidebar-w: 248px;
+  --r: 8px;
+}
+@media (prefers-color-scheme: dark) { :root {
+  --bg: #0b1410; --surface: #111a16; --surface2: #162119;
+  --border: #1e3028; --text: #ddf0e8; --muted: #6aaa8e;
+  --faint: #2f4d40; --code-bg: #0d1f18; --code-text: #7fd8b0;
+}}
+:root[data-theme="dark"]  { --bg:#0b1410;--surface:#111a16;--surface2:#162119;--border:#1e3028;--text:#ddf0e8;--muted:#6aaa8e;--faint:#2f4d40;--code-bg:#0d1f18;--code-text:#7fd8b0; }
+:root[data-theme="light"] { --bg:#f5f7f6;--surface:#ffffff;--surface2:#f0f4f2;--border:#dde8e3;--text:#0c1c17;--muted:#506b5f;--faint:#8eaaa0;--code-bg:#f0f4f2;--code-text:#1a3d30; }
+
+*,*::before,*::after { box-sizing:border-box;margin:0;padding:0 }
+html { scroll-behavior:smooth; scroll-padding-top:68px }
+body { font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.65;min-height:100vh }
+a { color:var(--teal-dk);text-decoration:none }
+a:hover { text-decoration:underline }
+
+/* ── TOPBAR ── */
+.topbar {
+  position:fixed;top:0;left:0;right:0;z-index:40;height:52px;
+  background:var(--surface);border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:12px;padding:0 20px;
+}
+.tb-home { display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--text);font-weight:700;font-size:15px;letter-spacing:-.01em }
+.tb-mark { width:26px;height:26px;border-radius:6px;flex-shrink:0 }
+.tb-sep { color:var(--border);font-size:18px;font-weight:300 }
+.tb-title { font-size:14px;font-weight:500;color:var(--muted) }
+.tb-spacer { flex:1 }
+.tb-badge { font-size:11px;background:var(--teal-dim);color:var(--teal-dk);border:1px solid var(--teal-dim2);border-radius:20px;padding:2px 10px;font-weight:600 }
+.theme-btn { width:32px;height:32px;border-radius:6px;border:1px solid var(--border);background:var(--surface2);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:background .15s }
+.theme-btn:hover { background:var(--teal-dim) }
+.ham-btn { display:none;width:32px;height:32px;border-radius:6px;border:1px solid var(--border);background:var(--surface2);cursor:pointer;align-items:center;justify-content:center;color:var(--muted) }
+@media(max-width:800px) { .ham-btn { display:flex } }
+
+/* ── LAYOUT ── */
+.layout { display:flex;padding-top:52px;min-height:100vh }
+
+/* ── SIDEBAR ── */
+.sidebar {
+  width:var(--sidebar-w);flex-shrink:0;
+  position:fixed;top:52px;bottom:0;overflow-y:auto;
+  background:var(--surface);border-right:1px solid var(--border);
+  padding:20px 0 40px;z-index:30;transition:transform .22s ease;
+}
+.sidebar::-webkit-scrollbar { width:4px }
+.sidebar::-webkit-scrollbar-thumb { background:var(--border);border-radius:4px }
+.sb-group { padding:0 12px;margin-bottom:6px }
+.sb-label { font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);padding:10px 8px 4px;display:block }
+.sb-link {
+  display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;
+  font-size:13px;text-decoration:none;color:var(--muted);
+  transition:background .12s,color .12s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.sb-link:hover { background:var(--teal-dim);color:var(--text) }
+.sb-link.active { background:var(--teal-dim2);color:var(--teal-dk);font-weight:600 }
+.sb-num { font-size:11px;font-weight:700;opacity:.55;flex-shrink:0;width:18px }
+@media(max-width:800px) { .sidebar { transform:translateX(-100%) } .sidebar.open { transform:none } }
+
+/* ── OVERLAY ── */
+.overlay { display:none;position:fixed;inset:0;z-index:29;background:rgba(0,0,0,.4) }
+.overlay.show { display:block }
+
+/* ── MAIN ── */
+.main { flex:1;margin-left:var(--sidebar-w);min-width:0 }
+@media(max-width:800px) { .main { margin-left:0 } }
+
+/* ── HERO ── */
+.hero {
+  background:linear-gradient(135deg,var(--teal) 0%,var(--teal-dk) 100%);
+  color:#fff;padding:clamp(40px,7vw,72px) clamp(20px,5vw,56px);
+}
+.hero-eye { font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.72;margin-bottom:10px }
+.hero-h1 { font-size:clamp(24px,4vw,38px);font-weight:800;letter-spacing:-.02em;margin-bottom:10px;text-wrap:balance }
+.hero-sub { font-size:clamp(14px,2vw,15px);opacity:.82;max-width:540px;line-height:1.7;margin-bottom:20px }
+.hero-chips { display:flex;gap:8px;flex-wrap:wrap }
+.hero-chip { background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:3px 11px;font-size:12px;font-weight:500 }
+
+/* ── SECTIONS ── */
+.section { max-width:800px;margin:0 auto;padding:48px clamp(16px,4vw,48px) 20px;border-bottom:1px solid var(--border) }
+.section:last-child { border-bottom:none }
+
+.sec-h2 { font-size:clamp(19px,2.8vw,24px);font-weight:800;letter-spacing:-.02em;margin-bottom:6px;display:flex;align-items:center;gap:10px }
+.sec-num { font-size:11px;font-weight:700;background:var(--teal-dim);color:var(--teal-dk);border-radius:5px;padding:2px 8px;letter-spacing:.02em;flex-shrink:0 }
+.sec-lead { font-size:15px;color:var(--muted);margin-bottom:24px;line-height:1.7 }
+.sec-h3 { font-size:15px;font-weight:700;margin:24px 0 8px;letter-spacing:-.01em }
+
+p { margin-bottom:12px;font-size:14.5px;line-height:1.7 }
+p:last-child { margin-bottom:0 }
+
+/* ── ROLES TABLE ── */
+.tbl-wrap { overflow-x:auto;margin:12px 0;border-radius:var(--r);border:1px solid var(--border) }
+table { width:100%;border-collapse:collapse;font-size:13.5px }
+th { background:var(--surface2);font-weight:600;padding:9px 14px;text-align:left;color:var(--muted);font-size:11px;letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid var(--border) }
+td { padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.55 }
+tr:last-child td { border-bottom:none }
+tr:hover td { background:var(--teal-dim) }
+
+/* ── STEPS ── */
+.steps { display:flex;flex-direction:column;gap:0;margin:12px 0 }
+.step { display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--border) }
+.step:last-child { border-bottom:none }
+.step-n { width:26px;height:26px;border-radius:50%;background:var(--teal);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px }
+.step-t { font-weight:700;font-size:13.5px;margin-bottom:3px }
+.step-d { font-size:13px;color:var(--muted);line-height:1.55 }
+
+/* ── CODE ── */
+code { font-family:"SF Mono","Fira Code",monospace;font-size:.84em;background:var(--code-bg);color:var(--code-text);padding:2px 6px;border-radius:4px;border:1px solid var(--border) }
+pre { background:var(--code-bg);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;overflow-x:auto;margin:12px 0 }
+pre code { background:none;border:none;padding:0;font-size:13px;line-height:1.6 }
+
+/* ── CALLOUT ── */
+.callout { border-radius:var(--r);padding:12px 15px;margin:14px 0;font-size:13.5px;line-height:1.6;display:flex;gap:10px;align-items:flex-start }
+.callout.info  { background:var(--teal-dim);border:1px solid var(--teal-dim2) }
+.callout.warn  { background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.22) }
+.callout-ico { font-size:15px;flex-shrink:0;line-height:1.4 }
+.callout p { margin:0 }
+
+/* ── TAGS ── */
+.tags { display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 }
+.tag { font-size:12px;font-weight:500;padding:3px 10px;border-radius:5px;background:var(--surface2);color:var(--muted);border:1px solid var(--border) }
+.tag.t { background:var(--teal-dim);color:var(--teal-dk);border-color:var(--teal-dim2) }
+
+/* ── FOOTER ── */
+.doc-footer { text-align:center;padding:40px 20px;color:var(--faint);font-size:12px;border-top:1px solid var(--border) }
+.doc-footer a { color:var(--teal-dk) }
+  </style>
+  <script>
+    (function(){ var t=localStorage.getItem('gd-theme'); if(t) document.documentElement.dataset.theme=t; })();
+  </script>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <button class="ham-btn" onclick="toggleSidebar()" aria-label="Menu">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <a class="tb-home" href="/">
+    <svg class="tb-mark" viewBox="0 0 34 34">
+      <rect width="34" height="34" rx="8" fill="#00c391"/>
+      <rect x="6" y="6" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
+      <rect x="19" y="6" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
+      <rect x="6" y="19" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
+      <rect x="19" y="19" width="9" height="10" rx="2" fill="rgba(0,0,0,0.72)"/>
+    </svg>
+    GestHall Suite
+  </a>
+  <span class="tb-sep">/</span>
+  <span class="tb-title">Guida Utente</span>
+  <div class="tb-spacer"></div>
+  <span class="tb-badge">v1.0 · Luglio 2026</span>
+  <button class="theme-btn" onclick="toggleTheme()" aria-label="Cambia tema">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+  </button>
+</div>
+
+<div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sidebar">
+  <div class="sb-group">
+    <span class="sb-label">Introduzione</span>
+    <a class="sb-link" href="#overview" onclick="closeMobile()"><span class="sb-num">·</span> Panoramica</a>
+  </div>
+  <div class="sb-group">
+    <span class="sb-label">App</span>
+    <a class="sb-link" href="#accesso" onclick="closeMobile()"><span class="sb-num">1</span> Primo accesso</a>
+    <a class="sb-link" href="#cassa" onclick="closeMobile()"><span class="sb-num">2</span> Cassa giornaliera</a>
+    <a class="sb-link" href="#swipe" onclick="closeMobile()"><span class="sb-num">3</span> Swipe turni mobile</a>
+    <a class="sb-link" href="#dashboard" onclick="closeMobile()"><span class="sb-num">4</span> Dashboard</a>
+    <a class="sb-link" href="#report" onclick="closeMobile()"><span class="sb-num">5</span> Report</a>
+    <a class="sb-link" href="#turni" onclick="closeMobile()"><span class="sb-num">6</span> Turni</a>
+    <a class="sb-link" href="#macchine" onclick="closeMobile()"><span class="sb-num">7</span> Macchine</a>
+    <a class="sb-link" href="#ticket" onclick="closeMobile()"><span class="sb-num">8</span> Ticket assistenza</a>
+    <a class="sb-link" href="#push" onclick="closeMobile()"><span class="sb-num">9</span> Notifiche push</a>
+    <a class="sb-link" href="#chat" onclick="closeMobile()"><span class="sb-num">10</span> Chat interna</a>
+    <a class="sb-link" href="#documenti" onclick="closeMobile()"><span class="sb-num">11</span> Documenti</a>
+    <a class="sb-link" href="#anagrafica" onclick="closeMobile()"><span class="sb-num">12</span> Anagrafica</a>
+    <a class="sb-link" href="#prestiti" onclick="closeMobile()"><span class="sb-num">13</span> Prestiti</a>
+  </div>
+  <div class="sb-group">
+    <span class="sb-label">Gestione</span>
+    <a class="sb-link" href="#impostazioni" onclick="closeMobile()"><span class="sb-num">14</span> Impostazioni</a>
+    <a class="sb-link" href="#sonos" onclick="closeMobile()"><span class="sb-num">15</span> SONOS</a>
+    <a class="sb-link" href="#radio" onclick="closeMobile()"><span class="sb-num">16</span> Web Radio</a>
+    <a class="sb-link" href="#sicurezza" onclick="closeMobile()"><span class="sb-num">17</span> Sicurezza</a>
+    <a class="sb-link" href="#problemi" onclick="closeMobile()"><span class="sb-num">18</span> Problemi comuni</a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="main" id="top">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eye">Guida Utente</div>
+  <h1 class="hero-h1">GestHall Suite</h1>
+  <p class="hero-sub">Tutto quello che ti serve per usare l'app ogni giorno: cassa, turni, report, chat, macchine e molto altro.</p>
+  <div class="hero-chips">
+    <span class="hero-chip">Operatore</span>
+    <span class="hero-chip">Responsabile</span>
+    <span class="hero-chip">Revisore</span>
+    <span class="hero-chip">Mobile + Desktop</span>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<div class="section" id="overview">
+  <div class="sec-h2">Panoramica</div>
+  <p class="sec-lead">GestHall Suite è il gestionale per sale giochi VLT e AWP. Centralizza cassa, turni, scassettamenti, report e comunicazione in un'unica app web, installabile come PWA sul telefono.</p>
+
+  <div class="tbl-wrap"><table>
+    <tr><th>Ruolo</th><th>Cosa può fare</th></tr>
+    <tr><td><strong>Operatore</strong></td><td>Cassa giornaliera, turni, chat, segnalare guasti, profilo</td></tr>
+    <tr><td><strong>Responsabile</strong></td><td>Tutto dell'operatore + dashboard KPI, report, macchine, impostazioni, utenti</td></tr>
+    <tr><td><strong>Revisore</strong></td><td>Dashboard in sola lettura, conferma versamenti, storico</td></tr>
+  </table></div>
+
+  <div class="callout info">
+    <span class="callout-ico">💬</span>
+    <p>Per assistenza tecnica: <strong>info@gesthallsuite.it</strong>. Risposta entro 24–48 ore (Piano Suite: 8 ore lavorative).</p>
+  </div>
+</div>
+
+<!-- 1. PRIMO ACCESSO -->
+<div class="section" id="accesso">
+  <div class="sec-h2"><span class="sec-num">1</span> Primo accesso</div>
+  <p class="sec-lead">Come accedere all'app e installarla come PWA sul tuo dispositivo.</p>
+
+  <div class="sec-h3">Accedere all'app</div>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div><div class="step-t">Apri il browser e vai all'URL</div><div class="step-d">L'URL ti viene fornito dal responsabile, es. <code>https://nomesala.sg-host.com/suite/</code></div></div></div>
+    <div class="step"><div class="step-n">2</div><div><div class="step-t">Inserisci username e password</div><div class="step-d">Usa le credenziali comunicate dal responsabile. Puoi spuntare "Resta connesso" per non dover fare login ogni volta (30 giorni).</div></div></div>
+    <div class="step"><div class="step-n">3</div><div><div class="step-t">Tour guidato</div><div class="step-d">Al primo accesso appare un tour guidato : seguilo o chiudilo liberamente.</div></div></div>
+  </div>
+
+  <div class="sec-h3">Installare come app (PWA)</div>
+  <p><strong>iPhone/iPad:</strong> in Safari, tocca il pulsante Condividi → "Aggiungi alla schermata Home"<br>
+  <strong>Android:</strong> il browser mostra un banner "Aggiungi alla schermata Home" in automatico<br>
+  <strong>Desktop Chrome/Edge:</strong> icona di installazione ⊕ nella barra degli indirizzi</p>
+  <p>Una volta installata funziona come un'app nativa, con icona dedicata e schermo intero.</p>
+
+  <div class="sec-h3">Dark mode</div>
+  <p>Clicca l'icona luna/sole in basso nella barra laterale. La preferenza viene salvata automaticamente.</p>
+</div>
+
+<!-- 2. CASSA GIORNALIERA -->
+<div class="section" id="cassa">
+  <div class="sec-h2"><span class="sec-num">2</span> Cassa giornaliera</div>
+  <p class="sec-lead">La pagina principale di lavoro. Accessibile da <strong>Cassa → Giornaliero</strong>.</p>
+
+  <div class="sec-h3">Workflow apertura turno (mattino)</div>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div><div class="step-t">Apri Cassa → Giornaliero</div><div class="step-d">La giornata odierna si crea automaticamente. Il Turno 1 – Mattino è già attivo.</div></div></div>
+    <div class="step"><div class="step-n">2</div><div><div class="step-t">Inserisci il fondo cassa</div><div class="step-d">Il fondo ricevuto dal turno precedente.</div></div></div>
+    <div class="step"><div class="step-n">3</div><div><div class="step-t">Compila i contanti per taglio</div><div class="step-d">Banconote da 5€, 10€, 20€ ecc. Il totale si calcola automaticamente.</div></div></div>
+    <div class="step"><div class="step-n">4</div><div><div class="step-t">Salva turno</div><div class="step-d">Usa il bottone "Salva turno" in basso. Il form si salva anche automaticamente ogni 500 ms.</div></div></div>
+  </div>
+
+  <div class="sec-h3">Durante il turno</div>
+  <div class="tags">
+    <span class="tag t">Scassettamenti VLT per macchina</span>
+    <span class="tag t">Refill AWP con orario e importo</span>
+    <span class="tag t">Ticket vincita per fornitore</span>
+    <span class="tag t">Bancomat e differenze/rientri</span>
+  </div>
+
+  <div class="sec-h3">Chiusura turno (sera)</div>
+  <p>Controlla il <strong>banner scostamento</strong> in cima alla pagina:</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Colore</th><th>Scostamento</th><th>Azione</th></tr>
+    <tr><td style="color:#16a34a;font-weight:700">Verde</td><td>&lt; 4€</td><td>Tutto ok: salva il turno</td></tr>
+    <tr><td style="color:#ca8a04;font-weight:700">Giallo</td><td>4–5€</td><td>Ricontrolla i valori inseriti</td></tr>
+    <tr><td style="color:#dc2626;font-weight:700">Rosso</td><td>&gt; 5€</td><td>Verifica attentamente prima di salvare</td></tr>
+  </table></div>
+
+  <div class="sec-h3">Formule di riconciliazione</div>
+  <pre><code>Cassetto      = Contanti + Refill AWP + Differenze − II Cassa − Rientri
+Versamento    = Scassettamenti VLT − Bancomat − Ticket vincita
+Totale cassa  = Cassetto + Monete − Versamento
+Scostamento   = Totale cassa − Fondo cassa</code></pre>
+  <p>Lo scostamento ideale è 0€. Piccoli scostamenti (&lt;4€) sono normali.</p>
+
+  <div class="sec-h3">Salvataggio automatico</div>
+  <p>Il form salva in automatico ogni 500 ms nel browser. Se chiudi accidentalmente la pagina i dati vengono recuperati alla riapertura.</p>
+
+  <div class="sec-h3">Chiusura giornata (Responsabile)</div>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div><div class="step-t">Verifica tutti i turni salvati</div><div class="step-d">Controlla che ogni turno abbia lo scostamento ok.</div></div></div>
+    <div class="step"><div class="step-n">2</div><div><div class="step-t">Clicca "Chiudi giornata"</div><div class="step-d">In fondo alla pagina. L'email di riepilogo viene inviata automaticamente ai revisori.</div></div></div>
+  </div>
+
+  <div class="sec-h3">Passaggio consegne</div>
+  <p>Se il modulo è attivo (Piano Suite), in fondo a ogni turno puoi compilare una checklist operativa e un messaggio libero per il turno successivo.</p>
+</div>
+
+<!-- 3. SWIPE TURNI MOBILE -->
+<div class="section" id="swipe">
+  <div class="sec-h2"><span class="sec-num">3</span> Swipe turni (mobile)</div>
+  <p class="sec-lead">Su smartphone puoi passare tra i turni con un gesto orizzontale.</p>
+  <p>Scorri da <strong>destra a sinistra</strong> → turno successivo<br>
+  Scorri da <strong>sinistra a destra</strong> → turno precedente<br>
+  I <strong>pallini</strong> in fondo indicano il turno attivo.</p>
+</div>
+
+<!-- 4. DASHBOARD -->
+<div class="section" id="dashboard">
+  <div class="sec-h2"><span class="sec-num">4</span> Dashboard</div>
+  <p class="sec-lead">KPI della giornata in corso e del mese. Diversa per Responsabile e Revisore.</p>
+
+  <div class="sec-h3">Dashboard Responsabile</div>
+  <div class="tags">
+    <span class="tag t">KPI live, aggiornati ogni 30 secondi</span>
+    <span class="tag t">Grafico ultimi 30 giorni</span>
+    <span class="tag t">Grafico ultimi 6 mesi</span>
+    <span class="tag t">Statistiche per operatore</span>
+    <span class="tag t">Widget drag &amp; drop</span>
+  </div>
+  <p>I KPI live mostrano: incasso VLT, versamento, bancomat, ticket, aggiornati ogni 30 secondi. I widget possono essere riordinati trascinando l'icona grip.</p>
+
+  <div class="sec-h3">Dashboard Revisore</div>
+  <p>Vista in sola lettura degli stessi KPI + sezione "Da confermare" con le giornate chiuse in attesa di conferma ritiro.</p>
+
+  <div class="sec-h3">Conferma versamento</div>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div><div class="step-t">Clicca "Conferma ritiro"</div><div class="step-d">Accanto alla giornata da confermare nella sezione "Da confermare".</div></div></div>
+    <div class="step"><div class="step-n">2</div><div><div class="step-t">Firma (se attiva)</div><div class="step-d">Se il modulo firma è attivo: firma nel canvas con il dito o il mouse.</div></div></div>
+    <div class="step"><div class="step-n">3</div><div><div class="step-t">Conferma</div><div class="step-d">L'operazione viene registrata con data, ora e IP per tracciabilità completa.</div></div></div>
+  </div>
+</div>
+
+<!-- 5. REPORT -->
+<div class="section" id="report">
+  <div class="sec-h2"><span class="sec-num">5</span> Report</div>
+  <p class="sec-lead">Accessibili dal menu Cassa. Tutti stampabili e esportabili.</p>
+
+  <div class="tbl-wrap"><table>
+    <tr><th>Report</th><th>Contenuto</th><th>Export</th></tr>
+    <tr><td><strong>Mensile</strong></td><td>Riepilogo giorno per giorno, Δ% vs mese precedente, incassi VLT per macchina, filtro operatore</td><td>CSV + Excel .xlsx</td></tr>
+    <tr><td><strong>Annuale</strong></td><td>Panoramica mese per mese, filtro operatore, link a ogni mensile</td><td>Stampa</td></tr>
+    <tr><td><strong>Confronto periodi</strong> <span style="font-size:11px;color:var(--teal-dk);font-weight:600">Pro+</span></td><td>Due intervalli di date liberi, 5 metriche, Δ%, grafico linee sovrapposto</td><td>Stampa</td></tr>
+    <tr><td><strong>Settimanale SNAI</strong></td><td>Dati Bet/Win SNAI, totali per fornitore, payout, confronto settimana precedente</td><td>Stampa</td></tr>
+  </table></div>
+</div>
+
+<!-- 6. TURNI -->
+<div class="section" id="turni">
+  <div class="sec-h2"><span class="sec-num">6</span> Turni</div>
+  <p class="sec-lead">Calendario degli operatori programmati per ogni giorno. <strong>Sala → Turni</strong>.</p>
+
+  <div class="sec-h3">Programmare un turno (Responsabile)</div>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div><div class="step-t">Clicca su un giorno nel calendario</div><div class="step-d">Seleziona il mese di interesse.</div></div></div>
+    <div class="step"><div class="step-n">2</div><div><div class="step-t">Seleziona operatore e turno</div><div class="step-d">Mattino o sera, con orario. Inserisci il prezzo orario se configurato.</div></div></div>
+    <div class="step"><div class="step-n">3</div><div><div class="step-t">Salva</div><div class="step-d">Il turno appare nel calendario per tutti.</div></div></div>
+  </div>
+
+  <div class="sec-h3">Autoassegnazione (Operatore)</div>
+  <p>Se il responsabile ha abilitato l'opzione in Impostazioni → Permessi, l'operatore può aggiungere se stesso ai turni disponibili.</p>
+</div>
+
+<!-- 7. MACCHINE -->
+<div class="section" id="macchine">
+  <div class="sec-h2"><span class="sec-num">7</span> Macchine</div>
+  <p class="sec-lead">Gestione del parco macchine. <strong>Impostazioni → Macchine</strong>.</p>
+
+  <div class="sec-h3">Aggiungere una macchina</div>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div><div class="step-t">Clicca + Nuova macchina</div><div class="step-d"></div></div></div>
+    <div class="step"><div class="step-n">2</div><div><div class="step-t">Inserisci i dati</div><div class="step-d">Codice, tipo (VLT o AWP), fornitore, seriale, CIV, ordine visualizzazione.</div></div></div>
+    <div class="step"><div class="step-n">3</div><div><div class="step-t">Salva</div><div class="step-d">La macchina appare nella lista degli scassettamenti del giornaliero.</div></div></div>
+  </div>
+
+  <div class="sec-h3">Storico macchina</div>
+  <p>Ogni macchina ha una pagina dedicata con KPI lifetime, grafico incassi mensili con overlay refill AWP e storico ticket assistenza.</p>
+
+  <div class="sec-h3">QR code per guasto rapido</div>
+  <p>Clicca <strong>QR</strong> nella lista macchine per generare un foglio A4 stampabile. Affiggerlo accanto alla macchina: scansionando il QR si apre direttamente il form di segnalazione, <strong>senza bisogno di login</strong>.</p>
+</div>
+
+<!-- 8. TICKET ASSISTENZA -->
+<div class="section" id="ticket">
+  <div class="sec-h2"><span class="sec-num">8</span> Ticket assistenza</div>
+  <p class="sec-lead">Registro dei guasti e degli interventi. <strong>Sala → Ticket assistenza</strong> (Piano Pro+).</p>
+
+  <div class="sec-h3">Aprire un ticket</div>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div><div class="step-t">Clicca + Nuovo ticket</div><div class="step-d">Oppure scansiona il QR sulla macchina (nessun login richiesto).</div></div></div>
+    <div class="step"><div class="step-n">2</div><div><div class="step-t">Seleziona macchina e tipo problema</div><div class="step-d">Guasto, manutenzione ordinaria o programmata. Inserisci l'ID ticket del fornitore se disponibile.</div></div></div>
+    <div class="step"><div class="step-n">3</div><div><div class="step-t">Salva</div><div class="step-d">Il sistema invia automaticamente un'email all'assistenza tecnica configurata con dati macchina, LOCK e operatore. Compare il popup per stampare l'avviso guasto.</div></div></div>
+  </div>
+
+  <div class="sec-h3">Chiudere un ticket</div>
+  <p>Trova il ticket nella lista → clicca <strong>Chiudi</strong> → inserisci la risoluzione → salva.</p>
+</div>
+
+<!-- 9. NOTIFICHE PUSH -->
+<div class="section" id="push">
+  <div class="sec-h2"><span class="sec-num">9</span> Notifiche push</div>
+  <p class="sec-lead">Avvisi su smartphone e browser per gli eventi più importanti (Piano Pro+).</p>
+
+  <p>Ricevi notifiche push per: <strong>nuovo ticket aperto</strong> (ai responsabili) e <strong>versamento confermato</strong> (agli operatori della giornata).</p>
+
+  <div class="sec-h3">Attivare le notifiche</div>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div><div class="step-t">Vai in Profilo → Notifiche</div><div class="step-d"></div></div></div>
+    <div class="step"><div class="step-n">2</div><div><div class="step-t">Clicca "Abilita notifiche"</div><div class="step-d">Il browser chiederà il permesso. Su iOS è necessario che l'app sia installata come PWA.</div></div></div>
+    <div class="step"><div class="step-n">3</div><div><div class="step-t">Configura le preferenze</div><div class="step-d">Scegli per quale tipo di evento ricevere la notifica.</div></div></div>
+  </div>
+
+  <p>La campanellina in sidebar mostra le ultime 20 notifiche e il badge con quelle non lette.</p>
+</div>
+
+<!-- 10. CHAT -->
+<div class="section" id="chat">
+  <div class="sec-h2"><span class="sec-num">10</span> Chat interna</div>
+  <p class="sec-lead">Messaggistica tra tutti gli utenti della sala. <strong>Sala → Chat</strong> (Piano Suite).</p>
+
+  <div class="tbl-wrap"><table>
+    <tr><th>Conversazione</th><th>Partecipanti</th></tr>
+    <tr><td><strong>Globale</strong></td><td>Tutti gli utenti della sala</td></tr>
+    <tr><td><strong>Messaggi diretti</strong></td><td>Un collega specifico</td></tr>
+    <tr><td><strong>Gruppi</strong></td><td>Creati dal responsabile per temi specifici</td></tr>
+  </table></div>
+
+  <div class="sec-h3">Cosa puoi inviare</div>
+  <div class="tags">
+    <span class="tag t">Testo</span>
+    <span class="tag t">Emoji (250+ in 7 categorie)</span>
+    <span class="tag t">Immagini (max 8 MB, compresse auto)</span>
+    <span class="tag t">Messaggi vocali (max 5 MB)</span>
+  </div>
+
+  <div class="sec-h3">Inviare un messaggio vocale</div>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div><div class="step-t">Clicca l'icona microfono 🎤</div><div class="step-d">Compare la barra di registrazione con timer in tempo reale.</div></div></div>
+    <div class="step"><div class="step-n">2</div><div><div class="step-t">Ferma o annulla</div><div class="step-d">Clicca di nuovo 🎤 per fermare. Clicca ✕ per scartare senza inviare.</div></div></div>
+    <div class="step"><div class="step-n">3</div><div><div class="step-t">Anteprima e invio</div><div class="step-d">Ascolta il player audio prima di inviare. Clicca "Invia" per pubblicare.</div></div></div>
+  </div>
+
+  <p>Il numero di messaggi non letti appare in sidebar e nella bottom bar mobile, aggiornato in tempo reale.</p>
+</div>
+
+<!-- 11. DOCUMENTI -->
+<div class="section" id="documenti">
+  <div class="sec-h2"><span class="sec-num">11</span> Documenti</div>
+  <p class="sec-lead">Repository documenti per la sala. <strong>Sala → Documenti</strong> (Piano Pro+).</p>
+
+  <p>Solo il responsabile può caricare e cancellare. Tutti possono visualizzare e scaricare.</p>
+
+  <div class="sec-h3">Caricare un documento</div>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div><div class="step-t">Entra in una cartella e clicca + Carica</div><div class="step-d"></div></div></div>
+    <div class="step"><div class="step-n">2</div><div><div class="step-t">Seleziona il file</div><div class="step-d">PDF, Word, Excel, immagini (max 20 MB). Inserisci nome e descrizione.</div></div></div>
+    <div class="step"><div class="step-n">3</div><div><div class="step-t">Salva</div><div class="step-d">Il file è subito disponibile per tutti gli utenti.</div></div></div>
+  </div>
+
+  <p>Le cartelle si riordinano con drag &amp; drop. I documenti si spostano tra cartelle trascinandoli.</p>
+</div>
+
+<!-- 12. ANAGRAFICA -->
+<div class="section" id="anagrafica">
+  <div class="sec-h2"><span class="sec-num">12</span> Anagrafica giocatori</div>
+  <p class="sec-lead">Registro dei clienti fidelizzati. <strong>Giocatori → Anagrafica</strong> (Piano Pro+).</p>
+
+  <p>Campi disponibili: nome, cognome, data di nascita, telefono, email, note, stato attivo/inattivo. Se il modulo Prestiti è attivo, la creazione di un giocatore crea automaticamente la scheda prestiti corrispondente.</p>
+</div>
+
+<!-- 13. PRESTITI -->
+<div class="section" id="prestiti">
+  <div class="sec-h2"><span class="sec-num">13</span> Prestiti e rientri</div>
+  <p class="sec-lead">Gestione prestiti verso i giocatori. <strong>Giocatori → Prestiti</strong> (Piano Pro+).</p>
+
+  <p>Per ogni giocatore: registra prestiti con data e importo, registra i rientri. Il <strong>saldo corrente</strong> si calcola automaticamente. I rientri si riflettono automaticamente sul giornaliero della giornata corrispondente.</p>
+</div>
+
+<!-- 14. IMPOSTAZIONI -->
+<div class="section" id="impostazioni">
+  <div class="sec-h2"><span class="sec-num">14</span> Impostazioni</div>
+  <p class="sec-lead">Accessibili solo al responsabile. <strong>Impostazioni</strong> in sidebar.</p>
+
+  <div class="tbl-wrap"><table>
+    <tr><th>Sezione</th><th>Cosa configura</th></tr>
+    <tr><td><strong>Sistema</strong></td><td>Nome sala, logo, accent color (white label), email mittente, numero assistenza</td></tr>
+    <tr><td><strong>Moduli</strong></td><td>Attiva/disattiva: assistenze, prestiti, anagrafica, documenti, SONOS, radio, passaggio consegne, firma digitale</td></tr>
+    <tr><td><strong>Permessi</strong></td><td>Operatori modificano turni, mobile cassa, revisori vedono turni</td></tr>
+    <tr><td><strong>Piano</strong></td><td>Piano attivo (Essenziale / Pro / Suite) e feature incluse</td></tr>
+    <tr><td><strong>Utenti</strong></td><td>Crea/modifica/disattiva operatori, responsabili e revisori; imposta password</td></tr>
+    <tr><td><strong>Guida chiusura</strong></td><td>Testo personalizzabile della guida "Come chiudere la sala" (supporta Markdown)</td></tr>
+  </table></div>
+</div>
+
+<!-- 15. SONOS -->
+<div class="section" id="sonos">
+  <div class="sec-h2"><span class="sec-num">15</span> SONOS</div>
+  <p class="sec-lead">Controllo musica SONOS sulla LAN della sala. <strong>Sala → SONOS</strong> (Piano Suite).</p>
+
+  <p>Richiede uno speaker SONOS sulla stessa rete del server e l'IP del coordinator configurato in Impostazioni. Comandi: play, pausa, traccia precedente/successiva, volume. La copertina dell'album viene mostrata tramite proxy interno.</p>
+</div>
+
+<!-- 16. RADIO -->
+<div class="section" id="radio">
+  <div class="sec-h2"><span class="sec-num">16</span> Web Radio</div>
+  <p class="sec-lead">Player radio streaming integrato. <strong>Sala → Radio</strong> (Piano Suite).</p>
+
+  <p>Stazioni predefinite: RAI Radio 1/2/3, Radio DeeJay, m2o, Radio 105, Virgin Radio Italy. Il responsabile può aggiungere stazioni personalizzate in Impostazioni → Moduli.</p>
+  <p>Shortcut tastiera: <code>Spazio</code> play/pausa · <code>←</code> stazione precedente · <code>→</code> stazione successiva. La stazione e il volume vengono ricordati al prossimo accesso.</p>
+</div>
+
+<!-- 17. SICUREZZA -->
+<div class="section" id="sicurezza">
+  <div class="sec-h2"><span class="sec-num">17</span> Sicurezza e privacy</div>
+  <p class="sec-lead">Come vengono protetti i tuoi dati e le tue operazioni.</p>
+
+  <div class="tbl-wrap"><table>
+    <tr><th>Aspetto</th><th>Come funziona</th></tr>
+    <tr><td>Audit log</td><td>Ogni operazione di scrittura è registrata con utente, data e IP</td></tr>
+    <tr><td>Sessione</td><td>Scade automaticamente dopo 2 ore di inattività</td></tr>
+    <tr><td>Resta connesso</td><td>Token SHA-256 per dispositivo, rolling 30 giorni, HttpOnly/Secure</td></tr>
+    <tr><td>Credenziali</td><td>Non condividere: ogni operatore deve avere il proprio account</td></tr>
+    <tr><td>Esportazione dati</td><td>I dati sono tuoi, esportabili in qualsiasi momento in CSV o Excel</td></tr>
+  </table></div>
+</div>
+
+<!-- 18. PROBLEMI COMUNI -->
+<div class="section" id="problemi">
+  <div class="sec-h2"><span class="sec-num">18</span> Problemi comuni</div>
+  <p class="sec-lead">Soluzioni rapide per i problemi più frequenti.</p>
+
+  <div class="sec-h3">"La giornata di ieri risulta ancora aperta"</div>
+  <p>Nell'header della cassa compare un avviso arancione. Clicca "Chiudi giornata precedente" (richiede ruolo responsabile) o contatta il responsabile.</p>
+
+  <div class="sec-h3">"I dati del form sono spariti"</div>
+  <p>L'app salva automaticamente ogni 500 ms. Chiudi e riapri la stessa pagina: i dati vengono ripristinati. Se il problema persiste, contatta il responsabile.</p>
+
+  <div class="sec-h3">"Le notifiche non arrivano"</div>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div><div class="step-t">Controlla il permesso nel browser</div><div class="step-d">Impostazioni browser → Notifiche → URL dell'app → Consenti.</div></div></div>
+    <div class="step"><div class="step-n">2</div><div><div class="step-t">Verifica la registrazione dispositivo</div><div class="step-d">Profilo → Notifiche → il tuo dispositivo deve essere in lista.</div></div></div>
+    <div class="step"><div class="step-n">3</div><div><div class="step-t">iOS: installa come PWA</div><div class="step-d">Su iPhone le notifiche push richiedono che l'app sia installata dalla schermata Home.</div></div></div>
+  </div>
+
+  <div class="sec-h3">"Non riesco ad accedere"</div>
+  <p>Verifica di usare lo <strong>username</strong> (non l'email). Clicca "Password dimenticata?" per il reset. Se il tuo account è stato disattivato, contatta il responsabile.</p>
+
+  <div class="callout info">
+    <span class="callout-ico">📧</span>
+    <p>Per qualsiasi problema non risolto: <strong>info@gesthallsuite.it</strong>. Risposta entro 24–48 ore lavorative (Piano Suite: 8 ore).</p>
+  </div>
+</div>
+
+<div class="doc-footer">
+  GestHall Suite &nbsp;·&nbsp; Guida Utente v1.0 &nbsp;·&nbsp; Luglio 2026<br>
+  <a href="/">gesthallsuite.it</a>
+</div>
+
+</main>
+</div>
+
+<script>
+function toggleTheme() {
+  var r = document.documentElement;
+  var cur = r.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  var next = cur === 'dark' ? 'light' : 'dark';
+  r.dataset.theme = next;
+  localStorage.setItem('gd-theme', next);
+}
+
+function toggleSidebar() {
+  var sb = document.getElementById('sidebar');
+  var ov = document.getElementById('overlay');
+  var open = sb.classList.toggle('open');
+  ov.classList.toggle('show', open);
+}
+function closeMobile() {
+  if (window.innerWidth <= 800) toggleSidebar();
+}
+
+(function() {
+  var links = document.querySelectorAll('.sb-link[href^="#"]');
+  var sections = Array.from(links).map(function(l) {
+    return document.getElementById(l.getAttribute('href').slice(1));
+  }).filter(Boolean);
+
+  function onScroll() {
+    var y = window.scrollY + 80;
+    var active = sections[0];
+    for (var i = 0; i < sections.length; i++) {
+      if (sections[i] && sections[i].offsetTop <= y) active = sections[i];
+    }
+    links.forEach(function(l) {
+      l.classList.toggle('active', active && l.getAttribute('href') === '#' + active.id);
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+</body>
+</html>

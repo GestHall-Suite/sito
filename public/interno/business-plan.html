@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GestHall Suite · Business Plan 2026</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+:root {
+  --teal: #00c391;
+  --teal-dk: #008f6a;
+  --teal-dim: rgba(0,195,145,0.10);
+  --teal-dim2: rgba(0,195,145,0.18);
+  --bg: #0b1410;
+  --surface: #111a16;
+  --surface2: #162119;
+  --border: #1e3028;
+  --text: #ddf0e8;
+  --muted: #6aaa8e;
+  --faint: #2f4d40;
+  --r: 8px;
+}
+[data-theme="light"] {
+  --bg: #f5f7f6; --surface: #fff; --surface2: #f0f4f2;
+  --border: #dde8e3; --text: #0c1c17; --muted: #506b5f; --faint: #8eaaa0;
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0 }
+html { scroll-behavior: smooth; scroll-padding-top: 60px }
+body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; min-height: 100vh }
+a { text-decoration: none }
+
+.topbar {
+  position: sticky; top: 0; z-index: 10; height: 52px;
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 12px; padding: 0 24px;
+}
+.tb-back { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); padding: 4px 8px; border-radius: 5px; transition: background .12s }
+.tb-back:hover { background: var(--teal-dim); color: var(--text) }
+.tb-logo { display: flex; align-items: center; gap: 8px; color: var(--text); font-weight: 700; font-size: 15px; letter-spacing: -.01em }
+.tb-mark { width: 24px; height: 24px; border-radius: 5px; flex-shrink: 0 }
+.tb-sep { color: var(--faint); margin: 0 2px }
+.tb-section { font-size: 13px; font-weight: 500; color: var(--muted) }
+.tb-spacer { flex: 1 }
+.tb-badge { font-size: 11px; background: rgba(239,68,68,.12); color: #f87171; border: 1px solid rgba(239,68,68,.25); border-radius: 20px; padding: 2px 10px; font-weight: 600 }
+.theme-btn { width: 30px; height: 30px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface2); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--muted); transition: background .15s }
+.theme-btn:hover { background: var(--teal-dim) }
+
+.main { max-width: 900px; margin: 0 auto; padding: 52px clamp(16px,4vw,48px) 80px }
+
+.hero-block {
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dk) 100%);
+  border-radius: var(--r); padding: clamp(32px,5vw,52px); margin-bottom: 52px; color: #fff;
+}
+.hb-eye { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .7; margin-bottom: 10px }
+.hb-h1 { font-size: clamp(24px,4vw,38px); font-weight: 800; letter-spacing: -.02em; margin-bottom: 10px; text-wrap: balance }
+.hb-sub { font-size: 15px; opacity: .85; line-height: 1.7; max-width: 560px; margin-bottom: 24px }
+.hb-chips { display: flex; gap: 8px; flex-wrap: wrap }
+.hb-chip { background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25); border-radius: 20px; padding: 3px 12px; font-size: 12px; font-weight: 500 }
+
+.section { margin-bottom: 60px }
+.sec-label { font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px }
+.sec-h2 { font-size: clamp(20px,3vw,26px); font-weight: 800; letter-spacing: -.02em; margin-bottom: 8px }
+.sec-lead { font-size: 14.5px; color: var(--muted); margin-bottom: 24px; line-height: 1.7 }
+.sec-h3 { font-size: 15px; font-weight: 700; margin: 24px 0 8px; letter-spacing: -.01em }
+
+p { margin-bottom: 12px; font-size: 14.5px; line-height: 1.7 }
+p:last-child { margin-bottom: 0 }
+
+.kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 32px }
+.kpi { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 18px 20px }
+.kpi-val { font-size: 28px; font-weight: 800; letter-spacing: -.02em; color: var(--teal); line-height: 1 }
+.kpi-label { font-size: 12px; color: var(--muted); margin-top: 4px; font-weight: 500 }
+.kpi-note { font-size: 11px; color: var(--faint); margin-top: 2px }
+
+.tbl-wrap { overflow-x: auto; margin: 14px 0; border-radius: var(--r); border: 1px solid var(--border) }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px }
+th { background: var(--surface2); font-weight: 600; padding: 10px 14px; text-align: left; color: var(--muted); font-size: 11.5px; letter-spacing: .04em; text-transform: uppercase; border-bottom: 1px solid var(--border) }
+td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top }
+tr:last-child td { border-bottom: none }
+tr:hover td { background: var(--teal-dim) }
+.td-right { text-align: right; font-variant-numeric: tabular-nums }
+
+.callout { border-radius: var(--r); padding: 14px 16px; margin: 16px 0; font-size: 13.5px; line-height: 1.6; display: flex; gap: 12px; align-items: flex-start }
+.callout.info  { background: var(--teal-dim); border: 1px solid var(--teal-dim2) }
+.callout.warn  { background: rgba(245,158,11,.08); border: 1px solid rgba(245,158,11,.22) }
+.callout p { margin: 0 }
+.callout-ico { font-size: 16px; flex-shrink: 0; line-height: 1.4 }
+
+.mrr-table { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin: 14px 0 }
+.mrr-table table { width: 100%; border-collapse: collapse; font-size: 13px }
+.mrr-table th { background: var(--surface2); padding: 10px 14px; text-align: left; font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border) }
+.mrr-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums }
+.mrr-table tr:last-child td { border-bottom: none; font-weight: 700 }
+.cell-base { color: var(--muted) }
+.cell-opt  { color: var(--teal) }
+
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 14px 0 }
+.plan { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 20px 22px }
+.plan.featured { border-color: var(--teal); box-shadow: 0 0 0 1px var(--teal) }
+.plan-name { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); margin-bottom: 8px }
+.plan-price { font-size: 32px; font-weight: 800; letter-spacing: -.02em }
+.plan-price span { font-size: 15px; font-weight: 500; color: var(--muted) }
+.plan-desc { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.6 }
+.plan-note { font-size: 11px; color: var(--faint); margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border) }
+
+.risk-row { display: flex; flex-direction: column; gap: 0 }
+.risk { display: grid; grid-template-columns: 2fr 1fr 3fr; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 13.5px; align-items: baseline }
+.risk:last-child { border-bottom: none }
+.risk-name { font-weight: 600 }
+.risk-level { font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 4px; display: inline-block; width: fit-content }
+.risk-level.hi  { background: rgba(239,68,68,.12); color: #f87171 }
+.risk-level.mid { background: rgba(245,158,11,.12); color: #fbbf24 }
+.risk-level.lo  { background: var(--teal-dim); color: var(--teal-dk) }
+.risk-mit { color: var(--muted) }
+
+.roadmap-grid { display: flex; flex-direction: column; gap: 0 }
+.roadmap-row { display: grid; grid-template-columns: 100px 80px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); align-items: baseline; font-size: 13.5px }
+.roadmap-row:last-child { border-bottom: none }
+.rm-date { color: var(--faint); font-size: 12px }
+.rm-status { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px }
+.rm-status.done  { background: rgba(34,197,94,.12); color: #4ade80 }
+.rm-status.wip   { background: var(--teal-dim); color: var(--teal-dk) }
+.rm-status.todo  { background: var(--surface2); color: var(--muted) }
+
+ul.plain { margin: 8px 0 16px 18px; display: flex; flex-direction: column; gap: 6px; font-size: 14px }
+ul.plain li::marker { color: var(--teal) }
+
+.exec-card { background: var(--surface); border: 1px solid var(--teal-dim2); border-radius: var(--r); padding: 28px 28px 24px; margin-bottom: 28px }
+.ec-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); margin-bottom: 16px }
+.ec-p { font-size: 14.5px; line-height: 1.75; color: var(--text) }
+
+.divider { height: 1px; background: var(--border); margin: 52px 0 }
+
+.page-footer { text-align: center; color: var(--faint); font-size: 12px; padding-top: 24px; border-top: 1px solid var(--border) }
+  </style>
+  <script>(function(){var t=localStorage.getItem('gd-theme');if(t)document.documentElement.dataset.theme=t;})()</script>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="tb-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Interno
+  </a>
+  <a class="tb-logo" href="index.html">
+    <svg class="tb-mark" viewBox="0 0 34 34">
+      <rect width="34" height="34" rx="8" fill="#00c391"/>
+      <rect x="6" y="6" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
+      <rect x="19" y="6" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
+      <rect x="6" y="19" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
+      <rect x="19" y="19" width="9" height="10" rx="2" fill="rgba(0,0,0,0.72)"/>
+    </svg>
+    GestHall Suite
+  </a>
+  <span class="tb-sep">/</span>
+  <span class="tb-section">Business Plan 2026</span>
+  <div class="tb-spacer"></div>
+  <span class="tb-badge">Riservato</span>
+  <button class="theme-btn" onclick="toggleTheme()" aria-label="Cambia tema">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+  </button>
+</div>
+
+<div class="main">
+
+  <div class="hero-block">
+    <div class="hb-eye">Documento riservato · Luglio 2026</div>
+    <h1 class="hb-h1">Business Plan 2026</h1>
+    <p class="hb-sub">Strategia, proiezioni finanziarie e roadmap di GestHall Suite. Per uso interno e presentazione a partner o investitori selezionati.</p>
+    <div class="hb-chips">
+      <span class="hb-chip">SaaS B2B · Italia</span>
+      <span class="hb-chip">Settore sale giochi VLT/AWP</span>
+      <span class="hb-chip">Bootstrapped · 2026</span>
+    </div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="section" id="executive">
+    <div class="sec-label">Executive Summary</div>
+
+    <div class="exec-card">
+      <div class="ec-title">Per investitori e partner</div>
+      <p class="ec-p">GestHall Suite è un software gestionale SaaS verticale per sale giochi con VLT e AWP in Italia. Copre l'intera operatività quotidiana: cassa per turno, scassettamenti, ticket, prestiti, anagrafica giocatori, assistenze tecniche, chat operatori e reporting.</p>
+      <p class="ec-p">Il mercato di riferimento conta circa 4.200 sale giochi fisiche in Italia (dati ADM 2024). Non esistono competitor SaaS verticali consolidati in questo segmento: il software attuale è o generico (ERP non specializzati) o sviluppato internamente da singole sale. GestHall Suite risolve esattamente questo gap.</p>
+      <p class="ec-p">Il modello è abbonamento mensile su tre piani (€39/€69/€99). La distribuzione avviene tramite rete di rivenditori regionali con revenue share al 30%. Il progetto è bootstrapped, i costi marginali per nuova installazione sono vicini a zero (un solo pull git aggiorna tutti i clienti), e la struttura white-label permette ai rivenditori di brandizzare il prodotto per la propria area.</p>
+    </div>
+
+    <div class="kpi-row">
+      <div class="kpi"><div class="kpi-val">4.200</div><div class="kpi-label">Sale giochi in Italia</div><div class="kpi-note">Dati ADM 2024</div></div>
+      <div class="kpi"><div class="kpi-val">€39</div><div class="kpi-label">Piano di ingresso</div><div class="kpi-note">Mensile</div></div>
+      <div class="kpi"><div class="kpi-val">30%</div><div class="kpi-label">Revenue share</div><div class="kpi-note">Ai rivenditori</div></div>
+      <div class="kpi"><div class="kpi-val">~0€</div><div class="kpi-label">Costo onboarding</div><div class="kpi-note">Dopo la prima installazione</div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- MERCATO -->
+  <div class="section" id="mercato">
+    <div class="sec-label">Mercato</div>
+    <h2 class="sec-h2">Analisi di mercato</h2>
+    <p class="sec-lead">Italia: 4.200 sale giochi fisiche, 400.000+ VLT attive, settore stabile a prescindere dai cicli economici (mercato anelastico al reddito).</p>
+
+    <div class="sec-h3">Struttura del mercato</div>
+    <div class="tbl-wrap"><table>
+      <tr><th>Segmento</th><th>Stima sale</th><th>Caratteristica</th></tr>
+      <tr><td>Piccole (1 turno)</td><td>~2.500</td><td>Piano Essenziale, operatore unico o famiglia</td></tr>
+      <tr><td>Medie (2 turni, 5-10 macchine)</td><td>~1.300</td><td>Piano Pro, responsabile dedicato</td></tr>
+      <tr><td>Grandi (3 turni, multi-sala)</td><td>~400</td><td>Piano Suite, integrazioni avanzate</td></tr>
+    </table></div>
+
+    <div class="sec-h3">Competitor analysis</div>
+    <div class="tbl-wrap"><table>
+      <tr><th>Soluzione attuale</th><th>Diffusione</th><th>Gap</th></tr>
+      <tr><td>Fogli Excel / carta</td><td>Alta (50%+ stima)</td><td>Zero automazione, zero storico digitale</td></tr>
+      <tr><td>Software gestionali generici</td><td>Media</td><td>Non verticale: mancano turni VLT, awp refill, ticket</td></tr>
+      <tr><td>Software su misura in-house</td><td>Bassa (reti grandi)</td><td>Costoso, non mantenuto, non white-label</td></tr>
+      <tr><td><strong>GestHall Suite</strong></td><td>In lancio</td><td>Primo SaaS verticale specializzato</td></tr>
+    </table></div>
+
+    <div class="callout info">
+      <span class="callout-ico">🎯</span>
+      <p>Posizionamento: "Il gestionale che un operatore impara in 20 minuti, usato ogni giorno per 10 anni." Verticale, semplice, affidabile.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PRICING -->
+  <div class="section" id="prezzi">
+    <div class="sec-label">Pricing</div>
+    <h2 class="sec-h2">Struttura prezzi</h2>
+    <p class="sec-lead">Tre piani mensili. Nessuna tariffa di setup. Revenue share ai rivenditori: 30% del ricorrente.</p>
+
+    <div class="pricing-grid">
+      <div class="plan">
+        <div class="plan-name">Essenziale</div>
+        <div class="plan-price">€39<span>/mese</span></div>
+        <p class="plan-desc">Cassa, turni, dashboard, report, chat. Max 4 utenti. Ideale per sale monofamiliare.</p>
+        <div class="plan-note">Revenue share rivenditore: €11,70/mese</div>
+      </div>
+      <div class="plan featured">
+        <div class="plan-name" style="color: var(--teal-dk)">Pro</div>
+        <div class="plan-price">€69<span>/mese</span></div>
+        <p class="plan-desc">Tutto Essenziale + ticket assistenza, anagrafica, prestiti, documenti, push, firma. Utenti illimitati.</p>
+        <div class="plan-note">Revenue share rivenditore: €20,70/mese</div>
+      </div>
+      <div class="plan">
+        <div class="plan-name">Suite</div>
+        <div class="plan-price">€99<span>/mese</span></div>
+        <p class="plan-desc">Tutto Pro + white label, SONOS, passaggio consegne, supporto prioritario.</p>
+        <div class="plan-note">Revenue share rivenditore: €29,70/mese</div>
+      </div>
+    </div>
+
+    <div class="sec-h3">Ipotesi di mix clienti</div>
+    <p>Proiezione conservativa: 60% piano Pro, 25% Essenziale, 15% Suite. Il piano Pro è il punto di conversione naturale: copre tutte le esigenze operative della sala media italiana senza extra.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PROIEZIONI MRR -->
+  <div class="section" id="proiezioni">
+    <div class="sec-label">Finanziario</div>
+    <h2 class="sec-h2">Proiezioni MRR</h2>
+    <p class="sec-lead">Due scenari: Base (crescita organica conservativa) e Ottimistico (rete rivenditori attiva). MRR lordo, al netto del revenue share.</p>
+
+    <div class="mrr-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Periodo</th>
+            <th>Clienti</th>
+            <th class="cell-base">MRR Base</th>
+            <th class="cell-opt">MRR Ottimistico</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Q3 2026</td>
+            <td>1–5</td>
+            <td class="td-right cell-base">€140–700</td>
+            <td class="td-right cell-opt">€500–1.200</td>
+            <td>Lancio, beta clienti</td>
+          </tr>
+          <tr>
+            <td>Q4 2026</td>
+            <td>5–15</td>
+            <td class="td-right cell-base">€700–2.100</td>
+            <td class="td-right cell-opt">€1.500–3.500</td>
+            <td>Primi rivenditori</td>
+          </tr>
+          <tr>
+            <td>Q1 2027</td>
+            <td>15–30</td>
+            <td class="td-right cell-base">€2.100–4.200</td>
+            <td class="td-right cell-opt">€4.000–7.000</td>
+            <td>Trazione rivenditori regionali</td>
+          </tr>
+          <tr>
+            <td>Q2 2027</td>
+            <td>30–60</td>
+            <td class="td-right cell-base">€4.200–8.400</td>
+            <td class="td-right cell-opt">€8.000–14.000</td>
+            <td>Billing automatico Stripe</td>
+          </tr>
+          <tr>
+            <td>Fine 2027</td>
+            <td>80–150</td>
+            <td class="td-right cell-base">€11.200–21.000</td>
+            <td class="td-right cell-opt">€18.000–32.000</td>
+            <td>Break-even &lt; 30 clienti</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout warn">
+      <span class="callout-ico">📌</span>
+      <p>MRR espresso al lordo del revenue share rivenditore (30%). Il netto trattenuto si calcola: MRR lordo × 0.70. Break-even stimato tra 25 e 35 clienti attivi a seconda del mix piano.</p>
+    </div>
+
+    <div class="sec-h3">Struttura dei costi (mensile, early stage)</div>
+    <div class="tbl-wrap"><table>
+      <tr><th>Voce</th><th>Stima mensile</th><th>Note</th></tr>
+      <tr><td>Hosting VPS (hub + demo)</td><td class="td-right">€20–40</td><td>1 VPS entry, scala con clienti</td></tr>
+      <tr><td>SiteGround (sito marketing)</td><td class="td-right">€10–15</td><td>Piano base</td></tr>
+      <tr><td>Email transazionale</td><td class="td-right">€0–15</td><td>Mailgun free tier fino a 500/mese</td></tr>
+      <tr><td>Stripe</td><td class="td-right">1,5% + €0,25</td><td>Per transazione, da Fase 2</td></tr>
+      <tr><td>Dominio/SSL</td><td class="td-right">€2</td><td>€25/anno amortizzato</td></tr>
+      <tr><td><strong>Totale fisso</strong></td><td class="td-right"><strong>€32–72</strong></td><td>Breakeven bassissimo</td></tr>
+    </table></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- MODELLO DISTRIBUZIONE -->
+  <div class="section" id="distribuzione">
+    <div class="sec-label">Go-to-market</div>
+    <h2 class="sec-h2">Modello di distribuzione</h2>
+    <p class="sec-lead">Tre canali complementari. Il canale rivenditore è il principale driver di crescita a regime.</p>
+
+    <div class="sec-h3">Canale diretto</div>
+    <p>Sito marketing + form demo. Contatto diretto con il responsabile sala. Funnel: landing page → video promo → richiesta demo. Conversione stimata: 15-25% dei contatti qualificati.</p>
+
+    <div class="sec-h3">Rete rivenditori</div>
+    <p>Rivenditori regionali (tecnici delle macchine, consulenti del settore) con accesso al pannello hub. Revenue share 30% sul ricorrente. Nessuna fee di ingresso nella fase di lancio. Il rivenditore gestisce la relazione col cliente, noi gestiamo il prodotto e il supporto tecnico. Obiettivo: 3-5 rivenditori attivi entro Q1 2027.</p>
+
+    <div class="sec-h3">Passaparola operatori</div>
+    <p>Settore molto chiuso e basato su fiducia tra operatori della stessa area. Un cliente soddisfatto in una città è il miglior referral per i 5-10 operatori nella stessa zona. Costo di acquisizione: zero.</p>
+
+    <div class="callout info">
+      <span class="callout-ico">🤝</span>
+      <p>Vantaggio strutturale: il rivenditore conosce già tutti gli operatori del suo territorio, spesso li visita mensilmente per manutenzione macchine. Il prodotto entra nella relazione già esistente.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- RISCHI -->
+  <div class="section" id="rischi">
+    <div class="sec-label">Risk analysis</div>
+    <h2 class="sec-h2">Rischi e mitigazioni</h2>
+    <p class="sec-lead">Analisi onesta dei rischi principali, con strategia di mitigazione per ciascuno.</p>
+
+    <div class="risk-row">
+      <div class="risk">
+        <div class="risk-name">Churn clienti</div>
+        <div class="risk-level mid">Medio</div>
+        <div class="risk-mit">Il prodotto diventa abitudinario dopo 30 giorni. Retention stimata alta per mercato verticale. Mitigazione: onboarding curato, supporto diretto, dati storici lock-in.</div>
+      </div>
+      <div class="risk">
+        <div class="risk-name">Concorrente verticale</div>
+        <div class="risk-level lo">Basso</div>
+        <div class="risk-mit">Il mercato è piccolo (4.200 sale), poco attraente per player grandi. Moat: codebase specializzato, rete rivenditori, e 12+ mesi di vantaggio.</div>
+      </div>
+      <div class="risk">
+        <div class="risk-name">Normativa ADM</div>
+        <div class="risk-level mid">Medio</div>
+        <div class="risk-mit">L'app gestisce dati operativi, non dati di gioco trasmessi ad ADM. Non siamo un sistema di controllo certificato. Rischio normativo è sulle sale, non su di noi.</div>
+      </div>
+      <div class="risk">
+        <div class="risk-name">Scalabilità tecnica</div>
+        <div class="risk-level lo">Basso</div>
+        <div class="risk-mit">Architettura model-C (DB separato per cliente, symlink) scala facilmente a 500+ installazioni. Costo aggiuntivo quasi zero per nuova sala.</div>
+      </div>
+      <div class="risk">
+        <div class="risk-name">Dipendenza fondatore</div>
+        <div class="risk-level hi">Alto</div>
+        <div class="risk-mit">Tutto il codice è in mano a una sola persona. Mitigazione: documentazione completa, codebase sano, GitHub organization, esternalizzazione futura Fase 3.</div>
+      </div>
+      <div class="risk">
+        <div class="risk-name">Ritardo primo cliente</div>
+        <div class="risk-level mid">Medio</div>
+        <div class="risk-mit">Se il lancio si sposta a Q4 2026, le proiezioni slittano di un trimestre ma il break-even rimane raggiungibile entro metà 2027.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ROADMAP -->
+  <div class="section" id="roadmap">
+    <div class="sec-label">Roadmap</div>
+    <h2 class="sec-h2">Piano esecutivo</h2>
+    <p class="sec-lead">Le tappe chiave dalla fase di lancio alla scalatura. Fase 0 completata. Fase 1 in corso.</p>
+
+    <div class="roadmap-grid">
+      <div class="roadmap-row"><span class="rm-date">Completato</span><span class="rm-status done">Fatto</span><span><strong>Suite completa + Hub v1</strong> — tutti i moduli, piano tier, rivenditori, ghost login, chat vocali</span></div>
+      <div class="roadmap-row"><span class="rm-date">Completato</span><span class="rm-status done">Fatto</span><span><strong>Privacy Policy + Termini</strong> — GDPR compliant, luglio 2026</span></div>
+      <div class="roadmap-row"><span class="rm-date">Completato</span><span class="rm-status done">Fatto</span><span><strong>Sito marketing + Docs</strong> — Astro, guida pubblica, sezione interna protetta</span></div>
+      <div class="roadmap-row"><span class="rm-date">Q3 2026</span><span class="rm-status wip">In corso</span><span><strong>License check in auth.php</strong> — validazione piano da hub, cache 24h</span></div>
+      <div class="roadmap-row"><span class="rm-date">Q3 2026</span><span class="rm-status wip">In corso</span><span><strong>Deploy su SiteGround + VPS</strong> — hub live, sito live, prima installazione demo</span></div>
+      <div class="roadmap-row"><span class="rm-date">Q3 2026</span><span class="rm-status todo">Todo</span><span><strong>Primo cliente pagante</strong> — onboarding diretto, feedback prodotto</span></div>
+      <div class="roadmap-row"><span class="rm-date">Q4 2026</span><span class="rm-status todo">Todo</span><span><strong>Stripe Billing webhook</strong> — rinnovo automatico, suspend su mancato pagamento</span></div>
+      <div class="roadmap-row"><span class="rm-date">Q4 2026</span><span class="rm-status todo">Todo</span><span><strong>Rete rivenditori (3-5 partner)</strong> — contratti, accesso hub, onboarding</span></div>
+      <div class="roadmap-row"><span class="rm-date">Q1 2027</span><span class="rm-status todo">Todo</span><span><strong>Provisioning automatico</strong> — CLI script, 10 min per nuova installazione</span></div>
+      <div class="roadmap-row"><span class="rm-date">Q2 2027</span><span class="rm-status todo">Todo</span><span><strong>Self-service rivenditore</strong> — crea installazione dal pannello, nessun intervento manuale</span></div>
+      <div class="roadmap-row"><span class="rm-date">2027+</span><span class="rm-status todo">Todo</span><span><strong>API pubblica + dashboard multi-sala</strong> — aggregazione dati, integrazioni SNAI/Sisal</span></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STRUTTURA LEGALE -->
+  <div class="section" id="legale">
+    <div class="sec-label">Struttura legale</div>
+    <h2 class="sec-h2">Aspetti legali e contrattuali</h2>
+
+    <div class="sec-h3">Titolare attuale</div>
+    <p>Il progetto è attualmente gestito come persona fisica (sviluppatore indipendente). La costituzione di una struttura societaria (SRL semplificata o SRL ordinaria) è prevista quando il MRR giustifica i costi fissi associati (~€15.000/anno incluso commercialista).</p>
+
+    <div class="sec-h3">Contratti rivenditori</div>
+    <p>Contratto di rivenditore: accordo scritto con revenue share (30%), termini di accesso al pannello, NDA sui dati dei clienti, diritto di recesso con 60 giorni di preavviso.</p>
+
+    <div class="sec-h3">Contratti clienti</div>
+    <p>Termini di servizio accettati al momento del setup. Includono: SLA best-effort, esclusione di responsabilità per perdita di dati oltre i backup settimanali, recesso mensile senza penali.</p>
+
+    <div class="sec-h3">GDPR e dati</div>
+    <p>Privacy Policy completa su sito e suite. Il titolare del trattamento è il gestore della sala (il cliente). GestHall Suite agisce come responsabile del trattamento. Placeholder <code>[TITOLARE]</code> e <code>[CITTÀ]</code> da completare con i dati legali definitivi alla costituzione della struttura.</p>
+
+    <div class="callout warn">
+      <span class="callout-ico">⚠️</span>
+      <p>I placeholder nella Privacy Policy e nei Termini di Servizio devono essere sostituiti prima del lancio commerciale ufficiale. Attualmente il testo è tecnicamente valido ma incompleto per quanto riguarda i dati del titolare del trattamento.</p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    GestHall Suite &nbsp;·&nbsp; Business Plan v1.1 &nbsp;·&nbsp; Luglio 2026 &nbsp;·&nbsp; Documento riservato
+    &nbsp;·&nbsp; <a href="index.html" style="color: var(--teal-dk)">Sezione interna</a>
+    &nbsp;·&nbsp; <a href="docs.html" style="color: var(--teal-dk)">Documentazione tecnica</a>
+  </div>
+
+</div>
+
+<script>
+function toggleTheme() {
+  var r = document.documentElement;
+  var cur = r.dataset.theme || 'dark';
+  var next = cur === 'dark' ? 'light' : 'dark';
+  r.dataset.theme = next;
+  localStorage.setItem('gd-theme', next);
+}
+</script>
+</body>
+</html>

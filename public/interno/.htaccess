@@ -1,0 +1,8 @@
+AuthType Basic
+AuthName "GestHall Suite — Sezione Interna"
+AuthUserFile /home/USERNAME/.htpasswd_interno
+Require valid-user
+
+# Nota: sostituire USERNAME con il nome utente SiteGround (visibile in Site Tools → SSH Keys Manager).
+# Il file .htpasswd deve stare fuori da public_html per sicurezza.
+# Creare con: htpasswd -c /home/USERNAME/.htpasswd_interno nomeutente
