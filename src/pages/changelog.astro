@@ -1,0 +1,253 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout page="Changelog" description="Tutte le novità di GestHall Suite: nuove funzionalità, miglioramenti e correzioni release per release.">
+
+<section class="cl-hero">
+  <div class="container">
+    <p class="cl-eyebrow">Changelog</p>
+    <h1>Novità e aggiornamenti</h1>
+    <p class="cl-sub">Ogni release di GestHall Suite, in ordine cronologico. Funzionalità nuove, miglioramenti e correzioni che cambiano il lavoro di ogni giorno.</p>
+  </div>
+</section>
+
+<section class="cl-body">
+  <div class="container">
+    <div class="cl-feed">
+
+      <!-- 2.11.0 -->
+      <div class="cl-entry">
+        <div class="cl-entry-head">
+          <span class="cl-ver">v2.11.0</span>
+          <time class="cl-date" datetime="2026-07-13">13 luglio 2026</time>
+        </div>
+        <div class="cl-entry-body">
+          <div class="cl-group">
+            <span class="cl-badge cl-badge-add">Novità</span>
+            <ul class="cl-list">
+              <li>Barra di avanzamento turno in tempo reale: mostra la percentuale di completamento delle operazioni di chiusura (bancomat, contanti, scassettamenti VLT) direttamente nei tab di switch turno.</li>
+              <li>Avatar con iniziali e colore deterministico per ogni operatore nei pulsanti di cambio turno. Nomi lunghi abbreviati automaticamente.</li>
+            </ul>
+          </div>
+          <div class="cl-group">
+            <span class="cl-badge cl-badge-fix">Corretto</span>
+            <ul class="cl-list">
+              <li>Colore link chat nella sidebar: ripristinato correttamente al valore base.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2.10.1 -->
+      <div class="cl-entry">
+        <div class="cl-entry-head">
+          <span class="cl-ver">v2.10.1</span>
+          <time class="cl-date" datetime="2026-07-09">9 luglio 2026</time>
+          <span class="cl-hotfix">Hotfix</span>
+        </div>
+        <div class="cl-entry-body">
+          <div class="cl-group">
+            <span class="cl-badge cl-badge-fix">Corretto</span>
+            <ul class="cl-list">
+              <li><strong>Calcolo versamento settimanale errato</strong> — il totale poteva divergere da quello visualizzato nel giornaliero. Ora i valori sono allineati.</li>
+              <li><strong>Conferma batch versamenti</strong> — quando la firma digitale era attiva, la conferma multipla saltava il passaggio firma. Ora ogni conferma segue il flusso completo.</li>
+              <li><strong>Messaggi vocali in chat</strong> — non era possibile fermare la registrazione né inviare il messaggio. Risolto.</li>
+              <li><strong>Cambio data a mezzanotte</strong> — salvando il turno dopo mezzanotte la data poteva scorrere al giorno successivo. Ora rimane quella di apertura.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2.10.0 -->
+      <div class="cl-entry">
+        <div class="cl-entry-head">
+          <span class="cl-ver">v2.10.0</span>
+          <time class="cl-date" datetime="2026-07-08">8 luglio 2026</time>
+        </div>
+        <div class="cl-entry-body">
+          <div class="cl-group">
+            <span class="cl-badge cl-badge-add">Novità</span>
+            <ul class="cl-list">
+              <li>Messaggi vocali nella chat interna: registra e invia audio con un solo tocco. Timer di registrazione, anteprima prima dell'invio, resa come player audio nella conversazione.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2.9.0 -->
+      <div class="cl-entry">
+        <div class="cl-entry-head">
+          <span class="cl-ver">v2.9.0</span>
+          <time class="cl-date" datetime="2026-07-08">8 luglio 2026</time>
+        </div>
+        <div class="cl-entry-body">
+          <div class="cl-group">
+            <span class="cl-badge cl-badge-add">Novità</span>
+            <ul class="cl-list">
+              <li>Web Radio persistente: l'audio non si interrompe più navigando tra le pagine dell'app. Cambio pagina via PJAX senza ricaricare il browser.</li>
+              <li>Mini player radio nella barra laterale con controlli play/pausa, stop e nome stazione. Su mobile: dot pulsante nella topbar per accesso rapido.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2.8.0 -->
+      <div class="cl-entry">
+        <div class="cl-entry-head">
+          <span class="cl-ver">v2.8.0</span>
+          <time class="cl-date" datetime="2026-07-07">7 luglio 2026</time>
+        </div>
+        <div class="cl-entry-body">
+          <div class="cl-group">
+            <span class="cl-badge cl-badge-add">Novità</span>
+            <ul class="cl-list">
+              <li>Contatore utenti attivi per il piano Essenziale: chip N/4 visibile in Admin → Utenti con avviso al raggiungimento del limite. Il pulsante "Nuovo utente" si disabilita con messaggio esplicativo.</li>
+              <li>Logo personalizzato e colori brand riservati al piano Suite: installazioni Essenziale e Pro usano il teal GestHall come colore predefinito.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2.7.0 -->
+      <div class="cl-entry">
+        <div class="cl-entry-head">
+          <span class="cl-ver">v2.7.0</span>
+          <time class="cl-date" datetime="2026-07-06">6 luglio 2026</time>
+        </div>
+        <div class="cl-entry-body">
+          <div class="cl-group">
+            <span class="cl-badge cl-badge-add">Novità</span>
+            <ul class="cl-list">
+              <li>Anagrafica giocatori: registro completo con nome, cognome, data di nascita, telefono, email e note. Ricerca in tempo reale su tutti i campi. Integrazione automatica con il modulo Prestiti.</li>
+              <li>Email automatica all'apertura di un ticket assistenza macchine: codice, tipo, fornitore, seriale e CIV inviati all'indirizzo configurato in Impostazioni → Assistenza.</li>
+              <li>Guida chiusura sala personalizzabile: l'admin può riscrivere la procedura di chiusura in Markdown dall'interfaccia di impostazioni, senza modificare il codice.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2.6.0 -->
+      <div class="cl-entry">
+        <div class="cl-entry-head">
+          <span class="cl-ver">v2.6.0</span>
+          <time class="cl-date" datetime="2026-07-06">6 luglio 2026</time>
+        </div>
+        <div class="cl-entry-body">
+          <div class="cl-group">
+            <span class="cl-badge cl-badge-add">Novità</span>
+            <ul class="cl-list">
+              <li>Storico macchina VLT/AWP: pagina dedicata per ogni macchina con KPI lifetime, grafico a barre mensili, media mensile e storico ticket assistenza.</li>
+              <li>QR code macchina stampabile: scansionando il QR affisso alla macchina si apre direttamente il form di apertura ticket — senza cercare la macchina nell'elenco.</li>
+              <li>Confronto periodi: seleziona due range di date e confronta scassettamenti, versamenti, bancomat, ticket e giorni chiusi con variazione percentuale Δ e grafico sovrapposto.</li>
+              <li>Firma digitale versamento: il revisore firma su canvas touch al momento del ritiro. Firma PNG, IP e timestamp salvati immutabilmente con l'importo dichiarato.</li>
+              <li>Passaggio consegne: checklist configurabile (fino a 20 item) e campo messaggio libero tra turni. Attivabile come modulo opzionale.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cl-footer">
+      <a href="/docs" class="cl-back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M12 7H2M6 3l-4 4 4 4"/></svg>
+        Torna alla documentazione
+      </a>
+      <p class="cl-note">Stai usando una versione precedente? <a href="/contatti">Contattaci</a> per assistenza all'aggiornamento.</p>
+    </div>
+
+  </div>
+</section>
+
+</Layout>
+
+<style>
+/* ── Hero ── */
+.cl-hero {
+  padding: clamp(80px, 10vw, 120px) 0 clamp(40px, 6vw, 64px);
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(155deg, oklch(100% 0 0) 0%, oklch(96.5% 0.012 245) 100%);
+}
+.cl-eyebrow {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .1em; color: var(--accent); margin-bottom: 14px
+}
+.cl-hero h1 {
+  font-size: clamp(32px, 5vw, 52px); font-weight: 800;
+  letter-spacing: -.03em; line-height: 1.05; margin-bottom: 16px; text-wrap: balance
+}
+.cl-sub { font-size: clamp(15px, 2vw, 17px); color: var(--muted); line-height: 1.65; max-width: 56ch }
+
+/* ── Body ── */
+.cl-body { padding: clamp(40px, 6vw, 72px) 0 clamp(60px, 8vw, 100px); background: var(--surface) }
+
+/* ── Feed ── */
+.cl-feed { max-width: 760px }
+
+.cl-entry {
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border-sub)
+}
+.cl-entry:last-child { border-bottom: none }
+
+.cl-entry-head {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 24px; flex-wrap: wrap
+}
+.cl-ver {
+  font-family: var(--font-head); font-size: 22px; font-weight: 800;
+  letter-spacing: -.04em; color: var(--text)
+}
+.cl-date {
+  font-size: 13px; font-weight: 500; color: var(--faint)
+}
+.cl-hotfix {
+  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+  padding: 2px 9px; border-radius: 99px;
+  background: oklch(0.96 0.04 40); color: oklch(0.52 0.16 40);
+  border: 1px solid oklch(0.88 0.06 40)
+}
+
+/* ── Entry body ── */
+.cl-entry-body { display: flex; flex-direction: column; gap: 20px }
+
+.cl-group { display: flex; flex-direction: column; gap: 10px }
+
+.cl-badge {
+  display: inline-flex; align-items: center; font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .06em; padding: 3px 10px; border-radius: 5px;
+  width: fit-content
+}
+.cl-badge-add { background: var(--accent-sub); color: var(--accent-dim); border: 1px solid oklch(0.72 0.16 168 / 0.22) }
+.cl-badge-fix { background: var(--surface-2); color: var(--muted); border: 1px solid var(--border-sub) }
+
+.cl-list { display: flex; flex-direction: column; gap: 8px; padding-left: 2px }
+.cl-list li {
+  font-size: 15px; color: var(--muted); line-height: 1.65;
+  padding-left: 18px; position: relative
+}
+.cl-list li::before {
+  content: ''; position: absolute; left: 0; top: 10px;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--border); flex-shrink: 0
+}
+.cl-badge-add + .cl-list li::before { background: var(--accent-sub); border: 1.5px solid oklch(0.72 0.16 168 / 0.4) }
+.cl-list li strong { color: var(--text); font-weight: 600 }
+
+/* ── Footer ── */
+.cl-footer {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+  gap: 12px; padding-top: 40px; margin-top: 8px
+}
+.cl-back {
+  display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 600;
+  color: var(--muted); transition: color .15s, gap .15s
+}
+.cl-back:hover { color: var(--text); gap: 10px }
+.cl-note { font-size: 13px; color: var(--faint) }
+.cl-note a { color: var(--accent); font-weight: 600; text-decoration: none }
+.cl-note a:hover { text-decoration: underline }
+
+@media (max-width: 640px) {
+  .cl-footer { flex-direction: column; align-items: flex-start }
+}
+</style>

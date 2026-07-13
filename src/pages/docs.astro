@@ -1,0 +1,250 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout page="Documentazione" description="Guide, riferimenti tecnici e area riservata per GestHall Suite. Tutto quello che ti serve per usare, installare e personalizzare la piattaforma.">
+
+<section class="docs-hero">
+  <div class="container">
+    <div class="docs-hero-inner">
+      <div>
+        <p class="docs-eyebrow">Documentazione</p>
+        <h1>Tutto quello che ti serve.</h1>
+        <p class="docs-sub">Guide utente, riferimenti tecnici per installatori, API e area riservata per il team interno.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="docs-body">
+  <div class="container">
+
+    <div class="docs-section">
+      <h2 class="docs-section-title">Guide pubbliche</h2>
+      <div class="docs-grid">
+
+        <a href="/docs/guida/" class="doc-card">
+          <div class="doc-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <div class="doc-card-body">
+            <h3>Guida utente</h3>
+            <p>Cassa giornaliera, turni, dashboard, report, chat, macchine e altro. Per operatori, responsabili e revisori.</p>
+            <span class="doc-card-chips">
+              <span>Operatore</span>
+              <span>Responsabile</span>
+              <span>Revisore</span>
+            </span>
+          </div>
+          <span class="doc-card-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a href="/docs/guida/#impostazioni" class="doc-card">
+          <div class="doc-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M19.07 19.07l-1.41-1.41M4.93 19.07l1.41-1.41M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+          </div>
+          <div class="doc-card-body">
+            <h3>Installazione e setup</h3>
+            <p>Requisiti server, installazione su hosting condiviso, configurazione iniziale, aggiornamenti.</p>
+            <span class="doc-card-chips">
+              <span>PHP 8+</span>
+              <span>MySQL</span>
+              <span>Apache</span>
+            </span>
+          </div>
+          <span class="doc-card-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a href="/docs/guida/#sicurezza" class="doc-card">
+          <div class="doc-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="doc-card-body">
+            <h3>Sicurezza e audit</h3>
+            <p>CSRF, ruoli utente, audit log, firma digitale versamenti. Come GestHall Suite protegge i tuoi dati.</p>
+            <span class="doc-card-chips">
+              <span>CSRF</span>
+              <span>Audit log</span>
+              <span>Firma digitale</span>
+            </span>
+          </div>
+          <span class="doc-card-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a href="/docs/guida/#push" class="doc-card">
+          <div class="doc-card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </div>
+          <div class="doc-card-body">
+            <h3>Notifiche push e PWA</h3>
+            <p>Installazione come app su iPhone e Android, notifiche push per versamenti e allerte turno.</p>
+            <span class="doc-card-chips">
+              <span>PWA</span>
+              <span>iOS</span>
+              <span>Android</span>
+            </span>
+          </div>
+          <span class="doc-card-arrow" aria-hidden="true">→</span>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-section-title">Novità e aggiornamenti</h2>
+      <a href="/changelog" class="docs-clog">
+        <div class="docs-clog-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>
+        </div>
+        <div class="docs-clog-body">
+          <strong>Tutte le novità di GestHall Suite</strong>
+          <p>Ultime release: barra completamento turno, vocali in chat, Web Radio persistente, anagrafica giocatori e molto altro.</p>
+        </div>
+        <span class="docs-clog-arrow" aria-hidden="true">Vedi changelog →</span>
+      </a>
+    </div>
+
+    <div class="docs-section">
+      <h2 class="docs-section-title">Accesso riservato</h2>
+      <div class="docs-admin-card">
+        <div class="docs-admin-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div class="docs-admin-body">
+          <h3>Area interna</h3>
+          <p>Documentazione tecnica, business plan, stato del progetto e risorse per il team. Accesso con password.</p>
+          <div class="docs-admin-meta">
+            <span class="docs-admin-badge">Team &amp; Partner</span>
+            <span>Dev docs · Business plan · Roadmap</span>
+          </div>
+        </div>
+        <a href="/interno" class="docs-admin-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Accedi
+        </a>
+      </div>
+    </div>
+
+    <div class="docs-support">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="2.5"/></svg>
+      <span>Hai una domanda? <a href="/contatti">Scrivici</a> — risposta entro 24 ore.</span>
+    </div>
+
+  </div>
+</section>
+
+</Layout>
+
+<style>
+/* ── Hero ── */
+.docs-hero {
+  padding: clamp(80px, 10vw, 120px) 0 clamp(40px, 6vw, 64px);
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(155deg, oklch(100% 0 0) 0%, oklch(96.5% 0.012 245) 100%);
+}
+.docs-hero-inner { max-width: 640px }
+.docs-eyebrow {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .1em; color: var(--accent); margin-bottom: 14px
+}
+.docs-hero h1 {
+  font-size: clamp(32px, 5vw, 52px); font-weight: 800;
+  letter-spacing: -.03em; line-height: 1.05; margin-bottom: 16px; text-wrap: balance
+}
+.docs-sub { font-size: clamp(15px, 2vw, 17px); color: var(--muted); line-height: 1.65; max-width: 500px }
+
+/* ── Body ── */
+.docs-body { padding: clamp(40px, 6vw, 72px) 0 clamp(60px, 8vw, 100px); background: var(--surface) }
+.docs-section { margin-bottom: clamp(40px, 5vw, 64px) }
+.docs-section-title {
+  font-size: 12px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--muted); margin-bottom: 20px;
+  padding-bottom: 10px; border-bottom: 1px solid var(--border-sub)
+}
+
+/* ── Doc Cards ── */
+.docs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px }
+.doc-card {
+  display: flex; align-items: flex-start; gap: 16px; padding: 20px;
+  background: var(--bg); border: 1px solid var(--border-sub); border-radius: var(--rx-m);
+  text-decoration: none; color: inherit; transition: border-color .15s, box-shadow .15s, transform .12s
+}
+.doc-card:hover {
+  border-color: var(--accent); box-shadow: 0 4px 20px var(--accent-glow); transform: translateY(-1px)
+}
+.doc-card-icon {
+  width: 44px; height: 44px; flex-shrink: 0; background: var(--accent-sub);
+  border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--accent-dim)
+}
+.doc-card-body { flex: 1; min-width: 0 }
+.doc-card-body h3 { font-size: 15px; font-weight: 700; letter-spacing: -.01em; margin-bottom: 5px; color: var(--text) }
+.doc-card-body p { font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 10px }
+.doc-card-chips { display: flex; flex-wrap: wrap; gap: 5px }
+.doc-card-chips span {
+  font-size: 10.5px; font-weight: 600; padding: 2px 8px;
+  background: var(--surface-2); color: var(--muted); border-radius: 5px; border: 1px solid var(--border-sub)
+}
+.doc-card-arrow {
+  font-size: 18px; color: var(--accent); flex-shrink: 0; line-height: 1; margin-top: 2px;
+  opacity: 0; transition: opacity .15s, transform .15s
+}
+.doc-card:hover .doc-card-arrow { opacity: 1; transform: translateX(3px) }
+
+/* ── Changelog teaser ── */
+.docs-clog {
+  display: flex; align-items: center; gap: 16px; padding: 18px 22px;
+  background: var(--accent-sub); border: 1px solid oklch(0.72 0.16 168 / 0.22);
+  border-radius: var(--rx-m); text-decoration: none; color: inherit;
+  transition: box-shadow .15s, transform .12s
+}
+.docs-clog:hover { box-shadow: 0 4px 20px var(--accent-glow); transform: translateY(-1px) }
+.docs-clog-icon {
+  width: 40px; height: 40px; flex-shrink: 0; background: oklch(0.72 0.16 168 / 0.12);
+  border-radius: 9px; display: flex; align-items: center; justify-content: center; color: var(--accent)
+}
+.docs-clog-body { flex: 1; min-width: 0 }
+.docs-clog-body strong { font-size: 14px; font-weight: 700; color: var(--text); display: block; margin-bottom: 3px }
+.docs-clog-body p { font-size: 13px; color: var(--muted); line-height: 1.5; margin: 0 }
+.docs-clog-arrow {
+  font-size: 13.5px; font-weight: 600; color: var(--accent); white-space: nowrap;
+  flex-shrink: 0; transition: letter-spacing .15s
+}
+.docs-clog:hover .docs-clog-arrow { letter-spacing: .02em }
+@media (max-width: 540px) { .docs-clog { flex-wrap: wrap } .docs-clog-arrow { width: 100%; padding-left: 56px } }
+
+/* ── Admin card ── */
+.docs-admin-card {
+  display: flex; align-items: center; gap: 20px; padding: 24px;
+  background: var(--bg); border: 1px solid var(--border-sub); border-radius: var(--rx-l)
+}
+@media (max-width: 600px) { .docs-admin-card { flex-direction: column; align-items: flex-start } }
+.docs-admin-icon {
+  width: 52px; height: 52px; flex-shrink: 0; background: var(--surface-2);
+  border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--muted)
+}
+.docs-admin-body { flex: 1; min-width: 0 }
+.docs-admin-body h3 { font-size: 16px; font-weight: 700; margin-bottom: 5px }
+.docs-admin-body p { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin-bottom: 10px }
+.docs-admin-meta { display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--faint) }
+.docs-admin-badge {
+  background: var(--surface-2); color: var(--muted); border-radius: 5px;
+  padding: 2px 8px; font-weight: 600; font-size: 11px; border: 1px solid var(--border-sub)
+}
+.docs-admin-btn {
+  display: inline-flex; align-items: center; gap: 7px; padding: 10px 20px;
+  background: var(--navy); color: var(--bg); border-radius: var(--rx-m);
+  font-size: 13.5px; font-weight: 600; text-decoration: none;
+  white-space: nowrap; flex-shrink: 0; transition: background .12s
+}
+.docs-admin-btn:hover { background: oklch(28% 0.065 245) }
+@media (max-width: 600px) { .docs-admin-btn { width: 100%; justify-content: center } }
+
+/* ── Support footer ── */
+.docs-support {
+  display: flex; align-items: center; gap: 10px; font-size: 13.5px;
+  color: var(--muted); padding: 20px 0; border-top: 1px solid var(--border-sub)
+}
+.docs-support svg { color: var(--accent); flex-shrink: 0 }
+.docs-support a { color: var(--accent); font-weight: 600; text-decoration: none }
+.docs-support a:hover { text-decoration: underline }
+</style>

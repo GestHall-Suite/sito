@@ -4,5 +4,5 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://gesthallsuite.it',
   integrations: [sitemap()],
-  trailingSlash: 'never',
+  trailingSlash: 'ignore',
 });

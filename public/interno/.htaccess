@@ -1,8 +1,13 @@
-AuthType Basic
-AuthName "GestHall Suite — Sezione Interna"
-AuthUserFile /home/USERNAME/.htpasswd_interno
-Require valid-user
+# La protezione primaria è ora JS (SHA-256 + sessionStorage) nell'HTML.
+# Per aggiungere un secondo livello server-side, decommentare e configurare:
+#
+# AuthType Basic
+# AuthName "GestHall Suite — Sezione Interna"
+# AuthUserFile /home/USERNAME/.htpasswd_interno
+# Require valid-user
+#
+# Creare il file con: htpasswd -c /home/USERNAME/.htpasswd_interno nomeutente
+# USERNAME = nome utente SiteGround (Site Tools → SSH Keys Manager)
 
-# Nota: sostituire USERNAME con il nome utente SiteGround (visibile in Site Tools → SSH Keys Manager).
-# Il file .htpasswd deve stare fuori da public_html per sicurezza.
-# Creare con: htpasswd -c /home/USERNAME/.htpasswd_interno nomeutente
+# Nessun indicizzazione da bot
+Header set X-Robots-Tag "noindex, nofollow"
