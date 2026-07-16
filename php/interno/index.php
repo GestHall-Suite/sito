@@ -277,6 +277,53 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
     .badge-blue  { background: var(--accent-sub); color: var(--accent-dim) }
     .badge-muted { background: var(--surface-2); color: var(--muted); border: 1px solid var(--border-sub) }
 
+    /* ── Procedure ──────────────────────────── */
+    .proc { display: flex; flex-direction: column; gap: 0 }
+    .proc-step {
+      display: grid; grid-template-columns: 28px 1fr; gap: 16px;
+      padding: 16px 0; border-bottom: 1px solid var(--border-sub);
+    }
+    .proc-step:last-child { border-bottom: none }
+    .proc-num {
+      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+      background: var(--accent-sub); color: var(--accent); font-size: 12px;
+      font-weight: 800; display: flex; align-items: center; justify-content: center;
+    }
+    .proc-body h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px }
+    .proc-body p  { font-size: 13px; color: var(--muted); line-height: 1.55 }
+    .proc-body code {
+      font-family: var(--font-mono, monospace); font-size: 12px;
+      background: var(--surface-2); padding: 1px 5px; border-radius: 4px; color: var(--text);
+    }
+    .proc-body .cmd {
+      display: block; margin-top: 8px; padding: 10px 13px;
+      background: var(--navy); color: oklch(88% 0.01 168); border-radius: 8px;
+      font-family: var(--font-mono, monospace); font-size: 12.5px; line-height: 1.7;
+      word-break: break-all;
+    }
+    .proc-tab-wrap { overflow-x: auto }
+    .proc-tab {
+      width: 100%; border-collapse: collapse; font-size: 13px; min-width: 480px;
+    }
+    .proc-tab th {
+      text-align: left; padding: 8px 12px; font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .04em; color: var(--faint);
+      background: var(--surface-2); border-bottom: 1px solid var(--border);
+    }
+    .proc-tab td { padding: 10px 12px; border-bottom: 1px solid var(--border-sub); vertical-align: top }
+    .proc-tab tr:last-child td { border-bottom: none }
+    .proc-tab code {
+      font-family: var(--font-mono, monospace); font-size: 11.5px;
+      background: var(--surface-2); padding: 1px 5px; border-radius: 4px;
+    }
+    .alert-box {
+      padding: 13px 16px; border-radius: 10px; font-size: 13px; line-height: 1.55;
+      margin-bottom: 14px;
+    }
+    .alert-amber { background: var(--amber-sub); border: 1px solid oklch(0.7 0.16 80 / .2); color: oklch(0.42 0.1 70) }
+    .alert-green { background: var(--green-sub); border: 1px solid oklch(0.6 0.18 145 / .2); color: oklch(0.38 0.12 145) }
+    .alert-blue  { background: var(--accent-sub); border: 1px solid oklch(0.72 0.16 168 / .2); color: var(--accent-dim) }
+
     /* ── Roadmap ─────────────────────────────── */
     .roadmap { display: flex; flex-direction: column; gap: 0 }
     .roadmap-item {
@@ -409,13 +456,193 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
         <table class="status-table">
           <thead><tr><th>Componente</th><th>Stato</th><th>Note</th></tr></thead>
           <tbody>
-            <tr><td>App gestionale (<code>suite/</code>)</td><td><span class="badge badge-green">✓ Produzione</span></td><td>Cassa, turni, AWP, dashboard, documenti, push</td></tr>
-            <tr><td>Hub license server (<code>hub/</code>)</td><td><span class="badge badge-green">✓ Produzione</span></td><td>API license, ghost login, pannello rivenditori</td></tr>
-            <tr><td>Sito marketing (<code>sito/</code>)</td><td><span class="badge badge-blue">~ In sviluppo</span></td><td>Astro 7, portale cliente, ordini</td></tr>
+            <tr><td>App gestionale (<code>suite/</code>)</td><td><span class="badge badge-green">✓ Produzione</span></td><td>Cassa, turni, AWP, dashboard, documenti, push, portale piano</td></tr>
+            <tr><td>Hub license server (<code>hub/</code>)</td><td><span class="badge badge-green">✓ Produzione</span></td><td>API license, ghost login, pannello rivenditori, richieste piano</td></tr>
+            <tr><td>Sito marketing (<code>sito/</code>)</td><td><span class="badge badge-blue">~ In sviluppo</span></td><td>Astro 7 · PHP <code>/interno/</code> e <code>/cliente/</code> già attivi</td></tr>
+            <tr><td>Portale cliente cambio piano</td><td><span class="badge badge-blue">~ In attivazione</span></td><td>Richiede installation_key allineata tra suite e hub</td></tr>
             <tr><td>Billing (Stripe)</td><td><span class="badge badge-amber">⏳ Fase 2</span></td><td>Checkout → webhook → hub → email chiave</td></tr>
             <tr><td>License check in-app</td><td><span class="badge badge-amber">⏳ Fase 2</span></td><td>Call a hub API con cache 24h; fallback su impostazioni.piano</td></tr>
           </tbody>
         </table>
+      </div>
+    </div>
+
+    <!-- Procedure operative -->
+    <div class="docs-section">
+      <h2 class="section-title">Procedure operative</h2>
+
+      <div style="display:flex;flex-direction:column;gap:20px">
+
+        <!-- superadmin_key -->
+        <div class="status-table-wrap" style="padding:20px 24px">
+          <h3 style="font-size:15px;font-weight:700;margin-bottom:4px">1 · Generare la superadmin_key</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:16px">La chiave è generata <strong>dalla suite</strong> e comunicata al hub. Non va mai generata dal hub.</p>
+          <div class="alert-blue" style="margin-bottom:16px">
+            <strong>Percorso:</strong> nella suite, aprire <code>account/ghost_generate.php</code> — al primo accesso la chiave viene generata automaticamente e mostrata a schermo. Copiarla e comunicarla al supporto GestHall.
+          </div>
+          <div class="proc">
+            <div class="proc-step">
+              <div class="proc-num">1</div>
+              <div class="proc-body">
+                <h4>Suite → ghost_generate.php</h4>
+                <p>Al primo accesso la chiave viene auto-generata da <code>ensure_superadmin_key()</code>, salvata in <code>impostazioni.superadmin_key</code> e mostrata una sola volta. Copiarla subito.</p>
+              </div>
+            </div>
+            <div class="proc-step">
+              <div class="proc-num">2</div>
+              <div class="proc-body">
+                <h4>Hub → installazione.php → "Imposta chiave"</h4>
+                <p>Incollare la chiave copiata nel campo <em>Superadmin key</em> della scheda installazione nel hub. Questo abilita il ghost login da quel momento.</p>
+              </div>
+            </div>
+            <div class="proc-step">
+              <div class="proc-num">3</div>
+              <div class="proc-body">
+                <h4>Verifica</h4>
+                <p>Da hub → installazione → "Genera link ghost login" — il link deve aprire la suite senza errori. Se dice "chiave non valida" le due copie non coincidono.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nuova installazione -->
+        <div class="status-table-wrap" style="padding:20px 24px">
+          <h3 style="font-size:15px;font-weight:700;margin-bottom:4px">2 · Attivazione nuova installazione</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:16px">Flusso completo per collegare una nuova installazione suite al hub e abilitare portale cliente + ghost login.</p>
+          <div class="proc">
+            <div class="proc-step">
+              <div class="proc-num">1</div>
+              <div class="proc-body">
+                <h4>Hub → nuova.php</h4>
+                <p>Creare la scheda installazione. Il hub genera automaticamente la <code>chiave</code> (64 hex). Completare nome sala, URL, piano, scadenza. <em>Lasciare superadmin_key vuota per ora.</em></p>
+              </div>
+            </div>
+            <div class="proc-step">
+              <div class="proc-num">2</div>
+              <div class="proc-body">
+                <h4>Installare la suite sul server del cliente</h4>
+                <p>Setup via <code>install/setup.php</code>. Al termine eliminare la cartella <code>install/</code>.</p>
+              </div>
+            </div>
+            <div class="proc-step">
+              <div class="proc-num">3</div>
+              <div class="proc-body">
+                <h4>Suite: generare superadmin_key</h4>
+                <p>Aprire <code>account/ghost_generate.php</code> nella suite del cliente — la chiave viene generata e mostrata. Copiarla.</p>
+              </div>
+            </div>
+            <div class="proc-step">
+              <div class="proc-num">4</div>
+              <div class="proc-body">
+                <h4>Hub → installazione.php → "Imposta chiave"</h4>
+                <p>Incollare la superadmin_key copiata dalla suite. Da questo momento il ghost login funziona.</p>
+              </div>
+            </div>
+            <div class="proc-step">
+              <div class="proc-num">5</div>
+              <div class="proc-body">
+                <h4>Hub → installazione.php → copiare la <code>chiave</code></h4>
+                <p>Cliccare il bottone <em>Copia</em> accanto al campo chiave installazione.</p>
+              </div>
+            </div>
+            <div class="proc-step">
+              <div class="proc-num">6</div>
+              <div class="proc-body">
+                <h4>Suite: Impostazioni → Piano → "Portale clienti"</h4>
+                <p>Incollare la <code>chiave</code> copiata dal hub nel campo di testo e salvare. Da questo momento il portale cambio piano è attivo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Installazione esistente -->
+        <div class="status-table-wrap" style="padding:20px 24px">
+          <h3 style="font-size:15px;font-weight:700;margin-bottom:4px">3 · Attivare il portale piano su installazione esistente</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:16px">Per installazioni già attive con ghost login funzionante — solo la parte portale cliente manca.</p>
+          <div class="alert-green" style="margin-bottom:16px">
+            La <code>superadmin_key</code> è già allineata (ghost login funziona) — non toccarla.
+          </div>
+          <div class="proc">
+            <div class="proc-step">
+              <div class="proc-num">1</div>
+              <div class="proc-body">
+                <h4>Hub → installazione.php → copiare la <code>chiave</code></h4>
+                <p>Bottone <em>Copia</em> accanto al campo chiave installazione nella scheda hub.</p>
+              </div>
+            </div>
+            <div class="proc-step">
+              <div class="proc-num">2</div>
+              <div class="proc-body">
+                <h4>Suite: Impostazioni → Piano → "Portale clienti"</h4>
+                <p>Incollare la chiave nel campo di testo e salvare. Il link "Gestisci piano online" appare immediatamente.</p>
+              </div>
+            </div>
+            <div class="proc-step">
+              <div class="proc-num">3</div>
+              <div class="proc-body">
+                <h4>Query DB suite (se la colonna manca)</h4>
+                <p>Lanciare una volta sul DB della suite del cliente se l'installazione è precedente all'aggiornamento:</p>
+                <code class="cmd">INSERT IGNORE INTO impostazioni (chiave, valore) VALUES ('installation_key', '');</code>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chiavi: quadro sinottico -->
+        <div class="status-table-wrap">
+          <div style="padding:16px 20px 8px"><h3 style="font-size:14px;font-weight:700">Chiavi: quadro sinottico</h3></div>
+          <div class="proc-tab-wrap">
+          <table class="proc-tab">
+            <thead><tr><th>Chiave</th><th>Chi la genera</th><th>Dove nel hub</th><th>Dove nella suite</th><th>Usata per</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><code>superadmin_key</code></td>
+                <td><strong>Suite</strong> (ghost_generate.php)</td>
+                <td>installazione.php → "Imposta chiave"</td>
+                <td>impostazioni.superadmin_key</td>
+                <td>Ghost login · firma link portale cliente</td>
+              </tr>
+              <tr>
+                <td><code>chiave / installation_key</code></td>
+                <td><strong>Hub</strong> (nuova.php, auto)</td>
+                <td>installazione.php → campo "Chiave" (Copia)</td>
+                <td>impostazioni.installation_key</td>
+                <td>License API · portale cliente (identifica l'installazione)</td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+
+        <!-- Dev locale -->
+        <div class="status-table-wrap" style="padding:20px 24px">
+          <h3 style="font-size:15px;font-weight:700;margin-bottom:4px">4 · Sviluppo locale — far funzionare /interno e /cliente</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:14px">Il server <code>astro dev</code> non serve PHP. Per testare le pagine PHP localmente:</p>
+          <div class="proc">
+            <div class="proc-step">
+              <div class="proc-num">A</div>
+              <div class="proc-body">
+                <h4>Opzione rapida — PHP server separato</h4>
+                <p>Serve solo le pagine PHP, non il sito Astro. Utile per testare login e portale isolati.</p>
+                <code class="cmd">cd sito/php &amp;&amp; php -S localhost:8080</code>
+                <p style="margin-top:8px">Poi aprire <code>localhost:8080/interno/</code> e <code>localhost:8080/cliente/</code>.</p>
+              </div>
+            </div>
+            <div class="proc-step">
+              <div class="proc-num">B</div>
+              <div class="proc-body">
+                <h4>Opzione completa — tutto da un unico server PHP</h4>
+                <p>Build Astro + copia PHP nel dist + PHP server unificato. I link interni (da /docs a /interno) funzionano.</p>
+                <code class="cmd">cd sito &amp;&amp; npm run build &amp;&amp; cp -r php/* dist/ &amp;&amp; php -S localhost:3000 -t dist</code>
+                <p style="margin-top:8px">Aprire <code>localhost:3000</code> — tutto funziona sulla stessa origine.</p>
+              </div>
+            </div>
+          </div>
+          <div class="alert-amber" style="margin-top:14px">
+            Il cookie di sessione in <code>interno/index.php</code> usa <code>'secure' =&gt; !empty($_SERVER['HTTPS'])</code> — in locale (HTTP) il cookie viene comunque impostato senza Secure, quindi il login funziona normalmente.
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -454,11 +681,18 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
               <p>API license pubblica, ghost login, pannello superadmin, schede rivenditori.</p>
             </div>
           </div>
-          <div class="roadmap-item">
-            <div class="roadmap-q">Q3 2026</div>
+          <div class="roadmap-item roadmap-done">
+            <div class="roadmap-q">✓ Fatto</div>
             <div class="roadmap-body">
               <h4>Portale cliente + richieste piano</h4>
-              <p>Link firmato da impostazioni → sito <code>/cliente/</code> → richiesta cambio piano → approvazione hub.</p>
+              <p>Link firmato HMAC da Impostazioni → Piano → <code>gesthallsuite.it/cliente/</code> → richiesta cambio piano → gestione hub (Richieste piano) → approvazione aggiorna <code>installazioni.piano</code>. Gestione rivenditori inclusa.</p>
+            </div>
+          </div>
+          <div class="roadmap-item roadmap-done">
+            <div class="roadmap-q">✓ Fatto</div>
+            <div class="roadmap-body">
+              <h4>Docs interne (<code>/interno/</code>) + portale cliente (<code>/cliente/</code>)</h4>
+              <p>PHP affiancato al sito Astro. Login con bcrypt. Portale cliente con validazione HMAC token.</p>
             </div>
           </div>
           <div class="roadmap-item">
