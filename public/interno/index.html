@@ -330,7 +330,6 @@ function toggleTheme() {
    SHA-256 della password. Per cambiarla:
    node -e "require('crypto').createHash('sha256').update('NUOVA_PASSWORD').digest('hex')" | pbcopy
    Sostituire il valore di HASH_ATTESO con l'output.
-   Password attuale: gesthall2026
 ──────────────────────────────────────────────────────────────────────── */
 var HASH_ATTESO = '876e951b1d0ff3134435e325f3cae3a8fe14ef34dff95fc74835b825314d6ff6';
 var SESSION_KEY = 'gh_interno_auth';
@@ -342,7 +341,7 @@ async function sha256hex(str) {
 
 function unlock() {
   document.getElementById('login-gate').style.display = 'none';
-  document.getElementById('protected-content').style.display = '';
+  document.getElementById('protected-content').style.display = 'block';
 }
 
 (function() {
