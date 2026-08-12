@@ -4,10 +4,10 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro';
 
 <FeatureLayout
   title="Anagrafica giocatori e gestione prestiti sala giochi · GestHall Suite"
-  description="Anagrafica completa dei giocatori con CRUD. Gestione prestiti e rientri con saldo live. Integrazione automatica con l'elenco persone."
+  description="Anagrafica completa con documento d'identità, indirizzi e badge scadenza. Gestione prestiti e rientri con saldo live. Integrazione automatica con l'elenco persone."
   tag="Giocatori e prestiti"
   heading="Anagrafica e prestiti senza fogli Excel."
-  sub="Registro completo dei giocatori con dati anagrafici. Prestiti e rientri con saldo aggiornato in tempo reale. Tutto collegato, niente da sincronizzare a mano."
+  sub="Registro completo dei giocatori con dati anagrafici, documento d'identità e indirizzi. Prestiti e rientri con saldo aggiornato in tempo reale. Badge automatico per documenti scaduti o mancanti."
   plan="pro"
   related={['cassa-giornaliera', 'ticket-assistenza', 'report-analisi']}
 >
@@ -55,15 +55,20 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro';
     <div class="fp-step">
       <div class="fp-step-num">1</div>
       <div class="fp-step-title">Crea l'anagrafica</div>
-      <div class="fp-step-desc">Aggiungi nome, cognome, data di nascita, telefono ed email del giocatore. Se il modulo Prestiti è attivo, la scheda prestiti viene creata automaticamente insieme all'anagrafica.</div>
+      <div class="fp-step-desc">Aggiungi nome, cognome, data e luogo di nascita, cittadinanza, telefono ed email. Compila l'indirizzo di residenza e, se diverso, il domicilio separato. Se il modulo Prestiti è attivo, la scheda prestiti viene creata automaticamente.</div>
     </div>
     <div class="fp-step">
       <div class="fp-step-num">2</div>
+      <div class="fp-step-title">Inserisci il documento d'identità</div>
+      <div class="fp-step-desc">Seleziona il tipo di documento (CI, passaporto, patente, permesso di soggiorno e altri), inserisci numero, date di rilascio e scadenza, autorità e luogo di rilascio. Spunta "documento presente" se la scansione è archiviata. La lista mostra automaticamente il badge SCADUTO o Doc. presente.</div>
+    </div>
+    <div class="fp-step">
+      <div class="fp-step-num">3</div>
       <div class="fp-step-title">Registra prestiti e rientri</div>
       <div class="fp-step-desc">Ogni movimento (prestito o rientro) viene registrato con data, importo e note opzionali. Il saldo si aggiorna in tempo reale: subito visibile nell'elenco giocatori.</div>
     </div>
     <div class="fp-step">
-      <div class="fp-step-num">3</div>
+      <div class="fp-step-num">4</div>
       <div class="fp-step-title">Monitora i saldi aperti</div>
       <div class="fp-step-desc">L'elenco giocatori mostra il saldo attuale per ogni persona. Chi ha un prestito aperto è immediatamente riconoscibile. Lo storico completo dei movimenti è sempre accessibile.</div>
     </div>
@@ -73,19 +78,19 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro';
     <div class="fp-benefit-list">
       <div class="fp-benefit">
         <div class="fp-benefit-icon"></div>
+        <div class="fp-benefit-text"><strong>Documento d'identità completo.</strong> La scheda include tipo documento, numero, date di rilascio e scadenza, autorità e luogo di rilascio. Il badge SCADUTO compare automaticamente in lista quando il documento è scaduto.</div>
+      </div>
+      <div class="fp-benefit">
+        <div class="fp-benefit-icon"></div>
+        <div class="fp-benefit-text"><strong>Residenza e domicilio separati.</strong> Indirizzo di residenza sempre visibile; il domicilio separato si rivela con un checkbox solo quando serve. Nessun campo inutile in vista.</div>
+      </div>
+      <div class="fp-benefit">
+        <div class="fp-benefit-icon"></div>
         <div class="fp-benefit-text"><strong>Anagrafica e prestiti integrati.</strong> Creare un giocatore in anagrafica genera automaticamente la scheda prestiti collegata. Nessuna doppia registrazione.</div>
       </div>
       <div class="fp-benefit">
         <div class="fp-benefit-icon"></div>
         <div class="fp-benefit-text"><strong>Saldo sempre aggiornato.</strong> Il saldo netto di ogni giocatore è visibile nell'elenco principale senza dover aprire la scheda singola.</div>
-      </div>
-      <div class="fp-benefit">
-        <div class="fp-benefit-icon"></div>
-        <div class="fp-benefit-text"><strong>Storico completo dei movimenti.</strong> Ogni prestito e rientro è registrato con data, importo, note e operatore che ha effettuato la registrazione.</div>
-      </div>
-      <div class="fp-benefit">
-        <div class="fp-benefit-icon"></div>
-        <div class="fp-benefit-text"><strong>Persona senza anagrafica.</strong> Puoi registrare prestiti anche per persone non ancora in anagrafica, aggiungendo solo il nome. Il collegamento si può fare in seguito.</div>
       </div>
     </div>
   </Fragment>

@@ -16,6 +16,25 @@ import Layout from '../layouts/Layout.astro';
   <div class="container">
     <div class="cl-feed">
 
+      <!-- 2.14.0 -->
+      <div class="cl-entry">
+        <div class="cl-entry-head">
+          <span class="cl-ver">v2.14.0</span>
+          <time class="cl-date" datetime="2026-08-12">12 agosto 2026</time>
+        </div>
+        <div class="cl-entry-body">
+          <div class="cl-group">
+            <span class="cl-badge cl-badge-add">Novità</span>
+            <ul class="cl-list">
+              <li><strong>Online e ultimo accesso (Utenti)</strong> — La lista utenti in Admin → Utenti mostra un pallino verde sull'avatar se l'utente è attualmente online (attività negli ultimi 2 minuti). Sotto il nome compare l'etichetta "Online", "X min fa", "X ore fa", "Ieri HH:MM" o la data breve a seconda dell'ultimo accesso. In chat, visualizzando un messaggio diretto con un utente offline, il sottotitolo dell'intestazione mostra "Visto X fa".</li>
+              <li><strong>Eliminazione utente</strong> — I responsabili possono eliminare definitivamente un utente dal menu ⋮ nella lista utenti. L'account viene anonimizzato, l'accesso revocato immediatamente e tutti i dati personali rimossi. I turni e i dati cassa storici compilati dall'utente vengono conservati. L'azione è irreversibile e richiede conferma tramite una dialog dedicata con avviso esplicito.</li>
+              <li><strong>Condivisione contenuti in chat</strong> — È ora possibile condividere contenuti della piattaforma direttamente nelle conversazioni chat. Categorie supportate: Calendario turni, Documenti, Contatti, Ticket assistenza, Anagrafica giocatori. Il pulsante graffetta apre un selettore con le 5 categorie; è possibile selezionare più elementi contemporaneamente e aggiungere un messaggio di accompagnamento. I contenuti condivisi vengono visualizzati come card strutturate nel feed dei messaggi, con colori e anteprime specifici per categoria.</li>
+              <li><strong>Anagrafica giocatori — scheda completa</strong> — La scheda giocatore ora include un sistema completo di dati anagrafici, indirizzi e documento d'identità: sesso, luogo di nascita (città, provincia, stato), cittadinanza; residenza (indirizzo, città, provincia, CAP); domicilio separato opzionale; documento d'identità con tipo (CI, passaporto, patente, permesso di soggiorno e altri), numero, date di rilascio e scadenza, autorità e luogo di rilascio, flag "documento presente". Nella lista giocatori compare un badge rosso <strong>SCADUTO</strong> se il documento è scaduto e un badge verde <strong>Doc. presente</strong> se la scansione è archiviata.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <!-- 2.13.0 -->
       <div class="cl-entry">
         <div class="cl-entry-head">
