@@ -13,41 +13,86 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro';
 >
 
   <div slot="visual" class="feat-mock-card" style="width:100%">
-    <div class="fmc-header">
-      <span class="fmc-title">Giocatori · Prestiti e rientri</span>
-    </div>
-    <div class="gp-player-card">
-      <div class="gp-avatar">RB</div>
-      <div class="gp-player-info">
-        <div class="gp-player-name">Roberto Bianchi</div>
-        <div class="gp-player-meta">nato 12/03/1971 · tel. 333 4567890</div>
-      </div>
-      <div class="gp-saldo-wrap">
-        <div class="gp-saldo-label">Saldo</div>
-        <div class="gp-saldo gp-saldo-neg">− € 320,00</div>
+    <!-- Header -->
+    <div class="fmc-header an-header">
+      <span class="fmc-title">Giocatori · Anagrafica</span>
+      <div class="an-search">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <span>Cerca…</span>
       </div>
     </div>
-    <div class="gp-movimenti">
-      <div class="gp-mov gp-mov-head"><span>Data</span><span>Tipo</span><span>Importo</span></div>
-      <div class="gp-mov">
-        <span>7 lug</span>
-        <span class="gp-tipo gp-prestito">Prestito</span>
-        <span class="gp-importo gp-neg">− € 200,00</span>
-      </div>
-      <div class="gp-mov">
-        <span>5 lug</span>
-        <span class="gp-tipo gp-rientro">Rientro</span>
-        <span class="gp-importo gp-pos">+ € 100,00</span>
-      </div>
-      <div class="gp-mov">
-        <span>2 lug</span>
-        <span class="gp-tipo gp-prestito">Prestito</span>
-        <span class="gp-importo gp-neg">− € 220,00</span>
-      </div>
+
+    <!-- Table header -->
+    <div class="an-thead">
+      <span class="an-th an-col-name">Nome</span>
+      <span class="an-th an-col-sx">Sesso</span>
+      <span class="an-th an-col-doc">Documento</span>
+      <span class="an-th an-col-res">Residenza</span>
+      <span class="an-th an-col-sal">Saldo</span>
     </div>
-    <div class="gp-actions">
-      <div class="gp-btn gp-btn-prestito">+ Prestito</div>
-      <div class="gp-btn gp-btn-rientro">+ Rientro</div>
+
+    <!-- Row 1 — documento scaduto -->
+    <div class="an-row">
+      <div class="an-col-name an-name-cell">
+        <div class="an-av" style="background:linear-gradient(135deg,oklch(0.65 0.14 250),oklch(0.55 0.18 280))">RB</div>
+        <div>
+          <div class="an-fullname">Roberto Bianchi</div>
+          <div class="an-sub">nat. 12/03/1971</div>
+        </div>
+      </div>
+      <div class="an-col-sx an-center an-muted">M</div>
+      <div class="an-col-doc">
+        <div class="an-doc-type">CI</div>
+        <div class="an-doc-num">7X432K</div>
+        <span class="an-badge an-badge-exp">SCADUTO</span>
+      </div>
+      <div class="an-col-res an-muted">Milano (MI)</div>
+      <div class="an-col-sal an-saldo-neg">−€ 320</div>
+    </div>
+
+    <!-- Row 2 — documento presente -->
+    <div class="an-row">
+      <div class="an-col-name an-name-cell">
+        <div class="an-av" style="background:linear-gradient(135deg,oklch(0.62 0.14 340),oklch(0.50 0.18 10))">LF</div>
+        <div>
+          <div class="an-fullname">Laura Ferroni</div>
+          <div class="an-sub">nat. 25/08/1985</div>
+        </div>
+      </div>
+      <div class="an-col-sx an-center an-muted">F</div>
+      <div class="an-col-doc">
+        <div class="an-doc-type">Pass.</div>
+        <div class="an-doc-num">AA123456</div>
+        <span class="an-badge an-badge-ok">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Presente
+        </span>
+      </div>
+      <div class="an-col-res an-muted">Roma (RM)</div>
+      <div class="an-col-sal an-saldo-pos">+€ 50</div>
+    </div>
+
+    <!-- Row 3 — nessun documento -->
+    <div class="an-row an-row-last">
+      <div class="an-col-name an-name-cell">
+        <div class="an-av" style="background:linear-gradient(135deg,oklch(0.60 0.14 168),oklch(0.50 0.18 200))">ME</div>
+        <div>
+          <div class="an-fullname">Marco Esposito</div>
+          <div class="an-sub">nat. 09/11/1978</div>
+        </div>
+      </div>
+      <div class="an-col-sx an-center an-muted">M</div>
+      <div class="an-col-doc">
+        <span class="an-badge an-badge-miss">Mancante</span>
+      </div>
+      <div class="an-col-res an-muted">Napoli (NA)</div>
+      <div class="an-col-sal an-muted">—</div>
+    </div>
+
+    <!-- Footer action -->
+    <div class="an-footer">
+      <div class="an-add-btn">+ Nuovo giocatore</div>
+      <div class="an-count">3 giocatori</div>
     </div>
   </div>
 
@@ -55,22 +100,22 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro';
     <div class="fp-step">
       <div class="fp-step-num">1</div>
       <div class="fp-step-title">Crea l'anagrafica</div>
-      <div class="fp-step-desc">Aggiungi nome, cognome, data e luogo di nascita, cittadinanza, telefono ed email. Compila l'indirizzo di residenza e, se diverso, il domicilio separato. Se il modulo Prestiti è attivo, la scheda prestiti viene creata automaticamente.</div>
+      <div class="fp-step-desc">Aggiungi nome, cognome, sesso, data e luogo di nascita, cittadinanza, telefono ed email. Se il modulo Prestiti è attivo, la scheda prestiti viene creata automaticamente al salvataggio.</div>
     </div>
     <div class="fp-step">
       <div class="fp-step-num">2</div>
-      <div class="fp-step-title">Inserisci il documento d'identità</div>
-      <div class="fp-step-desc">Seleziona il tipo di documento (CI, passaporto, patente, permesso di soggiorno e altri), inserisci numero, date di rilascio e scadenza, autorità e luogo di rilascio. Spunta "documento presente" se la scansione è archiviata. La lista mostra automaticamente il badge SCADUTO o Doc. presente.</div>
+      <div class="fp-step-title">Inserisci indirizzo e documento</div>
+      <div class="fp-step-desc">Residenza con comune e provincia sempre visibili in lista. Domicilio separato rivelato con un checkbox solo se diverso. Per il documento: tipo (CI, passaporto, patente, permesso di soggiorno), numero, date di rilascio e scadenza, autorità e luogo. Spunta "documento presente" se è archiviato.</div>
     </div>
     <div class="fp-step">
       <div class="fp-step-num">3</div>
-      <div class="fp-step-title">Registra prestiti e rientri</div>
-      <div class="fp-step-desc">Ogni movimento (prestito o rientro) viene registrato con data, importo e note opzionali. Il saldo si aggiorna in tempo reale: subito visibile nell'elenco giocatori.</div>
+      <div class="fp-step-title">Monitora badge e scadenze</div>
+      <div class="fp-step-desc">La lista mostra in colonna: badge SCADUTO in rosso se la data di scadenza è passata, badge verde "Presente" se il documento è archiviato, badge grigio "Mancante" se non è stato inserito nulla. Nessuna verifica manuale.</div>
     </div>
     <div class="fp-step">
       <div class="fp-step-num">4</div>
-      <div class="fp-step-title">Monitora i saldi aperti</div>
-      <div class="fp-step-desc">L'elenco giocatori mostra il saldo attuale per ogni persona. Chi ha un prestito aperto è immediatamente riconoscibile. Lo storico completo dei movimenti è sempre accessibile.</div>
+      <div class="fp-step-title">Registra prestiti e rientri</div>
+      <div class="fp-step-desc">Ogni movimento (prestito o rientro) viene registrato con data, importo e note opzionali. Il saldo netto è sempre visibile nella colonna dell'elenco senza dover aprire la scheda singola.</div>
     </div>
   </Fragment>
 
@@ -78,19 +123,19 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro';
     <div class="fp-benefit-list">
       <div class="fp-benefit">
         <div class="fp-benefit-icon"></div>
-        <div class="fp-benefit-text"><strong>Documento d'identità completo.</strong> La scheda include tipo documento, numero, date di rilascio e scadenza, autorità e luogo di rilascio. Il badge SCADUTO compare automaticamente in lista quando il documento è scaduto.</div>
+        <div class="fp-benefit-text"><strong>Badge automatici sui documenti.</strong> SCADUTO, Presente o Mancante appaiono direttamente in lista — senza aprire la scheda. Chi ha un documento scaduto si vede subito.</div>
       </div>
       <div class="fp-benefit">
         <div class="fp-benefit-icon"></div>
-        <div class="fp-benefit-text"><strong>Residenza e domicilio separati.</strong> Indirizzo di residenza sempre visibile; il domicilio separato si rivela con un checkbox solo quando serve. Nessun campo inutile in vista.</div>
+        <div class="fp-benefit-text"><strong>Residenza e sesso in colonna.</strong> Comune, provincia e sesso compaiono nella tabella principale. Ordinamento e ricerca coprono tutti i campi, inclusi i nuovi.</div>
       </div>
       <div class="fp-benefit">
         <div class="fp-benefit-icon"></div>
-        <div class="fp-benefit-text"><strong>Anagrafica e prestiti integrati.</strong> Creare un giocatore in anagrafica genera automaticamente la scheda prestiti collegata. Nessuna doppia registrazione.</div>
+        <div class="fp-benefit-text"><strong>Anagrafica e prestiti integrati.</strong> Creare un giocatore genera automaticamente la scheda prestiti collegata. Il saldo aggiornato è visibile nella stessa riga senza doppia registrazione.</div>
       </div>
       <div class="fp-benefit">
         <div class="fp-benefit-icon"></div>
-        <div class="fp-benefit-text"><strong>Saldo sempre aggiornato.</strong> Il saldo netto di ogni giocatore è visibile nell'elenco principale senza dover aprire la scheda singola.</div>
+        <div class="fp-benefit-text"><strong>Scheda completa in 32 campi.</strong> Dai contatti al documento, dalla residenza al domicilio, dalla cittadinanza al codice fiscale — tutto in un'unica form, nessun foglio esterno.</div>
       </div>
     </div>
   </Fragment>
@@ -98,29 +143,55 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro';
 </FeatureLayout>
 
 <style>
-.gp-player-card { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--border-sub) }
-.gp-avatar { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, oklch(0.65 0.14 250), oklch(0.55 0.18 280)); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: oklch(97% 0.005 245); flex-shrink: 0 }
-.gp-player-info { flex: 1 }
-.gp-player-name { font-size: 13px; font-weight: 700; color: var(--text) }
-.gp-player-meta { font-size: 10px; color: var(--faint) }
-.gp-saldo-wrap { text-align: right }
-.gp-saldo-label { font-size: 9px; color: var(--faint); text-transform: uppercase; letter-spacing: .05em }
-.gp-saldo { font-size: 16px; font-weight: 800; font-family: var(--font-head); letter-spacing: -0.03em; font-variant-numeric: tabular-nums }
-.gp-saldo-neg { color: oklch(0.45 0.18 25) }
-.gp-saldo-pos { color: oklch(0.45 0.18 155) }
-.gp-movimenti { display: flex; flex-direction: column }
-.gp-mov { display: grid; grid-template-columns: auto 1fr auto; gap: 8px 16px; padding: 8px 18px; font-size: 12px; border-bottom: 1px solid var(--border-sub); align-items: center }
-.gp-mov:last-child { border-bottom: none }
-.gp-mov-head { font-size: 10px; font-weight: 700; color: var(--faint) }
-.gp-mov span:first-child { color: var(--muted) }
-.gp-tipo { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px }
-.gp-prestito { background: oklch(96% 0.04 25); color: oklch(0.45 0.18 25) }
-.gp-rientro  { background: oklch(96% 0.05 155); color: oklch(0.42 0.18 155) }
-.gp-importo { font-weight: 700; font-variant-numeric: tabular-nums; text-align: right }
-.gp-neg { color: oklch(0.45 0.18 25) }
-.gp-pos { color: oklch(0.45 0.18 155) }
-.gp-actions { display: flex; gap: 8px; padding: 12px 18px }
-.gp-btn { flex: 1; text-align: center; font-size: 11px; font-weight: 700; padding: 7px; border-radius: var(--rx) }
-.gp-btn-prestito { background: oklch(96% 0.04 25); color: oklch(0.45 0.18 25) }
-.gp-btn-rientro  { background: oklch(96% 0.05 155); color: oklch(0.42 0.18 155) }
+/* ── Header ── */
+.an-header { display: flex; align-items: center; justify-content: space-between; gap: 12px }
+.an-search { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--faint); background: var(--surface); border: 1px solid var(--border-sub); border-radius: 20px; padding: 4px 10px }
+
+/* ── Table layout ── */
+.an-thead {
+  display: grid;
+  grid-template-columns: 1fr 36px 110px 80px 52px;
+  padding: 5px 14px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border-sub);
+}
+.an-th { font-size: 9px; font-weight: 700; color: var(--faint); text-transform: uppercase; letter-spacing: .05em }
+.an-row {
+  display: grid;
+  grid-template-columns: 1fr 36px 110px 80px 52px;
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--border-sub);
+  align-items: center;
+  gap: 0;
+}
+.an-row-last { border-bottom: none }
+
+/* ── Name cell ── */
+.an-name-cell { display: flex; align-items: center; gap: 8px }
+.an-av { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 700; color: oklch(97% 0.005 245); flex-shrink: 0 }
+.an-fullname { font-size: 11.5px; font-weight: 700; color: var(--text); line-height: 1.2 }
+.an-sub { font-size: 9px; color: var(--faint) }
+
+/* ── Other cells ── */
+.an-center { text-align: center }
+.an-muted { font-size: 10.5px; color: var(--muted) }
+.an-col-doc { display: flex; flex-direction: column; gap: 2px }
+.an-doc-type { font-size: 9px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; line-height: 1 }
+.an-doc-num { font-size: 10px; font-family: monospace; letter-spacing: .3px; color: var(--text); line-height: 1 }
+
+/* ── Badges ── */
+.an-badge { display: inline-flex; align-items: center; gap: 3px; font-size: 8.5px; font-weight: 700; padding: 2px 5px; border-radius: 4px; line-height: 1; white-space: nowrap }
+.an-badge-exp  { background: oklch(96% 0.05 25); color: oklch(0.45 0.18 25) }
+.an-badge-ok   { background: oklch(96% 0.05 155); color: oklch(0.42 0.18 155) }
+.an-badge-miss { background: var(--surface); color: var(--faint); border: 1px solid var(--border-sub) }
+
+/* ── Saldo column ── */
+.an-col-sal { text-align: right; font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums }
+.an-saldo-neg { color: oklch(0.45 0.18 25) }
+.an-saldo-pos { color: oklch(0.45 0.18 155) }
+
+/* ── Footer ── */
+.an-footer { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px }
+.an-add-btn { font-size: 11px; font-weight: 700; color: var(--accent); padding: 5px 10px; border: 1px solid var(--accent-weak, color-mix(in srgb, var(--accent) 20%, transparent)); border-radius: var(--rx, 6px); cursor: pointer }
+.an-count { font-size: 10px; color: var(--faint) }
 </style>
