@@ -32,6 +32,16 @@ import Layout from '../layouts/Layout.astro';
               <li><strong>Anagrafica giocatori — scheda completa</strong> — La scheda giocatore ora include un sistema completo di dati anagrafici, indirizzi e documento d'identità: sesso, luogo di nascita (città, provincia, stato), cittadinanza; residenza (indirizzo, città, provincia, CAP); domicilio separato opzionale; documento d'identità con tipo (CI, passaporto, patente, permesso di soggiorno e altri), numero, date di rilascio e scadenza, autorità e luogo di rilascio, flag "documento presente". Nella lista giocatori compare un badge rosso <strong>SCADUTO</strong> se il documento è scaduto e un badge verde <strong>Doc. presente</strong> se la scansione è archiviata.</li>
             </ul>
           </div>
+          <div class="cl-group">
+            <span class="cl-badge cl-badge-change">Migliorato</span>
+            <ul class="cl-list">
+              <li><strong>Scorciatoie da tastiera</strong> — Navigazione rapida tra le sezioni con sequenze <code>G+G</code> (Giornaliero), <code>G+T</code> (Turni), <code>G+D</code> (Dashboard), <code>G+A</code> (Assistenze), <code>G+H</code> (Guida). Nel giornaliero: <code>Ctrl+S</code> / <code>Enter</code> per salvare, <code>Ctrl+N</code> per cambiare turno, <code>Ctrl+←/→</code> per cambiare giorno. Tutte le scorciatoie sono consultabili dal popup utente → Scorciatoie, e possono essere visualizzate come badge contestuali direttamente sull'interfaccia con il toggle "Mostra suggerimenti".</li>
+              <li><strong>Operazioni aritmetiche nei campi numerici</strong> — Con un valore già presente nel campo, è possibile digitare <code>+N</code> o <code>-N</code> e premere Tab per applicare l'operazione senza usare la calcolatrice. Esempio: campo a 200, si digita <code>+50</code> → diventa 250.</li>
+              <li><strong>Filtro operatore nel calendario turni</strong> — Cliccando sul nome di un operatore nel calendario mensile, la vista si filtra mostrando solo i suoi turni. Un banner in cima al calendario indica il filtro attivo con un pulsante per rimuoverlo. Secondo clic sullo stesso operatore rimuove il filtro.</li>
+              <li><strong>Nota del turno precedente</strong> — Nel giornaliero, se il turno precedente della stessa giornata ha una nota, questa viene mostrata come banner evidenziato prima del form. Utile per il passaggio veloce di informazioni tra turni consecutivi senza aprire la sezione Passaggio consegne.</li>
+              <li><strong>Alert push soglia incasso VLT</strong> — Il responsabile può configurare una soglia minima di incasso VLT in Impostazioni → Notifiche. Se al momento della chiusura giornata l'incasso VLT totale risulta inferiore alla soglia, tutti i responsabili attivi ricevono una notifica push con l'importo e la data.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
