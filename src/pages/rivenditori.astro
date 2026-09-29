@@ -95,7 +95,7 @@ import Layout from '../layouts/Layout.astro';
   <div class="container">
     <div class="rv-numbers-grid reveal">
       <div class="rv-num">
-        <div class="rv-num-val">€39–99</div>
+        <div class="rv-num-val">€39–149</div>
         <div class="rv-num-label">abbonamento mensile per installazione</div>
       </div>
       <div class="rv-num">
@@ -103,8 +103,8 @@ import Layout from '../layouts/Layout.astro';
         <div class="rv-num-label">tempo di setup su hosting PHP standard</div>
       </div>
       <div class="rv-num">
-        <div class="rv-num-val">3 piani</div>
-        <div class="rv-num-label">Essenziale, Pro, Suite — scegli tu il margine</div>
+        <div class="rv-num-val">4 piani</div>
+        <div class="rv-num-label">Essenziale, Pro, Suite, Multi-sala — scegli tu il margine</div>
       </div>
       <div class="rv-num">
         <div class="rv-num-val">100%</div>
@@ -270,7 +270,7 @@ import Layout from '../layouts/Layout.astro';
 <section class="section rv-plans-section">
   <div class="container">
     <div class="rv-section-label">Prezzi al cliente</div>
-    <h2 class="rv-section-title">Tre piani, tu scegli il tuo margine</h2>
+    <h2 class="rv-section-title">Quattro piani, tu scegli il tuo margine</h2>
     <p class="rv-section-sub">Questi sono i prezzi base di GestHall Suite. Il rivenditore stabilisce liberamente il prezzo finale per il proprio cliente.</p>
 
     <div class="rv-plans reveal">
@@ -280,7 +280,9 @@ import Layout from '../layouts/Layout.astro';
         <ul class="rv-plan-features">
           <li>Cassa giornaliera VLT/AWP</li>
           <li>Scassettamenti e report</li>
-          <li>Gestione turni</li>
+          <li>Turni flessibili</li>
+          <li>Bet/Win e borderò</li>
+          <li>Funziona offline</li>
           <li>Dashboard responsabile</li>
           <li>Fino a 4 utenti attivi</li>
         </ul>
@@ -294,6 +296,7 @@ import Layout from '../layouts/Layout.astro';
           <li>Anagrafica giocatori</li>
           <li>Prestiti e rientri</li>
           <li>Ticket assistenza macchine</li>
+          <li>Bar e magazzino</li>
           <li>Documenti e firma digitale</li>
           <li>Notifiche push</li>
           <li>Utenti illimitati</li>
@@ -307,7 +310,18 @@ import Layout from '../layouts/Layout.astro';
           <li>White-label completo</li>
           <li>SONOS / Web Radio</li>
           <li>Passaggio consegne</li>
-          <li>Confronto periodi</li>
+          <li>Chat interna e LUL</li>
+        </ul>
+      </div>
+      <div class="rv-plan">
+        <div class="rv-plan-head rv-plan-multi">Multi-sala</div>
+        <div class="rv-plan-price">€149<span>/mese</span></div>
+        <ul class="rv-plan-features">
+          <li>Tutto di Suite +</li>
+          <li>2 sale incluse</li>
+          <li>+€49/mese per sala</li>
+          <li>Panoramica di tutte le sale</li>
+          <li>Utenti abilitati per sala</li>
         </ul>
       </div>
     </div>
@@ -485,7 +499,7 @@ import Layout from '../layouts/Layout.astro';
 /* ── PLANS ────────────────────────────────────────────────── */
 .rv-plans-section .rv-section-title { margin-bottom: 8px }
 .rv-plans-section .rv-section-sub { margin-bottom: 48px }
-.rv-plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px }
+.rv-plans { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px }
 .rv-plan { background: var(--surface); border: 1.5px solid var(--border-sub); border-radius: 16px; padding: 28px; position: relative }
 .rv-plan-featured { background: var(--bg); border-color: oklch(0.72 0.16 168 / 0.4); box-shadow: 0 8px 30px var(--accent-glow) }
 .rv-plan-badge { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: var(--accent); color: oklch(100% 0 0); font-size: 10px; font-weight: 800; padding: 3px 12px; border-radius: 99px; white-space: nowrap }
@@ -493,6 +507,7 @@ import Layout from '../layouts/Layout.astro';
 .rv-plan-ess { color: oklch(0.52 0.14 168) }
 .rv-plan-pro { color: oklch(0.45 0.18 250) }
 .rv-plan-suite { color: oklch(0.45 0.18 300) }
+.rv-plan-multi { color: oklch(0.45 0.12 210) }
 .rv-plan-price { font-family: var(--font-head); font-size: 2.4rem; font-weight: 800; color: var(--text); margin-bottom: 20px }
 .rv-plan-price span { font-size: 14px; font-weight: 500; color: var(--muted) }
 .rv-plan-features { display: flex; flex-direction: column; gap: 9px }
@@ -519,6 +534,7 @@ import Layout from '../layouts/Layout.astro';
 .rv-cta-note a { color: var(--accent) }
 
 /* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 1100px) { .rv-plans { grid-template-columns: repeat(2, 1fr) } }
 @media (max-width: 900px) {
   .rv-hub-grid { grid-template-columns: 1fr 1fr }
   .rv-steps { grid-template-columns: 1fr }

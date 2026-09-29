@@ -4,10 +4,10 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro';
 
 <FeatureLayout
   title="Scassettamenti VLT e AWP · GestHall Suite"
-  description="Registra ogni scassettamento macchina per macchina. Import automatico da portale SNAI e Betwin XLS. Storico lifetime e grafico mensile inclusi."
+  description="Registra ogni scassettamento macchina per macchina: sono gli incassi reali su cui si basano tutte le statistiche. Storico lifetime e grafico mensile inclusi."
   tag="Scassettamenti"
   heading="VLT e AWP macchina per macchina, senza errori."
-  sub="Ogni scassettamento registrato con importo, macchina e orario. Import XLS da SNAI e Betwin. Storico lifetime e confronto mensile sempre disponibili."
+  sub="Ogni scassettamento registrato nel turno, macchina per macchina. Sono gli incassi reali usati da report e dashboard. Storico lifetime e confronto mensile sempre disponibili."
   plan="essenziale"
   related={['cassa-giornaliera', 'report-analisi', 'ticket-assistenza']}
 >
@@ -27,20 +27,20 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro';
     <div class="fmc-total">Totale giornata: <strong>€ 9.460</strong></div>
     <div class="sc-import-row">
       <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6.5 1v8M3 6l3.5 3.5L10 6M1 12h11"/></svg>
-      Import XLS SNAI completato · 6 macchine · 7 lug 2026
+      Turno di chiusura · incasso reale usato nei report
     </div>
   </div>
 
   <Fragment slot="steps">
     <div class="fp-step">
       <div class="fp-step-num">1</div>
-      <div class="fp-step-title">Registra a mano o importa</div>
-      <div class="fp-step-desc">Inserisci gli scassettamenti manualmente macchina per macchina, oppure importa il file XLS scaricato dal portale SNAI o Betwin: il sistema riconosce automaticamente i valori.</div>
+      <div class="fp-step-title">Registra nel turno</div>
+      <div class="fp-step-desc">Inserisci gli scassettamenti macchina per macchina nel giornaliero, raggruppati per fornitore. Puoi annotare anche la lettura del dump della macchina per la verifica.</div>
     </div>
     <div class="fp-step">
       <div class="fp-step-num">2</div>
       <div class="fp-step-title">Visualizza il riepilogo</div>
-      <div class="fp-step-desc">La tabella giornaliera mostra ogni VLT e AWP con il valore di scassettamento del giorno e il totale mensile. Il confronto settimanale Bet/Win è calcolato in automatico.</div>
+      <div class="fp-step-desc">La tabella giornaliera mostra ogni VLT e AWP con il valore di scassettamento del giorno e il totale mensile. Il bet/win dichiarato dai fornitori resta in una sezione separata, con import Excel e archivio borderò.</div>
     </div>
     <div class="fp-step">
       <div class="fp-step-num">3</div>
@@ -58,7 +58,7 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro';
     <div class="fp-benefit-list">
       <div class="fp-benefit">
         <div class="fp-benefit-icon"></div>
-        <div class="fp-benefit-text"><strong>Import automatico SNAI e Betwin.</strong> Carica il file XLS dal portale del concessionario: il sistema abbina automaticamente i valori alle macchine configurate.</div>
+        <div class="fp-benefit-text"><strong>Incassi reali, non dichiarati.</strong> Le statistiche usano gli scassettamenti del turno di chiusura; il bet/win del concessionario (con import XLS) ha la sua sezione dedicata.</div>
       </div>
       <div class="fp-benefit">
         <div class="fp-benefit-icon"></div>

@@ -1,0 +1,77 @@
+---
+import FeatureLayout from '../../layouts/FeatureLayout.astro';
+---
+
+<FeatureLayout
+  title="Gestione bar e magazzino per sale giochi · GestHall Suite"
+  description="Banco con vendite a carrello, omaggi al cliente, scontrinato e fatturato. Magazzino diviso in prodotti premium e da banco con giacenze, carichi, scarti e margini."
+  tag="Bar e magazzino"
+  heading="Il bar della sala, finalmente sotto controllo."
+  sub="Vendite al banco in due tocchi, omaggi ai clienti tracciati, magazzino premium e banco con giacenze sempre aggiornate. Venduto, scontrinato, fatturato e margine in un solo report."
+  plan="pro"
+  related={['giocatori-prestiti', 'report-analisi', 'multi-sala']}
+>
+
+  <div slot="visual" class="feat-mock-card" style="width:100%">
+    <div class="fmc-header">
+      <span class="fmc-title">Banco · 12 settembre 2026</span>
+      <span class="fmc-badge">Scontrino</span>
+    </div>
+    <div class="bar-grid">
+      <div class="bar-prod"><span>Caffè</span><strong>€ 1,20</strong><em>× 2</em></div>
+      <div class="bar-prod"><span>Acqua 0,5 l</span><strong>€ 1,00</strong></div>
+      <div class="bar-prod bar-prem"><span>Amaro premium</span><strong>€ 4,50</strong><em>× 1</em></div>
+      <div class="bar-prod"><span>Cornetto</span><strong>€ 1,50</strong></div>
+    </div>
+    <div class="fmc-table">
+      <div class="fmc-trow fmc-trow-head"><span>Oggi</span><span>Qtà</span><span>Importo</span></div>
+      <div class="fmc-trow"><span>Venduto (scontrinato)</span><span>84</span><span>€ 212,40</span></div>
+      <div class="fmc-trow"><span>Fatturato</span><span>6</span><span>€ 38,00</span></div>
+      <div class="fmc-trow"><span>Omaggi ai clienti</span><span>11</span><span>€ 9,90 a costo</span></div>
+    </div>
+    <div class="fmc-total">Margine del giorno: <strong>€ 148,70</strong></div>
+  </div>
+
+  <Fragment slot="steps">
+    <div class="fp-step">
+      <div class="fp-step-num">1</div>
+      <div class="fp-step-title">Crea il listino</div>
+      <div class="fp-step-desc">Il responsabile inserisce i prodotti divisi in <strong>Premium</strong> e <strong>Banco</strong>, con prezzo, costo, scorta minima e l'indicazione di quelli che si possono offrire al cliente.</div>
+    </div>
+    <div class="fp-step">
+      <div class="fp-step-num">2</div>
+      <div class="fp-step-title">Vendi o offri</div>
+      <div class="fp-step-desc">L'operatore mette i prodotti nel carrello e registra la vendita (contanti o POS; scontrino, fattura o non documentato) oppure l'omaggio, anche associato al giocatore.</div>
+    </div>
+    <div class="fp-step">
+      <div class="fp-step-num">3</div>
+      <div class="fp-step-title">Gestisci il magazzino</div>
+      <div class="fp-step-desc">Carichi della merce, scarti e rettifiche di inventario: la giacenza si aggiorna da sola e i prodotti sotto scorta vengono evidenziati.</div>
+    </div>
+    <div class="fp-step">
+      <div class="fp-step-num">4</div>
+      <div class="fp-step-title">Chiudi e controlla</div>
+      <div class="fp-step-desc">A fine giornata si inserisce il totale del registratore telematico. Il report confronta scontrinato e RT e mostra margini, omaggi e prodotti più venduti.</div>
+    </div>
+  </Fragment>
+
+  <Fragment slot="benefits">
+    <div class="fp-benefit-list">
+      <div class="fp-benefit"><div class="fp-benefit-icon"></div><div class="fp-benefit-text"><strong>Omaggi tracciati.</strong> Ogni caffè offerto è registrato, valorizzato a costo e, se vuoi, collegato al giocatore: sai quanto investi in ospitalità.</div></div>
+      <div class="fp-benefit"><div class="fp-benefit-icon"></div><div class="fp-benefit-text"><strong>Scontrinato, fatturato e non documentato separati.</strong> Il report distingue i tre casi e li confronta con il totale del registratore telematico.</div></div>
+      <div class="fp-benefit"><div class="fp-benefit-icon"></div><div class="fp-benefit-text"><strong>Premium e banco.</strong> Due magazzini distinti per i prodotti di pregio e quelli di consumo quotidiano, con scorte minime per ciascuno.</div></div>
+      <div class="fp-benefit"><div class="fp-benefit-icon"></div><div class="fp-benefit-text"><strong>Prezzi sempre dal listino.</strong> Prezzi e costi vengono presi dal listino al momento della vendita: nessun importo digitato a mano.</div></div>
+      <div class="fp-benefit"><div class="fp-benefit-icon"></div><div class="fp-benefit-text"><strong>Contabilità separata.</strong> Il bar ha i suoi conti e non si mescola con la cassa delle macchine.</div></div>
+    </div>
+  </Fragment>
+
+</FeatureLayout>
+
+<style>
+.bar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 14px 18px }
+.bar-prod { position: relative; display: flex; flex-direction: column; gap: 2px; padding: 9px 11px; border-radius: var(--rx); border: 1px solid var(--border-sub); background: var(--surface) }
+.bar-prod span { font-size: 11px; color: var(--muted) }
+.bar-prod strong { font-size: 14px; color: var(--text); font-variant-numeric: tabular-nums }
+.bar-prod em { position: absolute; top: 8px; right: 10px; font-style: normal; font-size: 10px; font-weight: 700; color: var(--accent) }
+.bar-prem { border-color: oklch(0.65 0.18 300 / 0.3) }
+</style>

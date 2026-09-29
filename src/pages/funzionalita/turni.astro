@@ -4,27 +4,27 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro';
 
 <FeatureLayout
   title="Gestione turni operatori sala giochi · GestHall Suite"
-  description="Calendario turni mattino e sera con autoassegnazione. Passaggio consegne con checklist configurabile. Audit log completo di ogni operazione."
+  description="Calendario turni flessibile: modelli per giorno della settimana, 2, 3 o più turni al giorno, più operatori per turno. Autoassegnazione, passaggio consegne e nessun calcolo paghe."
   tag="Turni e operatori"
-  heading="Turni sempre coperti, consegne senza ambiguità."
-  sub="Calendario mensile condiviso, autoassegnazione per gli operatori, passaggio consegne strutturato con checklist. Il responsabile vede tutto in un colpo d'occhio."
+  heading="Turni che seguono la sala, non il contrario."
+  sub="Due turni in settimana, tre il sabato, uno in più per l'evento: ogni giorno ha i suoi turni. Calendario condiviso, autoassegnazione e passaggio consegne, senza fogli paga."
   plan="essenziale"
   related={['cassa-giornaliera', 'app-mobile', 'report-analisi']}
 >
 
   <div slot="visual" class="feat-mock-card" style="width:100%">
     <div class="fmc-header">
-      <span class="fmc-title">Calendario Turni · Luglio 2026</span>
+      <span class="fmc-title">Calendario Turni · Settembre 2026</span>
     </div>
     <div class="fmc-cal">
       <div class="fmc-cal-day">
         <span class="fmc-cal-d">Lun 7</span>
         <div class="fmc-chip fmc-mine">
-          <div class="fmc-chip-head"><span class="fmc-chip-lbl">Mattino</span><span class="fmc-chip-time">08:00–14:00</span></div>
+          <div class="fmc-chip-head"><span class="fmc-chip-lbl">Mattino</span><span class="fmc-chip-time">09:00–15:00</span></div>
           <span class="fmc-chip-op">Marco R.</span>
         </div>
         <div class="fmc-chip fmc-other">
-          <div class="fmc-chip-head"><span class="fmc-chip-lbl">Sera</span><span class="fmc-chip-time">14:00–20:00</span></div>
+          <div class="fmc-chip-head"><span class="fmc-chip-lbl">Sera</span><span class="fmc-chip-time">19:00–01:00</span></div>
           <span class="fmc-chip-op">Silvia M.</span>
           <span class="fmc-chip-note">2h straordinario</span>
         </div>
@@ -32,20 +32,24 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro';
       <div class="fmc-cal-day">
         <span class="fmc-cal-d">Mar 8</span>
         <div class="fmc-chip fmc-mine">
-          <div class="fmc-chip-head"><span class="fmc-chip-lbl">Mattino</span><span class="fmc-chip-time">08:00–14:00</span></div>
+          <div class="fmc-chip-head"><span class="fmc-chip-lbl">Mattino</span><span class="fmc-chip-time">09:00–15:00</span></div>
           <span class="fmc-chip-op">Marco R.</span>
         </div>
-        <div class="fmc-chip fmc-empty"><div class="fmc-chip-head"><span class="fmc-chip-lbl">Sera</span><span class="fmc-chip-time">14:00–20:00</span></div></div>
+        <div class="fmc-chip fmc-empty"><div class="fmc-chip-head"><span class="fmc-chip-lbl">Sera</span><span class="fmc-chip-time">19:00–01:00</span></div></div>
       </div>
       <div class="fmc-cal-day">
-        <span class="fmc-cal-d">Mer 9</span>
+        <span class="fmc-cal-d">Sab 12</span>
         <div class="fmc-chip fmc-other">
-          <div class="fmc-chip-head"><span class="fmc-chip-lbl">Mattino</span><span class="fmc-chip-time">08:00–14:00</span></div>
+          <div class="fmc-chip-head"><span class="fmc-chip-lbl">Mattino</span><span class="fmc-chip-time">09:00–15:00</span></div>
           <span class="fmc-chip-op">Luigi F.</span>
         </div>
+        <div class="fmc-chip fmc-mine">
+          <div class="fmc-chip-head"><span class="fmc-chip-lbl">Pomeriggio</span><span class="fmc-chip-time">15:00–19:00</span></div>
+          <span class="fmc-chip-op">Marco R.</span>
+        </div>
         <div class="fmc-chip fmc-other">
-          <div class="fmc-chip-head"><span class="fmc-chip-lbl">Sera</span><span class="fmc-chip-time">14:00–20:00</span></div>
-          <span class="fmc-chip-op">Silvia M.</span>
+          <div class="fmc-chip-head"><span class="fmc-chip-lbl">Sera</span><span class="fmc-chip-time">19:00–01:00</span></div>
+          <span class="fmc-chip-op">Silvia M. · Anna P.</span>
         </div>
       </div>
     </div>
@@ -72,16 +76,21 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro';
   <Fragment slot="steps">
     <div class="fp-step">
       <div class="fp-step-num">1</div>
-      <div class="fp-step-title">Programma i turni</div>
-      <div class="fp-step-desc">Il responsabile assegna gli operatori ai turni mattino e sera dal calendario mensile. Gli operatori possono autoassegnarsi agli slot liberi se il permesso è abilitato.</div>
+      <div class="fp-step-title">Definisci i modelli</div>
+      <div class="fp-step-desc">Il responsabile crea i turni tipo (nome, orario, giorni della settimana): ad esempio Mattino e Sera tutti i giorni, Pomeriggio solo il sabato. Il calendario si costruisce da solo.</div>
     </div>
     <div class="fp-step">
       <div class="fp-step-num">2</div>
+      <div class="fp-step-title">Assegna e personalizza</div>
+      <div class="fp-step-desc">Assegna uno o più operatori a ogni turno; per un giorno particolare aggiungi, sposta o togli turni solo per quella data. Gli operatori possono autoassegnarsi se il permesso è abilitato.</div>
+    </div>
+    <div class="fp-step">
+      <div class="fp-step-num">3</div>
       <div class="fp-step-title">Gestisci il passaggio consegne</div>
       <div class="fp-step-desc">Al cambio turno, l'operatore uscente completa la checklist configurabile e lascia un messaggio libero per il collega in entrata. Tutto resta registrato per ogni giornata.</div>
     </div>
     <div class="fp-step">
-      <div class="fp-step-num">3</div>
+      <div class="fp-step-num">4</div>
       <div class="fp-step-title">Controlla l'audit log</div>
       <div class="fp-step-desc">Ogni operazione sui turni — assegnazione, modifica, cancellazione — è registrata nell'audit log con utente, timestamp e IP. Il responsabile può filtrare e scaricare il log.</div>
     </div>
@@ -99,11 +108,19 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro';
       </div>
       <div class="fp-benefit">
         <div class="fp-benefit-icon"></div>
-        <div class="fp-benefit-text"><strong>Prezzi turno separati.</strong> Mattino e sera possono avere un costo orario diverso, visibile nel riepilogo mensile per il calcolo del costo del personale.</div>
+        <div class="fp-benefit-text"><strong>Ogni giorno i suoi turni.</strong> Numero di turni, nomi e orari possono cambiare per giorno della settimana o per una singola data; la cassa giornaliera mostra automaticamente una scheda per ogni turno.</div>
       </div>
       <div class="fp-benefit">
         <div class="fp-benefit-icon"></div>
         <div class="fp-benefit-text"><strong>Note turno direttamente sulla chip.</strong> Ogni turno può avere una nota testuale (ore di straordinario, annotazioni operative) aggiungibile dal pannello giornata. La nota compare in corsivo sulla chip del calendario, visibile a colpo d'occhio senza aprire nulla.</div>
+      </div>
+      <div class="fp-benefit">
+        <div class="fp-benefit-icon"></div>
+        <div class="fp-benefit-text"><strong>Solo turni e ore, niente paghe.</strong> Il calendario organizza chi lavora e quando; le ore del mese sono visibili a ciascun operatore, senza importi o stipendi.</div>
+      </div>
+      <div class="fp-benefit">
+        <div class="fp-benefit-icon"></div>
+        <div class="fp-benefit-text"><strong>Anche offline.</strong> Assegnazioni e note si salvano anche senza connessione e si sincronizzano al ritorno della rete.</div>
       </div>
       <div class="fp-benefit">
         <div class="fp-benefit-icon"></div>

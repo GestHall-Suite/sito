@@ -4,10 +4,10 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro';
 
 <FeatureLayout
   title="Cassa giornaliera per sale VLT e AWP · GestHall Suite"
-  description="Chiudi il cassetto ogni sera in 5 minuti. Turni mattino e sera, scassettamenti, bancomat, ticket: tutto calcolato in tempo reale senza errori."
+  description="Chiudi il cassetto ogni sera in 5 minuti. Un turno per ogni fascia del giorno, turno di chiusura, scassettamenti, bancomat, ticket: tutto calcolato in tempo reale, anche offline."
   tag="Cassa giornaliera"
   heading="La cassa che si chiude da sola."
-  sub="Inserisci i dati del turno, GestHall Suite calcola cassetto e versamento in tempo reale. Turno mattino e sera separati, zero errori manuali."
+  sub="Inserisci i dati del turno, GestHall Suite calcola cassetto e versamento in tempo reale. Una scheda per ogni turno del giorno, zero errori manuali."
   plan="essenziale"
   related={['scassettamenti', 'turni', 'firma-digitale']}
 >
@@ -44,7 +44,7 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro';
     <div class="fp-step">
       <div class="fp-step-num">1</div>
       <div class="fp-step-title">Apri il turno</div>
-      <div class="fp-step-desc">Ogni giornata ha due turni (mattino e sera). Il sistema li gestisce separatamente con operatore, fondo cassa e note distinte.</div>
+      <div class="fp-step-desc">Ogni giornata ha i turni previsti dal calendario: due nei giorni feriali, tre o più quando serve. Ogni turno parte dai dati del precedente e ha operatore e note propri.</div>
     </div>
     <div class="fp-step">
       <div class="fp-step-num">2</div>
@@ -59,7 +59,7 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro';
     <div class="fp-step">
       <div class="fp-step-num">4</div>
       <div class="fp-step-title">Chiudi e invia</div>
-      <div class="fp-step-desc">Al salvataggio, l'email riepilogativa viene inviata automaticamente ai revisori configurati con importo, scassettamenti e ora di chiusura.</div>
+      <div class="fp-step-desc">Alla chiusura della giornata il turno che ha chiuso la sala diventa il riferimento: l'email riepilogativa parte da sola ai revisori con versamento e scassettamenti.</div>
     </div>
   </Fragment>
 
@@ -71,7 +71,7 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro';
       </div>
       <div class="fp-benefit">
         <div class="fp-benefit-icon"></div>
-        <div class="fp-benefit-text"><strong>Due turni separati per giornata.</strong> Mattino e sera hanno operatore, cassetto e note indipendenti. Il responsabile vede tutto in una schermata.</div>
+        <div class="fp-benefit-text"><strong>Turni flessibili e turno di chiusura.</strong> Tante schede quanti sono i turni del giorno; il turno che chiude la sala è quello che conta per statistiche e versamento. E se cade la connessione, si continua offline.</div>
       </div>
       <div class="fp-benefit">
         <div class="fp-benefit-icon"></div>

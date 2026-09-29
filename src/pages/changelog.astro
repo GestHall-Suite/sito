@@ -16,6 +16,41 @@ import Layout from '../layouts/Layout.astro';
   <div class="container">
     <div class="cl-feed">
 
+      <!-- 3.0.0 -->
+      <div class="cl-entry">
+        <div class="cl-entry-head">
+          <span class="cl-ver">v3.0.0</span>
+          <time class="cl-date" datetime="2026-09-28">28 settembre 2026</time>
+        </div>
+        <div class="cl-entry-body">
+          <div class="cl-group">
+            <span class="cl-badge cl-badge-add">Novità</span>
+            <ul class="cl-list">
+              <li><strong>Turni flessibili</strong> — I turni non sono più fissi a Mattino e Sera: il responsabile definisce modelli di turno con orari e giorni della settimana (es. un turno in più solo il sabato) e può personalizzare ogni singola data. Il calendario ha viste mese, settimana e agenda, più operatori per turno e note. La cassa giornaliera mostra una scheda per ogni turno del giorno, con il pulsante <strong>+</strong> per un turno non previsto.</li>
+              <li><strong>Turno di chiusura</strong> — I valori dei turni sono progressivi: il turno che chiude la sala è quello di riferimento per statistiche, email ai revisori e conferma del versamento. Viene fissato alla chiusura della giornata e si può cambiare.</li>
+              <li><strong>Statistiche sugli incassi reali</strong> — Settimanale, mensile, annuale, confronto periodi, dashboard ed export usano gli scassettamenti effettivi delle macchine del turno di chiusura, non più il bet/win dichiarato dai fornitori e senza sommare i turni tra loro. L'annuale confronta con l'anno precedente e mostra le colonne per fornitore.</li>
+              <li><strong>Bet/Win e Borderò</strong> — Nuova sezione Bet/Win per i dati dichiarati dai fornitori (SNAI o altri), con import Excel. Nuovo archivio dei borderò PDF per fornitore e periodo.</li>
+              <li><strong>Bar e magazzino</strong> (piano Pro) — Banco con vendite a carrello (contanti/POS; scontrino, fattura o non documentato), omaggi al cliente, chiusura con il totale del registratore telematico; magazzino Premium e Banco con giacenze, carichi, scarti e rettifiche; report con venduto, scontrinato, fatturato e margine.</li>
+              <li><strong>Lavoro offline</strong> — Cassa giornaliera e calendario turni funzionano anche senza connessione: i salvataggi restano sul dispositivo e si sincronizzano da soli al ritorno della rete, con gestione dei conflitti.</li>
+              <li><strong>Piano Multi-sala</strong> — Più sale nello stesso account (€149/mese con 2 sale incluse, +€49 per sala): selettore sala, panoramica di tutte le sale, utenti abilitati per sala, impostazioni per sala.</li>
+            </ul>
+          </div>
+          <div class="cl-group">
+            <span class="cl-badge cl-badge-change">Migliorato</span>
+            <ul class="cl-list">
+              <li><strong>Licenza sincronizzata</strong> — Piano e numero di sale vengono verificati automaticamente ogni 24 ore; stato e verifica manuale in Impostazioni → Piano. Il portale clienti permette di richiedere anche sale aggiuntive.</li>
+              <li><strong>Niente più paghe per turno</strong> — Rimossi costi turno e stipendi: il calendario e la dashboard mostrano turni e ore.</li>
+            </ul>
+          </div>
+          <div class="cl-group">
+            <span class="cl-badge cl-badge-fix">Corretto</span>
+            <ul class="cl-list">
+              <li>Il salvataggio del giornaliero poteva fallire sulle installazioni meno recenti.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <!-- 2.14.0 -->
       <div class="cl-entry">
         <div class="cl-entry-head">

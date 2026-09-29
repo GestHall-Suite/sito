@@ -21,7 +21,7 @@ import Layout from '../layouts/Layout.astro';
           <li><strong>Servizio</strong> — la piattaforma software GestHall Suite accessibile tramite browser, comprensiva di tutte le funzionalità incluse nel Piano attivo.</li>
           <li><strong>Utente</strong> — la persona fisica o giuridica che accede al Servizio e accetta i presenti Termini.</li>
           <li><strong>Installazione</strong> — una singola istanza del Servizio, corrispondente a un'unica sala giochi e a un unico abbonamento.</li>
-          <li><strong>Piano</strong> — il livello di abbonamento attivo (Essenziale, Pro o Suite), con le relative funzionalità e limitazioni.</li>
+          <li><strong>Piano</strong> — il livello di abbonamento attivo (Essenziale, Pro, Suite o Multi-sala), con le relative funzionalità e limitazioni.</li>
           <li><strong>Dati dell'Utente</strong> — tutte le informazioni inserite dall'Utente nel Servizio (giornate, scassettamenti, turni, dati macchine, dati operatori, ecc.).</li>
           <li><strong>White Label</strong> — la personalizzazione del Servizio con logo e colori propri dell'Utente, disponibile sul Piano Suite.</li>
         </ul>
@@ -37,11 +37,12 @@ import Layout from '../layouts/Layout.astro';
         <h2>3. Il Servizio</h2>
         <p>GestHall Suite è una piattaforma gestionale B2B progettata per le sale giochi italiane con macchine VLT e AWP. Il Servizio include, in base al Piano attivo:</p>
         <ul class="doc-list">
-          <li>Riconciliazione cassa giornaliera e gestione turni operatori</li>
+          <li>Riconciliazione cassa giornaliera e gestione turni operatori, anche senza connessione per cassa giornaliera e calendario turni</li>
           <li>Registro scassettamenti VLT, refill AWP e ticket vincita</li>
-          <li>Dashboard, report mensili e annuali, confronto periodi</li>
-          <li>Moduli opzionali: anagrafica giocatori, prestiti, documenti, ticket assistenza, notifiche push, firma digitale, SONOS, web radio, passaggio consegne</li>
-          <li>Personalizzazione white label (Piano Suite)</li>
+          <li>Dashboard, report mensili e annuali, confronto periodi, archivio bet/win e borderò dei fornitori</li>
+          <li>Moduli opzionali: anagrafica giocatori, prestiti, documenti, ticket assistenza, bar e magazzino, notifiche push, firma digitale, SONOS, web radio, passaggio consegne</li>
+          <li>Personalizzazione white label (Piani Suite e Multi-sala)</li>
+          <li>Gestione di più sale nella stessa Installazione (Piano Multi-sala)</li>
           <li>Installazione come Progressive Web App (PWA)</li>
         </ul>
         <p>Il Servizio è sviluppato in Italia ed è conforme alla normativa italiana ed europea applicabile alle attività di gestione sala giochi. L'Utente rimane esclusivamente responsabile della conformità alla normativa ADM, alle disposizioni ADM-vigenti sui VLT e a qualsiasi altra normativa di settore.</p>
@@ -52,9 +53,9 @@ import Layout from '../layouts/Layout.astro';
         <h3>Credenziali</h3>
         <p>L'Utente è responsabile della riservatezza delle credenziali di accesso di tutti gli account creati all'interno della propria Installazione. È obbligatorio notificare immediatamente il Fornitore in caso di accesso non autorizzato o sospetta compromissione delle credenziali scrivendo a <a href="mailto:info@gesthallsuite.it">info@gesthallsuite.it</a>.</p>
         <h3>Numero di utenti</h3>
-        <p>Il Piano Essenziale consente un massimo di 4 operatori attivi. I Piani Pro e Suite non hanno limiti al numero di utenti. Il superamento del limite è tecnicamente prevenuto dal sistema.</p>
+        <p>Il Piano Essenziale consente un massimo di 4 operatori attivi. I Piani Pro, Suite e Multi-sala non hanno limiti al numero di utenti. Il superamento del limite è tecnicamente prevenuto dal sistema.</p>
         <h3>Una Installazione per abbonamento</h3>
-        <p>Ogni abbonamento corrisponde a una singola Installazione (una sala giochi). L'utilizzo di un unico abbonamento per gestire più sedi è vietato e costituisce causa di risoluzione immediata del contratto.</p>
+        <p>Ogni abbonamento corrisponde a una singola Installazione. Con i Piani Essenziale, Pro e Suite l'Installazione gestisce una sola sala giochi: l'utilizzo di un unico abbonamento per gestire più sedi è vietato e costituisce causa di risoluzione immediata del contratto. Il Piano Multi-sala consente di gestire più sale nella stessa Installazione, entro il numero di sale incluse nell'abbonamento.</p>
       </section>
 
       <section class="doc-section">
@@ -68,6 +69,7 @@ import Layout from '../layouts/Layout.astro';
             <tr><td>Essenziale</td><td>€39 + IVA</td><td>€390 + IVA (–17%)</td></tr>
             <tr><td>Pro</td><td>€69 + IVA</td><td>€690 + IVA (–17%)</td></tr>
             <tr><td>Suite</td><td>€99 + IVA</td><td>€990 + IVA (–17%)</td></tr>
+            <tr><td>Multi-sala</td><td>€149 + IVA (2 sale incluse) + €49 + IVA per ogni sala aggiuntiva</td><td>Su richiesta</td></tr>
           </tbody>
         </table>
         <h3>Fatturazione</h3>

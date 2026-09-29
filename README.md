@@ -66,7 +66,7 @@ npm run preview    # anteprima del build
 |---|---|
 | **Hero** | Headline + sub + CTA + mock dashboard animato |
 | **Funzionalità** | Bento grid con preview interattive: Cassa giornaliera, Firma digitale, App mobile, White-label, Chat + Radio (Suite) |
-| **Prezzi** | Tre piani (Essenziale / Pro / Suite) con feature list aggiornate |
+| **Prezzi** | Quattro piani (Essenziale €39 / Pro €69 / Suite €99 / Multi-sala €149 con 2 sale, +€49 per sala) con feature list aggiornate |
 | **Rivenditori** | Proposta B2B + mock pannello Hub |
 | **CTA finale** | Trial gratuito |
 
@@ -110,9 +110,14 @@ Le feature elencate nelle card prezzi devono restare sincronizzate con `suite/in
 
 | Piano | Feature chiave mostrate sul sito |
 |---|---|
-| Essenziale | Cassa, turni, VLT/AWP, report settimanale/mensile, PWA, export XLS, max 4 operatori |
-| Pro | + Anagrafica giocatori, prestiti, documenti, ticket assistenza, notifiche push, firma digitale, confronto periodi, operatori illimitati |
-| Suite | + Chat interna, Web Radio, white-label, passaggio consegne, SONOS, supporto prioritario |
+| Essenziale | Cassa, turni flessibili, VLT/AWP, report sugli incassi reali, bet/win e borderò, offline, PWA, export XLS, max 4 operatori |
+| Pro | + Anagrafica giocatori, prestiti, documenti, ticket assistenza, bar e magazzino, notifiche push, firma digitale, confronto periodi, operatori illimitati |
+| Suite | + Chat interna, Web Radio, white-label, passaggio consegne, SONOS, LUL, supporto prioritario |
+| Multi-sala | + più sale nello stesso account (2 incluse, +€49/sala), panoramica sale, utenti e impostazioni per sala |
+
+Le pagine funzionalità sono in `src/pages/funzionalita/` e l'elenco (nome, descrizione, piano, icona) è in `src/data/features.ts` — il tipo `Plan` include `multisala`. Pagine aggiunte in v3.0: `offline`, `betwin-bordero`, `bar`, `multi-sala`.
+
+Il portale clienti (`php/cliente/index.php`) gestisce anche il piano Multi-sala: campo «Numero di sale» (min 2) con prezzo calcolato, inviato all'hub come `sale` nella richiesta.
 
 ---
 

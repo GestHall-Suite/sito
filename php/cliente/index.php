@@ -71,6 +71,7 @@ $paramsMissing = $key === '' || $ts === 0 || $token === '';
 // ── POST: richiesta cambio piano ──────────────────────────────────────────────
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$paramsMissing) {
     $pianoRich = $_POST['piano']  ?? '';
+    $saleRich  = max(2, min(50, (int)($_POST['sale'] ?? 2)));
     $email     = trim($_POST['email'] ?? '');
     $note      = trim($_POST['note']  ?? '');
 
@@ -83,6 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$paramsMissing) {
             'ts'    => $ts,
             'token' => $token,
             'piano' => $pianoRich,
+            'sale'  => $pianoRich === 'multisala' ? $saleRich : '',
             'email' => $email,
             'note'  => $note,
         ]);
@@ -130,10 +132,17 @@ $pianiInfo = [
     'suite' => [
         'label' => 'Suite',
         'price' => '€99/mese',
-        'desc'  => 'Tutto Pro + white-label (logo e colori), passaggio consegne, SONOS, radio web, supporto prioritario.',
+        'desc'  => 'Tutto Pro + white-label (logo e colori), chat, LUL, passaggio consegne, SONOS, radio web, supporto prioritario.',
         'color' => 'oklch(0.55 0.22 290)',
     ],
+    'multisala' => [
+        'label' => 'Multi-sala',
+        'price' => '€149/mese · 2 sale incluse, +€49 per sala',
+        'desc'  => 'Tutto Suite + più sale nello stesso account: selettore sala, panoramica di tutte le sale, utenti e impostazioni per sala.',
+        'color' => 'oklch(0.55 0.12 210)',
+    ],
 ];
+$saleAttuali = max(1, (int)($inst['sale_max'] ?? 1));
 ?>
 <!doctype html>
 <html lang="it">
@@ -314,6 +323,7 @@ $pianiInfo = [
       cursor: not-allowed;
     }
     .cl-piano-opt[data-current] input { pointer-events: none }
+    .cl-sale-price { font-size: 13px; color: oklch(0.45 0.12 210); font-weight: 600; margin-top: 6px }
     .cl-current-tag {
       display: inline-block;
       font-size: 10.5px;
@@ -464,7 +474,7 @@ $pianiInfo = [
       <span class="cl-piano-badge" style="background:<?= $pi['color'] ?>"><?= $h($pi['label']) ?></span>
       <div class="cl-piano-info">
         <strong><?= $h($inst['nome_sala']) ?></strong>
-        <span>Piano <?= $h($pi['label']) ?> — <?= $pi['price'] ?></span>
+        <span>Piano <?= $h($pi['label']) ?><?php if (($inst['piano'] ?? '') === 'multisala'): ?> · <?= $saleAttuali ?> sale<?php endif; ?> — <?= isset($inst['prezzo']) ? '€' . number_format((float)$inst['prezzo'], 0, ',', '.') . '/mese' : $pi['price'] ?></span>
       </div>
     </div>
     <div class="cl-scadenza">
@@ -492,10 +502,13 @@ $pianiInfo = [
 
       <div class="cl-piani-list">
         <?php foreach ($pianiInfo as $pKey => $p): ?>
-        <?php $isCurrent = $pKey === $inst['piano'] ?>
-        <label class="cl-piano-opt" <?= $isCurrent ? 'data-current' : '' ?>>
+        <?php
+          $isCurrent = $pKey === $inst['piano'];
+          $lock      = $isCurrent && $pKey !== 'multisala'; /* Multi-sala: si può cambiare il numero di sale */
+        ?>
+        <label class="cl-piano-opt" <?= $lock ? 'data-current' : '' ?>>
           <input type="radio" name="piano" value="<?= $h($pKey) ?>"
-                 <?= $isCurrent ? 'checked disabled' : '' ?>>
+                 <?= $isCurrent ? 'checked' : '' ?> <?= $lock ? 'disabled' : '' ?>>
           <div class="cl-piano-opt-body">
             <strong>
               <?= $h($p['label']) ?>
@@ -506,6 +519,13 @@ $pianiInfo = [
           </div>
         </label>
         <?php endforeach; ?>
+      </div>
+
+      <div class="cl-field" id="cl-sale-field" <?= ($inst['piano'] ?? '') === 'multisala' ? '' : 'hidden' ?>>
+        <label class="cl-label" for="cl-sale">Numero di sale</label>
+        <input class="cl-input" type="number" id="cl-sale" name="sale" min="2" max="50"
+               value="<?= max(2, $saleAttuali) ?>" style="max-width:120px">
+        <div class="cl-sale-price" id="cl-sale-price"></div>
       </div>
 
       <div class="cl-field">
@@ -522,6 +542,20 @@ $pianiInfo = [
 
       <button type="submit" class="cl-submit">Invia richiesta</button>
     </form>
+    <script>
+    (function () {
+      var field = document.getElementById('cl-sale-field'), inp = document.getElementById('cl-sale'), out = document.getElementById('cl-sale-price');
+      function upd() {
+        var sel = document.querySelector('input[name=piano]:checked');
+        field.hidden = !sel || sel.value !== 'multisala';
+        var n = Math.max(2, Math.min(50, parseInt(inp.value, 10) || 2));
+        out.textContent = '€' + (149 + 49 * (n - 2)) + '/mese per ' + n + ' sale';
+      }
+      document.querySelectorAll('input[name=piano]').forEach(function (r) { r.addEventListener('change', upd); });
+      inp.addEventListener('input', upd);
+      upd();
+    })();
+    </script>
   </div>
 
   <?php endif; ?>

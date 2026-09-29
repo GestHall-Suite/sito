@@ -1,6 +1,4 @@
 <?php
-// TEMP DEBUG — rimuovere dopo il test
-error_reporting(E_ALL); ini_set('display_errors', '1');
 declare(strict_types=1);
 
 // ── Configurazione ──────────────────────────────────────────────────────────
@@ -458,12 +456,13 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
         <table class="status-table">
           <thead><tr><th>Componente</th><th>Stato</th><th>Note</th></tr></thead>
           <tbody>
-            <tr><td>App gestionale (<code>suite/</code>)</td><td><span class="badge badge-green">✓ Produzione</span></td><td>Cassa, turni, AWP, dashboard, documenti, push, portale piano</td></tr>
+            <tr><td>App gestionale (<code>suite/</code>)</td><td><span class="badge badge-green">✓ Produzione</span></td><td>Cassa, turni flessibili, AWP, bar, bet/win e borderò, offline, multi-sala, dashboard, documenti, push, portale piano</td></tr>
             <tr><td>Hub license server (<code>hub/</code>)</td><td><span class="badge badge-green">✓ Produzione</span></td><td>API license, ghost login, pannello rivenditori, richieste piano</td></tr>
             <tr><td>Sito marketing (<code>sito/</code>)</td><td><span class="badge badge-blue">~ In sviluppo</span></td><td>Astro 7 · PHP <code>/interno/</code> e <code>/cliente/</code> già attivi</td></tr>
             <tr><td>Portale cliente cambio piano</td><td><span class="badge badge-blue">~ In attivazione</span></td><td>Richiede installation_key allineata tra suite e hub</td></tr>
             <tr><td>Billing (Stripe)</td><td><span class="badge badge-amber">⏳ Fase 2</span></td><td>Checkout → webhook → hub → email chiave</td></tr>
-            <tr><td>License check in-app</td><td><span class="badge badge-amber">⏳ Fase 2</span></td><td>Call a hub API con cache 24h; fallback su impostazioni.piano</td></tr>
+            <tr><td>License check in-app</td><td><span class="badge badge-green">✓ v3.0</span></td><td><code>includes/license.php</code>: call a hub API con cache 24h (piano + sale_max); fallback su impostazioni.piano</td></tr>
+            <tr><td>Piano Multi-sala</td><td><span class="badge badge-green">✓ v3.0</span></td><td>€149/mese con 2 sale, +€49/sala · <code>installazioni.sale_max</code> nel hub · richiesta sale dal portale cliente</td></tr>
           </tbody>
         </table>
       </div>

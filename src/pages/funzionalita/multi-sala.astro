@@ -1,0 +1,67 @@
+---
+import FeatureLayout from '../../layouts/FeatureLayout.astro';
+---
+
+<FeatureLayout
+  title="Gestionale per più sale giochi · GestHall Suite Multi-sala"
+  description="Gestisci più sale giochi da un unico account: selettore sala, panoramica di tutte le sale, utenti abilitati per sala e impostazioni separate. €149/mese con 2 sale incluse."
+  tag="Multi-sala"
+  heading="Tutte le tue sale, un solo accesso."
+  sub="Cambia sala con un clic, guarda l'andamento di tutte le sale in una sola pagina e decidi chi lavora dove. Ogni sala ha i suoi dati, le sue macchine e le sue impostazioni."
+  plan="multisala"
+  related={['report-analisi', 'white-label', 'offline']}
+>
+
+  <div slot="visual" class="feat-mock-card" style="width:100%">
+    <div class="fmc-header">
+      <span class="fmc-title">Sale · settembre 2026</span>
+      <span class="fmc-badge">3 / 3 sale</span>
+    </div>
+    <div class="ms-grid">
+      <div class="ms-card"><div class="ms-name">Sala Centro</div><div class="ms-sub">Bologna</div><div class="ms-kpi">€ 7.820 <span>oggi</span></div><div class="ms-kpi ms-kpi-m">€ 184.300 <span>mese</span></div></div>
+      <div class="ms-card"><div class="ms-name">Sala Stazione</div><div class="ms-sub">Bologna</div><div class="ms-kpi">€ 5.140 <span>oggi</span></div><div class="ms-kpi ms-kpi-m">€ 121.900 <span>mese</span></div></div>
+      <div class="ms-card ms-warn"><div class="ms-name">Sala Mare</div><div class="ms-sub">Rimini</div><div class="ms-kpi">€ 3.960 <span>oggi</span></div><div class="ms-alert">1 giornata ancora aperta</div></div>
+    </div>
+  </div>
+
+  <Fragment slot="steps">
+    <div class="fp-step">
+      <div class="fp-step-num">1</div>
+      <div class="fp-step-title">Aggiungi le sale</div>
+      <div class="fp-step-desc">Dalla pagina Sale crei una nuova sala in un attimo, anche copiando le macchine da una sala esistente.</div>
+    </div>
+    <div class="fp-step">
+      <div class="fp-step-num">2</div>
+      <div class="fp-step-title">Abilita gli utenti</div>
+      <div class="fp-step-desc">Gli utenti sono comuni: per ognuno scegli su quali sale lavora, oppure tutte. Chi lavora in una sola sala non vede le altre.</div>
+    </div>
+    <div class="fp-step">
+      <div class="fp-step-num">3</div>
+      <div class="fp-step-title">Lavora e confronta</div>
+      <div class="fp-step-desc">Il selettore nella barra laterale cambia sala su tutte le pagine; la panoramica mostra incassi, giornate aperte e assistenze di tutte le sale.</div>
+    </div>
+  </Fragment>
+
+  <Fragment slot="benefits">
+    <div class="fp-benefit-list">
+      <div class="fp-benefit"><div class="fp-benefit-icon"></div><div class="fp-benefit-text"><strong>Dati separati per sala.</strong> Cassa, turni, macchine, bar, documenti e report restano distinti per ogni sala.</div></div>
+      <div class="fp-benefit"><div class="fp-benefit-icon"></div><div class="fp-benefit-text"><strong>Impostazioni per sala.</strong> Turni, moduli, permessi e dati di assistenza si configurano sala per sala; logo, colori e account restano unici.</div></div>
+      <div class="fp-benefit"><div class="fp-benefit-icon"></div><div class="fp-benefit-text"><strong>Tutto di Suite incluso.</strong> Chat, white-label, LUL, passaggio consegne e tutte le funzionalità dei piani inferiori.</div></div>
+      <div class="fp-benefit"><div class="fp-benefit-icon"></div><div class="fp-benefit-text"><strong>Cresci quando vuoi.</strong> 2 sale incluse a €149/mese, +€49/mese per ogni sala in più: la richiedi dal portale clienti e si attiva da sola.</div></div>
+    </div>
+  </Fragment>
+
+</FeatureLayout>
+
+<style>
+.ms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 14px 16px }
+.ms-card { padding: 10px 11px; border-radius: var(--rx); border: 1px solid var(--border-sub); background: var(--surface); display: flex; flex-direction: column; gap: 2px; min-width: 0 }
+.ms-name { font-size: 12px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.ms-sub { font-size: 10px; color: var(--faint); margin-bottom: 6px }
+.ms-kpi { font-size: 13px; font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums }
+.ms-kpi span { font-size: 9px; font-weight: 500; color: var(--faint) }
+.ms-kpi-m { font-size: 11px; color: var(--muted) }
+.ms-warn { border-color: oklch(0.75 0.12 80 / 0.5) }
+.ms-alert { font-size: 9.5px; font-weight: 600; color: oklch(0.5 0.12 70); margin-top: 4px }
+@media (max-width: 640px) { .ms-grid { grid-template-columns: 1fr } }
+</style>

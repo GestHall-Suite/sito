@@ -104,7 +104,7 @@ import { features, byPlan } from '../data/features.ts';
         <h2>Cassetto e versamento<br>calcolati in tempo reale.</h2>
         <p>Inserisci contanti, bancomat, ticket e scassettamenti. Il calcolo avviene mentre scrivi: nessun foglio Excel, nessun errore di somma alle 23:00.</p>
         <ul class="feat-checklist">
-          <li>Doppio turno mattino e sera separati</li>
+          <li>Una scheda per ogni turno del giorno, anche offline</li>
           <li>Banner verde/rosso immediato sulla quadratura</li>
           <li>Email automatica ai revisori alla chiusura</li>
           <li>Storico giornaliero completo e immutabile</li>
@@ -229,16 +229,17 @@ import { features, byPlan } from '../data/features.ts';
 <section class="section all-feat-section">
   <div class="container">
     <div class="sect-header reveal">
-      <h2>Dieci funzionalità.<br>Un solo gestionale.</h2>
-      <p>Dal piano base alle funzionalità Suite: ogni strumento è pensato per le sale giochi italiane.</p>
+      <h2>Tutte le funzionalità.<br>Un solo gestionale.</h2>
+      <p>Dalla singola sala alla rete di sale: ogni strumento è pensato per le sale giochi italiane.</p>
     </div>
 
-    {(['essenziale', 'pro', 'suite'] as const).map(plan => (
+    {(['essenziale', 'pro', 'suite', 'multisala'] as const).map(plan => (
       <div class="af-plan-group reveal">
         <div class={`af-plan-label af-label-${plan}`}>
           {plan === 'essenziale' && 'Essenziale — da €39/mese'}
           {plan === 'pro'        && 'Pro — da €69/mese'}
           {plan === 'suite'      && 'Suite — da €99/mese'}
+          {plan === 'multisala'  && 'Multi-sala — da €149/mese, 2 sale incluse'}
         </div>
         <div class="af-grid">
           {byPlan[plan].map(f => (
@@ -276,10 +277,12 @@ import { features, byPlan } from '../data/features.ts';
         <div class="plan-annual">o €390/anno · risparmi 2 mesi</div>
         <a href="/contatti" class="btn btn-ghost plan-btn">Inizia gratis</a>
         <ul class="plan-features">
-          <li>Cassa giornaliera e turni</li>
+          <li>Cassa giornaliera e turni flessibili</li>
           <li>VLT e AWP illimitati</li>
           <li>Fino a 4 operatori</li>
-          <li>Report settimanale e mensile</li>
+          <li>Report sugli incassi reali</li>
+          <li>Bet/Win e archivio borderò</li>
+          <li>Giornaliero e turni anche offline</li>
           <li>PWA mobile (iOS e Android)</li>
           <li>Export dati XLS</li>
           <li>Supporto via email</li>
@@ -299,6 +302,7 @@ import { features, byPlan } from '../data/features.ts';
           <li>Prestiti e rientri</li>
           <li>Documenti e archivi</li>
           <li>Ticket assistenza macchine</li>
+          <li>Bar e magazzino (banco, omaggi, scontrinato)</li>
           <li>Notifiche push iOS e Android</li>
           <li>Firma digitale versamenti</li>
           <li>Confronto periodi avanzato</li>
@@ -320,6 +324,21 @@ import { features, byPlan } from '../data/features.ts';
           <li>Supporto prioritario</li>
           <li>Istanza demo per rivenditori</li>
           <li>Onboarding dedicato</li>
+        </ul>
+      </div>
+
+      <div class="plan reveal d3">
+        <div class="plan-name">Multi-sala</div>
+        <div class="plan-price"><span class="plan-eur">€</span>149<span class="plan-mo">/mese</span></div>
+        <div class="plan-annual">2 sale incluse · +€49/mese per ogni sala in più</div>
+        <a href="/contatti" class="btn btn-ghost plan-btn">Parliamone</a>
+        <ul class="plan-features">
+          <li>Tutto di Suite</li>
+          <li>Più sale in un unico account</li>
+          <li>Selettore sala e panoramica di tutte le sale</li>
+          <li>Utenti abilitati per sala</li>
+          <li>Impostazioni e moduli per sala</li>
+          <li>Report separati per ogni sala</li>
         </ul>
       </div>
 
@@ -526,6 +545,7 @@ import { features, byPlan } from '../data/features.ts';
 .af-label-essenziale { color: oklch(0.50 0.14 168) }
 .af-label-pro        { color: oklch(0.45 0.18 250) }
 .af-label-suite      { color: oklch(0.45 0.18 300) }
+.af-label-multisala  { color: oklch(0.45 0.12 210) }
 .af-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px }
 .af-card { display: flex; align-items: flex-start; gap: 12px; background: var(--bg); border: 1px solid var(--border-sub); border-radius: var(--rx-m); padding: 16px; transition: all .2s var(--ease) }
 .af-card:hover { border-color: oklch(0.72 0.16 168 / 0.45); box-shadow: 0 4px 16px var(--accent-glow); transform: translateY(-1px) }
@@ -540,7 +560,10 @@ import { features, byPlan } from '../data/features.ts';
 
 /* ── PRICING ──────────────────────────────────────────────── */
 .pricing-section { background: var(--bg) }
-.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 32px }
+.pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px }
+.pricing-grid .plan { padding: 28px 22px }
+.pricing-grid .plan-price { font-size: 46px }
+@media (max-width: 1100px) { .pricing-grid { grid-template-columns: repeat(2, 1fr) } }
 .plan { background: var(--surface); border: 1px solid var(--border-sub); border-radius: var(--rx-l); padding: 32px 28px; display: flex; flex-direction: column; gap: 6px; position: relative }
 .plan-featured { border-color: oklch(0.72 0.16 168 / 0.45); background: oklch(97% 0.025 168); box-shadow: 0 0 0 1px oklch(0.72 0.16 168 / 0.18), 0 12px 40px oklch(0.72 0.16 168 / 0.1) }
 .plan-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: oklch(0.1 0 0); font-size: 11px; font-weight: 700; padding: 4px 14px; border-radius: 999px; white-space: nowrap }

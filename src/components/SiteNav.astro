@@ -64,6 +64,15 @@ import { byPlan } from '../data/features.ts';
                   </div>
                 </a>
               ))}
+              {byPlan.multisala.map(f => (
+                <a href={f.slug} class="snav-mega-item">
+                  <div class="snav-mega-icon" set:html={f.icon}></div>
+                  <div>
+                    <div class="snav-mega-name">{f.name}</div>
+                    <div class="snav-mega-desc">{f.desc}</div>
+                  </div>
+                </a>
+              ))}
               <a href="/funzionalita" class="snav-mega-all">Vedi tutte →</a>
             </div>
 

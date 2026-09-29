@@ -1,0 +1,74 @@
+---
+import FeatureLayout from '../../layouts/FeatureLayout.astro';
+---
+
+<FeatureLayout
+  title="Gestionale sala giochi che funziona offline · GestHall Suite"
+  description="Cassa giornaliera e calendario turni utilizzabili anche senza connessione: i dati restano sul dispositivo e si sincronizzano da soli al ritorno della rete, senza perdite."
+  tag="Funziona offline"
+  heading="Cade la linea? La cassa non si ferma."
+  sub="Giornaliero e calendario turni restano utilizzabili anche senza internet. I salvataggi vengono conservati sul dispositivo e inviati in automatico appena torna la connessione, con controllo dei conflitti."
+  plan="essenziale"
+  related={['cassa-giornaliera', 'turni', 'app-mobile']}
+>
+
+  <div slot="visual" class="feat-mock-card" style="width:100%">
+    <div class="off-bar">
+      <span class="off-dot"></span>
+      Offline — giornaliero e turni vengono salvati sul dispositivo · 2 modifiche da sincronizzare
+    </div>
+    <div class="fmc-header">
+      <span class="fmc-title">Giornaliero · Sera</span>
+      <span class="fmc-badge">Chiusura</span>
+    </div>
+    <div class="fmc-body">
+      <div class="fmc-rows">
+        <div class="fmc-row"><span>Scassettamenti</span><span>€ 8.460,00</span></div>
+        <div class="fmc-row"><span>Bancomat</span><span>€ 420,00</span></div>
+        <div class="fmc-row"><span>Ticket pagati</span><span>€ 220,00</span></div>
+      </div>
+      <div class="off-queue">
+        <div class="off-q"><span>Turno Sera · 21:42</span><em>In coda</em></div>
+        <div class="off-q"><span>Nota calendario · 21:45</span><em>In coda</em></div>
+        <div class="off-q off-ok"><span>Turno Mattino · 14:05</span><em>Sincronizzato</em></div>
+      </div>
+    </div>
+  </div>
+
+  <Fragment slot="steps">
+    <div class="fp-step">
+      <div class="fp-step-num">1</div>
+      <div class="fp-step-title">L'app si prepara da sola</div>
+      <div class="fp-step-desc">Quando sei online, giornaliero del giorno e calendario turni vengono conservati sul dispositivo. Non devi fare niente.</div>
+    </div>
+    <div class="fp-step">
+      <div class="fp-step-num">2</div>
+      <div class="fp-step-title">Lavora senza rete</div>
+      <div class="fp-step-desc">Se la connessione cade compare una barra «Offline»: continui a compilare e premi Salva come sempre. I dati restano sul dispositivo e li ritrovi nel form.</div>
+    </div>
+    <div class="fp-step">
+      <div class="fp-step-num">3</div>
+      <div class="fp-step-title">Sincronizzazione automatica</div>
+      <div class="fp-step-desc">Al ritorno della rete le modifiche vengono inviate in ordine. Se nel frattempo qualcuno ha salvato lo stesso turno da un'altra postazione, scegli tu se sovrascrivere o scartare.</div>
+    </div>
+  </Fragment>
+
+  <Fragment slot="benefits">
+    <div class="fp-benefit-list">
+      <div class="fp-benefit"><div class="fp-benefit-icon"></div><div class="fp-benefit-text"><strong>Nessun dato perso.</strong> Ogni salvataggio fatto senza rete è conservato sul dispositivo finché il server non lo conferma.</div></div>
+      <div class="fp-benefit"><div class="fp-benefit-icon"></div><div class="fp-benefit-text"><strong>Conflitti gestiti.</strong> Se due postazioni modificano lo stesso turno, niente viene sovrascritto di nascosto: la modifica va «da verificare».</div></div>
+      <div class="fp-benefit"><div class="fp-benefit-icon"></div><div class="fp-benefit-text"><strong>Sempre sulla sala giusta.</strong> Con il Multi-sala ogni salvataggio offline torna alla sala in cui è stato fatto.</div></div>
+      <div class="fp-benefit"><div class="fp-benefit-icon"></div><div class="fp-benefit-text"><strong>Incluso in tutti i piani.</strong> Funziona su computer, tablet e telefono, anche con l'app installata.</div></div>
+    </div>
+  </Fragment>
+
+</FeatureLayout>
+
+<style>
+.off-bar { display: flex; align-items: center; gap: 8px; padding: 9px 16px; font-size: 11px; font-weight: 600; color: oklch(0.45 0.12 70); background: oklch(96% 0.05 85); border-bottom: 1px solid oklch(0.75 0.12 80 / 0.3) }
+.off-dot { width: 7px; height: 7px; border-radius: 50%; background: oklch(0.72 0.16 70); flex-shrink: 0 }
+.off-queue { display: flex; flex-direction: column; gap: 6px }
+.off-q { display: flex; justify-content: space-between; font-size: 11px; padding: 7px 10px; border-radius: var(--rx); background: var(--surface); border: 1px solid var(--border-sub); color: var(--muted) }
+.off-q em { font-style: normal; font-weight: 700; color: oklch(0.55 0.14 70) }
+.off-ok em { color: var(--accent) }
+</style>
