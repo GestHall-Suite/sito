@@ -111,7 +111,14 @@ if (!$paramsMissing && $error === '' && $success === '') {
     } elseif (($res['error'] ?? '') === 'token_expired') {
         $error = 'Il link è scaduto. Torna sull\'app in Impostazioni → Piano per generare un nuovo link.';
     } else {
-        $error = $res['msg'] ?? 'Impossibile verificare l\'installazione. Link non valido.';
+        $error = match ($res['error'] ?? '') {
+            'not_found'     => 'Installazione non trovata: la chiave del gestionale (Impostazioni → Piano → Portale clienti) non corrisponde a quella registrata da GestHall. Contatta il supporto.',
+            'invalid_token' => 'Firma del link non valida: la chiave di sicurezza del gestionale non corrisponde a quella registrata da GestHall. Contatta il supporto.',
+            'no_secret'     => 'Il portale non è ancora attivo per questa installazione. Contatta il supporto GestHall.',
+            'disabled'      => 'Installazione disabilitata. Contatta il supporto GestHall.',
+            'network'       => 'Servizio momentaneamente non raggiungibile. Riprova tra qualche minuto.',
+            default         => $res['msg'] ?? 'Impossibile verificare l\'installazione. Link non valido.',
+        };
     }
 }
 
