@@ -2,6 +2,28 @@
  "updated": "2026-09-30",
  "releases": [
   {
+   "version": "3.7.2",
+   "date": "2026-09-30",
+   "hotfix": true,
+   "title": "",
+   "highlights": [],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Verifica dei file</strong> — In Impostazioni → Sistema un controllo mostra se dopo un aggiornamento qualche file è arrivato incompleto, e quale ricaricare."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "La dashboard poteva andare in errore dopo un aggiornamento caricato via FTP.",
+      "Dashboard: le personalizzazioni non venivano salvate dopo aver usato «Ripristina»."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.7.1",
    "date": "2026-09-30",
    "hotfix": true,
