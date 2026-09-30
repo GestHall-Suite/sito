@@ -58,6 +58,20 @@ npm run preview    # anteprima del build
 
 ---
 
+## Changelog: fonte unica
+
+`src/data/changelog.json` è la **fonte unica** delle novità di GestHall Suite:
+
+- `src/pages/changelog.astro` genera la pagina `/changelog` (una voce per release, ancora `#v3.7.0`)
+- `src/pages/changelog.json.ts` pubblica il feed `/changelog.json` (con `url` per release): lo legge la suite per il riquadro **Novità** del menu profilo (`suite/includes/novita.php`, cache 6 h)
+- `src/pages/docs.astro` mostra l'ultima release con novità
+
+Formato di una release: `version`, `date` (YYYY-MM-DD), `hotfix`, `title` (breve), `highlights` (2-5 frasi brevi per il riquadro Novità; vuoto per gli hotfix), `groups` (`add` Novità, `change` Migliorato, `fix` Corretto; voci in HTML con `<strong>` per il titolo). Testo per i clienti: niente nomi di file, SQL o dettagli tecnici (quelli vanno in `suite/docs/CHANGELOG.md`).
+
+**Regola operativa**: ogni rilascio della suite aggiunge la release qui (stessa versione di `GH_VERSION`), aggiorna le pagine `funzionalita/*`, la guida `public/docs/guida/` e `features.ts` se cambia ciò che il cliente vede, e registra le modifiche al sito in `CHANGELOG.md`.
+
+---
+
 ## Pagine
 
 ### `index.astro` — Home
@@ -111,7 +125,7 @@ Le feature elencate nelle card prezzi devono restare sincronizzate con `suite/in
 | Piano | Feature chiave mostrate sul sito |
 |---|---|
 | Essenziale | Cassa, turni flessibili, VLT/AWP, report sugli incassi reali, bet/win e borderò, offline, PWA, export XLS, max 4 operatori |
-| Pro | + Anagrafica giocatori, prestiti, documenti, ticket assistenza, bar e magazzino, notifiche push, firma digitale, confronto periodi, operatori illimitati |
+| Pro | + Anagrafica clienti, prestiti, documenti, ticket assistenza, bar e magazzino, notifiche push, firma digitale, confronto periodi, operatori illimitati |
 | Suite | + Chat interna, Web Radio, white-label, passaggio consegne, SONOS, LUL, supporto prioritario |
 | Multi-sala | + più sale nello stesso account (2 incluse, +€49/sala), panoramica sale, utenti e impostazioni per sala |
 
