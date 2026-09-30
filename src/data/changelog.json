@@ -2,6 +2,21 @@
  "updated": "2026-09-30",
  "releases": [
   {
+   "version": "3.7.1",
+   "date": "2026-09-30",
+   "hotfix": true,
+   "title": "",
+   "highlights": [],
+   "groups": [
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Aggiornamento più sicuro</strong> — Se durante l'aggiornamento alla 3.7 venivano caricati solo alcuni file, l'app poteva mostrare un errore. Ora continua a funzionare anche in quel caso."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.7.0",
    "date": "2026-09-30",
    "hotfix": false,
