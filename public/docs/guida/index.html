@@ -170,7 +170,7 @@ pre code { background:none;border:none;padding:0;font-size:13px;line-height:1.6 
   <span class="tb-sep">/</span>
   <span class="tb-title">Guida Utente</span>
   <div class="tb-spacer"></div>
-  <span class="tb-badge">v1.0 · Luglio 2026</span>
+  <span class="tb-badge">v3.7 · Settembre 2026</span>
   <button class="theme-btn" onclick="toggleTheme()" aria-label="Cambia tema">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
   </button>
@@ -190,7 +190,7 @@ pre code { background:none;border:none;padding:0;font-size:13px;line-height:1.6 
     <span class="sb-label">App</span>
     <a class="sb-link" href="#accesso" onclick="closeMobile()"><span class="sb-num">1</span> Primo accesso</a>
     <a class="sb-link" href="#cassa" onclick="closeMobile()"><span class="sb-num">2</span> Cassa giornaliera</a>
-    <a class="sb-link" href="#swipe" onclick="closeMobile()"><span class="sb-num">3</span> Swipe turni mobile</a>
+    <a class="sb-link" href="#swipe" onclick="closeMobile()"><span class="sb-num">3</span> Uso da telefono</a>
     <a class="sb-link" href="#dashboard" onclick="closeMobile()"><span class="sb-num">4</span> Dashboard</a>
     <a class="sb-link" href="#report" onclick="closeMobile()"><span class="sb-num">5</span> Report</a>
     <a class="sb-link" href="#turni" onclick="closeMobile()"><span class="sb-num">6</span> Turni</a>
@@ -204,11 +204,12 @@ pre code { background:none;border:none;padding:0;font-size:13px;line-height:1.6 
   </div>
   <div class="sb-group">
     <span class="sb-label">Gestione</span>
-    <a class="sb-link" href="#impostazioni" onclick="closeMobile()"><span class="sb-num">14</span> Impostazioni</a>
-    <a class="sb-link" href="#sonos" onclick="closeMobile()"><span class="sb-num">15</span> SONOS</a>
-    <a class="sb-link" href="#radio" onclick="closeMobile()"><span class="sb-num">16</span> Web Radio</a>
-    <a class="sb-link" href="#sicurezza" onclick="closeMobile()"><span class="sb-num">17</span> Sicurezza</a>
-    <a class="sb-link" href="#problemi" onclick="closeMobile()"><span class="sb-num">18</span> Problemi comuni</a>
+    <a class="sb-link" href="#bar" onclick="closeMobile()"><span class="sb-num">14</span> Bar</a>
+    <a class="sb-link" href="#impostazioni" onclick="closeMobile()"><span class="sb-num">15</span> Impostazioni</a>
+    <a class="sb-link" href="#sonos" onclick="closeMobile()"><span class="sb-num">16</span> SONOS</a>
+    <a class="sb-link" href="#radio" onclick="closeMobile()"><span class="sb-num">17</span> Web Radio</a>
+    <a class="sb-link" href="#sicurezza" onclick="closeMobile()"><span class="sb-num">18</span> Sicurezza</a>
+    <a class="sb-link" href="#problemi" onclick="closeMobile()"><span class="sb-num">19</span> Problemi comuni</a>
   </div>
 </nav>
 
@@ -275,7 +276,7 @@ pre code { background:none;border:none;padding:0;font-size:13px;line-height:1.6 
 
   <div class="sec-h3">Workflow apertura turno (mattino)</div>
   <div class="steps">
-    <div class="step"><div class="step-n">1</div><div><div class="step-t">Apri Cassa → Giornaliero</div><div class="step-d">La giornata odierna si crea automaticamente. Il Turno 1 – Mattino è già attivo.</div></div></div>
+    <div class="step"><div class="step-n">1</div><div><div class="step-t">Apri Cassa → Giornaliero</div><div class="step-d">La giornata odierna si crea automaticamente e si apre sul turno in corso secondo il calendario. In alto c'è una scheda per ogni turno del giorno; con <strong>+</strong> si aggiunge un turno non previsto.</div></div></div>
     <div class="step"><div class="step-n">2</div><div><div class="step-t">Inserisci il fondo cassa</div><div class="step-d">Il fondo ricevuto dal turno precedente.</div></div></div>
     <div class="step"><div class="step-n">3</div><div><div class="step-t">Compila i contanti per taglio</div><div class="step-d">Banconote da 5€, 10€, 20€ ecc. Il totale si calcola automaticamente.</div></div></div>
     <div class="step"><div class="step-n">4</div><div><div class="step-t">Salva turno</div><div class="step-d">Usa il bottone "Salva turno" in basso. Il form si salva anche automaticamente ogni 500 ms.</div></div></div>
@@ -287,7 +288,11 @@ pre code { background:none;border:none;padding:0;font-size:13px;line-height:1.6 
     <span class="tag t">Refill AWP con orario e importo</span>
     <span class="tag t">Ticket vincita per fornitore</span>
     <span class="tag t">Bancomat e differenze/rientri</span>
+    <span class="tag t">Numero di ticket convalidati per piattaforma</span>
   </div>
+
+  <div class="sec-h3">Layout Classico o Avanzato (Piano Suite)</div>
+  <p>Dal pulsante <strong>Layout</strong> ognuno sceglie il proprio: nel layout <strong>Avanzato</strong> gli scassettamenti stanno in una colonna fissa e i risultati del turno (cassetto, versamenti, scostamento) restano visibili in basso mentre compili. Il responsabile sceglie il layout predefinito della sala e può nascondere i campi che non usa (2ª cassa, numero ticket) in <strong>Impostazioni → Turni e cassa</strong>.</p>
 
   <div class="sec-h3">Chiusura turno (sera)</div>
   <p>Controlla il <strong>banner scostamento</strong> in cima alla pagina:</p>
@@ -320,8 +325,16 @@ Scostamento   = Totale cassa − Fondo cassa</code></pre>
 
 <!-- 3. SWIPE TURNI MOBILE -->
 <div class="section" id="swipe">
-  <div class="sec-h2"><span class="sec-num">3</span> Swipe turni (mobile)</div>
-  <p class="sec-lead">Su smartphone puoi passare tra i turni con un gesto orizzontale.</p>
+  <div class="sec-h2"><span class="sec-num">3</span> Uso da telefono</div>
+  <p class="sec-lead">Installata sulla schermata Home, GestHall Suite si usa come un'app.</p>
+  <div class="tags">
+    <span class="tag t">Barra in basso: Home, Turni, Chat, Menu, Profilo</span>
+    <span class="tag t">Menu con tutte le sezioni</span>
+    <span class="tag t">Finestre dal basso: si chiudono trascinandole giù</span>
+    <span class="tag t">Pulsante fluttuante per l'azione principale</span>
+    <span class="tag t">Tabelle come schede</span>
+  </div>
+  <p>Nella cassa giornaliera si passa da un turno all'altro anche con un gesto orizzontale:</p>
   <p>Scorri da <strong>destra a sinistra</strong> → turno successivo<br>
   Scorri da <strong>sinistra a destra</strong> → turno precedente<br>
   I <strong>pallini</strong> in fondo indicano il turno attivo.</p>
@@ -338,9 +351,16 @@ Scostamento   = Totale cassa − Fondo cassa</code></pre>
     <span class="tag t">Grafico ultimi 30 giorni</span>
     <span class="tag t">Grafico ultimi 6 mesi</span>
     <span class="tag t">Statistiche per operatore</span>
-    <span class="tag t">Widget drag &amp; drop</span>
+    <span class="tag t">Riquadri personalizzabili</span>
   </div>
-  <p>I KPI live mostrano: incasso VLT, versamento, bancomat, ticket, aggiornati ogni 30 secondi. I widget possono essere riordinati trascinando l'icona grip.</p>
+  <p>I KPI live mostrano: incasso VLT, versamento, bancomat, ticket, aggiornati ogni 30 secondi.</p>
+
+  <div class="sec-h3">Personalizzare la dashboard</div>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div><div class="step-t">Tocca «Personalizza»</div><div class="step-d">In alto a destra. Si apre l'elenco di tutti i riquadri (dal basso, su telefono).</div></div></div>
+    <div class="step"><div class="step-n">2</div><div><div class="step-t">Scegli cosa vedere</div><div class="step-d">Interruttore per mostrare o nascondere, frecce per l'ordine; su computer anche la larghezza (S, M, L) e la disposizione compatta o libera.</div></div></div>
+    <div class="step"><div class="step-n">3</div><div><div class="step-t">Oppure trascina</div><div class="step-d">Su computer «Trascina sulla griglia» permette di riordinare i riquadri trascinandoli. «Ripristina» torna alla disposizione iniziale.</div></div></div>
+  </div>
 
   <div class="sec-h3">Dashboard Revisore</div>
   <p>Vista in sola lettura degli stessi KPI + sezione "Da confermare" con le giornate chiuse in attesa di conferma ritiro.</p>
@@ -370,17 +390,28 @@ Scostamento   = Totale cassa − Fondo cassa</code></pre>
 <!-- 6. TURNI -->
 <div class="section" id="turni">
   <div class="sec-h2"><span class="sec-num">6</span> Turni</div>
-  <p class="sec-lead">Calendario degli operatori programmati per ogni giorno. <strong>Sala → Turni</strong>.</p>
+  <p class="sec-lead">Calendario di chi lavora e quando. <strong>Sala → Turni</strong>, anche dalla barra in basso su telefono.</p>
 
-  <div class="sec-h3">Programmare un turno (Responsabile)</div>
-  <div class="steps">
-    <div class="step"><div class="step-n">1</div><div><div class="step-t">Clicca su un giorno nel calendario</div><div class="step-d">Seleziona il mese di interesse.</div></div></div>
-    <div class="step"><div class="step-n">2</div><div><div class="step-t">Seleziona operatore e turno</div><div class="step-d">Mattino o sera, con orario. Inserisci il prezzo orario se configurato.</div></div></div>
-    <div class="step"><div class="step-n">3</div><div><div class="step-t">Salva</div><div class="step-d">Il turno appare nel calendario per tutti.</div></div></div>
+  <div class="sec-h3">Cosa trovi in alto</div>
+  <p>Il turno in corso (con <strong>Inizia turno</strong> per l'operatore), il tuo prossimo turno e, per responsabile e revisore, i turni ancora <strong>da coprire</strong>.</p>
+
+  <div class="sec-h3">Tre viste</div>
+  <div class="tags">
+    <span class="tag t">Calendario: il mese a colpo d'occhio</span>
+    <span class="tag t">Lista: i prossimi giorni con orari e operatori</span>
+    <span class="tag t">Riepilogo: turni e ore per operatore</span>
+    <span class="tag t">Filtri: I miei, Liberi, Operatore</span>
   </div>
 
-  <div class="sec-h3">Autoassegnazione (Operatore)</div>
-  <p>Se il responsabile ha abilitato l'opzione in Impostazioni → Permessi, l'operatore può aggiungere se stesso ai turni disponibili.</p>
+  <div class="sec-h3">Organizzare i turni (Responsabile)</div>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div><div class="step-t">Definisci i modelli</div><div class="step-d">In Impostazioni → Turni e cassa: nome, orario e giorni della settimana (es. Mattino e Sera tutti i giorni, Pomeriggio solo il sabato).</div></div></div>
+    <div class="step"><div class="step-n">2</div><div><div class="step-t">Apri un giorno</div><div class="step-d">Tocca il giorno nel calendario o nella lista: assegna uno o più operatori, lascia una nota, aggiungi o togli turni solo per quella data.</div></div></div>
+    <div class="step"><div class="step-n">3</div><div><div class="step-t">Struttura di un periodo</div><div class="step-d">Dal menu ⋯ si applica la struttura dei turni a più giorni insieme; da lì anche export CSV e stampa.</div></div></div>
+  </div>
+
+  <div class="sec-h3">Prendere un turno libero (Operatore)</div>
+  <p>Se il responsabile ha attivato <strong>Modifica calendario turni</strong> in Impostazioni → Permessi, l'operatore prende un turno libero con <strong>Lo prendo</strong>, può togliersi dal proprio e lasciare note, da qualsiasi dispositivo.</p>
 </div>
 
 <!-- 7. MACCHINE -->
@@ -462,7 +493,7 @@ Scostamento   = Totale cassa − Fondo cassa</code></pre>
     <div class="step"><div class="step-n">3</div><div><div class="step-t">Anteprima e invio</div><div class="step-d">Ascolta il player audio prima di inviare. Clicca "Invia" per pubblicare.</div></div></div>
   </div>
 
-  <p>Il numero di messaggi non letti appare in sidebar e nella bottom bar mobile, aggiornato in tempo reale.</p>
+  <p>Nell'elenco ogni conversazione mostra l'ultimo messaggio, l'orario e i non letti. Su telefono la conversazione si apre a tutto schermo e il tasto indietro torna all'elenco. Il numero di messaggi non letti appare in sidebar e nella barra in basso, aggiornato in tempo reale.</p>
 </div>
 
 <!-- 11. DOCUMENTI -->
@@ -484,39 +515,51 @@ Scostamento   = Totale cassa − Fondo cassa</code></pre>
 
 <!-- 12. ANAGRAFICA -->
 <div class="section" id="anagrafica">
-  <div class="sec-h2"><span class="sec-num">12</span> Anagrafica giocatori</div>
-  <p class="sec-lead">Registro dei clienti fidelizzati. <strong>Giocatori → Anagrafica</strong> (Piano Pro+).</p>
+  <div class="sec-h2"><span class="sec-num">12</span> Anagrafica clienti</div>
+  <p class="sec-lead">Registro dei clienti della sala e del bar. <strong>Clienti → Anagrafica</strong> (Piano Pro+).</p>
 
-  <p>Campi disponibili: nome, cognome, data di nascita, telefono, email, note, stato attivo/inattivo. Se il modulo Prestiti è attivo, la creazione di un giocatore crea automaticamente la scheda prestiti corrispondente.</p>
+  <p>Campi disponibili: nome, cognome, data di nascita, telefono, email, note, stato attivo/inattivo. Se il modulo Prestiti è attivo, la creazione di un cliente crea automaticamente la scheda prestiti corrispondente.</p>
 </div>
 
 <!-- 13. PRESTITI -->
 <div class="section" id="prestiti">
   <div class="sec-h2"><span class="sec-num">13</span> Prestiti e rientri</div>
-  <p class="sec-lead">Gestione prestiti verso i giocatori. <strong>Giocatori → Prestiti</strong> (Piano Pro+).</p>
+  <p class="sec-lead">Gestione prestiti verso i clienti. <strong>Clienti → Prestiti</strong> (Piano Pro+).</p>
 
-  <p>Per ogni giocatore: registra prestiti con data e importo, registra i rientri. Il <strong>saldo corrente</strong> si calcola automaticamente. I rientri si riflettono automaticamente sul giornaliero della giornata corrispondente.</p>
+  <p>Per ogni cliente: registra prestiti con data e importo, registra i rientri. Il <strong>saldo corrente</strong> si calcola automaticamente. I rientri si riflettono automaticamente sul giornaliero della giornata corrispondente.</p>
+</div>
+
+<!-- 13b. BAR -->
+<div class="section" id="bar">
+  <div class="sec-h2"><span class="sec-num">14</span> Bar e magazzino</div>
+  <p class="sec-lead">Banco, magazzino, menu e report del bar. <strong>Bar</strong> in sidebar (Piano Pro+, modulo da attivare in Impostazioni → Moduli).</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Pagina</th><th>Cosa fa</th></tr>
+    <tr><td><strong>Banco</strong></td><td>Vendite a carrello (contanti o POS; scontrino, fattura o non documentato) e omaggi al cliente. Toccando il prezzo lo si cambia solo per quella vendita; il responsabile può salvarlo come nuovo listino. A fine giornata il totale del registratore telematico.</td></tr>
+    <tr><td><strong>Magazzino</strong></td><td>Prodotti Premium e Banco, carichi, scarti e rettifiche; giacenze e scorte minime.</td></tr>
+    <tr><td><strong>Menu</strong></td><td>Menu dei prodotti su una pagina A4 con logo, tre stili e colore a scelta: si scarica in PDF o si stampa.</td></tr>
+    <tr><td><strong>Report</strong></td><td>Venduto, scontrinato, fatturato, margine, omaggi e scarti, prodotti più venduti.</td></tr>
+  </table></div>
 </div>
 
 <!-- 14. IMPOSTAZIONI -->
 <div class="section" id="impostazioni">
-  <div class="sec-h2"><span class="sec-num">14</span> Impostazioni</div>
-  <p class="sec-lead">Accessibili solo al responsabile. <strong>Impostazioni</strong> in sidebar.</p>
+  <div class="sec-h2"><span class="sec-num">15</span> Impostazioni</div>
+  <p class="sec-lead">Accessibili solo al responsabile. <strong>Impostazioni</strong> nel menu del profilo o nella barra laterale. Su computer si vede una sezione alla volta; su telefono l'elenco delle sezioni.</p>
 
   <div class="tbl-wrap"><table>
-    <tr><th>Sezione</th><th>Cosa configura</th></tr>
-    <tr><td><strong>Sistema</strong></td><td>Nome sala, logo, accent color (white label), email mittente, numero assistenza</td></tr>
-    <tr><td><strong>Moduli</strong></td><td>Attiva/disattiva: assistenze, prestiti, anagrafica, documenti, SONOS, radio, passaggio consegne, firma digitale</td></tr>
-    <tr><td><strong>Permessi</strong></td><td>Operatori modificano turni, mobile cassa, revisori vedono turni</td></tr>
-    <tr><td><strong>Piano</strong></td><td>Piano attivo (Essenziale / Pro / Suite) e feature incluse</td></tr>
-    <tr><td><strong>Utenti</strong></td><td>Crea/modifica/disattiva operatori, responsabili e revisori; imposta password</td></tr>
-    <tr><td><strong>Guida chiusura</strong></td><td>Testo personalizzabile della guida "Come chiudere la sala" (supporta Markdown)</td></tr>
+    <tr><th>Gruppo</th><th>Sezioni</th></tr>
+    <tr><td><strong>La sala</strong></td><td>Sala e aspetto (nome, logo, colore del brand) · Turni e cassa (modelli di turno, registro giornaliero, layout) · Guida di chiusura (Markdown)</td></tr>
+    <tr><td><strong>Persone</strong></td><td>Permessi (modifica calendario turni, cassa da telefono, revisori e turni) · Notifiche</td></tr>
+    <tr><td><strong>Funzionalità</strong></td><td>Moduli (assistenze, clienti, prestiti, documenti, bar, SONOS, radio, passaggio consegne, firma) · Assistenza tecnica · Musica SONOS</td></tr>
+    <tr><td><strong>Account</strong></td><td>Piano e licenza (piano, chiave installazione, portale clienti) · Sistema (email, backup)</td></tr>
   </table></div>
+  <p>Utenti e macchine si gestiscono da <strong>Admin → Utenti</strong> e <strong>Admin → Macchine</strong>.</p>
 </div>
 
 <!-- 15. SONOS -->
 <div class="section" id="sonos">
-  <div class="sec-h2"><span class="sec-num">15</span> SONOS</div>
+  <div class="sec-h2"><span class="sec-num">16</span> SONOS</div>
   <p class="sec-lead">Controllo musica SONOS sulla LAN della sala. <strong>Sala → SONOS</strong> (Piano Suite).</p>
 
   <p>Richiede uno speaker SONOS sulla stessa rete del server e l'IP del coordinator configurato in Impostazioni. Comandi: play, pausa, traccia precedente/successiva, volume. La copertina dell'album viene mostrata tramite proxy interno.</p>
@@ -524,7 +567,7 @@ Scostamento   = Totale cassa − Fondo cassa</code></pre>
 
 <!-- 16. RADIO -->
 <div class="section" id="radio">
-  <div class="sec-h2"><span class="sec-num">16</span> Web Radio</div>
+  <div class="sec-h2"><span class="sec-num">17</span> Web Radio</div>
   <p class="sec-lead">Player radio streaming integrato. <strong>Sala → Radio</strong> (Piano Suite).</p>
 
   <p>Stazioni predefinite: RAI Radio 1/2/3, Radio DeeJay, m2o, Radio 105, Virgin Radio Italy. Il responsabile può aggiungere stazioni personalizzate in Impostazioni → Moduli.</p>
@@ -533,7 +576,7 @@ Scostamento   = Totale cassa − Fondo cassa</code></pre>
 
 <!-- 17. SICUREZZA -->
 <div class="section" id="sicurezza">
-  <div class="sec-h2"><span class="sec-num">17</span> Sicurezza e privacy</div>
+  <div class="sec-h2"><span class="sec-num">18</span> Sicurezza e privacy</div>
   <p class="sec-lead">Come vengono protetti i tuoi dati e le tue operazioni.</p>
 
   <div class="tbl-wrap"><table>
@@ -548,7 +591,7 @@ Scostamento   = Totale cassa − Fondo cassa</code></pre>
 
 <!-- 18. PROBLEMI COMUNI -->
 <div class="section" id="problemi">
-  <div class="sec-h2"><span class="sec-num">18</span> Problemi comuni</div>
+  <div class="sec-h2"><span class="sec-num">19</span> Problemi comuni</div>
   <p class="sec-lead">Soluzioni rapide per i problemi più frequenti.</p>
 
   <div class="sec-h3">"La giornata di ieri risulta ancora aperta"</div>

@@ -1,0 +1,457 @@
+{
+ "updated": "2026-09-30",
+ "releases": [
+  {
+   "version": "3.7.0",
+   "date": "2026-09-30",
+   "hotfix": false,
+   "title": "Novità sempre aggiornate",
+   "highlights": [
+    "Novità nel menu profilo sempre aggiornate",
+    "Avviso quando esce una nuova versione"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Novità sempre aggiornate</strong> — Il riquadro «Novità» nel menu del profilo (clic sul proprio nome in basso nella barra laterale) si aggiorna da solo con il changelog di gesthallsuite.it: mostra le novità della versione installata e, se è uscita una versione più recente, lo segnala. Il badge «Nuovo» ricompare a ogni aggiornamento. Funziona anche senza internet, con le note della versione installata."
+     ]
+    }
+   ]
+  },
+  {
+   "version": "3.6.0",
+   "date": "2026-09-30",
+   "hotfix": false,
+   "title": "Chat, dashboard e tabelle",
+   "highlights": [
+    "Dashboard personalizzabile da un pannello",
+    "Chat come un'app di messaggistica",
+    "Tabelle leggibili su telefono",
+    "Barra in basso con stato attivo corretto"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Dashboard personalizzabile, più semplice</strong> — «Personalizza» apre un pannello con tutti i riquadri: interruttore per mostrarli o nasconderli, frecce per l'ordine, larghezza (S, M, L) e disposizione compatta o libera, più «Ripristina». Su computer si può anche riordinare trascinando direttamente sulla griglia.",
+      "<strong>Dashboard a colonne</strong> — Su computer i grafici occupano due terzi della larghezza e gli elenchi (ultime giornate, versamenti, assistenze, prossimi turni) un terzo, invece di una lunga colonna unica.",
+      "<strong>Chat come un'app di messaggistica</strong> — Nell'elenco la chat della sala mostra l'ultimo messaggio con l'autore, ogni conversazione ha l'orario e i non letti in evidenza. Su telefono la conversazione è a tutto schermo e il tasto indietro torna all'elenco.",
+      "<strong>Tabelle su telefono</strong> — Clienti, prestiti, assistenze, VLT, contatti, utenti e registro attività: ogni riga diventa una scheda leggibile con le azioni in fondo. Anche le macchine in Admin sono schede invece di righe da scorrere di lato."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "Barra in basso su telefono: «Menu» restava evidenziato dopo essere passati a Chat, Turni o Home.",
+      "Su computer poteva comparire un piccolo riquadro vuoto in basso a destra."
+     ]
+    }
+   ]
+  },
+  {
+   "version": "3.5.0",
+   "date": "2026-09-30",
+   "hotfix": false,
+   "title": "Nuovo aspetto",
+   "highlights": [
+    "Nuovo aspetto per tutta l'app",
+    "Su telefono si usa come un'app",
+    "Impostazioni riorganizzate"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Nuovo aspetto per tutta l'app</strong> — Palette pulita in chiaro e in scuro, con il colore del brand della sala (piani con white label) o il colore GestHall. Pulsanti, card, schede, tabelle, campi e finestre hanno lo stesso stile ovunque.",
+      "<strong>Su telefono si usa come un'app</strong> — Le finestre si aprono dal basso e si chiudono trascinandole giù, l'azione principale di ogni pagina è un pulsante fluttuante, la voce «Menu» della barra in basso apre tutte le sezioni divise per gruppi.",
+      "<strong>Impostazioni riorganizzate</strong> — Gruppi La sala, Persone, Funzionalità e Account; una sezione alla volta, e su telefono elenco delle sezioni con apertura a pagina."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "Con il colore del brand non impostato l'anteprima colorava di nero l'app.",
+      "Intestazioni che uscivano dallo schermo su telefono (Mensile, Annuale, Bet/Win, Report bar)."
+     ]
+    }
+   ]
+  },
+  {
+   "version": "3.4.1",
+   "date": "2026-09-29",
+   "hotfix": true,
+   "title": "",
+   "highlights": [],
+   "groups": [
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Menu del bar</strong> — Su alcuni server (MySQL) la pagina del menu andava in errore. Ora le colonne necessarie vengono create in modo compatibile con tutti i database."
+     ]
+    }
+   ]
+  },
+  {
+   "version": "3.4.0",
+   "date": "2026-09-29",
+   "hotfix": false,
+   "title": "Menu del bar in PDF",
+   "highlights": [
+    "Menu del bar in PDF su una pagina"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Menu del bar in PDF</strong> — Menu dei prodotti su una pagina A4 con logo, titolo, sezioni, descrizioni e prezzi. Tre stili (Classico, Moderno, Scuro) e colore a scelta; colonne e testo si adattano da soli per restare leggibili. Si scarica in PDF o si stampa, anche senza internet."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "Su telefono l'intestazione delle pagine finiva sotto la barra dell'app."
+     ]
+    }
+   ]
+  },
+  {
+   "version": "3.3.0",
+   "date": "2026-09-29",
+   "hotfix": false,
+   "title": "Clienti e prezzo al banco",
+   "highlights": [
+    "Prezzo modificabile al banco del bar",
+    "«Giocatori» diventa «Clienti»",
+    "Un solo permesso per i turni"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Prezzo modificabile al banco</strong> — Nel carrello del bar si può cambiare il prezzo di un prodotto per quella vendita o quell'omaggio (sconto, promozione). Il responsabile può salvarlo come nuovo prezzo di listino."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>«Giocatori» diventa «Clienti»</strong> — Lo stesso registro vale per la sala e per il bar.",
+      "<strong>Un solo permesso per i turni</strong> — «Modifica calendario turni» vale su qualsiasi dispositivo: prendere un turno libero, togliersi dal proprio e lasciare note."
+     ]
+    }
+   ]
+  },
+  {
+   "version": "3.2.0",
+   "date": "2026-09-29",
+   "hotfix": false,
+   "title": "Turni riprogettati",
+   "highlights": [
+    "Pagina Turni riprogettata per il telefono"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Pagina Turni riprogettata</strong> — In evidenza il turno in corso, il tuo prossimo turno e quelli da coprire. Tre viste (Calendario, Lista, Riepilogo), filtri I miei / Liberi / Operatore, «Lo prendo» per un turno libero con un tocco, dettaglio del giorno come foglio dal basso su telefono."
+     ]
+    }
+   ]
+  },
+  {
+   "version": "3.1.1",
+   "date": "2026-09-29",
+   "hotfix": true,
+   "title": "",
+   "highlights": [],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Ticket convalidati per piattaforma</strong> — Nel riquadro «Ticket pagati» ogni piattaforma ha il proprio numero di ticket convalidati, con il totale in fondo."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "Il layout Avanzato del giornaliero a volte non si attivava; ora la scelta viene salvata e, in caso di problemi, compare un messaggio."
+     ]
+    }
+   ]
+  },
+  {
+   "version": "3.1.0",
+   "date": "2026-09-29",
+   "hotfix": false,
+   "title": "Layout del giornaliero",
+   "highlights": [
+    "Layout Avanzato del giornaliero",
+    "Numero di ticket convalidati",
+    "2ª cassa attivabile"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Layout del giornaliero Classico / Avanzato</strong> (piano Suite) — Nel layout Avanzato gli scassettamenti stanno in una colonna fissa, i pannelli sono su due colonne e i risultati del turno restano visibili in basso mentre si compila. Il responsabile sceglie il predefinito, ogni utente il proprio.",
+      "<strong>Numero di ticket convalidati</strong> — Nuovo campo nel riquadro «Ticket pagati», progressivo come gli altri valori del turno.",
+      "<strong>2ª cassa attivabile</strong> — Le sale che non la usano possono nascondere il campo."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "Intestazione del giornaliero più compatta sugli schermi medi, con tutti i turni visibili."
+     ]
+    }
+   ]
+  },
+  {
+   "version": "3.0.0",
+   "date": "2026-09-28",
+   "hotfix": false,
+   "title": "",
+   "highlights": [
+    "Turni flessibili",
+    "Turno di chiusura",
+    "Statistiche sugli incassi reali",
+    "Bet/Win e Borderò",
+    "Bar e magazzino"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Turni flessibili</strong> — I turni non sono più fissi a Mattino e Sera: il responsabile definisce modelli di turno con orari e giorni della settimana (es. un turno in più solo il sabato) e può personalizzare ogni singola data. Il calendario ha viste mese, settimana e agenda, più operatori per turno e note. La cassa giornaliera mostra una scheda per ogni turno del giorno, con il pulsante <strong>+</strong> per un turno non previsto.",
+      "<strong>Turno di chiusura</strong> — I valori dei turni sono progressivi: il turno che chiude la sala è quello di riferimento per statistiche, email ai revisori e conferma del versamento. Viene fissato alla chiusura della giornata e si può cambiare.",
+      "<strong>Statistiche sugli incassi reali</strong> — Settimanale, mensile, annuale, confronto periodi, dashboard ed export usano gli scassettamenti effettivi delle macchine del turno di chiusura, non più il bet/win dichiarato dai fornitori e senza sommare i turni tra loro. L'annuale confronta con l'anno precedente e mostra le colonne per fornitore.",
+      "<strong>Bet/Win e Borderò</strong> — Nuova sezione Bet/Win per i dati dichiarati dai fornitori (SNAI o altri), con import Excel. Nuovo archivio dei borderò PDF per fornitore e periodo.",
+      "<strong>Bar e magazzino</strong> (piano Pro) — Banco con vendite a carrello (contanti/POS; scontrino, fattura o non documentato), omaggi al cliente, chiusura con il totale del registratore telematico; magazzino Premium e Banco con giacenze, carichi, scarti e rettifiche; report con venduto, scontrinato, fatturato e margine.",
+      "<strong>Lavoro offline</strong> — Cassa giornaliera e calendario turni funzionano anche senza connessione: i salvataggi restano sul dispositivo e si sincronizzano da soli al ritorno della rete, con gestione dei conflitti.",
+      "<strong>Piano Multi-sala</strong> — Più sale nello stesso account (€149/mese con 2 sale incluse, +€49 per sala): selettore sala, panoramica di tutte le sale, utenti abilitati per sala, impostazioni per sala."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Licenza sincronizzata</strong> — Piano e numero di sale vengono verificati automaticamente ogni 24 ore; stato e verifica manuale in Impostazioni → Piano. Il portale clienti permette di richiedere anche sale aggiuntive.",
+      "<strong>Niente più paghe per turno</strong> — Rimossi costi turno e stipendi: il calendario e la dashboard mostrano turni e ore."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "Il salvataggio del giornaliero poteva fallire sulle installazioni meno recenti."
+     ]
+    }
+   ]
+  },
+  {
+   "version": "2.14.0",
+   "date": "2026-08-12",
+   "hotfix": false,
+   "title": "",
+   "highlights": [
+    "Online e ultimo accesso (Utenti)",
+    "Eliminazione utente",
+    "Condivisione contenuti in chat",
+    "Anagrafica giocatori — scheda completa",
+    "Scorciatoie da tastiera"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Online e ultimo accesso (Utenti)</strong> — La lista utenti in Admin → Utenti mostra un pallino verde sull'avatar se l'utente è attualmente online (attività negli ultimi 2 minuti). Sotto il nome compare l'etichetta \"Online\", \"X min fa\", \"X ore fa\", \"Ieri HH:MM\" o la data breve a seconda dell'ultimo accesso. In chat, visualizzando un messaggio diretto con un utente offline, il sottotitolo dell'intestazione mostra \"Visto X fa\".",
+      "<strong>Eliminazione utente</strong> — I responsabili possono eliminare definitivamente un utente dal menu ⋮ nella lista utenti. L'account viene anonimizzato, l'accesso revocato immediatamente e tutti i dati personali rimossi. I turni e i dati cassa storici compilati dall'utente vengono conservati. L'azione è irreversibile e richiede conferma tramite una dialog dedicata con avviso esplicito.",
+      "<strong>Condivisione contenuti in chat</strong> — È ora possibile condividere contenuti della piattaforma direttamente nelle conversazioni chat. Categorie supportate: Calendario turni, Documenti, Contatti, Ticket assistenza, Anagrafica giocatori. Il pulsante graffetta apre un selettore con le 5 categorie; è possibile selezionare più elementi contemporaneamente e aggiungere un messaggio di accompagnamento. I contenuti condivisi vengono visualizzati come card strutturate nel feed dei messaggi, con colori e anteprime specifici per categoria.",
+      "<strong>Anagrafica giocatori — scheda completa</strong> — La scheda giocatore ora include un sistema completo di dati anagrafici, indirizzi e documento d'identità: sesso, luogo di nascita (città, provincia, stato), cittadinanza; residenza (indirizzo, città, provincia, CAP); domicilio separato opzionale; documento d'identità con tipo (CI, passaporto, patente, permesso di soggiorno e altri), numero, date di rilascio e scadenza, autorità e luogo di rilascio, flag \"documento presente\". Nella lista giocatori compare un badge rosso <strong>SCADUTO</strong> se il documento è scaduto e un badge verde <strong>Doc. presente</strong> se la scansione è archiviata."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Scorciatoie da tastiera</strong> — Navigazione rapida tra le sezioni con sequenze <code>G+G</code> (Giornaliero), <code>G+T</code> (Turni), <code>G+D</code> (Dashboard), <code>G+A</code> (Assistenze), <code>G+H</code> (Guida). Nel giornaliero: <code>Ctrl+S</code> / <code>Enter</code> per salvare, <code>Ctrl+N</code> per cambiare turno, <code>Ctrl+←/→</code> per cambiare giorno. Tutte le scorciatoie sono consultabili dal popup utente → Scorciatoie, e possono essere visualizzate come badge contestuali direttamente sull'interfaccia con il toggle \"Mostra suggerimenti\".",
+      "<strong>Operazioni aritmetiche nei campi numerici</strong> — Con un valore già presente nel campo, è possibile digitare <code>+N</code> o <code>-N</code> e premere Tab per applicare l'operazione senza usare la calcolatrice. Esempio: campo a 200, si digita <code>+50</code> → diventa 250.",
+      "<strong>Filtro operatore nel calendario turni</strong> — Cliccando sul nome di un operatore nel calendario mensile, la vista si filtra mostrando solo i suoi turni. Un banner in cima al calendario indica il filtro attivo con un pulsante per rimuoverlo. Secondo clic sullo stesso operatore rimuove il filtro.",
+      "<strong>Nota del turno precedente</strong> — Nel giornaliero, se il turno precedente della stessa giornata ha una nota, questa viene mostrata come banner evidenziato prima del form. Utile per il passaggio veloce di informazioni tra turni consecutivi senza aprire la sezione Passaggio consegne.",
+      "<strong>Alert push soglia incasso VLT</strong> — Il responsabile può configurare una soglia minima di incasso VLT in Impostazioni → Notifiche. Se al momento della chiusura giornata l'incasso VLT totale risulta inferiore alla soglia, tutti i responsabili attivi ricevono una notifica push con l'importo e la data."
+     ]
+    }
+   ]
+  },
+  {
+   "version": "2.13.0",
+   "date": "2026-07-22",
+   "hotfix": false,
+   "title": "",
+   "highlights": [
+    "LUL — Buste paga digitali",
+    "Codice fiscale operatore",
+    "Calendario turni fullscreen"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>LUL — Buste paga digitali</strong> — Il revisore carica il PDF del Libro Unico del Lavoro: l'app riconosce automaticamente i codici fiscali, abbina ciascuno all'operatore corrispondente e invia le buste paga individuali via email. Ogni operatore trova le proprie buste nella sezione dedicata con badge di notifica. L'apertura di una busta registra la presa visione con data, ora e IP per conformità normativa.",
+      "<strong>Codice fiscale operatore</strong> — Campo CF aggiunto ai profili utente, editabile da Admin → Utenti. Usato dall'abbinamento automatico LUL."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Calendario turni fullscreen</strong> — Le viste Mese, Settimana e Agenda occupano ora tutta l'altezza disponibile senza scrolling esterno."
+     ]
+    }
+   ]
+  },
+  {
+   "version": "2.12.0",
+   "date": "2026-07-22",
+   "hotfix": false,
+   "title": "",
+   "highlights": [
+    "Note sui turni programmati",
+    "Chip calendario turni ridisegnate"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Note sui turni programmati</strong> — ogni turno nel calendario può avere una nota testuale (es. ore di straordinario, annotazioni operative). Si aggiunge dal pannello di dettaglio giornata e compare direttamente sulla chip del calendario, in corsivo, senza aprire nulla."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Chip calendario turni ridisegnate</strong> — nuovo layout compatto con nome turno e orario sulla stessa riga, nome operatore in evidenza con peso tipografico maggiore. Le chip non vengono più tagliate nelle celle. Differenziazione visiva più netta tra i propri turni (accent saturo + bordo interno) e i turni degli altri (grigio con bordo sottile)."
+     ]
+    }
+   ]
+  },
+  {
+   "version": "2.11.0",
+   "date": "2026-07-13",
+   "hotfix": false,
+   "title": "",
+   "highlights": [],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "Barra di avanzamento turno in tempo reale: mostra la percentuale di completamento delle operazioni di chiusura (bancomat, contanti, scassettamenti VLT) direttamente nei tab di switch turno.",
+      "Avatar con iniziali e colore deterministico per ogni operatore nei pulsanti di cambio turno. Nomi lunghi abbreviati automaticamente."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "Colore link chat nella sidebar: ripristinato correttamente al valore base."
+     ]
+    }
+   ]
+  },
+  {
+   "version": "2.10.1",
+   "date": "2026-07-09",
+   "hotfix": true,
+   "title": "",
+   "highlights": [],
+   "groups": [
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Calcolo versamento settimanale errato</strong> — il totale poteva divergere da quello visualizzato nel giornaliero. Ora i valori sono allineati.",
+      "<strong>Conferma batch versamenti</strong> — quando la firma digitale era attiva, la conferma multipla saltava il passaggio firma. Ora ogni conferma segue il flusso completo.",
+      "<strong>Messaggi vocali in chat</strong> — non era possibile fermare la registrazione né inviare il messaggio. Risolto.",
+      "<strong>Cambio data a mezzanotte</strong> — salvando il turno dopo mezzanotte la data poteva scorrere al giorno successivo. Ora rimane quella di apertura."
+     ]
+    }
+   ]
+  },
+  {
+   "version": "2.10.0",
+   "date": "2026-07-08",
+   "hotfix": false,
+   "title": "",
+   "highlights": [],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "Messaggi vocali nella chat interna: registra e invia audio con un solo tocco. Timer di registrazione, anteprima prima dell'invio, resa come player audio nella conversazione."
+     ]
+    }
+   ]
+  },
+  {
+   "version": "2.9.0",
+   "date": "2026-07-08",
+   "hotfix": false,
+   "title": "",
+   "highlights": [],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "Web Radio persistente: l'audio non si interrompe più navigando tra le pagine dell'app. Cambio pagina via PJAX senza ricaricare il browser.",
+      "Mini player radio nella barra laterale con controlli play/pausa, stop e nome stazione. Su mobile: dot pulsante nella topbar per accesso rapido."
+     ]
+    }
+   ]
+  },
+  {
+   "version": "2.8.0",
+   "date": "2026-07-07",
+   "hotfix": false,
+   "title": "",
+   "highlights": [],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "Contatore utenti attivi per il piano Essenziale: chip N/4 visibile in Admin → Utenti con avviso al raggiungimento del limite. Il pulsante \"Nuovo utente\" si disabilita con messaggio esplicativo.",
+      "Logo personalizzato e colori brand riservati al piano Suite: installazioni Essenziale e Pro usano il teal GestHall come colore predefinito."
+     ]
+    }
+   ]
+  },
+  {
+   "version": "2.7.0",
+   "date": "2026-07-06",
+   "hotfix": false,
+   "title": "",
+   "highlights": [],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "Anagrafica giocatori: registro completo con nome, cognome, data di nascita, telefono, email e note. Ricerca in tempo reale su tutti i campi. Integrazione automatica con il modulo Prestiti.",
+      "Email automatica all'apertura di un ticket assistenza macchine: codice, tipo, fornitore, seriale e CIV inviati all'indirizzo configurato in Impostazioni → Assistenza.",
+      "Guida chiusura sala personalizzabile: l'admin può riscrivere la procedura di chiusura in Markdown dall'interfaccia di impostazioni, senza modificare il codice."
+     ]
+    }
+   ]
+  },
+  {
+   "version": "2.6.0",
+   "date": "2026-07-06",
+   "hotfix": false,
+   "title": "",
+   "highlights": [],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "Storico macchina VLT/AWP: pagina dedicata per ogni macchina con KPI lifetime, grafico a barre mensili, media mensile e storico ticket assistenza.",
+      "QR code macchina stampabile: scansionando il QR affisso alla macchina si apre direttamente il form di apertura ticket — senza cercare la macchina nell'elenco.",
+      "Confronto periodi: seleziona due range di date e confronta scassettamenti, versamenti, bancomat, ticket e giorni chiusi con variazione percentuale Δ e grafico sovrapposto.",
+      "Firma digitale versamento: il revisore firma su canvas touch al momento del ritiro. Firma PNG, IP e timestamp salvati immutabilmente con l'importo dichiarato.",
+      "Passaggio consegne: checklist configurabile (fino a 20 item) e campo messaggio libero tra turni. Attivabile come modulo opzionale."
+     ]
+    }
+   ]
+  }
+ ]
+}

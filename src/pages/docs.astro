@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import changelog from '../data/changelog.json';
+const last = changelog.releases.find((r) => r.highlights.length) ?? changelog.releases[0];
 ---
 
 <Layout page="Documentazione" description="Guide, riferimenti tecnici e area riservata per GestHall Suite. Tutto quello che ti serve per usare, installare e personalizzare la piattaforma.">
@@ -98,7 +100,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <div class="docs-clog-body">
           <strong>Tutte le novità di GestHall Suite</strong>
-          <p>Ultima release 3.0: turni flessibili, statistiche sugli incassi reali, bar e magazzino, bet/win e borderò, lavoro offline e piano Multi-sala.</p>
+          <p>Ultima release {last.version.replace(/\.0$/, '')}: {last.highlights.join(', ').toLowerCase()}.</p>
         </div>
         <span class="docs-clog-arrow" aria-hidden="true">Vedi changelog →</span>
       </a>
