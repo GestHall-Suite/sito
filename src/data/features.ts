@@ -51,6 +51,14 @@ export const features: Feature[] = [
     icon: `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7.5a12 12 0 0 1 16 0M5 10.5a8 8 0 0 1 10 0M8 13.5a4 4 0 0 1 4 0"/><circle cx="10" cy="16.5" r="1"/><path d="M3 3l14 14"/></svg>`,
   },
   {
+    id: 'sicurezza-aggiornamenti',
+    slug: '/funzionalita/sicurezza-aggiornamenti',
+    name: 'Backup e aggiornamenti',
+    desc: 'Aggiornamenti con un clic, backup settimanale del database, accesso in due passaggi e avvisi automatici',
+    plan: 'essenziale',
+    icon: `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2l6 2.5v4.5c0 4-2.6 7.2-6 8.5-3.4-1.3-6-4.5-6-8.5V4.5z"/><path d="M7 10l2 2 4-4"/></svg>`,
+  },
+  {
     id: 'betwin-bordero',
     slug: '/funzionalita/betwin-bordero',
     name: 'Bet/Win e borderò',

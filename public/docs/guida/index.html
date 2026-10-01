@@ -170,7 +170,7 @@ pre code { background:none;border:none;padding:0;font-size:13px;line-height:1.6 
   <span class="tb-sep">/</span>
   <span class="tb-title">Guida Utente</span>
   <div class="tb-spacer"></div>
-  <span class="tb-badge">v3.7 · Settembre 2026</span>
+  <span class="tb-badge">v3.8 · Ottobre 2026</span>
   <button class="theme-btn" onclick="toggleTheme()" aria-label="Cambia tema">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
   </button>
@@ -208,7 +208,7 @@ pre code { background:none;border:none;padding:0;font-size:13px;line-height:1.6 
     <a class="sb-link" href="#impostazioni" onclick="closeMobile()"><span class="sb-num">15</span> Impostazioni</a>
     <a class="sb-link" href="#sonos" onclick="closeMobile()"><span class="sb-num">16</span> SONOS</a>
     <a class="sb-link" href="#radio" onclick="closeMobile()"><span class="sb-num">17</span> Web Radio</a>
-    <a class="sb-link" href="#sicurezza" onclick="closeMobile()"><span class="sb-num">18</span> Sicurezza</a>
+    <a class="sb-link" href="#sicurezza" onclick="closeMobile()"><span class="sb-num">18</span> Sicurezza e aggiornamenti</a>
     <a class="sb-link" href="#problemi" onclick="closeMobile()"><span class="sb-num">19</span> Problemi comuni</a>
   </div>
 </nav>
@@ -380,7 +380,7 @@ Scostamento   = Totale cassa − Fondo cassa</code></pre>
 
   <div class="tbl-wrap"><table>
     <tr><th>Report</th><th>Contenuto</th><th>Export</th></tr>
-    <tr><td><strong>Mensile</strong></td><td>Riepilogo giorno per giorno, Δ% vs mese precedente, incassi VLT per macchina, filtro operatore</td><td>CSV + Excel .xlsx</td></tr>
+    <tr><td><strong>Mensile</strong></td><td>Riepilogo giorno per giorno, Δ% vs mese precedente, incassi VLT per macchina, filtro operatore</td><td>CSV + Excel .xlsx + <strong>Per il commercialista</strong> (riepilogo, incassi giornalieri, versamenti, bar)</td></tr>
     <tr><td><strong>Annuale</strong></td><td>Panoramica mese per mese, filtro operatore, link a ogni mensile</td><td>Stampa</td></tr>
     <tr><td><strong>Confronto periodi</strong> <span style="font-size:11px;color:var(--teal-dk);font-weight:600">Pro+</span></td><td>Due intervalli di date liberi, 5 metriche, Δ%, grafico linee sovrapposto</td><td>Stampa</td></tr>
     <tr><td><strong>Settimanale SNAI</strong></td><td>Dati Bet/Win SNAI, totali per fornitore, payout, confronto settimana precedente</td><td>Stampa</td></tr>
@@ -576,7 +576,7 @@ Scostamento   = Totale cassa − Fondo cassa</code></pre>
 
 <!-- 17. SICUREZZA -->
 <div class="section" id="sicurezza">
-  <div class="sec-h2"><span class="sec-num">18</span> Sicurezza e privacy</div>
+  <div class="sec-h2"><span class="sec-num">18</span> Sicurezza, backup e aggiornamenti</div>
   <p class="sec-lead">Come vengono protetti i tuoi dati e le tue operazioni.</p>
 
   <div class="tbl-wrap"><table>
@@ -586,7 +586,16 @@ Scostamento   = Totale cassa − Fondo cassa</code></pre>
     <tr><td>Resta connesso</td><td>Token SHA-256 per dispositivo, rolling 30 giorni, HttpOnly/Secure</td></tr>
     <tr><td>Credenziali</td><td>Non condividere: ogni operatore deve avere il proprio account</td></tr>
     <tr><td>Esportazione dati</td><td>I dati sono tuoi, esportabili in qualsiasi momento in CSV o Excel</td></tr>
+    <tr><td>Verifica in due passaggi</td><td>Responsabili e revisori, dopo la password, inseriscono un codice ricevuto via email (Impostazioni → Sistema). Sui dispositivi attendibili non viene richiesto per 30 giorni</td></tr>
+    <tr><td>Tentativi sbagliati</td><td>Dopo 5 errori dallo stesso dispositivo, o 10 sullo stesso utente, l'accesso si blocca per 15 minuti</td></tr>
+    <tr><td>Backup</td><td>Copia completa del database ogni settimana, in automatico; manuale, scaricabile e ripristinabile da Admin → Backup</td></tr>
   </table></div>
+
+  <div class="sec-h3">Aggiornare l'app</div>
+  <p>Quando esce una nuova versione la trovi in <strong>Admin → Aggiornamenti</strong> (o Impostazioni → Sistema). <strong>Aggiorna ora</strong> salva prima il database e i file attuali, poi installa la versione controllando ogni file: in caso di problemi, <strong>Versioni precedenti → Ripristina</strong> riporta l'app com'era. Se hai ricevuto un pacchetto <code>.zip</code> dal supporto, caricalo nella stessa pagina con <strong>Installa da un file</strong>: non serve l'FTP.</p>
+
+  <div class="sec-h3">Avvisi automatici</div>
+  <p>Il responsabile riceve un avviso (campanella e, se attive, notifiche push) quando la cassa di un turno non quadra oltre la soglia, quando un prodotto del bar scende sotto la scorta minima e quando un ticket di assistenza resta aperto troppi giorni. Le soglie si impostano in Impostazioni → Notifiche; ognuno può disattivare i singoli avvisi da Profilo → Notifiche.</p>
 </div>
 
 <!-- 18. PROBLEMI COMUNI -->
