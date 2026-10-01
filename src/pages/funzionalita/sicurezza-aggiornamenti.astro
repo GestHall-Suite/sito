@@ -1,0 +1,70 @@
+---
+import FeatureLayout from '../../layouts/FeatureLayout.astro';
+---
+
+<FeatureLayout
+  title="Backup, aggiornamenti e sicurezza del gestionale · GestHall Suite"
+  description="Aggiornamenti installati dall'app con un clic, backup automatico del database, accesso in due passaggi per responsabili e revisori e avvisi automatici quando qualcosa non torna."
+  tag="Backup e aggiornamenti"
+  heading="Sempre aggiornato, sempre al sicuro."
+  sub="Le nuove versioni si installano dall'app con un clic, il database si salva da solo ogni settimana e l'accesso di responsabili e revisori è protetto da un codice via email. Se la cassa non quadra, te lo dice l'app."
+  plan="essenziale"
+  related={['cassa-giornaliera', 'report-analisi', 'multi-sala']}
+>
+
+  <div slot="visual" class="feat-mock-card" style="width:100%">
+    <div class="fmc-header">
+      <span class="fmc-title">Aggiornamenti</span>
+      <span class="fmc-badge">Versione 3.8</span>
+    </div>
+    <div class="fmc-body">
+      <div class="sa-card">
+        <strong>È disponibile una nuova versione</strong>
+        <span>Prima di installarla l'app salva il database e i file attuali.</span>
+        <em class="sa-btn">Aggiorna ora</em>
+      </div>
+      <div class="fmc-rows">
+        <div class="fmc-row"><span>Ultimo backup</span><span>lunedì 06:12 · automatico</span></div>
+        <div class="fmc-row"><span>Verifica in due passaggi</span><span class="sa-on">Attiva</span></div>
+        <div class="fmc-row"><span>Avviso · Turno Sera</span><span class="sa-warn">cassa −32,00 €</span></div>
+      </div>
+    </div>
+  </div>
+
+  <Fragment slot="steps">
+    <div class="fp-step">
+      <div class="fp-step-num">1</div>
+      <div class="fp-step-title">Aggiorna con un clic</div>
+      <div class="fp-step-desc">Quando esce una nuova versione la trovi in Impostazioni → Sistema → Aggiornamenti. Un clic e l'app la installa, controllando ogni file: niente FTP, niente file arrivati a metà.</div>
+    </div>
+    <div class="fp-step">
+      <div class="fp-step-num">2</div>
+      <div class="fp-step-title">Backup automatico</div>
+      <div class="fp-step-desc">Ogni settimana l'app salva una copia completa del database. Puoi crearne una quando vuoi, scaricarla sul computer o ripristinarla in un attimo.</div>
+    </div>
+    <div class="fp-step">
+      <div class="fp-step-num">3</div>
+      <div class="fp-step-title">Accesso protetto e avvisi</div>
+      <div class="fp-step-desc">Responsabili e revisori confermano l'accesso con un codice via email. L'app ti avvisa se la cassa di un turno non quadra, se il bar va sotto scorta o se un guasto resta aperto troppo a lungo.</div>
+    </div>
+  </Fragment>
+
+  <Fragment slot="benefits">
+    <div class="fp-benefit-list">
+      <div class="fp-benefit"><div class="fp-benefit-icon"></div><div class="fp-benefit-text"><strong>Si torna sempre indietro.</strong> Prima di ogni aggiornamento vengono salvati il database e i file sostituiti: un clic per ripristinare.</div></div>
+      <div class="fp-benefit"><div class="fp-benefit-icon"></div><div class="fp-benefit-text"><strong>Dati al sicuro.</strong> Backup settimanale automatico, scaricabile in un formato standard leggibile da qualsiasi database.</div></div>
+      <div class="fp-benefit"><div class="fp-benefit-icon"></div><div class="fp-benefit-text"><strong>Accessi sotto controllo.</strong> Codice via email per chi vede i soldi, blocco dopo troppi tentativi sbagliati, dispositivi attendibili per 30 giorni.</div></div>
+      <div class="fp-benefit"><div class="fp-benefit-icon"></div><div class="fp-benefit-text"><strong>Pronto per il commercialista.</strong> Un Excel al mese con riepilogo, incassi giornalieri, versamenti e bar.</div></div>
+    </div>
+  </Fragment>
+
+</FeatureLayout>
+
+<style>
+.sa-card { display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; border-radius: var(--rx); background: var(--surface); border: 1px solid var(--border-sub); margin-bottom: 10px }
+.sa-card strong { font-size: 13px }
+.sa-card span { font-size: 11px; color: var(--muted) }
+.sa-btn { align-self: flex-start; margin-top: 6px; font-style: normal; font-size: 11px; font-weight: 700; color: #fff; background: var(--accent); padding: 6px 12px; border-radius: 99px }
+.sa-on { color: var(--accent); font-weight: 700 }
+.sa-warn { color: oklch(0.55 0.14 70); font-weight: 700 }
+</style>

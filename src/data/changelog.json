@@ -1,6 +1,39 @@
 {
- "updated": "2026-09-30",
+ "updated": "2026-10-01",
  "releases": [
+  {
+   "version": "3.8.0",
+   "date": "2026-10-01",
+   "hotfix": false,
+   "title": "Aggiornamenti con un clic, backup e sicurezza",
+   "highlights": [
+    "Aggiornamenti installati dall'app, senza FTP",
+    "Backup automatico del database",
+    "Accesso in due passaggi per responsabili e revisori",
+    "Avvisi automatici su cassa, bar e assistenze",
+    "Excel pronto per il commercialista"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Aggiornamenti dall'app</strong> — In Impostazioni → Sistema → Aggiornamenti trovi le nuove versioni e le installi con un clic. L'app controlla ogni file, salva prima i dati e una copia della versione attuale, e ti permette di tornare indietro. Puoi anche caricare un pacchetto ricevuto dal supporto direttamente dal browser.",
+      "<strong>Backup del database</strong> — Una copia completa dei dati ogni settimana, in automatico. Puoi crearne una quando vuoi, scaricarla o ripristinarla (prima del ripristino lo stato attuale viene salvato).",
+      "<strong>Verifica in due passaggi</strong> — Responsabili e revisori, dopo la password, inseriscono un codice ricevuto via email. Sui dispositivi indicati come attendibili il codice non viene richiesto per 30 giorni. Si attiva da Impostazioni → Sistema.",
+      "<strong>Avvisi automatici</strong> — Il responsabile riceve un avviso quando la cassa di un turno non quadra oltre la soglia, quando un prodotto del bar scende sotto la scorta minima e quando un ticket di assistenza resta aperto troppi giorni. Soglie in Impostazioni → Notifiche; ognuno può disattivarli dal profilo.",
+      "<strong>Export per il commercialista</strong> — Da Cassa → Mensile un Excel con riepilogo, incassi giornalieri per piattaforma, versamenti confermati e vendite del bar.",
+      "<strong>Promemoria di scadenza</strong> — Il responsabile vede un avviso 15 giorni prima della scadenza della licenza."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "Un utente viene bloccato per 15 minuti dopo 10 tentativi di accesso sbagliati, anche da postazioni diverse.",
+      "Gli aggiornamenti caricati via FTP non arrivano più incompleti: nessun file dell'app supera i 30 KB."
+     ]
+    }
+   ]
+  },
   {
    "version": "3.7.2",
    "date": "2026-09-30",

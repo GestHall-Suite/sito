@@ -2,6 +2,12 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-01
+
+- Changelog: versione 3.8.0 della suite (aggiornamenti dall'app, backup, verifica in due passaggi, avvisi automatici, export per il commercialista).
+- Nuova pagina funzionalità «Backup e aggiornamenti» (`/funzionalita/sicurezza-aggiornamenti`) e voce in `features.ts`; report: export per il commercialista.
+- Guida utente aggiornata alla 3.8: sicurezza, backup, aggiornamenti dall'app, avvisi automatici.
+
 ## 2026-09-30
 
 - Changelog: hotfix 3.7.1 e 3.7.2 della suite.
