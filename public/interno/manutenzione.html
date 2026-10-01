@@ -205,8 +205,8 @@ p code, li code, td code, .step-desc code { overflow-wrap:anywhere }
   <div class="sb-group">
     <span class="sb-group-label">Manutenzione</span>
     <a class="sb-link" href="#flusso" onclick="closeMobile()"><span class="sb-icon">🧭</span> Il quadro completo</a>
-    <a class="sb-link" href="#pacchetto" onclick="closeMobile()"><span class="sb-icon">📦</span> Creare il pacchetto</a>
-    <a class="sb-link" href="#pubblicare" onclick="closeMobile()"><span class="sb-icon">🚀</span> Pubblicare nell'hub</a>
+    <a class="sb-link" href="#pacchetto" onclick="closeMobile()"><span class="sb-icon">📦</span> Pubblicare una versione</a>
+    <a class="sb-link" href="#pubblicare" onclick="closeMobile()"><span class="sb-icon">🔗</span> Hub e GitHub</a>
     <a class="sb-link" href="#scoperta" onclick="closeMobile()"><span class="sb-icon">📡</span> Come la sala lo scopre</a>
     <a class="sb-link" href="#installazione" onclick="closeMobile()"><span class="sb-icon">⚙️</span> Installazione e ritorno</a>
   </div>
@@ -231,10 +231,10 @@ p code, li code, td code, .step-desc code { overflow-wrap:anywhere }
 <div class="section-hero">
   <div class="sh-eyebrow">Documentazione interna</div>
   <h1 class="sh-h1">Aggiornamenti, backup e manutenzione</h1>
-  <p class="sh-sub">Come nasce una versione, come arriva alle sale, come si installa da sola, come vengono salvati i dati e dove finisce ogni file. Vale dalla versione 3.8.0 della suite.</p>
+  <p class="sh-sub">Come nasce una versione, come arriva alle sale, come si installa da sola, come vengono salvati i dati e dove finisce ogni file. Vale dalla versione 3.8.1 della suite (rilasci da GitHub).</p>
   <div class="sh-chips">
-    <span class="sh-chip">Suite 3.8.0</span>
-    <span class="sh-chip">Hub · Rilasci</span>
+    <span class="sh-chip">Suite 3.8.1</span>
+    <span class="sh-chip">GitHub Releases → Hub</span>
     <span class="sh-chip">Nessun cron, nessun FTP</span>
     <span class="sh-chip">Ottobre 2026</span>
   </div>
@@ -243,50 +243,47 @@ p code, li code, td code, .step-desc code { overflow-wrap:anywhere }
 <!-- 1. FLUSSO -->
 <div class="section" id="flusso">
   <div class="sec-h2"><span class="sec-num">01</span> Il quadro completo</div>
-  <p class="sec-lead">Tre attori: il <strong>codice</strong> (repository GitHub della suite), l'<strong>hub</strong> (hub.gesthallsuite.it, che conosce tutte le installazioni) e ogni <strong>suite</strong> installata in una sala. Nessuno dei tre "cerca" niente da solo nel senso di Internet: ogni passaggio è una richiesta precisa.</p>
-<pre><code>REPOSITORY (computer / sessione di sviluppo)
-  1. si alza GH_VERSION e si scrive il CHANGELOG
-  2. php tools/file_attesi.php   → install/file_attesi.json (elenco file + impronte)
-  3. php tools/pacchetto.php     → dist/gesthall-suite-3.8.1.zip
-              │  (caricato a mano dal superadmin)
+  <p class="sec-lead">Tre attori: <strong>GitHub</strong> (repository della suite, che con GitHub Actions costruisce e pubblica ogni versione), l'<strong>hub</strong> (hub.gesthallsuite.it, che conosce tutte le installazioni e legge le versioni da GitHub) e ogni <strong>suite</strong> installata in una sala. Nessun file da creare o caricare a mano.</p>
+<pre><code>REPOSITORY su GitHub
+  1. si alza GH_VERSION e si scrive il CHANGELOG, si unisce su main
+  2. GitHub Actions (rilascio.yml) vede una versione senza release:
+     test → controlli → pacchetto → tag v3.8.1 → GitHub Release
+     con gesthall-suite-3.8.1.zip + .sha256 e le note del CHANGELOG
+              │  ogni 10 minuti (o «Sincronizza ora»), con il token GitHub
               ▼
-HUB  hub.gesthallsuite.it
-  4. Rilasci → Carica versione → Pubblica   (zip in storage/rilasci/, impronta SHA-256 nel DB)
+HUB  hub.gesthallsuite.it  (Rilasci)
+  3. legge le release e le propone alle sale (Ritira per nasconderne una)
               ▲  ① una volta al giorno: "sono la sala X, ho la 3.8.0"
               │  ② risposta: "licenza ok, c'è la 3.8.1, impronta abc…"
-              │  ③ al clic su Aggiorna ora: download dello zip
+              │  ③ al clic su Aggiorna ora: l'hub scarica da GitHub e inoltra
 SUITE della sala (Impostazioni → Sistema → Aggiornamenti)
-  5. backup database → download → controllo impronte → copia dei file vecchi
+  4. backup database → download → controllo impronte → copia dei file vecchi
      → scrittura dei file nuovi → controllo finale</code></pre>
-  <div class="callout info"><span class="callout-ico">💡</span><p><code>tools/pacchetto.php</code> non trova l'aggiornamento: lo <strong>costruisce</strong> partendo dai file del repository. Chi "trova" l'aggiornamento è la suite della sala, chiedendo all'hub; l'hub lo conosce perché qualcuno ce l'ha caricato e pubblicato.</p></div>
+  <div class="callout info"><span class="callout-ico">💡</span><p>Le sale non parlano mai con GitHub e non serve git sui loro server: scaricano solo dall'hub, con la loro chiave di installazione. Il token di GitHub sta solo sull'hub.</p></div>
 </div>
 
 <!-- 2. PACCHETTO -->
 <div class="section" id="pacchetto">
-  <div class="sec-h2"><span class="sec-num">02</span> Creare il pacchetto</div>
-  <p class="sec-lead">Si fa dove c'è una copia del repository della suite e PHP da riga di comando: il proprio computer o una sessione di sviluppo con Claude. Non sul server della sala.</p>
+  <div class="sec-h2"><span class="sec-num">02</span> Pubblicare una versione</div>
+  <p class="sec-lead">Tutto parte da un push su <code>main</code>: si fa in una sessione di sviluppo (con Claude) o dal proprio computer.</p>
   <div class="steps">
-    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Versione e changelog</div><div class="step-desc">In <code>includes/lib.php</code> e <code>includes/novita.php</code> si aggiorna <code>GH_VERSION</code> (es. <code>3.8.1</code>); in <code>docs/CHANGELOG.md</code> si apre la sezione <code>## [3.8.1]</code>. Il testo per i clienti va nel <code>changelog.json</code> del sito.</div></div></div>
-    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title"><code>php tools/file_attesi.php</code></div><div class="step-desc">Prende l'elenco dei file versionati (<code>git ls-files</code>), esclude quelli che non vanno sul server (configurazione, <code>.htaccess</code> principale, documentazione nella radice, <code>tools/</code>, <code>tests/</code>) e per ognuno scrive dimensione e impronta SHA-1 in <code>install/file_attesi.json</code>, insieme alla versione. È il <strong>manifest</strong>: la lista ufficiale di cosa deve esserci sul server.</div></div></div>
-    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title"><code>php tools/pacchetto.php</code></div><div class="step-desc">Prima lancia <code>tools/controlla.php</code> (sintassi di tutti i PHP, nessun file oltre 30 KB, stessa versione in <code>lib.php</code>, <code>novita.php</code>, CHANGELOG e manifest, manifest aggiornato). Se tutto è a posto mette in <code>dist/gesthall-suite-&lt;versione&gt;.zip</code> esattamente i file del manifest più il manifest stesso, e stampa numero di file, dimensione (≈ 1 MB) e SHA-256.</div></div></div>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Versione e changelog</div><div class="step-desc">In <code>includes/lib.php</code> e <code>includes/novita.php</code> si aggiorna <code>GH_VERSION</code> (es. <code>3.8.2</code>); in <code>docs/CHANGELOG.md</code> si apre la sezione <code>## [3.8.2]</code> (diventa la nota della release); il testo per i clienti va nel <code>changelog.json</code> del sito. <strong>GH_VERSION si alza solo quando la versione è pronta</strong>: è quello che fa partire il rilascio.</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Unione su <code>main</code></div><div class="step-desc">Al push GitHub Actions esegue due workflow: <strong>Controlli</strong> (sintassi, file sotto 30 KB, versione coerente, test) e <strong>Rilascio</strong>, che controlla se per <code>GH_VERSION</code> esiste già una release.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Rilascio automatico</div><div class="step-desc">Se la release non esiste: test con un database di prova, <code>tools/pacchetto.php</code> (controlli, manifest <code>install/file_attesi.json</code> con dimensione e impronta di ogni file, zip e file <code>.sha256</code>), creazione del tag <code>v3.8.2</code> e della GitHub Release con i due allegati e le note dal CHANGELOG. Dura 1-2 minuti; si segue in GitHub → Actions → Rilascio.</div></div></div>
   </div>
-<pre><code>$ php tools/file_attesi.php
-198 file in install/file_attesi.json
-$ php tools/pacchetto.php
-✓ 224 file controllati, versione 3.8.1
-dist/gesthall-suite-3.8.1.zip: 199 file, 0.9 MB, sha256 a693b5…</code></pre>
-  <div class="callout warn"><span class="callout-ico">⚠️</span><p>Lo zip non contiene mai <code>install/config.php</code> (credenziali del database della sala) né il <code>.htaccess</code> principale: estrarlo o installarlo non può rompere la configurazione. Lo stesso zip serve sia per l'hub sia, se serve, per l'installazione a mano.</p></div>
+  <p>In alternativa il rilascio parte con un tag <code>vX.Y.Z</code> uguale a <code>GH_VERSION</code> o a mano da Actions → Rilascio → <em>Run workflow</em>. Se i test o i controlli falliscono la release non viene creata.</p>
+  <div class="callout warn"><span class="callout-ico">⚠️</span><p>Il pacchetto non contiene mai <code>install/config.php</code> (credenziali del database della sala) né il <code>.htaccess</code> principale. Il manifest <code>install/file_attesi.json</code> non è nel repository: esiste solo nel pacchetto e sui server. <code>php tools/pacchetto.php</code> crea lo stesso zip in locale (cartella <code>dist/</code>), utile per prova o per un'installazione a mano.</p></div>
 </div>
 
 <!-- 3. PUBBLICARE -->
 <div class="section" id="pubblicare">
-  <div class="sec-h2"><span class="sec-num">03</span> Pubblicare nell'hub</div>
-  <p class="sec-lead">Hub → <strong>Rilasci</strong> (solo superadmin) → <strong>Carica versione</strong>.</p>
+  <div class="sec-h2"><span class="sec-num">03</span> Hub e GitHub</div>
+  <p class="sec-lead">Hub → <strong>Rilasci</strong> (solo superadmin).</p>
   <ul class="plain">
-    <li>L'hub apre lo zip, legge <code>install/file_attesi.json</code> e da lì prende il numero di versione: non lo si scrive a mano.</li>
-    <li>Controlla che ogni file del manifest sia nello zip e che ci siano <code>includes/lib.php</code> e la pagina degli aggiornamenti; rifiuta una versione già presente.</li>
-    <li>Salva lo zip in <code>storage/rilasci/</code> dell'hub (cartella non raggiungibile dal web: <code>.htaccess</code> + regola nel <code>.htaccess</code> principale) e nella tabella <code>rilasci</code> registra versione, nome del file, SHA-256, dimensione, note e stato.</li>
-    <li><strong>Pubblicato</strong> = proposto alle sale. <strong>Ritira</strong> lo nasconde senza cancellarlo (utile se si scopre un problema). <strong>Note</strong> = testo che il responsabile legge prima di aggiornare: novità, eventuali query SQL.</li>
+    <li><strong>Collegamento</strong> (una volta): pulsante <strong>GitHub</strong> → repository <code>gesthall-suite/suite</code> e un <em>fine-grained token</em> creato su GitHub (Settings → Developer settings → Fine-grained tokens) con accesso al solo repository della suite e permesso <strong>Contents: Read-only</strong>. In alternativa <code>github_repo</code> / <code>github_token</code> in <code>install/config.php</code> dell'hub, che hanno la precedenza.</li>
+    <li><strong>Lettura</strong>: ogni 10 minuti (quando qualcuno usa l'hub o una sala controlla la licenza) o subito con <strong>Sincronizza ora</strong>. L'hub prende le release non bozza con l'allegato <code>gesthall-suite-X.Y.Z.zip</code> e l'impronta SHA-256, e le salva nella tabella <code>rilasci</code> con un riassunto delle novità.</li>
+    <li><strong>Ritira / Riproponi</strong>: decide quali versioni proporre alle sale senza toccare GitHub (utile se si scopre un problema dopo il rilascio). La versione proposta è la più recente non ritirata.</li>
+    <li>Nessun pacchetto viene salvato sull'hub: al momento del download lo legge da GitHub e lo inoltra alla sala.</li>
   </ul>
   <p>In Rilasci e nella Dashboard si vede quante installazioni sono ferme a versioni precedenti; nella tabella installazioni la colonna <strong>Versione</strong> diventa arancione per chi non ha l'ultima e indica da quanti giorni la sala non si collega.</p>
 </div>
@@ -312,7 +309,7 @@ dist/gesthall-suite-3.8.1.zip: 199 file, 0.9 MB, sha256 a693b5…</code></pre>
     <tr><th>#</th><th>Passo</th><th>Dettaglio</th></tr>
     <tr><td>1</td><td>Requisiti</td><td>Estensione PHP zip, possibilità di scaricare (cURL), cartelle dell'app scrivibili. Se manca qualcosa la pagina lo spiega e non procede.</td></tr>
     <tr><td>2</td><td>Backup del database</td><td>Copia completa, tipo «Prima dell'aggiornamento» (vedi sezione Backup).</td></tr>
-    <tr><td>3</td><td>Download</td><td><code>{hub}/api/aggiornamento.php?key=…&amp;v=3.8.1</code> → <code>account/uploads/aggiornamenti/download_3.8.1.zip</code>. Se lo SHA-256 non coincide con quello ricevuto dall'hub, il file viene cancellato e ci si ferma.</td></tr>
+    <tr><td>3</td><td>Download</td><td><code>{hub}/api/aggiornamento.php?key=…&amp;v=3.8.1</code>: l'hub verifica chiave e licenza, legge l'allegato dalla GitHub Release e lo inoltra → <code>account/uploads/aggiornamenti/download_3.8.1.zip</code>. Se lo SHA-256 non coincide con quello della release, il file viene cancellato e ci si ferma.</td></tr>
     <tr><td>4</td><td>Verifica del contenuto</td><td>Per ogni file del manifest: presente nello zip, stessa dimensione, stessa impronta SHA-1, percorso ammesso (mai <code>config.php</code>, <code>.htaccess</code> principale, <code>account/uploads/</code>, niente <code>..</code>).</td></tr>
     <tr><td>5</td><td>Copia di sicurezza</td><td>I file che stanno per cambiare vengono messi in <code>account/uploads/aggiornamenti/precedente_3.8.0_AAAAMMGG_HHMMSS.zip</code>, con l'elenco dei file nuovi (da cancellare in caso di ritorno).</td></tr>
     <tr><td>6</td><td>Scrittura</td><td>Solo i file diversi: ognuno scritto in <code>nomefile.gh-tmp</code> e poi rinominato, così nessuno resta mai a metà. Un blocco impedisce due aggiornamenti contemporanei.</td></tr>
@@ -321,7 +318,7 @@ dist/gesthall-suite-3.8.1.zip: 199 file, 0.9 MB, sha256 a693b5…</code></pre>
   <div class="sec-h3">Tornare indietro</div>
   <p><strong>Versioni precedenti → Ripristina</strong> rimette i file della copia di sicurezza e cancella quelli aggiunti dall'aggiornamento. Il database non viene toccato: se l'aggiornamento avesse cambiato dati, si usa il backup «Prima dell'aggiornamento» nella pagina Backup. Si conservano le ultime 3 copie.</p>
   <div class="sec-h3">Installa da un file</div>
-  <p>Stessa procedura dal passo 4, con lo zip caricato dal browser invece che scaricato dall'hub. Rifiuta una versione più vecchia di quella installata. È l'alternativa all'FTP per le sale senza licenza collegata o quando l'hub non è raggiungibile.</p>
+  <p>Stessa procedura dal passo 4, con lo zip caricato dal browser invece che scaricato dall'hub (lo zip si scarica dalla pagina della release su GitHub). Rifiuta una versione più vecchia di quella installata. È l'alternativa all'FTP per le sale senza licenza collegata o quando l'hub non è raggiungibile.</p>
   <div class="callout warn"><span class="callout-ico">⚠️</span><p>Nessuna migrazione automatica del database: le colonne e le tabelle nuove si creano da sole al primo uso; se una versione richiede query, vanno nelle note del rilascio e nel CHANGELOG.</p></div>
 </div>
 
@@ -377,10 +374,11 @@ dist/gesthall-suite-3.8.1.zip: 199 file, 0.9 MB, sha256 a693b5…</code></pre>
     <tr><th>Percorso</th><th>Cosa contiene</th><th>Accesso web</th></tr>
     <tr><td><code>suite/account/uploads/backup/</code></td><td>Backup del database (<code>.sql.gz</code>)</td><td>Negato</td></tr>
     <tr><td><code>suite/account/uploads/aggiornamenti/</code></td><td><code>precedente_*.zip</code> (ultime 3 copie per tornare indietro), <code>download_*.zip</code> / <code>caricato_*.zip</code> temporanei (cancellati dopo l'installazione o entro 24 ore), <code>.lock</code></td><td>Negato</td></tr>
-    <tr><td><code>suite/install/file_attesi.json</code></td><td>Manifest della versione installata: lo usano Verifica file, diagnosi e aggiornamenti</td><td>—</td></tr>
+    <tr><td><code>suite/install/file_attesi.json</code></td><td>Manifest della versione installata (arriva con il pacchetto, non è nel repository): lo usano Verifica file, diagnosi e aggiornamenti</td><td>—</td></tr>
     <tr><td><code>suite/install/config.php</code></td><td>Credenziali del database: mai toccato da aggiornamenti e pacchetti</td><td>—</td></tr>
-    <tr><td><code>hub/storage/rilasci/</code></td><td>Pacchetti caricati in Rilasci</td><td>Negato</td></tr>
-    <tr><td>Tabella <code>rilasci</code> (hub)</td><td>Versione, file, SHA-256, dimensione, note, pubblicato</td><td>—</td></tr>
+    <tr><td>GitHub Releases della suite</td><td><code>gesthall-suite-X.Y.Z.zip</code> e <code>.sha256</code> di ogni versione (unica copia dei pacchetti)</td><td>Privato (token)</td></tr>
+    <tr><td>Tabella <code>rilasci</code> (hub)</td><td>Versione, tag, allegato, SHA-256, dimensione, novità, ritirato</td><td>—</td></tr>
+    <tr><td>Tabella <code>hub_impostazioni</code> (hub)</td><td>Repository e token GitHub, ultima lettura ed esito</td><td>—</td></tr>
     <tr><td>Tabella <code>installazioni</code> (hub)</td><td>Nuove colonne <code>versione</code>, <code>ultimo_contatto</code></td><td>—</td></tr>
     <tr><td><code>impostazioni_testi.aggiornamento_cache</code> (suite)</td><td>Ultima versione proposta dall'hub</td><td>—</td></tr>
   </table></div>
@@ -417,14 +415,13 @@ dist/gesthall-suite-3.8.1.zip: 199 file, 0.9 MB, sha256 a693b5…</code></pre>
 <div class="section" id="checklist">
   <div class="sec-h2"><span class="sec-num">11</span> Checklist di rilascio</div>
 <pre><code>1. GH_VERSION in includes/lib.php e includes/novita.php
-2. docs/CHANGELOG.md (tecnico, con eventuali SQL)
+2. docs/CHANGELOG.md, sezione ## [X.Y.Z] (diventa la nota della release; SQL compreso)
 3. sito: src/data/changelog.json (testo clienti + highlights), pagine e guida se serve
-4. GH_TEST_DB=gh_test php tests/run.php
-5. php tools/file_attesi.php
-6. php tools/pacchetto.php            ← include tools/controlla.php
-7. commit + merge su main + push (la CI ripete controlli e test)
-8. Hub → Rilasci → Carica versione → note → Pubblica
-9. Una sala di prova: Aggiornamenti → Controlla ora → Aggiorna ora → Verifica file</code></pre>
+4. php tools/controlla.php  e  GH_TEST_DB=gh_test php tests/run.php
+5. merge su main + push  →  GitHub Actions: Controlli + Rilascio (tag e release)
+6. GitHub → Actions → Rilascio verde; GitHub → Releases mostra lo zip
+7. Hub → Rilasci → Sincronizza ora (oppure attendi 10 minuti)
+8. Una sala di prova: Aggiornamenti → Controlla ora → Aggiorna ora → Verifica file</code></pre>
 </div>
 
 <!-- 12. PROBLEMI -->
@@ -432,9 +429,11 @@ dist/gesthall-suite-3.8.1.zip: 199 file, 0.9 MB, sha256 a693b5…</code></pre>
   <div class="sec-h2"><span class="sec-num">12</span> Problemi e soluzioni</div>
   <div class="tbl-wrap"><table>
     <tr><th>Sintomo</th><th>Causa probabile</th><th>Cosa fare</th></tr>
-    <tr><td>La sala non vede la nuova versione</td><td>Rilascio non pubblicato, chiave non collegata, controllo non ancora fatto</td><td>Pubblica in Rilasci; in Aggiornamenti premi «Controlla ora»; verifica la chiave in Piano e licenza</td></tr>
+    <tr><td>Nessuna release su GitHub dopo il push</td><td>GH_VERSION non cambiata, test o controlli falliti</td><td>GitHub → Actions → Rilascio: leggi il passo in rosso, correggi e ripeti il push</td></tr>
+    <tr><td>Rilasci nell'hub vuoto o «token non valido»</td><td>GitHub non collegato o token scaduto/senza permessi</td><td>Rilasci → GitHub: nuovo token con <em>Contents: Read-only</em> sul repository della suite</td></tr>
+    <tr><td>La sala non vede la nuova versione</td><td>Versione ritirata, hub non ancora sincronizzato, chiave non collegata</td><td>Rilasci → Sincronizza ora; in Aggiornamenti della sala «Controlla ora»; verifica la chiave in Piano e licenza</td></tr>
     <tr><td>«L'hub ha rifiutato il download (licenza scaduta)»</td><td>Scadenza passata in hub</td><td>Rinnova la scadenza dell'installazione nell'hub</td></tr>
-    <tr><td>«Il pacchetto scaricato non è integro»</td><td>Download interrotto</td><td>Riprova; se si ripete, ricarica il pacchetto in Rilasci</td></tr>
+    <tr><td>«Il pacchetto scaricato non è integro» / «hub ha rifiutato il download»</td><td>Download interrotto, GitHub non raggiungibile dall'hub</td><td>Riprova; controlla l'esito in Hub → Rilasci; in emergenza scarica lo zip dalla release e usa «Installa da un file»</td></tr>
     <tr><td>«File non scrivibile dall'app»</td><td>Permessi della cartella</td><td>File Manager → permessi 755 cartelle / 644 file, oppure aggiorna a mano</td></tr>
     <tr><td>Dopo l'aggiornamento qualcosa non va</td><td>—</td><td>Aggiornamenti → Versioni precedenti → Ripristina; per i dati, Backup «Prima dell'aggiornamento»</td></tr>
     <tr><td>Nessun backup automatico</td><td>Nessun responsabile ha aperto l'app, o backup disattivato</td><td>Admin → Backup: controlla l'interruttore, crea un backup manuale</td></tr>

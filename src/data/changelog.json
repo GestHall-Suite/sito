@@ -2,6 +2,21 @@
  "updated": "2026-10-01",
  "releases": [
   {
+   "version": "3.8.1",
+   "date": "2026-10-01",
+   "hotfix": true,
+   "title": "",
+   "highlights": [],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Aggiornamenti più rapidi</strong> — Le nuove versioni arrivano in Impostazioni → Sistema → Aggiornamenti appena vengono pubblicate, già verificate da controlli e test automatici."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.8.0",
    "date": "2026-10-01",
    "hotfix": false,
