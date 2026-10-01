@@ -164,6 +164,9 @@ tr:hover td { background:var(--teal-dim) }
 .feat-tag.teal { background:var(--teal-dim);color:var(--teal-dk);border-color:var(--teal-dim2) }
 
 ul.plain { margin:8px 0 16px 20px;display:flex;flex-direction:column;gap:6px;font-size:14px }
+/* Telefono: niente scorrimento orizzontale della pagina (codice lungo e tabelle scorrono da soli) */
+.main { min-width:0 }
+p code, li code, td code, .step-desc code { overflow-wrap:anywhere }
   </style>
   <script>if(sessionStorage.getItem('gh_interno_auth')!=='1')location.replace('/interno/');</script>
   <script>(function(){var t=localStorage.getItem('gd-theme');if(t)document.documentElement.dataset.theme=t;})()</script>
@@ -225,6 +228,7 @@ ul.plain { margin:8px 0 16px 20px;display:flex;flex-direction:column;gap:6px;fon
     <span class="sb-group-label">Tecnico</span>
     <a class="sb-link" href="#superadmin" onclick="closeMobile()"><span class="sb-icon">⚡</span> Super admin</a>
     <a class="sb-link" href="#deploy" onclick="closeMobile()"><span class="sb-icon">🚀</span> Deploy SiteGround</a>
+    <a class="sb-link" href="manutenzione.html"><span class="sb-icon">🔄</span> Aggiornamenti e backup &rarr;</a>
     <a class="sb-link" href="#architettura" onclick="closeMobile()"><span class="sb-icon">🏗</span> Architettura</a>
   </div>
   <div class="sb-group">
@@ -284,6 +288,7 @@ ul.plain { margin:8px 0 16px 20px;display:flex;flex-direction:column;gap:6px;fon
 <div class="section" id="changelog">
   <div class="sec-h2"><span class="sec-num">02</span> Changelog recente</div>
   <p class="sec-lead">Modifiche più significative, luglio 2026.</p>
+  <div class="cl-item"><span class="cl-date">ott 2026</span><span><strong>Suite 3.8 — aggiornamenti dall'app e backup</strong> — pacchetti in hub → Rilasci, installazione verificata con ritorno alla versione precedente, backup settimanale del database, verifica in due passaggi, avvisi automatici. Dettagli in <a href="manutenzione.html">Aggiornamenti e backup</a></span><span class="badge done">feature</span></div>
   <div class="cl-item"><span class="cl-date">lug 2026</span><span><strong>Privacy Policy + Termini di Servizio</strong> — GDPR completa su sito, suite e hub. Placeholder <code>[TITOLARE]</code> e <code>[CITTÀ]</code> da completare alla costituzione della struttura legale</span><span class="badge done">legal</span></div>
   <div class="cl-item"><span class="cl-date">lug 2026</span><span><strong>Docs site integrato nel sito</strong> — <code>/docs</code> (guida utente pubblica) e <code>/interno</code> (documentazione tecnica + business plan, accesso htpasswd) integrati nell'Astro sito</span><span class="badge done">feature</span></div>
   <div class="cl-item"><span class="cl-date">lug 2026</span><span><strong>Chat + messaggi vocali</strong> — <code>sala/chat.php</code>: messaggi testo, emoji, immagini e audio in tempo reale. Vocali via MediaRecorder API (WebM/OGG/MP4, max 5 MB)</span><span class="badge done">feature</span></div>
@@ -608,7 +613,8 @@ nomesala.gesthallsuite.it → Installazione cliente</code></pre>
   </div>
   <div class="sec-h3">Seconda installazione in poi</div>
   <p>Ripeti solo i passi 2, 4 (nuovo DB), 5 (nuovo .htaccess), 6 (wizard). Tempo stimato: <strong>10–15 minuti</strong>.</p>
-  <div class="sec-h3">Aggiornare tutte le installazioni</div>
+  <div class="sec-h3">Aggiornare le installazioni</div>
+  <p>Dalla 3.8 ogni sala si aggiorna dall'app (Impostazioni → Sistema → Aggiornamenti) con il pacchetto pubblicato nell'hub in <strong>Rilasci</strong>: vedi <a href="manutenzione.html">Aggiornamenti, backup e manutenzione</a>. Con un codebase condiviso via git resta valido anche:</p>
   <pre><code>cd /home/[utente]/gestHall-suite
 git pull origin main
 # Un solo pull aggiorna tutti i vhost contemporaneamente</code></pre>
