@@ -1,0 +1,80 @@
+---
+import AreaLayout from '../../layouts/AreaLayout.astro';
+import Shot from '../../components/Shot.astro';
+import Phone from '../../components/Phone.astro';
+import { ICONE } from '../../data/aree';
+---
+<AreaLayout slug="sala" alt="Calendario mensile dei turni con operatori assegnati e turni da coprire" description="Turni del personale, ticket di assistenza per macchina, chat della sala, documenti, buste paga digitali (LUL) e passaggio consegne per sale giochi.">
+
+<section class="section">
+  <div class="container">
+    <div class="split reveal">
+      <div>
+        <span class="eyebrow">Calendario turni</span>
+        <h2>I turni del mese, senza il gruppo WhatsApp.</h2>
+        <p class="lead">Vista mese, elenco o riepilogo ore. I turni scoperti saltano all'occhio, gli operatori prendono quelli liberi dal telefono e il responsabile assegna il resto. In alto: il turno in corso, il tuo prossimo turno e quelli da coprire.</p>
+        <ul class="checks">
+          <li><strong>Modelli per giorno della settimana</strong>, con giorni speciali personalizzabili.</li>
+          <li><strong>Filtri</strong> per i miei turni, quelli dei colleghi o quelli liberi.</li>
+          <li><strong>Inizia turno</strong>: apre la cassa giusta all'operatore giusto.</li>
+          <li><strong>Permessi</strong>: decidi se gli operatori possono prendere o lasciare turni.</li>
+        </ul>
+      </div>
+      <div class="center-phone"><Phone src="m-turni" alt="Turni in elenco su telefono con il giorno di oggi in evidenza" /></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="split rev reveal">
+      <div>
+        <span class="eyebrow">Ticket assistenza · Pro</span>
+        <h2>Ogni guasto ha un numero, uno stato e una storia.</h2>
+        <p class="lead">Apri il ticket dalla macchina, anche scansionando il QR attaccato al mobile. Il centro assistenza riceve l'email con modello, seriale e codici; tu segui lo stato fino alla risoluzione e stampi il cartello «fuori servizio».</p>
+        <ul class="checks">
+          <li><strong>Aperto, in carico, risolto</strong>, con il numero del ticket del fornitore.</li>
+          <li><strong>Avviso automatico</strong> per i ticket fermi da troppi giorni.</li>
+          <li><strong>Storico per macchina</strong>: guasti e incassi nella stessa scheda.</li>
+        </ul>
+      </div>
+      <Shot src="ticket" alt="Elenco dei ticket di assistenza con stato, macchina, problema e operatore" />
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="split reveal">
+      <div>
+        <span class="eyebrow">Chat della sala · Suite</span>
+        <h2>Le comunicazioni di lavoro restano al lavoro.</h2>
+        <p class="lead">Una chat di sala e i messaggi diretti tra colleghi, con foto, emoji e messaggi vocali. Fuori dal telefono personale, dentro il gestionale e solo per chi lavora con te.</p>
+      </div>
+      <Shot src="chat" alt="Chat di sala con messaggi tra responsabile e operatori" />
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Personale e organizzazione</span>
+      <h2>Meno carta, meno dimenticanze.</h2>
+    </div>
+    <div class="grid g3">
+      <div class="card reveal"><div class="icon" set:html={ICONE.utenti}></div><h3>Ruoli chiari</h3><p>Operatore, responsabile e revisore: ognuno vede e fa solo quello che gli compete. Ogni modifica importante finisce nel registro attività.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.doc}></div><h3>Buste paga digitali · Suite</h3><p>Carichi il LUL in PDF: l'app riconosce i codici fiscali, divide le buste e le invia a ciascuno. La presa visione viene registrata con data e ora.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.turni}></div><h3>Passaggio consegne · Suite</h3><p>Una checklist configurabile e un messaggio per il turno successivo, salvati insieme alla cassa.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.doc}></div><h3>Documenti · Pro</h3><p>Procedure, licenze, manuali e moduli in cartelle, sempre a portata di operatore. Si caricano e si stampano dall'app.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.telefono}></div><h3>Contatti · Pro</h3><p>Tecnici, fornitori, concessionari e numeri utili della sala in una rubrica condivisa.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.campana}></div><h3>Musica in sala · Suite</h3><p>Web Radio con le stazioni italiane e le tue, oppure il controllo degli altoparlanti SONOS della sala.</p></div>
+    </div>
+  </div>
+</section>
+
+</AreaLayout>
+
+<style>
+.center-phone { display: flex; justify-content: center }
+</style>

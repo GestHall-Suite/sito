@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PricingCards from '../components/PricingCards.astro';
+import Cta from '../components/Cta.astro';
+import { piani, confronto, inclusi, PROVA_GIORNI, SALA_EXTRA } from '../data/piani';
+---
+<Layout page="Prezzi" description={`Prezzi di GestHall Suite: Essenziale €39, Pro €69, Suite €99, Multi-sala €149 al mese. Installazione, migrazione dei dati e aggiornamenti inclusi, ${PROVA_GIORNI} giorni di prova.`}>
+
+<section class="page-hero center-hero">
+  <div class="container">
+    <span class="eyebrow">Prezzi</span>
+    <h1>Paghi la sala, non le macchine.</h1>
+    <p class="lead">Un abbonamento per sala, qualunque sia il numero di VLT e AWP. Mensile o annuale con due mesi gratis, disdetta quando vuoi.</p>
+  </div>
+</section>
+
+<section class="section-tight" style="padding-top:0">
+  <div class="container">
+    <PricingCards />
+    <div class="incl reveal">
+      <h2>Sempre inclusi</h2>
+      <ul class="checks">{inclusi.map(i => <li>{i}</li>)}</ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="confronto">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Confronto</span>
+      <h2>Cosa c'è in ogni piano.</h2>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="table cmp">
+        <thead><tr><th>Funzione</th>{piani.map(p => <th class="c">{p.nome}</th>)}</tr></thead>
+        <tbody>
+          {confronto.map(g => (
+            <>
+              <tr class="grp"><td colspan="5">{g.titolo}</td></tr>
+              {g.righe.map(r => (
+                <tr>
+                  <td>{r.voce}</td>
+                  {r.v.map(c => <td class="c">{c === true ? <span class="yes" role="img" aria-label="Incluso"></span> : c === false ? <span class="no" aria-label="Non incluso">—</span> : <strong>{c}</strong>}</td>)}
+                </tr>
+              ))}
+            </>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container narrow">
+    <div class="section-head">
+      <span class="eyebrow">Domande frequenti</span>
+      <h2>Prima di scegliere.</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Il prezzo dipende dal numero di macchine?</summary><div><p>No. Il prezzo è per sala: 6 o 40 VLT, l'abbonamento è lo stesso. Con il piano Multi-sala paghi €149 al mese per le prime due sale e €{SALA_EXTRA} per ciascuna sala in più.</p></div></details>
+      <details><summary>Come funziona la prova di {PROVA_GIORNI} giorni?</summary><div><p>Installiamo GestHall Suite sul tuo spazio web e lo configuriamo con la tua sala. Per {PROVA_GIORNI} giorni lo usi senza limiti e senza carta di credito; alla fine scegli il piano oppure non paghi nulla.</p></div></details>
+      <details><summary>Serve un server? Chi lo paga?</summary><div><p>Serve uno spazio web con PHP e MySQL, come quelli dei normali hosting (alcuni euro al mese). Se la sala ha già un sito spesso basta quello; altrimenti ti indichiamo noi cosa attivare. L'hosting resta intestato a te, insieme ai dati.</p></div></details>
+      <details><summary>Posso cambiare piano?</summary><div><p>Sì, in entrambe le direzioni. Il responsabile chiede il cambio dall'app (Impostazioni → Piano e licenza) e dopo l'approvazione le nuove funzioni compaiono da sole, senza reinstallare nulla.</p></div></details>
+      <details><summary>Cosa succede se disdico?</summary><div><p>I dati restano tuoi: il database è sul tuo spazio web e puoi scaricare backup ed export in Excel in qualsiasi momento, anche dopo la disdetta. Nessun vincolo di durata e nessuna penale.</p></div></details>
+      <details><summary>Importate i dati che ho già?</summary><div><p>Sì, la migrazione è inclusa: storico della cassa da Excel o da un altro gestionale, macchine, operatori e clienti. Prima della partenza controlliamo con te che i totali coincidano.</p></div></details>
+      <details><summary>Ci sono costi nascosti?</summary><div><p>No: installazione, migrazione, aggiornamenti e assistenza via email sono compresi. L'unico costo esterno è l'hosting, che resta tuo.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<Cta />
+</Layout>
+
+<style>
+.center-hero { text-align: center }
+.center-hero h1, .center-hero .lead { margin-inline: auto }
+.incl { margin-top: 40px; padding: 28px; border-radius: var(--r-l); background: var(--surface); border: 1px solid var(--border); display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: start }
+.incl h2 { font-size: 20px }
+.incl .checks { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 24px }
+.cmp { min-width: 680px }
+.cmp td:first-child { color: var(--text) }
+.cmp tbody td:first-child, .cmp thead th:first-child { position: sticky; left: 0; z-index: 1; background: var(--surface) }
+.cmp thead th:first-child { background: var(--surface-2); z-index: 2 }
+.cmp .grp td:first-child { background: var(--surface-2) }
+@media (max-width: 760px) {
+  .cmp { min-width: 540px }
+  .cmp tbody td:first-child, .cmp thead th:first-child { width: 168px; min-width: 168px; box-shadow: 1px 0 0 var(--border) }
+  .cmp .c { width: auto }
+  .incl { grid-template-columns: 1fr }
+  .incl .checks { grid-template-columns: 1fr }
+}
+</style>

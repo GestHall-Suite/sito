@@ -1,190 +1,130 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { ICONE } from '../data/aree';
+import { piani, PROVA_GIORNI } from '../data/piani';
 ---
+<Layout page="Contatti" description="Richiedi una demo di GestHall Suite, informazioni sui piani o sul programma rivenditori. Risposta entro un giorno lavorativo.">
 
-<Layout page="Contatti" description="Scrivici per attivare la demo gratuita, informazioni sui piani o il programma rivenditori. Risposta entro 24 ore.">
-
-<section class="contact-hero">
-  <div class="container contact-hero-inner">
-    <div>
-      <h1>Parliamo.</h1>
-      <p>Demo gratuita, domande sui piani, o accordi per rivenditori. Risposta entro 24 ore nei giorni lavorativi.</p>
-    </div>
-    <div class="contact-hero-meta">
-      <a href="mailto:info@gesthallsuite.it" class="contact-email">info@gesthallsuite.it</a>
-      <span class="contact-badge">Risposta in 24h</span>
-    </div>
+<section class="page-hero">
+  <div class="container">
+    <nav class="crumbs" aria-label="Percorso"><a href="/">Home</a><span aria-hidden="true">/</span><span>Contatti</span></nav>
+    <span class="eyebrow">Contatti</span>
+    <h1>Parliamo della tua sala.</h1>
+    <p class="lead">Demo, domande sui piani, migrazione dei dati o programma rivenditori: scrivici e ti rispondiamo entro un giorno lavorativo.</p>
   </div>
 </section>
 
-<section class="contact-body">
-  <div class="container contact-grid">
-
-    <div class="contact-form-wrap">
-      <form id="contact-form" class="contact-form" novalidate>
-        <div class="field-row">
-          <label class="field">
-            <span class="field-label">Nome</span>
-            <input type="text" name="nome" placeholder="Mario Rossi" autocomplete="name" required />
-          </label>
-          <label class="field">
-            <span class="field-label">Email</span>
-            <input type="email" name="email" placeholder="mario@salafortuna.it" autocomplete="email" required />
-          </label>
+<section class="section-tight" style="padding-top:0" id="modulo">
+  <div class="container ct-grid">
+    <div class="card ct-form">
+      <div class="form-msg ok" id="ct-ok" hidden></div>
+      <div class="form-msg err" id="ct-err" hidden></div>
+      <form class="form" id="ct" method="post" action="/api/contatto.php" novalidate>
+        <div class="field">
+          <label for="ct-motivo">Di cosa hai bisogno?</label>
+          <select id="ct-motivo" name="motivo">
+            <option value="demo">Una demo del gestionale</option>
+            <option value="info">Informazioni su piani e prezzi</option>
+            <option value="rivenditore">Programma rivenditori</option>
+            <option value="assistenza">Assistenza (sono già cliente)</option>
+            <option value="altro">Altro</option>
+          </select>
         </div>
-        <label class="field">
-          <span class="field-label">Sei un…</span>
-          <div class="select-wrap">
-            <select name="ruolo">
-              <option value="">Seleziona</option>
-              <option value="gestore">Gestore di sala (VLT/AWP)</option>
-              <option value="rivenditore">Rivenditore / Installatore</option>
-              <option value="consulente">Consulente / Studio commerciale</option>
-              <option value="altro">Altro</option>
-            </select>
-            <svg class="select-arrow" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
-          </div>
-        </label>
-        <label class="field">
-          <span class="field-label">Messaggio</span>
-          <textarea name="messaggio" rows="5" placeholder="Gestisco una sala con 8 VLT e 4 AWP, vorrei capire come funziona l'installazione…" required></textarea>
-        </label>
-        <button type="submit" class="btn btn-primary contact-submit">Invia messaggio</button>
-        <div class="contact-success" id="contact-success" hidden>
-          <svg viewBox="0 0 20 20" fill="none" stroke="oklch(0.72 0.16 168)" stroke-width="1.8" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M6.5 10l2.5 2.5 4.5-4.5"/></svg>
-          <span>Messaggio inviato! Ti risponderemo entro 24 ore.</span>
+        <div class="form-row">
+          <div class="field"><label for="ct-nome">Nome e cognome</label><input id="ct-nome" name="nome" autocomplete="name" required maxlength="120"></div>
+          <div class="field"><label for="ct-email">Email</label><input id="ct-email" name="email" type="email" autocomplete="email" required maxlength="160"></div>
         </div>
+        <div class="form-row">
+          <div class="field"><label for="ct-tel">Telefono <span>(facoltativo)</span></label><input id="ct-tel" name="telefono" type="tel" autocomplete="tel" maxlength="40"></div>
+          <div class="field"><label for="ct-sala">Sala o azienda <span>(facoltativo)</span></label><input id="ct-sala" name="sala" autocomplete="organization" maxlength="160" placeholder="Es. Sala Aurora, Bologna"></div>
+        </div>
+        <div class="field" id="ct-piano-f">
+          <label for="ct-piano">Piano che ti interessa <span>(facoltativo)</span></label>
+          <select id="ct-piano" name="piano">
+            <option value="">Non lo so ancora</option>
+            {piani.map(p => <option value={p.id}>{p.nome}</option>)}
+          </select>
+        </div>
+        <div class="field">
+          <label for="ct-msg">Messaggio</label>
+          <textarea id="ct-msg" name="messaggio" required maxlength="5000" placeholder="Quante VLT e AWP avete, quanti turni al giorno, cosa usate oggi per la cassa…"></textarea>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="ct-web">Sito web</label><input id="ct-web" name="sito_web" tabindex="-1" autocomplete="off"></div>
+        <input type="hidden" name="t" id="ct-t" value="0">
+        <label class="check-line"><input type="checkbox" name="privacy" value="1" required> <span>Ho letto l'<a href="/privacy">informativa privacy</a> e acconsento all'uso dei miei dati per ricevere una risposta.</span></label>
+        <button type="submit" class="btn btn-primary btn-lg" id="ct-btn">Invia la richiesta</button>
       </form>
     </div>
 
-    <aside class="contact-info">
-      <div class="contact-info-block">
-        <div class="cib-label">Email diretta</div>
-        <a href="mailto:info@gesthallsuite.it" class="cib-value">info@gesthallsuite.it</a>
+    <aside class="ct-side">
+      <div class="card">
+        <div class="icon" set:html={ICONE.chat}></div>
+        <h3>Email</h3>
+        <p><a class="link" href="mailto:info@gesthallsuite.it">info@gesthallsuite.it</a></p>
+        <p class="small">Risposta entro un giorno lavorativo.</p>
       </div>
-      <div class="contact-info-block">
-        <div class="cib-label">Tempi di risposta</div>
-        <div class="cib-value">Entro 24h lavorative</div>
+      <div class="card">
+        <div class="icon" set:html={ICONE.cassa}></div>
+        <h3>Come funziona la demo</h3>
+        <p>Una videochiamata con una sala configurata come la tua. Poi, se vuoi, installiamo GestHall Suite sul tuo spazio web per {PROVA_GIORNI} giorni di prova senza carta di credito.</p>
       </div>
-      <div class="contact-info-block">
-        <div class="cib-label">Demo gratuita</div>
-        <div class="cib-value cib-muted">14 giorni, senza carta di credito. Installiamo noi sul tuo hosting.</div>
-      </div>
-      <div class="contact-info-block">
-        <div class="cib-label">Programma rivenditori</div>
-        <div class="cib-value cib-muted">White-label, margini su abbonamento, supporto prioritario. Scrivici con oggetto "Rivenditore".</div>
-      </div>
-      <div class="contact-divider"></div>
-      <div class="contact-info-block">
-        <div class="cib-label">Già cliente?</div>
-        <a href="https://app.gesthallsuite.it" class="cib-link">
-          Accedi all'app →
-        </a>
+      <div class="card">
+        <div class="icon" set:html={ICONE.utenti}></div>
+        <h3>Sei già cliente?</h3>
+        <p>Accedi dall'indirizzo della tua sala. Per il piano e la licenza usa l'<a class="ilink" href="/cliente/">area clienti</a>; la <a class="ilink" href="/docs/guida/">guida all'uso</a> risponde alle domande più comuni.</p>
       </div>
     </aside>
-
   </div>
 </section>
-
 </Layout>
 
 <style>
-.contact-hero {
-  padding: 120px 0 56px;
-  border-bottom: 1px solid var(--border-sub);
-}
-.contact-hero-inner {
-  display: flex; justify-content: space-between; align-items: flex-end;
-  gap: 32px; flex-wrap: wrap;
-}
-.contact-hero h1 { font-size: clamp(3rem, 6vw, 6rem); font-weight: 800; margin-bottom: 16px }
-.contact-hero p { font-size: 17px; color: var(--muted); max-width: 44ch; line-height: 1.7 }
-.contact-hero-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; flex-shrink: 0 }
-.contact-email {
-  font-family: var(--font-head); font-size: clamp(1rem, 1.8vw, 1.3rem);
-  font-weight: 600; color: var(--accent); letter-spacing: -0.02em;
-  text-decoration: underline; text-underline-offset: 4px;
-  text-decoration-color: oklch(0.72 0.16 168 / 0.4);
-  transition: text-decoration-color 0.15s;
-}
-.contact-email:hover { text-decoration-color: var(--accent) }
-.contact-badge {
-  font-size: 12px; font-weight: 600; color: var(--faint);
-  padding: 4px 12px; border-radius: 999px; border: 1px solid var(--border-sub);
-}
-
-.contact-body { padding: 72px 0 96px }
-.contact-grid { display: grid; grid-template-columns: 1fr 320px; gap: 72px; align-items: start }
-
-.contact-form { display: flex; flex-direction: column; gap: 20px }
-.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px }
-.field { display: flex; flex-direction: column; gap: 6px }
-.field-label { font-size: 13px; font-weight: 600; color: var(--muted) }
-.field input, .field textarea, .field select {
-  padding: 12px 16px; border-radius: var(--rx-m);
-  background: var(--surface); border: 1px solid var(--border-sub);
-  color: var(--text); font-family: var(--font-body); font-size: 15px;
-  outline: none; transition: border-color 0.15s, background 0.15s;
-  width: 100%; resize: vertical;
-}
-.field input:focus, .field textarea:focus, .field select:focus {
-  border-color: oklch(0.72 0.16 168 / 0.55);
-  background: var(--surface-2);
-}
-.field input::placeholder, .field textarea::placeholder { color: var(--faint) }
-.select-wrap { position: relative }
-.select-wrap select {
-  appearance: none; -webkit-appearance: none;
-  padding-right: 36px; cursor: pointer;
-}
-.select-arrow {
-  position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
-  width: 12px; height: 12px; color: var(--faint); pointer-events: none;
-}
-.contact-submit { align-self: flex-start; min-width: 180px; justify-content: center }
-.contact-success {
-  display: flex; align-items: center; gap: 10px;
-  padding: 14px 18px; border-radius: var(--rx-m);
-  background: oklch(0.72 0.16 168 / 0.08); border: 1px solid oklch(0.72 0.16 168 / 0.25);
-  font-size: 14px; color: var(--muted);
-}
-.contact-success[hidden] { display: none }
-.contact-success svg { width: 20px; height: 20px; flex-shrink: 0 }
-
-.contact-info { display: flex; flex-direction: column; gap: 0; padding-top: 4px }
-.contact-info-block { padding: 20px 0; border-bottom: 1px solid var(--border-sub) }
-.contact-info-block:first-child { padding-top: 0 }
-.cib-label { font-size: 11px; font-weight: 700; color: var(--faint); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px }
-.cib-value { font-size: 15px; font-weight: 600; color: var(--text) }
-.cib-muted { font-size: 14px; font-weight: 400; color: var(--muted); line-height: 1.6 }
-.cib-link { font-size: 14px; font-weight: 600; color: var(--accent); transition: opacity 0.15s }
-.cib-link:hover { opacity: 0.75 }
-.contact-divider { height: 1px; background: var(--border-sub); margin: 4px 0 }
-
-@media (max-width: 900px) {
-  .contact-hero-inner { flex-direction: column; align-items: flex-start }
-  .contact-hero-meta { align-items: flex-start }
-  .contact-grid { grid-template-columns: 1fr; gap: 48px }
-  .contact-info { order: -1 }
-}
-@media (max-width: 600px) {
-  .field-row { grid-template-columns: 1fr }
-  .contact-hero { padding: 100px 0 48px }
-}
+.ct-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 24px; align-items: start }
+.ct-form { padding: clamp(22px, 4vw, 36px) }
+.ct-form .form-msg { margin-bottom: 18px }
+.ct-side { display: grid; gap: 16px }
+.ct-side .card { padding: 22px }
+.ct-side .icon { width: 38px; height: 38px; margin-bottom: 12px }
+.ct-side h3 { font-size: 17px }
+.ct-side p + p { margin-top: 6px }
+#ct-btn { justify-self: start }
+@media (max-width: 900px) { .ct-grid { grid-template-columns: 1fr } }
+@media (max-width: 640px) { #ct-btn { justify-self: stretch } }
 </style>
 
 <script>
-  document.getElementById('contact-form')?.addEventListener('submit', (e) => {
+  const f = document.getElementById('ct') as HTMLFormElement;
+  const ok = document.getElementById('ct-ok')!;
+  const err = document.getElementById('ct-err')!;
+  const btn = document.getElementById('ct-btn') as HTMLButtonElement;
+  const q = new URLSearchParams(location.search);
+  const sel = f.elements.namedItem('motivo') as HTMLSelectElement;
+  const piano = f.elements.namedItem('piano') as HTMLSelectElement;
+  if (q.get('motivo') && [...sel.options].some(o => o.value === q.get('motivo'))) sel.value = q.get('motivo')!;
+  if (q.get('piano')) piano.value = q.get('piano')!;
+  const sync = () => { document.getElementById('ct-piano-f')!.hidden = !['demo', 'info'].includes(sel.value); };
+  sel.addEventListener('change', sync); sync();
+  (document.getElementById('ct-t') as HTMLInputElement).value = String(Date.now());
+  const show = (el: HTMLElement, msg: string) => { ok.hidden = err.hidden = true; el.textContent = msg; el.hidden = false; el.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); };
+  if (q.get('inviato')) { show(ok, 'Messaggio inviato. Ti rispondiamo entro un giorno lavorativo.'); f.hidden = true; }
+  if (q.get('errore')) show(err, q.get('errore')!);
+
+  f.addEventListener('submit', async e => {
     e.preventDefault();
-    const form    = e.target as HTMLFormElement;
-    const success = document.getElementById('contact-success');
-    const btn     = form.querySelector('button') as HTMLButtonElement;
-    btn.textContent = 'Invio…';
-    btn.disabled = true;
-    setTimeout(() => {
-      form.reset();
-      btn.hidden = true;
-      if (success) success.hidden = false;
-    }, 600);
+    if (!f.checkValidity()) {
+      const bad = f.querySelector<HTMLInputElement>(':invalid');
+      show(err, bad?.name === 'privacy' ? 'Serve il consenso al trattamento dei dati per risponderti.' : bad?.type === 'email' ? 'Controlla l\'indirizzo email.' : 'Compila nome, email e messaggio.');
+      bad?.focus(); return;
+    }
+    btn.disabled = true; btn.textContent = 'Invio…';
+    try {
+      const r = await fetch(f.action, { method: 'POST', body: new FormData(f), headers: { Accept: 'application/json' } });
+      const d = await r.json();
+      if (d.ok) { show(ok, d.msg); f.hidden = true; }
+      else show(err, d.msg);
+    } catch {
+      show(err, 'Invio non riuscito: controlla la connessione oppure scrivi a info@gesthallsuite.it.');
+    }
+    btn.disabled = false; btn.textContent = 'Invia la richiesta';
   });
 </script>

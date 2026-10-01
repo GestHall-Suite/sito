@@ -1,649 +1,235 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { features, byPlan } from '../data/features.ts';
+import Shot from '../components/Shot.astro';
+import Phone from '../components/Phone.astro';
+import Cta from '../components/Cta.astro';
+import PricingCards from '../components/PricingCards.astro';
+import { aree, ICONE } from '../data/aree';
+import { PROVA_GIORNI } from '../data/piani';
 ---
-
 <Layout>
 
-<!-- ── HERO ────────────────────────────────────────────────── -->
 <section class="hero">
-  <div class="container hero-inner">
+  <div class="container hero-in">
+    <div class="hero-copy">
+      <span class="eyebrow">Gestionale per sale giochi VLT e AWP</span>
+      <h1>La cassa della sala, chiusa in pochi minuti. E i conti tornano.</h1>
+      <p class="lead">GestHall Suite segue ogni turno: scassettamenti, ticket, bancomat e contanti. Calcola versamento e scostamento mentre l'operatore scrive, li fa firmare a chi ritira e ti dà i numeri veri della sala, dal telefono.</p>
+      <div class="actions">
+        <a href="/contatti?motivo=demo" class="btn btn-primary btn-lg">Richiedi una demo</a>
+        <a href="/prodotto" class="btn btn-ghost btn-lg">Guarda il prodotto</a>
+      </div>
+      <ul class="hero-trust">
+        <li>{PROVA_GIORNI} giorni di prova</li>
+        <li>Installazione e migrazione incluse</li>
+        <li>I dati restano sul tuo server</li>
+      </ul>
+    </div>
+    <div class="hero-visual">
+      <Shot src="dashboard" alt="Dashboard di GestHall Suite con incasso VLT del giorno, del mese e grafico degli ultimi 30 giorni" eager />
+      <div class="hero-phone"><Phone src="m-giornaliero" alt="Il giornaliero della cassa su telefono" eager /></div>
+    </div>
+  </div>
+</section>
 
-    <div class="hero-text">
-      <div class="hero-pill">Gestionale · VLT · AWP · Made in Italy</div>
-      <h1>Chiudi la cassa<br>in 5 minuti.<br>Ogni sera.</h1>
-      <p class="hero-sub">Il primo gestionale costruito per le sale giochi italiane. Scassettamenti, turni, firma versamenti digitale, notifiche push. Niente fogli Excel alle 23:00.</p>
-      <div class="hero-actions">
-        <a href="#demo" class="btn btn-primary">
-          Prova la demo
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+<section class="section-tight">
+  <div class="container">
+    <div class="facts reveal">
+      <div class="fact"><b>Turni flessibili</b><span>2, 3 o più turni al giorno, ognuno con la sua cassa</span></div>
+      <div class="fact"><b>Firma del ritiro</b><span>Chi ritira il versamento conferma importo, ora e firma</span></div>
+      <div class="fact"><b>Anche offline</b><span>Si continua a lavorare se cade la connessione</span></div>
+      <div class="fact"><b>Da €39/mese</b><span>Senza vincoli: mensile o annuale, disdetta libera</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Perché GestHall</span>
+      <h2>Fatto per come lavora davvero una sala.</h2>
+      <p>Non un gestionale generico adattato: ogni schermata parte dai problemi di chi chiude la cassa la sera e di chi deve rispondere dei numeri.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card reveal">
+        <div class="icon" set:html={ICONE.turni}></div>
+        <h3>Ogni turno passa la cassa al successivo</h3>
+        <p>Il turno parte dai valori del precedente: l'operatore aggiorna solo quello che cambia e vede subito se qualcosa non torna.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon" set:html={ICONE.firma}></div>
+        <h3>Il versamento non si discute</h3>
+        <p>Calcolato sul turno di chiusura, confermato con firma, data, ora e dispositivo da chi lo ritira. A tutela degli operatori e della proprietà.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon" set:html={ICONE.report}></div>
+        <h3>I numeri sono già pronti</h3>
+        <p>Incasso per macchina e piattaforma, giorno per giorno. Il mese si chiude con un file per il commercialista, non con una sera di Excel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="split reveal">
+      <div>
+        <span class="eyebrow">Cassa giornaliera</span>
+        <h2>Scassettamenti, ticket, contanti: il risultato lo vedi mentre scrivi.</h2>
+        <p class="lead">Una scheda per turno. Inserisci gli scassettamenti macchina per macchina, i ticket pagati per piattaforma, i bancomat e i contanti per taglio: cassetto, versamento e scostamento si aggiornano subito.</p>
+        <ul class="checks">
+          <li><strong>Semaforo dello scostamento</strong>: verde, giallo o rosso, prima di salvare.</li>
+          <li><strong>Turno di chiusura</strong>: il dato della giornata è quello giusto, non la somma dei turni.</li>
+          <li><strong>Avviso al responsabile</strong> se lo scostamento supera la soglia che scegli tu.</li>
+        </ul>
+        <p style="margin-top:22px"><a href="/prodotto/cassa-e-turni" class="link">Come funziona la cassa <span aria-hidden="true">→</span></a></p>
+      </div>
+      <Shot src="giornaliero" alt="Il giornaliero: valori di cassa, contanti per taglio e scassettamenti VLT divisi per piattaforma" />
+    </div>
+
+    <div class="split rev reveal">
+      <div>
+        <span class="eyebrow">Report</span>
+        <h2>Il mese della sala in una pagina. Per te e per il commercialista.</h2>
+        <p class="lead">Incasso VLT per giorno e per piattaforma, ticket, bancomat e versamenti, sempre calcolati sul turno di chiusura. Confronto tra periodi, storico di ogni macchina, export in Excel.</p>
+        <ul class="checks">
+          <li><strong>Dashboard in tempo reale</strong> con i grafici di 30 giorni e 6 mesi.</li>
+          <li><strong>File per il commercialista</strong>: incassi, versamenti confermati e bar in un unico Excel.</li>
+          <li><strong>Bet/Win e borderò</strong> dei fornitori archiviati e separati dall'incasso reale.</li>
+        </ul>
+        <p style="margin-top:22px"><a href="/prodotto/report" class="link">Tutti i report <span aria-hidden="true">→</span></a></p>
+      </div>
+      <Shot src="mensile" alt="Riepilogo mensile con cassa per giorno e incasso per piattaforma" />
+    </div>
+
+    <div class="split reveal">
+      <div>
+        <span class="eyebrow">Turni e personale</span>
+        <h2>Chi lavora, quando, e cosa ha lasciato al collega.</h2>
+        <p class="lead">Calendario dei turni con orari diversi per giorno della settimana, turni scoperti in evidenza, operatori che si prendono i turni liberi dal telefono. Poi chat della sala, passaggio consegne e buste paga digitali.</p>
+        <p style="margin-top:22px"><a href="/prodotto/sala" class="link">Sala e personale <span aria-hidden="true">→</span></a></p>
+      </div>
+      <div class="duo">
+        <Shot src="turni" alt="Calendario mensile dei turni con operatori assegnati" />
+        <div class="duo-phone"><Phone src="m-turni" alt="Elenco dei turni su telefono" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Il prodotto</span>
+      <h2>Una suite, cinque aree di lavoro.</h2>
+      <p>Attivi solo quello che ti serve: i moduli si accendono e si spengono dalle impostazioni, il menu resta pulito.</p>
+    </div>
+    <div class="grid g3">
+      {aree.map(a => (
+        <a href={`/prodotto/${a.slug}`} class="card area reveal">
+          <div class="icon" set:html={a.icon}></div>
+          <h3>{a.nome}</h3>
+          <p>{a.sintesi}</p>
+          <span class="link">Scopri <span aria-hidden="true">→</span></span>
         </a>
-        <a href="#prezzi" class="btn btn-ghost">Vedi i piani</a>
-      </div>
-    </div>
-
-    <div class="hero-visual" aria-hidden="true">
-      <div class="mock">
-        <div class="mock-chrome">
-          <div class="mock-dots"><span></span><span></span><span></span></div>
-          <div class="mock-url">app.gesthallsuite.it</div>
-          <div style="width:48px"></div>
-        </div>
-        <div class="mock-app">
-          <div class="mock-sb">
-            <div class="mock-sb-logo">
-              <svg width="20" height="20" viewBox="0 0 20 20"><rect width="20" height="20" rx="5" fill="oklch(0.72 0.16 168)"/><rect x="3" y="3" width="5" height="6" rx="1" fill="oklch(0.1 0 0 / 0.3)"/><rect x="12" y="3" width="5" height="6" rx="1" fill="oklch(0.1 0 0 / 0.3)"/><rect x="3" y="11" width="5" height="6" rx="1" fill="oklch(0.1 0 0 / 0.3)"/><rect x="12" y="11" width="5" height="6" rx="1" fill="oklch(0.1 0 0 / 0.7)"/></svg>
-            </div>
-            <div class="mock-sb-items">
-              <div class="mock-sb-item"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="5" height="5" rx="1"/><rect x="8" y="1" width="5" height="5" rx="1"/><rect x="1" y="8" width="5" height="5" rx="1"/><rect x="8" y="8" width="5" height="5" rx="1"/></svg></div>
-              <div class="mock-sb-item active"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="2" width="12" height="10" rx="1.5"/><path d="M9 1v3M5 1v3M1 6h12"/></svg></div>
-              <div class="mock-sb-item"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="2" width="12" height="10" rx="1.5"/><path d="M9 1v3M5 1v3M1 6h12M4 9h1M6.5 9h1M9 9h1"/></svg></div>
-              <div class="mock-sb-item"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 5a4 4 0 0 1 0 4v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5a4 4 0 0 1 0-4V3a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1z"/></svg></div>
-            </div>
-            <div class="mock-sb-foot">
-              <div class="mock-sb-avatar">MN</div>
-            </div>
-          </div>
-          <div class="mock-main">
-            <div class="mock-hdr">
-              <span class="mock-hdr-date">Lun 7 luglio 2026</span>
-              <span class="mock-hdr-badge">Aperta</span>
-            </div>
-            <div class="mock-kpis">
-              <div class="mock-kpi"><div class="mock-kpi-label">Versamento</div><div class="mock-kpi-val">€&nbsp;7.820</div></div>
-              <div class="mock-kpi"><div class="mock-kpi-label">Scassettamenti</div><div class="mock-kpi-val">€&nbsp;12.460</div></div>
-            </div>
-            <div class="mock-tabs">
-              <span class="mock-tab">Turno 1</span>
-              <span class="mock-tab on"><span class="mock-tab-dot"></span>Turno 2</span>
-            </div>
-            <div class="mock-rows">
-              <div class="mock-row"><span class="mock-rl">Fondo cassa</span><span class="mock-rv">€ 300</span></div>
-              <div class="mock-row"><span class="mock-rl">Scassettamenti</span><span class="mock-rv">€ 8.460</span></div>
-              <div class="mock-row"><span class="mock-rl">Bancomat</span><span class="mock-rv">€ 420</span></div>
-              <div class="mock-row"><span class="mock-rl">Ticket pagati</span><span class="mock-rv">€ 220</span></div>
-            </div>
-            <div class="mock-result">
-              <span class="mock-rl-acc">Versamento netto</span>
-              <span class="mock-rv-acc">€ 7.820</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── TRUST STRIP ──────────────────────────────────────────── -->
-<div class="trust-strip">
-  <div class="container">
-    <ul class="trust-items" role="list">
-      <li>VLT &amp; AWP</li>
-      <li>SNAI · Betwin</li>
-      <li>Firma digitale ADM</li>
-      <li>PWA iOS &amp; Android</li>
-      <li>Notifiche push</li>
-      <li>Supporto in italiano</li>
-    </ul>
-  </div>
-</div>
-
-<!-- ── 3 FEATURE HIGHLIGHTS ─────────────────────────────────── -->
-<section class="section feat-section" id="funzionalita">
-  <div class="container">
-    <div class="sect-header reveal">
-      <h2>Costruito per chi chiude<br>i conti ogni sera.</h2>
-      <p>Non un gestionale generico adattato alle sale: un prodotto pensato da zero per VLT e AWP italiani.</p>
-    </div>
-
-    <!-- 1. Cassa giornaliera -->
-    <div class="feat-row reveal">
-      <div class="feat-row-text">
-        <div class="feat-tag">Cassa giornaliera</div>
-        <h2>Cassetto e versamento<br>calcolati in tempo reale.</h2>
-        <p>Inserisci contanti, bancomat, ticket e scassettamenti. Il calcolo avviene mentre scrivi: nessun foglio Excel, nessun errore di somma alle 23:00.</p>
-        <ul class="feat-checklist">
-          <li>Una scheda per ogni turno del giorno, anche offline</li>
-          <li>Banner verde/rosso immediato sulla quadratura</li>
-          <li>Email automatica ai revisori alla chiusura</li>
-          <li>Storico giornaliero completo e immutabile</li>
-        </ul>
-        <a href="/funzionalita/cassa-giornaliera" class="feat-link">
-          Scopri la cassa giornaliera
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-        </a>
-      </div>
-      <div class="feat-row-visual" aria-hidden="true">
-        <div class="feat-mock-card">
-          <div class="fmc-header">
-            <span class="fmc-title">Cassa · Turno 2</span>
-            <span class="fmc-badge">Aperta</span>
-          </div>
-          <div class="fmc-body">
-            <div class="fmc-kpis">
-              <div class="fmc-kpi"><div class="fmc-kpi-l">Versamento</div><div class="fmc-kpi-v">€ 7.820</div></div>
-              <div class="fmc-kpi"><div class="fmc-kpi-l">Scassettamenti</div><div class="fmc-kpi-v">€ 12.460</div></div>
-            </div>
-            <div class="fmc-rows">
-              <div class="fmc-row"><span>Fondo cassa</span><span>€ 300,00</span></div>
-              <div class="fmc-row"><span>Scassettamenti totali</span><span>€ 12.460,00</span></div>
-              <div class="fmc-row"><span>Bancomat</span><span>€ 420,00</span></div>
-              <div class="fmc-row"><span>Ticket pagati</span><span>€ 220,00</span></div>
-            </div>
-            <div class="fmc-result">
-              <span>Versamento netto</span>
-              <strong>€ 11.820,00</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 2. Firma digitale -->
-    <div class="feat-row feat-row-rev reveal">
-      <div class="feat-row-text">
-        <div class="feat-tag">Firma digitale</div>
-        <h2>Ogni versamento firmato,<br>tracciato, inattaccabile.</h2>
-        <p>Il revisore firma il ritiro su canvas touch da qualsiasi dispositivo. Firma PNG, timestamp e IP vengono salvati immutabilmente insieme all'importo dichiarato.</p>
-        <ul class="feat-checklist">
-          <li>Firma manuale su tablet, smartphone o PC</li>
-          <li>Dati salvati immutabilmente lato server</li>
-          <li>Badge "Confermato" visibile a tutti</li>
-          <li>Storico completo per il responsabile</li>
-        </ul>
-        <a href="/funzionalita/firma-digitale" class="feat-link">
-          Scopri la firma digitale
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-        </a>
-      </div>
-      <div class="feat-row-visual" aria-hidden="true">
-        <div class="feat-mock-card">
-          <div class="fmc-header">
-            <span class="fmc-title">Conferma versamento</span>
-          </div>
-          <div class="fmc-body">
-            <div class="fmc-firma-info">
-              <span>Giornata</span><strong>7 luglio 2026</strong>
-              <span>Importo</span><strong class="fmc-firma-amount">€ 7.820,00</strong>
-            </div>
-            <div class="fmc-firma-canvas">
-              <svg viewBox="0 0 220 64" width="100%" height="64" aria-hidden="true">
-                <path d="M15 50 C30 15, 55 60, 75 40 C90 25, 105 55, 125 35 C140 20, 158 50, 185 38 C200 28, 210 45, 218 40" stroke="oklch(0.72 0.16 168)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <div class="fmc-firma-label">Firma del revisore · 22:14 · IP 10.0.0.5</div>
-            </div>
-            <div class="fmc-firma-btn">Conferma ritiro</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 3. App mobile -->
-    <div class="feat-row reveal">
-      <div class="feat-row-text">
-        <div class="feat-tag">App mobile & push</div>
-        <h2>Installa una volta.<br>Notifiche per sempre.</h2>
-        <p>PWA installabile su iPhone e Android senza app store. Notifiche push native per versamenti confermati e ticket di guasto. Il gestionale in tasca, sempre aggiornato.</p>
-        <ul class="feat-checklist">
-          <li>Installazione dal browser in 3 secondi</li>
-          <li>Notifiche push native iOS e Android</li>
-          <li>Preferenze per tipo di notifica per utente</li>
-          <li>Swipe tra turni su mobile</li>
-        </ul>
-        <a href="/funzionalita/app-mobile" class="feat-link">
-          Scopri l'app mobile
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-        </a>
-      </div>
-      <div class="feat-row-visual" aria-hidden="true">
-        <div class="feat-phone-wrap">
-          <div class="feat-phone">
-            <div class="feat-phone-notch"></div>
-            <div class="feat-phone-bar">GestHall Suite</div>
-            <div class="feat-phone-content">
-              <div class="fpc-notif">
-                <div class="fpc-notif-icon">
-                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M8 1a4 4 0 0 0-4 4c0 4.5-2 5.5-2 5.5h12s-2-1-2-5.5a4 4 0 0 0-4-4z"/><path d="M9.7 14a1.9 1.9 0 0 1-3.4 0"/></svg>
-                </div>
-                <div>
-                  <div class="fpc-notif-title">GestHall Suite</div>
-                  <div class="fpc-notif-body">Versamento confermato · € 7.820</div>
-                </div>
-              </div>
-              <div class="fpc-kpi-row">
-                <div class="fpc-kpi"><div class="fpc-kpi-l">Oggi</div><div class="fpc-kpi-v">€ 7.820</div></div>
-                <div class="fpc-kpi"><div class="fpc-kpi-l">Settimana</div><div class="fpc-kpi-v">€ 41.200</div></div>
-              </div>
-              <div class="fpc-btn">Apri cassa →</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── ALL FEATURES GRID ─────────────────────────────────────── -->
-<section class="section all-feat-section">
-  <div class="container">
-    <div class="sect-header reveal">
-      <h2>Tutte le funzionalità.<br>Un solo gestionale.</h2>
-      <p>Dalla singola sala alla rete di sale: ogni strumento è pensato per le sale giochi italiane.</p>
-    </div>
-
-    {(['essenziale', 'pro', 'suite', 'multisala'] as const).map(plan => (
-      <div class="af-plan-group reveal">
-        <div class={`af-plan-label af-label-${plan}`}>
-          {plan === 'essenziale' && 'Essenziale — da €39/mese'}
-          {plan === 'pro'        && 'Pro — da €69/mese'}
-          {plan === 'suite'      && 'Suite — da €99/mese'}
-          {plan === 'multisala'  && 'Multi-sala — da €149/mese, 2 sale incluse'}
-        </div>
-        <div class="af-grid">
-          {byPlan[plan].map(f => (
-            <a href={f.slug} class="af-card">
-              <div class="af-card-icon" set:html={f.icon}></div>
-              <div class="af-card-body">
-                <div class="af-card-name">{f.name}</div>
-                <div class="af-card-desc">{f.desc}</div>
-              </div>
-              <svg class="af-card-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-            </a>
-          ))}
-        </div>
-      </div>
-    ))}
-
-    <div class="af-footer reveal">
-      <a href="/funzionalita" class="btn btn-ghost">Esplora tutte le funzionalità →</a>
+      ))}
+      <a href="/sicurezza" class="card area reveal">
+        <div class="icon" set:html={ICONE.scudo}></div>
+        <h3>Sicurezza e dati</h3>
+        <p>Backup settimanale, verifica in due passaggi, registro delle attività, aggiornamenti verificati con un clic e ritorno alla versione precedente.</p>
+        <span class="link">Scopri <span aria-hidden="true">→</span></span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ── PRICING ──────────────────────────────────────────────── -->
-<section class="section pricing-section" id="prezzi">
+<section class="section section-alt">
   <div class="container">
-    <div class="sect-header reveal">
-      <h2>Prezzi chiari.<br>Nessuna sorpresa.</h2>
-      <p>Abbonamento mensile o annuale. Annulla quando vuoi. Migrazione dati inclusa.</p>
-    </div>
-    <div class="pricing-grid">
-
-      <div class="plan reveal">
-        <div class="plan-name">Essenziale</div>
-        <div class="plan-price"><span class="plan-eur">€</span>39<span class="plan-mo">/mese</span></div>
-        <div class="plan-annual">o €390/anno · risparmi 2 mesi</div>
-        <a href="/contatti" class="btn btn-ghost plan-btn">Inizia gratis</a>
-        <ul class="plan-features">
-          <li>Cassa giornaliera e turni flessibili</li>
-          <li>VLT e AWP illimitati</li>
-          <li>Fino a 4 operatori</li>
-          <li>Report sugli incassi reali</li>
-          <li>Bet/Win e archivio borderò</li>
-          <li>Giornaliero e turni anche offline</li>
-          <li>PWA mobile (iOS e Android)</li>
-          <li>Export dati XLS</li>
-          <li>Supporto via email</li>
+    <div class="split reveal">
+      <div>
+        <span class="eyebrow">Sempre in tasca</span>
+        <h2>Un'app sul telefono, senza passare dagli store.</h2>
+        <p class="lead">GestHall Suite si installa sulla schermata home come un'app. Il titolare controlla l'incasso da dove vuole, l'operatore vede i suoi turni e riceve le notifiche, il giornaliero resta utilizzabile anche se la rete della sala cade.</p>
+        <ul class="checks">
+          <li><strong>Notifiche push</strong> per scostamenti, scorte del bar, ticket fermi e versamenti confermati.</li>
+          <li><strong>Modalità offline</strong>: le modifiche partono appena torna la connessione.</li>
+          <li><strong>Permessi per telefono</strong>: decidi tu cosa può compilare un operatore da mobile.</li>
         </ul>
       </div>
-
-      <div class="plan plan-featured reveal d1">
-        <div class="plan-badge">Più scelto</div>
-        <div class="plan-name">Pro</div>
-        <div class="plan-price"><span class="plan-eur">€</span>69<span class="plan-mo">/mese</span></div>
-        <div class="plan-annual">o €690/anno · risparmi 2 mesi</div>
-        <a href="/contatti" class="btn btn-primary plan-btn">Inizia gratis</a>
-        <ul class="plan-features">
-          <li>Tutto di Essenziale</li>
-          <li>Operatori illimitati</li>
-          <li>Anagrafica clienti</li>
-          <li>Prestiti e rientri</li>
-          <li>Documenti e archivi</li>
-          <li>Ticket assistenza macchine</li>
-          <li>Bar e magazzino (banco, omaggi, scontrinato)</li>
-          <li>Notifiche push iOS e Android</li>
-          <li>Firma digitale versamenti</li>
-          <li>Confronto periodi avanzato</li>
-        </ul>
-      </div>
-
-      <div class="plan reveal d2">
-        <div class="plan-name">Suite</div>
-        <div class="plan-price"><span class="plan-eur">€</span>99<span class="plan-mo">/mese</span></div>
-        <div class="plan-annual">o €990/anno · risparmi 2 mesi</div>
-        <a href="/contatti" class="btn btn-ghost plan-btn">Inizia gratis</a>
-        <ul class="plan-features">
-          <li>Tutto di Pro</li>
-          <li>Chat interna tra operatori</li>
-          <li>Web Radio streaming</li>
-          <li>White-label (logo e colori)</li>
-          <li>Passaggio consegne con checklist</li>
-          <li>Integrazione SONOS</li>
-          <li>Supporto prioritario</li>
-          <li>Istanza demo per rivenditori</li>
-          <li>Onboarding dedicato</li>
-        </ul>
-      </div>
-
-      <div class="plan reveal d3">
-        <div class="plan-name">Multi-sala</div>
-        <div class="plan-price"><span class="plan-eur">€</span>149<span class="plan-mo">/mese</span></div>
-        <div class="plan-annual">2 sale incluse · +€49/mese per ogni sala in più</div>
-        <a href="/contatti" class="btn btn-ghost plan-btn">Parliamone</a>
-        <ul class="plan-features">
-          <li>Tutto di Suite</li>
-          <li>Più sale in un unico account</li>
-          <li>Selettore sala e panoramica di tutte le sale</li>
-          <li>Utenti abilitati per sala</li>
-          <li>Impostazioni e moduli per sala</li>
-          <li>Report separati per ogni sala</li>
-        </ul>
-      </div>
-
-    </div>
-    <p class="pricing-note reveal">Tutti i piani includono installazione su hosting proprio, aggiornamenti, e 14 giorni di prova gratuita senza carta di credito.</p>
-  </div>
-</section>
-
-<!-- ── RESELLERS ────────────────────────────────────────────── -->
-<section class="section resellers-section" id="rivenditori">
-  <div class="container">
-    <div class="resellers-inner reveal">
-      <div class="resellers-text">
-        <div class="resellers-tag">Per rivenditori</div>
-        <h2>Installi software per le sale?<br>GestHall Suite è fatto per te.</h2>
-        <p>White-label completo, setup in meno di un'ora su qualsiasi hosting PHP, pannello di gestione multi-installazione. Il tuo brand sul prodotto, il tuo margine su ogni abbonamento.</p>
-        <ul class="feat-checklist">
-          <li>Logo e colori del tuo cliente su ogni installazione</li>
-          <li>Demo instance preconfigurata per presentazioni</li>
-          <li>Documentazione tecnica e guide di installazione</li>
-          <li>Supporto prioritario per i rivenditori certificati</li>
-        </ul>
-        <a href="/rivenditori" class="btn btn-primary" style="margin-top: 32px">Scopri il programma rivenditori →</a>
-      </div>
-      <div class="resellers-visual" aria-hidden="true">
-        <div class="resellers-mockup">
-          <div class="rm-header">Dashboard rivenditore</div>
-          <div class="rm-installs">
-            <div class="rm-install">
-              <div class="rm-dot rm-dot-green"></div>
-              <div><div class="rm-name">Sala Fortuna — Napoli</div><div class="rm-sub">Piano Pro · Attivo</div></div>
-              <div class="rm-plan">Pro</div>
-            </div>
-            <div class="rm-install">
-              <div class="rm-dot rm-dot-green"></div>
-              <div><div class="rm-name">New Game — Torino</div><div class="rm-sub">Piano Suite · Attivo</div></div>
-              <div class="rm-plan rm-plan-suite">Suite</div>
-            </div>
-            <div class="rm-install">
-              <div class="rm-dot rm-dot-amber"></div>
-              <div><div class="rm-name">Lucky Star — Roma</div><div class="rm-sub">Piano Essenziale · Trial</div></div>
-              <div class="rm-plan rm-plan-ess">Ess.</div>
-            </div>
-          </div>
-        </div>
+      <div class="phones">
+        <Phone src="m-dashboard" alt="Dashboard su telefono" />
+        <Phone src="m-bar" alt="Banco del bar su telefono" />
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── DEMO CTA ─────────────────────────────────────────────── -->
-<section class="section demo-section" id="demo">
+<section class="section" id="prezzi">
   <div class="container">
-    <div class="demo-inner reveal">
-      <h2>Prova GestHall Suite<br>senza impegno.</h2>
-      <p>14 giorni gratuiti, nessuna carta di credito. Installazione su hosting inclusa nel primo mese.</p>
-      <form class="demo-form" id="demo-form" novalidate>
-        <input type="email" name="email" placeholder="La tua email" required autocomplete="email" />
-        <button type="submit" class="btn btn-primary">Inizia la prova →</button>
-      </form>
-      <p class="demo-note" id="demo-note">Oppure scrivici a <a href="mailto:info@gesthallsuite.it">info@gesthallsuite.it</a></p>
+    <div class="section-head center">
+      <span class="eyebrow">Prezzi</span>
+      <h2>Un prezzo chiaro per ogni sala.</h2>
+      <p>Installazione, migrazione dei dati e aggiornamenti sono sempre inclusi. Nessun costo per macchina.</p>
     </div>
+    <PricingCards compact />
+    <p class="center-link"><a href="/prezzi" class="link">Confronta i piani nel dettaglio <span aria-hidden="true">→</span></a></p>
   </div>
 </section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Come si parte</span>
+      <h2>Dalla prima telefonata alla prima cassa chiusa.</h2>
+    </div>
+    <ol class="grid g3 steps">
+      <li class="card reveal"><span class="step-n">1</span><h3>Demo sui tuoi numeri</h3><p>In videochiamata ti mostriamo una sala configurata come la tua, con le tue macchine e i tuoi turni.</p></li>
+      <li class="card reveal"><span class="step-n">2</span><h3>Installazione e dati</h3><p>Installiamo GestHall Suite sul tuo spazio web, configuriamo sala, macchine e operatori e importiamo lo storico che ci mandi.</p></li>
+      <li class="card reveal"><span class="step-n">3</span><h3>{PROVA_GIORNI} giorni di prova</h3><p>Lavori con il gestionale vero, senza carta di credito. Se ti convince scegli il piano, altrimenti non paghi nulla.</p></li>
+    </ol>
+  </div>
+</section>
+
+<Cta />
 
 </Layout>
 
 <style>
-/* ── HERO ─────────────────────────────────────────────────── */
-.hero { padding: 120px 0 80px; min-height: 100dvh; display: flex; align-items: center; background: linear-gradient(155deg, oklch(100% 0 0) 0%, oklch(96% 0.012 245) 100%) }
-.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center }
-.hero-text { display: flex; flex-direction: column; gap: 24px }
-.hero-pill {
-  display: inline-flex; align-items: center; padding: 6px 14px; border-radius: 999px;
-  background: var(--accent-sub); border: 1px solid oklch(0.72 0.16 168 / 0.25);
-  color: var(--accent); font-size: 13px; font-weight: 600; width: fit-content;
-  animation: fadeUp 0.7s var(--ease) 0s both;
-}
-.hero-text h1 { font-size: clamp(2.6rem, 4.5vw, 4.4rem); font-weight: 800; color: var(--text); animation: fadeUp 0.8s var(--ease) 0.08s both }
-.hero-sub { font-size: 17px; color: var(--muted); max-width: 48ch; line-height: 1.7; animation: fadeUp 0.8s var(--ease) 0.17s both }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; animation: fadeUp 0.8s var(--ease) 0.26s both }
-.hero-visual { animation: fadeIn 1s var(--ease) 0.12s both }
-
-@keyframes fadeUp { from { opacity: 0; transform: translateY(22px) } to { opacity: 1; transform: none } }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(14px) } to { opacity: 1; transform: none } }
-
-/* ── HERO MOCK ────────────────────────────────────────────── */
-.mock { background: var(--bg); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 28px 72px oklch(19% 0.075 245 / 0.12), 0 4px 16px oklch(19% 0.075 245 / 0.06) }
-.mock-chrome { background: var(--surface-2); padding: 10px 14px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--border) }
-.mock-dots { display: flex; gap: 5px }
-.mock-dots span { width: 9px; height: 9px; border-radius: 50%; background: var(--border) }
-.mock-url { flex: 1; text-align: center; font-size: 11px; color: var(--faint); font-family: var(--font-body) }
-.mock-app { display: flex; height: 290px }
-.mock-sb { width: 52px; background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; padding: 12px 0 10px; gap: 4px }
-.mock-sb-logo { width: 28px; height: 28px; margin-bottom: 12px; display: flex; align-items: center; justify-content: center }
-.mock-sb-items { display: flex; flex-direction: column; gap: 2px }
-.mock-sb-item { width: 34px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--faint) }
-.mock-sb-item svg { width: 14px; height: 14px }
-.mock-sb-item.active { background: var(--accent-sub); color: var(--accent) }
-.mock-sb-foot { margin-top: auto }
-.mock-sb-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--surface-2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 700; color: var(--muted) }
-.mock-main { flex: 1; padding: 12px 14px 10px; display: flex; flex-direction: column; gap: 10px; background: var(--bg) }
-.mock-hdr { display: flex; align-items: center; gap: 8px }
-.mock-hdr-date { font-size: 12px; font-weight: 600; color: var(--text) }
-.mock-hdr-badge { font-size: 9px; padding: 2px 7px; border-radius: 99px; background: oklch(0.72 0.16 168 / 0.1); color: var(--accent); font-weight: 700 }
-.mock-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 7px }
-.mock-kpi { background: var(--surface); border-radius: 7px; padding: 8px 10px; border: 1px solid var(--border-sub) }
-.mock-kpi-label { font-size: 9px; color: var(--faint); font-weight: 500; margin-bottom: 2px }
-.mock-kpi-val { font-size: 19px; font-weight: 700; color: var(--text); font-family: var(--font-head); letter-spacing: -0.03em; font-variant-numeric: tabular-nums }
-.mock-tabs { display: flex; gap: 5px }
-.mock-tab { font-size: 10px; font-weight: 600; padding: 4px 10px; border-radius: 6px; color: var(--faint) }
-.mock-tab.on { background: var(--accent-sub); color: var(--accent); display: flex; align-items: center; gap: 4px }
-.mock-tab-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0 }
-.mock-rows { display: flex; flex-direction: column; gap: 5px }
-.mock-row { display: flex; justify-content: space-between; font-size: 11px }
-.mock-rl { color: var(--faint) }
-.mock-rv { color: var(--text); font-weight: 600; font-variant-numeric: tabular-nums }
-.mock-result { margin-top: 4px; padding: 7px 10px; border-radius: 7px; background: var(--accent-sub); border: 1px solid oklch(0.72 0.16 168 / 0.22); display: flex; justify-content: space-between; align-items: center }
-.mock-rl-acc { font-size: 10px; font-weight: 700; color: var(--accent) }
-.mock-rv-acc { font-size: 16px; font-weight: 800; color: var(--accent); font-family: var(--font-head); letter-spacing: -0.03em; font-variant-numeric: tabular-nums }
-
-/* ── TRUST ────────────────────────────────────────────────── */
-.trust-strip { padding: 18px 0; background: oklch(19% 0.075 245) }
-.trust-items { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 24px }
-.trust-items li { font-size: 12px; font-weight: 600; color: oklch(48% 0.04 245); letter-spacing: 0.02em; text-transform: uppercase }
-
-/* ── SHARED ───────────────────────────────────────────────── */
-.section { padding: 96px 0 }
-.sect-header { margin-bottom: 72px }
-.sect-header h2 { font-size: clamp(2rem, 3vw, 3rem); font-weight: 800; margin-bottom: 16px }
-.sect-header p { font-size: 17px; color: var(--muted); max-width: 50ch }
-
-/* ── FEAT TAG + LINK ──────────────────────────────────────── */
-.feat-tag { display: inline-flex; padding: 5px 13px; border-radius: 999px; background: var(--accent-sub); color: var(--accent); font-size: 12px; font-weight: 700; margin-bottom: 12px }
-.feat-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--accent); margin-top: 20px; transition: gap .2s var(--ease) }
-.feat-link:hover { gap: 10px }
-
-/* ── FEAT ROWS ────────────────────────────────────────────── */
-.feat-section { padding-bottom: 80px }
-.feat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; padding: 72px 0; border-top: 1px solid var(--border-sub) }
-.feat-row:first-of-type { border-top: none; padding-top: 0 }
-.feat-row-rev .feat-row-text { order: 2 }
-.feat-row-rev .feat-row-visual { order: 1 }
-.feat-row-text { display: flex; flex-direction: column }
-.feat-row-text h2 { font-size: clamp(1.7rem, 2.5vw, 2.4rem); font-weight: 800; margin-bottom: 16px }
-.feat-row-text p { font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 24px }
-.feat-row-visual { display: flex; align-items: center; justify-content: center }
-
-.feat-checklist { display: flex; flex-direction: column; gap: 8px }
-.feat-checklist li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted) }
-.feat-checklist li::before {
-  content: ''; width: 16px; height: 16px; flex-shrink: 0; border-radius: 50%;
-  background: var(--accent-sub); border: 1px solid oklch(0.72 0.16 168 / 0.3);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' fill='none' stroke='oklch(0.72 0.16 168)' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M2 5l2 2 4-4'/%3E%3C/svg%3E");
-  background-size: 10px; background-position: center; background-repeat: no-repeat;
-}
-
-/* ── FEAT MOCK CARD ───────────────────────────────────────── */
-.feat-mock-card { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: var(--rx-l); overflow: hidden; box-shadow: 0 24px 64px oklch(19% 0.075 245 / 0.1), 0 4px 16px oklch(19% 0.075 245 / 0.05) }
-.fmc-header { background: var(--surface-2); padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border) }
-.fmc-title { font-size: 12px; font-weight: 600; color: var(--muted) }
-.fmc-badge { font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 99px; background: oklch(0.72 0.16 168 / 0.1); color: var(--accent) }
-.fmc-body { padding: 18px }
-.fmc-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px }
-.fmc-kpi { background: var(--surface); border-radius: var(--rx); padding: 10px 14px; border: 1px solid var(--border-sub) }
-.fmc-kpi-l { font-size: 10px; color: var(--faint); margin-bottom: 3px }
-.fmc-kpi-v { font-size: 20px; font-weight: 700; color: var(--text); font-family: var(--font-head); letter-spacing: -0.03em; font-variant-numeric: tabular-nums }
-.fmc-rows { display: flex; flex-direction: column; margin-bottom: 12px }
-.fmc-row { display: flex; justify-content: space-between; font-size: 12px; padding: 8px 0; border-bottom: 1px solid var(--border-sub) }
-.fmc-row:last-child { border-bottom: none }
-.fmc-row span:first-child { color: var(--muted) }
-.fmc-row span:last-child { color: var(--text); font-weight: 600; font-variant-numeric: tabular-nums }
-.fmc-result { display: flex; justify-content: space-between; align-items: center; padding: 11px 14px; border-radius: var(--rx); background: var(--accent-sub); border: 1px solid oklch(0.72 0.16 168 / 0.25) }
-.fmc-result span { font-size: 12px; font-weight: 600; color: var(--accent) }
-.fmc-result strong { font-size: 22px; font-weight: 800; color: var(--accent); font-family: var(--font-head); letter-spacing: -0.03em; font-variant-numeric: tabular-nums }
-.fmc-firma-info { display: grid; grid-template-columns: auto 1fr; gap: 5px 16px; margin-bottom: 14px; font-size: 12px; color: var(--muted); align-items: baseline }
-.fmc-firma-info strong { color: var(--text); font-weight: 600 }
-.fmc-firma-amount { font-size: 20px; font-weight: 800; color: var(--accent); font-family: var(--font-head); font-variant-numeric: tabular-nums }
-.fmc-firma-canvas { background: var(--surface); border-radius: var(--rx); border: 1px dashed var(--border); padding: 14px; margin-bottom: 12px; text-align: center }
-.fmc-firma-label { font-size: 9px; color: var(--faint); margin-top: 4px }
-.fmc-firma-btn { display: inline-block; background: var(--accent); color: oklch(0.1 0 0); font-size: 13px; font-weight: 700; padding: 9px 18px; border-radius: var(--rx) }
-
-/* ── PHONE MOCK ───────────────────────────────────────────── */
-.feat-phone-wrap { display: flex; justify-content: center }
-.feat-phone { background: var(--bg); border: 1px solid var(--border); border-radius: 28px; overflow: hidden; width: 260px; box-shadow: 0 24px 64px oklch(19% 0.075 245 / 0.1) }
-.feat-phone-notch { width: 72px; height: 6px; border-radius: 3px; background: var(--border); margin: 10px auto 0 }
-.feat-phone-bar { background: var(--surface-2); padding: 10px 18px; font-size: 13px; font-weight: 600; color: var(--text); border-bottom: 1px solid var(--border) }
-.feat-phone-content { padding: 14px; display: flex; flex-direction: column; gap: 10px }
-.fpc-notif { display: flex; align-items: center; gap: 10px; background: var(--surface); border-radius: var(--rx-m); padding: 11px 13px; border: 1px solid var(--border-sub) }
-.fpc-notif-icon { width: 34px; height: 34px; border-radius: 8px; flex-shrink: 0; background: var(--accent-sub); color: var(--accent); display: flex; align-items: center; justify-content: center }
-.fpc-notif-title { font-size: 11px; font-weight: 700; color: var(--text); margin-bottom: 2px }
-.fpc-notif-body { font-size: 10px; color: var(--muted) }
-.fpc-kpi-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px }
-.fpc-kpi { background: var(--surface); border-radius: var(--rx); padding: 9px 11px; border: 1px solid var(--border-sub) }
-.fpc-kpi-l { font-size: 9px; color: var(--faint); margin-bottom: 2px }
-.fpc-kpi-v { font-size: 17px; font-weight: 700; color: var(--text); font-family: var(--font-head); letter-spacing: -0.03em; font-variant-numeric: tabular-nums }
-.fpc-btn { background: var(--accent); color: oklch(0.1 0 0); font-size: 12px; font-weight: 700; padding: 9px 16px; border-radius: var(--rx); text-align: center }
-
-/* ── ALL FEATURES GRID ────────────────────────────────────── */
-.all-feat-section { background: var(--surface); padding-bottom: 80px }
-.af-plan-group { margin-bottom: 48px }
-.af-plan-group:last-of-type { margin-bottom: 0 }
-.af-plan-label { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border-sub) }
-.af-label-essenziale { color: oklch(0.50 0.14 168) }
-.af-label-pro        { color: oklch(0.45 0.18 250) }
-.af-label-suite      { color: oklch(0.45 0.18 300) }
-.af-label-multisala  { color: oklch(0.45 0.12 210) }
-.af-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px }
-.af-card { display: flex; align-items: flex-start; gap: 12px; background: var(--bg); border: 1px solid var(--border-sub); border-radius: var(--rx-m); padding: 16px; transition: all .2s var(--ease) }
-.af-card:hover { border-color: oklch(0.72 0.16 168 / 0.45); box-shadow: 0 4px 16px var(--accent-glow); transform: translateY(-1px) }
-.af-card-icon { width: 34px; height: 34px; flex-shrink: 0; background: var(--accent-sub); border-radius: var(--rx); display: flex; align-items: center; justify-content: center; color: var(--accent); padding: 8px }
-.af-card-icon svg { width: 100%; height: 100% }
-.af-card-body { flex: 1; min-width: 0 }
-.af-card-name { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 3px }
-.af-card-desc { font-size: 12px; color: var(--muted); line-height: 1.5 }
-.af-card-arrow { color: var(--faint); flex-shrink: 0; margin-top: 3px; transition: transform .2s var(--ease), color .2s }
-.af-card:hover .af-card-arrow { transform: translateX(3px); color: var(--accent) }
-.af-footer { margin-top: 40px; display: flex; justify-content: center }
-
-/* ── PRICING ──────────────────────────────────────────────── */
-.pricing-section { background: var(--bg) }
-.pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px }
-.pricing-grid .plan { padding: 28px 22px }
-.pricing-grid .plan-price { font-size: 46px }
-@media (max-width: 1100px) { .pricing-grid { grid-template-columns: repeat(2, 1fr) } }
-.plan { background: var(--surface); border: 1px solid var(--border-sub); border-radius: var(--rx-l); padding: 32px 28px; display: flex; flex-direction: column; gap: 6px; position: relative }
-.plan-featured { border-color: oklch(0.72 0.16 168 / 0.45); background: oklch(97% 0.025 168); box-shadow: 0 0 0 1px oklch(0.72 0.16 168 / 0.18), 0 12px 40px oklch(0.72 0.16 168 / 0.1) }
-.plan-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: oklch(0.1 0 0); font-size: 11px; font-weight: 700; padding: 4px 14px; border-radius: 999px; white-space: nowrap }
-.plan-name { font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px }
-.plan-price { display: flex; align-items: baseline; gap: 2px; font-family: var(--font-head); font-weight: 800; color: var(--text); font-size: 52px; letter-spacing: -0.04em; line-height: 1 }
-.plan-eur { font-size: 22px; font-weight: 600; color: var(--muted) }
-.plan-mo  { font-size: 16px; font-weight: 500; color: var(--muted); margin-bottom: 6px }
-.plan-annual { font-size: 12px; color: var(--faint); margin-bottom: 20px }
-.plan-btn { width: 100%; justify-content: center; margin-bottom: 20px }
-.plan-features { display: flex; flex-direction: column; gap: 10px }
-.plan-features li { font-size: 14px; color: var(--muted); padding-left: 22px; position: relative }
-.plan-features li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; font-size: 13px }
-.pricing-note { font-size: 14px; color: var(--faint); text-align: center }
-
-/* ── RESELLERS ────────────────────────────────────────────── */
-.resellers-section { background: var(--surface) }
-.resellers-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center }
-.resellers-tag { display: inline-flex; padding: 5px 13px; border-radius: 999px; background: var(--accent-sub); color: var(--accent); font-size: 12px; font-weight: 700; margin-bottom: 16px }
-.resellers-text h2 { font-size: clamp(1.7rem, 2.4vw, 2.4rem); margin-bottom: 16px }
-.resellers-text p { font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 24px }
-.resellers-mockup { background: var(--bg); border: 1px solid var(--border-sub); border-radius: var(--rx-l); overflow: hidden }
-.rm-header { background: var(--surface-2); padding: 12px 18px; font-size: 12px; font-weight: 600; color: var(--muted); border-bottom: 1px solid var(--border) }
-.rm-installs { padding: 8px 0 }
-.rm-install { display: flex; align-items: center; gap: 12px; padding: 12px 18px; border-bottom: 1px solid var(--border-sub) }
-.rm-install:last-child { border-bottom: none }
-.rm-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0 }
-.rm-dot-green { background: #34d399 }
-.rm-dot-amber { background: #fbbf24 }
-.rm-name { font-size: 13px; font-weight: 600; color: var(--text) }
-.rm-sub  { font-size: 11px; color: var(--faint) }
-.rm-plan { margin-left: auto; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 6px; background: oklch(0.72 0.16 168 / 0.1); color: var(--accent) }
-.rm-plan-suite { background: oklch(0.72 0.16 300 / 0.1); color: oklch(0.55 0.14 300) }
-.rm-plan-ess   { background: var(--surface-2); color: var(--muted) }
-
-/* ── DEMO ─────────────────────────────────────────────────── */
-.demo-section { background: var(--bg) }
-.demo-inner { max-width: 560px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px }
-.demo-inner h2 { font-size: clamp(1.9rem, 3vw, 2.8rem) }
-.demo-inner > p { font-size: 16px; color: var(--muted) }
-.demo-form { display: flex; gap: 10px; width: 100% }
-.demo-form input { flex: 1; padding: 13px 18px; border-radius: var(--rx-m); background: var(--surface); border: 1px solid var(--border); color: var(--text); font-family: var(--font-body); font-size: 15px; outline: none; transition: border-color 0.15s }
-.demo-form input:focus { border-color: oklch(0.72 0.16 168 / 0.6) }
-.demo-form input::placeholder { color: var(--faint) }
-.demo-note { font-size: 13px; color: var(--faint) }
-.demo-note a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px }
-
-/* ── RESPONSIVE ───────────────────────────────────────────── */
-@media (max-width: 900px) {
-  .hero { padding: 96px 0 48px; min-height: auto }
-  .hero-inner { grid-template-columns: 1fr; gap: 48px }
-  .hero-visual { max-width: 520px; margin: 0 auto }
-  .feat-row { grid-template-columns: 1fr; gap: 40px; padding: 56px 0 }
-  .feat-row-rev .feat-row-text, .feat-row-rev .feat-row-visual { order: 0 }
-  .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto 32px }
-  .resellers-inner { grid-template-columns: 1fr; gap: 48px }
-  .feat-phone { width: 240px }
+.hero { padding: clamp(40px, 7vw, 88px) 0 clamp(24px, 4vw, 48px); overflow: hidden }
+.hero-in { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 5vw, 64px); align-items: center }
+.hero h1 { font-size: clamp(34px, 4.4vw, 54px); letter-spacing: -.03em; margin: 16px 0 20px }
+.hero .lead { margin-bottom: 30px }
+.hero-trust { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 26px; font-size: 14.5px; color: var(--muted) }
+.hero-trust li { display: flex; align-items: center; gap: 8px }
+.hero-trust li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent) }
+.hero-visual { position: relative; padding-bottom: 40px }
+.hero-visual { padding-left: 64px }
+.hero-phone { position: absolute; left: 0; bottom: 0; width: 170px }
+.hero-phone  :global(.phone) { width: 100%; border-radius: 30px; padding: 7px }
+.hero-phone :global(.phone img) { border-radius: 24px }
+.duo { position: relative; padding: 0 0 48px 0 }
+.duo-phone { position: absolute; right: -12px; bottom: 0; width: 170px }
+.duo-phone  :global(.phone) { width: 100%; border-radius: 28px; padding: 7px }
+.phones { display: flex; justify-content: center; gap: 24px }
+.phones  :global(.phone) { width: min(260px, 44vw) }
+.phones  :global(.phone:last-child) { margin-top: 56px }
+.area { display: flex; flex-direction: column }
+.area p { flex: 1; margin-bottom: 18px }
+.center-link { text-align: center; margin-top: 28px }
+.steps { counter-reset: s }
+.step-n { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: var(--text); color: var(--bg); font-weight: 750; margin-bottom: 16px }
+@media (max-width: 980px) {
+  .hero-in { grid-template-columns: 1fr }
+  .hero-visual { padding-left: 0 }
+  .hero-phone { left: auto; right: 8px; width: 150px }
 }
 @media (max-width: 640px) {
-  .hero-text h1 { font-size: 2.4rem }
-  .hero-sub { font-size: 15px }
-  .hero-visual { display: none }
-  .demo-form { flex-direction: column }
-  .af-grid { grid-template-columns: 1fr }
+  .hero-phone { width: 118px; right: 4px }
+  .hero-phone  :global(.phone) { border-radius: 20px; padding: 5px }
+  .hero-phone :global(.phone img) { border-radius: 16px }
+  .duo-phone { width: 120px; right: 0 }
+  .phones { gap: 12px }
+  .phones  :global(.phone) { padding: 6px; border-radius: 26px }
+  .phones  :global(.phone:last-child) { margin-top: 32px }
 }
 </style>
-
-<script>
-  document.getElementById('demo-form')?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const form  = e.target as HTMLFormElement;
-    const email = (form.elements.namedItem('email') as HTMLInputElement).value;
-    const btn   = form.querySelector('button') as HTMLButtonElement;
-    const note  = document.getElementById('demo-note');
-    btn.textContent = '✓ Ricevuto!';
-    btn.disabled = true;
-    if (note) note.textContent = `Ti contatteremo presto a ${email}.`;
-    setTimeout(() => {
-      btn.textContent = 'Inizia la prova →';
-      btn.disabled = false;
-      if (note) note.innerHTML = 'Oppure scrivici a <a href="mailto:info@gesthallsuite.it">info@gesthallsuite.it</a>';
-    }, 5000);
-  });
-</script>

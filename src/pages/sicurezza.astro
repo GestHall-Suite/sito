@@ -1,0 +1,128 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Shot from '../components/Shot.astro';
+import Cta from '../components/Cta.astro';
+import { ICONE } from '../data/aree';
+---
+<Layout page="Sicurezza e dati" description="Dove stanno i dati di GestHall Suite e come sono protetti: database sul tuo spazio web, backup settimanale, verifica in due passaggi, blocco dei tentativi, registro attività, aggiornamenti verificati.">
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="crumbs" aria-label="Percorso"><a href="/">Home</a><span aria-hidden="true">/</span><span>Sicurezza e dati</span></nav>
+    <span class="eyebrow">Sicurezza e dati</span>
+    <h1>I numeri della sala sono tuoi. E restano al sicuro.</h1>
+    <p class="lead">GestHall Suite gira sul tuo spazio web, con il tuo database. Backup, accessi, tracciabilità e aggiornamenti sono progettati per chi maneggia contanti ogni giorno e deve poterlo dimostrare.</p>
+  </div>
+</section>
+
+<section class="section-tight" style="padding-top:0">
+  <div class="container">
+    <div class="grid g4">
+      <a href="#dati" class="card jump"><div class="icon" set:html={ICONE.server}></div><h3>Dove sono i dati</h3></a>
+      <a href="#backup" class="card jump"><div class="icon" set:html={ICONE.backup}></div><h3>Backup</h3></a>
+      <a href="#accessi" class="card jump"><div class="icon" set:html={ICONE.chiave}></div><h3>Accessi</h3></a>
+      <a href="#aggiornamenti" class="card jump"><div class="icon" set:html={ICONE.aggiorna}></div><h3>Aggiornamenti</h3></a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="dati">
+  <div class="container">
+    <div class="split reveal">
+      <div>
+        <span class="eyebrow">Dove sono i dati</span>
+        <h2>Sul tuo server, non su un cloud condiviso.</h2>
+        <p class="lead">L'app e il database MySQL stanno nello spazio web della sala (un normale hosting PHP o un tuo server). Nessun altro cliente condivide il tuo database e nessun servizio esterno legge i movimenti di cassa.</p>
+        <ul class="checks">
+          <li><strong>Il nostro server</strong> riceve solo la verifica della licenza: chiave dell'installazione e versione installata.</li>
+          <li><strong>L'assistenza</strong> entra solo con un link firmato valido 15 minuti, e l'accesso finisce nel registro attività della sala.</li>
+          <li><strong>I file</strong> (documenti, borderò, buste paga, foto) si aprono solo da utenti autenticati: la cartella non è raggiungibile dall'esterno.</li>
+        </ul>
+      </div>
+      <div class="card spec">
+        <h3>Requisiti tecnici</h3>
+        <dl>
+          <div><dt>Server</dt><dd>PHP 8.1 o superiore, Apache o Nginx</dd></div>
+          <div><dt>Database</dt><dd>MySQL 8 o MariaDB 10.6 e successivi</dd></div>
+          <div><dt>Connessione</dt><dd>HTTPS (necessario per app e notifiche)</dd></div>
+          <div><dt>Estensioni</dt><dd>PDO, OpenSSL, mbstring, Zip</dd></div>
+          <div><dt>Hosting</dt><dd>Va bene un hosting condiviso: nessun servizio da tenere acceso</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="backup">
+  <div class="container">
+    <div class="split rev reveal">
+      <div>
+        <span class="eyebrow">Backup</span>
+        <h2>Una copia completa ogni settimana, senza pensarci.</h2>
+        <p class="lead">Ogni sette giorni l'app salva una copia compressa di tutto il database: cassa, turni, utenti, impostazioni. Si conservano le ultime otto (o quante ne vuoi, fino a trenta).</p>
+        <ul class="checks">
+          <li><strong>Backup manuale</strong> quando vuoi, prima di un cambiamento importante.</li>
+          <li><strong>Scarica</strong> la copia sul tuo computer per tenerla anche fuori dal server.</li>
+          <li><strong>Ripristina</strong> con un clic, anche da un file caricato.</li>
+          <li><strong>Prima di ogni aggiornamento</strong> l'app fa da sola un backup dedicato.</li>
+        </ul>
+      </div>
+      <Shot src="backup" alt="Pagina dei backup con backup automatici settimanali, manuali e prima dell'aggiornamento" />
+    </div>
+  </div>
+</section>
+
+<section class="section" id="accessi">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Accessi e tracciabilità</span>
+      <h2>Chi entra, cosa vede, cosa ha cambiato.</h2>
+    </div>
+    <div class="grid g3">
+      <div class="card reveal"><div class="icon" set:html={ICONE.chiave}></div><h3>Verifica in due passaggi</h3><p>Per responsabili e revisori, un codice via email a ogni accesso. I dispositivi attendibili non lo chiedono per 30 giorni.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.scudo}></div><h3>Blocco dei tentativi</h3><p>Dopo troppi tentativi sbagliati l'accesso si blocca, sia per indirizzo sia per utente. Le password sono salvate solo in forma cifrata.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.utenti}></div><h3>Ruoli e permessi</h3><p>Operatore, responsabile, revisore. Cosa può fare un operatore da telefono, se può modificare turni già salvati, se il revisore vede i turni: lo decidi tu.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.occhio}></div><h3>Registro attività</h3><p>Salvataggi, chiusure e riaperture, eliminazioni, cambi di impostazione e accessi del supporto, con utente, ora e indirizzo.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.firma}></div><h3>Versamenti firmati</h3><p>Importo, firma, data, ora e dispositivo di chi ritira. Una prova a tutela degli operatori quanto della proprietà.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.campana}></div><h3>Avvisi automatici</h3><p>Scostamenti di cassa oltre soglia, scorte del bar e assistenze ferme arrivano al responsabile come notifica.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="aggiornamenti">
+  <div class="container">
+    <div class="split reveal">
+      <div>
+        <span class="eyebrow">Aggiornamenti</span>
+        <h2>Nuove versioni con un clic. E un clic per tornare indietro.</h2>
+        <p class="lead">Ogni versione passa controlli e test automatici prima di essere pubblicata. Quando è pronta il responsabile la trova in Impostazioni → Aggiornamenti, con le novità spiegate.</p>
+      </div>
+      <ol class="flow">
+        <li><b>Verifica</b><span>Il pacchetto arriva con la sua impronta SHA-256 e ogni file viene controllato prima di essere scritto.</span></li>
+        <li><b>Backup</b><span>Database salvato e copia dei file che cambiano, prima di toccare qualsiasi cosa.</span></li>
+        <li><b>Installazione</b><span>Un minuto, senza FTP. Configurazione e file caricati non vengono mai sovrascritti.</span></li>
+        <li><b>Ritorno</b><span>Se qualcosa non ti convince, la versione precedente si ripristina dalla stessa pagina.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<Cta title="Domande su dati, privacy o server?" text="Ti spieghiamo dove installare GestHall Suite, come proteggere il tuo spazio web e come gestire i backup. Scrivici o chiedi una demo." />
+</Layout>
+
+<style>
+.jump { display: flex; align-items: center; gap: 14px; padding: 18px 20px }
+.jump .icon { margin: 0 }
+.jump h3 { margin: 0; font-size: 17px }
+.spec h3 { margin-bottom: 16px }
+.spec dl { display: grid; gap: 0 }
+.spec dl div { display: grid; grid-template-columns: 120px 1fr; gap: 12px; padding: 12px 0; border-top: 1px solid var(--border); font-size: 15px }
+.spec dt { font-weight: 650 }
+.spec dd { color: var(--muted) }
+.flow { display: grid; gap: 12px; counter-reset: f }
+.flow li { counter-increment: f; position: relative; padding: 18px 20px 18px 64px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-m) }
+.flow li::before { content: counter(f); position: absolute; left: 20px; top: 18px; width: 30px; height: 30px; border-radius: 9px; background: var(--accent-weak); color: var(--accent-ink); font-weight: 750; display: grid; place-items: center }
+.flow b { display: block; margin-bottom: 2px }
+.flow span { color: var(--muted); font-size: 15px }
+@media (max-width: 640px) { .spec dl div { grid-template-columns: 1fr; gap: 2px } }
+</style>

@@ -1,0 +1,68 @@
+---
+import AreaLayout from '../../layouts/AreaLayout.astro';
+import Shot from '../../components/Shot.astro';
+import Phone from '../../components/Phone.astro';
+import { ICONE } from '../../data/aree';
+---
+<AreaLayout slug="report" alt="Riepilogo mensile: cassa per giorno, incasso per piattaforma e sintesi della cassa" description="Report per sale giochi: dashboard in tempo reale, settimanale, mensile, annuale, confronto tra periodi, storico per macchina, Bet/Win, borderò ed export Excel per il commercialista.">
+
+<section class="section">
+  <div class="container">
+    <div class="split reveal">
+      <div>
+        <span class="eyebrow">Dashboard</span>
+        <h2>Come sta andando oggi, senza telefonare in sala.</h2>
+        <p class="lead">Incasso VLT e versamento del giorno, totale del mese, confronto con ieri e con il mese precedente, ultime giornate. I dati si aggiornano da soli ogni 30 secondi.</p>
+        <ul class="checks">
+          <li><strong>Personalizzabile</strong>: ognuno sceglie quali riquadri vedere, in che ordine e di che misura.</li>
+          <li><strong>Per ruolo</strong>: il revisore vede i versamenti da confermare, l'operatore i suoi turni.</li>
+        </ul>
+      </div>
+      <div class="duo">
+        <Shot src="dashboard" alt="Dashboard con incasso del giorno, del mese e grafici" />
+        <div class="duo-phone"><Phone src="m-dashboard" alt="Dashboard su telefono" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Statistiche</span>
+      <h2>Un solo modo di contare, in tutti i report.</h2>
+      <p>L'incasso è quello degli scassettamenti effettivi del turno di chiusura: lo stesso numero nella dashboard, nel mensile, nell'export e nel confronto. Il dichiarato dei fornitori vive nella sua sezione.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card reveal"><div class="icon" set:html={ICONE.report}></div><h3>Settimanale, mensile, annuale</h3><p>Cassa per giorno, incasso per piattaforma con quota e media giornaliera, ticket, bancomat e versamenti. Filtrabile per operatore.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.cassa}></div><h3>Storico per macchina</h3><p>Ogni VLT e AWP ha la sua scheda: incasso degli ultimi 12 mesi, media, refill e ticket di assistenza. Ci arrivi anche dal QR sulla macchina.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.aggiorna}></div><h3>Confronto tra periodi · Pro</h3><p>Due intervalli a scelta, cinque metriche a confronto con la variazione percentuale e il grafico sovrapposto.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.doc}></div><h3>Bet/Win dei fornitori</h3><p>Giocato e pagato dichiarati per settimana contabile, inseriti a mano o importati dal file Excel del concessionario.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.doc}></div><h3>Archivio borderò</h3><p>I PDF dei borderò per fornitore e periodo, con numero e importo, consultabili da responsabile e revisore.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.euro}></div><h3>Per il commercialista</h3><p>Un file Excel con riepilogo, incassi giorno per giorno, versamenti confermati e bar. Un mese o un intervallo fino a un anno.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="split rev reveal">
+      <div>
+        <span class="eyebrow">Export</span>
+        <h2>Esci dal gestionale quando vuoi, con i tuoi dati.</h2>
+        <p class="lead">Ogni report si esporta in CSV o in Excel e si stampa in formato pulito. I dati sono tuoi: stanno nel database del tuo spazio web e ne fai il backup quando vuoi.</p>
+        <p><a href="/sicurezza" class="link">Dove stanno i dati e come sono protetti <span aria-hidden="true">→</span></a></p>
+      </div>
+      <Shot src="bar-report" alt="Report del bar con venduto, scontrinato, margine e dettaglio per giornata e prodotto" />
+    </div>
+  </div>
+</section>
+
+</AreaLayout>
+
+<style>
+.duo { position: relative; padding-bottom: 48px }
+.duo-phone { position: absolute; right: -12px; bottom: 0; width: 160px }
+.duo-phone  :global(.phone) { width: 100%; border-radius: 28px; padding: 7px }
+@media (max-width: 640px) { .duo-phone { width: 116px; right: 0 } .duo-phone  :global(.phone) { border-radius: 20px; padding: 5px } }
+</style>

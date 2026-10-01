@@ -1,0 +1,20 @@
+# Vecchi indirizzi «funzionalità» → nuove pagine prodotto (301 permanenti)
+<IfModule mod_alias.c>
+  RedirectMatch 301 ^/funzionalita/?$ /prodotto/
+  RedirectMatch 301 ^/funzionalita/cassa-giornaliera/?$ /prodotto/cassa-e-turni/
+  RedirectMatch 301 ^/funzionalita/scassettamenti/?$ /prodotto/cassa-e-turni/
+  RedirectMatch 301 ^/funzionalita/firma-digitale/?$ /prodotto/cassa-e-turni/
+  RedirectMatch 301 ^/funzionalita/offline/?$ /prodotto/cassa-e-turni/
+  RedirectMatch 301 ^/funzionalita/turni/?$ /prodotto/sala/
+  RedirectMatch 301 ^/funzionalita/ticket-assistenza/?$ /prodotto/sala/
+  RedirectMatch 301 ^/funzionalita/chat-operatori/?$ /prodotto/sala/
+  RedirectMatch 301 ^/funzionalita/lul-buste-paga/?$ /prodotto/sala/
+  RedirectMatch 301 ^/funzionalita/report-analisi/?$ /prodotto/report/
+  RedirectMatch 301 ^/funzionalita/betwin-bordero/?$ /prodotto/report/
+  RedirectMatch 301 ^/funzionalita/bar/?$ /prodotto/bar-e-clienti/
+  RedirectMatch 301 ^/funzionalita/giocatori-prestiti/?$ /prodotto/bar-e-clienti/
+  RedirectMatch 301 ^/funzionalita/multi-sala/?$ /prodotto/multi-sala/
+  RedirectMatch 301 ^/funzionalita/app-mobile/?$ /prodotto/
+  RedirectMatch 301 ^/funzionalita/white-label/?$ /rivenditori/
+  RedirectMatch 301 ^/funzionalita/sicurezza-aggiornamenti/?$ /sicurezza/
+</IfModule>

@@ -1,0 +1,61 @@
+---
+import AreaLayout from '../../layouts/AreaLayout.astro';
+import Shot from '../../components/Shot.astro';
+import Phone from '../../components/Phone.astro';
+import { ICONE } from '../../data/aree';
+---
+<AreaLayout slug="bar-e-clienti" piano="Piano Pro e superiori" alt="Il banco del bar con prodotti, carrello, pagamento e documento" description="Bar della sala giochi: vendite al banco, magazzino con scorte, omaggi, menu stampabile, chiusura del registratore telematico e report. Anagrafica clienti con prestiti e rientri.">
+
+<section class="section">
+  <div class="container">
+    <div class="split reveal">
+      <div>
+        <span class="eyebrow">Banco</span>
+        <h2>Una vendita in due tocchi, anche nell'ora di punta.</h2>
+        <p class="lead">Tocchi i prodotti, scegli contanti o POS e scontrino o fattura, registri. Gli omaggi ai clienti hanno il loro pulsante e il loro conteggio, separato dal venduto.</p>
+        <ul class="checks">
+          <li><strong>Banco e premium</strong> divisi, con ricerca per nome.</li>
+          <li><strong>Prezzo cambiato al banco</strong> solo per quella vendita, o salvato a listino dal responsabile.</li>
+          <li><strong>Chiusura RT</strong>: il totale del registratore confrontato con lo scontrinato.</li>
+        </ul>
+      </div>
+      <div class="center-phone"><Phone src="m-bar" alt="Il banco del bar su telefono" /></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Magazzino e report</span>
+      <h2>Sai cosa hai, cosa manca e quanto ci guadagni.</h2>
+      <p>La giacenza si calcola dai movimenti: carichi, vendite, omaggi, scarti e rettifiche. Nessun numero da aggiornare a mano.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card reveal"><div class="icon" set:html={ICONE.bar}></div><h3>Scorte sotto controllo</h3><p>Scorta minima per prodotto e avviso automatico quando si scende sotto. Il carico aggiorna anche il costo d'acquisto.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.report}></div><h3>Margine reale</h3><p>Venduto, costo del venduto, margine, omaggi e scarti valorizzati al costo, contanti e POS. Per giorno e per prodotto.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.doc}></div><h3>Menu stampabile</h3><p>Un menu A4 con il tuo logo in tre stili, generato dal listino e scaricabile in PDF anche senza connessione.</p></div>
+    </div>
+    <div class="reveal" style="margin-top:40px"><Shot src="bar-report" alt="Report del bar del mese con venduto, scontrinato, margine e dettaglio per prodotto" /></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Clienti</span>
+      <h2>I clienti abituali, con la loro storia.</h2>
+      <p>Anagrafica dei clienti della sala e del bar, con contatti e note. Se usi i prestiti, ogni cliente ha il suo saldo.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card reveal"><div class="icon" set:html={ICONE.utenti}></div><h3>Anagrafica</h3><p>Nome, contatti, data di nascita e note, ricerca rapida. Il cliente creato in anagrafica è subito disponibile per prestiti e bar.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.euro}></div><h3>Prestiti e rientri</h3><p>Ogni prestito e ogni rientro con data, quantità e operatore. Il saldo «dare» di ciascun cliente è sempre aggiornato.</p></div>
+    </div>
+  </div>
+</section>
+
+</AreaLayout>
+
+<style>
+.center-phone { display: flex; justify-content: center }
+</style>

@@ -183,7 +183,7 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-.doc-page { padding: 120px 0 96px }
+.doc-page { padding: 56px 0 96px }
 .doc-inner { max-width: 800px }
 
 .doc-header { margin-bottom: 56px; padding-bottom: 32px; border-bottom: 1px solid var(--border-sub) }
@@ -213,7 +213,7 @@ import Layout from '../layouts/Layout.astro';
   max-width: 68ch; margin-bottom: 12px;
 }
 .doc-section p:last-child { margin-bottom: 0 }
-.doc-section a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px }
+.doc-section a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px }
 .doc-section strong { color: var(--text); font-weight: 600 }
 
 .doc-list {
@@ -225,7 +225,7 @@ import Layout from '../layouts/Layout.astro';
   padding-left: 20px; position: relative;
 }
 .doc-list li::before {
-  content: '–'; position: absolute; left: 0; color: var(--accent); font-weight: 700;
+  content: '–'; position: absolute; left: 0; color: var(--accent-ink); font-weight: 700;
 }
 
 .doc-table {
@@ -245,7 +245,7 @@ import Layout from '../layouts/Layout.astro';
 .doc-table tr:last-child td { border-bottom: none }
 
 @media (max-width: 640px) {
-  .doc-page { padding: 100px 0 64px }
+  .doc-page { padding: 40px 0 64px }
   .doc-table { font-size: 13px }
   .doc-table th, .doc-table td { padding: 8px 12px }
 }

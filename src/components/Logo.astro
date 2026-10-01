@@ -1,0 +1,20 @@
+---
+const { size = 30 } = Astro.props;
+---
+<span class="logo">
+  <svg width={size} height={size} viewBox="0 0 36 36" aria-hidden="true">
+    <rect width="36" height="36" rx="9" fill="#00c391"/>
+    <rect x="6" y="6" width="10.5" height="11" rx="2.5" fill="rgba(0,0,0,.28)"/>
+    <rect x="19.5" y="6" width="10.5" height="11" rx="2.5" fill="rgba(0,0,0,.28)"/>
+    <rect x="6" y="19" width="10.5" height="11" rx="2.5" fill="rgba(0,0,0,.28)"/>
+    <rect x="19.5" y="19" width="10.5" height="11" rx="2.5" fill="rgba(0,0,0,.62)"/>
+  </svg>
+  <span class="logo-name">GestHall <b>Suite</b></span>
+</span>
+
+<style>
+.logo { display: inline-flex; align-items: center; gap: 10px }
+.logo svg { flex: none }
+.logo-name { font-size: 18px; letter-spacing: -.02em; font-weight: 450; white-space: nowrap }
+.logo-name b { font-weight: 750 }
+</style>

@@ -1,573 +1,101 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Shot from '../components/Shot.astro';
+import { ICONE } from '../data/aree';
+import { piani, eur } from '../data/piani';
 ---
+<Layout page="Rivenditori" description="Programma rivenditori GestHall Suite: un gestionale per sale giochi da proporre ai tuoi clienti, con pannello centrale per installazioni, licenze, accesso di assistenza e aggiornamenti automatici.">
 
-<Layout
-  title="Diventa rivenditore GestHall Suite · Pannello multi-installazione"
-  description="Vendi GestHall Suite come tuo prodotto. White-label completo, pannello hub per gestire tutte le installazioni, ghost login, license API. Il tuo brand, il tuo margine."
->
-
-<!-- ── HERO ─────────────────────────────────────────────────── -->
-<section class="rv-hero">
-  <div class="container rv-hero-inner">
-    <div class="rv-hero-text reveal-once">
-      <nav class="rv-breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a>
-        <span aria-hidden="true">›</span>
-        <span>Rivenditori</span>
-      </nav>
-      <div class="rv-tag">Programma rivenditori</div>
-      <h1>Vendi GestHall Suite.<br>Sotto il tuo nome.</h1>
-      <p class="rv-sub">White-label completo, pannello hub per gestire tutte le installazioni dei tuoi clienti, ghost login sicuro e license API automatica. Tutto ciò di cui hai bisogno per rivendere un software gestionale professionale senza costruirlo da zero.</p>
-      <div class="rv-actions">
-        <a href="/contatti" class="btn btn-primary">Diventa rivenditore →</a>
-        <a href="#come-funziona" class="btn btn-ghost">Come funziona</a>
-      </div>
-    </div>
-    <div class="rv-hero-visual" aria-hidden="true">
-      <!-- Hub dashboard mockup -->
-      <div class="hub-mock">
-        <div class="hub-topbar">
-          <div class="hub-topbar-logo">
-            <svg width="20" height="20" viewBox="0 0 34 34"><rect width="34" height="34" rx="8" fill="oklch(0.72 0.16 168)"/><rect x="6" y="6" width="9" height="10" rx="2" fill="oklch(0.1 0 0 / 0.32)"/><rect x="19" y="6" width="9" height="10" rx="2" fill="oklch(0.1 0 0 / 0.32)"/><rect x="6" y="19" width="9" height="10" rx="2" fill="oklch(0.1 0 0 / 0.32)"/><rect x="19" y="19" width="9" height="10" rx="2" fill="oklch(0.1 0 0 / 0.72)"/></svg>
-            <span>GestHall Hub</span>
-          </div>
-          <div class="hub-topbar-user">● Rivenditore Rossi</div>
-        </div>
-        <div class="hub-body">
-          <aside class="hub-sidebar">
-            <div class="hub-sn-item hub-sn-active">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-              Installazioni
-            </div>
-            <div class="hub-sn-item">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              License API
-            </div>
-            <div class="hub-sn-item">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              Profilo
-            </div>
-          </aside>
-          <main class="hub-main">
-            <div class="hub-main-head">
-              <span class="hub-main-title">Le tue installazioni</span>
-              <span class="hub-kpi">3 attive</span>
-            </div>
-            <div class="hub-installs">
-              <div class="hub-row">
-                <div class="hub-dot hub-dot-green"></div>
-                <div class="hub-row-info">
-                  <div class="hub-row-name">Sala Fortuna</div>
-                  <div class="hub-row-sub">Napoli · scade 30/09/2026</div>
-                </div>
-                <div class="hub-badge hub-badge-pro">Pro</div>
-                <button class="hub-ghost-btn">Accedi</button>
-              </div>
-              <div class="hub-row">
-                <div class="hub-dot hub-dot-green"></div>
-                <div class="hub-row-info">
-                  <div class="hub-row-name">New Game</div>
-                  <div class="hub-row-sub">Torino · scade 15/10/2026</div>
-                </div>
-                <div class="hub-badge hub-badge-suite">Suite</div>
-                <button class="hub-ghost-btn">Accedi</button>
-              </div>
-              <div class="hub-row">
-                <div class="hub-dot hub-dot-amber"></div>
-                <div class="hub-row-info">
-                  <div class="hub-row-name">Lucky Star</div>
-                  <div class="hub-row-sub">Roma · trial 14 gg</div>
-                </div>
-                <div class="hub-badge hub-badge-ess">Essenz.</div>
-                <button class="hub-ghost-btn">Accedi</button>
-              </div>
-            </div>
-          </main>
-        </div>
-      </div>
+<section class="page-hero">
+  <div class="container">
+    <nav class="crumbs" aria-label="Percorso"><a href="/">Home</a><span aria-hidden="true">/</span><span>Rivenditori</span></nav>
+    <span class="eyebrow">Programma rivenditori</span>
+    <h1>Un gestionale da proporre alle sale che segui. Senza doverlo mantenere.</h1>
+    <p class="lead">Per installatori, tecnici e agenzie del settore giochi. Tu porti il cliente e il rapporto sul territorio; noi sviluppo, aggiornamenti e infrastruttura delle licenze. Tutte le tue installazioni in un unico pannello.</p>
+    <div class="actions">
+      <a href="/contatti?motivo=rivenditore" class="btn btn-primary btn-lg">Diventa rivenditore</a>
+      <a href="#come-funziona" class="btn btn-ghost btn-lg">Come funziona</a>
     </div>
   </div>
 </section>
 
-<!-- ── NUMBERS ───────────────────────────────────────────────── -->
-<section class="rv-numbers">
+<section class="section-tight" style="padding-top:0">
   <div class="container">
-    <div class="rv-numbers-grid reveal">
-      <div class="rv-num">
-        <div class="rv-num-val">€39–149</div>
-        <div class="rv-num-label">abbonamento mensile per installazione</div>
-      </div>
-      <div class="rv-num">
-        <div class="rv-num-val">&lt; 1 ora</div>
-        <div class="rv-num-label">tempo di setup su hosting PHP standard</div>
-      </div>
-      <div class="rv-num">
-        <div class="rv-num-val">4 piani</div>
-        <div class="rv-num-label">Essenziale, Pro, Suite, Multi-sala — scegli tu il margine</div>
-      </div>
-      <div class="rv-num">
-        <div class="rv-num-val">100%</div>
-        <div class="rv-num-label">white-label: il gestore vede solo il tuo brand</div>
-      </div>
+    <div class="facts reveal">
+      <div class="fact"><b>Hosting standard</b><span>PHP e MySQL, anche condiviso: nessun container</span></div>
+      <div class="fact"><b>Licenze automatiche</b><span>Piano e scadenza arrivano all'app dal pannello</span></div>
+      <div class="fact"><b>Aggiornamenti dall'app</b><span>Le sale si aggiornano da sole, con backup</span></div>
+      <div class="fact"><b>4 piani</b><span>Da {eur(piani[0].mese)} a {eur(piani[3].mese)} al mese per sala</span></div>
     </div>
   </div>
 </section>
 
-<!-- ── HUB EXPLAIN ──────────────────────────────────────────── -->
-<section class="section rv-hub-section" id="hub">
+<section class="section">
   <div class="container">
-    <div class="rv-section-label">Il pannello centrale</div>
-    <h2 class="rv-section-title">hub.gesthallsuite.it — il tuo quartier generale</h2>
-    <p class="rv-section-sub">Ogni rivenditore certificato accede a un pannello dedicato per gestire tutte le installazioni dei propri clienti da un'unica interfaccia. Nessun accesso ai dati dei clienti altrui, solo le tue.</p>
-
-    <div class="rv-hub-grid reveal">
-      <div class="rv-hub-card">
-        <div class="rv-hub-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-        </div>
-        <h3>Dashboard multi-installazione</h3>
-        <p>Tutte le installazioni in un'unica tabella: nome sala, città, piano attivo, data scadenza, stato. Filtro e ricerca istantanei.</p>
-      </div>
-      <div class="rv-hub-card">
-        <div class="rv-hub-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
-        </div>
-        <h3>Ghost login sicuro</h3>
-        <p>Accedi all'app di un cliente con un click — senza conoscere la sua password. Il link è firmato HMAC-SHA256, valido 15 minuti, e ogni accesso viene registrato nel log.</p>
-      </div>
-      <div class="rv-hub-card">
-        <div class="rv-hub-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <h3>License API automatica</h3>
-        <p>Ogni installazione si autentica verso <code>hub.gesthallsuite.it/api/license</code> e riceve piano, scadenza e funzionalità abilitate. Nessun file di licenza da gestire manualmente.</p>
-      </div>
-      <div class="rv-hub-card">
-        <div class="rv-hub-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-        </div>
-        <h3>Gestione piani</h3>
-        <p>Cambia piano e scadenza di un'installazione direttamente dalla scheda cliente nel hub. Attualmente manuale, in futuro integrato con Stripe Checkout e webhook automatici.</p>
-      </div>
-      <div class="rv-hub-card">
-        <div class="rv-hub-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
-        <h3>Demo instance inclusa</h3>
-        <p>I rivenditori certificati ricevono un'istanza demo già preconfigurata con dati di esempio. Pronta per le presentazioni ai potenziali clienti senza setup.</p>
-      </div>
-      <div class="rv-hub-card">
-        <div class="rv-hub-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
-        </div>
-        <h3>Documentazione tecnica</h3>
-        <p>Guide di installazione su Apache/Nginx, configurazione database MySQL, aggiornamenti e migrazione schema SQL. Tutto in un unico portale riservato.</p>
-      </div>
+    <div class="section-head">
+      <span class="eyebrow">Il pannello rivenditori</span>
+      <h2>Tutti i tuoi clienti, in un solo posto.</h2>
+      <p>Con le tue credenziali accedi al pannello centrale e vedi solo le tue installazioni: piano, scadenza, versione installata e ultimo contatto di ciascuna.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card reveal"><div class="icon" set:html={ICONE.server}></div><h3>Stato delle installazioni</h3><p>Licenze in scadenza nei prossimi giorni, sale silenziose da troppo tempo, installazioni ancora da aggiornare: lo vedi prima che te lo dica il cliente.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.chiave}></div><h3>Accesso di assistenza</h3><p>Entri nell'app del cliente con un link firmato valido 15 minuti, senza conoscere le sue password. Ogni accesso resta nel registro attività della sala.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.euro}></div><h3>Piani e richieste</h3><p>Il cliente chiede il cambio di piano dall'app; la richiesta arriva al pannello e, una volta approvata, la licenza si aggiorna da sola.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.aggiorna}></div><h3>Aggiornamenti centralizzati</h3><p>Ogni nuova versione è verificata da test automatici e proposta a tutte le sale, che la installano con un clic e possono tornare indietro.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.marchio}></div><h3>Il marchio del cliente</h3><p>Con il piano Suite l'app mostra logo e colori della sala, anche nelle email e nell'icona sul telefono degli operatori.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.doc}></div><h3>Documentazione tecnica</h3><p>Installazione su hosting condiviso, configurazione, backup e aggiornamenti: guide riservate per chi installa.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ── WHITE LABEL ──────────────────────────────────────────── -->
-<section class="section rv-wl-section">
+<section class="section section-alt" id="come-funziona">
   <div class="container">
-    <div class="rv-wl-inner reveal">
-      <div class="rv-wl-text">
-        <div class="rv-section-label">White-label completo</div>
-        <h2>Il gestore vede il tuo brand.<br>Non il nostro.</h2>
-        <p>Ogni installazione ha logo, colori e nome della sala configurati dal rivenditore. Le email automatiche (chiusura cassa, reset password, nuovo account) escono con il brand del cliente. La PWA installata sul telefono dell'operatore ha l'icona che scegli tu.</p>
-        <ul class="rv-checklist">
-          <li>Logo personalizzato per ogni installazione</li>
-          <li>Colore accento con derivazione automatica delle varianti</li>
-          <li>Email con header e footer brandizzati</li>
-          <li>PWA con nome e icona del cliente (manifest dinamico)</li>
-          <li>Nessun riferimento a GestHall Suite visibile all'utente finale</li>
-        </ul>
-        <a href="/funzionalita/white-label" class="rv-link">Approfondisci il white-label →</a>
-      </div>
-      <div class="rv-wl-visual" aria-hidden="true">
-        <div class="wl-phone">
-          <div class="wlp-bar">
-            <div class="wlp-logo-row">
-              <div class="wlp-logo">SF</div>
-              <div>
-                <div class="wlp-name">Sala Fortuna</div>
-                <div class="wlp-plan">Piano Pro · Attivo</div>
-              </div>
-            </div>
-          </div>
-          <div class="wlp-body">
-            <div class="wlp-nav-item wlp-nav-active">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-              Cassa
-            </div>
-            <div class="wlp-nav-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01"/></svg>
-              Turni
-            </div>
-            <div class="wlp-nav-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              Mail
-            </div>
-          </div>
-          <div class="wlp-email">
-            <div class="wlp-email-head">
-              <div class="wlp-email-logo">SF</div>
-              <div>
-                <div class="wlp-email-from">Sala Fortuna</div>
-                <div class="wlp-email-sub">Riepilogo versamento 14/07/2026</div>
-              </div>
-            </div>
-            <div class="wlp-email-line"></div>
-            <div class="wlp-email-line short"></div>
-          </div>
-        </div>
-      </div>
+    <div class="section-head">
+      <span class="eyebrow">Come funziona</span>
+      <h2>Dal primo contatto al primo cliente attivo.</h2>
     </div>
+    <ol class="grid g4 steps">
+      <li class="card reveal"><span class="step-n">1</span><h3>Conosciamoci</h3><p>Ci scrivi con la tua zona e il numero di sale che segui. Fissiamo una call per presentarti il prodotto e le condizioni.</p></li>
+      <li class="card reveal"><span class="step-n">2</span><h3>Accesso e demo</h3><p>Ricevi le credenziali del pannello, la documentazione e una sala dimostrativa con dati realistici per le presentazioni.</p></li>
+      <li class="card reveal"><span class="step-n">3</span><h3>Installi e configuri</h3><p>Sull'hosting del cliente, con la procedura guidata: sala, macchine, operatori, marchio. Ti supportiamo nelle prime installazioni.</p></li>
+      <li class="card reveal"><span class="step-n">4</span><h3>Segui dal pannello</h3><p>L'installazione compare nel tuo pannello: licenza, scadenze, aggiornamenti e assistenza da un'unica schermata.</p></li>
+    </ol>
   </div>
 </section>
 
-<!-- ── HOW IT WORKS ─────────────────────────────────────────── -->
-<section class="section rv-steps-section" id="come-funziona">
+<section class="section">
   <div class="container">
-    <div class="rv-section-label">Il processo</div>
-    <h2 class="rv-section-title">Da zero al primo cliente attivo</h2>
-
-    <div class="rv-steps reveal">
-      <div class="rv-step">
-        <div class="rv-step-num">01</div>
-        <div class="rv-step-body">
-          <h3>Contattaci e vieni onboardato</h3>
-          <p>Compila il form di contatto selezionando "Programma rivenditori". Entro 48h fissiamo una call per presentarti il prodotto, rispondere alle domande tecniche e valutare insieme la compatibilità con il tuo portafoglio clienti.</p>
-        </div>
-      </div>
-      <div class="rv-step">
-        <div class="rv-step-num">02</div>
-        <div class="rv-step-body">
-          <h3>Accesso all'hub e istanza demo</h3>
-          <p>Ricevi le credenziali per <code>hub.gesthallsuite.it</code> e un'istanza demo preconfigurata per le presentazioni. Hai accesso alla documentazione tecnica completa e alle guide di installazione su hosting PHP condiviso.</p>
-        </div>
-      </div>
-      <div class="rv-step">
-        <div class="rv-step-num">03</div>
-        <div class="rv-step-body">
-          <h3>Installi, personalizzi, consegni</h3>
-          <p>Per ogni nuovo cliente: setup in meno di un'ora su qualsiasi hosting PHP con MySQL, configurazione brand (logo + colori), creazione del responsabile iniziale. Tutto da linea di comando o pannello hosting. Zero dipendenze da cloud o servizi terzi.</p>
-        </div>
-      </div>
-      <div class="rv-step">
-        <div class="rv-step-num">04</div>
-        <div class="rv-step-body">
-          <h3>Gestisci tutto dall'hub</h3>
-          <p>L'installazione compare automaticamente nel tuo pannello hub. Da lì puoi accedere in ghost login per il supporto, vedere lo stato della licenza, cambiare piano e monitorare la scadenza di ogni cliente senza comunicare con noi.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── PIANI ─────────────────────────────────────────────────── -->
-<section class="section rv-plans-section">
-  <div class="container">
-    <div class="rv-section-label">Prezzi al cliente</div>
-    <h2 class="rv-section-title">Quattro piani, tu scegli il tuo margine</h2>
-    <p class="rv-section-sub">Questi sono i prezzi base di GestHall Suite. Il rivenditore stabilisce liberamente il prezzo finale per il proprio cliente.</p>
-
-    <div class="rv-plans reveal">
-      <div class="rv-plan">
-        <div class="rv-plan-head rv-plan-ess">Essenziale</div>
-        <div class="rv-plan-price">€39<span>/mese</span></div>
-        <ul class="rv-plan-features">
-          <li>Cassa giornaliera VLT/AWP</li>
-          <li>Scassettamenti e report</li>
-          <li>Turni flessibili</li>
-          <li>Bet/Win e borderò</li>
-          <li>Funziona offline</li>
-          <li>Dashboard responsabile</li>
-          <li>Fino a 4 utenti attivi</li>
-        </ul>
-      </div>
-      <div class="rv-plan rv-plan-featured">
-        <div class="rv-plan-badge">Più venduto</div>
-        <div class="rv-plan-head rv-plan-pro">Pro</div>
-        <div class="rv-plan-price">€69<span>/mese</span></div>
-        <ul class="rv-plan-features">
-          <li>Tutto di Essenziale +</li>
-          <li>Anagrafica clienti</li>
-          <li>Prestiti e rientri</li>
-          <li>Ticket assistenza macchine</li>
-          <li>Bar e magazzino</li>
-          <li>Documenti e firma digitale</li>
-          <li>Notifiche push</li>
-          <li>Utenti illimitati</li>
-        </ul>
-      </div>
-      <div class="rv-plan">
-        <div class="rv-plan-head rv-plan-suite">Suite</div>
-        <div class="rv-plan-price">€99<span>/mese</span></div>
-        <ul class="rv-plan-features">
-          <li>Tutto di Pro +</li>
-          <li>White-label completo</li>
-          <li>SONOS / Web Radio</li>
-          <li>Passaggio consegne</li>
-          <li>Chat interna e LUL</li>
-        </ul>
-      </div>
-      <div class="rv-plan">
-        <div class="rv-plan-head rv-plan-multi">Multi-sala</div>
-        <div class="rv-plan-price">€149<span>/mese</span></div>
-        <ul class="rv-plan-features">
-          <li>Tutto di Suite +</li>
-          <li>2 sale incluse</li>
-          <li>+€49/mese per sala</li>
-          <li>Panoramica di tutte le sale</li>
-          <li>Utenti abilitati per sala</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── TECH NOTES ────────────────────────────────────────────── -->
-<section class="section rv-tech-section">
-  <div class="container">
-    <div class="rv-tech-inner reveal">
+    <div class="split reveal">
       <div>
-        <div class="rv-section-label">Note tecniche</div>
-        <h2>Requisiti di installazione</h2>
-        <p class="rv-tech-sub">GestHall Suite è progettato per funzionare su hosting PHP condiviso standard. Nessun container, nessun cloud proprietario, nessuna dipendenza esterna.</p>
+        <span class="eyebrow">Cosa proponi</span>
+        <h2>Un prodotto che si spiega da solo, in una demo.</h2>
+        <p class="lead">Il cliente vede subito la cassa del turno che quadra, i numeri del mese e i turni del personale. Quattro piani per accompagnarlo dalla prima sala alla rete di sale.</p>
+        <ul class="checks">
+          {piani.map(p => <li><strong>{p.nome} · {eur(p.mese)}/mese</strong> — {p.per}</li>)}
+        </ul>
+        <p class="muted small" style="margin-top:16px">Le condizioni per i rivenditori (sconto o percentuale sugli abbonamenti) si concordano in base al numero di sale.</p>
       </div>
-      <div class="rv-tech-grid">
-        <div class="rv-tech-item">
-          <div class="rv-tech-label">Server</div>
-          <div class="rv-tech-val">PHP 8.1+ · Apache o Nginx</div>
-        </div>
-        <div class="rv-tech-item">
-          <div class="rv-tech-label">Database</div>
-          <div class="rv-tech-val">MySQL 8+ o MariaDB 10.6+</div>
-        </div>
-        <div class="rv-tech-item">
-          <div class="rv-tech-label">HTTPS</div>
-          <div class="rv-tech-val">Richiesto per PWA e notifiche push</div>
-        </div>
-        <div class="rv-tech-item">
-          <div class="rv-tech-label">Estensioni PHP</div>
-          <div class="rv-tech-val">PDO, openssl, mbstring, zip</div>
-        </div>
-        <div class="rv-tech-item">
-          <div class="rv-tech-label">Setup</div>
-          <div class="rv-tech-val">Wizard guidato a prima installazione</div>
-        </div>
-        <div class="rv-tech-item">
-          <div class="rv-tech-label">Aggiornamenti</div>
-          <div class="rv-tech-val">Manuale via FTP o SSH (no auto-update)</div>
-        </div>
-      </div>
+      <Shot src="sale" alt="Panoramica di più sale con incassi del giorno e del mese" />
     </div>
   </div>
 </section>
 
-<!-- ── CTA ───────────────────────────────────────────────────── -->
-<section class="rv-cta">
-  <div class="container rv-cta-inner reveal">
-    <h2>Pronto a iniziare?</h2>
-    <p>Scrivici specificando il numero di sale che gestisci e la tua zona operativa. Risposta entro 48 ore lavorative.</p>
-    <a href="/contatti?tipo=rivenditore" class="btn btn-primary btn-lg">Contattaci per il programma rivenditori →</a>
-    <p class="rv-cta-note">Oppure scrivi a <a href="mailto:rivenditori@gesthallsuite.it">rivenditori@gesthallsuite.it</a></p>
+<section class="section-tight">
+  <div class="container">
+    <div class="cta reveal">
+      <div>
+        <h2>Segui già delle sale giochi?</h2>
+        <p>Scrivici la tua zona e quante sale segui: ti rispondiamo entro due giorni lavorativi con le condizioni e una demo.</p>
+      </div>
+      <div class="actions">
+        <a href="/contatti?motivo=rivenditore" class="btn btn-light btn-lg">Diventa rivenditore</a>
+        <a href="mailto:info@gesthallsuite.it?subject=Programma%20rivenditori" class="btn btn-outline-light btn-lg">Scrivi un'email</a>
+      </div>
+    </div>
   </div>
 </section>
-
 </Layout>
 
 <style>
-/* ── LAYOUT HELPERS ───────────────────────────────────────── */
-.container { max-width: 1140px; margin: 0 auto; padding: 0 24px }
-.section { padding: 100px 0 }
-.btn { display: inline-flex; align-items: center; gap: 6px; padding: 11px 22px; border-radius: var(--rx); font-size: 15px; font-weight: 600; transition: all .18s; text-decoration: none; white-space: nowrap }
-.btn-primary { background: var(--accent); color: oklch(100% 0 0) }
-.btn-primary:hover { background: var(--accent-dim); transform: translateY(-1px); box-shadow: 0 6px 20px var(--accent-glow) }
-.btn-ghost { background: transparent; color: var(--text); border: 1.5px solid var(--border) }
-.btn-ghost:hover { background: var(--surface); border-color: var(--border) }
-.btn-lg { padding: 14px 30px; font-size: 16px }
-
-/* ── REVEAL ───────────────────────────────────────────────── */
-.reveal, .reveal-once { opacity: 0; transform: translateY(20px); transition: opacity .6s var(--ease), transform .6s var(--ease) }
-.reveal.visible, .reveal-once.visible { opacity: 1; transform: none }
-
-/* ── SHARED SECTION LABELS ────────────────────────────────── */
-.rv-section-label { font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px }
-.rv-section-title { font-family: var(--font-head); font-size: clamp(1.8rem, 2.6vw, 2.5rem); font-weight: 800; color: var(--text); margin-bottom: 16px; line-height: 1.15 }
-.rv-section-sub { font-size: 16px; color: var(--muted); max-width: 58ch; line-height: 1.75; margin-bottom: 56px }
-
-/* ── HERO ─────────────────────────────────────────────────── */
-.rv-hero { padding: 130px 0 80px; background: linear-gradient(155deg, oklch(100% 0 0), oklch(96.5% 0.01 240)) }
-.rv-hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center }
-.rv-breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); margin-bottom: 20px }
-.rv-breadcrumb a { color: var(--muted); text-decoration: none }
-.rv-breadcrumb a:hover { color: var(--text) }
-.rv-breadcrumb span[aria-hidden] { color: var(--faint) }
-.rv-tag { display: inline-flex; padding: 5px 13px; border-radius: 999px; background: var(--accent-sub); border: 1px solid oklch(0.72 0.16 168 / 0.25); color: var(--accent); font-size: 12px; font-weight: 700; margin-bottom: 20px }
-.rv-hero-text h1 { font-family: var(--font-head); font-size: clamp(2.4rem, 4vw, 3.8rem); font-weight: 800; color: var(--text); line-height: 1.1; margin-bottom: 20px }
-.rv-sub { font-size: 16px; color: var(--muted); line-height: 1.75; max-width: 48ch; margin-bottom: 32px }
-.rv-actions { display: flex; gap: 12px; flex-wrap: wrap }
-
-/* ── HUB MOCKUP ───────────────────────────────────────────── */
-.hub-mock { background: oklch(18% 0.07 245); border: 1px solid oklch(26% 0.085 245); border-radius: 16px; overflow: hidden; font-size: 12px; box-shadow: 0 20px 60px oklch(10% 0.04 245 / 0.35), 0 4px 16px oklch(10% 0.04 245 / 0.2) }
-.hub-topbar { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: oklch(14% 0.06 245); border-bottom: 1px solid oklch(22% 0.08 245) }
-.hub-topbar-logo { display: flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 700; color: oklch(90% 0.01 245) }
-.hub-topbar-user { font-size: 11px; color: oklch(55% 0.04 245) }
-.hub-topbar-user::before { content: ''; display: inline-block; width: 6px; height: 6px; background: oklch(0.72 0.16 168); border-radius: 50%; margin-right: 5px }
-.hub-body { display: grid; grid-template-columns: 110px 1fr }
-.hub-sidebar { background: oklch(15.5% 0.065 245); border-right: 1px solid oklch(22% 0.08 245); padding: 12px 8px; display: flex; flex-direction: column; gap: 2px }
-.hub-sn-item { display: flex; align-items: center; gap: 7px; padding: 7px 8px; border-radius: 7px; font-size: 11px; color: oklch(55% 0.04 245); cursor: default }
-.hub-sn-active { background: oklch(0.72 0.16 168 / 0.15); color: oklch(0.72 0.16 168) }
-.hub-main { padding: 14px }
-.hub-main-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px }
-.hub-main-title { font-size: 12px; font-weight: 700; color: oklch(88% 0.01 245) }
-.hub-kpi { font-size: 10px; font-weight: 700; background: oklch(0.72 0.16 168 / 0.15); color: oklch(0.72 0.16 168); padding: 2px 8px; border-radius: 99px }
-.hub-installs { display: flex; flex-direction: column; gap: 6px }
-.hub-row { display: flex; align-items: center; gap: 8px; padding: 8px 10px; background: oklch(21% 0.075 245); border-radius: 8px }
-.hub-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0 }
-.hub-dot-green { background: oklch(0.72 0.16 168) }
-.hub-dot-amber { background: oklch(0.78 0.15 75) }
-.hub-row-info { flex: 1; min-width: 0 }
-.hub-row-name { font-size: 11px; font-weight: 700; color: oklch(88% 0.01 245) }
-.hub-row-sub { font-size: 10px; color: oklch(50% 0.04 245) }
-.hub-badge { font-size: 9px; font-weight: 800; padding: 2px 7px; border-radius: 99px; flex-shrink: 0 }
-.hub-badge-pro { background: oklch(96% 0.04 250); color: oklch(0.45 0.18 250) }
-.hub-badge-suite { background: oklch(96% 0.04 300); color: oklch(0.45 0.18 300) }
-.hub-badge-ess { background: oklch(96% 0.04 168); color: oklch(0.52 0.14 168) }
-.hub-ghost-btn { font-size: 10px; font-weight: 700; color: var(--accent); background: oklch(0.72 0.16 168 / 0.12); border: none; padding: 3px 9px; border-radius: 6px; cursor: default; flex-shrink: 0 }
-
-/* ── NUMBERS ──────────────────────────────────────────────── */
-.rv-numbers { background: oklch(19% 0.075 245); padding: 56px 0 }
-.rv-numbers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; text-align: center }
-.rv-num { padding: 8px 24px; border-right: 1px solid oklch(30% 0.08 245) }
-.rv-num:last-child { border-right: none }
-.rv-num-val { font-family: var(--font-head); font-size: clamp(1.8rem, 2.4vw, 2.4rem); font-weight: 800; color: oklch(0.72 0.16 168); margin-bottom: 6px }
-.rv-num-label { font-size: 13px; color: oklch(58% 0.04 245); line-height: 1.45 }
-
-/* ── HUB FEATURES GRID ────────────────────────────────────── */
-.rv-hub-section { background: var(--surface) }
-.rv-hub-section .rv-section-sub { margin-bottom: 48px }
-.rv-hub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px }
-.rv-hub-card { background: var(--bg); border: 1px solid var(--border-sub); border-radius: 14px; padding: 24px; transition: border-color .2s, box-shadow .2s }
-.rv-hub-card:hover { border-color: var(--border); box-shadow: 0 4px 20px oklch(10% 0.04 245 / 0.06) }
-.rv-hub-icon { width: 36px; height: 36px; background: var(--accent-sub); border-radius: 9px; display: flex; align-items: center; justify-content: center; color: var(--accent); margin-bottom: 14px }
-.rv-hub-card h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px }
-.rv-hub-card p { font-size: 13.5px; color: var(--muted); line-height: 1.65 }
-.rv-hub-card code { font-size: 11.5px; background: var(--surface-2); padding: 1px 5px; border-radius: 4px; color: var(--accent) }
-
-/* ── WHITE LABEL SECTION ──────────────────────────────────── */
-.rv-wl-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center }
-.rv-wl-text .rv-section-title { margin-bottom: 16px }
-.rv-wl-text p { font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 24px }
-.rv-checklist { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px }
-.rv-checklist li { display: flex; align-items: flex-start; gap: 10px; font-size: 14.5px; color: var(--muted) }
-.rv-checklist li::before { content: ''; display: inline-flex; width: 18px; height: 18px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='oklch(0.72 0.16 168)' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/contain no-repeat; flex-shrink: 0; margin-top: 1px }
-.rv-link { font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none }
-.rv-link:hover { text-decoration: underline }
-
-/* ── WL PHONE MOCKUP ──────────────────────────────────────── */
-.wl-phone { background: var(--surface-2); border: 1.5px solid var(--border-sub); border-radius: 20px; overflow: hidden; max-width: 320px; margin: 0 auto; box-shadow: 0 16px 50px oklch(10% 0.04 245 / 0.1) }
-.wlp-bar { padding: 14px 16px 12px; background: var(--bg); border-bottom: 1px solid var(--border-sub) }
-.wlp-logo-row { display: flex; align-items: center; gap: 10px }
-.wlp-logo { width: 36px; height: 36px; border-radius: 9px; background: linear-gradient(135deg, oklch(0.65 0.14 168), oklch(0.55 0.18 200)); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: oklch(97% 0.005 245); flex-shrink: 0 }
-.wlp-name { font-size: 14px; font-weight: 700; color: var(--text) }
-.wlp-plan { font-size: 11px; color: var(--accent); font-weight: 600 }
-.wlp-body { display: flex; gap: 0; padding: 12px 16px; border-bottom: 1px solid var(--border-sub) }
-.wlp-nav-item { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--muted); flex: 1; justify-content: center; padding: 6px 4px; border-radius: 8px }
-.wlp-nav-active { color: var(--accent); background: var(--accent-sub) }
-.wlp-email { padding: 14px 16px }
-.wlp-email-head { display: flex; align-items: center; gap: 10px; margin-bottom: 12px }
-.wlp-email-logo { width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, oklch(0.65 0.14 168), oklch(0.55 0.18 200)); display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 800; color: oklch(97% 0.005 245); flex-shrink: 0 }
-.wlp-email-from { font-size: 12px; font-weight: 700; color: var(--text) }
-.wlp-email-sub { font-size: 11px; color: var(--muted) }
-.wlp-email-line { height: 8px; background: var(--surface-2); border-radius: 4px; margin-bottom: 6px }
-.wlp-email-line.short { width: 60% }
-
-/* ── STEPS ────────────────────────────────────────────────── */
-.rv-steps-section { background: var(--surface) }
-.rv-steps-section .rv-section-title { margin-bottom: 52px }
-.rv-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 64px }
-.rv-step { display: flex; gap: 20px }
-.rv-step-num { font-family: var(--font-head); font-size: 2rem; font-weight: 800; color: var(--accent-sub); line-height: 1; flex-shrink: 0; width: 48px; border-right: 2px solid var(--accent-sub); padding-right: 20px; margin-right: 0 }
-.rv-step-body h3 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 8px }
-.rv-step-body p { font-size: 14.5px; color: var(--muted); line-height: 1.7 }
-.rv-step-body code { font-size: 12.5px; background: var(--surface-2); padding: 1px 5px; border-radius: 4px; color: var(--accent) }
-
-/* ── PLANS ────────────────────────────────────────────────── */
-.rv-plans-section .rv-section-title { margin-bottom: 8px }
-.rv-plans-section .rv-section-sub { margin-bottom: 48px }
-.rv-plans { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px }
-.rv-plan { background: var(--surface); border: 1.5px solid var(--border-sub); border-radius: 16px; padding: 28px; position: relative }
-.rv-plan-featured { background: var(--bg); border-color: oklch(0.72 0.16 168 / 0.4); box-shadow: 0 8px 30px var(--accent-glow) }
-.rv-plan-badge { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: var(--accent); color: oklch(100% 0 0); font-size: 10px; font-weight: 800; padding: 3px 12px; border-radius: 99px; white-space: nowrap }
-.rv-plan-head { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 12px }
-.rv-plan-ess { color: oklch(0.52 0.14 168) }
-.rv-plan-pro { color: oklch(0.45 0.18 250) }
-.rv-plan-suite { color: oklch(0.45 0.18 300) }
-.rv-plan-multi { color: oklch(0.45 0.12 210) }
-.rv-plan-price { font-family: var(--font-head); font-size: 2.4rem; font-weight: 800; color: var(--text); margin-bottom: 20px }
-.rv-plan-price span { font-size: 14px; font-weight: 500; color: var(--muted) }
-.rv-plan-features { display: flex; flex-direction: column; gap: 9px }
-.rv-plan-features li { font-size: 13.5px; color: var(--muted); padding-left: 20px; position: relative }
-.rv-plan-features li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; font-size: 12px }
-
-/* ── TECH ─────────────────────────────────────────────────── */
-.rv-tech-section { background: oklch(19% 0.075 245) }
-.rv-tech-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start }
-.rv-tech-inner .rv-section-label { color: oklch(0.72 0.16 168) }
-.rv-tech-inner h2 { font-family: var(--font-head); font-size: clamp(1.8rem, 2.4vw, 2.2rem); font-weight: 800; color: oklch(93% 0.008 245); margin-bottom: 12px }
-.rv-tech-sub { font-size: 15px; color: oklch(55% 0.04 245); line-height: 1.7 }
-.rv-tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: oklch(28% 0.08 245); border: 1px solid oklch(28% 0.08 245); border-radius: 12px; overflow: hidden }
-.rv-tech-item { background: oklch(22% 0.075 245); padding: 14px 16px }
-.rv-tech-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: oklch(48% 0.04 245); margin-bottom: 4px }
-.rv-tech-val { font-size: 13px; color: oklch(82% 0.01 245) }
-
-/* ── CTA ──────────────────────────────────────────────────── */
-.rv-cta { background: linear-gradient(135deg, oklch(0.72 0.16 168 / 0.08), oklch(0.72 0.16 168 / 0.02)); border-top: 1px solid oklch(0.72 0.16 168 / 0.18); border-bottom: 1px solid oklch(0.72 0.16 168 / 0.1); padding: 100px 0 }
-.rv-cta-inner { text-align: center }
-.rv-cta-inner h2 { font-family: var(--font-head); font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 800; color: var(--text); margin-bottom: 14px }
-.rv-cta-inner > p { font-size: 16px; color: var(--muted); margin-bottom: 32px }
-.rv-cta-note { font-size: 13px; color: var(--muted); margin-top: 16px }
-.rv-cta-note a { color: var(--accent) }
-
-/* ── RESPONSIVE ───────────────────────────────────────────── */
-@media (max-width: 1100px) { .rv-plans { grid-template-columns: repeat(2, 1fr) } }
-@media (max-width: 900px) {
-  .rv-hub-grid { grid-template-columns: 1fr 1fr }
-  .rv-steps { grid-template-columns: 1fr }
-}
-
-@media (max-width: 760px) {
-  .rv-hero-inner { grid-template-columns: 1fr; gap: 48px }
-  .rv-hero { padding: 100px 0 60px }
-  .rv-numbers-grid { grid-template-columns: 1fr 1fr }
-  .rv-num { border-right: none; border-bottom: 1px solid oklch(30% 0.08 245); padding: 16px }
-  .rv-num:nth-child(even) { border-bottom: 1px solid oklch(30% 0.08 245) }
-  .rv-num:last-child, .rv-num:nth-last-child(2) { border-bottom: none }
-  .rv-wl-inner { grid-template-columns: 1fr; gap: 48px }
-  .rv-plans { grid-template-columns: 1fr }
-  .rv-tech-inner { grid-template-columns: 1fr; gap: 40px }
-  .rv-tech-grid { grid-template-columns: 1fr }
-  .hub-mock { font-size: 11px }
-}
-
-@media (max-width: 640px) {
-  .section { padding: 72px 0 }
-  .rv-hub-grid { grid-template-columns: 1fr }
-  .rv-numbers-grid { grid-template-columns: 1fr 1fr }
-  .hub-sidebar { display: none }
-  .hub-body { grid-template-columns: 1fr }
-  .rv-step { flex-direction: column; gap: 8px }
-  .rv-step-num { font-size: 1.4rem; border-right: none; padding-right: 0; border-bottom: 2px solid var(--accent-sub); width: auto; padding-bottom: 8px; margin-bottom: 4px }
-}
+.step-n { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: var(--text); color: var(--bg); font-weight: 750; margin-bottom: 16px }
 </style>
-
-<script>
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal, .reveal-once').forEach(el => io.observe(el));
-</script>

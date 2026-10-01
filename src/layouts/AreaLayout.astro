@@ -1,0 +1,54 @@
+---
+import Layout from './Layout.astro';
+import Shot from '../components/Shot.astro';
+import Cta from '../components/Cta.astro';
+import { aree } from '../data/aree';
+
+interface Props { slug: string; description: string; alt: string; piano?: string }
+const { slug, description, alt, piano } = Astro.props;
+const a = aree.find(x => x.slug === slug)!;
+const altre = aree.filter(x => x.slug !== slug);
+---
+<Layout page={a.nome} description={description}>
+  <section class="page-hero">
+    <div class="container">
+      <nav class="crumbs" aria-label="Percorso"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/prodotto">Prodotto</a><span aria-hidden="true">/</span><span>{a.nome}</span></nav>
+      <span class="eyebrow">{a.nome}</span>
+      <h1>{a.titolo}</h1>
+      <p class="lead">{a.sintesi}</p>
+      <div class="actions">
+        <a href="/contatti?motivo=demo" class="btn btn-primary btn-lg">Richiedi una demo</a>
+        <a href="/prezzi" class="btn btn-ghost btn-lg">Prezzi</a>
+        {piano && <span class="badge badge-accent">{piano}</span>}
+      </div>
+    </div>
+    <div class="container area-shot">
+      <Shot src={a.shot} alt={alt} eager />
+    </div>
+  </section>
+
+  <slot />
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="section-head"><h2>Le altre aree</h2></div>
+      <div class="grid g4">
+        {altre.map(o => (
+          <a href={`/prodotto/${o.slug}`} class="card other">
+            <div class="icon" set:html={o.icon}></div>
+            <h3>{o.nome}</h3>
+            <p>{o.breve}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Cta />
+</Layout>
+
+<style>
+.area-shot { margin-top: clamp(32px, 5vw, 56px) }
+.other h3 { font-size: 17px }
+.other p { font-size: 14.5px }
+</style>
