@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GestHall Suite · Aggiornamenti e backup</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+:root {
+  --teal: #00c391;
+  --teal-dk: #008f6a;
+  --teal-dim: rgba(0,195,145,0.10);
+  --teal-dim2: rgba(0,195,145,0.18);
+  --bg: #f5f7f6;
+  --surface: #ffffff;
+  --surface2: #f0f4f2;
+  --border: #dde8e3;
+  --text: #0c1c17;
+  --muted: #506b5f;
+  --faint: #8eaaa0;
+  --code-bg: #f0f4f2;
+  --code-text: #1a3d30;
+  --sidebar-w: 252px;
+  --r: 8px;
+}
+@media (prefers-color-scheme: dark) { :root {
+  --bg:#0b1410;--surface:#111a16;--surface2:#162119;
+  --border:#1e3028;--text:#ddf0e8;--muted:#6aaa8e;
+  --faint:#2f4d40;--code-bg:#0d1f18;--code-text:#7fd8b0;
+}}
+:root[data-theme="dark"]  { --bg:#0b1410;--surface:#111a16;--surface2:#162119;--border:#1e3028;--text:#ddf0e8;--muted:#6aaa8e;--faint:#2f4d40;--code-bg:#0d1f18;--code-text:#7fd8b0; }
+:root[data-theme="light"] { --bg:#f5f7f6;--surface:#ffffff;--surface2:#f0f4f2;--border:#dde8e3;--text:#0c1c17;--muted:#506b5f;--faint:#8eaaa0;--code-bg:#f0f4f2;--code-text:#1a3d30; }
+
+*,*::before,*::after { box-sizing:border-box;margin:0;padding:0 }
+html { scroll-behavior:smooth; scroll-padding-top:72px }
+body { font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.65;min-height:100vh }
+
+.topbar {
+  position:fixed;top:0;left:0;right:0;z-index:40;height:52px;
+  background:var(--surface);border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:12px;padding:0 20px;
+}
+.tb-back { display:flex;align-items:center;gap:6px;text-decoration:none;font-size:13px;color:var(--muted);padding:4px 8px;border-radius:5px;transition:background .12s }
+.tb-back:hover { background:var(--teal-dim);color:var(--text) }
+.tb-logo { display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--text);font-weight:700;font-size:15px;letter-spacing:-.01em }
+.tb-mark { width:26px;height:26px;border-radius:6px;flex-shrink:0 }
+.tb-spacer { flex:1 }
+.tb-badge { font-size:11px;background:var(--teal-dim);color:var(--teal-dk);border:1px solid var(--teal-dim2);border-radius:20px;padding:2px 10px;font-weight:600 }
+.theme-btn { width:32px;height:32px;border-radius:6px;border:1px solid var(--border);background:var(--surface2);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:background .15s }
+.theme-btn:hover { background:var(--teal-dim) }
+.ham-btn { display:none;width:32px;height:32px;border-radius:6px;border:1px solid var(--border);background:var(--surface2);cursor:pointer;align-items:center;justify-content:center;color:var(--muted) }
+@media(max-width:800px) { .ham-btn { display:flex } }
+
+.layout { display:flex;padding-top:52px;min-height:100vh }
+
+.sidebar {
+  width:var(--sidebar-w);flex-shrink:0;
+  position:fixed;top:52px;bottom:0;overflow-y:auto;
+  background:var(--surface);border-right:1px solid var(--border);
+  padding:20px 0 40px;z-index:30;transition:transform .22s ease;
+}
+.sidebar::-webkit-scrollbar { width:4px }
+.sidebar::-webkit-scrollbar-thumb { background:var(--border);border-radius:4px }
+.sb-group { padding:0 12px;margin-bottom:6px }
+.sb-group-label { font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);padding:10px 8px 4px;display:block }
+.sb-link { display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;font-size:13px;text-decoration:none;color:var(--muted);transition:background .12s,color .12s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis }
+.sb-link:hover { background:var(--teal-dim);color:var(--text) }
+.sb-link.active { background:var(--teal-dim2);color:var(--teal-dk);font-weight:600 }
+.sb-icon { flex-shrink:0;opacity:.6;font-size:14px }
+.sb-link.active .sb-icon { opacity:1 }
+@media(max-width:800px) { .sidebar { transform:translateX(-100%) } .sidebar.open { transform:none } }
+
+.overlay { display:none;position:fixed;inset:0;z-index:29;background:rgba(0,0,0,.4) }
+.overlay.show { display:block }
+
+.main { flex:1;margin-left:var(--sidebar-w);min-width:0 }
+@media(max-width:800px) { .main { margin-left:0 } }
+
+.section { max-width:860px;margin:0 auto;padding:52px clamp(16px,4vw,48px) 20px;border-bottom:1px solid var(--border) }
+.section:last-child { border-bottom:none }
+
+.section-hero { background:linear-gradient(135deg,var(--teal) 0%,var(--teal-dk) 100%);color:#fff;padding:clamp(36px,6vw,64px) clamp(16px,4vw,48px);text-align:center }
+.sh-eyebrow { font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:10px }
+.sh-h1 { font-size:clamp(26px,5vw,42px);font-weight:800;letter-spacing:-.02em;margin-bottom:12px;text-wrap:balance }
+.sh-sub { font-size:clamp(14px,2vw,16px);opacity:.82;max-width:560px;margin:0 auto;line-height:1.7 }
+.sh-chips { display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px }
+.sh-chip { background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500 }
+
+.sec-h2 { font-size:clamp(20px,3vw,26px);font-weight:800;letter-spacing:-.02em;margin-bottom:8px;display:flex;align-items:center;gap:10px }
+.sec-h2 .sec-num { font-size:12px;font-weight:600;background:var(--teal-dim);color:var(--teal-dk);border-radius:5px;padding:2px 8px;letter-spacing:.02em }
+.sec-lead { font-size:15px;color:var(--muted);margin-bottom:28px;line-height:1.7 }
+.sec-h3 { font-size:16px;font-weight:700;margin:28px 0 10px;letter-spacing:-.01em }
+
+p { margin-bottom:14px;font-size:14.5px;line-height:1.7 }
+p:last-child { margin-bottom:0 }
+
+code { font-family:"SF Mono","Fira Code",monospace;font-size:.85em;background:var(--code-bg);color:var(--code-text);padding:2px 6px;border-radius:4px;border:1px solid var(--border) }
+pre { background:var(--code-bg);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;overflow-x:auto;margin:14px 0 }
+pre code { background:none;border:none;padding:0;font-size:13px;line-height:1.6;color:var(--code-text) }
+
+.tbl-wrap { overflow-x:auto;margin:14px 0;border-radius:var(--r);border:1px solid var(--border) }
+table { width:100%;border-collapse:collapse;font-size:13.5px }
+th { background:var(--surface2);font-weight:600;padding:10px 14px;text-align:left;color:var(--muted);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid var(--border) }
+td { padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top }
+tr:last-child td { border-bottom:none }
+tr:hover td { background:var(--teal-dim) }
+
+.badge { display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;letter-spacing:.02em }
+.badge.done  { background:#dcfce7;color:#166534 }
+.badge.wip   { background:var(--teal-dim);color:var(--teal-dk) }
+.badge.todo  { background:var(--surface2);color:var(--muted) }
+.badge.suite { background:rgba(99,102,241,.1);color:#4f46e5 }
+.badge.pro   { background:rgba(59,130,246,.1);color:#2563eb }
+.badge.ess   { background:var(--surface2);color:var(--muted) }
+@media(prefers-color-scheme:dark) {
+  .badge.done { background:rgba(22,163,74,.15);color:#4ade80 }
+  .badge.suite { background:rgba(99,102,241,.15);color:#818cf8 }
+  .badge.pro   { background:rgba(59,130,246,.15);color:#60a5fa }
+}
+
+.callout { border-radius:var(--r);padding:14px 16px;margin:16px 0;font-size:13.5px;line-height:1.6;display:flex;gap:12px;align-items:flex-start }
+.callout.info  { background:var(--teal-dim);border:1px solid var(--teal-dim2) }
+.callout.warn  { background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.22) }
+.callout.danger{ background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.22) }
+.callout-ico { font-size:16px;flex-shrink:0;line-height:1.4 }
+.callout p { margin:0 }
+
+.steps { counter-reset:step;display:flex;flex-direction:column;gap:0 }
+.step { display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--border) }
+.step:last-child { border-bottom:none }
+.step-num { width:28px;height:28px;border-radius:50%;background:var(--teal);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px }
+.step-content { flex:1 }
+.step-title { font-weight:700;font-size:14px;margin-bottom:4px }
+.step-desc { font-size:13.5px;color:var(--muted);line-height:1.6 }
+
+.status-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:14px 0 }
+.status-item { background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:12px 14px;display:flex;align-items:center;gap:10px }
+.s-dot { width:8px;height:8px;border-radius:50%;flex-shrink:0 }
+.s-dot.done { background:#22c55e }
+.s-dot.wip  { background:var(--teal);animation:pulse 2s infinite }
+.s-dot.todo { background:var(--faint) }
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(0,195,145,.2)} 50%{box-shadow:0 0 0 4px rgba(0,195,145,.2)} }
+.s-label { font-size:13px;font-weight:600 }
+.s-note  { font-size:11px;color:var(--muted);margin-top:1px }
+
+.pricing-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:14px 0 }
+.price-card { background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:10px }
+.price-card.featured { border-color:var(--teal);box-shadow:0 0 0 1px var(--teal) }
+.price-name { font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted) }
+.price-amount { font-size:30px;font-weight:800;letter-spacing:-.02em }
+.price-amount span { font-size:15px;font-weight:500;color:var(--muted) }
+.price-features { list-style:none;display:flex;flex-direction:column;gap:6px;flex:1 }
+.price-features li { font-size:13px;display:flex;gap:6px;align-items:flex-start }
+.price-features li::before { content:"✓";color:var(--teal);font-weight:700;flex-shrink:0 }
+.price-features li.dim::before { content:"—";color:var(--faint) }
+.price-features li.dim { color:var(--faint) }
+
+.cl-item { display:grid;grid-template-columns:80px 1fr auto;gap:12px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--border);font-size:13.5px }
+.cl-item:last-child { border-bottom:none }
+.cl-date { color:var(--faint);font-size:12px }
+
+.feat-row { display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 }
+.feat-tag { font-size:12px;font-weight:500;padding:3px 10px;border-radius:5px;background:var(--surface2);color:var(--muted);border:1px solid var(--border) }
+.feat-tag.teal { background:var(--teal-dim);color:var(--teal-dk);border-color:var(--teal-dim2) }
+
+ul.plain, ol.plain { margin:8px 0 16px 20px;display:flex;flex-direction:column;gap:6px;font-size:14px }
+/* Telefono: niente scorrimento orizzontale della pagina (codice lungo e tabelle scorrono da soli) */
+.main { min-width:0 }
+p code, li code, td code, .step-desc code { overflow-wrap:anywhere }
+  </style>
+  <script>if(sessionStorage.getItem('gh_interno_auth')!=='1')location.replace('/interno/');</script>
+  <script>(function(){var t=localStorage.getItem('gd-theme');if(t)document.documentElement.dataset.theme=t;})()</script>
+</head>
+<body>
+
+<div class="topbar">
+  <button class="ham-btn" onclick="toggleSidebar()" aria-label="Menu">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <a class="tb-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Interno
+  </a>
+  <a class="tb-logo" href="index.html">
+    <svg class="tb-mark" viewBox="0 0 34 34">
+      <rect width="34" height="34" rx="8" fill="#00c391"/>
+      <rect x="6" y="6" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
+      <rect x="19" y="6" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
+      <rect x="6" y="19" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
+      <rect x="19" y="19" width="9" height="10" rx="2" fill="rgba(0,0,0,0.72)"/>
+    </svg>
+    GestHall Suite
+  </a>
+  <div class="tb-spacer"></div>
+  <span class="tb-badge">Manutenzione</span>
+  <button class="theme-btn" onclick="toggleTheme()" aria-label="Tema">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+  </button>
+</div>
+
+<div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<div class="layout">
+<nav class="sidebar" id="sidebar">
+  <div class="sb-group">
+    <span class="sb-group-label">Manutenzione</span>
+    <a class="sb-link" href="#flusso" onclick="closeMobile()"><span class="sb-icon">🧭</span> Il quadro completo</a>
+    <a class="sb-link" href="#pacchetto" onclick="closeMobile()"><span class="sb-icon">📦</span> Creare il pacchetto</a>
+    <a class="sb-link" href="#pubblicare" onclick="closeMobile()"><span class="sb-icon">🚀</span> Pubblicare nell'hub</a>
+    <a class="sb-link" href="#scoperta" onclick="closeMobile()"><span class="sb-icon">📡</span> Come la sala lo scopre</a>
+    <a class="sb-link" href="#installazione" onclick="closeMobile()"><span class="sb-icon">⚙️</span> Installazione e ritorno</a>
+  </div>
+  <div class="sb-group">
+    <span class="sb-group-label">Dati</span>
+    <a class="sb-link" href="#backup" onclick="closeMobile()"><span class="sb-icon">💾</span> Backup del database</a>
+    <a class="sb-link" href="#ripristino" onclick="closeMobile()"><span class="sb-icon">↩️</span> Ripristino</a>
+    <a class="sb-link" href="#cartelle" onclick="closeMobile()"><span class="sb-icon">🗂</span> Dove sta ogni file</a>
+  </div>
+  <div class="sb-group">
+    <span class="sb-group-label">Altro</span>
+    <a class="sb-link" href="#sicurezza" onclick="closeMobile()"><span class="sb-icon">🔐</span> Accesso e avvisi</a>
+    <a class="sb-link" href="#manuale" onclick="closeMobile()"><span class="sb-icon">🗃</span> Aggiornare a mano</a>
+    <a class="sb-link" href="#checklist" onclick="closeMobile()"><span class="sb-icon">✅</span> Checklist di rilascio</a>
+    <a class="sb-link" href="#problemi" onclick="closeMobile()"><span class="sb-icon">🩺</span> Problemi e soluzioni</a>
+    <a class="sb-link" href="docs.html"><span class="sb-icon">📚</span> Documentazione &rarr;</a>
+  </div>
+</nav>
+
+<main class="main" id="top">
+
+<div class="section-hero">
+  <div class="sh-eyebrow">Documentazione interna</div>
+  <h1 class="sh-h1">Aggiornamenti, backup e manutenzione</h1>
+  <p class="sh-sub">Come nasce una versione, come arriva alle sale, come si installa da sola, come vengono salvati i dati e dove finisce ogni file. Vale dalla versione 3.8.0 della suite.</p>
+  <div class="sh-chips">
+    <span class="sh-chip">Suite 3.8.0</span>
+    <span class="sh-chip">Hub · Rilasci</span>
+    <span class="sh-chip">Nessun cron, nessun FTP</span>
+    <span class="sh-chip">Ottobre 2026</span>
+  </div>
+</div>
+
+<!-- 1. FLUSSO -->
+<div class="section" id="flusso">
+  <div class="sec-h2"><span class="sec-num">01</span> Il quadro completo</div>
+  <p class="sec-lead">Tre attori: il <strong>codice</strong> (repository GitHub della suite), l'<strong>hub</strong> (hub.gesthallsuite.it, che conosce tutte le installazioni) e ogni <strong>suite</strong> installata in una sala. Nessuno dei tre "cerca" niente da solo nel senso di Internet: ogni passaggio è una richiesta precisa.</p>
+<pre><code>REPOSITORY (computer / sessione di sviluppo)
+  1. si alza GH_VERSION e si scrive il CHANGELOG
+  2. php tools/file_attesi.php   → install/file_attesi.json (elenco file + impronte)
+  3. php tools/pacchetto.php     → dist/gesthall-suite-3.8.1.zip
+              │  (caricato a mano dal superadmin)
+              ▼
+HUB  hub.gesthallsuite.it
+  4. Rilasci → Carica versione → Pubblica   (zip in storage/rilasci/, impronta SHA-256 nel DB)
+              ▲  ① una volta al giorno: "sono la sala X, ho la 3.8.0"
+              │  ② risposta: "licenza ok, c'è la 3.8.1, impronta abc…"
+              │  ③ al clic su Aggiorna ora: download dello zip
+SUITE della sala (Impostazioni → Sistema → Aggiornamenti)
+  5. backup database → download → controllo impronte → copia dei file vecchi
+     → scrittura dei file nuovi → controllo finale</code></pre>
+  <div class="callout info"><span class="callout-ico">💡</span><p><code>tools/pacchetto.php</code> non trova l'aggiornamento: lo <strong>costruisce</strong> partendo dai file del repository. Chi "trova" l'aggiornamento è la suite della sala, chiedendo all'hub; l'hub lo conosce perché qualcuno ce l'ha caricato e pubblicato.</p></div>
+</div>
+
+<!-- 2. PACCHETTO -->
+<div class="section" id="pacchetto">
+  <div class="sec-h2"><span class="sec-num">02</span> Creare il pacchetto</div>
+  <p class="sec-lead">Si fa dove c'è una copia del repository della suite e PHP da riga di comando: il proprio computer o una sessione di sviluppo con Claude. Non sul server della sala.</p>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Versione e changelog</div><div class="step-desc">In <code>includes/lib.php</code> e <code>includes/novita.php</code> si aggiorna <code>GH_VERSION</code> (es. <code>3.8.1</code>); in <code>docs/CHANGELOG.md</code> si apre la sezione <code>## [3.8.1]</code>. Il testo per i clienti va nel <code>changelog.json</code> del sito.</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title"><code>php tools/file_attesi.php</code></div><div class="step-desc">Prende l'elenco dei file versionati (<code>git ls-files</code>), esclude quelli che non vanno sul server (configurazione, <code>.htaccess</code> principale, documentazione nella radice, <code>tools/</code>, <code>tests/</code>) e per ognuno scrive dimensione e impronta SHA-1 in <code>install/file_attesi.json</code>, insieme alla versione. È il <strong>manifest</strong>: la lista ufficiale di cosa deve esserci sul server.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title"><code>php tools/pacchetto.php</code></div><div class="step-desc">Prima lancia <code>tools/controlla.php</code> (sintassi di tutti i PHP, nessun file oltre 30 KB, stessa versione in <code>lib.php</code>, <code>novita.php</code>, CHANGELOG e manifest, manifest aggiornato). Se tutto è a posto mette in <code>dist/gesthall-suite-&lt;versione&gt;.zip</code> esattamente i file del manifest più il manifest stesso, e stampa numero di file, dimensione (≈ 1 MB) e SHA-256.</div></div></div>
+  </div>
+<pre><code>$ php tools/file_attesi.php
+198 file in install/file_attesi.json
+$ php tools/pacchetto.php
+✓ 224 file controllati, versione 3.8.1
+dist/gesthall-suite-3.8.1.zip: 199 file, 0.9 MB, sha256 a693b5…</code></pre>
+  <div class="callout warn"><span class="callout-ico">⚠️</span><p>Lo zip non contiene mai <code>install/config.php</code> (credenziali del database della sala) né il <code>.htaccess</code> principale: estrarlo o installarlo non può rompere la configurazione. Lo stesso zip serve sia per l'hub sia, se serve, per l'installazione a mano.</p></div>
+</div>
+
+<!-- 3. PUBBLICARE -->
+<div class="section" id="pubblicare">
+  <div class="sec-h2"><span class="sec-num">03</span> Pubblicare nell'hub</div>
+  <p class="sec-lead">Hub → <strong>Rilasci</strong> (solo superadmin) → <strong>Carica versione</strong>.</p>
+  <ul class="plain">
+    <li>L'hub apre lo zip, legge <code>install/file_attesi.json</code> e da lì prende il numero di versione: non lo si scrive a mano.</li>
+    <li>Controlla che ogni file del manifest sia nello zip e che ci siano <code>includes/lib.php</code> e la pagina degli aggiornamenti; rifiuta una versione già presente.</li>
+    <li>Salva lo zip in <code>storage/rilasci/</code> dell'hub (cartella non raggiungibile dal web: <code>.htaccess</code> + regola nel <code>.htaccess</code> principale) e nella tabella <code>rilasci</code> registra versione, nome del file, SHA-256, dimensione, note e stato.</li>
+    <li><strong>Pubblicato</strong> = proposto alle sale. <strong>Ritira</strong> lo nasconde senza cancellarlo (utile se si scopre un problema). <strong>Note</strong> = testo che il responsabile legge prima di aggiornare: novità, eventuali query SQL.</li>
+  </ul>
+  <p>In Rilasci e nella Dashboard si vede quante installazioni sono ferme a versioni precedenti; nella tabella installazioni la colonna <strong>Versione</strong> diventa arancione per chi non ha l'ultima e indica da quanti giorni la sala non si collega.</p>
+</div>
+
+<!-- 4. SCOPERTA -->
+<div class="section" id="scoperta">
+  <div class="sec-h2"><span class="sec-num">04</span> Come la sala scopre la nuova versione</div>
+  <p class="sec-lead">Con il controllo della licenza che esisteva già, al quale ora la suite aggiunge la propria versione.</p>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Quando parte</div><div class="step-desc">Al massimo una volta ogni 24 ore, quando un <strong>responsabile</strong> apre una pagina dell'app (non i ghost login), oppure subito con <strong>Controlla ora</strong> nella pagina Aggiornamenti. Non serve nessuna operazione pianificata sul server.</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">La richiesta</div><div class="step-desc"><code>GET {hub}/api/license.php?key=CHIAVE_INSTALLAZIONE&amp;v=3.8.0</code> (timeout 3 secondi: se l'hub non risponde la sala lavora normalmente). La chiave è quella inserita in Impostazioni → Piano e licenza.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">L'hub risponde</div><div class="step-desc">Aggiorna <code>installazioni.versione</code> e <code>ultimo_contatto</code>, poi restituisce piano, scadenza e — se esiste un rilascio pubblicato più recente di <code>v</code> — il campo <code>aggiornamento</code>: versione, SHA-256, dimensione, note, data.</div></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">La suite lo ricorda</div><div class="step-desc">Salva queste informazioni in <code>impostazioni_testi.aggiornamento_cache</code> e la pagina Aggiornamenti mostra «Disponibile la versione …» con le note.</div></div></div>
+  </div>
+  <div class="callout info"><span class="callout-ico">🔑</span><p>Senza chiave di installazione la sala non riceve proposte di aggiornamento: può comunque installare un pacchetto con <strong>Installa da un file</strong>. Con licenza scaduta l'hub rifiuta il download.</p></div>
+</div>
+
+<!-- 5. INSTALLAZIONE -->
+<div class="section" id="installazione">
+  <div class="sec-h2"><span class="sec-num">05</span> Installazione e ritorno alla versione precedente</div>
+  <p class="sec-lead">Cosa succede, in ordine, quando il responsabile preme <strong>Aggiorna ora</strong> (circa un minuto).</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>#</th><th>Passo</th><th>Dettaglio</th></tr>
+    <tr><td>1</td><td>Requisiti</td><td>Estensione PHP zip, possibilità di scaricare (cURL), cartelle dell'app scrivibili. Se manca qualcosa la pagina lo spiega e non procede.</td></tr>
+    <tr><td>2</td><td>Backup del database</td><td>Copia completa, tipo «Prima dell'aggiornamento» (vedi sezione Backup).</td></tr>
+    <tr><td>3</td><td>Download</td><td><code>{hub}/api/aggiornamento.php?key=…&amp;v=3.8.1</code> → <code>account/uploads/aggiornamenti/download_3.8.1.zip</code>. Se lo SHA-256 non coincide con quello ricevuto dall'hub, il file viene cancellato e ci si ferma.</td></tr>
+    <tr><td>4</td><td>Verifica del contenuto</td><td>Per ogni file del manifest: presente nello zip, stessa dimensione, stessa impronta SHA-1, percorso ammesso (mai <code>config.php</code>, <code>.htaccess</code> principale, <code>account/uploads/</code>, niente <code>..</code>).</td></tr>
+    <tr><td>5</td><td>Copia di sicurezza</td><td>I file che stanno per cambiare vengono messi in <code>account/uploads/aggiornamenti/precedente_3.8.0_AAAAMMGG_HHMMSS.zip</code>, con l'elenco dei file nuovi (da cancellare in caso di ritorno).</td></tr>
+    <tr><td>6</td><td>Scrittura</td><td>Solo i file diversi: ognuno scritto in <code>nomefile.gh-tmp</code> e poi rinominato, così nessuno resta mai a metà. Un blocco impedisce due aggiornamenti contemporanei.</td></tr>
+    <tr><td>7</td><td>Controllo finale</td><td>Tutti i file confrontati di nuovo con il manifest; cache di PHP svuotata; operazione registrata nell'audit con versione, numero di file, backup e copia.</td></tr>
+  </table></div>
+  <div class="sec-h3">Tornare indietro</div>
+  <p><strong>Versioni precedenti → Ripristina</strong> rimette i file della copia di sicurezza e cancella quelli aggiunti dall'aggiornamento. Il database non viene toccato: se l'aggiornamento avesse cambiato dati, si usa il backup «Prima dell'aggiornamento» nella pagina Backup. Si conservano le ultime 3 copie.</p>
+  <div class="sec-h3">Installa da un file</div>
+  <p>Stessa procedura dal passo 4, con lo zip caricato dal browser invece che scaricato dall'hub. Rifiuta una versione più vecchia di quella installata. È l'alternativa all'FTP per le sale senza licenza collegata o quando l'hub non è raggiungibile.</p>
+  <div class="callout warn"><span class="callout-ico">⚠️</span><p>Nessuna migrazione automatica del database: le colonne e le tabelle nuove si creano da sole al primo uso; se una versione richiede query, vanno nelle note del rilascio e nel CHANGELOG.</p></div>
+</div>
+
+<!-- 6. BACKUP -->
+<div class="section" id="backup">
+  <div class="sec-h2"><span class="sec-num">06</span> Backup del database</div>
+  <p class="sec-lead">Il backup lo fa l'app stessa, in PHP: non usa <code>mysqldump</code>, cron o strumenti di SiteGround, quindi funziona su qualsiasi hosting.</p>
+  <div class="sec-h3">Come viene prodotto</div>
+  <ol class="plain">
+    <li>L'app si collega al proprio database con le credenziali di <code>install/config.php</code> (le stesse che usa sempre).</li>
+    <li>Legge l'elenco delle tabelle (<code>SHOW FULL TABLES</code>) e, per ognuna, la struttura (<code>SHOW CREATE TABLE</code>) e tutte le righe (<code>SELECT *</code>, lette una alla volta per non riempire la memoria).</li>
+    <li>Scrive un file SQL compresso: per ogni tabella <code>DROP TABLE IF EXISTS</code>, <code>CREATE TABLE …</code> e le righe in blocchi di <code>INSERT</code> (massimo 200 righe o 1 MB per istruzione). <strong>Ogni istruzione occupa una sola riga</strong>: è il formato che rende possibile il ripristino affidabile.</li>
+    <li>Prima riga fissa (<code>-- GestHall Suite 3.8.0 — backup del database …</code>) e ultima riga fissa (<code>-- fine backup</code>): servono a riconoscere un file completo. Il file si scrive come <code>.tmp</code> e prende il nome definitivo solo alla fine.</li>
+  </ol>
+  <div class="sec-h3">Quando</div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Tipo</th><th>Quando parte</th><th>Nome del file</th></tr>
+    <tr><td>Automatico</td><td>Un responsabile apre l'app e l'ultimo backup ha più di 7 giorni. Parte <em>dopo</em> che la pagina è stata inviata, quindi non rallenta. Una sola volta anche se più responsabili sono connessi.</td><td><code>…_auto_…</code></td></tr>
+    <tr><td>Manuale</td><td>Admin → Backup → «Crea backup ora».</td><td><code>…_manuale_…</code></td></tr>
+    <tr><td>Prima dell'aggiornamento</td><td>Ogni «Aggiorna ora» / «Installa da un file».</td><td><code>…_aggiornamento_…</code></td></tr>
+    <tr><td>Prima del ripristino</td><td>Ogni ripristino salva lo stato attuale prima di sostituirlo.</td><td><code>…_ripristino_…</code></td></tr>
+  </table></div>
+  <div class="sec-h3">Dove viene salvato</div>
+<pre><code>&lt;cartella dell'app&gt;/account/uploads/backup/
+  .htaccess                                       ← nega qualsiasi accesso dal web
+  backup_20261006_091212_auto_3fa91c.sql.gz
+  backup_20261013_090455_auto_b81e02.sql.gz
+  backup_20261014_163020_aggiornamento_7d2a44.sql.gz</code></pre>
+  <p>Esempio su SiteGround: <code>~/www/gamespalace.gesthallsuite.it/public_html/account/uploads/backup/</code>. Nessuno può scaricarli dall'indirizzo web: solo il responsabile dalla pagina Backup (dopo il login) o chi ha accesso al File Manager.</p>
+  <ul class="plain">
+    <li><strong>Conservazione</strong>: gli ultimi 8 (impostabile da 2 a 30), automatici e manuali insieme; i più vecchi vengono cancellati a ogni nuovo backup.</li>
+    <li><strong>Peso</strong>: pochi KB per una sala nuova, qualche MB dopo anni (le firme dei versamenti sono la parte più pesante).</li>
+    <li><strong>Non contiene</strong> i file caricati (<code>account/uploads/documenti</code>, <code>bordero</code>, <code>lul</code>, <code>chat</code>, foto profilo): per quelli valgono i backup giornalieri di SiteGround o una copia della cartella <code>account/uploads</code>.</li>
+    <li>Impostazioni coinvolte: <code>backup_auto</code>, <code>backup_conserva</code>, <code>backup_ultimo</code> (uniche per l'installazione, anche con più sale).</li>
+  </ul>
+</div>
+
+<!-- 7. RIPRISTINO -->
+<div class="section" id="ripristino">
+  <div class="sec-h2"><span class="sec-num">07</span> Ripristino</div>
+  <ul class="plain">
+    <li><strong>Dall'app</strong>: Admin → Backup → «Ripristina» su una riga, oppure «Carica e ripristina» con un file <code>.sql.gz</code>; si scrive <code>RIPRISTINA</code> per conferma. L'app controlla prima e ultima riga, salva lo stato attuale e poi esegue il file una riga alla volta.</li>
+    <li><strong>Da phpMyAdmin</strong> (se l'app non si apre): SiteGround → Site Tools → MySQL → phpMyAdmin → database della sala → Importa → scegli il <code>.sql.gz</code>. Il formato è SQL standard.</li>
+    <li>Un backup si può ripristinare anche su un'altra installazione (es. per spostare una sala): attenzione che sostituisce tutto, utenti e impostazioni compresi.</li>
+  </ul>
+  <div class="callout danger"><span class="callout-ico">⛔</span><p>Il ripristino sostituisce l'intero database: le operazioni fatte dopo la data del backup spariscono (restano solo nella copia «Prima del ripristino»). Avvisare la sala prima di farlo.</p></div>
+</div>
+
+<!-- 8. CARTELLE -->
+<div class="section" id="cartelle">
+  <div class="sec-h2"><span class="sec-num">08</span> Dove sta ogni file</div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Percorso</th><th>Cosa contiene</th><th>Accesso web</th></tr>
+    <tr><td><code>suite/account/uploads/backup/</code></td><td>Backup del database (<code>.sql.gz</code>)</td><td>Negato</td></tr>
+    <tr><td><code>suite/account/uploads/aggiornamenti/</code></td><td><code>precedente_*.zip</code> (ultime 3 copie per tornare indietro), <code>download_*.zip</code> / <code>caricato_*.zip</code> temporanei (cancellati dopo l'installazione o entro 24 ore), <code>.lock</code></td><td>Negato</td></tr>
+    <tr><td><code>suite/install/file_attesi.json</code></td><td>Manifest della versione installata: lo usano Verifica file, diagnosi e aggiornamenti</td><td>—</td></tr>
+    <tr><td><code>suite/install/config.php</code></td><td>Credenziali del database: mai toccato da aggiornamenti e pacchetti</td><td>—</td></tr>
+    <tr><td><code>hub/storage/rilasci/</code></td><td>Pacchetti caricati in Rilasci</td><td>Negato</td></tr>
+    <tr><td>Tabella <code>rilasci</code> (hub)</td><td>Versione, file, SHA-256, dimensione, note, pubblicato</td><td>—</td></tr>
+    <tr><td>Tabella <code>installazioni</code> (hub)</td><td>Nuove colonne <code>versione</code>, <code>ultimo_contatto</code></td><td>—</td></tr>
+    <tr><td><code>impostazioni_testi.aggiornamento_cache</code> (suite)</td><td>Ultima versione proposta dall'hub</td><td>—</td></tr>
+  </table></div>
+</div>
+
+<!-- 9. SICUREZZA E AVVISI -->
+<div class="section" id="sicurezza">
+  <div class="sec-h2"><span class="sec-num">09</span> Accesso, avvisi ed export</div>
+  <div class="sec-h3">Blocco dei tentativi</div>
+  <p>5 errori dallo stesso IP in 15 minuti bloccano quell'IP; 10 errori sullo stesso nome utente, da qualsiasi IP, bloccano l'utente per 15 minuti. Tabella <code>login_attempts</code> (colonna <code>username</code> aggiunta in 3.8).</p>
+  <div class="sec-h3">Verifica in due passaggi</div>
+  <p>Impostazioni → Sistema (<code>login_2fa</code>). Per responsabili e revisori con email: dopo la password l'utente resta fuori finché non inserisce il codice di 6 cifre ricevuto via email (10 minuti, 5 tentativi, «Invia un nuovo codice» dopo 60 secondi). «Non chiederlo più su questo dispositivo» crea un cookie <code>gh_dev</code> valido 30 giorni (tabella <code>login_dispositivi</code>). All'attivazione vengono revocati i «Resta connesso» di responsabili e revisori; «Dimentica i dispositivi» annulla tutti i dispositivi attendibili. Il ghost login dall'hub non chiede il codice: è la via d'uscita se le email non funzionano.</p>
+  <div class="sec-h3">Avvisi automatici</div>
+  <p>Ai responsabili della sala, nella campanella e via push: scostamento di cassa oltre soglia al salvataggio di un turno (<code>avviso_scostamento</code>, 20 €), prodotto del bar alla scorta minima (<code>avviso_scorta_bar</code>), ticket aperto oltre <code>avviso_ticket_giorni</code> giorni (3, controllato al massimo ogni 6 ore durante la navigazione). Ogni evento parte una volta sola (tabella <code>avvisi_inviati</code>); ogni responsabile può disattivarli dal profilo.</p>
+  <div class="sec-h3">Export per il commercialista</div>
+  <p>Cassa → Mensile → «Per il commercialista»: Excel con fogli Riepilogo, Incassi (turno di chiusura, per piattaforma), Versamenti confermati e Bar. Responsabile e revisore.</p>
+  <div class="sec-h3">Promemoria di scadenza</div>
+  <p>Dai 15 giorni prima della scadenza (e a licenza scaduta) il responsabile vede un avviso con il link a Piano e licenza; si può nascondere per la giornata.</p>
+</div>
+
+<!-- 10. MANUALE -->
+<div class="section" id="manuale">
+  <div class="sec-h2"><span class="sec-num">10</span> Aggiornare a mano (File Manager)</div>
+  <p class="sec-lead">Serve per la prima installazione della 3.8 (che porta il sistema di aggiornamento) o se l'app non si apre.</p>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Carica lo zip intero</div><div class="step-desc">SiteGround → Site Tools → File Manager → cartella dell'app (quella con <code>index.php</code>, <code>account/</code>, <code>includes/</code>) → Carica <code>gesthall-suite-x.y.z.zip</code>. Meglio dell'FTP: un solo file, nessun troncamento.</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Estrai</div><div class="step-desc">Clic destro sullo zip → Extract → stessa cartella, sovrascrivendo. Poi elimina lo zip.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Verifica</div><div class="step-desc">Nell'app: Impostazioni → Sistema → Verifica file (confronta ogni file con <code>install/file_attesi.json</code>). Se l'app dà errore 500: copia <code>tools/diagnosi.php</code> nella cartella dell'app, aprilo dal browser, poi cancellalo (si disattiva da solo dopo 24 ore).</div></div></div>
+  </div>
+  <div class="callout info"><span class="callout-ico">📏</span><p>Regola dei file piccoli: nessun file dell'app supera 30 KB (l'FTP di SiteGround li troncava a 32 KB). <code>tools/controlla.php</code> e la CI su GitHub bloccano un rilascio che la violi.</p></div>
+</div>
+
+<!-- 11. CHECKLIST -->
+<div class="section" id="checklist">
+  <div class="sec-h2"><span class="sec-num">11</span> Checklist di rilascio</div>
+<pre><code>1. GH_VERSION in includes/lib.php e includes/novita.php
+2. docs/CHANGELOG.md (tecnico, con eventuali SQL)
+3. sito: src/data/changelog.json (testo clienti + highlights), pagine e guida se serve
+4. GH_TEST_DB=gh_test php tests/run.php
+5. php tools/file_attesi.php
+6. php tools/pacchetto.php            ← include tools/controlla.php
+7. commit + merge su main + push (la CI ripete controlli e test)
+8. Hub → Rilasci → Carica versione → note → Pubblica
+9. Una sala di prova: Aggiornamenti → Controlla ora → Aggiorna ora → Verifica file</code></pre>
+</div>
+
+<!-- 12. PROBLEMI -->
+<div class="section" id="problemi">
+  <div class="sec-h2"><span class="sec-num">12</span> Problemi e soluzioni</div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Sintomo</th><th>Causa probabile</th><th>Cosa fare</th></tr>
+    <tr><td>La sala non vede la nuova versione</td><td>Rilascio non pubblicato, chiave non collegata, controllo non ancora fatto</td><td>Pubblica in Rilasci; in Aggiornamenti premi «Controlla ora»; verifica la chiave in Piano e licenza</td></tr>
+    <tr><td>«L'hub ha rifiutato il download (licenza scaduta)»</td><td>Scadenza passata in hub</td><td>Rinnova la scadenza dell'installazione nell'hub</td></tr>
+    <tr><td>«Il pacchetto scaricato non è integro»</td><td>Download interrotto</td><td>Riprova; se si ripete, ricarica il pacchetto in Rilasci</td></tr>
+    <tr><td>«File non scrivibile dall'app»</td><td>Permessi della cartella</td><td>File Manager → permessi 755 cartelle / 644 file, oppure aggiorna a mano</td></tr>
+    <tr><td>Dopo l'aggiornamento qualcosa non va</td><td>—</td><td>Aggiornamenti → Versioni precedenti → Ripristina; per i dati, Backup «Prima dell'aggiornamento»</td></tr>
+    <tr><td>Nessun backup automatico</td><td>Nessun responsabile ha aperto l'app, o backup disattivato</td><td>Admin → Backup: controlla l'interruttore, crea un backup manuale</td></tr>
+    <tr><td>Codice di accesso non arriva</td><td>Email del server non configurate o in spam</td><td>Imposta il mittente in Impostazioni → Sistema → Email; entra con ghost login e disattiva la verifica finché non funzionano</td></tr>
+    <tr><td>Errore 500 dopo un caricamento</td><td>File arrivato incompleto</td><td><code>tools/diagnosi.php</code> indica file e riga; ricarica quel file o usa Installa da un file</td></tr>
+  </table></div>
+</div>
+
+</main>
+</div>
+
+<script>
+function toggleTheme() {
+  var r = document.documentElement;
+  var cur = r.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  var next = cur === 'dark' ? 'light' : 'dark';
+  r.dataset.theme = next;
+  localStorage.setItem('gd-theme', next);
+}
+function toggleSidebar() {
+  var sb = document.getElementById('sidebar');
+  var ov = document.getElementById('overlay');
+  var open = sb.classList.toggle('open');
+  ov.classList.toggle('show', open);
+}
+function closeMobile() {
+  if (window.innerWidth <= 800) toggleSidebar();
+}
+(function() {
+  var links = document.querySelectorAll('.sb-link[href^="#"]');
+  var sections = Array.from(links).map(function(l) {
+    return document.getElementById(l.getAttribute('href').slice(1));
+  }).filter(Boolean);
+  function onScroll() {
+    var y = window.scrollY + 80;
+    var active = sections[0];
+    for (var i = 0; i < sections.length; i++) {
+      if (sections[i] && sections[i].offsetTop <= y) active = sections[i];
+    }
+    links.forEach(function(l) {
+      l.classList.toggle('active', active && l.getAttribute('href') === '#' + active.id);
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+</body>
+</html>
