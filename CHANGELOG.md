@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-01
 
+- Changelog: versione 3.8.1 della suite. Area riservata: la guida Aggiornamenti e backup descrive il nuovo flusso (GitHub Actions → GitHub Releases → hub → sale), il collegamento GitHub dell'hub, la checklist e i problemi comuni; aggiornati changelog interno e sezione Deploy.
+
 - Area riservata: nuova guida `/interno/manutenzione.html` (creazione e pubblicazione dei rilasci, come le sale scoprono e installano gli aggiornamenti, backup e ripristino del database, cartelle e file, accesso e avvisi, aggiornamento a mano dal File Manager, checklist, problemi comuni); collegata da `/interno/` e dalla documentazione interna (sezione Deploy e changelog aggiornati). Pagine interne senza scorrimento orizzontale su telefono.
 
 - Changelog: versione 3.8.0 della suite (aggiornamenti dall'app, backup, verifica in due passaggi, avvisi automatici, export per il commercialista).
