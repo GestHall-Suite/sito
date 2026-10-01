@@ -1,0 +1,93 @@
+---
+import AreaLayout from '../../layouts/AreaLayout.astro';
+import Phone from '../../components/Phone.astro';
+import { ICONE } from '../../data/aree';
+---
+<AreaLayout slug="cassa-e-turni" alt="Il giornaliero di GestHall Suite con scostamento a zero, contanti per taglio e scassettamenti VLT" description="Cassa giornaliera per sale VLT e AWP: scassettamenti per macchina, ticket per piattaforma, contanti per taglio, versamento calcolato sul turno di chiusura e firmato da chi lo ritira.">
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Il giornaliero</span>
+      <h2>Tutto quello che entra ed esce dal turno, in una schermata.</h2>
+      <p>Ogni voce ha il suo posto e ogni totale si aggiorna da solo. L'operatore non fa somme: controlla il semaforo e salva.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card reveal"><div class="icon" set:html={ICONE.cassa}></div><h3>Scassettamenti VLT</h3><p>Macchina per macchina, raggruppati per piattaforma con il totale di ciascuna. Se serve, accanto all'importo si annota la lettura del dump per il controllo.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.euro}></div><h3>Contanti per taglio</h3><p>Pezzi per ogni banconota, monete a parte, fondo cassa del turno. Il totale contanti è sempre sotto gli occhi.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.ticket}></div><h3>Ticket e bancomat</h3><p>Ticket pagati per piattaforma, con il numero di ticket convalidati se lo vuoi registrare. Bancomat, differenze, rientri e seconda cassa.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.aggiorna}></div><h3>Refill AWP</h3><p>Ricariche delle AWP con numero macchina e ora: entrano nel cassetto del turno e nello storico della macchina.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.doc}></div><h3>Note al turno dopo</h3><p>Quello che il collega deve sapere resta sul turno. Con il passaggio consegne si aggiunge una checklist da spuntare.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.offline}></div><h3>Anche senza rete</h3><p>Se la connessione cade il giornaliero resta aperto: le modifiche partono appena torna la rete, e i conflitti si risolvono con un clic.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="split reveal">
+      <div>
+        <span class="eyebrow">Trasparenza</span>
+        <h2>Formule chiare, uguali per tutti.</h2>
+        <p class="lead">Il calcolo è lo stesso sullo schermo dell'operatore, nel riepilogo del titolare e nell'email ai revisori. Nessuna cifra cambia da un report all'altro.</p>
+        <p class="muted">Il dato della giornata è quello del <strong>turno di chiusura</strong>: ogni turno riparte dai valori del precedente, quindi i turni non si sommano tra loro. Se nella tua sala ogni turno chiude per conto suo, basta un'impostazione.</p>
+      </div>
+      <div class="formula card">
+        <div><span>Cassetto</span><code>contanti + refill AWP + differenze − 2ª cassa − rientri</code></div>
+        <div><span>Versamento</span><code>scassettamenti − bancomat − ticket pagati</code></div>
+        <div><span>Totale cassa</span><code>cassetto + monete − versamento</code></div>
+        <div class="f-res"><span>Scostamento</span><code>totale cassa − fondo cassa</code></div>
+        <ul class="sem"><li><i class="ok"></i>sotto 4 €</li><li><i class="warn"></i>da 4 a 5 €</li><li><i class="bad"></i>oltre 5 €</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="split rev reveal">
+      <div>
+        <span class="eyebrow">Versamento firmato · Pro</span>
+        <h2>Chi ritira il versamento lo conferma. Con firma.</h2>
+        <p class="lead">Alla chiusura della giornata i revisori ricevono un'email con il riepilogo e l'importo da ritirare. Al ritiro confermano dall'app: l'importo, la firma tracciata sullo schermo, la data, l'ora e il dispositivo restano registrati.</p>
+        <ul class="checks">
+          <li><strong>Pannello del revisore</strong> con le giornate da confermare e la copertura del mese.</li>
+          <li><strong>Badge «confermato»</strong> visibile a operatori e responsabile sul giornaliero.</li>
+          <li><strong>Notifica</strong> agli operatori della giornata quando il versamento è confermato.</li>
+        </ul>
+      </div>
+      <div class="center-phone"><Phone src="m-giornaliero" alt="Il giornaliero su telefono con i pulsanti Salva, Riapri e Firma e conferma ritiro" /></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Turni flessibili</span>
+      <h2>Due turni il martedì, tre il sabato. Senza forzature.</h2>
+      <p>Definisci i modelli di turno con orari e giorni della settimana; il calendario li applica da solo. Un giorno speciale si personalizza a mano, un turno in più si aggiunge dal giornaliero.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card reveal"><h3>Turni oltre la mezzanotte</h3><p>Un turno 21–02 appartiene alla giornata in cui è cominciato: alle 00:30 l'app apre ancora la cassa di ieri.</p></div>
+      <div class="card reveal"><h3>Chiusura della giornata</h3><p>La chiude l'operatore a fine serata e il turno di chiusura si fissa da solo. Riaprire una giornata chiusa resta un permesso del responsabile.</p></div>
+      <div class="card reveal"><h3>Layout a scelta · Suite</h3><p>Classico o avanzato, con gli scassettamenti sempre in vista e i risultati fissi in basso. Ognuno sceglie il suo.</p></div>
+    </div>
+    <p style="margin-top:28px"><a href="/prodotto/sala" class="link">Il calendario turni del personale <span aria-hidden="true">→</span></a></p>
+  </div>
+</section>
+
+</AreaLayout>
+
+<style>
+.formula { display: grid; gap: 14px; padding: 28px }
+.formula div { display: grid; gap: 6px }
+.formula span { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--muted) }
+.formula code { display: block; padding: 12px 14px; font-size: 14.5px; border-radius: 10px; white-space: normal }
+.f-res code { background: var(--accent-weak); border-color: var(--accent-line); color: var(--accent-ink); font-weight: 600 }
+.sem { display: flex; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--muted); padding-top: 4px }
+.sem li { display: flex; align-items: center; gap: 8px }
+.sem i { width: 10px; height: 10px; border-radius: 50% }
+.sem .ok { background: #12b76a } .sem .warn { background: #f79009 } .sem .bad { background: #f04438 }
+.center-phone { display: flex; justify-content: center }
+</style>

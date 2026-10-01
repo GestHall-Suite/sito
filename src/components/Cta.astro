@@ -1,0 +1,22 @@
+---
+import { PROVA_GIORNI } from '../data/piani';
+interface Props { title?: string; text?: string }
+const {
+  title = 'Vedila al lavoro sui numeri della tua sala.',
+  text = `Una demo in videochiamata con i tuoi turni e le tue macchine, poi ${PROVA_GIORNI} giorni di prova. L'installazione e il trasferimento dei dati li facciamo noi.`,
+} = Astro.props;
+---
+<section class="section-tight">
+  <div class="container">
+    <div class="cta reveal">
+      <div>
+        <h2>{title}</h2>
+        <p>{text}</p>
+      </div>
+      <div class="actions">
+        <a href="/contatti?motivo=demo" class="btn btn-light btn-lg">Richiedi una demo</a>
+        <a href="/prezzi" class="btn btn-outline-light btn-lg">Vedi i prezzi</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,44 @@
+---
+import AreaLayout from '../../layouts/AreaLayout.astro';
+import { ICONE } from '../../data/aree';
+import { SALA_EXTRA } from '../../data/piani';
+---
+<AreaLayout slug="multi-sala" piano={`Piano Multi-sala · €149/mese con 2 sale, +€${SALA_EXTRA} per sala`} alt="Panoramica di tre sale con incasso del giorno e del mese, operatori in turno e versamenti da confermare" description="Gestionale multi-sala per sale giochi: più sale con un solo accesso, panoramica degli incassi, operatori abilitati per sala, impostazioni e macchine separate.">
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Come funziona</span>
+      <h2>Ogni sala è indipendente. Tu le vedi tutte.</h2>
+      <p>Un'unica installazione, un unico abbonamento. Ogni sala ha la propria cassa, i propri turni, macchine, bar, documenti e impostazioni; utenti, chat e licenza sono condivisi.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card reveal"><div class="icon" set:html={ICONE.multi}></div><h3>Panoramica</h3><p>Incasso di oggi e del mese di tutte le sale, chi è in turno, giornate ancora aperte, versamenti da confermare e assistenze aperte.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.aggiorna}></div><h3>Cambio sala con un tocco</h3><p>Il selettore nel menu porta in un'altra sala; l'app ricorda l'ultima su cui hai lavorato.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.utenti}></div><h3>Chi lavora dove</h3><p>Ogni utente è abilitato su una o più sale, oppure su tutte. Un operatore vede solo le sale in cui lavora.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.cassa}></div><h3>Impostazioni per sala</h3><p>Turni, soglie, permessi e moduli si regolano sala per sala; marchio, licenza e backup restano unici.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.report}></div><h3>Report separati</h3><p>Ogni sala ha i suoi report e il suo export per il commercialista, con i dati che non si mescolano.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.ticket}></div><h3>QR per sala</h3><p>I QR sulle macchine aprono la segnalazione del guasto nella sala giusta, anche senza accedere.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container narrow">
+    <div class="section-head">
+      <span class="eyebrow">Prezzo</span>
+      <h2>Quanto costa con le tue sale.</h2>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="table">
+        <thead><tr><th>Sale</th><th>Al mese</th></tr></thead>
+        <tbody>
+          {[2, 3, 4, 5].map(n => <tr><td>{n} sale</td><td><strong>€{149 + (n - 2) * SALA_EXTRA}</strong></td></tr>)}
+        </tbody>
+      </table>
+    </div>
+    <p class="muted small" style="margin-top:14px">Il piano Multi-sala include tutte le funzioni del piano Suite in ogni sala. Le sale si aggiungono o si tolgono quando serve.</p>
+  </div>
+</section>
+
+</AreaLayout>

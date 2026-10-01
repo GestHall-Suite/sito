@@ -1,0 +1,67 @@
+---
+import { piani, eur, SALA_EXTRA } from '../data/piani';
+interface Props { compact?: boolean }
+const { compact = false } = Astro.props;
+---
+<div class="pr-wrap" data-pr>
+  <div class="pr-toggle" role="group" aria-label="Fatturazione">
+    <button type="button" aria-pressed="true" data-bill="mese">Mensile</button>
+    <button type="button" aria-pressed="false" data-bill="anno">Annuale <span>2 mesi gratis</span></button>
+  </div>
+  <div class={`pr-grid${compact ? ' pr-compact' : ''}`}>
+    {piani.map(p => (
+      <article class={`pr-card${p.evidenza ? ' pr-hot' : ''}`}>
+        {p.evidenza && <span class="pr-flag">Il più scelto</span>}
+        <h3>{p.nome}</h3>
+        <p class="pr-per">{p.per}</p>
+        <div class="pr-price">
+          <span data-show="mese"><b>{eur(p.mese)}</b><small>/mese</small></span>
+          <span data-show="anno" hidden>{p.anno ? <><b>{eur(p.anno)}</b><small>/anno</small></> : <><b>{eur(p.mese)}</b><small>/mese</small></>}</span>
+        </div>
+        <p class="pr-note">
+          <span data-show="mese">{p.anno ? `oppure ${eur(p.anno)} all'anno` : p.nota}</span>
+          <span data-show="anno" hidden>{p.anno ? `pari a ${eur(Math.round(p.anno / 12 * 100) / 100).replace(/,(\d)$/, ',$10')}/mese` : `+${eur(SALA_EXTRA)}/mese per ogni sala oltre la seconda`}</span>
+        </p>
+        {!compact && <ul class="checks pr-list">{p.include.map(i => <li>{i}</li>)}</ul>}
+        {compact && <p class="pr-sum">{p.include.slice(1, 4).join(' · ')}</p>}
+        <a href={`/contatti?motivo=demo&piano=${p.id}`} class={`btn ${p.evidenza ? 'btn-primary' : 'btn-ghost'} btn-block`}>Prova {p.nome}</a>
+        {p.anno !== null && <p class="pr-users">{p.nota}</p>}
+      </article>
+    ))}
+  </div>
+</div>
+
+<style>
+.pr-toggle { display: inline-flex; gap: 4px; padding: 4px; border-radius: 12px; background: var(--surface); border: 1px solid var(--border); margin: 0 auto 28px; position: relative; left: 50%; transform: translateX(-50%) }
+.pr-toggle button { height: 38px; padding: 0 16px; border-radius: 9px; font-size: 14.5px; font-weight: 600; color: var(--muted); display: inline-flex; align-items: center; gap: 8px }
+.pr-toggle button[aria-pressed="true"] { background: var(--accent-weak); color: var(--accent-ink) }
+.pr-toggle span { font-size: 12px; font-weight: 700; color: var(--accent-ink) }
+.pr-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; align-items: stretch }
+.pr-card { position: relative; display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-l); padding: 26px 22px 22px; box-shadow: var(--sh-1) }
+.pr-hot { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), var(--sh-2) }
+.pr-flag { position: absolute; top: -12px; left: 22px; background: var(--accent); color: #fff; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px }
+.pr-card h3 { font-size: 20px; margin-bottom: 6px }
+.pr-per { color: var(--muted); font-size: 14.5px; min-height: 44px; margin-bottom: 18px }
+.pr-price b { font-size: 40px; letter-spacing: -.03em; font-weight: 750 }
+.pr-price small { font-size: 15px; color: var(--muted); margin-left: 2px }
+.pr-note { font-size: 13.5px; color: var(--faint); margin: 4px 0 20px; min-height: 20px }
+.pr-list { margin-bottom: 24px; flex: 1 }
+.pr-list li { font-size: 14.5px }
+.pr-sum { font-size: 14px; color: var(--muted); margin-bottom: 22px; flex: 1 }
+.pr-users { text-align: center; font-size: 13px; color: var(--faint); margin-top: 10px }
+@media (max-width: 1080px) { .pr-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) } }
+@media (max-width: 640px) {
+  .pr-grid { grid-template-columns: 1fr }
+  .pr-per { min-height: 0 }
+}
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-pr]').forEach(w => {
+    const bs = w.querySelectorAll<HTMLButtonElement>('[data-bill]');
+    bs.forEach(b => b.addEventListener('click', () => {
+      bs.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+      w.querySelectorAll<HTMLElement>('[data-show]').forEach(el => { el.hidden = el.dataset.show !== b.dataset.bill; });
+    }));
+  });
+</script>

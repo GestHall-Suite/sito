@@ -9,7 +9,7 @@ import Layout from '../layouts/Layout.astro';
 
     <header class="doc-header">
       <h1>Privacy Policy</h1>
-      <p class="doc-meta">Informativa ai sensi del Reg. UE 2016/679 (GDPR) · Aggiornata luglio 2026</p>
+      <p class="doc-meta">Informativa ai sensi del Reg. UE 2016/679 (GDPR) · Aggiornata ottobre 2026</p>
     </header>
 
     <div class="doc-body">
@@ -24,13 +24,13 @@ import Layout from '../layouts/Layout.astro';
         <h2>Dati raccolti</h2>
 
         <h3>Dati forniti volontariamente</h3>
-        <p>Quando compili il modulo di contatto o richiedi la demo, raccogliamo: nome, indirizzo e-mail, ruolo professionale e il contenuto del messaggio. Questi dati sono usati esclusivamente per rispondere alla tua richiesta.</p>
+        <p>Quando compili il modulo di contatto o richiedi la demo, raccogliamo: nome, indirizzo e-mail, il motivo della richiesta, il contenuto del messaggio e, se li indichi, telefono, nome della sala o dell'azienda e piano di interesse. Il modulo invia questi dati via e-mail al nostro indirizzo info@gesthallsuite.it insieme all'indirizzo IP di invio (usato anche per limitare gli invii automatici); sono usati esclusivamente per rispondere alla tua richiesta e non vengono salvati in banche dati del sito.</p>
 
         <h3>Dati di navigazione</h3>
         <p>I server web registrano automaticamente informazioni tecniche (indirizzo IP, tipo di browser, pagine visitate, ora della visita) a fini di sicurezza e statistici aggregati. Tali dati non sono associati a persone identificabili e vengono eliminati entro 30 giorni.</p>
 
         <h3>Cookie</h3>
-        <p>Questo sito non utilizza cookie di profilazione, cookie di terze parti né strumenti di tracciamento comportamentale. Sono presenti esclusivamente cookie tecnici di sessione, strettamente necessari al funzionamento del sito. Non è richiesto il consenso per l'uso di tali cookie ai sensi dell'art. 122 del Codice Privacy.</p>
+        <p>Questo sito non utilizza cookie di profilazione, cookie di terze parti né strumenti di tracciamento comportamentale. Le pagine pubbliche non impostano cookie: l'unica informazione salvata nel browser è la preferenza per il tema chiaro o scuro (archiviazione locale), che non viene trasmessa a nessuno. Il sito non carica caratteri, script o contenuti da servizi di terze parti. Non è quindi richiesto alcun consenso ai sensi dell'art. 122 del Codice Privacy.</p>
       </section>
 
       <section class="doc-section">
@@ -90,7 +90,7 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-.doc-page { padding: 120px 0 96px }
+.doc-page { padding: 56px 0 96px }
 .doc-inner { max-width: 800px }
 
 .doc-header { margin-bottom: 56px; padding-bottom: 32px; border-bottom: 1px solid var(--border-sub) }
@@ -120,7 +120,7 @@ import Layout from '../layouts/Layout.astro';
   max-width: 68ch; margin-bottom: 12px;
 }
 .doc-section p:last-child { margin-bottom: 0 }
-.doc-section a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px }
+.doc-section a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px }
 .doc-section strong { color: var(--text); font-weight: 600 }
 
 .doc-list {
@@ -132,7 +132,7 @@ import Layout from '../layouts/Layout.astro';
   padding-left: 20px; position: relative;
 }
 .doc-list li::before {
-  content: '–'; position: absolute; left: 0; color: var(--accent); font-weight: 700;
+  content: '–'; position: absolute; left: 0; color: var(--accent-ink); font-weight: 700;
 }
 
 .doc-table {
@@ -152,7 +152,7 @@ import Layout from '../layouts/Layout.astro';
 .doc-table tr:last-child td { border-bottom: none }
 
 @media (max-width: 640px) {
-  .doc-page { padding: 100px 0 64px }
+  .doc-page { padding: 40px 0 64px }
   .doc-table { font-size: 13px }
   .doc-table th, .doc-table td { padding: 8px 12px }
 }

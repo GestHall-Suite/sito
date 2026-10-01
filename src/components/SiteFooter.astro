@@ -1,85 +1,63 @@
 ---
+import Logo from './Logo.astro';
+import { aree } from '../data/aree';
+const anno = new Date().getFullYear();
 ---
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <a href="/" class="slogo" aria-label="GestHall Suite">
-        <svg width="28" height="28" viewBox="0 0 34 34" aria-hidden="true">
-          <rect width="34" height="34" rx="8" fill="oklch(0.72 0.16 168)"/>
-          <rect x="6"  y="6"  width="9" height="10" rx="2" fill="oklch(0.1 0 0 / 0.32)"/>
-          <rect x="19" y="6"  width="9" height="10" rx="2" fill="oklch(0.1 0 0 / 0.32)"/>
-          <rect x="6"  y="19" width="9" height="10" rx="2" fill="oklch(0.1 0 0 / 0.32)"/>
-          <rect x="19" y="19" width="9" height="10" rx="2" fill="oklch(0.1 0 0 / 0.72)"/>
-        </svg>
-        <span class="slogo-name">GestHall <strong>Suite</strong></span>
-      </a>
-      <p class="footer-tagline">Il gestionale per le sale giochi italiane.</p>
+<footer class="foot">
+  <div class="container foot-in">
+    <div class="foot-brand">
+      <a href="/" aria-label="GestHall Suite"><Logo size={28} /></a>
+      <p>Il gestionale della cassa e della sala per le sale giochi italiane con VLT e AWP.</p>
+      <a href="mailto:info@gesthallsuite.it" class="foot-mail">info@gesthallsuite.it</a>
     </div>
-    <nav class="footer-links" aria-label="Link footer">
-      <div class="footer-col">
-        <span class="footer-col-head">Prodotto</span>
-        <a href="/#funzionalita">Funzionalità</a>
-        <a href="/#prezzi">Prezzi</a>
-        <a href="/#demo">Demo gratuita</a>
-        <a href="/docs">Documentazione</a>
+    <nav class="foot-cols" aria-label="Piè di pagina">
+      <div>
+        <p>Prodotto</p>
+        <a href="/prodotto">Panoramica</a>
+        {aree.map(a => <a href={`/prodotto/${a.slug}`}>{a.nome}</a>)}
       </div>
-      <div class="footer-col">
-        <span class="footer-col-head">Azienda</span>
+      <div>
+        <p>Azienda</p>
+        <a href="/prezzi">Prezzi</a>
+        <a href="/sicurezza">Sicurezza e dati</a>
         <a href="/rivenditori">Rivenditori</a>
         <a href="/contatti">Contatti</a>
       </div>
-      <div class="footer-col">
-        <span class="footer-col-head">Legale</span>
-        <a href="/privacy">Privacy Policy</a>
+      <div>
+        <p>Risorse</p>
+        <a href="/docs">Documentazione</a>
+        <a href="/docs/guida/">Guida all'uso</a>
+        <a href="/changelog">Novità</a>
+        <a href="/cliente/">Area clienti</a>
+      </div>
+      <div>
+        <p>Legale</p>
+        <a href="/privacy">Privacy</a>
         <a href="/termini">Termini di servizio</a>
       </div>
     </nav>
   </div>
-  <div class="container footer-bottom">
-    <span>© 2026 GestHall Suite. Tutti i diritti riservati.</span>
-    <div class="footer-bottom-links">
-      <a href="/privacy">Privacy</a>
-      <a href="/contatti">Contatti</a>
-    </div>
+  <div class="container foot-bottom">
+    <span>© {anno} GestHall Suite</span>
+    <span>Software per sale giochi · Made in Italy</span>
   </div>
 </footer>
 
 <style>
-.site-footer {
-  background: oklch(19% 0.075 245);
-  border-top: 1px solid oklch(26% 0.085 245);
-  padding: 64px 0 0;
-}
-.footer-inner { display: grid; grid-template-columns: 1fr auto; gap: 64px; padding-bottom: 48px }
-.slogo { display: flex; align-items: center; gap: 10px; margin-bottom: 12px }
-.slogo-name {
-  font-family: var(--font-head); font-size: 18px; font-weight: 300;
-  letter-spacing: -0.03em; color: oklch(93% 0.008 245);
-}
-.slogo-name strong { font-weight: 700 }
-.footer-tagline { font-size: 14px; color: oklch(50% 0.04 245) }
-.footer-links { display: flex; gap: 48px }
-.footer-col { display: flex; flex-direction: column; gap: 10px }
-.footer-col-head {
-  font-size: 12px; font-weight: 700; color: oklch(78% 0.02 245);
-  text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;
-}
-.footer-col a { font-size: 14px; color: oklch(50% 0.04 245); transition: color 0.15s }
-.footer-col a:hover { color: oklch(82% 0.02 245) }
-.footer-bottom {
-  padding: 20px 0; border-top: 1px solid oklch(26% 0.085 245);
-  font-size: 13px; color: oklch(40% 0.04 245);
-  display: flex; justify-content: space-between; align-items: center;
-}
-.footer-bottom-links { display: flex; gap: 16px }
-.footer-bottom-links a { color: oklch(40% 0.04 245); transition: color 0.15s }
-.footer-bottom-links a:hover { color: oklch(65% 0.035 245) }
-
-@media (max-width: 900px) {
-  .footer-inner { grid-template-columns: 1fr; gap: 40px }
-  .footer-links { flex-wrap: wrap; gap: 32px }
-}
+.foot { background: var(--ink); color: var(--ink-muted); padding: 64px 0 0; margin-top: auto }
+.foot-in { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 56px; padding-bottom: 48px }
+.foot-brand { color: #fff; max-width: 340px }
+.foot-brand p { color: var(--ink-muted); font-size: 15px; margin: 16px 0 14px }
+.foot-mail { color: #4fe0b7; font-weight: 600; font-size: 15px }
+.foot-cols { display: grid; grid-template-columns: repeat(4, auto); gap: 48px }
+.foot-cols div { display: flex; flex-direction: column; gap: 10px }
+.foot-cols p { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; margin-bottom: 4px }
+.foot-cols a { font-size: 14.5px; transition: color .15s }
+.foot-cols a:hover, .foot-mail:hover { color: #fff }
+.foot-bottom { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 22px 24px; border-top: 1px solid rgba(255, 255, 255, .08); font-size: 13.5px }
+@media (max-width: 980px) { .foot-in { grid-template-columns: 1fr } }
 @media (max-width: 640px) {
-  .footer-bottom { flex-direction: column; gap: 8px; text-align: center }
+  .foot-cols { grid-template-columns: 1fr 1fr; gap: 32px 24px }
+  .foot-bottom { padding: 20px 16px }
 }
 </style>

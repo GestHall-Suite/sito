@@ -4,6 +4,12 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-01
 
+- **Nuovo sito.** Sistema grafico unico (`src/styles/site.css`) con i token della suite, tema chiaro/scuro, font di sistema (rimossi i Google Fonts), menu con tendina Prodotto e foglio su telefono, piè di pagina nuovo.
+- Schermate reali della suite (`public/img/prodotto/`, sala dimostrativa) al posto dei mockup disegnati; anteprima social `og.png`.
+- Pagine nuove: `/prodotto` con cinque aree (cassa e turni, report, sala e personale, bar e clienti, multi-sala), `/sicurezza`, `/prezzi` (selettore mensile/annuale, confronto completo, domande frequenti). Rifatte home, rivenditori (aggiornamenti dall'app, pannello), contatti, risorse e novità; privacy aggiornata (modulo, nessun cookie).
+- Prezzi e piani in un solo file (`src/data/piani.ts`); rimossi `features.ts`, `FeatureLayout.astro` e le pagine `/funzionalita/*`, che ora reindirizzano alle nuove pagine (`redirects` di Astro + `.htaccess` 301).
+- Modulo contatti funzionante: `public/api/contatto.php` (email a info@, campo trappola, limite di invii, consenso privacy), precompilato da `?motivo=` e `&piano=`.
+
 - Changelog: versione 3.8.1 della suite. Area riservata: la guida Aggiornamenti e backup descrive il nuovo flusso (GitHub Actions → GitHub Releases → hub → sale), il collegamento GitHub dell'hub, la checklist e i problemi comuni; aggiornati changelog interno e sezione Deploy.
 
 - Area riservata: nuova guida `/interno/manutenzione.html` (creazione e pubblicazione dei rilasci, come le sale scoprono e installano gli aggiornamenti, backup e ripristino del database, cartelle e file, accesso e avvisi, aggiornamento a mano dal File Manager, checklist, problemi comuni); collegata da `/interno/` e dalla documentazione interna (sezione Deploy e changelog aggiornati). Pagine interne senza scorrimento orizzontale su telefono.

@@ -1,0 +1,279 @@
+/* GestHall Suite — sistema grafico del sito.
+   Stessi token della suite (assets/css/ui.css): chi passa dal sito all'app ritrova colori,
+   raggi e ombre. Font di sistema: nessuna richiesta a servizi esterni. */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 84px }
+img, svg { display: block; max-width: 100% }
+a { color: inherit; text-decoration: none }
+button { cursor: pointer; font: inherit; color: inherit; border: none; background: none }
+ul, ol { list-style: none }
+table { border-collapse: collapse }
+
+:root {
+  --bg: #f4f5f7;
+  --bg-alt: #eceef2;
+  --surface: #ffffff;
+  --surface-2: #f7f8fa;
+  --border: #e4e7ec;
+  --border-strong: #d0d5dd;
+  --text: #101828;
+  --muted: #5d6679;
+  --faint: #98a2b3;
+  --accent: #00c391;
+  --accent-ink: #00785a;
+  --accent-weak: #e3f7f0;
+  --accent-line: rgba(0, 195, 145, .32);
+  --on-accent: #ffffff;
+  --amber: #b54708;
+  --amber-weak: #fef0c7;
+  --red: #d92d20;
+  --ink: #0c1424;
+  --ink-2: #162033;
+  --ink-text: #e7ebf2;
+  --ink-muted: #98a2b3;
+
+  --r-l: 16px;
+  --r-m: 12px;
+  --r-s: 10px;
+  --sh-1: 0 1px 2px rgba(16, 24, 40, .05);
+  --sh-2: 0 1px 3px rgba(16, 24, 40, .06), 0 8px 24px -6px rgba(16, 24, 40, .08);
+  --sh-3: 0 2px 6px rgba(16, 24, 40, .06), 0 24px 60px -12px rgba(16, 24, 40, .22);
+
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+
+  /* nomi usati dalle pagine legali e dalle risorse */
+  --font-head: var(--font);
+  --font-body: var(--font);
+  --accent-sub: var(--accent-weak);
+  --accent-dim: var(--accent-ink);
+  --border-sub: var(--border);
+  --rx: var(--r-s);
+  --rx-m: var(--r-m);
+  --rx-l: var(--r-l);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0b111c;
+  --bg-alt: #0f1623;
+  --surface: #121a28;
+  --surface-2: #172133;
+  --border: #233047;
+  --border-strong: #2e3d57;
+  --text: #e8edf5;
+  --muted: #a3adbf;
+  --faint: #6b778c;
+  --accent-ink: #4fe0b7;
+  --accent-weak: rgba(0, 195, 145, .14);
+  --accent-line: rgba(0, 195, 145, .4);
+  --amber: #fdb022;
+  --amber-weak: rgba(253, 176, 34, .14);
+  --ink: #070b13;
+  --ink-2: #0e1522;
+  --sh-1: 0 1px 2px rgba(0, 0, 0, .3);
+  --sh-2: 0 1px 3px rgba(0, 0, 0, .35), 0 8px 24px -6px rgba(0, 0, 0, .45);
+  --sh-3: 0 2px 6px rgba(0, 0, 0, .4), 0 24px 60px -12px rgba(0, 0, 0, .6);
+  color-scheme: dark;
+}
+
+html, body { background: var(--bg); color: var(--text) }
+body {
+  font-family: var(--font); font-size: 16px; line-height: 1.6;
+  min-height: 100dvh; display: flex; flex-direction: column;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+main { flex: 1 }
+h1, h2, h3, h4 { line-height: 1.15; letter-spacing: -.022em; font-weight: 700; text-wrap: balance }
+p { text-wrap: pretty }
+strong { font-weight: 650 }
+code { font-family: var(--mono); font-size: .9em; background: var(--surface-2); border: 1px solid var(--border); padding: 1px 6px; border-radius: 6px }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px }
+::selection { background: var(--accent-weak) }
+
+.container { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 24px }
+.narrow { max-width: 780px }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap }
+
+/* ── Pulsanti ─────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 46px; padding: 0 20px; border-radius: var(--r-m);
+  font-size: 15px; font-weight: 600; line-height: 1; white-space: nowrap;
+  border: 1px solid transparent; transition: background .18s, border-color .18s, transform .18s var(--ease), box-shadow .18s;
+}
+.btn svg { width: 16px; height: 16px; flex: none }
+.btn-primary { background: linear-gradient(180deg, #12d3a0, var(--accent)); color: var(--on-accent); box-shadow: 0 1px 2px rgba(0, 120, 90, .3), inset 0 1px 0 rgba(255, 255, 255, .18) }
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 18px -4px rgba(0, 195, 145, .55), inset 0 1px 0 rgba(255, 255, 255, .18) }
+.btn-soft { background: var(--accent-weak); color: var(--accent-ink); border-color: var(--accent-line) }
+.btn-soft:hover { border-color: var(--accent) }
+.btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border-strong) }
+.btn-ghost:hover { border-color: var(--text) }
+.btn-light { background: #fff; color: #0c1424 }
+.btn-light:hover { transform: translateY(-1px) }
+.btn-outline-light { color: #fff; border-color: rgba(255, 255, 255, .28) }
+.btn-outline-light:hover { border-color: #fff }
+.btn-lg { min-height: 52px; padding: 0 26px; font-size: 16px }
+.btn-block { width: 100% }
+.link { color: var(--accent-ink); font-weight: 600; display: inline-flex; align-items: center; gap: 6px }
+.link:hover { text-decoration: underline; text-underline-offset: 3px }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center }
+
+/* ── Testi di sezione ─────────────────────────────────── */
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-ink) }
+.eyebrow::before { content: ''; width: 8px; height: 8px; border-radius: 2px; background: var(--accent) }
+.lead { font-size: clamp(17px, 1.6vw, 19px); color: var(--muted); line-height: 1.65; max-width: 62ch }
+.muted { color: var(--muted) }
+.small { font-size: 14px }
+.section { padding: clamp(64px, 9vw, 112px) 0 }
+.section-tight { padding: clamp(48px, 6vw, 72px) 0 }
+.section-alt { background: var(--surface); border-block: 1px solid var(--border) }
+.section-head { display: grid; gap: 14px; margin-bottom: clamp(32px, 5vw, 56px); max-width: 760px }
+.section-head.center { margin-inline: auto; text-align: center; justify-items: center }
+.section-head h2 { font-size: clamp(28px, 3.6vw, 42px) }
+.section-head p { color: var(--muted); font-size: 17px; max-width: 62ch }
+
+/* ── Intestazione delle pagine ────────────────────────── */
+.page-hero { padding: clamp(56px, 8vw, 96px) 0 clamp(40px, 5vw, 64px) }
+.page-hero h1 { font-size: clamp(34px, 5vw, 56px); margin: 14px 0 18px; max-width: 20ch }
+.page-hero .lead { margin-bottom: 28px }
+.crumbs { display: flex; flex-wrap: wrap; gap: 6px; font-size: 14px; color: var(--faint); margin-bottom: 18px }
+.crumbs a { color: var(--muted) }
+.crumbs a:hover { color: var(--text) }
+
+/* ── Schede ───────────────────────────────────────────── */
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-l); padding: 28px; box-shadow: var(--sh-1) }
+.card h3 { font-size: 19px; margin-bottom: 8px }
+.card p { color: var(--muted); font-size: 15.5px }
+a.card { transition: border-color .18s, transform .18s var(--ease), box-shadow .18s; display: block }
+a.card:hover { border-color: var(--accent-line); transform: translateY(-2px); box-shadow: var(--sh-2) }
+.grid { display: grid; gap: 20px }
+.g2 { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+.g3 { grid-template-columns: repeat(3, minmax(0, 1fr)) }
+.g4 { grid-template-columns: repeat(4, minmax(0, 1fr)) }
+.icon { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--accent-weak); color: var(--accent-ink); margin-bottom: 18px; flex: none }
+.icon svg { width: 22px; height: 22px }
+
+/* ── Elenchi ──────────────────────────────────────────── */
+.checks { display: grid; gap: 12px }
+.checks li { position: relative; padding-left: 30px; color: var(--muted) }
+.checks li strong { color: var(--text) }
+.checks li::before {
+  content: ''; position: absolute; left: 0; top: 3px; width: 20px; height: 20px; border-radius: 50%;
+  background: var(--accent-weak) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%2300a67c' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 10.5l2.6 2.6L14 7.5'/%3E%3C/svg%3E") center / 20px no-repeat;
+}
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px; font-size: 12.5px; font-weight: 650; background: var(--surface-2); border: 1px solid var(--border); color: var(--muted); white-space: nowrap }
+.badge-accent { background: var(--accent-weak); border-color: var(--accent-line); color: var(--accent-ink) }
+
+/* ── Schermate ────────────────────────────────────────── */
+.shot { border-radius: var(--r-l); border: 1px solid var(--border); background: var(--surface); box-shadow: var(--sh-3); overflow: hidden }
+.shot-bar { display: flex; align-items: center; gap: 6px; height: 34px; padding: 0 14px; border-bottom: 1px solid var(--border); background: var(--surface-2) }
+.shot-bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--border-strong) }
+.shot-bar span { margin-left: 10px; font-size: 12px; color: var(--faint); overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+.shot img { width: 100%; height: auto; background: #f4f5f7 }
+.phone { width: min(300px, 78vw); border-radius: 38px; padding: 9px; background: #0c1424; box-shadow: var(--sh-3), inset 0 0 0 1.5px #2a3446 }
+.phone img { border-radius: 30px; width: 100%; height: auto }
+.figure-cap { margin-top: 14px; font-size: 14px; color: var(--faint); text-align: center }
+
+/* ── Blocco funzionalità (testo + schermata) ──────────── */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(32px, 6vw, 80px); align-items: center }
+.split.rev { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) }
+.split.rev > :first-child { order: 2 }
+.split h2 { font-size: clamp(26px, 3.2vw, 36px); margin: 12px 0 14px }
+.split .lead { margin-bottom: 22px }
+.split + .split { margin-top: clamp(64px, 9vw, 112px) }
+
+/* ── Dati ─────────────────────────────────────────────── */
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--r-l); overflow: hidden }
+.fact { background: var(--surface); padding: 22px 24px }
+.fact b { display: block; font-size: clamp(18px, 2.4vw, 24px); letter-spacing: -.02em; margin-bottom: 4px }
+.fact span { color: var(--muted); font-size: 14.5px }
+
+/* ── Tabelle ──────────────────────────────────────────── */
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--r-l); background: var(--surface) }
+.table { width: 100%; font-size: 15px }
+.table th, .table td { padding: 13px 18px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top }
+.table thead th { font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); background: var(--surface-2); position: sticky; top: 0 }
+.table tbody tr:last-child td { border-bottom: 0 }
+.table .grp td { background: var(--surface-2); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted) }
+.table .c { text-align: center; width: 13% }
+.yes { display: inline-block; width: 20px; height: 20px; border-radius: 50%; background: var(--accent-weak) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%2300a67c' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 10.5l2.6 2.6L14 7.5'/%3E%3C/svg%3E") center / 20px no-repeat; vertical-align: middle }
+.no { color: var(--faint) }
+
+/* ── Domande frequenti ────────────────────────────────── */
+.faq { display: grid; gap: 10px }
+.faq details { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-m); padding: 0 22px }
+.faq summary { cursor: pointer; list-style: none; padding: 18px 28px 18px 0; font-weight: 650; position: relative }
+.faq summary::-webkit-details-marker { display: none }
+.faq summary::after { content: ''; position: absolute; right: 2px; top: 50%; width: 10px; height: 10px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: translateY(-70%) rotate(45deg); transition: transform .2s }
+.faq details[open] summary::after { transform: translateY(-30%) rotate(-135deg) }
+.faq details > div { padding: 0 0 20px; color: var(--muted) }
+.faq details > div p + p { margin-top: 10px }
+
+/* ── Fascia finale ────────────────────────────────────── */
+.cta { background: radial-gradient(120% 140% at 100% 0%, rgba(0, 195, 145, .22), transparent 55%), var(--ink); color: var(--ink-text); border-radius: 24px; padding: clamp(36px, 6vw, 64px); display: grid; grid-template-columns: minmax(0, 1.4fr) auto; gap: 32px; align-items: center }
+.cta h2 { font-size: clamp(26px, 3.4vw, 38px); color: #fff; margin-bottom: 12px }
+.cta p { color: var(--ink-muted); font-size: 17px; max-width: 56ch }
+
+/* ── Moduli ───────────────────────────────────────────── */
+.form { display: grid; gap: 18px }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px }
+.field { display: grid; gap: 7px }
+.field label { font-size: 14px; font-weight: 600 }
+.field label span { color: var(--faint); font-weight: 500 }
+.field input, .field select, .field textarea {
+  width: 100%; min-height: 48px; padding: 12px 14px; border-radius: var(--r-s);
+  border: 1px solid var(--border-strong); background: var(--surface); color: var(--text);
+  font: inherit; font-size: 16px; transition: border-color .15s, box-shadow .15s;
+}
+.field textarea { min-height: 130px; resize: vertical }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-weak) }
+.check-line { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--muted) }
+.check-line input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--accent); flex: none }
+.check-line a { color: var(--accent-ink); text-decoration: underline }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden }
+.form-msg { border-radius: var(--r-m); padding: 14px 16px; font-size: 15px }
+.form-msg.ok { background: var(--accent-weak); color: var(--accent-ink); border: 1px solid var(--accent-line) }
+.form-msg.err { background: var(--amber-weak); color: var(--amber); border: 1px solid rgba(181, 71, 8, .25) }
+
+/* ── Prosa (pagine legali, guide) ─────────────────────── */
+.prose { color: var(--text); font-size: 16.5px; line-height: 1.75 }
+.prose h2 { font-size: 24px; margin: 44px 0 12px }
+.prose h3 { font-size: 19px; margin: 28px 0 8px }
+.prose p, .prose ul, .prose ol { margin-bottom: 14px; color: var(--muted) }
+.prose ul { list-style: disc; padding-left: 22px }
+.prose ol { list-style: decimal; padding-left: 22px }
+.prose a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px }
+.prose strong { color: var(--text) }
+
+/* ── Comparsa ─────────────────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s var(--ease), transform .6s var(--ease) }
+.reveal.in { opacity: 1; transform: none }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto }
+  .reveal { opacity: 1; transform: none; transition: none }
+}
+
+@media (max-width: 980px) {
+  .g4 { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+  .g3 { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+  .split, .split.rev { grid-template-columns: 1fr }
+  .split.rev > :first-child { order: 0 }
+  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+  .cta { grid-template-columns: 1fr }
+}
+@media (max-width: 640px) {
+  .container { padding: 0 16px }
+  .g2, .g3, .g4 { grid-template-columns: 1fr }
+  .form-row { grid-template-columns: 1fr }
+  .card { padding: 22px }
+  .fact { padding: 18px 16px }
+  .fact span { font-size: 13.5px }
+  .table th, .table td { padding: 11px 12px; font-size: 14px }
+  .cta .actions .btn { flex: 1 1 100% }
+  .shot-bar { height: 26px }
+  .shot-bar span { display: none }
+}
+.ilink { color: var(--accent-ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px }

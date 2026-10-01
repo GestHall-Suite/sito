@@ -7,11 +7,12 @@ const fmt = (d) => new Date(d + 'T12:00:00').toLocaleDateString('it-IT', { day: 
 ---
 <Layout page="Changelog" description="Tutte le novità di GestHall Suite: nuove funzionalità, miglioramenti e correzioni release per release.">
 
-<section class="cl-hero">
+<section class="page-hero">
   <div class="container">
-    <p class="cl-eyebrow">Changelog</p>
-    <h1>Novità e aggiornamenti</h1>
-    <p class="cl-sub">Ogni release di GestHall Suite, in ordine cronologico. Funzionalità nuove, miglioramenti e correzioni che cambiano il lavoro di ogni giorno.</p>
+    <nav class="crumbs" aria-label="Percorso"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/docs">Risorse</a><span aria-hidden="true">/</span><span>Novità</span></nav>
+    <span class="eyebrow">Novità</span>
+    <h1>Cosa c'è di nuovo in GestHall Suite.</h1>
+    <p class="lead">Ogni versione, dalla più recente: nuove funzioni, miglioramenti e correzioni che cambiano il lavoro di ogni giorno.</p>
   </div>
 </section>
 
@@ -43,9 +44,9 @@ const fmt = (d) => new Date(d + 'T12:00:00').toLocaleDateString('it-IT', { day: 
     <div class="cl-footer">
       <a href="/docs" class="cl-back">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M12 7H2M6 3l-4 4 4 4"/></svg>
-        Torna alla documentazione
+        Torna alle risorse
       </a>
-      <p class="cl-note">Stai usando una versione precedente? <a href="/contatti">Contattaci</a> per assistenza all'aggiornamento.</p>
+      <p class="cl-note">Le nuove versioni si installano dall'app, in Impostazioni → Sistema → Aggiornamenti. Serve aiuto? <a href="/contatti?motivo=assistenza">Scrivici</a>.</p>
     </div>
 
   </div>
@@ -54,97 +55,28 @@ const fmt = (d) => new Date(d + 'T12:00:00').toLocaleDateString('it-IT', { day: 
 </Layout>
 
 <style>
-/* ── Hero ── */
-.cl-hero {
-  padding: clamp(80px, 10vw, 120px) 0 clamp(40px, 6vw, 64px);
-  border-bottom: 1px solid var(--border);
-  background: linear-gradient(155deg, oklch(100% 0 0) 0%, oklch(96.5% 0.012 245) 100%);
-}
-.cl-eyebrow {
-  font-size: 11px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: .1em; color: var(--accent); margin-bottom: 14px
-}
-.cl-hero h1 {
-  font-size: clamp(32px, 5vw, 52px); font-weight: 800;
-  letter-spacing: -.03em; line-height: 1.05; margin-bottom: 16px; text-wrap: balance
-}
-.cl-sub { font-size: clamp(15px, 2vw, 17px); color: var(--muted); line-height: 1.65; max-width: 56ch }
-
-/* ── Body ── */
-.cl-body { padding: clamp(40px, 6vw, 72px) 0 clamp(60px, 8vw, 100px); background: var(--surface) }
-
-/* ── Feed ── */
-.cl-feed { max-width: 760px }
-
-.cl-entry {
-  padding: 36px 0;
-  border-bottom: 1px solid var(--border-sub)
-}
-.cl-entry:last-child { border-bottom: none }
-
-.cl-entry-head {
-  display: flex; align-items: center; gap: 12px; margin-bottom: 24px; flex-wrap: wrap
-}
-.cl-ver {
-  font-family: var(--font-head); font-size: 22px; font-weight: 800;
-  letter-spacing: -.04em; color: var(--text)
-}
-.cl-ver { text-decoration: none }
-.cl-title {
-  font-size: 13px; font-weight: 600; color: var(--muted);
-  padding: 3px 10px; border-radius: 99px; background: var(--surface-2); border: 1px solid var(--border-sub)
-}
-.cl-date {
-  font-size: 13px; font-weight: 500; color: var(--faint)
-}
-.cl-hotfix {
-  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
-  padding: 2px 9px; border-radius: 99px;
-  background: oklch(0.96 0.04 40); color: oklch(0.52 0.16 40);
-  border: 1px solid oklch(0.88 0.06 40)
-}
-
-/* ── Entry body ── */
-.cl-entry-body { display: flex; flex-direction: column; gap: 20px }
-
-.cl-group { display: flex; flex-direction: column; gap: 10px }
-
-.cl-badge {
-  display: inline-flex; align-items: center; font-size: 11px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: .06em; padding: 3px 10px; border-radius: 5px;
-  width: fit-content
-}
-.cl-badge-add    { background: var(--accent-sub); color: var(--accent-dim); border: 1px solid oklch(0.72 0.16 168 / 0.22) }
-.cl-badge-change { background: oklch(0.96 0.018 250); color: oklch(0.45 0.14 250); border: 1px solid oklch(0.82 0.06 250) }
-.cl-badge-fix    { background: var(--surface-2); color: var(--muted); border: 1px solid var(--border-sub) }
-
-.cl-list { display: flex; flex-direction: column; gap: 8px; padding-left: 2px }
-.cl-list li {
-  font-size: 15px; color: var(--muted); line-height: 1.65;
-  padding-left: 18px; position: relative
-}
-.cl-list li::before {
-  content: ''; position: absolute; left: 0; top: 10px;
-  width: 6px; height: 6px; border-radius: 50%; background: var(--border); flex-shrink: 0
-}
-.cl-badge-add + .cl-list li::before { background: var(--accent-sub); border: 1.5px solid oklch(0.72 0.16 168 / 0.4) }
-.cl-list li strong { color: var(--text); font-weight: 600 }
-
-/* ── Footer ── */
-.cl-footer {
-  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
-  gap: 12px; padding-top: 40px; margin-top: 8px
-}
-.cl-back {
-  display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 600;
-  color: var(--muted); transition: color .15s, gap .15s
-}
-.cl-back:hover { color: var(--text); gap: 10px }
-.cl-note { font-size: 13px; color: var(--faint) }
-.cl-note a { color: var(--accent); font-weight: 600; text-decoration: none }
-.cl-note a:hover { text-decoration: underline }
-
-@media (max-width: 640px) {
-  .cl-footer { flex-direction: column; align-items: flex-start }
-}
+.cl-body { padding: 0 0 clamp(60px, 8vw, 100px) }
+.cl-feed { display: grid; gap: 16px; max-width: 860px }
+.cl-entry { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-l); padding: clamp(20px, 3vw, 28px) }
+.cl-entry-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-bottom: 16px }
+.cl-ver { font-size: 22px; font-weight: 750; letter-spacing: -.02em }
+.cl-ver:hover { color: var(--accent-ink) }
+.cl-date { font-size: 13.5px; color: var(--muted); padding: 3px 10px; border-radius: 99px; background: var(--surface-2); border: 1px solid var(--border) }
+.cl-hotfix { font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 99px; background: var(--amber-weak); color: var(--amber) }
+.cl-title { font-weight: 650; color: var(--text) }
+.cl-entry-body { display: grid; gap: 16px }
+.cl-group { display: grid; gap: 10px }
+.cl-badge { justify-self: start; font-size: 11.5px; font-weight: 750; text-transform: uppercase; letter-spacing: .06em; padding: 3px 10px; border-radius: 6px }
+.cl-badge-add { background: var(--accent-weak); color: var(--accent-ink) }
+.cl-badge-change { background: var(--surface-2); color: var(--text); border: 1px solid var(--border) }
+.cl-badge-fix { background: var(--amber-weak); color: var(--amber) }
+.cl-list { display: grid; gap: 8px }
+.cl-list li { position: relative; padding-left: 18px; color: var(--muted); font-size: 15.5px }
+.cl-list li::before { content: ''; position: absolute; left: 2px; top: 10px; width: 6px; height: 6px; border-radius: 50%; background: var(--border-strong) }
+.cl-list li :global(strong) { color: var(--text) }
+.cl-list li :global(code) { font-size: 13px }
+.cl-footer { display: grid; gap: 12px; padding-top: 32px; max-width: 860px }
+.cl-back { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: var(--accent-ink) }
+.cl-note { color: var(--muted); font-size: 15px }
+.cl-note a { color: var(--accent-ink); font-weight: 600 }
 </style>

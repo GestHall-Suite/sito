@@ -1,0 +1,67 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Shot from '../../components/Shot.astro';
+import Cta from '../../components/Cta.astro';
+import { aree, ICONE } from '../../data/aree';
+---
+<Layout page="Il prodotto" description="GestHall Suite in dettaglio: cassa e turni, report, sala e personale, bar e clienti, multi-sala. Un gestionale per sale giochi VLT e AWP installato sul tuo spazio web.">
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="crumbs" aria-label="Percorso"><a href="/">Home</a><span aria-hidden="true">/</span><span>Prodotto</span></nav>
+    <span class="eyebrow">Il prodotto</span>
+    <h1>Tutto il lavoro della sala, in un'unica app.</h1>
+    <p class="lead">Dalla cassa del turno al report per il commercialista, dal calendario del personale al magazzino del bar. Si usa dal computer della cassa e dal telefono, con lo stesso account.</p>
+  </div>
+</section>
+
+<section class="section-tight" style="padding-top:0">
+  <div class="container">
+    <div class="ov">
+      {aree.map((a, i) => (
+        <a href={`/prodotto/${a.slug}`} class={`ov-row reveal${i % 2 ? ' rev' : ''}`}>
+          <div class="ov-text">
+            <div class="icon" set:html={a.icon}></div>
+            <h2>{a.nome}</h2>
+            <p class="lead">{a.sintesi}</p>
+            <span class="link">Vai a {a.nome.toLowerCase()} <span aria-hidden="true">→</span></span>
+          </div>
+          <Shot src={a.shot} alt={a.titolo} />
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Su ogni piano</span>
+      <h2>Le basi che non cambiano.</h2>
+    </div>
+    <div class="grid g4">
+      <div class="card"><div class="icon" set:html={ICONE.telefono}></div><h3>App sul telefono</h3><p>Si installa dal browser sulla schermata home, senza store.</p></div>
+      <div class="card"><div class="icon" set:html={ICONE.offline}></div><h3>Offline</h3><p>Giornaliero e turni funzionano anche quando cade la rete.</p></div>
+      <div class="card"><div class="icon" set:html={ICONE.backup}></div><h3>Backup</h3><p>Copia del database ogni settimana, ripristino con un clic.</p></div>
+      <div class="card"><div class="icon" set:html={ICONE.aggiorna}></div><h3>Aggiornamenti</h3><p>Nuove versioni dall'app, con ritorno a quella precedente.</p></div>
+    </div>
+    <p style="margin-top:24px"><a href="/sicurezza" class="link">Sicurezza e dati <span aria-hidden="true">→</span></a></p>
+  </div>
+</section>
+
+<Cta />
+</Layout>
+
+<style>
+.ov { display: grid; gap: 24px }
+.ov-row { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(24px, 5vw, 64px); align-items: center; padding: clamp(24px, 4vw, 40px); background: var(--surface); border: 1px solid var(--border); border-radius: 24px; transition: border-color .18s, box-shadow .18s }
+.ov-row:hover { border-color: var(--accent-line); box-shadow: var(--sh-2) }
+.ov-row.rev .ov-text { order: 2 }
+.ov-row h2 { font-size: clamp(24px, 3vw, 32px); margin-bottom: 10px }
+.ov-row .lead { font-size: 16.5px; margin-bottom: 18px }
+.ov-row  :global(.shot) { box-shadow: var(--sh-2) }
+@media (max-width: 980px) {
+  .ov-row { grid-template-columns: 1fr }
+  .ov-row.rev .ov-text { order: 0 }
+}
+</style>
