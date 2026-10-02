@@ -41,7 +41,7 @@ a { text-decoration: none }
 .tb-sep { color: var(--faint); margin: 0 2px }
 .tb-section { font-size: 13px; font-weight: 500; color: var(--muted) }
 .tb-spacer { flex: 1 }
-.tb-badge { font-size: 11px; background: rgba(239,68,68,.12); color: #f87171; border: 1px solid rgba(239,68,68,.25); border-radius: 20px; padding: 2px 10px; font-weight: 600 }
+.tb-badge { white-space: nowrap; font-size: 11px; background: rgba(239,68,68,.12); color: #f87171; border: 1px solid rgba(239,68,68,.25); border-radius: 20px; padding: 2px 10px; font-weight: 600 }
 .theme-btn { width: 30px; height: 30px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface2); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--muted); transition: background .15s }
 .theme-btn:hover { background: var(--teal-dim) }
 
@@ -132,6 +132,7 @@ ul.plain li::marker { color: var(--teal) }
 .divider { height: 1px; background: var(--border); margin: 52px 0 }
 
 .page-footer { text-align: center; color: var(--faint); font-size: 12px; padding-top: 24px; border-top: 1px solid var(--border) }
+@media (max-width: 560px) { .tb-sep, .tb-section, .tb-badge { display: none } .mrr-table { overflow-x: auto } }
   </style>
   <script>if(sessionStorage.getItem('gh_interno_auth')!=='1')location.replace('/interno/');</script>
   <script>(function(){var t=localStorage.getItem('gd-theme');if(t)document.documentElement.dataset.theme=t;})()</script>
@@ -165,7 +166,7 @@ ul.plain li::marker { color: var(--teal) }
 <div class="main">
 
   <div class="hero-block">
-    <div class="hb-eye">Documento riservato · Luglio 2026</div>
+    <div class="hb-eye">Documento riservato · Ottobre 2026</div>
     <h1 class="hb-h1">Business Plan 2026</h1>
     <p class="hb-sub">Strategia, proiezioni finanziarie e roadmap di GestHall Suite. Per uso interno e presentazione a partner o investitori selezionati.</p>
     <div class="hb-chips">
@@ -181,13 +182,13 @@ ul.plain li::marker { color: var(--teal) }
 
     <div class="exec-card">
       <div class="ec-title">Per investitori e partner</div>
-      <p class="ec-p">GestHall Suite è un software gestionale SaaS verticale per sale giochi con VLT e AWP in Italia. Copre l'intera operatività quotidiana: cassa per turno, scassettamenti, ticket, prestiti, anagrafica giocatori, assistenze tecniche, chat operatori e reporting.</p>
-      <p class="ec-p">Il mercato di riferimento conta circa 4.200 sale giochi fisiche in Italia (dati ADM 2024). Non esistono competitor SaaS verticali consolidati in questo segmento: il software attuale è o generico (ERP non specializzati) o sviluppato internamente da singole sale. GestHall Suite risolve esattamente questo gap.</p>
-      <p class="ec-p">Il modello è abbonamento mensile su tre piani (€39/€69/€99). La distribuzione avviene tramite rete di rivenditori regionali con revenue share al 30%. Il progetto è bootstrapped, i costi marginali per nuova installazione sono vicini a zero (un solo pull git aggiorna tutti i clienti), e la struttura white-label permette ai rivenditori di brandizzare il prodotto per la propria area.</p>
+      <p class="ec-p">GestHall Suite è un software gestionale SaaS verticale per sale giochi con VLT e AWP in Italia. Copre l'intera operatività quotidiana: cassa per turno, scassettamenti, ticket, turni, bar e magazzino, clienti e prestiti, assistenze tecniche, chat, buste paga, reporting e gestione di più sale.</p>
+      <p class="ec-p">Il mercato di riferimento sono le sale giochi fisiche italiane con VLT e AWP (alcune migliaia di punti; il numero esatto va ricavato dai dati ADM aggiornati prima di presentare il documento). Non esistono competitor SaaS verticali consolidati in questo segmento: il software attuale è o generico (ERP non specializzati) o sviluppato internamente da singole sale. GestHall Suite risolve esattamente questo gap.</p>
+      <p class="ec-p">Il modello è abbonamento mensile o annuale (sconto 17%) su quattro piani (€39/€69/€99 e Multi-sala da €149), con demo online e prova gratuita di 14 giorni. La distribuzione avviene tramite rete di rivenditori regionali con revenue share al 30%. Il progetto è bootstrapped, i costi marginali per nuova installazione sono vicini a zero (ogni sala si aggiorna da sola dall'app con le versioni pubblicate su GitHub), e la struttura white-label permette ai rivenditori di brandizzare il prodotto per la propria area.</p>
     </div>
 
     <div class="kpi-row">
-      <div class="kpi"><div class="kpi-val">4.200</div><div class="kpi-label">Sale giochi in Italia</div><div class="kpi-note">Dati ADM 2024</div></div>
+      <div class="kpi"><div class="kpi-val">14 gg</div><div class="kpi-label">Prova gratuita</div><div class="kpi-note">Senza carta, poi sola lettura</div></div>
       <div class="kpi"><div class="kpi-val">€39</div><div class="kpi-label">Piano di ingresso</div><div class="kpi-note">Mensile</div></div>
       <div class="kpi"><div class="kpi-val">30%</div><div class="kpi-label">Revenue share</div><div class="kpi-note">Ai rivenditori</div></div>
       <div class="kpi"><div class="kpi-val">~0€</div><div class="kpi-label">Costo onboarding</div><div class="kpi-note">Dopo la prima installazione</div></div>
@@ -200,14 +201,14 @@ ul.plain li::marker { color: var(--teal) }
   <div class="section" id="mercato">
     <div class="sec-label">Mercato</div>
     <h2 class="sec-h2">Analisi di mercato</h2>
-    <p class="sec-lead">Italia: 4.200 sale giochi fisiche, 400.000+ VLT attive, settore stabile a prescindere dai cicli economici (mercato anelastico al reddito).</p>
+    <p class="sec-lead">Italia: alcune migliaia di sale giochi fisiche con VLT e AWP; settore stabile a prescindere dai cicli economici. <strong>Da verificare</strong> sui dati ADM più recenti (numero di sale, VLT e AWP) prima di usare il documento all'esterno: le stime per segmento qui sotto sono ipotesi di lavoro.</p>
 
     <div class="sec-h3">Struttura del mercato</div>
     <div class="tbl-wrap"><table>
       <tr><th>Segmento</th><th>Stima sale</th><th>Caratteristica</th></tr>
       <tr><td>Piccole (1 turno)</td><td>~2.500</td><td>Piano Essenziale, operatore unico o famiglia</td></tr>
       <tr><td>Medie (2 turni, 5-10 macchine)</td><td>~1.300</td><td>Piano Pro, responsabile dedicato</td></tr>
-      <tr><td>Grandi (3 turni, multi-sala)</td><td>~400</td><td>Piano Suite, integrazioni avanzate</td></tr>
+      <tr><td>Grandi (3 turni, multi-sala)</td><td>~400</td><td>Piano Suite o Multi-sala</td></tr>
     </table></div>
 
     <div class="sec-h3">Competitor analysis</div>
@@ -231,31 +232,37 @@ ul.plain li::marker { color: var(--teal) }
   <div class="section" id="prezzi">
     <div class="sec-label">Pricing</div>
     <h2 class="sec-h2">Struttura prezzi</h2>
-    <p class="sec-lead">Tre piani mensili. Nessuna tariffa di setup. Revenue share ai rivenditori: 30% del ricorrente.</p>
+    <p class="sec-lead">Quattro piani, mensili o annuali (annuale = 10 mensilità). Nessuna tariffa di setup. Prova gratuita di 14 giorni. Revenue share ai rivenditori: 30% del ricorrente (ipotesi, da fissare nel contratto rivenditore).</p>
 
     <div class="pricing-grid">
       <div class="plan">
         <div class="plan-name">Essenziale</div>
         <div class="plan-price">€39<span>/mese</span></div>
-        <p class="plan-desc">Cassa, turni, dashboard, report, chat. Max 4 utenti. Ideale per sale monofamiliare.</p>
+        <p class="plan-desc">Cassa, AWP, turni, dashboard e report. Max 4 utenti attivi. Per la sala piccola a gestione familiare.</p>
         <div class="plan-note">Revenue share rivenditore: €11,70/mese</div>
       </div>
       <div class="plan featured">
         <div class="plan-name" style="color: var(--teal-dk)">Pro</div>
         <div class="plan-price">€69<span>/mese</span></div>
-        <p class="plan-desc">Tutto Essenziale + ticket assistenza, anagrafica, prestiti, documenti, push, firma. Utenti illimitati.</p>
+        <p class="plan-desc">Tutto Essenziale + assistenze, clienti e prestiti, documenti, bar e magazzino, notifiche push, firma dei versamenti, confronto periodi. Utenti illimitati.</p>
         <div class="plan-note">Revenue share rivenditore: €20,70/mese</div>
       </div>
       <div class="plan">
         <div class="plan-name">Suite</div>
         <div class="plan-price">€99<span>/mese</span></div>
-        <p class="plan-desc">Tutto Pro + white label, SONOS, passaggio consegne, supporto prioritario.</p>
+        <p class="plan-desc">Tutto Pro + chat, buste paga (LUL), passaggio consegne, musica, white label, layout avanzato della cassa.</p>
         <div class="plan-note">Revenue share rivenditore: €29,70/mese</div>
+      </div>
+      <div class="plan">
+        <div class="plan-name">Multi-sala</div>
+        <div class="plan-price">€149<span>/mese</span></div>
+        <p class="plan-desc">Tutto Suite per 2 sale nella stessa installazione; €49/mese per ogni sala in più.</p>
+        <div class="plan-note">Revenue share rivenditore: da €44,70/mese</div>
       </div>
     </div>
 
     <div class="sec-h3">Ipotesi di mix clienti</div>
-    <p>Proiezione conservativa: 60% piano Pro, 25% Essenziale, 15% Suite. Il piano Pro è il punto di conversione naturale: copre tutte le esigenze operative della sala media italiana senza extra.</p>
+    <p>Proiezione conservativa: 55% piano Pro, 25% Essenziale, 15% Suite, 5% Multi-sala. Il piano Pro è il punto di conversione naturale: copre tutte le esigenze operative della sala media italiana senza extra.</p>
   </div>
 
   <div class="divider"></div>
@@ -279,35 +286,35 @@ ul.plain li::marker { color: var(--teal) }
         </thead>
         <tbody>
           <tr>
-            <td>Q3 2026</td>
+            <td>Q4 2026</td>
             <td>1–5</td>
             <td class="td-right cell-base">€140–700</td>
             <td class="td-right cell-opt">€500–1.200</td>
-            <td>Lancio, beta clienti</td>
+            <td>Lancio: demo online, prime prove</td>
           </tr>
           <tr>
-            <td>Q4 2026</td>
+            <td>Q1 2027</td>
             <td>5–15</td>
             <td class="td-right cell-base">€700–2.100</td>
             <td class="td-right cell-opt">€1.500–3.500</td>
             <td>Primi rivenditori</td>
           </tr>
           <tr>
-            <td>Q1 2027</td>
+            <td>Q2 2027</td>
             <td>15–30</td>
             <td class="td-right cell-base">€2.100–4.200</td>
             <td class="td-right cell-opt">€4.000–7.000</td>
             <td>Trazione rivenditori regionali</td>
           </tr>
           <tr>
-            <td>Q2 2027</td>
+            <td>Q3 2027</td>
             <td>30–60</td>
             <td class="td-right cell-base">€4.200–8.400</td>
             <td class="td-right cell-opt">€8.000–14.000</td>
-            <td>Billing automatico Stripe</td>
+            <td>Pagamenti automatici (metodo da decidere)</td>
           </tr>
           <tr>
-            <td>Fine 2027</td>
+            <td>Fine 2027 / inizio 2028</td>
             <td>80–150</td>
             <td class="td-right cell-base">€11.200–21.000</td>
             <td class="td-right cell-opt">€18.000–32.000</td>
@@ -325,10 +332,11 @@ ul.plain li::marker { color: var(--teal) }
     <div class="sec-h3">Struttura dei costi (mensile, early stage)</div>
     <div class="tbl-wrap"><table>
       <tr><th>Voce</th><th>Stima mensile</th><th>Note</th></tr>
-      <tr><td>Hosting VPS (hub + demo)</td><td class="td-right">€20–40</td><td>1 VPS entry, scala con clienti</td></tr>
+      <tr><td>Hub (SiteGround o VPS)</td><td class="td-right">€10–20</td><td>Licenze, prove, rilasci</td></tr>
+      <tr><td>Server demo (VPS 2 vCPU / 4 GB)</td><td class="td-right">€5–8</td><td>40 demo attive, cancellate dopo 14 giorni</td></tr>
       <tr><td>SiteGround (sito marketing)</td><td class="td-right">€10–15</td><td>Piano base</td></tr>
       <tr><td>Email transazionale</td><td class="td-right">€0–15</td><td>Mailgun free tier fino a 500/mese</td></tr>
-      <tr><td>Stripe</td><td class="td-right">1,5% + €0,25</td><td>Per transazione, da Fase 2</td></tr>
+      <tr><td>Incasso e fatturazione elettronica</td><td class="td-right">variabile</td><td>Commissioni del fornitore di pagamento (da scegliere) + gestionale di fatturazione</td></tr>
       <tr><td>Dominio/SSL</td><td class="td-right">€2</td><td>€25/anno amortizzato</td></tr>
       <tr><td><strong>Totale fisso</strong></td><td class="td-right"><strong>€32–72</strong></td><td>Breakeven bassissimo</td></tr>
     </table></div>
@@ -374,7 +382,7 @@ ul.plain li::marker { color: var(--teal) }
       <div class="risk">
         <div class="risk-name">Concorrente verticale</div>
         <div class="risk-level lo">Basso</div>
-        <div class="risk-mit">Il mercato è piccolo (4.200 sale), poco attraente per player grandi. Moat: codebase specializzato, rete rivenditori, e 12+ mesi di vantaggio.</div>
+        <div class="risk-mit">Il mercato è piccolo (alcune migliaia di sale), poco attraente per player grandi. Moat: codebase specializzato, rete rivenditori, e 12+ mesi di vantaggio.</div>
       </div>
       <div class="risk">
         <div class="risk-name">Normativa ADM</div>
@@ -384,7 +392,7 @@ ul.plain li::marker { color: var(--teal) }
       <div class="risk">
         <div class="risk-name">Scalabilità tecnica</div>
         <div class="risk-level lo">Basso</div>
-        <div class="risk-mit">Architettura model-C (DB separato per cliente, symlink) scala facilmente a 500+ installazioni. Costo aggiuntivo quasi zero per nuova sala.</div>
+        <div class="risk-mit">Un'installazione e un database per cliente, sull'hosting del cliente o nostro; aggiornamenti dall'app via GitHub Releases e hub, backup automatici, riparazione dei file. Costo aggiuntivo quasi zero per nuova sala; l'hub regge centinaia di installazioni.</div>
       </div>
       <div class="risk">
         <div class="risk-name">Dipendenza fondatore</div>
@@ -405,20 +413,20 @@ ul.plain li::marker { color: var(--teal) }
   <div class="section" id="roadmap">
     <div class="sec-label">Roadmap</div>
     <h2 class="sec-h2">Piano esecutivo</h2>
-    <p class="sec-lead">Le tappe chiave dalla fase di lancio alla scalatura. Fase 0 completata. Fase 1 in corso.</p>
+    <p class="sec-lead">Le tappe chiave dalla fase di lancio alla scalatura. Prodotto completo (suite 3.11); in corso la messa in produzione e la parte commerciale.</p>
 
     <div class="roadmap-grid">
-      <div class="roadmap-row"><span class="rm-date">Completato</span><span class="rm-status done">Fatto</span><span><strong>Suite completa + Hub v1</strong> — tutti i moduli, piano tier, rivenditori, ghost login, chat vocali</span></div>
-      <div class="roadmap-row"><span class="rm-date">Completato</span><span class="rm-status done">Fatto</span><span><strong>Privacy Policy + Termini</strong> — GDPR compliant, luglio 2026</span></div>
-      <div class="roadmap-row"><span class="rm-date">Completato</span><span class="rm-status done">Fatto</span><span><strong>Sito marketing + Docs</strong> — Astro, guida pubblica, sezione interna protetta</span></div>
-      <div class="roadmap-row"><span class="rm-date">Q3 2026</span><span class="rm-status wip">In corso</span><span><strong>License check in auth.php</strong> — validazione piano da hub, cache 24h</span></div>
-      <div class="roadmap-row"><span class="rm-date">Q3 2026</span><span class="rm-status wip">In corso</span><span><strong>Deploy su SiteGround + VPS</strong> — hub live, sito live, prima installazione demo</span></div>
-      <div class="roadmap-row"><span class="rm-date">Q3 2026</span><span class="rm-status todo">Todo</span><span><strong>Primo cliente pagante</strong> — onboarding diretto, feedback prodotto</span></div>
-      <div class="roadmap-row"><span class="rm-date">Q4 2026</span><span class="rm-status todo">Todo</span><span><strong>Stripe Billing webhook</strong> — rinnovo automatico, suspend su mancato pagamento</span></div>
-      <div class="roadmap-row"><span class="rm-date">Q4 2026</span><span class="rm-status todo">Todo</span><span><strong>Rete rivenditori (3-5 partner)</strong> — contratti, accesso hub, onboarding</span></div>
-      <div class="roadmap-row"><span class="rm-date">Q1 2027</span><span class="rm-status todo">Todo</span><span><strong>Provisioning automatico</strong> — CLI script, 10 min per nuova installazione</span></div>
-      <div class="roadmap-row"><span class="rm-date">Q2 2027</span><span class="rm-status todo">Todo</span><span><strong>Self-service rivenditore</strong> — crea installazione dal pannello, nessun intervento manuale</span></div>
-      <div class="roadmap-row"><span class="rm-date">2027+</span><span class="rm-status todo">Todo</span><span><strong>API pubblica + dashboard multi-sala</strong> — aggregazione dati, integrazioni SNAI/Sisal</span></div>
+      <div class="roadmap-row"><span class="rm-date">Fatto</span><span class="rm-status done">Fatto</span><span><strong>Suite 3.11</strong> — turni flessibili, cassa, report, bar, clienti, multi-sala, offline, chat, LUL, personalizzazione</span></div>
+      <div class="roadmap-row"><span class="rm-date">Fatto</span><span class="rm-status done">Fatto</span><span><strong>Licenza dall'hub</strong> — piano e sale dall'hub, prova 14 giorni con promemoria, sola lettura a scadenza</span></div>
+      <div class="roadmap-row"><span class="rm-date">Fatto</span><span class="rm-status done">Fatto</span><span><strong>Aggiornamenti e backup</strong> — rilasci da GitHub, aggiornamento con un clic, backup settimanale, riparazione dei file</span></div>
+      <div class="roadmap-row"><span class="rm-date">Fatto</span><span class="rm-status done">Fatto</span><span><strong>Sito</strong> — pagine prodotto con schermate reali, prezzi, sicurezza, guida, changelog</span></div>
+      <div class="roadmap-row"><span class="rm-date">Q4 2026</span><span class="rm-status wip">In corso</span><span><strong>Messa in produzione</strong> — hub con email e GitHub, server demo online, «Prova subito» sul sito</span></div>
+      <div class="roadmap-row"><span class="rm-date">Q4 2026</span><span class="rm-status todo">Todo</span><span><strong>Documenti</strong> — dati societari, modulo d'ordine, DPA, kit privacy per la sala, contratto rivenditore</span></div>
+      <div class="roadmap-row"><span class="rm-date">Q4 2026</span><span class="rm-status todo">Todo</span><span><strong>Prime sale in prova e primo cliente pagante</strong> — onboarding diretto, feedback</span></div>
+      <div class="roadmap-row"><span class="rm-date">Q1 2027</span><span class="rm-status todo">Todo</span><span><strong>Pagamenti automatici</strong> — metodo da scegliere; rinnovo collegato all'hub, sola lettura su mancato pagamento</span></div>
+      <div class="roadmap-row"><span class="rm-date">Q1 2027</span><span class="rm-status todo">Todo</span><span><strong>Rete rivenditori (3-5 partner)</strong> — contratti, accesso hub, onboarding</span></div>
+      <div class="roadmap-row"><span class="rm-date">2027</span><span class="rm-status todo">Todo</span><span><strong>Installazione automatica dall'hub</strong> e portale rivenditore self-service</span></div>
+      <div class="roadmap-row"><span class="rm-date">2027+</span><span class="rm-status todo">Todo</span><span><strong>Integrazioni</strong> — import automatico dai concessionari, API per terzi</span></div>
     </div>
   </div>
 
@@ -436,19 +444,19 @@ ul.plain li::marker { color: var(--teal) }
     <p>Contratto di rivenditore: accordo scritto con revenue share (30%), termini di accesso al pannello, NDA sui dati dei clienti, diritto di recesso con 60 giorni di preavviso.</p>
 
     <div class="sec-h3">Contratti clienti</div>
-    <p>Termini di servizio accettati al momento del setup. Includono: SLA best-effort, esclusione di responsabilità per perdita di dati oltre i backup settimanali, recesso mensile senza penali.</p>
+    <p>Termini e condizioni (bozza 1.1) online: prova di 14 giorni, rinnovo automatico, sola lettura in caso di mancato pagamento, recesso con 7 giorni di preavviso. Per l'abbonamento: modulo d'ordine firmato con approvazione specifica delle clausole (artt. 1341-1342 c.c.) — da preparare. Dettagli in <a href="vendita.html#contratti">Vendita e legale</a>.</p>
 
     <div class="sec-h3">GDPR e dati</div>
-    <p>Privacy Policy completa su sito e suite. Il titolare del trattamento è il gestore della sala (il cliente). GestHall Suite agisce come responsabile del trattamento. Placeholder <code>[TITOLARE]</code> e <code>[CITTÀ]</code> da completare con i dati legali definitivi alla costituzione della struttura.</p>
+    <p>Privacy Policy completa su sito e suite. Il titolare del trattamento è il gestore della sala (il cliente). GestHall Suite agisce come responsabile del trattamento quando ospita l'app o vi accede per assistenza: serve un DPA (art. 28 GDPR), da preparare. Da completare: dati del titolare in Privacy e Termini, foro competente («[CITTÀ — da definire]»).</p>
 
     <div class="callout warn">
       <span class="callout-ico">⚠️</span>
-      <p>I placeholder nella Privacy Policy e nei Termini di Servizio devono essere sostituiti prima del lancio commerciale ufficiale. Attualmente il testo è tecnicamente valido ma incompleto per quanto riguarda i dati del titolare del trattamento.</p>
+      <p>I dati del titolare e il foro competente vanno completati prima del lancio commerciale; contratti, DPA e informative vanno rivisti da un professionista. L'elenco completo è in <a href="vendita.html#mancante">Vendita e legale → Cosa manca</a>.</p>
     </div>
   </div>
 
   <div class="page-footer">
-    GestHall Suite &nbsp;·&nbsp; Business Plan v1.1 &nbsp;·&nbsp; Luglio 2026 &nbsp;·&nbsp; Documento riservato
+    GestHall Suite &nbsp;·&nbsp; Business Plan v1.2 &nbsp;·&nbsp; Ottobre 2026 &nbsp;·&nbsp; Documento riservato
     &nbsp;·&nbsp; <a href="index.html" style="color: var(--teal-dk)">Sezione interna</a>
     &nbsp;·&nbsp; <a href="docs.html" style="color: var(--teal-dk)">Documentazione tecnica</a>
   </div>

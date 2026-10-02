@@ -51,7 +51,8 @@ public/
 ├── .htaccess                Redirect 301 dei vecchi indirizzi /funzionalita/*
 ├── cliente/index.php        Area clienti (piano e cambio piano, link firmato dall'app; senza link mostra come entrare)
 ├── docs/guida/              Guida all'uso (HTML statico)
-└── interno/                 Area riservata (accesso con password)
+└── interno/                 Area riservata (accesso con password): index, docs (tecnica), manutenzione
+                             (aggiornamenti e backup), vendita (vendita, pagamenti, documenti legali), business-plan
 php/interno                  Accesso all'area interna: si carica a parte in /interno/
 ```
 

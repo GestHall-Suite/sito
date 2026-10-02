@@ -167,6 +167,7 @@ ul.plain, ol.plain { margin:8px 0 16px 20px;display:flex;flex-direction:column;g
 /* Telefono: niente scorrimento orizzontale della pagina (codice lungo e tabelle scorrono da soli) */
 .main { min-width:0 }
 p code, li code, td code, .step-desc code { overflow-wrap:anywhere }
+@media (max-width: 480px) { .tb-badge { display: none } .tb-logo { white-space: nowrap } }
   </style>
   <script>if(sessionStorage.getItem('gh_interno_auth')!=='1')location.replace('/interno/');</script>
   <script>(function(){var t=localStorage.getItem('gd-theme');if(t)document.documentElement.dataset.theme=t;})()</script>
@@ -231,9 +232,9 @@ p code, li code, td code, .step-desc code { overflow-wrap:anywhere }
 <div class="section-hero">
   <div class="sh-eyebrow">Documentazione interna</div>
   <h1 class="sh-h1">Aggiornamenti, backup e manutenzione</h1>
-  <p class="sh-sub">Come nasce una versione, come arriva alle sale, come si installa da sola, come vengono salvati i dati e dove finisce ogni file. Vale dalla versione 3.8.1 della suite (rilasci da GitHub).</p>
+  <p class="sh-sub">Come nasce una versione, come arriva alle sale, come si installa da sola, come vengono salvati i dati e dove finisce ogni file. Aggiornata alla suite 3.11 (rilasci da GitHub dalla 3.8.1, riparazione dei file dalla 3.9).</p>
   <div class="sh-chips">
-    <span class="sh-chip">Suite 3.8.1</span>
+    <span class="sh-chip">Suite 3.11</span>
     <span class="sh-chip">GitHub Releases → Hub</span>
     <span class="sh-chip">Nessun cron, nessun FTP</span>
     <span class="sh-chip">Ottobre 2026</span>
@@ -319,6 +320,10 @@ SUITE della sala (Impostazioni → Sistema → Aggiornamenti)
   <p><strong>Versioni precedenti → Ripristina</strong> rimette i file della copia di sicurezza e cancella quelli aggiunti dall'aggiornamento. Il database non viene toccato: se l'aggiornamento avesse cambiato dati, si usa il backup «Prima dell'aggiornamento» nella pagina Backup. Si conservano le ultime 3 copie.</p>
   <div class="sec-h3">Installa da un file</div>
   <p>Stessa procedura dal passo 4, con lo zip caricato dal browser invece che scaricato dall'hub (lo zip si scarica dalla pagina della release su GitHub). Rifiuta una versione più vecchia di quella installata. È l'alternativa all'FTP per le sale senza licenza collegata o quando l'hub non è raggiungibile.</p>
+  <div class="sec-h3">Riparare i file (Verifica file)</div>
+  <p>Impostazioni → Sistema → <strong>Verifica file</strong> confronta ogni file con <code>install/file_attesi.json</code>. Se trova file mancanti o diversi, <strong>Ripara automaticamente</strong> riscarica dall'hub il pacchetto della <em>stessa</em> versione installata (<code>&amp;ripara=1</code>: funziona anche con la versione ritirata o la licenza scaduta), controlla le impronte e riscrive solo quei file, con la copia di sicurezza come in un aggiornamento. Serve la chiave d'installazione collegata.</p>
+  <div class="sec-h3">Demo</div>
+  <p>Le installazioni del server demo (<code>config.php</code> con <code>'demo' =&gt; true</code>) rifiutano aggiornamenti e installazioni da file: si aggiornano solo dal server con <code>php cli.php aggiorna-modello</code> (vedi <a href="vendita.html#demo">Vendita e legale → Demo</a> e <code>tools/demo/README.md</code>).</p>
   <div class="callout warn"><span class="callout-ico">⚠️</span><p>Nessuna migrazione automatica del database: le colonne e le tabelle nuove si creano da sole al primo uso; se una versione richiede query, vanno nelle note del rilascio e nel CHANGELOG.</p></div>
 </div>
 
@@ -392,11 +397,13 @@ SUITE della sala (Impostazioni → Sistema → Aggiornamenti)
   <div class="sec-h3">Verifica in due passaggi</div>
   <p>Impostazioni → Sistema (<code>login_2fa</code>). Per responsabili e revisori con email: dopo la password l'utente resta fuori finché non inserisce il codice di 6 cifre ricevuto via email (10 minuti, 5 tentativi, «Invia un nuovo codice» dopo 60 secondi). «Non chiederlo più su questo dispositivo» crea un cookie <code>gh_dev</code> valido 30 giorni (tabella <code>login_dispositivi</code>). All'attivazione vengono revocati i «Resta connesso» di responsabili e revisori; «Dimentica i dispositivi» annulla tutti i dispositivi attendibili. Il ghost login dall'hub non chiede il codice: è la via d'uscita se le email non funzionano.</p>
   <div class="sec-h3">Avvisi automatici</div>
-  <p>Ai responsabili della sala, nella campanella e via push: scostamento di cassa oltre soglia al salvataggio di un turno (<code>avviso_scostamento</code>, 20 €), prodotto del bar alla scorta minima (<code>avviso_scorta_bar</code>), ticket aperto oltre <code>avviso_ticket_giorni</code> giorni (3, controllato al massimo ogni 6 ore durante la navigazione). Ogni evento parte una volta sola (tabella <code>avvisi_inviati</code>); ogni responsabile può disattivarli dal profilo.</p>
+  <p>Ai responsabili della sala, nella campanella e via push: scostamento di cassa oltre soglia al salvataggio di un turno (<code>avviso_scostamento</code>, 20 €), prodotto del bar alla scorta minima (<code>avviso_scorta_bar</code>), ticket aperto oltre <code>avviso_ticket_giorni</code> giorni (3, controllato al massimo ogni 6 ore durante la navigazione). Ogni evento parte una volta sola (tabella <code>avvisi_inviati</code>); ogni responsabile può disattivarli da Il mio spazio → Notifiche.</p>
+  <div class="sec-h3">Pulizia automatica</div>
+  <p>Una volta al giorno, dopo l'invio di una pagina (<code>includes/manutenzione.php</code>), l'app cancella a blocchi: tentativi di accesso oltre 2 giorni, token di recupero password scaduti da 7 giorni, dispositivi attendibili scaduti, notifiche lette e avvisi oltre 180 giorni. Cassa, chat e dati della sala non vengono toccati; il registro attività ha la sua conservazione (pagina Audit, predefinito 90 giorni).</p>
   <div class="sec-h3">Export per il commercialista</div>
   <p>Cassa → Mensile → «Per il commercialista»: Excel con fogli Riepilogo, Incassi (turno di chiusura, per piattaforma), Versamenti confermati e Bar. Responsabile e revisore.</p>
   <div class="sec-h3">Promemoria di scadenza</div>
-  <p>Dai 15 giorni prima della scadenza (e a licenza scaduta) il responsabile vede un avviso con il link a Piano e licenza; si può nascondere per la giornata.</p>
+  <p>Dai 15 giorni prima della scadenza (in prova: sempre, con i giorni rimasti) il responsabile vede un avviso con il link a Piano e licenza; si può nascondere per la giornata. Dopo la scadenza: 15 giorni di tolleranza (la prova: nessuna), poi <strong>sola lettura</strong> con banner fisso per tutti. In sola lettura restano permessi aggiornamenti, backup, verifica e riparazione dei file, rinnovo della licenza. L'hub manda le email di promemoria (vedi <a href="vendita.html#scadenza">Vendita e legale</a>).</p>
 </div>
 
 <!-- 10. MANUALE -->
@@ -421,7 +428,8 @@ SUITE della sala (Impostazioni → Sistema → Aggiornamenti)
 5. merge su main + push  →  GitHub Actions: Controlli + Rilascio (tag e release)
 6. GitHub → Actions → Rilascio verde; GitHub → Releases mostra lo zip
 7. Hub → Rilasci → Sincronizza ora (oppure attendi 10 minuti)
-8. Una sala di prova: Aggiornamenti → Controlla ora → Aggiorna ora → Verifica file</code></pre>
+8. Una sala di prova: Aggiornamenti → Controlla ora → Aggiorna ora → Verifica file
+9. Server demo: php cli.php aggiorna-modello (e, se serve, aggiorna-istanze)</code></pre>
 </div>
 
 <!-- 12. PROBLEMI -->
@@ -438,6 +446,8 @@ SUITE della sala (Impostazioni → Sistema → Aggiornamenti)
     <tr><td>Dopo l'aggiornamento qualcosa non va</td><td>—</td><td>Aggiornamenti → Versioni precedenti → Ripristina; per i dati, Backup «Prima dell'aggiornamento»</td></tr>
     <tr><td>Nessun backup automatico</td><td>Nessun responsabile ha aperto l'app, o backup disattivato</td><td>Admin → Backup: controlla l'interruttore, crea un backup manuale</td></tr>
     <tr><td>Codice di accesso non arriva</td><td>Email del server non configurate o in spam</td><td>Imposta il mittente in Impostazioni → Sistema → Email; entra con ghost login e disattiva la verifica finché non funzionano</td></tr>
+    <tr><td>Verifica file segnala file mancanti o diversi</td><td>Caricamento incompleto o file modificati a mano</td><td>«Ripara automaticamente»; senza chiave collegata, Installa da un file con lo zip della stessa versione</td></tr>
+    <tr><td>La sala non salva più nulla (403, banner «sola lettura»)</td><td>Licenza o prova scaduta</td><td>Hub: nuova scadenza (o «Attiva abbonamento»); poi in Piano e licenza «Verifica ora»</td></tr>
     <tr><td>Errore 500 dopo un caricamento</td><td>File arrivato incompleto</td><td><code>tools/diagnosi.php</code> indica file e riga; ricarica quel file o usa Installa da un file</td></tr>
   </table></div>
 </div>

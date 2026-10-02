@@ -4,6 +4,10 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-02
 
+- Area riservata aggiornata da capo allo stato attuale (suite 3.11): nuova guida `/interno/vendita.html` «Vendita, pagamenti e documenti» (percorso demo → prova → abbonamento, server demo, attivazione e rinnovi, morosità e disdetta, opzioni di pagamento da decidere, fatturazione elettronica, contratti e approvazione delle clausole, privacy e GDPR con ruoli e DPA, cookie, conservazione dei dati, violazioni, cosa manca, routine); `docs.html` riscritta (stato, versioni, repository e regole, accesso, ruoli, cassa e turni, report, moduli e piani dal codice, Il mio spazio, multi-sala, licenza e sola lettura, offline, hub e License API, assistenza remota, installare una sala, architettura, test, roadmap); `manutenzione.html` con riparazione dei file, demo, pulizia automatica, sola lettura; business plan 1.2 (quattro piani, prova e demo, costi, roadmap, parte legale; dati di mercato da verificare); indice con stato e accessi rapidi nuovi; `php/interno` con stato, procedura di attivazione corretta (setup, `install/config.php`), migrazione dominio, roadmap e piani. Pagine interne senza scorrimento orizzontale su telefono.
+- Privacy: sezione «Demo online» (dati raccolti dal modulo della demo e cancellazione alla scadenza).
+- Changelog: versione 3.11.0 della suite (Il mio spazio come contenitore unico). Guida: sezione «Il mio spazio e preferenze» con le schede; Prodotto → Sala e personale aggiornato; schermata `m-mio.webp` rifatta.
+
 - Changelog: versione 3.10.0 della suite (Il mio spazio, preferenze personali). Prodotto → Sala e personale: sezione «Il mio spazio» con schermata `m-mio.webp`. Guida: sezione Preferenze e Il mio spazio, barra in basso personalizzabile.
 
 - Changelog: versione 3.9.0 della suite (prova gratuita, sola lettura, riparazione dei file). Prezzi: domande frequenti su prova e disdetta aggiornate alla sola lettura. Sicurezza: passo «Riparazione» negli aggiornamenti. Termini (versione 1.1): prova gratuita e sola lettura al posto della sospensione.
