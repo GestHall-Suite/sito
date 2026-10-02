@@ -2,6 +2,40 @@
  "updated": "2026-10-02",
  "releases": [
   {
+   "version": "3.12.0",
+   "date": "2026-10-02",
+   "hotfix": false,
+   "title": "Turni con un solo salvataggio e il tuo aspetto",
+   "highlights": [
+    "Turni del giorno: modifichi tutto e salvi una volta",
+    "Il giornaliero si apre sul primo turno",
+    "Profilo rinnovato con la tua copertina",
+    "Tema, densità e benvenuto in dashboard a tua scelta"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Turni</strong> — Nel foglio del giorno il responsabile cambia operatori, note, orari e turni e salva una volta sola con «Salva modifiche». Se chiude senza salvare, l'app chiede conferma.",
+      "<strong>Giornaliero</strong> — All'apertura e al cambio di giorno si parte dal primo turno; dopo un salvataggio si resta sul turno su cui si lavorava.",
+      "<strong>Profilo</strong> — Nuova grafica con copertina e foto, dati personali in un solo modulo, password con «mostra» e indicatore di robustezza."
+     ]
+    },
+    {
+     "type": "add",
+     "items": [
+      "<strong>Aspetto personale</strong> — In Il mio spazio → Preferenze: copertina tra 8 sfumature, tema chiaro/scuro/automatico salvato sull'account, densità comoda o compatta, riquadro di benvenuto in dashboard con saluto, prossimo turno e scorciatoie."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Pagina iniziale</strong> — «Il mio spazio» scelto come pagina iniziale ora viene rispettato."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.11.0",
    "date": "2026-10-02",
    "hotfix": false,
