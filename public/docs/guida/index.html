@@ -276,7 +276,7 @@ pre code { background:none;border:none;padding:0;font-size:13px;line-height:1.6 
 
   <div class="sec-h3">Workflow apertura turno (mattino)</div>
   <div class="steps">
-    <div class="step"><div class="step-n">1</div><div><div class="step-t">Apri Cassa → Giornaliero</div><div class="step-d">La giornata odierna si crea automaticamente e si apre sul turno in corso secondo il calendario. In alto c'è una scheda per ogni turno del giorno; con <strong>+</strong> si aggiunge un turno non previsto.</div></div></div>
+    <div class="step"><div class="step-n">1</div><div><div class="step-t">Apri Cassa → Giornaliero</div><div class="step-d">La giornata odierna si crea automaticamente e si apre sul primo turno (anche quando si cambia giorno); dopo un salvataggio resti sul turno su cui stavi lavorando. In alto c'è una scheda per ogni turno del giorno; con <strong>+</strong> si aggiunge un turno non previsto.</div></div></div>
     <div class="step"><div class="step-n">2</div><div><div class="step-t">Inserisci il fondo cassa</div><div class="step-d">Il fondo ricevuto dal turno precedente.</div></div></div>
     <div class="step"><div class="step-n">3</div><div><div class="step-t">Compila i contanti per taglio</div><div class="step-d">Banconote da 5€, 10€, 20€ ecc. Il totale si calcola automaticamente.</div></div></div>
     <div class="step"><div class="step-n">4</div><div><div class="step-t">Salva turno</div><div class="step-d">Usa il bottone "Salva turno" in basso. Il form si salva anche automaticamente ogni 500 ms.</div></div></div>
@@ -406,7 +406,7 @@ Scostamento   = Totale cassa − Fondo cassa</code></pre>
   <div class="sec-h3">Organizzare i turni (Responsabile)</div>
   <div class="steps">
     <div class="step"><div class="step-n">1</div><div><div class="step-t">Definisci i modelli</div><div class="step-d">In Impostazioni → Turni e cassa: nome, orario e giorni della settimana (es. Mattino e Sera tutti i giorni, Pomeriggio solo il sabato).</div></div></div>
-    <div class="step"><div class="step-n">2</div><div><div class="step-t">Apri un giorno</div><div class="step-d">Tocca il giorno nel calendario o nella lista: assegna uno o più operatori, lascia una nota, aggiungi o togli turni solo per quella data.</div></div></div>
+    <div class="step"><div class="step-n">2</div><div><div class="step-t">Apri un giorno</div><div class="step-d">Tocca il giorno nel calendario o nella lista. Il responsabile cambia gli operatori (o lascia libero un turno), scrive le note, modifica nome e orari, aggiunge o toglie turni solo per quella data, poi preme <strong>Salva modifiche</strong> una volta sola; se chiude il foglio senza salvare l'app chiede conferma. Gli operatori, se abilitati, prendono un turno libero o si tolgono dal proprio con un tocco.</div></div></div>
     <div class="step"><div class="step-n">3</div><div><div class="step-t">Struttura di un periodo</div><div class="step-d">Dal menu ⋯ si applica la struttura dei turni a più giorni insieme; da lì anche export CSV e stampa.</div></div></div>
   </div>
 
@@ -549,8 +549,8 @@ Scostamento   = Totale cassa − Fondo cassa</code></pre>
   <div class="tbl-wrap"><table>
     <tr><th>Scheda</th><th>Cosa contiene</th></tr>
     <tr><td><strong>Panoramica</strong></td><td>Saluto con il turno in corso e il prossimo, pulsante per aprire la cassa del turno, prossimi turni con le ore, il mio mese (turni, ore previste e già fatte), buste paga da leggere, ultime notifiche</td></tr>
-    <tr><td><strong>Profilo</strong></td><td>Nome visualizzato, telefono, email (serve per recuperare la password), cambio password, foto</td></tr>
-    <tr><td><strong>Preferenze</strong></td><td><strong>Pagina iniziale</strong> (dashboard, Il mio spazio, cassa, turni, chat, bar, assistenze…): si apre dopo l'accesso ed è la voce «Home» sul telefono · <strong>Dimensione del testo</strong>: normale, grande, molto grande · <strong>Barra in basso sul telefono</strong>: fino a 3 voci</td></tr>
+    <tr><td><strong>Profilo</strong></td><td>Copertina con la tua foto (tocca la fotocamera per cambiarla), dati personali — nome, telefono, email — con un solo salvataggio, cambio password con «mostra password»</td></tr>
+    <tr><td><strong>Preferenze</strong></td><td><strong>Aspetto</strong>: copertina colorata (8 sfumature, usata in dashboard, Il mio spazio e profilo), tema chiaro / scuro / come il dispositivo, densità comoda o compatta, riquadro di benvenuto in dashboard · <strong>Pagina iniziale</strong> (dashboard, Il mio spazio, cassa, turni, chat, bar, assistenze…): si apre dopo l'accesso ed è la voce «Home» sul telefono · <strong>Dimensione del testo</strong>: normale, grande, molto grande · <strong>Barra in basso sul telefono</strong>: fino a 3 voci</td></tr>
     <tr><td><strong>Notifiche</strong></td><td>Attivare le notifiche push su questo dispositivo, scegliere per quali eventi riceverle, vedere e rimuovere i dispositivi collegati (se il responsabile ha attivato le notifiche)</td></tr>
     <tr><td><strong>Buste paga</strong></td><td>Le buste paga ricevute: la prima apertura registra la presa visione. Il numero accanto a «Il mio spazio» indica quelle da leggere</td></tr>
   </table></div>
