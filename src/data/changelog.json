@@ -2,6 +2,27 @@
  "updated": "2026-10-02",
  "releases": [
   {
+   "version": "3.9.0",
+   "date": "2026-10-02",
+   "hotfix": false,
+   "title": "Prova gratuita, sola lettura e riparazione dei file",
+   "highlights": [
+    "Prova gratuita con i giorni rimasti in evidenza",
+    "Sola lettura a licenza scaduta: i dati restano tuoi",
+    "Riparazione automatica dei file dell'app"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Prova gratuita di 14 giorni</strong> — Il responsabile vede quanti giorni mancano e sceglie il piano con un clic; prima della fine arrivano i promemoria via email.",
+      "<strong>Sola lettura a licenza scaduta</strong> — Alla fine della prova, o 15 giorni dopo la scadenza di un abbonamento non rinnovato, l'app resta consultabile ed esportabile ma non accetta nuovi dati. Nessun dato viene cancellato e rinnovando si riprende subito.",
+      "<strong>Riparazione automatica dei file</strong> — In «Verifica file» il pulsante «Ripara automaticamente» rimette dal pacchetto ufficiale i file mancanti o danneggiati, con gli stessi controlli degli aggiornamenti."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.8.3",
    "date": "2026-10-02",
    "hotfix": true,

@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-02
 
+- Changelog: versione 3.9.0 della suite (prova gratuita, sola lettura, riparazione dei file). Prezzi: domande frequenti su prova e disdetta aggiornate alla sola lettura. Sicurezza: passo «Riparazione» negli aggiornamenti. Termini (versione 1.1): prova gratuita e sola lettura al posto della sospensione.
+
 - Changelog: versione 3.8.3 della suite (conflitti di salvataggio, prestazioni, pulizia automatica).
 
 - Changelog: versione 3.8.2 della suite (giornaliero più leggibile). Schermate del prodotto rifatte con la nuova grafica del giornaliero.

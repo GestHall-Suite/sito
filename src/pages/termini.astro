@@ -9,7 +9,7 @@ import Layout from '../layouts/Layout.astro';
 
     <header class="doc-header">
       <h1>Termini di Servizio</h1>
-      <p class="doc-meta">Condizioni generali di utilizzo · Versione 1.0 · Luglio 2026</p>
+      <p class="doc-meta">Condizioni generali di utilizzo · Versione 1.1 · Ottobre 2026</p>
     </header>
 
     <div class="doc-body">
@@ -75,7 +75,9 @@ import Layout from '../layouts/Layout.astro';
         <h3>Fatturazione</h3>
         <p>Il corrispettivo è fatturato mensilmente (o annualmente se l'Utente opta per il piano annuale) in anticipo. I prezzi sono espressi in euro, IVA esclusa. L'IVA applicabile è quella vigente in Italia al momento dell'emissione della fattura.</p>
         <h3>Modalità di pagamento</h3>
-        <p>Il pagamento avviene tramite le modalità indicate al momento dell'attivazione dell'abbonamento. In caso di mancato pagamento entro 15 giorni dalla scadenza, il Fornitore si riserva il diritto di sospendere l'accesso al Servizio.</p>
+        <p>Il pagamento avviene tramite le modalità indicate al momento dell'attivazione dell'abbonamento. In caso di mancato pagamento entro 15 giorni dalla scadenza, il Servizio passa in sola lettura: i Dati dell'Utente restano consultabili ed esportabili, ma non è possibile inserirne di nuovi fino al rinnovo.</p>
+        <h3>Prova gratuita</h3>
+        <p>La prova gratuita dura 14 giorni, non richiede metodi di pagamento e non comporta alcun obbligo. Al termine, se l'Utente non sceglie un Piano, il Servizio passa in sola lettura; i dati inseriti durante la prova non vengono cancellati.</p>
         <h3>Modifica dei prezzi</h3>
         <p>Il Fornitore si riserva il diritto di modificare i prezzi con un preavviso di almeno 30 giorni. Le modifiche non si applicano agli abbonamenti annuali già in corso sino alla relativa scadenza.</p>
         <h3>Rimborsi</h3>
@@ -108,7 +110,7 @@ import Layout from '../layouts/Layout.astro';
         <h3>Trattamento dei dati personali</h3>
         <p>Il trattamento dei dati personali degli utenti finali inseriti nel Servizio (es. dati degli operatori, giocatori) è disciplinato dall'<a href="/privacy">Informativa sulla Privacy</a>. Nella misura in cui l'Utente inserisce nel Servizio dati personali di terzi, l'Utente agisce in qualità di Titolare del trattamento e il Fornitore in qualità di Responsabile. Su richiesta è disponibile un Accordo sul Trattamento dei Dati (DPA) conforme all'art. 28 GDPR.</p>
         <h3>Portabilità ed esportazione</h3>
-        <p>L'Utente può esportare i propri dati in formato CSV o Excel in qualsiasi momento tramite le funzionalità native del Servizio. In caso di risoluzione del contratto, il Fornitore garantisce l'accesso in sola lettura per 30 giorni per permettere l'esportazione completa dei dati.</p>
+        <p>L'Utente può esportare i propri dati in formato CSV o Excel in qualsiasi momento tramite le funzionalità native del Servizio. In caso di risoluzione del contratto il Servizio resta disponibile in sola lettura, per permettere la consultazione e l'esportazione completa dei dati, che restano nel database dell'Utente.</p>
         <h3>Sicurezza</h3>
         <p>Il Fornitore adotta misure tecniche e organizzative adeguate per proteggere i Dati dell'Utente da accessi non autorizzati, perdita o divulgazione non consentita. Sono inclusi: autenticazione con hash sicuro (bcrypt), protezione CSRF su tutte le operazioni di scrittura, prepared statement per tutte le query SQL e log di audit completo delle operazioni significative.</p>
       </section>
