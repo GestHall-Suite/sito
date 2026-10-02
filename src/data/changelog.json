@@ -2,6 +2,28 @@
  "updated": "2026-10-02",
  "releases": [
   {
+   "version": "3.10.0",
+   "date": "2026-10-02",
+   "hotfix": false,
+   "title": "Il mio spazio e preferenze personali",
+   "highlights": [
+    "Il mio spazio: turni, ore del mese e buste paga",
+    "Scegli la pagina che si apre all'accesso",
+    "Testo più grande con un tocco",
+    "La tua barra in basso sul telefono"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Il mio spazio</strong> — Una pagina personale con il turno in corso, i prossimi turni con le ore, il mese (turni, ore previste e già fatte), le buste paga da leggere e le ultime notifiche.",
+      "<strong>Preferenze personali</strong> — In Profilo → Preferenze ognuno sceglie la pagina che si apre all'accesso, la dimensione del testo e fino a tre voci della barra in basso sul telefono. Valgono su ogni dispositivo.",
+      "<strong>Saluto contestuale</strong> — La dashboard ricorda se sei in turno e quando è il prossimo."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.9.0",
    "date": "2026-10-02",
    "hotfix": false,
