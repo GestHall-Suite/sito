@@ -2,6 +2,29 @@
  "updated": "2026-10-02",
  "releases": [
   {
+   "version": "3.8.3",
+   "date": "2026-10-02",
+   "hotfix": true,
+   "title": "",
+   "highlights": [],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Niente più dati sovrascritti per errore</strong> — Se un collega ha salvato lo stesso turno mentre lo stavi compilando, l'app ti dice chi e a che ora e ti chiede se sovrascrivere o ricaricare.",
+      "<strong>Più veloce con molti utenti collegati</strong> — Chat, notifiche e dashboard si aggiornano solo quando le stai guardando e rallentano da sole quando non usi l'app.",
+      "<strong>Pulizia automatica</strong> — Una volta al giorno l'app toglie i dati di servizio scaduti (tentativi di accesso, codici, notifiche lette vecchie)."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Dashboard</strong> — Il riepilogo in tempo reale veniva richiesto due volte."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.8.2",
    "date": "2026-10-02",
    "hotfix": true,
