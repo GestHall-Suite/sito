@@ -156,30 +156,31 @@ $saleAttuali = max(1, (int)($inst['sale_max'] ?? 1));
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portale cliente — GestHall Suite</title>
+  <title>Area clienti — GestHall Suite</title>
   <meta name="robots" content="noindex, nofollow">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
 
     :root {
-      --accent:    oklch(0.72 0.16 168);
-      --accent-dk: oklch(0.56 0.18 168);
-      --navy:      oklch(19% 0.075 245);
-      --ink:       oklch(20% 0.04 245);
-      --muted:     oklch(48% 0.03 245);
-      --border:    oklch(88% 0.01 245);
-      --bg:        oklch(97% 0.005 245);
+      --accent:    #00c391;
+      --accent-dk: #00785a;
+      --accent-weak: #e3f7f0;
+      --navy:      #101828;
+      --ink:       #101828;
+      --muted:     #5d6679;
+      --border:    #e4e7ec;
+      --bg:        #f4f5f7;
       --surface:   #fff;
-      --red:       oklch(0.55 0.22 25);
-      --amber:     oklch(0.60 0.18 70);
-      --green:     oklch(0.52 0.18 168);
-      --purple:    oklch(0.55 0.22 290);
-      --radius:    10px;
-      --sh:        0 1px 3px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.06);
+      --red:       #d92d20;
+      --amber:     #b54708;
+      --green:     #00785a;
+      --purple:    #6941c6;
+      --radius:    12px;
+      --sh:        0 1px 3px rgba(16,24,40,.06), 0 8px 24px -6px rgba(16,24,40,.08);
     }
 
     body {
-      font-family: 'Bricolage Grotesque', 'Barlow', system-ui, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       background: var(--bg);
       color: var(--ink);
       min-height: 100dvh;
@@ -411,6 +412,13 @@ $saleAttuali = max(1, (int)($inst['sale_max'] ?? 1));
       color: var(--muted);
       margin-top: 32px;
     }
+    .cl-intro h1 { font-size: 24px; letter-spacing: -.02em; margin-bottom: 10px }
+    .cl-intro p { color: var(--muted); line-height: 1.65; margin-bottom: 16px }
+    .cl-steps { margin: 0 0 16px 20px; display: grid; gap: 8px; line-height: 1.55 }
+    .cl-note { font-size: 14px }
+    .cl-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px }
+    .cl-btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 12px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none }
+    .cl-btn-ghost { background: var(--surface); color: var(--ink); border: 1px solid #d0d5dd }
   </style>
 </head>
 <body>
@@ -418,7 +426,7 @@ $saleAttuali = max(1, (int)($inst['sale_max'] ?? 1));
 
   <header class="cl-header">
     <svg class="cl-logo" viewBox="0 0 42 42" aria-hidden="true">
-      <rect width="42" height="42" rx="10" fill="oklch(0.72 0.16 168)"/>
+      <rect width="42" height="42" rx="10" fill="#00c391"/>
       <rect x="7" y="7" width="11" height="12" rx="2.5" fill="rgba(0,0,0,0.28)"/>
       <rect x="24" y="7" width="11" height="12" rx="2.5" fill="rgba(0,0,0,0.28)"/>
       <rect x="7" y="23" width="11" height="12" rx="2.5" fill="rgba(0,0,0,0.28)"/>
@@ -426,17 +434,27 @@ $saleAttuali = max(1, (int)($inst['sale_max'] ?? 1));
     </svg>
     <div class="cl-header-text">
       <strong>GestHall Suite</strong>
-      <span>Portale gestione piano</span>
+      <span>Area clienti</span>
     </div>
   </header>
 
   <?php if ($paramsMissing): ?>
 
   <div class="cl-card">
-    <div class="cl-empty">
-      <h2>Link non valido</h2>
-      <p>Questo portale richiede un link firmato generato dall'app.<br>
-         Vai in <strong>Impostazioni → Piano</strong> e clicca «Gestisci piano online».</p>
+    <div class="cl-intro">
+      <h1>Area clienti</h1>
+      <p>Qui vedi piano, scadenza e numero di sale della tua installazione e puoi chiedere di cambiare piano. Per proteggere il tuo account l'accesso avviene solo dal gestionale, con un collegamento personale valido un'ora: niente password da ricordare.</p>
+      <ol class="cl-steps">
+        <li>Accedi a GestHall Suite come <strong>responsabile</strong>.</li>
+        <li>Apri <strong>Impostazioni → Piano e licenza</strong>.</li>
+        <li>Premi <strong>«Gestisci piano online»</strong>: si apre questa pagina con i dati della tua sala.</li>
+      </ol>
+      <p class="cl-note">Il pulsante non c'è? Serve la chiave dell'installazione: la trovi nell'email di attivazione o puoi chiederla al supporto.</p>
+      <div class="cl-actions">
+        <a class="cl-btn" href="/contatti?motivo=assistenza">Scrivi al supporto</a>
+        <a class="cl-btn cl-btn-ghost" href="/docs/guida/#impostazioni">Guida all'uso</a>
+        <a class="cl-btn cl-btn-ghost" href="/prezzi">Piani e prezzi</a>
+      </div>
     </div>
   </div>
 

@@ -61,9 +61,6 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Area interna · GestHall Suite</title>
   <meta name="robots" content="noindex, nofollow">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
     html { -webkit-text-size-adjust: 100% }
@@ -93,8 +90,8 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
       --rx-m: 14px; --rx-l: 20px;
       --sh: 0 1px 3px oklch(17% 0.045 245 / .06), 0 4px 16px oklch(17% 0.045 245 / .06);
       --sh-lg: 0 8px 40px oklch(17% 0.045 245 / .12);
-      --font-head: 'Bricolage Grotesque', system-ui, sans-serif;
-      --font-body: 'Barlow', system-ui, sans-serif;
+      --font-head: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
       --ease: cubic-bezier(0.19, 1, 0.22, 1);
     }
 
