@@ -49,9 +49,10 @@ public/
 ├── img/prodotto/*.webp      Schermate reali dalla suite (sala dimostrativa)
 ├── og.png                   Anteprima social 1200×630
 ├── .htaccess                Redirect 301 dei vecchi indirizzi /funzionalita/*
+├── cliente/index.php        Area clienti (piano e cambio piano, link firmato dall'app; senza link mostra come entrare)
 ├── docs/guida/              Guida all'uso (HTML statico)
 └── interno/                 Area riservata (accesso con password)
-php/cliente, php/interno     Portale clienti e accesso area interna: si caricano a parte in /cliente/ e /interno/
+php/interno                  Accesso all'area interna: si carica a parte in /interno/
 ```
 
 ## Sistema grafico
@@ -83,7 +84,7 @@ npm run build
 # caricare il contenuto di dist/ (compresi .htaccess e api/) nella cartella pubblica del dominio
 ```
 
-Il portale clienti (`php/cliente/`) e l'accesso all'area interna (`php/interno/`) restano nelle loro cartelle sul server.
+L'area clienti è compresa nel build (`dist/cliente/index.php`); l'accesso all'area interna (`php/interno/`) resta nella sua cartella sul server.
 
 ## Regola operativa
 
