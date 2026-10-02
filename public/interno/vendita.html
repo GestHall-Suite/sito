@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GestHall Suite · Vendita, pagamenti e documenti</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+:root {
+  --teal: #00c391;
+  --teal-dk: #008f6a;
+  --teal-dim: rgba(0,195,145,0.10);
+  --teal-dim2: rgba(0,195,145,0.18);
+  --bg: #f5f7f6;
+  --surface: #ffffff;
+  --surface2: #f0f4f2;
+  --border: #dde8e3;
+  --text: #0c1c17;
+  --muted: #506b5f;
+  --faint: #8eaaa0;
+  --code-bg: #f0f4f2;
+  --code-text: #1a3d30;
+  --sidebar-w: 252px;
+  --r: 8px;
+}
+@media (prefers-color-scheme: dark) { :root {
+  --bg:#0b1410;--surface:#111a16;--surface2:#162119;
+  --border:#1e3028;--text:#ddf0e8;--muted:#6aaa8e;
+  --faint:#2f4d40;--code-bg:#0d1f18;--code-text:#7fd8b0;
+}}
+:root[data-theme="dark"]  { --bg:#0b1410;--surface:#111a16;--surface2:#162119;--border:#1e3028;--text:#ddf0e8;--muted:#6aaa8e;--faint:#2f4d40;--code-bg:#0d1f18;--code-text:#7fd8b0; }
+:root[data-theme="light"] { --bg:#f5f7f6;--surface:#ffffff;--surface2:#f0f4f2;--border:#dde8e3;--text:#0c1c17;--muted:#506b5f;--faint:#8eaaa0;--code-bg:#f0f4f2;--code-text:#1a3d30; }
+
+*,*::before,*::after { box-sizing:border-box;margin:0;padding:0 }
+html { scroll-behavior:smooth; scroll-padding-top:72px }
+body { font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.65;min-height:100vh }
+
+.topbar {
+  position:fixed;top:0;left:0;right:0;z-index:40;height:52px;
+  background:var(--surface);border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:12px;padding:0 20px;
+}
+.tb-back { display:flex;align-items:center;gap:6px;text-decoration:none;font-size:13px;color:var(--muted);padding:4px 8px;border-radius:5px;transition:background .12s }
+.tb-back:hover { background:var(--teal-dim);color:var(--text) }
+.tb-logo { display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--text);font-weight:700;font-size:15px;letter-spacing:-.01em }
+.tb-mark { width:26px;height:26px;border-radius:6px;flex-shrink:0 }
+.tb-spacer { flex:1 }
+.tb-badge { font-size:11px;background:var(--teal-dim);color:var(--teal-dk);border:1px solid var(--teal-dim2);border-radius:20px;padding:2px 10px;font-weight:600 }
+.theme-btn { width:32px;height:32px;border-radius:6px;border:1px solid var(--border);background:var(--surface2);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:background .15s }
+.theme-btn:hover { background:var(--teal-dim) }
+.ham-btn { display:none;width:32px;height:32px;border-radius:6px;border:1px solid var(--border);background:var(--surface2);cursor:pointer;align-items:center;justify-content:center;color:var(--muted) }
+@media(max-width:800px) { .ham-btn { display:flex } }
+
+.layout { display:flex;padding-top:52px;min-height:100vh }
+
+.sidebar {
+  width:var(--sidebar-w);flex-shrink:0;
+  position:fixed;top:52px;bottom:0;overflow-y:auto;
+  background:var(--surface);border-right:1px solid var(--border);
+  padding:20px 0 40px;z-index:30;transition:transform .22s ease;
+}
+.sidebar::-webkit-scrollbar { width:4px }
+.sidebar::-webkit-scrollbar-thumb { background:var(--border);border-radius:4px }
+.sb-group { padding:0 12px;margin-bottom:6px }
+.sb-group-label { font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);padding:10px 8px 4px;display:block }
+.sb-link { display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;font-size:13px;text-decoration:none;color:var(--muted);transition:background .12s,color .12s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis }
+.sb-link:hover { background:var(--teal-dim);color:var(--text) }
+.sb-link.active { background:var(--teal-dim2);color:var(--teal-dk);font-weight:600 }
+.sb-icon { flex-shrink:0;opacity:.6;font-size:14px }
+.sb-link.active .sb-icon { opacity:1 }
+@media(max-width:800px) { .sidebar { transform:translateX(-100%) } .sidebar.open { transform:none } }
+
+.overlay { display:none;position:fixed;inset:0;z-index:29;background:rgba(0,0,0,.4) }
+.overlay.show { display:block }
+
+.main { flex:1;margin-left:var(--sidebar-w);min-width:0 }
+@media(max-width:800px) { .main { margin-left:0 } }
+
+.section { max-width:860px;margin:0 auto;padding:52px clamp(16px,4vw,48px) 20px;border-bottom:1px solid var(--border) }
+.section:last-child { border-bottom:none }
+
+.section-hero { background:linear-gradient(135deg,var(--teal) 0%,var(--teal-dk) 100%);color:#fff;padding:clamp(36px,6vw,64px) clamp(16px,4vw,48px);text-align:center }
+.sh-eyebrow { font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:10px }
+.sh-h1 { font-size:clamp(26px,5vw,42px);font-weight:800;letter-spacing:-.02em;margin-bottom:12px;text-wrap:balance }
+.sh-sub { font-size:clamp(14px,2vw,16px);opacity:.82;max-width:560px;margin:0 auto;line-height:1.7 }
+.sh-chips { display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px }
+.sh-chip { background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500 }
+
+.sec-h2 { font-size:clamp(20px,3vw,26px);font-weight:800;letter-spacing:-.02em;margin-bottom:8px;display:flex;align-items:center;gap:10px }
+.sec-h2 .sec-num { font-size:12px;font-weight:600;background:var(--teal-dim);color:var(--teal-dk);border-radius:5px;padding:2px 8px;letter-spacing:.02em }
+.sec-lead { font-size:15px;color:var(--muted);margin-bottom:28px;line-height:1.7 }
+.sec-h3 { font-size:16px;font-weight:700;margin:28px 0 10px;letter-spacing:-.01em }
+
+p { margin-bottom:14px;font-size:14.5px;line-height:1.7 }
+p:last-child { margin-bottom:0 }
+
+code { font-family:"SF Mono","Fira Code",monospace;font-size:.85em;background:var(--code-bg);color:var(--code-text);padding:2px 6px;border-radius:4px;border:1px solid var(--border) }
+pre { background:var(--code-bg);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;overflow-x:auto;margin:14px 0 }
+pre code { background:none;border:none;padding:0;font-size:13px;line-height:1.6;color:var(--code-text) }
+
+.tbl-wrap { overflow-x:auto;margin:14px 0;border-radius:var(--r);border:1px solid var(--border) }
+table { width:100%;border-collapse:collapse;font-size:13.5px }
+th { background:var(--surface2);font-weight:600;padding:10px 14px;text-align:left;color:var(--muted);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid var(--border) }
+td { padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top }
+tr:last-child td { border-bottom:none }
+tr:hover td { background:var(--teal-dim) }
+
+.badge { display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;letter-spacing:.02em }
+.badge.done  { background:#dcfce7;color:#166534 }
+.badge.wip   { background:var(--teal-dim);color:var(--teal-dk) }
+.badge.todo  { background:var(--surface2);color:var(--muted) }
+.badge.suite { background:rgba(99,102,241,.1);color:#4f46e5 }
+.badge.pro   { background:rgba(59,130,246,.1);color:#2563eb }
+.badge.ess   { background:var(--surface2);color:var(--muted) }
+@media(prefers-color-scheme:dark) {
+  .badge.done { background:rgba(22,163,74,.15);color:#4ade80 }
+  .badge.suite { background:rgba(99,102,241,.15);color:#818cf8 }
+  .badge.pro   { background:rgba(59,130,246,.15);color:#60a5fa }
+}
+
+.callout { border-radius:var(--r);padding:14px 16px;margin:16px 0;font-size:13.5px;line-height:1.6;display:flex;gap:12px;align-items:flex-start }
+.callout.info  { background:var(--teal-dim);border:1px solid var(--teal-dim2) }
+.callout.warn  { background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.22) }
+.callout.danger{ background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.22) }
+.callout-ico { font-size:16px;flex-shrink:0;line-height:1.4 }
+.callout p { margin:0 }
+
+.steps { counter-reset:step;display:flex;flex-direction:column;gap:0 }
+.step { display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--border) }
+.step:last-child { border-bottom:none }
+.step-num { width:28px;height:28px;border-radius:50%;background:var(--teal);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px }
+.step-content { flex:1 }
+.step-title { font-weight:700;font-size:14px;margin-bottom:4px }
+.step-desc { font-size:13.5px;color:var(--muted);line-height:1.6 }
+
+.status-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:14px 0 }
+.status-item { background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:12px 14px;display:flex;align-items:center;gap:10px }
+.s-dot { width:8px;height:8px;border-radius:50%;flex-shrink:0 }
+.s-dot.done { background:#22c55e }
+.s-dot.wip  { background:var(--teal);animation:pulse 2s infinite }
+.s-dot.todo { background:var(--faint) }
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(0,195,145,.2)} 50%{box-shadow:0 0 0 4px rgba(0,195,145,.2)} }
+.s-label { font-size:13px;font-weight:600 }
+.s-note  { font-size:11px;color:var(--muted);margin-top:1px }
+
+.pricing-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:14px 0 }
+.price-card { background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:10px }
+.price-card.featured { border-color:var(--teal);box-shadow:0 0 0 1px var(--teal) }
+.price-name { font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted) }
+.price-amount { font-size:30px;font-weight:800;letter-spacing:-.02em }
+.price-amount span { font-size:15px;font-weight:500;color:var(--muted) }
+.price-features { list-style:none;display:flex;flex-direction:column;gap:6px;flex:1 }
+.price-features li { font-size:13px;display:flex;gap:6px;align-items:flex-start }
+.price-features li::before { content:"✓";color:var(--teal);font-weight:700;flex-shrink:0 }
+.price-features li.dim::before { content:"—";color:var(--faint) }
+.price-features li.dim { color:var(--faint) }
+
+.cl-item { display:grid;grid-template-columns:80px 1fr auto;gap:12px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--border);font-size:13.5px }
+.cl-item:last-child { border-bottom:none }
+.cl-date { color:var(--faint);font-size:12px }
+
+.feat-row { display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 }
+.feat-tag { font-size:12px;font-weight:500;padding:3px 10px;border-radius:5px;background:var(--surface2);color:var(--muted);border:1px solid var(--border) }
+.feat-tag.teal { background:var(--teal-dim);color:var(--teal-dk);border-color:var(--teal-dim2) }
+
+ul.plain, ol.plain { margin:8px 0 16px 20px;display:flex;flex-direction:column;gap:6px;font-size:14px }
+/* Telefono: niente scorrimento orizzontale della pagina (codice lungo e tabelle scorrono da soli) */
+.main { min-width:0 }
+p code, li code, td code, .step-desc code { overflow-wrap:anywhere }
+.plain-p { font-size:14px;margin:8px 0 14px;line-height:1.65 }
+@media (max-width: 480px) { .tb-badge { display: none } .tb-logo { white-space: nowrap } }
+  </style>
+  <script>if(sessionStorage.getItem('gh_interno_auth')!=='1')location.replace('/interno/');</script>
+  <script>(function(){var t=localStorage.getItem('gd-theme');if(t)document.documentElement.dataset.theme=t;})()</script>
+</head>
+<body>
+
+<div class="topbar">
+  <button class="ham-btn" onclick="toggleSidebar()" aria-label="Menu">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <a class="tb-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Interno
+  </a>
+  <a class="tb-logo" href="index.html">
+    <svg class="tb-mark" viewBox="0 0 34 34">
+      <rect width="34" height="34" rx="8" fill="#00c391"/>
+      <rect x="6" y="6" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
+      <rect x="19" y="6" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
+      <rect x="6" y="19" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
+      <rect x="19" y="19" width="9" height="10" rx="2" fill="rgba(0,0,0,0.72)"/>
+    </svg>
+    GestHall Suite
+  </a>
+  <div class="tb-spacer"></div>
+  <span class="tb-badge">Vendita e legale</span>
+  <button class="theme-btn" onclick="toggleTheme()" aria-label="Tema">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+  </button>
+</div>
+
+<div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<div class="layout">
+<nav class="sidebar" id="sidebar">
+  <div class="sb-group">
+    <span class="sb-group-label">Vendita</span>
+    <a class="sb-link" href="#percorso" onclick="closeMobile()"><span class="sb-icon">🧭</span> Il percorso del cliente</a>
+    <a class="sb-link" href="#demo" onclick="closeMobile()"><span class="sb-icon">🎬</span> Demo online</a>
+    <a class="sb-link" href="#prova" onclick="closeMobile()"><span class="sb-icon">⏳</span> Prova di 14 giorni</a>
+    <a class="sb-link" href="#attivazione" onclick="closeMobile()"><span class="sb-icon">✅</span> Attivazione e rinnovi</a>
+    <a class="sb-link" href="#scadenza" onclick="closeMobile()"><span class="sb-icon">🔒</span> Scadenza e disdetta</a>
+  </div>
+  <div class="sb-group">
+    <span class="sb-group-label">Soldi</span>
+    <a class="sb-link" href="#pagamenti" onclick="closeMobile()"><span class="sb-icon">💳</span> Pagamenti</a>
+    <a class="sb-link" href="#fatture" onclick="closeMobile()"><span class="sb-icon">🧾</span> Fatturazione</a>
+  </div>
+  <div class="sb-group">
+    <span class="sb-group-label">Documenti</span>
+    <a class="sb-link" href="#contratti" onclick="closeMobile()"><span class="sb-icon">✍️</span> Contratti</a>
+    <a class="sb-link" href="#privacy" onclick="closeMobile()"><span class="sb-icon">🛡</span> Privacy e GDPR</a>
+    <a class="sb-link" href="#cookie" onclick="closeMobile()"><span class="sb-icon">🍪</span> Cookie</a>
+    <a class="sb-link" href="#conservazione" onclick="closeMobile()"><span class="sb-icon">🗄</span> Conservazione dei dati</a>
+    <a class="sb-link" href="#incidenti" onclick="closeMobile()"><span class="sb-icon">🚨</span> Violazione dei dati</a>
+  </div>
+  <div class="sb-group">
+    <span class="sb-group-label">Da fare</span>
+    <a class="sb-link" href="#mancante" onclick="closeMobile()"><span class="sb-icon">📋</span> Cosa manca</a>
+    <a class="sb-link" href="#calendario" onclick="closeMobile()"><span class="sb-icon">🗓</span> Routine</a>
+    <a class="sb-link" href="manutenzione.html"><span class="sb-icon">🛠</span> Aggiornamenti e backup &rarr;</a>
+  </div>
+</nav>
+
+<main class="main" id="top">
+
+<div class="section-hero">
+  <div class="sh-eyebrow">Documentazione interna</div>
+  <h1 class="sh-h1">Vendita, pagamenti e documenti</h1>
+  <p class="sh-sub">Dalla demo all'abbonamento, come si incassa, quali contratti e informative servono e che cosa resta da decidere. Vale dalla versione 3.11 della suite.</p>
+  <div class="sh-chips">
+    <span class="sh-chip">Demo → Prova → Abbonamento</span>
+    <span class="sh-chip">Pagamenti: da decidere</span>
+    <span class="sh-chip">Contratti e GDPR</span>
+    <span class="sh-chip">Ottobre 2026</span>
+  </div>
+</div>
+
+<div class="section">
+  <div class="callout warn"><span class="callout-ico">⚖️</span><p>Questa guida organizza il lavoro e indica cosa serve: <strong>non sostituisce un avvocato né il commercialista</strong>. Prima di usare contratti, DPA e informative con i clienti fateli rivedere a un professionista, completando le parti indicate come <em>da definire</em>.</p></div>
+</div>
+
+<!-- 1. PERCORSO -->
+<div class="section" id="percorso">
+  <div class="sec-h2"><span class="sec-num">01</span> Il percorso del cliente</div>
+  <p class="sec-lead">Quattro fasi, ognuna con un posto preciso nei nostri strumenti. La licenza (hub) è l'unica cosa che decide cosa può fare l'app: qualunque metodo di pagamento scegliamo, alla fine si traduce in «aggiorno la scadenza nell'hub».</p>
+<pre><code>DEMO (demo.gesthallsuite.it)            nessun contratto, dati di esempio, 14 giorni
+  │  «mi piace, provo con la mia sala»
+  ▼
+PROVA (hub: «Prova 14 giorni»)          installazione vera, dati veri, gratis, nessun pagamento
+  │  ‑3 giorni e ultimo giorno: email automatica dall'hub
+  ▼
+ABBONAMENTO (hub: «Attiva abbonamento») contratto firmato + primo pagamento → scadenza +1 mese / +1 anno
+  │  ‑15 e ‑3 giorni: promemoria; rinnovo = nuovo pagamento → nuova scadenza
+  ▼
+SCADUTO   prova: subito sola lettura · abbonamento: 15 giorni di tolleranza, poi sola lettura
+          i dati non si cancellano mai da soli: si esportano, poi disdetta</code></pre>
+  <div class="tbl-wrap"><table>
+    <tr><th>Fase</th><th>Dove si gestisce</th><th>Cosa vede il cliente</th></tr>
+    <tr><td>Demo</td><td>Server demo (<code>tools/demo/cli.php</code>)</td><td>Banner «Demo con dati di esempio, disponibile fino al …» con «Attiva la tua sala»</td></tr>
+    <tr><td>Prova</td><td>Hub → Nuova installazione (casella «Prova 14 giorni») o scheda installazione</td><td>Banner «Prova gratuita: termina tra N giorni» per il responsabile</td></tr>
+    <tr><td>Abbonamento</td><td>Hub → scheda installazione → piano, scadenza</td><td>Niente, fino a 15 giorni dalla scadenza (promemoria)</td></tr>
+    <tr><td>Scaduto</td><td>Hub: nuova scadenza per riattivare</td><td>Sola lettura, banner fisso; consultazione ed export restano</td></tr>
+  </table></div>
+</div>
+
+<!-- 2. DEMO -->
+<div class="section" id="demo">
+  <div class="sec-h2"><span class="sec-num">02</span> Demo online</div>
+  <p class="sec-lead">Una sala finta ma realistica, creata in 2 secondi, su <code>&lt;codice&gt;.demo.gesthallsuite.it</code>. Serve a far vedere il prodotto prima di parlarne; non è la prova.</p>
+  <div class="sec-h3">Come è fatta</div>
+  <ul class="plain">
+    <li>Piccola VPS dedicata (2 vCPU, 4 GB, 5-8 €/mese), separata da hosting dei clienti, hub e sito.</li>
+    <li>Ogni demo ha un database con un utente MySQL proprio e una cartella che condivide i file del «modello» (pochi KB). 120 giorni di cassa, turni, bar, clienti, chat; tre accessi: <code>titolare</code>, <code>operatore</code>, <code>contabile</code>, con una password generata.</li>
+    <li>Dura 14 giorni, poi un cron la cancella. Massimo 40 demo attive, 3 al giorno per indirizzo IP.</li>
+    <li>Nella demo email e comandi di sistema sono disattivati e gli aggiornamenti dell'app sono bloccati.</li>
+  </ul>
+  <div class="sec-h3">Mettere online il server (una volta)</div>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">DNS</div><div class="step-desc">Record A per <code>demo.gesthallsuite.it</code> e <code>*.demo.gesthallsuite.it</code> verso l'IP della VPS.</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Installazione</div><div class="step-desc">Sulla VPS (Ubuntu 24.04, come root): <code>bash installa-server.sh &lt;indirizzo del repository&gt;</code>. Installa nginx, PHP, MariaDB, il cron di pulizia; stampa la password MySQL.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Configurazione</div><div class="step-desc"><code>tools/demo/config.php</code> (da <code>config.esempio.php</code>): password MySQL, <code>segreto</code> casuale, mittente email con dominio autorizzato.</div></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">Certificato jolly</div><div class="step-desc">certbot con verifica DNS (con Cloudflare il rinnovo è automatico). Passi esatti in <code>tools/demo/README.md</code>.</div></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-content"><div class="step-title">Modello e prova</div><div class="step-desc"><code>php cli.php aggiorna-modello</code>, poi aprire <code>https://demo.gesthallsuite.it</code> e creare una demo. Sul sito, impostare l'indirizzo «Prova subito».</div></div></div>
+  </div>
+  <div class="sec-h3">Uso quotidiano</div>
+<pre><code>php cli.php crea "Sala Rossi" cliente@esempio.it 1   # demo preparata per un appuntamento
+php cli.php elenca                                  # chi ha una demo e quando scade
+php cli.php proroga &lt;codice&gt; 7                      # più tempo a chi sta valutando
+php cli.php aggiorna-modello                        # dopo ogni rilascio della suite</code></pre>
+  <div class="callout info"><span class="callout-ico">📇</span><p><code>elenca</code> è anche la lista dei contatti caldi: chi ha creato una demo lasciando l'email va richiamato entro 2-3 giorni. I dati del modulo (nome sala, città, email, IP) si cancellano con la demo; l'informativa del sito lo dice.</p></div>
+</div>
+
+<!-- 3. PROVA -->
+<div class="section" id="prova">
+  <div class="sec-h2"><span class="sec-num">03</span> Prova di 14 giorni</div>
+  <p class="sec-lead">Installazione vera con i dati della sala. Niente carta di credito, niente contratto firmato: basta l'accettazione dei Termini.</p>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Hub → Nuova installazione</div><div class="step-desc">Nome sala, piano da provare (di solito Suite o Multi-sala), <strong>email del responsabile</strong> (per i promemoria), casella «Prova 14 giorni» attiva: la scadenza si imposta a +14 giorni.</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Installazione dell'app</div><div class="step-desc">Sull'hosting del cliente o sul nostro (procedura «Attivazione nuovo cliente» in <a href="/interno/">Interno</a>). Nel setup si incolla la chiave d'installazione; in alternativa la si incolla dopo in Impostazioni → Piano e licenza.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Durante la prova</div><div class="step-desc">Il responsabile vede i giorni rimasti. L'hub manda l'email 3 giorni prima e l'ultimo giorno. Una telefonata a metà prova vale più di qualsiasi email.</div></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">Fine prova</div><div class="step-desc">Nella scheda installazione: «Attiva abbonamento mensile/annuale» (dopo firma e pagamento) oppure «Proroga di 7 giorni». Se non succede niente l'app va in sola lettura: nessun dato perso, si riparte dal punto in cui si era.</div></div></div>
+  </div>
+</div>
+
+<!-- 4. ATTIVAZIONE -->
+<div class="section" id="attivazione">
+  <div class="sec-h2"><span class="sec-num">04</span> Attivazione e rinnovi</div>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Proposta</div><div class="step-desc">Modulo d'ordine con dati fiscali, piano, prezzo, durata, decorrenza, hosting (suo o nostro), referente. Vedi <a href="#contratti">Contratti</a>.</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Firma</div><div class="step-desc">Modulo d'ordine + Condizioni generali + approvazione specifica delle clausole + DPA. Firma digitale o firma elettronica avanzata; in mancanza, PDF firmato a mano e scansionato.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Primo pagamento e fattura</div><div class="step-desc">Anticipato, per il primo mese o il primo anno. Fattura elettronica dopo l'incasso (o alla firma, secondo il commercialista).</div></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">Hub</div><div class="step-desc">Scheda installazione → «Attiva abbonamento mensile/annuale» (toglie la prova, scadenza +1 mese / +1 anno) o modifica a mano di piano e scadenza. Nelle note: estremi del contratto e della fattura.</div></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-content"><div class="step-title">Rinnovo</div><div class="step-desc">A ogni incasso si sposta in avanti la scadenza. L'hub manda i promemoria a 15 e 3 giorni. Con l'addebito automatico (fase 2) lo farà da solo.</div></div></div>
+  </div>
+  <div class="callout info"><span class="callout-ico">🔁</span><p>Cambio di piano: dal portale clienti (Impostazioni → Piano → «Gestisci piano online») arriva una richiesta in Hub → Richieste piano. Si approva dopo aver concordato la differenza: in salita si fattura il conguaglio fino alla scadenza, in discesa vale dal rinnovo successivo.</p></div>
+</div>
+
+<!-- 5. SCADENZA -->
+<div class="section" id="scadenza">
+  <div class="sec-h2"><span class="sec-num">05</span> Scadenza, morosità e disdetta</div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Quando</th><th>Cosa succede da solo</th><th>Cosa facciamo noi</th></tr>
+    <tr><td>Scadenza −15 e −3 giorni</td><td>Email al cliente, banner al responsabile</td><td>Verificare che il pagamento sia in arrivo</td></tr>
+    <tr><td>Giorno 0–15 dopo la scadenza</td><td>Banner «la licenza è scaduta, tra N giorni sola lettura»; email «scaduta»</td><td>Sollecito (telefono o email); se paga, nuova scadenza</td></tr>
+    <tr><td>Dal 16° giorno</td><td>Sola lettura per tutti (la prova: dal giorno 1)</td><td>Ultimo sollecito scritto, preferibilmente PEC</td></tr>
+    <tr><td>Oltre 30 giorni di insoluto</td><td>Nulla: l'app resta in sola lettura</td><td>Risoluzione del contratto (Termini, art. 12) con comunicazione scritta; da qui 30 giorni per esportare i dati</td></tr>
+  </table></div>
+  <div class="sec-h3">Disdetta</div>
+  <ul class="plain">
+    <li>Il cliente scrive (email o PEC) almeno 7 giorni prima del rinnovo; il servizio resta attivo fino alla fine del periodo pagato.</li>
+    <li>Rispondiamo confermando la data di fine e ricordando come esportare: export Excel (cassa, commercialista) e <strong>Backup</strong> del database da Impostazioni → Sistema → Backup.</li>
+    <li>Hosting del cliente: i dati restano a lui, noi disattiviamo l'installazione nell'hub. Hosting nostro: dopo 30 giorni dalla fine cancelliamo database e file e lo comunichiamo per iscritto.</li>
+  </ul>
+</div>
+
+<!-- 6. PAGAMENTI -->
+<div class="section" id="pagamenti">
+  <div class="sec-h2"><span class="sec-num">06</span> Pagamenti <span class="badge todo">da decidere</span></div>
+  <p class="sec-lead">La scelta è rimandata. La licenza è già pronta per qualunque metodo: scadenze, prova, proroghe, promemoria e sola lettura funzionano da soli. Manca solo il modo in cui i soldi arrivano e la scadenza si sposta.</p>
+  <div class="sec-h3">Fase 1 — Manuale (si può partire subito)</div>
+  <ul class="plain">
+    <li><strong>Bonifico anticipato</strong> su conto aziendale, con causale «GestHall – nome sala – periodo». Annuale consigliato: un incasso, una fattura, meno solleciti (il listino lo incentiva con lo sconto del 17%).</li>
+    <li>A ogni incasso: fattura elettronica, poi nell'hub nuova scadenza. Tempo stimato: 5 minuti per cliente per periodo.</li>
+    <li>Adatta fino a qualche decina di sale. Il limite è la gestione dei mensili: tanti piccoli bonifici da riconciliare.</li>
+  </ul>
+  <div class="sec-h3">Fase 2 — Addebito automatico</div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Soluzione</th><th>Pro</th><th>Contro</th></tr>
+    <tr><td><strong>Stripe</strong> (Checkout + Billing: carta e addebito SEPA)</td><td>Abbonamenti ricorrenti, gestione dei tentativi falliti, pagina cliente per cambiare carta, webhook affidabili</td><td>Commissione a transazione, più alta sulle carte che sul SEPA; non emette fattura elettronica italiana</td></tr>
+    <tr><td><strong>GoCardless</strong> (addebito SEPA)</td><td>Pensato per abbonamenti B2B, commissioni basse, nessuna carta che scade</td><td>Solo addebito diretto; mandato da firmare; incasso in qualche giorno</td></tr>
+    <tr><td><strong>Gestionale di fatturazione con incasso</strong> (es. Fatture in Cloud, Aruba)</td><td>Fattura elettronica e incasso nello stesso posto; molti si collegano a Stripe</td><td>Meno flessibile sugli abbonamenti; integrazione con l'hub da verificare</td></tr>
+  </table></div>
+  <p class="plain-p">Commissioni e condizioni cambiano: confrontare i listini aggiornati dei fornitori prima di scegliere.</p>
+  <div class="sec-h3">Come si collegherà all'hub (quando si decide)</div>
+<pre><code>Portale clienti (gesthallsuite.it/cliente/) → «Paga / rinnova»
+   → pagina di pagamento del fornitore (nessun dato di carta passa da noi)
+   → webhook all'hub: pagamento riuscito  → scadenza +1 mese/+1 anno, prova tolta
+                      pagamento fallito   → nessuna proroga: arrivano tolleranza e sola lettura
+   → fattura elettronica emessa dal gestionale di fatturazione (automatica o in coda)</code></pre>
+  <div class="callout info"><span class="callout-ico">🧩</span><p>Lavoro stimato nell'hub: tabella pagamenti, endpoint webhook firmato, pulsante nel portale clienti, riconciliazione in dashboard. Il resto (scadenze, promemoria, sola lettura) esiste già.</p></div>
+  <div class="sec-h3">Rivenditori</div>
+  <p class="plain-p">Due modelli possibili, da fissare nel contratto rivenditore: <strong>(a)</strong> il rivenditore incassa dal cliente e paga a noi il listino scontato (noi fatturiamo al rivenditore); <strong>(b)</strong> incassiamo noi dal cliente e paghiamo una provvigione al rivenditore. Il (a) è più semplice finché i pagamenti sono manuali.</p>
+</div>
+
+<!-- 7. FATTURE -->
+<div class="section" id="fatture">
+  <div class="sec-h2"><span class="sec-num">07</span> Fatturazione</div>
+  <ul class="plain">
+    <li>Clienti italiani con partita IVA: <strong>fattura elettronica tramite SdI</strong>, con codice destinatario o PEC del cliente (raccoglierli nel modulo d'ordine).</li>
+    <li>Prezzi del sito e dei Termini: <strong>IVA esclusa</strong>. Mensile o annuale, sempre anticipato.</li>
+    <li>Nell'hub, nelle note dell'installazione: numero e data dell'ultima fattura, periodo coperto.</li>
+  </ul>
+  <div class="sec-h3">Domande per il commercialista</div>
+  <ul class="plain">
+    <li>Forma e regime fiscale più adatti (ditta, SRL; ordinario o forfettario) e codice ATECO per software in abbonamento.</li>
+    <li>Fattura all'incasso o alla firma; trattamento dei canoni annuali anticipati.</li>
+    <li>Fatture a rivenditori e provvigioni; clienti esteri (UE ed extra UE), se mai arrivassero.</li>
+    <li>Strumento di fatturazione elettronica da usare e se collegarlo al futuro fornitore di pagamenti.</li>
+  </ul>
+</div>
+
+<!-- 8. CONTRATTI -->
+<div class="section" id="contratti">
+  <div class="sec-h2"><span class="sec-num">08</span> Contratti</div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Documento</th><th>Stato</th><th>Note</th></tr>
+    <tr><td><strong>Termini e condizioni</strong> (<a href="/termini">/termini</a>)</td><td><span class="badge wip">bozza 1.1</span></td><td>Piani, prova, sola lettura, rinnovo, recesso, responsabilità. Da completare: dati del Fornitore, foro competente («[CITTÀ — da definire]»)</td></tr>
+    <tr><td><strong>Modulo d'ordine</strong></td><td><span class="badge todo">da fare</span></td><td>Dati fiscali del cliente (ragione sociale, P.IVA, sede, codice SdI/PEC), sala o sale, piano, prezzo, mensile/annuale, decorrenza, hosting, referente, firma</td></tr>
+    <tr><td><strong>Approvazione specifica delle clausole</strong></td><td><span class="badge todo">da fare</span></td><td>Seconda firma (artt. 1341-1342 c.c.) per le clausole sfavorevoli al cliente: limitazione di responsabilità, rinnovo automatico, sospensione/sola lettura, recesso e risoluzione, foro competente. Senza, quelle clausole rischiano di non valere</td></tr>
+    <tr><td><strong>DPA — nomina a responsabile del trattamento</strong> (art. 28 GDPR)</td><td><span class="badge todo">da fare</span></td><td>I Termini dicono «disponibile su richiesta»: va preparato. Vedi <a href="#privacy">Privacy</a></td></tr>
+    <tr><td><strong>Livelli di servizio (SLA)</strong></td><td><span class="badge todo">facoltativo</span></td><td>Solo per chi ospitiamo noi: disponibilità, finestre di manutenzione, tempi di risposta del supporto, backup</td></tr>
+    <tr><td><strong>Contratto rivenditore</strong></td><td><span class="badge todo">da fare</span></td><td>Sconto o provvigione, chi incassa, chi fa il primo supporto, uso del marchio e white label, clienti alla cessazione, riservatezza</td></tr>
+  </table></div>
+  <div class="sec-h3">Come si firma</div>
+  <ul class="plain">
+    <li>Meglio: <strong>firma digitale</strong> (molti titolari ce l'hanno per la camera di commercio) o un servizio di firma elettronica avanzata (FEA).</li>
+    <li>Accettabile: PDF stampato, firmato due volte (contratto + clausole) e rimandato scansionato.</li>
+    <li>Prova gratuita: basta l'accettazione dei Termini online. Il contratto firmato serve al primo pagamento.</li>
+    <li>Archivio: un PDF per cliente, con lo stesso nome dell'installazione nell'hub, conservato almeno 10 anni.</li>
+  </ul>
+</div>
+
+<!-- 9. PRIVACY -->
+<div class="section" id="privacy">
+  <div class="sec-h2"><span class="sec-num">09</span> Privacy e GDPR</div>
+  <p class="sec-lead">Nell'app la sala inserisce dati personali: operatori (nome, telefono, email, codice fiscale, buste paga), clienti (anagrafica, prestiti), registro attività con indirizzi IP, firme dei versamenti. Ruoli diversi a seconda di chi fa cosa.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Chi</th><th>Ruolo</th><th>Cosa comporta</th></tr>
+    <tr><td>La sala (il cliente)</td><td><strong>Titolare</strong> dei dati di operatori e clienti</td><td>Informa operatori e clienti, decide cosa inserire e per quanto tenerlo</td></tr>
+    <tr><td>GestHall</td><td><strong>Responsabile</strong> (art. 28) quando ospita l'app o vi accede per assistenza (accesso ghost dall'hub)</td><td>DPA firmato, istruzioni del titolare, riservatezza, sicurezza, avviso in caso di violazione, cancellazione a fine contratto, registro dei trattamenti come responsabile (art. 30.2)</td></tr>
+    <tr><td>GestHall</td><td><strong>Titolare</strong> dei dati commerciali: contatti, clienti, fatture, licenze nell'hub, richieste demo</td><td>Informativa del sito (<a href="/privacy">/privacy</a>), registro dei trattamenti come titolare</td></tr>
+    <tr><td>Hosting, email, DNS, server demo</td><td><strong>Sub-responsabili</strong></td><td>Elenco nel DPA (es. SiteGround per hosting e posta, provider della VPS demo, Cloudflare se usato per il DNS); GitHub non riceve dati delle sale</td></tr>
+  </table></div>
+  <div class="sec-h3">Il DPA deve contenere</div>
+  <ul class="plain">
+    <li>Oggetto, durata, natura e finalità; categorie di dati (anagrafici, contatto, retributivi delle buste paga, dati di accesso) e di interessati (operatori, clienti della sala).</li>
+    <li>Misure di sicurezza: HTTPS, password con hash, blocco dei tentativi, verifica in due passaggi, permessi per ruolo, registro attività, backup cifrati in trasporto, accesso ghost solo dal pannello hub con link firmato e a scadenza.</li>
+    <li>Sub-responsabili ammessi e come si comunicano le modifiche.</li>
+    <li>Assistenza al titolare (diritti degli interessati, valutazioni d'impatto), notifica delle violazioni senza ritardo, restituzione o cancellazione dei dati a fine contratto.</li>
+  </ul>
+  <div class="sec-h3">Kit privacy per la sala <span class="badge todo">da fare</span></div>
+  <p class="plain-p">Un aiuto concreto che vende: modelli di <strong>informativa per gli operatori</strong> (gestione turni, cassa, buste paga, registro attività, firma dei versamenti) e di <strong>informativa per i clienti della sala</strong> (anagrafica, prestiti). Si consegnano con l'attivazione e si possono caricare in Documenti nell'app.</p>
+</div>
+
+<!-- 10. COOKIE -->
+<div class="section" id="cookie">
+  <div class="sec-h2"><span class="sec-num">10</span> Cookie</div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Dove</th><th>Cosa salva</th><th>Consenso</th></tr>
+    <tr><td>Sito gesthallsuite.it</td><td>Nessun cookie; solo il tema chiaro/scuro in archiviazione locale. Nessun font, script o statistica di terzi</td><td>Non serve banner. Già scritto in <a href="/privacy">/privacy</a></td></tr>
+    <tr><td>App della sala</td><td>Cookie di sessione, cookie «dispositivo attendibile» (verifica in due passaggi, 30 giorni), preferenze in archiviazione locale</td><td>Tecnici: niente consenso; vanno citati nell'informativa agli operatori</td></tr>
+    <tr><td>Demo, hub, portale clienti, area interna</td><td>Solo cookie di sessione</td><td>Tecnici: niente consenso</td></tr>
+  </table></div>
+  <div class="callout warn"><span class="callout-ico">🍪</span><p>Se un giorno si aggiungono statistiche (Google Analytics, pixel pubblicitari, video incorporati) servono banner e consenso preventivo. Alternativa senza banner: statistiche anonime e ospitate da noi.</p></div>
+</div>
+
+<!-- 11. CONSERVAZIONE -->
+<div class="section" id="conservazione">
+  <div class="sec-h2"><span class="sec-num">11</span> Conservazione dei dati</div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Dato</th><th>Per quanto</th><th>Come</th></tr>
+    <tr><td>Registro attività (audit) dell'app</td><td>Scelto dal responsabile (predefinito 90 giorni)</td><td>Pagina Audit → conservazione; si eliminano i log più vecchi</td></tr>
+    <tr><td>Tentativi di accesso, token di recupero password, dispositivi attendibili scaduti</td><td>2–7 giorni / alla scadenza</td><td>Pulizia automatica giornaliera dell'app</td></tr>
+    <tr><td>Notifiche lette, avvisi inviati</td><td>180 giorni</td><td>Pulizia automatica giornaliera</td></tr>
+    <tr><td>Backup del database</td><td>Gli ultimi N (predefinito 8)</td><td>Impostazioni → Sistema → Backup</td></tr>
+    <tr><td>Cassa, turni, buste paga, clienti</td><td>Decide la sala (obblighi fiscali e di lavoro)</td><td>Nessuna cancellazione automatica</td></tr>
+    <tr><td>Demo</td><td>14 giorni (più eventuali proroghe)</td><td>Cron del server demo: database, file e riga del registro</td></tr>
+    <tr><td>Contatti dal sito</td><td>24 mesi dall'ultimo contatto</td><td>Casella email: pulizia manuale una volta l'anno</td></tr>
+    <tr><td>Contratti e fatture</td><td>10 anni</td><td>Archivio PDF + conservazione sostitutiva delle fatture elettroniche</td></tr>
+  </table></div>
+</div>
+
+<!-- 12. INCIDENTI -->
+<div class="section" id="incidenti">
+  <div class="sec-h2"><span class="sec-num">12</span> Violazione dei dati</div>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Contenere</div><div class="step-desc">Cambiare le chiavi interessate (installazione, superadmin, password hub, token GitHub), disattivare l'installazione nell'hub se serve, conservare i log.</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Capire</div><div class="step-desc">Quali sale, quali dati, da quando. Registro attività dell'app, log del server, audit dell'hub.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Avvisare le sale</div><div class="step-desc">Come responsabili: alle sale coinvolte, senza ritardo, per iscritto, con quello che si sa. Sono loro, come titolari, a dover valutare la notifica al Garante entro 72 ore.</div></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">Se riguarda i nostri dati</div><div class="step-desc">Contatti, fatture, hub: siamo titolari, valutiamo noi la notifica al Garante entro 72 ore.</div></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-content"><div class="step-title">Registrare</div><div class="step-desc">Registro delle violazioni (anche se non notificate): cosa, quando, effetti, rimedi.</div></div></div>
+  </div>
+</div>
+
+<!-- 13. COSA MANCA -->
+<div class="section" id="mancante">
+  <div class="sec-h2"><span class="sec-num">13</span> Cosa manca</div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Cosa</th><th>Chi</th><th>Stato</th></tr>
+    <tr><td>Dati societari (ragione sociale, P.IVA, sede, PEC) in Privacy, Termini e piè di pagina del sito</td><td>Noi</td><td><span class="badge todo">da fare</span></td></tr>
+    <tr><td>Foro competente nei Termini</td><td>Noi + avvocato</td><td><span class="badge todo">da fare</span></td></tr>
+    <tr><td>Modulo d'ordine + approvazione specifica delle clausole</td><td>Avvocato</td><td><span class="badge todo">da fare</span></td></tr>
+    <tr><td>DPA e elenco sub-responsabili</td><td>Avvocato / consulente privacy</td><td><span class="badge todo">da fare</span></td></tr>
+    <tr><td>Registro dei trattamenti (titolare e responsabile)</td><td>Noi + consulente</td><td><span class="badge todo">da fare</span></td></tr>
+    <tr><td>Kit privacy per la sala</td><td>Consulente privacy</td><td><span class="badge todo">da fare</span></td></tr>
+    <tr><td>Contratto rivenditore</td><td>Avvocato</td><td><span class="badge todo">da fare</span></td></tr>
+    <tr><td>Metodo di pagamento e strumento di fatturazione</td><td>Noi + commercialista</td><td><span class="badge todo">da decidere</span></td></tr>
+    <tr><td>Integrazione pagamenti nell'hub</td><td>Sviluppo</td><td><span class="badge todo">dopo la scelta</span></td></tr>
+    <tr><td>Server demo online + «Prova subito» sul sito</td><td>Noi</td><td><span class="badge wip">pronto da installare</span></td></tr>
+    <tr><td>Informativa del sito aggiornata per la demo</td><td>—</td><td><span class="badge done">fatto</span></td></tr>
+    <tr><td>Prova 14 giorni, promemoria, sola lettura</td><td>—</td><td><span class="badge done">fatto</span></td></tr>
+  </table></div>
+</div>
+
+<!-- 14. ROUTINE -->
+<div class="section" id="calendario">
+  <div class="sec-h2"><span class="sec-num">14</span> Routine</div>
+<pre><code>OGNI GIORNO      Hub → dashboard: prove in scadenza, licenze scadute, richieste piano
+                 demo create con email → richiamare entro 2-3 giorni
+OGNI SETTIMANA   incassi della settimana → fatture → nuove scadenze nell'hub
+                 sale in tolleranza → sollecito
+OGNI MESE        sale in sola lettura da oltre 30 giorni → risoluzione scritta
+                 server demo: «elenca», spazio disco, aggiornamenti di sistema
+A OGNI RILASCIO  server demo: aggiorna-modello (vedi Aggiornamenti e backup)
+OGNI ANNO        rilettura di Termini, DPA e informative; pulizia contatti oltre 24 mesi;
+                 verifica sub-responsabili; prova di ripristino di un backup</code></pre>
+</div>
+
+</main>
+</div>
+
+<script>
+function toggleTheme() {
+  var r = document.documentElement;
+  var cur = r.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  var next = cur === 'dark' ? 'light' : 'dark';
+  r.dataset.theme = next;
+  localStorage.setItem('gd-theme', next);
+}
+function toggleSidebar() {
+  var sb = document.getElementById('sidebar');
+  var ov = document.getElementById('overlay');
+  var open = sb.classList.toggle('open');
+  ov.classList.toggle('show', open);
+}
+function closeMobile() {
+  if (window.innerWidth <= 800) toggleSidebar();
+}
+(function() {
+  var links = document.querySelectorAll('.sb-link[href^="#"]');
+  var sections = Array.from(links).map(function(l) {
+    return document.getElementById(l.getAttribute('href').slice(1));
+  }).filter(Boolean);
+  function onScroll() {
+    var y = window.scrollY + 80;
+    var active = sections[0];
+    for (var i = 0; i < sections.length; i++) {
+      if (sections[i] && sections[i].offsetTop <= y) active = sections[i];
+    }
+    links.forEach(function(l) {
+      l.classList.toggle('active', active && l.getAttribute('href') === '#' + active.id);
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+</body>
+</html>

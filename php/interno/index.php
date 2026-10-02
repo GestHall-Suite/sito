@@ -444,22 +444,22 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
     <div class="docs-section">
       <h2 class="section-title">Stato progetto</h2>
       <div class="kpi-row">
-        <div class="kpi"><div class="kpi-val">v1.x</div><div class="kpi-label">Versione produzione</div></div>
-        <div class="kpi"><div class="kpi-val">PHP&nbsp;8+</div><div class="kpi-label">Runtime richiesto</div></div>
-        <div class="kpi"><div class="kpi-val">3</div><div class="kpi-label">Piani attivi (Ess · Pro · Suite)</div></div>
-        <div class="kpi"><div class="kpi-val">Hub&nbsp;v1</div><div class="kpi-label">License server</div></div>
+        <div class="kpi"><div class="kpi-val">3.11</div><div class="kpi-label">Versione della suite</div></div>
+        <div class="kpi"><div class="kpi-val">PHP&nbsp;8.1+</div><div class="kpi-label">Runtime richiesto</div></div>
+        <div class="kpi"><div class="kpi-val">4</div><div class="kpi-label">Piani (Ess · Pro · Suite · Multi-sala)</div></div>
+        <div class="kpi"><div class="kpi-val">14&nbsp;gg</div><div class="kpi-label">Prova gratuita</div></div>
       </div>
       <div class="status-table-wrap">
         <table class="status-table">
           <thead><tr><th>Componente</th><th>Stato</th><th>Note</th></tr></thead>
           <tbody>
-            <tr><td>App gestionale (<code>suite/</code>)</td><td><span class="badge badge-green">✓ Produzione</span></td><td>Cassa, turni flessibili, AWP, bar, bet/win e borderò, offline, multi-sala, dashboard, documenti, push, portale piano</td></tr>
-            <tr><td>Hub license server (<code>hub/</code>)</td><td><span class="badge badge-green">✓ Produzione</span></td><td>API license, ghost login, pannello rivenditori, richieste piano</td></tr>
-            <tr><td>Sito marketing (<code>sito/</code>)</td><td><span class="badge badge-blue">~ In sviluppo</span></td><td>Astro 7 · PHP <code>/interno/</code> e <code>/cliente/</code> già attivi</td></tr>
-            <tr><td>Portale cliente cambio piano</td><td><span class="badge badge-blue">~ In attivazione</span></td><td>Richiede installation_key allineata tra suite e hub</td></tr>
-            <tr><td>Billing (Stripe)</td><td><span class="badge badge-amber">⏳ Fase 2</span></td><td>Checkout → webhook → hub → email chiave</td></tr>
-            <tr><td>License check in-app</td><td><span class="badge badge-green">✓ v3.0</span></td><td><code>includes/license.php</code>: call a hub API con cache 24h (piano + sale_max); fallback su impostazioni.piano</td></tr>
-            <tr><td>Piano Multi-sala</td><td><span class="badge badge-green">✓ v3.0</span></td><td>€149/mese con 2 sale, +€49/sala · <code>installazioni.sale_max</code> nel hub · richiesta sale dal portale cliente</td></tr>
+            <tr><td>App gestionale (<code>suite/</code>)</td><td><span class="badge badge-green">✓ Pronta</span></td><td>3.11: cassa, turni flessibili, bar, report, multi-sala, offline, chat, LUL, Il mio spazio. Aggiornamenti dall'app, backup, riparazione file</td></tr>
+            <tr><td>Hub (<code>hub/</code>)</td><td><span class="badge badge-green">✓ Pronto</span></td><td>Licenze, prova 14 giorni con promemoria, rivenditori, richieste piano, rilasci da GitHub, accesso ghost</td></tr>
+            <tr><td>Hub in produzione</td><td><span class="badge badge-blue">~ Da mettere online</span></td><td>Mittente email (promemoria) e token GitHub (rilasci) da configurare</td></tr>
+            <tr><td>Sito (<code>sito/</code>)</td><td><span class="badge badge-green">✓ Online</span></td><td>Astro, schermate reali, guida, changelog; <code>/cliente/</code> e <code>/interno/</code></td></tr>
+            <tr><td>Server demo</td><td><span class="badge badge-blue">~ Pronto</span></td><td><code>suite/tools/demo/</code>: VPS dedicata da installare (vedi <a href="/interno/vendita.html#demo">Vendita e legale</a>)</td></tr>
+            <tr><td>Pagamenti</td><td><span class="badge badge-amber">⏳ Da decidere</span></td><td>Oggi manuale (bonifico + scadenza nell'hub); automatico dopo la scelta del fornitore</td></tr>
+            <tr><td>Contratti e GDPR</td><td><span class="badge badge-amber">⏳ Da fare</span></td><td>Dati societari, modulo d'ordine, DPA, kit privacy per la sala</td></tr>
           </tbody>
         </table>
       </div>
@@ -519,7 +519,7 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
               <div class="proc-num">2</div>
               <div class="proc-body">
                 <h4>Installare la suite sul server del cliente</h4>
-                <p>Setup via <code>install/setup.php</code>. Al termine eliminare la cartella <code>install/</code>.</p>
+                <p>Carica lo zip dell'ultima GitHub Release, estrailo e apri <code>install/setup.php</code> (database, responsabile, sala, macchine). Non eliminare <code>install/</code>: contiene configurazione e schema; con un responsabile già creato il setup non riparte.</p>
               </div>
             </div>
             <div class="proc-step">
@@ -644,7 +644,7 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
         <!-- Nuova installazione su sottodominio -->
         <div class="status-table-wrap" style="padding:20px 24px">
           <h3 style="font-size:15px;font-weight:700;margin-bottom:4px">5 · Attivazione nuovo cliente — sottodominio su SiteGround</h3>
-          <p style="font-size:13px;color:var(--muted);margin-bottom:14px">Procedura completa: da "cliente firma il contratto" a "suite operativa". Il cliente non ha bisogno di un proprio server — tutto gira su <code>nomesala.gesthallsuite.it</code>.</p>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:14px">Procedura completa: da "cliente firma il contratto" a "suite operativa". Variante «ospitata da noi»: tutto gira su <code>nomesala.gesthallsuite.it</code>. Se il cliente preferisce il proprio hosting i passi sono gli stessi sul suo spazio (i dati restano intestati a lui).</p>
           <div class="proc">
             <div class="proc-step">
               <div class="proc-num">1</div>
@@ -657,22 +657,21 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
               <div class="proc-num">2</div>
               <div class="proc-body">
                 <h4>Copia la suite nella cartella</h4>
-                <p>Carica i file della suite (escludi <code>.env</code>, <code>config.php</code>, <code>uploads/</code> di altri clienti) nella cartella del sottodominio. Via File Manager SiteGround o SFTP.</p>
+                <p>Carica lo zip dell'ultima release (GitHub → Releases, <code>gesthall-suite-X.Y.Z.zip</code>) con il File Manager di SiteGround ed estrailo nella cartella del sottodominio. Non usare l'FTP file per file.</p>
               </div>
             </div>
             <div class="proc-step">
               <div class="proc-num">3</div>
               <div class="proc-body">
                 <h4>Crea il database MySQL</h4>
-                <p>Panel SiteGround → MySQL Databases → crea un nuovo DB e utente dedicati al cliente. Poi importa lo schema:</p>
-                <code class="cmd">mysql -u utente -p nome_db &lt; install/schema.sql</code>
+                <p>Panel SiteGround → MySQL Databases → crea un nuovo DB e utente dedicati al cliente. Lo schema lo importa il setup al passo successivo.</p>
               </div>
             </div>
             <div class="proc-step">
               <div class="proc-num">4</div>
               <div class="proc-body">
-                <h4>Configura <code>includes/config.php</code></h4>
-                <p>Copia <code>includes/config.example.php</code> → <code>includes/config.php</code> e imposta le credenziali DB, il nome sala e la base URL (<code>https://nomesala.gesthallsuite.it/</code>).</p>
+                <h4>Esegui il setup</h4>
+                <p>Apri <code>https://nomesala.gesthallsuite.it/install/setup.php</code>: credenziali del database (scrive <code>install/config.php</code>), schema, responsabile, dati della sala, macchine. L'indirizzo dell'app non si configura: lo ricava da sola.</p>
               </div>
             </div>
             <div class="proc-step">
@@ -693,7 +692,7 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
               <div class="proc-num">7</div>
               <div class="proc-body">
                 <h4>Crea l'utente responsabile via ghost login</h4>
-                <p>Hub → installazione → Genera link ghost login → aprilo nella suite → vai su Impostazioni → Utenti → crea l'account del cliente. Poi comunicagli le credenziali.</p>
+                <p>Il responsabile lo crea il setup. Per gli altri: accesso ghost dall'hub → Impostazioni → Utenti. Con un'email l'utente riceve il link per scegliere la password; senza, comunicagliela tu. Infine Impostazioni → Sistema → Verifica file.</p>
               </div>
             </div>
           </div>
@@ -749,18 +748,16 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
           <div class="proc-step">
             <div class="proc-num">4</div>
             <div class="proc-body">
-              <h4>Aggiorna <code>config.php</code> della suite (gamespalace)</h4>
-              <p>Nel file <code>suite/includes/config.php</code> cambia solo la <code>base_url</code>:</p>
-              <code class="cmd">'base_url' =&gt; 'https://gamespalace.gesthallsuite.it/'</code>
-              <p style="margin-top:8px">DB host, nome, utente e password rimangono identici — è lo stesso database di prima.</p>
+              <h4>Suite (gamespalace): niente da cambiare</h4>
+              <p>La suite ricava da sola il proprio indirizzo: <code>install/config.php</code> contiene solo database e nome sala e resta identico. Dopo il passaggio controlla che notifiche push e app installata puntino al nuovo dominio (vanno riattivate dal telefono, in Il mio spazio → Notifiche).</p>
             </div>
           </div>
           <div class="proc-step">
             <div class="proc-num">5</div>
             <div class="proc-body">
               <h4>Aggiorna <code>config.php</code> dell'hub</h4>
-              <p>Nel file <code>hub/includes/config.php</code>:</p>
-              <code class="cmd">'base_url' =&gt; 'https://hub.gesthallsuite.it/'</code>
+              <p>Nel file <code>hub/install/config.php</code>:</p>
+              <code class="cmd">'app_url' =&gt; 'https://hub.gesthallsuite.it'</code>
               <p style="margin-top:8px">Anche qui il DB è lo stesso, solo l'URL cambia.</p>
             </div>
           </div>
@@ -838,7 +835,7 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
       <div class="card-grid">
         <div class="card card-accent">
           <h3>App gestionale (suite)</h3>
-          <p>PHP 8+ / PDO / HTML CSS JS vanilla. Nessun framework. Una installazione per sala, ospitata su sottodominio GestHall (<code>nomesala.gesthallsuite.it</code>). White-label via <code>impostazioni.brand_*</code>. PJAX navigation (piano Suite).</p>
+          <p>PHP 8+ / PDO / HTML CSS JS vanilla. Nessun framework. Un'installazione per cliente (una sala o un gruppo Multi-sala), su un nostro sottodominio (<code>nomesala.gesthallsuite.it</code>) o sull'hosting del cliente. Logo e colori della sala nel piano Suite. Si aggiorna dall'app con le versioni pubblicate su GitHub.</p>
         </div>
         <div class="card card-accent">
           <h3>Hub (<code>hub.gesthallsuite.it</code>)</h3>
@@ -846,7 +843,7 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
         </div>
         <div class="card card-accent">
           <h3>Sito (<code>gesthallsuite.it</code>)</h3>
-          <p>Astro 7 statico servito su Apache. PHP affiancato per <code>/interno/</code> e <code>/cliente/</code>. Stripe Checkout (Fase 2).</p>
+          <p>Astro statico servito su Apache. PHP affiancato per <code>/interno/</code> e <code>/cliente/</code>. Pagamenti online: da decidere (vedi Vendita e legale).</p>
         </div>
         <div class="card card-accent">
           <h3>Sicurezza</h3>
@@ -867,7 +864,7 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
         </table>
       </div>
       <div class="alert-box alert-blue" style="margin-top:12px">
-        GestHall ospita tutte le installazioni — il cliente non ha bisogno di un proprio server. Su SiteGround: attivare il certificato wildcard <code>*.gesthallsuite.it</code> in Security → SSL/TLS; creare ogni sottodominio cliente in Domains → Subdomains.
+        Per le installazioni ospitate da noi: Su SiteGround: attivare il certificato wildcard <code>*.gesthallsuite.it</code> in Security → SSL/TLS; creare ogni sottodominio cliente in Domains → Subdomains.
       </div>
     </div>
 
@@ -898,24 +895,45 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
             </div>
           </div>
           <div class="roadmap-item">
-            <div class="roadmap-q">Q3 2026</div>
+            <div class="roadmap-q">✓ Fatto</div>
             <div class="roadmap-body">
-              <h4>License check in-app</h4>
-              <p>Call a <code>hub/api/license.php</code> con cache 24h. Fallback graceful su <code>impostazioni.piano</code>.</p>
+              <h4>Licenza dall'hub, prova e sola lettura</h4>
+              <p><code>includes/license.php</code> (cache 24 h, fallback <code>impostazioni.piano</code>), prova 14 giorni con promemoria email, sola lettura a scadenza.</p>
             </div>
           </div>
           <div class="roadmap-item">
-            <div class="roadmap-q">Q4 2026</div>
-            <div class="roadmap-body">
-              <h4>Billing Stripe</h4>
-              <p>Checkout hosted → webhook → hub aggiorna piano → email con chiave di attivazione.</p>
-            </div>
-          </div>
-          <div class="roadmap-item">
-            <div class="roadmap-q">Q4 2026</div>
+            <div class="roadmap-q">✓ Fatto</div>
             <div class="roadmap-body">
               <h4>Multi-sala</h4>
-              <p>Un account con più sedi: condivisione dashboard responsabile, report aggregati.</p>
+              <p>Più sale in un'installazione, <code>sale_max</code> dall'hub, panoramica e selettore di sala.</p>
+            </div>
+          </div>
+          <div class="roadmap-item">
+            <div class="roadmap-q">✓ Fatto</div>
+            <div class="roadmap-body">
+              <h4>Aggiornamenti, backup, riparazione</h4>
+              <p>GitHub Releases → hub → «Aggiorna ora» nella sala; backup settimanale; riparazione dei file.</p>
+            </div>
+          </div>
+          <div class="roadmap-item">
+            <div class="roadmap-q">Q4 2026</div>
+            <div class="roadmap-body">
+              <h4>Messa in produzione e prime prove</h4>
+              <p>Hub con email e GitHub, server demo, «Prova subito» sul sito, documenti legali.</p>
+            </div>
+          </div>
+          <div class="roadmap-item">
+            <div class="roadmap-q">Da decidere</div>
+            <div class="roadmap-body">
+              <h4>Pagamenti automatici</h4>
+              <p>Fornitore da scegliere; webhook all'hub che sposta la scadenza; «Paga / rinnova» nel portale clienti.</p>
+            </div>
+          </div>
+          <div class="roadmap-item">
+            <div class="roadmap-q">2027</div>
+            <div class="roadmap-body">
+              <h4>Installazione automatica e portale rivenditore</h4>
+              <p>Creazione di una sala dall'hub sui nostri sottodomini; rivenditore self-service.</p>
             </div>
           </div>
         </div>
@@ -931,7 +949,8 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
           <tbody>
             <tr><td><span class="badge badge-muted">Essenziale</span></td><td>€39/mese · €390/anno</td><td>Sale piccole, avvio</td><td>Configurabile (default 30%)</td></tr>
             <tr><td><span class="badge badge-blue">Pro</span></td><td>€69/mese · €690/anno</td><td>Sale con più operatori e moduli</td><td>Configurabile</td></tr>
-            <tr><td><span class="badge badge-green">Suite</span></td><td>€99/mese · €990/anno</td><td>Catene, white-label</td><td>Configurabile</td></tr>
+            <tr><td><span class="badge badge-green">Suite</span></td><td>€99/mese · €990/anno</td><td>Sale strutturate: chat, buste paga, white label</td><td>Configurabile</td></tr>
+            <tr><td><span class="badge badge-green">Multi-sala</span></td><td>€149/mese (2 sale) + €49 per sala</td><td>Gruppi con più sale</td><td>Configurabile</td></tr>
           </tbody>
         </table>
       </div>
@@ -947,11 +966,11 @@ if (!$authed && $_SERVER['REQUEST_METHOD'] !== 'POST') {
         </div>
         <div class="card">
           <h3>Limiti attuali</h3>
-          <p>Il rivenditore non può creare installazioni né effettuare ghost login. Il cambio piano e l'approvazione delle richieste sono operazioni superadmin. Il billing automatico è Fase 2.</p>
+          <p>Il rivenditore non può creare installazioni né effettuare ghost login. Il cambio piano e l'approvazione delle richieste sono operazioni superadmin. I pagamenti sono manuali finché non si sceglie il fornitore.</p>
         </div>
         <div class="card">
           <h3>Fase 2 — portale rivenditore</h3>
-          <p>Self-service: il rivenditore potrà creare installazioni, generare chiavi di prova e vedere le commissioni maturate con integrazione Stripe Connect.</p>
+          <p>Self-service: il rivenditore potrà creare installazioni, avviare prove e vedere le commissioni maturate (modalità di pagamento da definire nel contratto rivenditore).</p>
         </div>
       </div>
     </div>

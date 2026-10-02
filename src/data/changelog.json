@@ -2,6 +2,32 @@
  "updated": "2026-10-02",
  "releases": [
   {
+   "version": "3.11.0",
+   "date": "2026-10-02",
+   "hotfix": false,
+   "title": "Il mio spazio, tutto in un posto",
+   "highlights": [
+    "Il mio spazio raccoglie profilo, preferenze, notifiche e buste paga",
+    "Un menu più semplice: una sola voce personale",
+    "Sul telefono la tua foto apre Il mio spazio"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Il mio spazio</strong> — Diventa l'unico posto per tutto ciò che è personale, diviso in schede: Panoramica (turni, ore del mese, notifiche), Profilo, Preferenze, Notifiche e Buste paga. Nel menu del proprio nome resta una sola voce, con il numero delle buste paga da leggere.",
+      "<strong>Telefono</strong> — Toccando la propria foto nella barra in basso si apre Il mio spazio."
+     ]
+    },
+    {
+     "type": "add",
+     "items": [
+      "<strong>Demo online</strong> — Le sale dimostrative mostrano fino a quando restano disponibili e il collegamento per attivare la propria sala."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.10.0",
    "date": "2026-10-02",
    "hotfix": false,

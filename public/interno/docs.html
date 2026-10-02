@@ -167,6 +167,8 @@ ul.plain { margin:8px 0 16px 20px;display:flex;flex-direction:column;gap:6px;fon
 /* Telefono: niente scorrimento orizzontale della pagina (codice lungo e tabelle scorrono da soli) */
 .main { min-width:0 }
 p code, li code, td code, .step-desc code { overflow-wrap:anywhere }
+.plain-p { font-size:14px;margin:8px 0 14px;line-height:1.65 }
+@media (max-width: 480px) { .tb-badge { display: none } .tb-logo { white-space: nowrap } }
   </style>
   <script>if(sessionStorage.getItem('gh_interno_auth')!=='1')location.replace('/interno/');</script>
   <script>(function(){var t=localStorage.getItem('gd-theme');if(t)document.documentElement.dataset.theme=t;})()</script>
@@ -192,7 +194,7 @@ p code, li code, td code, .step-desc code { overflow-wrap:anywhere }
     GestHall Suite
   </a>
   <div class="tb-spacer"></div>
-  <span class="tb-badge">Docs · Luglio 2026</span>
+  <span class="tb-badge">Docs · Ottobre 2026</span>
   <button class="theme-btn" onclick="toggleTheme()" aria-label="Tema">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
   </button>
@@ -204,32 +206,38 @@ p code, li code, td code, .step-desc code { overflow-wrap:anywhere }
 <nav class="sidebar" id="sidebar">
   <div class="sb-group">
     <span class="sb-group-label">Panoramica</span>
-    <a class="sb-link" href="#overview" onclick="closeMobile()"><span class="sb-icon">🏠</span> Stato componenti</a>
-    <a class="sb-link" href="#changelog" onclick="closeMobile()"><span class="sb-icon">📋</span> Changelog</a>
+    <a class="sb-link" href="#overview" onclick="closeMobile()"><span class="sb-icon">🏠</span> Stato del progetto</a>
+    <a class="sb-link" href="#changelog" onclick="closeMobile()"><span class="sb-icon">📋</span> Versioni</a>
+    <a class="sb-link" href="#struttura" onclick="closeMobile()"><span class="sb-icon">🗂</span> Repository e regole</a>
   </div>
   <div class="sb-group">
     <span class="sb-group-label">Suite — App</span>
-    <a class="sb-link" href="#login" onclick="closeMobile()"><span class="sb-icon">🔐</span> Login &amp; sessione</a>
-    <a class="sb-link" href="#operatore" onclick="closeMobile()"><span class="sb-icon">👷</span> Guida operatore</a>
-    <a class="sb-link" href="#chat" onclick="closeMobile()"><span class="sb-icon">💬</span> Chat operatori</a>
-    <a class="sb-link" href="#responsabile" onclick="closeMobile()"><span class="sb-icon">🧑‍💼</span> Guida responsabile</a>
-    <a class="sb-link" href="#revisore" onclick="closeMobile()"><span class="sb-icon">👁</span> Guida revisore</a>
-    <a class="sb-link" href="#moduli" onclick="closeMobile()"><span class="sb-icon">🧩</span> Moduli opzionali</a>
-    <a class="sb-link" href="#piani" onclick="closeMobile()"><span class="sb-icon">💎</span> Piani &amp; feature</a>
+    <a class="sb-link" href="#login" onclick="closeMobile()"><span class="sb-icon">🔐</span> Accesso e sicurezza</a>
+    <a class="sb-link" href="#ruoli" onclick="closeMobile()"><span class="sb-icon">👥</span> Ruoli</a>
+    <a class="sb-link" href="#cassa" onclick="closeMobile()"><span class="sb-icon">💶</span> Cassa e turni</a>
+    <a class="sb-link" href="#report" onclick="closeMobile()"><span class="sb-icon">📈</span> Statistiche e report</a>
+    <a class="sb-link" href="#moduli" onclick="closeMobile()"><span class="sb-icon">🧩</span> Moduli</a>
+    <a class="sb-link" href="#piani" onclick="closeMobile()"><span class="sb-icon">💎</span> Piani</a>
+    <a class="sb-link" href="#mio" onclick="closeMobile()"><span class="sb-icon">🙋</span> Il mio spazio</a>
+    <a class="sb-link" href="#multisala" onclick="closeMobile()"><span class="sb-icon">🏢</span> Multi-sala</a>
+    <a class="sb-link" href="#licenza" onclick="closeMobile()"><span class="sb-icon">🔑</span> Licenza e sola lettura</a>
+    <a class="sb-link" href="#offline" onclick="closeMobile()"><span class="sb-icon">📶</span> Offline e conflitti</a>
   </div>
   <div class="sb-group">
-    <span class="sb-group-label">Hub Admin</span>
-    <a class="sb-link" href="#hub-overview" onclick="closeMobile()"><span class="sb-icon">🛠</span> Panoramica hub</a>
+    <span class="sb-group-label">Hub</span>
+    <a class="sb-link" href="#hub-overview" onclick="closeMobile()"><span class="sb-icon">🛠</span> Pannello hub</a>
     <a class="sb-link" href="#hub-installazioni" onclick="closeMobile()"><span class="sb-icon">🖥</span> Installazioni</a>
-    <a class="sb-link" href="#hub-rivenditori" onclick="closeMobile()"><span class="sb-icon">🤝</span> Rivenditori</a>
-    <a class="sb-link" href="#hub-license" onclick="closeMobile()"><span class="sb-icon">🔑</span> License API</a>
+    <a class="sb-link" href="#hub-license" onclick="closeMobile()"><span class="sb-icon">📡</span> License API</a>
+    <a class="sb-link" href="#hub-rivenditori" onclick="closeMobile()"><span class="sb-icon">🤝</span> Rivenditori e portale</a>
   </div>
   <div class="sb-group">
     <span class="sb-group-label">Tecnico</span>
-    <a class="sb-link" href="#superadmin" onclick="closeMobile()"><span class="sb-icon">⚡</span> Super admin</a>
-    <a class="sb-link" href="#deploy" onclick="closeMobile()"><span class="sb-icon">🚀</span> Deploy SiteGround</a>
-    <a class="sb-link" href="manutenzione.html"><span class="sb-icon">🔄</span> Aggiornamenti e backup &rarr;</a>
+    <a class="sb-link" href="#superadmin" onclick="closeMobile()"><span class="sb-icon">⚡</span> Assistenza remota</a>
+    <a class="sb-link" href="#deploy" onclick="closeMobile()"><span class="sb-icon">🚀</span> Installare una sala</a>
     <a class="sb-link" href="#architettura" onclick="closeMobile()"><span class="sb-icon">🏗</span> Architettura</a>
+    <a class="sb-link" href="#test" onclick="closeMobile()"><span class="sb-icon">🧪</span> Test e CI</a>
+    <a class="sb-link" href="manutenzione.html"><span class="sb-icon">🔄</span> Aggiornamenti e backup &rarr;</a>
+    <a class="sb-link" href="vendita.html"><span class="sb-icon">💳</span> Vendita e legale &rarr;</a>
   </div>
   <div class="sb-group">
     <span class="sb-group-label">Roadmap</span>
@@ -243,487 +251,339 @@ p code, li code, td code, .step-desc code { overflow-wrap:anywhere }
 <div class="section-hero">
   <div class="sh-eyebrow">Documentazione interna</div>
   <h1 class="sh-h1">GestHall Suite</h1>
-  <p class="sh-sub">Gestionale PHP+MySQL per sale giochi VLT/AWP italiane. White-label, PWA-first, senza framework. Tutto in un'unica pagina.</p>
+  <p class="sh-sub">Gestionale PHP+MySQL per sale giochi VLT/AWP: cassa, turni, report, bar, clienti, più sale. Hub centrale per licenze e aggiornamenti. Stato a ottobre 2026, suite 3.11.</p>
   <div class="sh-chips">
-    <span class="sh-chip">PHP 8+ · MySQL · Vanilla JS</span>
-    <span class="sh-chip">3 piani · Essenziale / Pro / Suite</span>
-    <span class="sh-chip">Hub admin · License server v1</span>
-    <span class="sh-chip">Luglio 2026</span>
+    <span class="sh-chip">PHP 8.1+ · MySQL/MariaDB · JS senza framework</span>
+    <span class="sh-chip">4 piani · Essenziale / Pro / Suite / Multi-sala</span>
+    <span class="sh-chip">Hub · licenze, prove, rilasci</span>
+    <span class="sh-chip">Ottobre 2026</span>
   </div>
 </div>
 
 <!-- OVERVIEW -->
 <div class="section" id="overview">
-  <div class="sec-h2"><span class="sec-num">01</span> Stato componenti</div>
-  <p class="sec-lead">Snapshot dello stato attuale del progetto. Tutto ciò che è marcato con punto verde è in produzione.</p>
+  <div class="sec-h2"><span class="sec-num">01</span> Stato del progetto</div>
+  <p class="sec-lead">Verde = funziona ed è nel codice su <code>main</code>. Azzurro = pronto ma da mettere in produzione. Grigio = da fare o da decidere.</p>
   <div class="status-grid">
-    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Suite (app)</div><div class="s-note">Tutti i moduli attivi</div></div></div>
-    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Hub v1</div><div class="s-note">Installazioni + rivenditori</div></div></div>
-    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Remember-me</div><div class="s-note">Token rotante 30gg</div></div></div>
-    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">QR Segnalazione</div><div class="s-note">Standalone, no-auth</div></div></div>
-    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Ghost login</div><div class="s-note">HMAC-SHA256, 15min</div></div></div>
-    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Chat + vocali</div><div class="s-note">MediaRecorder, nativa</div></div></div>
-    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Privacy + Termini</div><div class="s-note">GDPR, luglio 2026</div></div></div>
-    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">GitHub Organization</div><div class="s-note">github.com/gesthall-suite</div></div></div>
-    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Sito marketing</div><div class="s-note">Astro, in deploy</div></div></div>
-    <div class="status-item"><div class="s-dot wip"></div><div><div class="s-label">License check</div><div class="s-note">Da integrare in auth.php</div></div></div>
-    <div class="status-item"><div class="s-dot wip"></div><div><div class="s-label">Deploy produzione</div><div class="s-note">VPS + DNS in corso</div></div></div>
-    <div class="status-item"><div class="s-dot todo"></div><div><div class="s-label">Stripe Billing</div><div class="s-note">Fase 2 · Q4 2026</div></div></div>
-    <div class="status-item"><div class="s-dot todo"></div><div><div class="s-label">Provisioning auto</div><div class="s-note">Script CLI · Fase 2</div></div></div>
-    <div class="status-item"><div class="s-dot todo"></div><div><div class="s-label">Primo cliente</div><div class="s-note">Obiettivo Q3 2026</div></div></div>
-  </div>
-  <div class="sec-h3">Struttura del progetto</div>
-  <pre><code>gesthall-suite/
-  suite/   ← app PHP gestionale
-  hub/     ← pannello admin
-  sito/    ← marketing Astro + docs
-  docs/    ← documentazione strategica e guide</code></pre>
-  <div class="callout info">
-    <span class="callout-ico">ℹ️</span>
-    <p>I tre sotto-progetti hanno ognuno il proprio <code>.git</code>. La root <code>gesthall-suite/</code> non ha git: è solo un contenitore locale.</p>
+    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Suite 3.11</div><div class="s-note">Tutti i moduli, mobile-first</div></div></div>
+    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Licenza dall'hub</div><div class="s-note">Cache 24 h, sola lettura</div></div></div>
+    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Prova 14 giorni</div><div class="s-note">Promemoria email dall'hub</div></div></div>
+    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Aggiornamenti dall'app</div><div class="s-note">GitHub Releases → hub</div></div></div>
+    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Backup e riparazione</div><div class="s-note">Settimanale, verifica file</div></div></div>
+    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Multi-sala</div><div class="s-note">Un'installazione, più sale</div></div></div>
+    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Offline</div><div class="s-note">Giornaliero e turni</div></div></div>
+    <div class="status-item"><div class="s-dot done"></div><div><div class="s-label">Sito</div><div class="s-note">Astro, schermate reali</div></div></div>
+    <div class="status-item"><div class="s-dot wip"></div><div><div class="s-label">Server demo</div><div class="s-note">Pronto: da installare</div></div></div>
+    <div class="status-item"><div class="s-dot wip"></div><div><div class="s-label">Hub in produzione</div><div class="s-note">Serve per prova e rilasci</div></div></div>
+    <div class="status-item"><div class="s-dot todo"></div><div><div class="s-label">Pagamenti</div><div class="s-note">Metodo da decidere</div></div></div>
+    <div class="status-item"><div class="s-dot todo"></div><div><div class="s-label">Contratti e DPA</div><div class="s-note">Vedi Vendita e legale</div></div></div>
   </div>
 </div>
 
 <!-- CHANGELOG -->
 <div class="section" id="changelog">
-  <div class="sec-h2"><span class="sec-num">02</span> Changelog recente</div>
-  <p class="sec-lead">Modifiche più significative, luglio 2026.</p>
-  <div class="cl-item"><span class="cl-date">ott 2026</span><span><strong>Suite 3.8 — aggiornamenti dall'app e backup</strong> — versioni pubblicate da GitHub Actions come GitHub Releases e proposte dall'hub, installazione verificata con ritorno alla versione precedente, backup settimanale del database, verifica in due passaggi, avvisi automatici. Dettagli in <a href="manutenzione.html">Aggiornamenti e backup</a></span><span class="badge done">feature</span></div>
-  <div class="cl-item"><span class="cl-date">lug 2026</span><span><strong>Privacy Policy + Termini di Servizio</strong> — GDPR completa su sito, suite e hub. Placeholder <code>[TITOLARE]</code> e <code>[CITTÀ]</code> da completare alla costituzione della struttura legale</span><span class="badge done">legal</span></div>
-  <div class="cl-item"><span class="cl-date">lug 2026</span><span><strong>Docs site integrato nel sito</strong> — <code>/docs</code> (guida utente pubblica) e <code>/interno</code> (documentazione tecnica + business plan, accesso htpasswd) integrati nell'Astro sito</span><span class="badge done">feature</span></div>
-  <div class="cl-item"><span class="cl-date">lug 2026</span><span><strong>Chat + messaggi vocali</strong> — <code>sala/chat.php</code>: messaggi testo, emoji, immagini e audio in tempo reale. Vocali via MediaRecorder API (WebM/OGG/MP4, max 5 MB)</span><span class="badge done">feature</span></div>
-  <div class="cl-item"><span class="cl-date">lug 2026</span><span><strong>QR segnalazione guasto</strong> — <code>sala/segnala_guasto.php</code> standalone, no-auth. QR punta qui invece di <code>ticket.php</code>; salva ticket + invia email</span><span class="badge done">feature</span></div>
-  <div class="cl-item"><span class="cl-date">lug 2026</span><span><strong>Resta connesso</strong> — remember-me token SHA-256 rotante, per-dispositivo, cookie HttpOnly/Secure/SameSite=Lax, tabella <code>remember_tokens</code></span><span class="badge done">security</span></div>
-  <div class="cl-item"><span class="cl-date">lug 2026</span><span><strong>Hub rivenditori</strong> — CRUD rivenditori, collegamento installazione ↔ rivenditore, vista rivenditore filtrata, KPI revenue share</span><span class="badge done">feature</span></div>
-  <div class="cl-item"><span class="cl-date">lug 2026</span><span><strong>Login redirect</strong> — <code>require_login()</code> salva <code>login_next</code> in sessione; post-login redirect all'URL originale</span><span class="badge done">fix</span></div>
-  <div class="cl-item"><span class="cl-date">giu 2026</span><span><strong>Hub v1</strong> — schema DB, autenticazione super admin + rivenditori, license API, dashboard KPI, gestione installazioni, ghost login da UI, setup wizard</span><span class="badge done">feature</span></div>
+  <div class="sec-h2"><span class="sec-num">02</span> Versioni</div>
+  <p class="sec-lead">Il dettaglio tecnico di ogni versione è in <code>suite/docs/CHANGELOG.md</code> (diventa la nota della GitHub Release); il testo per i clienti è in <a href="/changelog">/changelog</a> del sito.</p>
+  <div class="cl-item"><span class="cl-date">3.11</span><span><strong>Il mio spazio, tutto in un posto</strong> — schede Panoramica, Profilo, Preferenze, Notifiche, Buste paga; una sola voce nel menu. Generatore di demo (<code>tools/demo/</code>).</span><span class="badge done">ott</span></div>
+  <div class="cl-item"><span class="cl-date">3.10</span><span><strong>Personalizzazione</strong> — pagina iniziale, dimensione del testo, barra in basso scelta da ognuno; saluto con turno in corso e prossimo.</span><span class="badge done">ott</span></div>
+  <div class="cl-item"><span class="cl-date">3.9</span><span><strong>Prova e sola lettura</strong> — prova di 14 giorni dall'hub con promemoria; licenza scaduta = sola lettura (prova subito, abbonamento dopo 15 giorni); riparazione automatica dei file.</span><span class="badge done">ott</span></div>
+  <div class="cl-item"><span class="cl-date">3.8.x</span><span><strong>Aggiornamenti, backup, sicurezza, prestazioni</strong> — rilasci da GitHub Actions, aggiornamento con un clic e ritorno indietro, backup settimanale, verifica in due passaggi, avvisi automatici, export commercialista; polling ridotto, conflitti di salvataggio, pulizia automatica.</span><span class="badge done">ott</span></div>
+  <div class="cl-item"><span class="cl-date">3.5–3.7</span><span><strong>Nuovo aspetto</strong> — sistema grafico unico (<code>ui.css</code>), tabelle come schede su telefono, dashboard personalizzabile, chat rinnovata, riquadro Novità dal sito.</span><span class="badge done">set</span></div>
+  <div class="cl-item"><span class="cl-date">3.1–3.4</span><span><strong>Giornaliero, turni, bar</strong> — layout avanzato, campi facoltativi, turni riprogettati, clienti e prezzo al banco, menu del bar in PDF.</span><span class="badge done">set</span></div>
+  <div class="cl-item"><span class="cl-date">3.0</span><span><strong>Rifondazione</strong> — turni flessibili e turno di chiusura, statistiche sugli scassettamenti, Bet/Win e borderò, modulo bar, multi-sala, offline.</span><span class="badge done">set</span></div>
+  <div class="cl-item"><span class="cl-date">2.x</span><span><strong>Prima generazione</strong> — cassa a 3 turni, hub v1 e rivenditori, chat con vocali, LUL, QR guasti, resta connesso.</span><span class="badge done">lug</span></div>
+</div>
+
+<!-- STRUTTURA -->
+<div class="section" id="struttura">
+  <div class="sec-h2"><span class="sec-num">03</span> Repository e regole</div>
+  <p class="sec-lead">Organizzazione GitHub <code>gesthall-suite</code>, tre repository indipendenti.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Repository</th><th>Cosa</th><th>Dove gira</th></tr>
+    <tr><td><code>suite</code></td><td>L'app delle sale (PHP). Rilasci automatici: push su <code>main</code> con una nuova <code>GH_VERSION</code> → GitHub Release</td><td>Hosting del cliente o nostro, una cartella per installazione</td></tr>
+    <tr><td><code>hub</code></td><td>Pannello centrale: installazioni, licenze, prove, rivenditori, richieste piano, rilasci</td><td><code>hub.gesthallsuite.it</code></td></tr>
+    <tr><td><code>sito</code></td><td>Sito Astro statico + <code>/cliente/</code> (portale) + <code>/interno/</code> (queste pagine) + <code>/docs/guida/</code></td><td><code>gesthallsuite.it</code> (SiteGround)</td></tr>
+  </table></div>
+  <div class="sec-h3">Regole che valgono sempre</div>
+  <ul class="plain">
+    <li><strong>Nessuna modifica senza traccia</strong>: voce nel CHANGELOG del repository toccato; ogni rilascio della suite aggiorna anche <code>changelog.json</code> del sito (2-5 highlights per il riquadro Novità).</li>
+    <li><strong>File piccoli</strong>: nessun file dell'app sopra 30 KB (l'FTP di SiteGround li troncava). <code>tools/dividi_file.php</code> per spezzarli; <code>tools/controlla.php</code> e la CI bloccano il rilascio.</li>
+    <li><strong>Niente migration</strong>: lo schema vive solo in <code>install/schema.sql</code>; le colonne nuove si creano al primo uso (<code>db_aggiungi_colonna()</code>) o con le query scritte nel CHANGELOG.</li>
+    <li><strong>Branch</strong>: ogni lavoro su <code>feat/…</code> o <code>fix/…</code>, poi merge su <code>main</code>.</li>
+    <li>Le istruzioni per chi sviluppa (anche con Claude) sono in <code>CLAUDE.md</code> di ogni repository.</li>
+  </ul>
 </div>
 
 <!-- LOGIN -->
 <div class="section" id="login">
-  <div class="sec-h2"><span class="sec-num">03</span> Login &amp; sessione</div>
-  <p class="sec-lead">Accesso su <code>account/login.php</code>. Supporta username o email, rate limiting, remember-me e redirect post-login.</p>
-  <div class="sec-h3">Autenticazione</div>
-  <p>Il form accetta sia <strong>username</strong> sia <strong>indirizzo email</strong>. Se il campo contiene <code>@</code> viene tentata la ricerca per email (solo se univoca). Rate limiting: 5 tentativi in 15 minuti per IP.</p>
-  <div class="sec-h3">Resta connesso (remember-me)</div>
+  <div class="sec-h2"><span class="sec-num">04</span> Accesso e sicurezza</div>
   <div class="tbl-wrap"><table>
-    <tr><th>Aspetto</th><th>Dettaglio</th></tr>
-    <tr><td>Cookie</td><td><code>gh_rm</code> — HttpOnly, Secure, SameSite=Lax</td></tr>
-    <tr><td>Storage DB</td><td>Hash SHA-256 del token (raw token solo nel cookie)</td></tr>
-    <tr><td>Scadenza</td><td>30 giorni, rolling (si rinnova ad ogni accesso automatico)</td></tr>
-    <tr><td>Per-dispositivo</td><td>Ogni tablet/telefono ha il proprio token indipendente</td></tr>
-    <tr><td>Logout</td><td>Cancella solo il token del dispositivo corrente</td></tr>
+    <tr><th>Cosa</th><th>Come funziona</th></tr>
+    <tr><td>Accesso</td><td><code>account/login.php</code> con nome utente o email; dopo l'accesso si torna alla pagina richiesta (es. link da QR) o alla pagina iniziale scelta dall'utente</td></tr>
+    <tr><td>Blocco tentativi</td><td>5 tentativi falliti in 15 minuti per IP; 10 in 15 minuti per utente (<code>includes/accesso.php</code>)</td></tr>
+    <tr><td>Verifica in due passaggi</td><td>Facoltativa (Impostazioni → Sistema): codice via email a responsabili e revisori con email; «dispositivo attendibile» 30 giorni (cookie <code>gh_dev</code>)</td></tr>
+    <tr><td>Resta connesso</td><td>Cookie <code>gh_rm</code> HttpOnly/Secure, token SHA-256 per dispositivo, 30 giorni rinnovati a ogni uso</td></tr>
+    <tr><td>Password</td><td>Hash PHP; recupero via email con link di 1 ora; nuovo account con link di 24 ore; email di avviso al cambio password</td></tr>
+    <tr><td>Richieste</td><td>CSRF su ogni POST, query sempre preparate, output sempre con <code>htmlspecialchars</code>; registro attività (audit) con conservazione scelta dal responsabile</td></tr>
   </table></div>
-  <div class="callout warn">
-    <span class="callout-ico">⚠️</span>
-    <p>Per installazioni esistenti: <code>CREATE TABLE IF NOT EXISTS remember_tokens (...)</code> — vedi <code>suite/install/schema.sql</code>.</p>
-  </div>
-  <div class="sec-h3">Redirect post-login</div>
-  <p>Se un utente non autenticato accede a una pagina protetta (es. link QR), <code>require_login()</code> salva l'URL in <code>$_SESSION['login_next']</code> e lo usa dopo il login invece della dashboard.</p>
-  <div class="sec-h3">White label nel login</div>
+</div>
+
+<!-- RUOLI -->
+<div class="section" id="ruoli">
+  <div class="sec-h2"><span class="sec-num">05</span> Ruoli</div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Ruolo</th><th>Può</th><th>Non può</th></tr>
+    <tr><td><strong>Operatore</strong></td><td>Compilare la cassa e chiudere la giornata, prendere turni liberi (se permesso), bar, assistenze, clienti e prestiti, chat, documenti, Il mio spazio</td><td>Riaprire giornate, impostazioni, utenti, macchine, report riservati</td></tr>
+    <tr><td><strong>Responsabile</strong></td><td>Tutto: impostazioni, utenti, macchine, calendario, report, conferma versamenti, aggiornamenti e backup, piano e licenza</td><td>—</td></tr>
+    <tr><td><strong>Revisore</strong> (contabile, proprietà)</td><td>Report, Bet/Win e borderò, conferma ritiro dei versamenti con firma, LUL (caricare le buste paga), export commercialista; turni in sola lettura se permesso</td><td>Modificare la cassa, impostazioni, utenti</td></tr>
+  </table></div>
+  <p class="plain-p">Permessi regolabili (Impostazioni → Permessi): operatori e calendario turni, modifica libera dei turni del giornaliero, giornaliero da telefono (solo scassettamenti o completo), revisori e turni.</p>
+</div>
+
+<!-- CASSA -->
+<div class="section" id="cassa">
+  <div class="sec-h2"><span class="sec-num">06</span> Cassa e turni</div>
+  <div class="sec-h3">Turni flessibili</div>
   <ul class="plain">
-    <li><strong>Suite con logo</strong>: mostra il logo caricato in Impostazioni → Identità</li>
-    <li><strong>Suite senza logo</strong>: mostra iniziali in gradiente brand accent</li>
-    <li><strong>Pro/Essenziale</strong>: mostra il logo GestHall SVG</li>
+    <li><strong>Modelli</strong> (Impostazioni → Turni): nome, orario, giorni della settimana. Il calendario (<code>sala/turni.php</code>) li usa per ogni giorno; un giorno si può personalizzare (slot aggiunti, tolti, spostati).</li>
+    <li>Gli operatori prendono i turni liberi e si tolgono dai propri; il responsabile assegna. Turni che scavalcano la mezzanotte appartengono alla giornata in cui iniziano.</li>
+    <li>Nessun riferimento a paghe: si mostrano solo le ore.</li>
+  </ul>
+  <div class="sec-h3">Giornaliero (<code>cassa/giornaliero.php</code>)</div>
+  <ul class="plain">
+    <li>Una scheda per turno; i valori sono <strong>cumulativi</strong>: ogni turno parte da quelli del precedente. Il dato della giornata è quello del <strong>turno di chiusura</strong> (impostabile; in alternativa «ogni turno fa da chiusura» e la giornata è la somma).</li>
+    <li>Contanti per taglio, scassettamenti VLT raggruppati per fornitore (con lettura dump facoltativa), ticket pagati per piattaforma (con numero di ticket facoltativo), refill AWP, bancomat, differenze, seconda cassa facoltativa, rientri, note.</li>
+    <li>Layout classico o «Avanzato» (piano Suite): colonna scassettamenti fissa e risultato sempre visibile.</li>
+  </ul>
+<pre><code>cassetto     = contanti + refill_awp + differenze − ii_cassa − rientri
+versamento   = scassettamenti − bancomat − ticket_pagati
+totale_cassa = cassetto + monete − versamento
+scostamento  = totale_cassa − fondo_cassa      verde &lt; 4 € · giallo 4–5 € · rosso &gt; 5 €</code></pre>
+  <ul class="plain">
+    <li>Chiusura della giornata → email di riepilogo ai revisori → il revisore (o il responsabile) <strong>conferma il ritiro</strong> del versamento, con firma a mano se il modulo è attivo; restano importo, chi, quando, IP.</li>
+    <li>Scostamento oltre soglia → avviso automatico ai responsabili.</li>
   </ul>
 </div>
 
-<!-- OPERATORE -->
-<div class="section" id="operatore">
-  <div class="sec-h2"><span class="sec-num">04</span> Guida operatore</div>
-  <p class="sec-lead">Cosa può fare un operatore: compilare la cassa, gestire i turni, segnalare guasti, registrare prestiti.</p>
-  <div class="sec-h3">Cassa giornaliera</div>
-  <p>Pagina principale: <code>cassa/giornaliero.php</code>. Struttura a tab per turno (fino a 3). Swipe touch tra i turni su mobile. Banner colorato per scostamento: verde &lt;4€, giallo 4–5€, rosso &gt;5€.</p>
-  <div class="feat-row">
-    <span class="feat-tag teal">Contanti per taglio</span>
-    <span class="feat-tag teal">Scassettamenti VLT</span>
-    <span class="feat-tag teal">Ticket pagati</span>
-    <span class="feat-tag teal">Refill AWP</span>
-    <span class="feat-tag teal">Fondo cassa / Monete / Bancomat</span>
-    <span class="feat-tag teal">Note turno</span>
-  </div>
-  <pre><code>cassetto   = contanti + refill_awp + differenze - ii_cassa - rientri
-versamento = scassettamenti - bancomat - ticket
-scostamento= (cassetto + monete) - fondo_cassa - versamento</code></pre>
-  <div class="sec-h3">QR segnalazione guasto</div>
-  <p>Ogni macchina ha un QR code fisico stampabile da <code>sala/print_qr.php</code>. Il QR punta a <code>sala/segnala_guasto.php</code>: pagina standalone <strong>senza login</strong>, accessibile da qualsiasi scanner.</p>
-  <div class="steps">
-    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Scannerizza il QR</div><div class="step-desc">Con la fotocamera del telefono. Si apre automaticamente la pagina segnalazione, nessun login richiesto.</div></div></div>
-    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Descrivi il problema</div><div class="step-desc">Campo obbligatorio. Opzionalmente inserisci il tuo nome.</div></div></div>
-    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Invia</div><div class="step-desc">Ticket salvato nel DB + email automatica all'assistenza configurata in Impostazioni.</div></div></div>
-  </div>
-</div>
-
-<!-- CHAT -->
-<div class="section" id="chat">
-  <div class="sec-h2"><span class="sec-num">04b</span> Chat operatori</div>
-  <p class="sec-lead"><code>sala/chat.php</code> — messaggistica in tempo reale tra tutti gli utenti autenticati. Supporta testo, emoji, immagini e vocali senza dipendenze esterne.</p>
-  <div class="feat-row">
-    <span class="feat-tag teal">Testo libero</span>
-    <span class="feat-tag teal">Emoji (250+ in 7 categorie)</span>
-    <span class="feat-tag teal">Immagini (JPG/PNG/WebP)</span>
-    <span class="feat-tag teal">Messaggi vocali</span>
-  </div>
-  <div class="sec-h3">Messaggi vocali</div>
-  <div class="steps">
-    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Avvia registrazione</div><div class="step-desc">Clicca icona microfono 🎤. Compare la recording bar con timer in tempo reale.</div></div></div>
-    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Ferma o annulla</div><div class="step-desc">Clicca di nuovo 🎤 per fermare. Clicca ✕ per scartare senza inviare.</div></div></div>
-    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Anteprima e invio</div><div class="step-desc">Player <code>&lt;audio controls&gt;</code> per ascoltare prima di inviare. Clicca "Invia" per pubblicare.</div></div></div>
-  </div>
-  <div class="tbl-wrap"><table>
-    <tr><th>Aspetto</th><th>Dettaglio</th></tr>
-    <tr><td>Registrazione</td><td>MediaRecorder API, nessuna dipendenza npm</td></tr>
-    <tr><td>Formati audio</td><td><code>audio/webm</code>, <code>audio/ogg</code>, <code>audio/mp4</code></td></tr>
-    <tr><td>Storage</td><td><code>account/uploads/chat/</code> — <code>{msg_id}_{hex8}.{ext}</code></td></tr>
-    <tr><td>Accesso file</td><td>Solo via <code>sala/chat_img.php?id=N</code> (autenticazione + whitelist MIME)</td></tr>
-    <tr><td>API endpoint vocale</td><td><code>az=invia_audio</code> — POST multipart: <code>audio</code>, <code>conv</code>, <code>csrf</code></td></tr>
-    <tr><td>Immagini max</td><td>8 MB pre-compressione; compresso a WebP prima dell'upload</td></tr>
-  </table></div>
-  <div class="callout warn">
-    <span class="callout-ico">⚠️</span>
-    <p>Per installazioni esistenti: <code>ALTER TABLE chat_messaggi ADD COLUMN IF NOT EXISTS media_path VARCHAR(120) DEFAULT NULL;</code></p>
-  </div>
-</div>
-
-<!-- RESPONSABILE -->
-<div class="section" id="responsabile">
-  <div class="sec-h2"><span class="sec-num">05</span> Guida responsabile</div>
-  <p class="sec-lead">Accesso completo: impostazioni, utenti, macchine, tutti i report, conferma versamenti.</p>
-  <div class="sec-h3">Dashboard responsabile</div>
-  <p>KPI in tempo reale (polling ogni 30s): stato giornata, incasso VLT odierno, MRR mensile. Grafico 30 giorni e grafico 6 mesi. Versamenti in sospeso e statistiche operatori.</p>
-  <div class="sec-h3">Impostazioni</div>
-  <div class="tbl-wrap"><table>
-    <tr><th>Sezione</th><th>Cosa configura</th></tr>
-    <tr><td>Identità</td><td>Nome sala, slogan, logo, brand accent color</td></tr>
-    <tr><td>Turni</td><td>Numero turni (1–3), nomi, orari, prezzi stipendio</td></tr>
-    <tr><td>Permessi</td><td>Operatori modifica turni, mobile giornaliero, revisori vedi turni</td></tr>
-    <tr><td>Moduli</td><td>Attiva/disattiva assistenze, prestiti, documenti, SONOS, passaggio, firma</td></tr>
-    <tr><td>Assistenza</td><td>Telefono tecnico, lock, password — visibili nel form ticket</td></tr>
-    <tr><td>Sistema</td><td>Fuso orario, retention log, email mittente</td></tr>
-    <tr><td>Piano</td><td>Cambia piano (Essenziale/Pro/Suite)</td></tr>
-  </table></div>
-  <div class="sec-h3">Macchine e fornitori</div>
-  <p>In <code>account/admin/macchine.php</code>: CRUD macchine VLT/AWP (codice, tipo, fornitore, seriale, CIV, ordine), drag-and-drop riordino fornitori. Stampa QR per ogni macchina.</p>
-  <div class="sec-h3">Report</div>
-  <div class="feat-row">
-    <span class="feat-tag">Settimanale Bet/Win</span>
-    <span class="feat-tag">Mensile (CSV + XLSX)</span>
-    <span class="feat-tag">Annuale</span>
-    <span class="feat-tag teal">Confronto periodi (Piano Pro+)</span>
-  </div>
-</div>
-
-<!-- REVISORE -->
-<div class="section" id="revisore">
-  <div class="sec-h2"><span class="sec-num">06</span> Guida revisore</div>
-  <p class="sec-lead">Conferma versamenti, storico KPI mensili. Accesso in sola lettura.</p>
-  <div class="sec-h3">Conferma versamento</div>
-  <p>Clic su "Conferma ritiro" → (se <code>modulo_firma_ritiro</code> attivo) canvas firma a mano libera → firma PNG salvata in <code>versamenti_confermati.firma_img</code>. La conferma registra chi ha ritirato, quando e da che IP.</p>
-  <div class="sec-h3">Cosa il revisore NON può fare</div>
+<!-- REPORT -->
+<div class="section" id="report">
+  <div class="sec-h2"><span class="sec-num">07</span> Statistiche e report</div>
   <ul class="plain">
-    <li>Aprire/chiudere ticket assistenza</li>
-    <li>Modificare la cassa giornaliera</li>
-    <li>Accedere a impostazioni, macchine, utenti, audit</li>
-    <li>Registrare prestiti o rientri</li>
+    <li>Un solo motore: <code>stat_periodo()</code>. <strong>Incasso = scassettamenti VLT del turno di chiusura</strong>, mai il bet/win dichiarato dai fornitori e mai la somma dei turni.</li>
+    <li>Pagine: dashboard (KPI in tempo reale), settimanale, mensile, annuale, confronto periodi, storico per macchina, Bet/Win (dati dichiarati dai fornitori, import Excel), borderò (archivio PDF).</li>
+    <li>Export: Excel per pagina; <strong>export per il commercialista</strong> (riepilogo, incassi, versamenti confermati, bar) per mese o periodo.</li>
   </ul>
 </div>
 
 <!-- MODULI -->
 <div class="section" id="moduli">
-  <div class="sec-h2"><span class="sec-num">07</span> Moduli opzionali</div>
-  <p class="sec-lead">Funzionalità attivabili/disattivabili da Impostazioni → Moduli. Alcuni richiedono un piano specifico.</p>
+  <div class="sec-h2"><span class="sec-num">08</span> Moduli</div>
+  <p class="sec-lead">Si accendono e spengono da Impostazioni → Moduli; compaiono solo se anche il piano li comprende.</p>
   <div class="tbl-wrap"><table>
-    <tr><th>Modulo</th><th>Chiave</th><th>Default</th><th>Piano min.</th><th>Cosa fa</th></tr>
-    <tr><td>Ticket assistenza</td><td><code>modulo_assistenze</code></td><td>ON</td><td><span class="badge pro">Pro</span></td><td>CRUD guasti macchine, email tecnico, QR segnalazione no-auth</td></tr>
-    <tr><td>Prestiti</td><td><code>modulo_prestiti</code></td><td>ON</td><td><span class="badge pro">Pro</span></td><td>Prestiti a persone, rientri, riflesso automatico sul giornaliero</td></tr>
-    <tr><td>Anagrafica</td><td><code>modulo_anagrafica</code></td><td>ON</td><td><span class="badge pro">Pro</span></td><td>Registro giocatori con dati anagrafici e link a prestiti</td></tr>
-    <tr><td>Documenti</td><td><code>modulo_documenti</code></td><td>ON</td><td><span class="badge pro">Pro</span></td><td>Gestione file (PDF, Office, immagini) con cartelle e drag&amp;drop</td></tr>
-    <tr><td>Notifiche push</td><td><code>vapid_public</code></td><td>OFF</td><td><span class="badge pro">Pro</span></td><td>Push WebPush su nuovo ticket e conferma versamento</td></tr>
-    <tr><td>Firma digitale</td><td><code>modulo_firma_ritiro</code></td><td>OFF</td><td><span class="badge pro">Pro</span></td><td>Canvas firma a mano sulla conferma versamento</td></tr>
-    <tr><td>Confronto periodi</td><td>—</td><td>ON</td><td><span class="badge pro">Pro</span></td><td>Comparazione due range di date, 5 metriche, grafico</td></tr>
-    <tr><td>SONOS</td><td><code>modulo_sonos</code></td><td>OFF</td><td><span class="badge suite">Suite</span></td><td>Controllo musica SONOS via UPnP locale</td></tr>
-    <tr><td>Passaggio consegne</td><td><code>modulo_passaggio</code></td><td>OFF</td><td><span class="badge suite">Suite</span></td><td>Checklist configurabile + messaggi tra turni</td></tr>
+    <tr><th>Modulo</th><th>Chiave</th><th>Piano min.</th><th>Cosa fa</th></tr>
+    <tr><td>Assistenze</td><td><code>modulo_assistenze</code></td><td>Pro</td><td>Ticket guasti, email al tecnico, QR sulle macchine per segnalare senza accesso, avviso sui ticket fermi</td></tr>
+    <tr><td>Clienti (anagrafica)</td><td><code>modulo_anagrafica</code></td><td>Pro</td><td>Anagrafica dei clienti della sala e del bar</td></tr>
+    <tr><td>Prestiti</td><td><code>modulo_prestiti</code></td><td>Pro</td><td>Prestiti e rientri per cliente, riflessi nel giornaliero</td></tr>
+    <tr><td>Documenti</td><td><code>modulo_documenti</code></td><td>Pro</td><td>File della sala in cartelle, solo con accesso</td></tr>
+    <tr><td>Bar</td><td><code>modulo_bar</code></td><td>Pro</td><td>Banco con carrello, omaggi, magazzino a movimenti, scorte, report con margini, chiusura RT, menu stampabile in PDF</td></tr>
+    <tr><td>Firma versamento</td><td><code>modulo_firma_ritiro</code></td><td>Pro</td><td>Firma a mano sulla conferma di ritiro</td></tr>
+    <tr><td>Notifiche push</td><td>chiavi VAPID</td><td>Pro</td><td>Push sul telefono (Impostazioni → Notifiche → Genera chiavi)</td></tr>
+    <tr><td>Chat</td><td>—</td><td>Suite</td><td>Messaggi, immagini, vocali tra il personale</td></tr>
+    <tr><td>LUL e buste paga</td><td><code>modulo_lul</code></td><td>Suite</td><td>Il revisore carica il PDF del LUL, l'app lo divide per codice fiscale e lo consegna con presa visione</td></tr>
+    <tr><td>Passaggio consegne</td><td><code>modulo_passaggio</code></td><td>Suite</td><td>Checklist e messaggio tra un turno e l'altro</td></tr>
+    <tr><td>SONOS · Web radio</td><td><code>modulo_sonos</code> · <code>modulo_radio</code></td><td>Suite</td><td>Musica in sala</td></tr>
   </table></div>
 </div>
 
 <!-- PIANI -->
 <div class="section" id="piani">
-  <div class="sec-h2"><span class="sec-num">08</span> Piani &amp; feature</div>
-  <p class="sec-lead">Il piano è in <code>impostazioni.piano</code>. I gate vengono applicati in <code>nav.php</code> tramite <code>piano_can()</code>.</p>
-  <div class="pricing-grid">
-    <div class="price-card">
-      <div class="price-name">Essenziale</div>
-      <div class="price-amount">€39<span>/mese</span></div>
-      <ul class="price-features">
-        <li>Cassa giornaliera</li><li>Refill AWP</li><li>Turni programmati</li>
-        <li>Dashboard</li><li>Report mensile/annuale</li><li>Chat (testo + vocali)</li>
-        <li class="dim">Contatti, assistenze, documenti</li>
-        <li class="dim">Notifiche push, firma</li>
-        <li class="dim">White label, SONOS</li>
-      </ul>
-      <div style="margin-top:auto;padding-top:12px;font-size:12px;color:var(--muted)">Max 4 utenti attivi</div>
-    </div>
-    <div class="price-card featured">
-      <div class="price-name" style="color:var(--teal-dk)">Pro — consigliato</div>
-      <div class="price-amount">€69<span>/mese</span></div>
-      <ul class="price-features">
-        <li>Tutto Essenziale</li><li>Contatti rubrica</li><li>Ticket assistenza + QR guasti</li>
-        <li>Anagrafica giocatori</li><li>Prestiti e rientri</li><li>Documenti (PDF, Office)</li>
-        <li>Notifiche push VAPID</li><li>Firma digitale versamento</li><li>Confronto periodi</li>
-        <li class="dim">White label, SONOS, passaggio</li>
-      </ul>
-      <div style="margin-top:auto;padding-top:12px;font-size:12px;color:var(--muted)">Utenti illimitati</div>
-    </div>
-    <div class="price-card">
-      <div class="price-name">Suite</div>
-      <div class="price-amount">€99<span>/mese</span></div>
-      <ul class="price-features">
-        <li>Tutto Pro</li><li>White label (logo + colori)</li>
-        <li>SONOS controller</li><li>Passaggio consegne</li><li>Supporto prioritario</li>
-      </ul>
-      <div style="margin-top:auto;padding-top:12px;font-size:12px;color:var(--muted)">Utenti illimitati</div>
-    </div>
-  </div>
-  <div class="callout info">
-    <span class="callout-ico">🔧</span>
-    <p>Per cambiare piano manualmente: <code>UPDATE impostazioni SET valore='pro' WHERE chiave='piano';</code> — valori: <code>essenziale</code>, <code>pro</code>, <code>suite</code>.</p>
-  </div>
+  <div class="sec-h2"><span class="sec-num">09</span> Piani</div>
+  <p class="sec-lead">Definiti in <code>piano_features()</code> (suite) e <code>hub_piano_features()</code> (hub), da tenere allineati; prezzi e tabella del sito in <code>src/data/piani.ts</code>. Prezzi IVA esclusa, annuale con il 17% di sconto.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Piano</th><th>Prezzo</th><th>Comprende</th><th>Utenti</th></tr>
+    <tr><td><span class="badge ess">Essenziale</span></td><td>39 €/mese</td><td>Cassa, AWP, turni, dashboard e report</td><td>4 attivi</td></tr>
+    <tr><td><span class="badge pro">Pro</span></td><td>69 €/mese</td><td>+ contatti, assistenze, clienti, prestiti, documenti, push, firma, confronto periodi, bar</td><td>illimitati</td></tr>
+    <tr><td><span class="badge suite">Suite</span></td><td>99 €/mese</td><td>+ chat, LUL, passaggio consegne, SONOS e radio, white label (logo e colori), layout avanzato del giornaliero</td><td>illimitati</td></tr>
+    <tr><td><span class="badge suite">Multi-sala</span></td><td>149 €/mese (2 sale) + 49 € per sala</td><td>Tutto Suite + più sale nella stessa installazione</td><td>illimitati</td></tr>
+  </table></div>
+  <div class="callout info"><span class="callout-ico">🔑</span><p>Con la chiave d'installazione collegata il piano lo decide l'hub (scheda installazione); <code>impostazioni.piano</code> resta solo come valore di riserva per le installazioni non collegate.</p></div>
 </div>
 
-<!-- HUB OVERVIEW -->
+<!-- MIO -->
+<div class="section" id="mio">
+  <div class="sec-h2"><span class="sec-num">10</span> Il mio spazio e personalizzazione</div>
+  <ul class="plain">
+    <li><strong>Il mio spazio</strong> (<code>account/mio.php</code>, voce unica nel menu del nome, scorciatoia G P, la foto nella barra in basso del telefono): schede Panoramica, Profilo, Preferenze, Notifiche, Buste paga (<code>account/mio/schede.php</code>).</li>
+    <li><strong>Preferenze</strong> per utente, su ogni dispositivo: pagina iniziale, dimensione del testo, fino a 3 voci della barra in basso (<code>includes/preferenze.php</code>).</li>
+    <li><strong>Dashboard</strong> personalizzabile (widget, ordine, larghezze); layout del giornaliero personale (piano Suite).</li>
+    <li>Tema chiaro/scuro, colori e logo della sala (white label, piano Suite).</li>
+  </ul>
+</div>
+
+<!-- MULTISALA -->
+<div class="section" id="multisala">
+  <div class="sec-h2"><span class="sec-num">11</span> Multi-sala</div>
+  <ul class="plain">
+    <li>Una sola installazione e un solo database; le tabelle della sala hanno <code>sala_id</code>. Ogni query filtra per la sala corrente (<code>@gh_sala</code>).</li>
+    <li>Condivisi tra le sale: utenti, chat, LUL, notifiche, fornitori, licenza. Ogni utente vede le sale abilitate (o tutte); selettore in barra laterale.</li>
+    <li>Impostazioni per sala sopra quelle generali (tranne quelle globali: piano, chiavi, brand, backup…). Pagina <code>account/sale.php</code> con panoramica e creazione entro il limite <code>sale_max</code> dato dall'hub.</li>
+  </ul>
+</div>
+
+<!-- LICENZA -->
+<div class="section" id="licenza">
+  <div class="sec-h2"><span class="sec-num">12</span> Licenza e sola lettura</div>
+<pre><code>suite → GET {hub}/api/license.php?key=CHIAVE&amp;v=3.11.0     (al massimo ogni 24 h; ogni ora se scaduta)
+hub   → { valida, piano, scadenza, prova, features, user_limit, sale_max, aggiornamento }</code></pre>
+  <div class="tbl-wrap"><table>
+    <tr><th>Stato</th><th>Cosa succede</th></tr>
+    <tr><td>Valida</td><td>Piano e numero di sale dall'hub; promemoria al responsabile 15 giorni prima della scadenza (in prova: sempre i giorni rimasti)</td></tr>
+    <tr><td>Prova scaduta</td><td>Subito sola lettura</td></tr>
+    <tr><td>Abbonamento scaduto</td><td>15 giorni di tolleranza con banner, poi sola lettura (<code>LICENSE_TOLLERANZA</code>)</td></tr>
+    <tr><td>Hub irraggiungibile</td><td>Resta l'ultimo stato noto; una licenza già scaduta resta scaduta</td></tr>
+  </table></div>
+  <p class="plain-p"><strong>Sola lettura</strong>: si consulta ed esporta tutto; i salvataggi rispondono 403. Restano possibili: accesso e uscita, profilo e preferenze, notifiche, cambio sala, presa visione buste paga, rinnovo della licenza (Impostazioni → Piano), aggiornamenti, backup, verifica file. L'accesso ghost dall'hub non è bloccato.</p>
+</div>
+
+<!-- OFFLINE -->
+<div class="section" id="offline">
+  <div class="sec-h2"><span class="sec-num">13</span> Offline e conflitti</div>
+  <ul class="plain">
+    <li>Giornaliero e turni funzionano senza rete: il service worker tiene le pagine, i salvataggi vanno in coda (IndexedDB) e partono al ritorno della connessione.</li>
+    <li>Due persone sullo stesso turno: prima di salvare l'app controlla se qualcuno l'ha modificato nel frattempo e chiede «Sovrascrivi» o «Ricarica»; in coda offline il conflitto compare nella finestra della coda. I turni non toccati non vengono sovrascritti.</li>
+    <li>Le pagine aggiornate in automatico (chat, notifiche, dashboard) si fermano quando la scheda non è visibile.</li>
+  </ul>
+</div>
+
+<!-- HUB -->
 <div class="section" id="hub-overview">
-  <div class="sec-h2"><span class="sec-num">09</span> Pannello Hub</div>
-  <p class="sec-lead">License server + pannello admin centrale su <code>hub.gesthallsuite.it</code>. Due ruoli: super admin e rivenditore.</p>
+  <div class="sec-h2"><span class="sec-num">14</span> Pannello hub</div>
+  <p class="sec-lead"><code>hub.gesthallsuite.it</code>: stesso aspetto della suite, usabile da telefono. Due ruoli: super admin e rivenditore.</p>
   <div class="tbl-wrap"><table>
-    <tr><th>Ruolo</th><th>Come accede</th><th>Cosa vede</th></tr>
-    <tr><td><strong>Super admin</strong></td><td>Email + password da <code>hub/install/config.php</code></td><td>Tutto: KPI, tutte le installazioni, rivenditori, ghost login</td></tr>
-    <tr><td><strong>Rivenditore</strong></td><td>Email + password create nel pannello</td><td>Solo le proprie installazioni; KPI filtrati; nessun ghost login</td></tr>
+    <tr><th>Pagina</th><th>A cosa serve</th></tr>
+    <tr><td>Dashboard</td><td>Installazioni attive, MRR (prove escluse), prove in corso, licenze in scadenza o scadute, versione e ultimo contatto di ogni sala, richieste di cambio piano</td></tr>
+    <tr><td>Nuova installazione</td><td>Nome, URL, piano, sale, rivenditore, email del responsabile, «Prova 14 giorni»; genera la chiave</td></tr>
+    <tr><td>Scheda installazione</td><td>Piano, scadenza, prova («Attiva abbonamento», «Proroga 7 giorni»), chiave e sua sostituzione, accesso ghost, note</td></tr>
+    <tr><td>Rivenditori</td><td>Account dei rivenditori, percentuale, installazioni collegate</td></tr>
+    <tr><td>Richieste piano</td><td>Cambi di piano chiesti dal portale clienti: approva o rifiuta</td></tr>
+    <tr><td>Rilasci</td><td>Versioni della suite lette da GitHub, Ritira/Riproponi, collegamento GitHub (token in sola lettura)</td></tr>
   </table></div>
-  <div class="sec-h3">Setup iniziale hub</div>
+  <div class="sec-h3">Prima installazione dell'hub</div>
   <div class="steps">
-    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Deploy e DB</div><div class="step-desc">Crea DB <code>gesthall_hub</code>, importa <code>hub/install/schema.sql</code>, copia e compila <code>hub/install/config.php</code>.</div></div></div>
-    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Setup wizard</div><div class="step-desc">Visita <code>hub.gesthallsuite.it/install/setup.php</code> per impostare la password super admin.</div></div></div>
-    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Blocca setup</div><div class="step-desc">Rinomina o rimuovi <code>install/setup.php</code> dopo il completamento.</div></div></div>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Database e file</div><div class="step-desc">Database <code>gesthall_hub</code>, import di <code>install/schema.sql</code>, <code>install/config.php</code> compilato.</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Setup</div><div class="step-desc"><code>/install/setup.php</code> per l'account super admin, poi eliminarlo o rinominarlo.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Email e GitHub</div><div class="step-desc">Mittente email funzionante (promemoria di prova e scadenza); Rilasci → collega GitHub con un token <em>Contents: Read-only</em> sul repository della suite.</div></div></div>
   </div>
 </div>
 
-<!-- HUB INSTALLAZIONI -->
 <div class="section" id="hub-installazioni">
-  <div class="sec-h2"><span class="sec-num">10</span> Gestione installazioni</div>
-  <p class="sec-lead">Da Hub → Dashboard → "Nuova installazione". Ogni installazione ha una chiave univoca e può essere associata a un rivenditore.</p>
-  <div class="tbl-wrap"><table>
-    <tr><th>Campo</th><th>Descrizione</th></tr>
-    <tr><td>Nome sala</td><td>Etichetta interna nell'hub</td></tr>
-    <tr><td>URL</td><td>URL completo dell'installazione</td></tr>
-    <tr><td>Piano</td><td>Essenziale / Pro / Suite</td></tr>
-    <tr><td>Data scadenza</td><td>Default: +1 anno dalla creazione</td></tr>
-    <tr><td>Chiave installazione</td><td>64 hex auto-generata → va in <code>config.php</code> come <code>INSTALLATION_KEY</code></td></tr>
-    <tr><td>Superadmin key</td><td>Necessaria per ghost login. Prima occorrenza in <code>ghost_generate.php</code>.</td></tr>
-    <tr><td>Rivenditore</td><td>Assegnazione opzionale</td></tr>
-  </table></div>
-  <div class="sec-h3">Ghost login da hub</div>
-  <p>Scheda installazione (con <code>superadmin_key</code> configurata) → <strong>Genera ghost login</strong> → link firmato HMAC valido 15 minuti. Ogni accesso è loggato in <code>audit_log</code> con prefisso <code>[GHOST]</code>.</p>
+  <div class="sec-h2"><span class="sec-num">15</span> Installazioni</div>
+  <ul class="plain">
+    <li>Ogni installazione ha una <strong>chiave</strong> (64 caratteri esadecimali) che si incolla nella suite in Impostazioni → Piano e licenza. Se la suite ne genera una nuova, va registrata nella scheda («Sostituisci con la chiave del gestionale»). Risposta <code>not_found</code> = chiavi diverse.</li>
+    <li><strong>Prova</strong>: casella «Prova 14 giorni» (scadenza +14), email del responsabile per i promemoria (3 giorni prima, ultimo giorno, scaduta). <strong>Abbonamento</strong>: promemoria a 15 e 3 giorni. Ogni promemoria parte una volta sola.</li>
+    <li>La suite comunica versione e ultimo contatto a ogni controllo della licenza: la dashboard mostra chi è rimasto indietro o non si collega più.</li>
+  </ul>
 </div>
 
-<!-- HUB RIVENDITORI -->
-<div class="section" id="hub-rivenditori">
-  <div class="sec-h2"><span class="sec-num">11</span> Rivenditori</div>
-  <p class="sec-lead">I rivenditori accedono con proprie credenziali e vedono solo le installazioni assegnate. Nessun ghost login, nessuna modifica piani.</p>
-  <div class="sec-h3">Creare un rivenditore</div>
-  <div class="steps">
-    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Hub → sidebar "Rivenditori"</div><div class="step-desc">Solo super admin. Clicca "+ Nuovo rivenditore".</div></div></div>
-    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Compila i dati</div><div class="step-desc">Nome, email, password, revenue share % (es. 30).</div></div></div>
-    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Comunica le credenziali</div><div class="step-desc">Non c'è invito automatico: comunicare email e password manualmente.</div></div></div>
-  </div>
-  <div class="sec-h3">Assegnare installazioni</div>
-  <p>Nel form "Nuova installazione" scegli il rivenditore dal menu, oppure modifica una installazione esistente. Il rivenditore vede automaticamente tutte le installazioni con il suo ID.</p>
-</div>
-
-<!-- LICENSE API -->
 <div class="section" id="hub-license">
-  <div class="sec-h2"><span class="sec-num">12</span> License API</div>
-  <p class="sec-lead">Endpoint pubblico che le installazioni interrogano per verificare piano e scadenza.</p>
-  <pre><code>GET https://hub.gesthallsuite.it/api/license?key=INSTALLATION_KEY</code></pre>
-  <div class="sec-h3">Risposta valida</div>
-  <pre><code>{
-  "valida": true,
-  "piano": "pro",
-  "scadenza": "2027-07-01",
-  "nome_sala": "Sala dei Cristalli",
-  "features": ["cassa","awp","turni","dashboard","contatti",
-               "assistenze","anagrafica","prestiti","documenti",
-               "push","firma","confronto"],
-  "user_limit": 0
-}</code></pre>
-  <div class="callout warn">
-    <span class="callout-ico">⚠️</span>
-    <p>Il check license in <code>suite/includes/auth.php</code> (<code>get_license()</code> con cache 24h su file) è ancora da implementare. Attualmente il piano viene letto da <code>impostazioni.piano</code> nel DB locale.</p>
-  </div>
+  <div class="sec-h2"><span class="sec-num">16</span> License API e download</div>
+<pre><code>GET /api/license.php?key=CHIAVE&amp;v=3.11.0
+200 { "valida": true, "piano": "suite", "scadenza": "2027-10-02", "prova": false,
+      "nome_sala": "Sala Aurora", "features": [...], "user_limit": 0, "sale_max": 1,
+      "aggiornamento": { "versione": "3.12.0", "sha256": "…", "dimensione": 1234567, "note": "…", "data": "…" } | null }
+402 { "valida": false, "error": "expired", "scadenza": "…", "prova": true|false }
+404 { "valida": false, "error": "not_found" }
+
+GET /api/aggiornamento.php?key=CHIAVE&amp;v=3.12.0              pacchetto della versione (licenza valida)
+GET /api/aggiornamento.php?key=CHIAVE&amp;v=3.11.0&amp;ripara=1     stessa versione per la riparazione dei file
+                                                          (anche se ritirata o con licenza scaduta; &amp;info=1 solo impronta)</code></pre>
 </div>
 
-<!-- SUPER ADMIN -->
-<div class="section" id="superadmin">
-  <div class="sec-h2"><span class="sec-num">13</span> Super admin</div>
-  <p class="sec-lead">Strumenti per la gestione remota delle installazioni: ghost login diretto, accesso DB, backup.</p>
-  <div class="sec-h3">Ghost login diretto (senza hub)</div>
-  <p>Vai su <code>https://[url]/account/ghost_generate.php</code> e inserisci la <code>superadmin_key</code>. Il link firmato è valido 15 minuti.</p>
-  <div class="callout danger">
-    <span class="callout-ico">🔒</span>
-    <p>La <code>superadmin_key</code> è in <code>impostazioni</code> nel DB. Conservarla nel password manager con etichetta chiara per ogni sala. Non condividere i link ghost.</p>
-  </div>
-  <div class="sec-h3">Cambiare piano manualmente</div>
-  <pre><code>mysql -u gh_sala -p gh_sala
-UPDATE impostazioni SET valore='suite' WHERE chiave='piano';
--- valori: 'essenziale', 'pro', 'suite'</code></pre>
-  <div class="sec-h3">Backup DB</div>
-  <pre><code># Backup singola installazione
-mysqldump -u root -p gh_nomesala > /backup/gh_nomesala_$(date +%Y%m%d).sql
+<div class="section" id="hub-rivenditori">
+  <div class="sec-h2"><span class="sec-num">17</span> Rivenditori e portale clienti</div>
+  <ul class="plain">
+    <li><strong>Rivenditori</strong>: accedono all'hub con le proprie credenziali e vedono solo le loro installazioni e i loro numeri; niente accesso ghost, niente cambi di piano. Le condizioni economiche vanno nel contratto rivenditore (vedi <a href="vendita.html#pagamenti">Vendita e legale</a>).</li>
+    <li><strong>Portale clienti</strong> (<code>gesthallsuite.it/cliente/</code>): dalla suite, Impostazioni → Piano → «Gestisci piano online» genera un link firmato valido 1 ora (<code>hash_hmac(installation_key|ts, superadmin_key)</code>). Il portale chiede all'hub (<code>/api/sito.php</code>) nome, piano e scadenza e invia la richiesta di cambio piano. Senza parametri mostra una pagina informativa «Area clienti».</li>
+  </ul>
+</div>
 
-# Backup tutti i DB GestHall
-for db in $(mysql -u root -p -e "SHOW DATABASES LIKE 'gh_%'" -s --skip-column-names); do
-  mysqldump -u root -p $db > /backup/${db}_$(date +%Y%m%d).sql
-done</code></pre>
-  <div class="sec-h3">Sicurezza — riepilogo accessi</div>
-  <div class="tbl-wrap"><table>
-    <tr><th>Risorsa</th><th>Come accedere</th><th>Note</th></tr>
-    <tr><td><code>ghost_generate.php</code></td><td>URL non indicizzato + superadmin_key</td><td>Trattare come URL segreto</td></tr>
-    <tr><td>DB MySQL</td><td>SSH + mysql CLI</td><td>Credenziali in <code>config.php</code></td></tr>
-    <tr><td>Hub</td><td><code>hub.gesthallsuite.it</code> + email + password</td><td>Solo account super admin</td></tr>
-    <tr><td>License API</td><td>HTTPS + installation_key</td><td>Chiave auto-generata al setup</td></tr>
-  </table></div>
+<!-- SUPERADMIN -->
+<div class="section" id="superadmin">
+  <div class="sec-h2"><span class="sec-num">18</span> Assistenza remota</div>
+  <ul class="plain">
+    <li><strong>Accesso ghost</strong>: dalla scheda installazione dell'hub, link firmato HMAC con la <code>superadmin_key</code> della sala e scadenza breve; entra come responsabile senza codice di verifica; ogni azione resta nel registro attività con <code>[GHOST]</code>. In emergenza, senza hub: <code>account/ghost_generate.php</code> sulla sala con la <code>superadmin_key</code>.</li>
+    <li><strong>Query per installazioni vecchie</strong>: quelle del CHANGELOG, eseguite da phpMyAdmin dell'hosting o da noi via accesso ghost + strumenti dell'hosting.</li>
+    <li><strong>Backup</strong>: lo fa l'app (settimanale, prima di ogni aggiornamento, a mano). Niente <code>mysqldump</code> né cron sui server dei clienti. Dettagli in <a href="manutenzione.html#backup">Aggiornamenti e backup</a>.</li>
+    <li><strong>Errore 500</strong>: <code>tools/diagnosi.php</code> copiato nella cartella dell'app, poi cancellato. File mancanti o rovinati: Impostazioni → Sistema → Verifica file → «Ripara automaticamente».</li>
+  </ul>
+  <div class="callout warn"><span class="callout-ico">🔒</span><p><code>superadmin_key</code> e <code>installation_key</code> di ogni sala vanno solo nel password manager. Un link ghost non si inoltra a nessuno.</p></div>
 </div>
 
 <!-- DEPLOY -->
 <div class="section" id="deploy">
-  <div class="sec-h2"><span class="sec-num">14</span> Deploy su SiteGround</div>
-  <p class="sec-lead">Come configurare N installazioni su sottodomini <code>*.gesthallsuite.it</code> con un unico codebase condiviso.</p>
-  <div class="sec-h3">Struttura domini</div>
-  <pre><code>gesthallsuite.it          → Astro sito marketing (public_html/)
-hub.gesthallsuite.it      → Pannello hub PHP (public_html/hub.gesthallsuite.it/)
-demo.gesthallsuite.it     → Installazione demo suite
-nomesala.gesthallsuite.it → Installazione cliente</code></pre>
-  <div class="sec-h3">Prima installazione suite</div>
+  <div class="sec-h2"><span class="sec-num">19</span> Installare una sala</div>
+  <p class="sec-lead">Ogni sala (o gruppo di sale Multi-sala) è un'installazione separata: propria cartella, proprio database, propria chiave. Sull'hosting del cliente o su un nostro sottodominio <code>nomesala.gesthallsuite.it</code>.</p>
   <div class="steps">
-    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Clone repository</div><div class="step-desc"><code>cd /home/[utente]/ && git clone git@github.com:gesthall-suite/suite.git gestHall-suite</code></div></div></div>
-    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Crea sottodominio in SiteGround</div><div class="step-desc">Site Tools → Domains → Subdomains → Crea <code>demo.gesthallsuite.it</code></div></div></div>
-    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Symlink document root</div><div class="step-desc"><code>ln -s /home/[u]/gestHall-suite/suite /home/[u]/www/demo.gesthallsuite.it/public</code></div></div></div>
-    <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">Crea DB MySQL</div><div class="step-desc">Site Tools → MySQL: crea DB <code>gh_demo</code>, crea utente, assegna privilegi ALL.</div></div></div>
-    <div class="step"><div class="step-num">5</div><div class="step-content"><div class="step-title">Isolamento config via .htaccess</div><div class="step-desc">Crea <code>/home/[u]/www/demo.gesthallsuite.it/.htaccess</code> con <code>SetEnv GH_DB_NAME "gh_demo"</code> ecc. Il <code>config.php</code> condiviso legge da <code>getenv()</code>.</div></div></div>
-    <div class="step"><div class="step-num">6</div><div class="step-content"><div class="step-title">Wizard setup + SSL</div><div class="step-desc">Visita <code>/install/setup.php</code>, completa, rinomina il file. SSL da Site Tools → Security → SSL Manager.</div></div></div>
+    <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Hub</div><div class="step-desc">Nuova installazione (prova o abbonamento) → copiare la chiave.</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Spazio</div><div class="step-desc">Sottodominio o cartella con PHP 8.1+, database MySQL/MariaDB e utente dedicati, certificato SSL (obbligatorio per notifiche push e app installabile).</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">File</div><div class="step-desc">Zip dell'ultima GitHub Release caricato con il File Manager ed estratto (non l'FTP file per file).</div></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">Setup</div><div class="step-desc"><code>/install/setup.php</code>: database, schema, responsabile, dati della sala e moduli, macchine. Quando esiste già un responsabile il setup non riparte.</div></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-content"><div class="step-title">Licenza e verifica</div><div class="step-desc">Impostazioni → Piano e licenza → incolla la chiave → «Verifica ora». Poi Sistema → Verifica file. Da qui in avanti gli aggiornamenti arrivano dall'app.</div></div></div>
   </div>
-  <div class="sec-h3">Seconda installazione in poi</div>
-  <p>Ripeti solo i passi 2, 4 (nuovo DB), 5 (nuovo .htaccess), 6 (wizard). Tempo stimato: <strong>10–15 minuti</strong>.</p>
-  <div class="sec-h3">Aggiornare le installazioni</div>
-  <p>Dalla 3.8 ogni sala si aggiorna dall'app (Impostazioni → Sistema → Aggiornamenti) con la versione pubblicata su GitHub Releases e proposta dall'hub in <strong>Rilasci</strong>: vedi <a href="manutenzione.html">Aggiornamenti, backup e manutenzione</a>. Con un codebase condiviso via git resta valido anche:</p>
-  <pre><code>cd /home/[utente]/gestHall-suite
-git pull origin main
-# Un solo pull aggiorna tutti i vhost contemporaneamente</code></pre>
-  <div class="sec-h3">Deploy sito Astro</div>
-  <pre><code>cd sito/
-npm run build        # genera dist/
-rsync -avz dist/ user@server:/home/user/public_html/
-# oppure: npm run build e upload manuale via File Manager SiteGround</code></pre>
+  <div class="callout info"><span class="callout-ico">🧭</span><p>Sito: <code>npm run build</code> e caricamento di <code>dist/</code> (zip dal File Manager). <code>/interno/</code> e <code>/cliente/</code> sono inclusi; l'accesso PHP all'area interna (<code>php/interno/</code>) resta nella sua cartella sul server.</p></div>
 </div>
 
 <!-- ARCHITETTURA -->
 <div class="section" id="architettura">
-  <div class="sec-h2"><span class="sec-num">15</span> Architettura</div>
-  <p class="sec-lead">Modello C — ibrido subdomain: stesso codebase PHP, DB MySQL separato per cliente, vhost diverso per ogni sottodominio.</p>
+  <div class="sec-h2"><span class="sec-num">20</span> Architettura</div>
+<pre><code>gesthallsuite.it          sito statico (Astro) + /cliente/ + /interno/ + /docs/guida/
+hub.gesthallsuite.it      hub (PHP + MySQL): licenze, prove, rivenditori, rilasci
+demo.gesthallsuite.it     server demo (VPS): *.demo.gesthallsuite.it, una demo per sottodominio
+nomesala.gesthallsuite.it oppure dominio del cliente → una suite, un database
+GitHub                    codice + Actions (controlli, rilasci); l'hub legge le Release</code></pre>
   <div class="tbl-wrap"><table>
-    <tr><th>Modello</th><th>Descrizione</th><th>Verdict</th></tr>
-    <tr><td>A — Isolato</td><td>Server+DB separati per cliente</td><td>Non scala gli aggiornamenti</td></tr>
-    <tr><td>B — Multitenant</td><td>Un'app, un DB, colonna sala_id</td><td>Riscrittura massiva + rischio data leakage</td></tr>
-    <tr><td><strong>C — Ibrido subdomain</strong></td><td><strong>Stesso codebase, DB separati, vhost diversi</strong></td><td><span class="badge done">Scelto</span></td></tr>
+    <tr><th>File (suite)</th><th>Responsabilità</th></tr>
+    <tr><td><code>includes/auth.php</code></td><td>Sessione, accesso, CSRF, resta connesso, sola lettura dei POST</td></tr>
+    <tr><td><code>includes/lib.php</code> (+ <code>lib/</code>)</td><td>Helper comuni, <code>GH_VERSION</code>, piani, cassa, statistiche</td></tr>
+    <tr><td><code>includes/sale.php</code></td><td>Sala corrente, impostazioni per sala</td></tr>
+    <tr><td><code>includes/nav.php</code> (+ <code>nav/</code>)</td><td>Barra laterale, barra in basso, banner licenza, avvisi, backup e pulizia automatici</td></tr>
+    <tr><td><code>includes/license.php</code> · <code>aggiornamento.php</code> · <code>backup.php</code></td><td>Licenza, aggiornamenti e riparazione, backup e ripristino</td></tr>
+    <tr><td><code>includes/preferenze.php</code> · <code>avvisi.php</code> · <code>manutenzione.php</code> · <code>accesso.php</code></td><td>Preferenze, avvisi, pulizia, verifica in due passaggi</td></tr>
+    <tr><td><code>assets/css/ui.css</code> · <code>assets/js/ui.js</code></td><td>Sistema grafico comune (da riportare anche nell'hub)</td></tr>
+    <tr><td><code>install/schema.sql</code></td><td>Unica fonte dello schema</td></tr>
+    <tr><td><code>tools/</code></td><td>Controlli, pacchetto, divisione file, diagnosi, generatore di demo (non va nel pacchetto)</td></tr>
   </table></div>
-  <div class="sec-h3">DNS layout</div>
-  <pre><code>*.gesthallsuite.it      → server principale (wildcard A record)
-  roma.gesthallsuite.it   → DB: gh_roma
-  napoli.gesthallsuite.it → DB: gh_napoli
-hub.gesthallsuite.it    → pannello admin separato</code></pre>
-  <div class="sec-h3">Stack tecnologico</div>
-  <div class="feat-row">
-    <span class="feat-tag teal">PHP 8+ · PDO</span>
-    <span class="feat-tag teal">MySQL 8 / MariaDB 10.6+</span>
-    <span class="feat-tag teal">HTML/CSS/JS Vanilla</span>
-    <span class="feat-tag teal">PWA · Web Push VAPID</span>
-    <span class="feat-tag">Chart.js (CDN)</span>
-    <span class="feat-tag">Astro 7 (marketing)</span>
-  </div>
-  <div class="sec-h3">File principali</div>
-  <div class="tbl-wrap"><table>
-    <tr><th>File</th><th>Responsabilità</th></tr>
-    <tr><td><code>includes/auth.php</code></td><td>Autenticazione, sessione, CSRF, rate limiting, remember-me, setup guard</td></tr>
-    <tr><td><code>includes/lib.php</code></td><td>Helper: <code>piano_can()</code>, <code>brand_derive()</code>, <code>riepilogo_giornata()</code>, <code>audit()</code></td></tr>
-    <tr><td><code>includes/db.php</code></td><td>Singleton PDO + <code>config()</code></td></tr>
-    <tr><td><code>includes/nav.php</code></td><td>Sidebar, tab bar mobile, white label, PWA tags, PJAX</td></tr>
-    <tr><td><code>install/schema.sql</code></td><td>Unica fonte di verità per lo schema DB</td></tr>
-    <tr><td><code>sala/chat.php</code></td><td>Chat real-time: testo, emoji, immagini, messaggi vocali (MediaRecorder)</td></tr>
-    <tr><td><code>sala/segnala_guasto.php</code></td><td>Pagina standalone no-auth per segnalazione guasto via QR</td></tr>
-  </table></div>
-  <div class="callout info">
-    <span class="callout-ico">📌</span>
-    <p>Regola: nessun file di migration. Aggiornare solo <code>schema.sql</code>. Per installazioni esistenti, dettare la query al cliente o eseguirla via ghost login.</p>
-  </div>
+</div>
+
+<!-- TEST -->
+<div class="section" id="test">
+  <div class="sec-h2"><span class="sec-num">21</span> Test e CI</div>
+  <ul class="plain">
+    <li><code>GH_TEST_DB=gh_test php tests/run.php</code>: ricrea un database di prova da <code>schema.sql</code> ed esegue i test (cassa, statistiche, bar, avvisi, backup, licenza, preferenze, pulizia).</li>
+    <li><code>php tools/controlla.php</code>: sintassi, dimensione dei file, versione.</li>
+    <li>GitHub Actions: <code>controlli.yml</code> a ogni push; <code>rilascio.yml</code> su <code>main</code> con una nuova versione (test → pacchetto → tag → Release).</li>
+  </ul>
 </div>
 
 <!-- ROADMAP -->
 <div class="section" id="roadmap">
-  <div class="sec-h2"><span class="sec-num">16</span> Roadmap</div>
-  <p class="sec-lead">Tre fasi. La Fase 0 è completata. La Fase 1 è in corso (Q3 2026).</p>
-
-  <div class="sec-h3"><span class="badge done">Fase 0 — Completata</span></div>
-  <div class="feat-row" style="margin-top:10px">
-    <span class="feat-tag teal">Core gestionale</span>
-    <span class="feat-tag teal">Tutti i moduli opzionali</span>
-    <span class="feat-tag teal">Piano tier completo</span>
-    <span class="feat-tag teal">Ghost login</span>
-    <span class="feat-tag teal">Hub v1 + rivenditori</span>
-    <span class="feat-tag teal">Remember-me</span>
-    <span class="feat-tag teal">QR segnalazione no-auth</span>
-    <span class="feat-tag teal">Chat + messaggi vocali</span>
-    <span class="feat-tag teal">Privacy Policy GDPR</span>
-    <span class="feat-tag teal">Termini di Servizio</span>
-    <span class="feat-tag teal">Guida utente completa</span>
-    <span class="feat-tag teal">GitHub Organization</span>
-    <span class="feat-tag teal">Sito marketing Astro</span>
-    <span class="feat-tag teal">Docs site integrato</span>
-  </div>
-
-  <div class="sec-h3" style="margin-top:24px"><span class="badge wip">Fase 1 — Q3 2026 (in corso)</span></div>
-  <div class="feat-row" style="margin-top:10px">
-    <span class="feat-tag">License check in auth.php</span>
-    <span class="feat-tag">Deploy hub su VPS</span>
-    <span class="feat-tag">Deploy sito su SiteGround</span>
-    <span class="feat-tag">Form contatti Formspree</span>
-    <span class="feat-tag">Registrare video promo</span>
-    <span class="feat-tag">Primo cliente pagante</span>
-  </div>
-
-  <div class="sec-h3" style="margin-top:24px"><span class="badge todo">Fase 2 — Q4 2026</span></div>
-  <div class="feat-row" style="margin-top:10px">
-    <span class="feat-tag">Stripe Billing webhook</span>
-    <span class="feat-tag">Provisioning automatico</span>
-    <span class="feat-tag">Dashboard revenue share avanzata</span>
-    <span class="feat-tag">Self-service rivenditore</span>
-  </div>
-
-  <div class="sec-h3" style="margin-top:24px"><span class="badge todo">Fase 3 — 2027+</span></div>
-  <div class="feat-row" style="margin-top:10px">
-    <span class="feat-tag">Multi-sala dashboard aggregata</span>
-    <span class="feat-tag">API pubblica integrazioni</span>
-    <span class="feat-tag">Integrazione SNAI/Sisal automatica</span>
-  </div>
-
-  <div style="margin-top:40px;padding-top:24px;border-top:1px solid var(--border);text-align:center;color:var(--faint);font-size:12px">
-    GestHall Suite &nbsp;·&nbsp; PHP 8+ / MySQL / Vanilla JS &nbsp;·&nbsp; Documentazione interna &nbsp;·&nbsp; luglio 2026
-    &nbsp;·&nbsp; <a href="index.html" style="color:var(--teal-dk)">Sezione interna</a>
-    &nbsp;·&nbsp; <a href="business-plan.html" style="color:var(--teal-dk)">Business plan</a>
-  </div>
+  <div class="sec-h2"><span class="sec-num">22</span> Roadmap</div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Quando</th><th>Cosa</th><th>Stato</th></tr>
+    <tr><td>Ora</td><td>Hub in produzione con email e GitHub collegati; prima sala in prova</td><td><span class="badge wip">in corso</span></td></tr>
+    <tr><td>Ora</td><td>Server demo online + «Prova subito» sul sito</td><td><span class="badge wip">pronto</span></td></tr>
+    <tr><td>Ora</td><td>Dati societari, modulo d'ordine, DPA, kit privacy per la sala</td><td><span class="badge todo">da fare</span></td></tr>
+    <tr><td>Dopo la scelta</td><td>Pagamenti: incasso e rinnovo automatico collegati all'hub, portale clienti «Paga / rinnova»</td><td><span class="badge todo">da decidere</span></td></tr>
+    <tr><td>Poi</td><td>Creazione automatica di un'installazione dall'hub sui nostri sottodomini</td><td><span class="badge todo">idea</span></td></tr>
+    <tr><td>Poi</td><td>Portale rivenditore self-service, report provvigioni</td><td><span class="badge todo">idea</span></td></tr>
+    <tr><td>2027+</td><td>Integrazioni con i concessionari (import automatico Bet/Win), API per terzi</td><td><span class="badge todo">idea</span></td></tr>
+  </table></div>
 </div>
+
+<div class="section" style="text-align:center;color:var(--faint);font-size:12px">GestHall Suite · Documentazione interna · ottobre 2026 · <a href="index.html">Sezione interna</a> · <a href="business-plan.html">Business plan</a></div>
 
 </main>
 </div>
-
 <script>
 function toggleTheme() {
   var r = document.documentElement;
