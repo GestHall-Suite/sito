@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-02
 
+- Changelog: versione 3.8.2 della suite (giornaliero più leggibile). Schermate del prodotto rifatte con la nuova grafica del giornaliero.
+
 - Area clienti: aperta senza collegamento firmato non mostra più «Link non valido» ma spiega come entrare (dall'app: Impostazioni → Piano e licenza → «Gestisci piano online») con i link a supporto, guida e prezzi. Colori e caratteri del nuovo sito.
 - L'area clienti passa da `php/cliente/` a `public/cliente/`: è inclusa nel build e nello zip, non va più caricata a parte.
 - Area interna: tolti i Google Fonts (caratteri di sistema).

@@ -1,6 +1,21 @@
 {
- "updated": "2026-10-01",
+ "updated": "2026-10-02",
  "releases": [
+  {
+   "version": "3.8.2",
+   "date": "2026-10-02",
+   "hotfix": true,
+   "title": "",
+   "highlights": [],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Giornaliero più leggibile</strong> — Negli scassettamenti ogni fornitore ha il suo riquadro con il numero di macchine e il subtotale; nei ticket pagati le colonne «N° ticket» e «Importo» sono allineate ai campi e il totale mostra quanti ticket sono stati convalidati."
+     ]
+    }
+   ]
+  },
   {
    "version": "3.8.1",
    "date": "2026-10-01",
