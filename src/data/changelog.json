@@ -1,6 +1,36 @@
 {
- "updated": "2026-10-02",
+ "updated": "2026-10-03",
  "releases": [
+  {
+   "version": "3.13.0",
+   "date": "2026-10-03",
+   "hotfix": false,
+   "title": "Dashboard viva, turni per tutti e compenso",
+   "highlights": [
+    "Dashboard con numeri animati e conto alla rovescia del turno",
+    "Nuovo riquadro «Il mese a colpo d'occhio»",
+    "Con il permesso, gli operatori modificano tutti i turni",
+    "Compenso dei turni facoltativo, a ore o per tipo di turno",
+    "Motivo grafico sulla copertina"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Turni</strong> — Con «Modifica calendario turni» attivo l'operatore cambia chi fa ogni turno del giorno (anche quelli dei colleghi), prende i turni liberi e scrive le note, con un solo salvataggio; orari e turni del giorno restano al responsabile. Senza il permesso può sempre togliersi dai propri turni con «Non posso più farlo»."
+     ]
+    },
+    {
+     "type": "add",
+     "items": [
+      "<strong>Dashboard viva</strong> — La copertina mostra i numeri del tuo ruolo con un'animazione: incasso VLT di oggi e del mese con confronto e andamento di 14 giorni (responsabile), versamenti da confermare e copertura (revisore), ore del mese e conto alla rovescia del turno (operatore).",
+      "<strong>Il mese a colpo d'occhio</strong> — Nuovo riquadro con il calendario del mese colorato per incasso o ore di turno; ogni giorno apre il giornaliero o i turni.",
+      "<strong>Compenso dei turni</strong> — Facoltativo e disattivo di default: a ore o per tipo di turno, nel Riepilogo dei turni, nell'export, in Il mio spazio e in dashboard (ognuno vede il proprio).",
+      "<strong>Motivo sulla copertina</strong> — In Preferenze → Aspetto: onde, punti, linee o cerchi sopra la sfumatura scelta."
+     ]
+    }
+   ]
+  },
   {
    "version": "3.12.0",
    "date": "2026-10-02",

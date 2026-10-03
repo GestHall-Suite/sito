@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-03
+
+- Changelog: versione 3.13.0 della suite (dashboard viva, «Il mese a colpo d'occhio», permesso turni degli operatori, compenso facoltativo, motivo sulla copertina). Guida: dashboard, turni degli operatori, compenso dei turni, Preferenze → Aspetto.
+
 ## 2026-10-02
 
 - Changelog: versione 3.12.0 della suite (turni con un solo salvataggio, giornaliero sul primo turno, profilo rinnovato, aspetto personale). Guida: giornaliero, foglio del giorno dei turni, Il mio spazio (Profilo e Preferenze → Aspetto).
