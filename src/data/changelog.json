@@ -2,6 +2,27 @@
  "updated": "2026-10-03",
  "releases": [
   {
+   "version": "3.20.0",
+   "date": "2026-10-03",
+   "hotfix": false,
+   "title": "Barre del telefono rifinite",
+   "highlights": [
+    "Voce attiva che scorre nella barra in basso",
+    "Barra in alto con il nome della sala",
+    "App più leggera e ordinata"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Barra in basso</strong> — La voce attiva è evidenziata da un indicatore che scorre con un piccolo rimbalzo da una voce all'altra: su iPhone una capsula di vetro tinta col colore della sala, altrove una pillola dietro l'icona.",
+      "<strong>Barra in alto</strong> — Sul telefono mostra il titolo della pagina con il nome della sala, il logo più grande e pulsanti tondi; quando la pagina scorre compare un'ombra leggera che la separa dal contenuto.",
+      "<strong>Pulizia</strong> — Rimossi stili e codice non più usati: pagine un po' più leggere, nessun cambiamento nell'aspetto."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.18.0",
    "date": "2026-10-03",
    "hotfix": false,

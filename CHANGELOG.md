@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-03
 
+- Changelog: versione 3.20.0 della suite (voce attiva che scorre nella barra in basso, barra in alto con il nome della sala, pulizia).
+
 - Changelog: versione 3.18.0 della suite (vetro liquido su iPhone, Turni a tutta larghezza). Guida: «Barre sul telefono» nello Studio di stile.
 
 - Changelog: versione 3.17.0 della suite (Studio di stile ovunque, personalizzazione in un punto solo, testo sui colori chiari). Guida: Studio con pagina iniziale e barra in basso, tolta la riga «Preferenze».
