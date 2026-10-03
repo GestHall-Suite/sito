@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-03
 
+- Changelog: versione 3.20.2 della suite (parte alta nitida su iPhone, titolo aggiornato con la radio attiva).
+
 - Changelog: versione 3.20.1 della suite (barra in alto nitida su iPhone, titolo centrato, logo largo).
 
 - Changelog: versione 3.20.0 della suite (voce attiva che scorre nella barra in basso, barra in alto con il nome della sala, pulizia).

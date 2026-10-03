@@ -2,6 +2,25 @@
  "updated": "2026-10-03",
  "releases": [
   {
+   "version": "3.20.2",
+   "date": "2026-10-03",
+   "hotfix": true,
+   "title": "iPhone: parte alta nitida",
+   "highlights": [
+    "Parte alta nitida nell'app su iPhone",
+    "Titolo giusto in ogni pagina"
+   ],
+   "groups": [
+    {
+     "type": "fix",
+     "items": [
+      "<strong>App installata su iPhone</strong> — Con iOS 26 la parte alta dell'app appariva sfocata: ora la barra di stato è piena, dello stesso colore della barra dell'app, in chiaro e in scuro. Se la sfocatura resta, togli l'app dalla schermata Home e aggiungila di nuovo.",
+      "<strong>Titolo della pagina</strong> — Con la radio attiva il titolo in alto restava «Dashboard» cambiando sezione; ora si aggiorna sempre, insieme all'aiuto «?» della pagina."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.20.1",
    "date": "2026-10-03",
    "hotfix": true,
