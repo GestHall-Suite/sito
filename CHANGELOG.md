@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-03
 
+- Changelog: versione 3.14.1 della suite (menu scuro leggibile, linee divisorie facoltative).
+
 - Changelog: versione 3.14.0 della suite (bar con articoli e ricette). Prodotto → Bar e clienti: ricette e margine reale. Guida: «Articoli e ricette» nella sezione Bar.
 
 - Changelog: versione 3.13.0 della suite (dashboard viva, «Il mese a colpo d'occhio», permesso turni degli operatori, compenso facoltativo, motivo sulla copertina). Guida: dashboard, turni degli operatori, compenso dei turni, Preferenze → Aspetto.

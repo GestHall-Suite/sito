@@ -2,6 +2,30 @@
  "updated": "2026-10-03",
  "releases": [
   {
+   "version": "3.14.1",
+   "date": "2026-10-03",
+   "hotfix": true,
+   "title": "Menu scuro sempre leggibile",
+   "highlights": [
+    "Menu scuro leggibile con qualsiasi colore",
+    "Linee divisorie del menu facoltative"
+   ],
+   "groups": [
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Menu stampabile, stile Scuro</strong> — Con un colore scuro i nomi delle sezioni non si vedevano: ora il colore si adatta da solo allo sfondo, anche nel PDF."
+     ]
+    },
+    {
+     "type": "add",
+     "items": [
+      "<strong>Linee divisorie</strong> — Nel menu si possono togliere la linea tra le colonne e quelle sotto le sezioni."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.14.0",
    "date": "2026-10-03",
    "hotfix": false,
