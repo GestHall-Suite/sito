@@ -543,10 +543,18 @@ Scostamento   = Totale cassa − Fondo cassa</code></pre>
   <div class="tbl-wrap"><table>
     <tr><th>Pagina</th><th>Cosa fa</th></tr>
     <tr><td><strong>Banco</strong></td><td>Vendite a carrello (contanti o POS; scontrino, fattura o non documentato) e omaggi al cliente. Toccando il prezzo lo si cambia solo per quella vendita; il responsabile può salvarlo come nuovo listino. A fine giornata il totale del registratore telematico.</td></tr>
-    <tr><td><strong>Magazzino</strong></td><td>Prodotti Premium e Banco, carichi, scarti e rettifiche; giacenze e scorte minime.</td></tr>
+    <tr><td><strong>Magazzino</strong></td><td>Prodotti Premium e Banco, carichi (con fornitore o marca), scarti e inventario; giacenze in bottiglie, lattine o confezioni anche con i decimali, scorte minime.</td></tr>
     <tr><td><strong>Menu</strong></td><td>Menu dei prodotti su una pagina A4 con logo, tre stili e colore a scelta: si scarica in PDF o si stampa.</td></tr>
     <tr><td><strong>Report</strong></td><td>Venduto, scontrinato, fatturato, margine, omaggi e scarti, prodotti più venduti.</td></tr>
   </table></div>
+
+  <div class="sec-h3">Articoli e ricette</div>
+  <p>Ogni prodotto ha due interruttori: <strong>In vendita</strong> (compare al banco e nel menu) e <strong>Tieni la giacenza</strong>. L'Aperol è solo a magazzino (non si vende da solo), lo Spritz è in vendita senza giacenza propria, il Gin è entrambe le cose, l'acqua al bicchiere è in vendita senza giacenza (con prezzo 0 nel menu compare «Offerta»).</p>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div><div class="step-t">Articolo generico</div><div class="step-d">Nome senza marca (Gin, Caffè), unità d'acquisto (bottiglia, lattina, conf) e cosa contiene (70 cl, 1 kg, 50 pezzi). La marca e il fornitore si scrivono sul <strong>carico</strong>: se cambiano, l'articolo resta lo stesso.</div></div></div>
+    <div class="step"><div class="step-n">2</div><div><div class="step-t">Ricetta</div><div class="step-d">Per ogni prodotto in vendita indichi cosa consuma una porzione, in ml, cl, litri, oz, g, kg, pezzi o un'unità intera: Spritz = 6 cl Aperol + 9 cl Prosecco; Gin Tonic = 4 cl Gin + 1 Tonica; un bicchierino di Gin = 4 cl di «questo prodotto». Senza ricetta la vendita scala 1 unità del prodotto (es. una lattina).</div></div></div>
+    <div class="step"><div class="step-n">3</div><div><div class="step-t">Vendita e inventario</div><div class="step-d">Ogni vendita o omaggio scala gli ingredienti e registra il costo della porzione. Al banco i drink mostrano le porzioni ancora servibili. Con <strong>Inventario</strong> inserisci quanto hai contato (anche 2,3 bottiglie): la differenza mostra quanto le dosi reali si scostano da quelle della ricetta.</div></div></div>
+  </div>
 </div>
 
 <!-- 14. IMPOSTAZIONI -->

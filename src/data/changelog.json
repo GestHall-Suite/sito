@@ -2,6 +2,35 @@
  "updated": "2026-10-03",
  "releases": [
   {
+   "version": "3.14.0",
+   "date": "2026-10-03",
+   "hotfix": false,
+   "title": "Bar: articoli e ricette",
+   "highlights": [
+    "Ricette dei drink: ogni vendita scala gli ingredienti",
+    "Dosi in ml, cl, oz, g o pezzi",
+    "Fornitore e marca sul carico, l'articolo non cambia",
+    "Costo della porzione e margine reale"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Articoli e ricette</strong> — Ogni prodotto può essere in vendita e/o a magazzino: l'Aperol si tiene a magazzino senza venderlo da solo, lo Spritz si vende e scala 6 cl di Aperol e 9 cl di Prosecco. Dosi in ml, cl, litri, oz, g, kg, pezzi o un'unità intera; anteprima del costo della porzione.",
+      "<strong>Vendite che scalano gli ingredienti</strong> — Ogni vendita o omaggio registra il costo vero della porzione (margine reale); annullandola gli ingredienti tornano in giacenza. Al banco i drink mostrano quante porzioni si possono ancora servire.",
+      "<strong>Fornitore o marca sul carico</strong> — Se cambia il fornitore o la marca, l'articolo resta lo stesso.",
+      "<strong>Prodotti senza giacenza e offerti</strong> — Acqua al bicchiere o ghiaccio della macchina senza scorta; prezzo 0 = «Offerta» nel menu."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Giacenze con decimali</strong> — L'inventario si fa anche sulle bottiglie aperte (es. 2,3 bottiglie). Il menu mostra solo i prodotti in vendita."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.13.0",
    "date": "2026-10-03",
    "hotfix": false,
