@@ -2,6 +2,26 @@
  "updated": "2026-10-03",
  "releases": [
   {
+   "version": "3.20.1",
+   "date": "2026-10-03",
+   "hotfix": true,
+   "title": "Barra in alto su iPhone",
+   "highlights": [
+    "Titolo e logo nitidi su iPhone",
+    "Titolo sempre al centro della barra"
+   ],
+   "groups": [
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Barra in alto su iPhone</strong> — Titolo e logo non appaiono più sfocati: la barra in alto è ora piena, il vetro resta sulla barra in basso.",
+      "<strong>Più pulsanti nella barra</strong> — Con aiuto, notifiche e radio i pulsanti restano dentro lo schermo e il titolo rimane al centro.",
+      "<strong>Logo della sala</strong> — I loghi orizzontali vengono mostrati più grandi, senza essere schiacciati in un quadrato."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.20.0",
    "date": "2026-10-03",
    "hotfix": false,
