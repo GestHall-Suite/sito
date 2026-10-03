@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-03
 
+- Changelog: versione 3.17.0 della suite (Studio di stile ovunque, personalizzazione in un punto solo, testo sui colori chiari). Guida: Studio con pagina iniziale e barra in basso, tolta la riga «Preferenze».
+
 - Changelog: versione 3.16.0 della suite (tema scuro con qualsiasi colore, tavolozza unica).
 
 - Changelog: versione 3.15.0 della suite (Studio di stile, dashboard personale). Guida: riga «Studio di stile» in Il mio spazio. Prodotto → Sala e personale: Studio di stile e dashboard personale.

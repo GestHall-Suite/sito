@@ -2,6 +2,32 @@
  "updated": "2026-10-03",
  "releases": [
   {
+   "version": "3.17.0",
+   "date": "2026-10-03",
+   "hotfix": false,
+   "title": "Personalizzazione in un punto solo",
+   "highlights": [
+    "Studio di stile da ogni pagina, anche sul telefono",
+    "Pagina iniziale e barra in basso nello Studio",
+    "Testo leggibile sui pulsanti dei colori chiari"
+   ],
+   "groups": [
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Studio di stile sul telefono</strong> — Si apre da ogni pagina con «Personalizza l'app» in cima al Menu della barra in basso; le schede sono tutte visibili, senza scorrere.",
+      "<strong>Colori chiari</strong> — Con il teal predefinito, Ambra o Oro il testo dei pulsanti diventa scuro quando il bianco non si legge."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Tutto in un punto</strong> — La scheda «Preferenze» di Il mio spazio lascia il posto a «🎨 Stile»: pagina iniziale e voci della barra in basso sono nella scheda Menu dello Studio."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.16.0",
    "date": "2026-10-03",
    "hotfix": false,
