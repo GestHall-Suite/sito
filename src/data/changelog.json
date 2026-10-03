@@ -2,6 +2,29 @@
  "updated": "2026-10-03",
  "releases": [
   {
+   "version": "3.15.0",
+   "date": "2026-10-03",
+   "hotfix": false,
+   "title": "Studio di stile: l'app come la vuoi tu",
+   "highlights": [
+    "Studio di stile da ogni pagina, con anteprima dal vivo",
+    "6 temi pronti e colore principale personale",
+    "Preferiti in cima al menu",
+    "Note, scorciatoie e obiettivo del mese in dashboard"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Studio di stile</strong> — Dalla tavolozza accanto al tuo nome (o «Personalizza» nel menu utente, o i tasti G S): temi pronti, colore principale, copertina e motivo, sfondo, angoli, carattere, animazioni, densità e testo. Tutto si vede subito e si salva da solo, su ogni dispositivo.",
+      "<strong>Menu su misura</strong> — Fino a 8 pagine preferite in cima alla barra laterale, sezioni da nascondere, barra laterale tinta o con la tua copertina.",
+      "<strong>Ti riconosce</strong> — Soprannome nel saluto, frase personale sulla copertina, emoji accanto alla foto e colore dell'avatar.",
+      "<strong>Dashboard personale</strong> — Nuovi riquadri «Le mie note» (si salvano da sole), «Le mie scorciatoie» e «Obiettivo del mese» con anello di avanzamento."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.14.1",
    "date": "2026-10-03",
    "hotfix": true,

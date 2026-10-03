@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-03
 
+- Changelog: versione 3.15.0 della suite (Studio di stile, dashboard personale). Guida: riga «Studio di stile» in Il mio spazio. Prodotto → Sala e personale: Studio di stile e dashboard personale.
+
 - Changelog: versione 3.14.1 della suite (menu scuro leggibile, linee divisorie facoltative).
 
 - Changelog: versione 3.14.0 della suite (bar con articoli e ricette). Prodotto → Bar e clienti: ricette e margine reale. Guida: «Articoli e ricette» nella sezione Bar.
