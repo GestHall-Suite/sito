@@ -2,6 +2,37 @@
  "updated": "2026-10-03",
  "releases": [
   {
+   "version": "3.18.0",
+   "date": "2026-10-03",
+   "hotfix": false,
+   "title": "Vetro liquido su iPhone",
+   "highlights": [
+    "Barre in vetro liquido su iPhone, come iOS",
+    "Barra in basso a capsula flottante",
+    "Turni a tutta larghezza sul computer"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Vetro liquido</strong> — Su iPhone e iPad la barra in basso diventa una capsula flottante traslucida e le barre in alto sono in vetro sfocato, come nelle app di sistema. Si può scegliere anche su Android (Studio di stile → Forme → Barre sul telefono) o tornare allo stile classico."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Telefono</strong> — I comandi di ogni pagina sono integrati nel contenuto, senza la fascia grigia sotto la barra dell'app."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Turni</strong> — Sul computer il calendario usa tutta la larghezza dello schermo."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.17.0",
    "date": "2026-10-03",
    "hotfix": false,
