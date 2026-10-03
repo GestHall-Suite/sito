@@ -2,6 +2,31 @@
  "updated": "2026-10-03",
  "releases": [
   {
+   "version": "3.16.0",
+   "date": "2026-10-03",
+   "hotfix": false,
+   "title": "Tema scuro perfetto con qualsiasi colore",
+   "highlights": [
+    "Tema scuro leggibile anche con Inchiostro, Ardesia e Notte",
+    "Pulsanti col colore della sala anche al buio",
+    "Stessi colori e sfumature per sala e Studio di stile"
+   ],
+   "groups": [
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Tema scuro</strong> — Con un colore della sala scuro, hover e voci attive del menu, pulsanti, link e grafici si perdevano. Ora ogni colore ha una sua versione per il tema scuro, della stessa tinta e sempre leggibile; i pulsanti seguono il colore della sala invece del teal."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Tavolozza unica</strong> — 25 colori e 14 sfumature, gli stessi nel branding della sala e nello Studio di stile; la copertina «Colore della sala» usa la sfumatura del brand."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.15.0",
    "date": "2026-10-03",
    "hotfix": false,
