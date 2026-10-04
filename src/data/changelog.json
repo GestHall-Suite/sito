@@ -2,6 +2,32 @@
  "updated": "2026-10-04",
  "releases": [
   {
+   "version": "3.25.0",
+   "date": "2026-10-04",
+   "hotfix": false,
+   "title": "Pianifica i turni con un tocco",
+   "highlights": [
+    "Modalità «Pianifica»: persona, poi i turni",
+    "Trascina i turni sul computer",
+    "Ogni modifica si salva da sola, con «Annulla»"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Pianifica</strong> — Nella pagina Turni il pulsante «Pianifica» mostra le persone della sala: tocchi una persona e poi tutti i turni da darle, nell'elenco o nel calendario del mese. «Libera» toglie la persona dai turni toccati. Ogni turno si salva subito e si può annullare.",
+      "<strong>Trascinamento</strong> — Sul computer si trascina una persona su un turno per assegnarglielo, oppure un turno su un altro per scambiare chi li fa, anche tra giorni diversi."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Foglio del giorno immediato</strong> — Niente più «Salva modifiche»: si sceglie chi fa il turno toccando la persona, la nota si salva da sola, orari e turni aggiunti o tolti si applicano subito e il calendario si aggiorna senza ricaricare la pagina."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.24.0",
    "date": "2026-10-04",
    "hotfix": false,
