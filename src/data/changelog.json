@@ -2,6 +2,27 @@
  "updated": "2026-10-04",
  "releases": [
   {
+   "version": "3.23.0",
+   "date": "2026-10-04",
+   "hotfix": false,
+   "title": "Studio di stile nel piano Suite",
+   "highlights": [
+    "Studio di stile completo con Suite e Multi-sala",
+    "Tema, testo e menu liberi in tutti i piani",
+    "Le scelte già fatte non si perdono"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Studio di stile</strong> — La personalizzazione dell'aspetto (colori, copertine anche mesh e foto, sfondi, forme, carattere, temi pronti, soprannome ed emoji) fa parte del branding ed è compresa nei piani Suite e Multi-sala, come logo e colori della sala.",
+      "<strong>Negli altri piani</strong> — Lo Studio mostra queste scelte disattivate, con l'invito al piano Suite; tema chiaro o scuro, dimensione del testo, densità, animazioni, menu, preferiti, scorciatoie e note restano personalizzabili da tutti.",
+      "<strong>Nessuna scelta persa</strong> — Le personalizzazioni già fatte restano salvate e tornano attive appena la sala passa a Suite o Multi-sala."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.22.0",
    "date": "2026-10-04",
    "hotfix": false,

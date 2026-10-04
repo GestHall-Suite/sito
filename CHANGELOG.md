@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-04
 
+- Changelog: versione 3.23.0 della suite (Studio di stile completo nei piani Suite e Multi-sala). Piani: riga «Studio di stile completo» nella tabella e tra le voci di Suite. Prodotto → Sala e personale e guida: cosa è libero e cosa è del piano Suite.
+
 - Changelog: versione 3.22.0 della suite (copertine mesh, sfondi Velo e Mesh). Guida: Studio di stile aggiornato.
 
 - Changelog: versione 3.21.0 della suite (foto di copertina, sfondi con motivi, fogli in vetro, Menu che si chiude trascinando). Guida: Studio di stile con foto di copertina e nuovi sfondi.

@@ -35,7 +35,7 @@ export const piani: Piano[] = [
     id: 'suite', nome: 'Suite', mese: 99, anno: 990,
     per: 'La sala strutturata che vuole il proprio marchio e meno carta.',
     nota: 'Utenti illimitati',
-    include: ['Tutto Pro', 'Il tuo logo e i tuoi colori', 'Chat interna con foto e vocali', 'LUL e buste paga digitali', 'Passaggio consegne tra turni', 'Layout avanzato del giornaliero', 'Musica: Web Radio e SONOS', 'Supporto prioritario'],
+    include: ['Tutto Pro', 'Il tuo logo e i tuoi colori', 'Studio di stile completo per ognuno', 'Chat interna con foto e vocali', 'LUL e buste paga digitali', 'Passaggio consegne tra turni', 'Layout avanzato del giornaliero', 'Musica: Web Radio e SONOS', 'Supporto prioritario'],
   },
   {
     id: 'multisala', nome: 'Multi-sala', mese: 149, anno: null,
@@ -93,6 +93,7 @@ export const confronto: Gruppo[] = [
     { voce: 'Verifica in due passaggi e registro attività', v: [true, true, true, true] },
     { voce: 'Notifiche push e avvisi automatici', v: [false, true, true, true] },
     { voce: 'Logo e colori della sala', v: [false, false, true, true] },
+    { voce: 'Studio di stile completo per ogni persona (colori, copertine, foto, sfondi)', v: [false, false, true, true] },
     { voce: 'Più sale con un solo accesso', v: [false, false, false, true] },
     { voce: 'Supporto prioritario', v: [false, false, true, true] },
   ]},
