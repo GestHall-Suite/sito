@@ -2,6 +2,34 @@
  "updated": "2026-10-04",
  "releases": [
   {
+   "version": "3.22.0",
+   "date": "2026-10-04",
+   "hotfix": false,
+   "title": "Copertine mesh",
+   "highlights": [
+    "Copertine mesh a più colori",
+    "Mesh con i colori della sala",
+    "Sfondo «Velo» dalla tua copertina",
+    "Sfondi scelti da anteprime"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Copertine mesh</strong> — Nello Studio di stile (Colori → Copertina) trovi 8 copertine mesh a più colori e la «Mesh della sala», creata dai colori della tua sala. Il testo resta sempre leggibile.",
+      "<strong>Nuovi sfondi</strong> — «Velo della copertina» porta la copertina scelta (anche una mesh o la tua foto) sfocata dietro tutta la pagina; «Mesh» usa macchie morbide del colore principale."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Tutto coordinato</strong> — Lo sfondo si sceglie da anteprime con gli stessi colori di copertina e colore principale; i temi pronti Aurora e Notte al casinò usano le nuove mesh.",
+      "<strong>Tema scuro</strong> — I pulsanti sulla copertina della dashboard restano bianchi e leggibili."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.21.0",
    "date": "2026-10-04",
    "hotfix": false,

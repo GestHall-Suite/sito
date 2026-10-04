@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-04
 
+- Changelog: versione 3.22.0 della suite (copertine mesh, sfondi Velo e Mesh). Guida: Studio di stile aggiornato.
+
 - Changelog: versione 3.21.0 della suite (foto di copertina, sfondi con motivi, fogli in vetro, Menu che si chiude trascinando). Guida: Studio di stile con foto di copertina e nuovi sfondi.
 
 ## 2026-10-03
