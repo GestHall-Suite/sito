@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-04
 
+- Changelog: versione 3.25.0 della suite (modalità Pianifica, trascinamento, foglio del giorno a salvataggio immediato). Guida turni: Pianifica e salvataggio immediato. Prodotto → Sala: voce «Pianifica».
+
 - Changelog: versione 3.24.0 della suite (turni in ordine di orario, sovrapposizioni, permesso di eliminazione, foto di copertina). Guida: eliminazione dei turni, ordine, avvisi e «Altro turno».
 
 - Changelog: versione 3.23.0 della suite (Studio di stile completo nei piani Suite e Multi-sala). Piani: riga «Studio di stile completo» nella tabella e tra le voci di Suite. Prodotto → Sala e personale e guida: cosa è libero e cosa è del piano Suite.
