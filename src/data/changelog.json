@@ -2,6 +2,40 @@
  "updated": "2026-10-04",
  "releases": [
   {
+   "version": "3.24.0",
+   "date": "2026-10-04",
+   "hotfix": false,
+   "title": "Turni in ordine e senza sovrapposizioni",
+   "highlights": [
+    "Turni sempre in ordine di orario",
+    "Avviso se due turni si sovrappongono",
+    "Operatori: permesso di togliere turni",
+    "Foto di copertina più affidabile"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Eliminazione dei turni</strong> — Nuovo permesso in Impostazioni → Permessi: gli operatori possono togliere un turno dal giorno con il cestino, se il responsabile lo consente.",
+      "<strong>Avviso di sovrapposizione</strong> — Se due turni dello stesso giorno si sovrappongono negli orari compare un avviso, anche nelle impostazioni dei turni, e prima di salvare viene chiesta conferma."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Ordine di orario</strong> — Nel calendario i turni sono sempre in ordine di orario, con quelli dopo mezzanotte in fondo alla giornata; anche il Giornaliero li segue.",
+      "<strong>Foglio del giorno più chiaro</strong> — «Altro turno» con nome e orari da scrivere subito, «Modifica nome e orario» ben visibile, note più esplicite."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Foto di copertina</strong> — Il caricamento non si blocca più: la foto viene alleggerita e ogni problema viene spiegato con un messaggio chiaro."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.23.0",
    "date": "2026-10-04",
    "hotfix": false,
