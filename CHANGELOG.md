@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-04
+
+- Changelog: versione 3.21.0 della suite (foto di copertina, sfondi con motivi, fogli in vetro, Menu che si chiude trascinando). Guida: Studio di stile con foto di copertina e nuovi sfondi.
+
 ## 2026-10-03
 
 - Changelog: versione 3.20.2 della suite (parte alta nitida su iPhone, titolo aggiornato con la radio attiva).

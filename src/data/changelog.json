@@ -1,6 +1,41 @@
 {
- "updated": "2026-10-03",
+ "updated": "2026-10-04",
  "releases": [
+  {
+   "version": "3.21.0",
+   "date": "2026-10-04",
+   "hotfix": false,
+   "title": "Foto di copertina e fogli in vetro",
+   "highlights": [
+    "Una tua foto come copertina",
+    "Sfondi a onde, linee e cerchi",
+    "Fogli in vetro liquido su iPhone",
+    "Menu che si chiude trascinando"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Foto di copertina</strong> — Nello Studio di stile (Colori → Copertina) puoi usare una tua foto: viene ridotta automaticamente, resta leggibile sotto il testo e la vedi solo tu.",
+      "<strong>Sfondi con i motivi</strong> — Lo sfondo dell'app può avere onde, linee o cerchi, gli stessi motivi della copertina, nel tuo colore principale, in chiaro e in scuro."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Vetro liquido</strong> — Con il vetro attivo anche i fogli dal basso (foglio del giorno dei Turni, finestre di modifica, conferme) sono in vetro come il Menu.",
+      "<strong>Menu del telefono</strong> — Si chiude trascinandolo verso il basso o toccando fuori, come su iPhone.",
+      "<strong>Cassa sul telefono</strong> — Le schede dei turni sono più ordinate: nome del turno e di chi lo fa sempre leggibili, icone solo sulla scheda aperta."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Colore principale</strong> — Nello Studio di stile il colore scelto si vede subito anche quando la sala ha un colore proprio."
+     ]
+    }
+   ]
+  },
   {
    "version": "3.20.2",
    "date": "2026-10-03",
