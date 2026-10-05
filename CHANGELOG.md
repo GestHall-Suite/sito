@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-05
+
+- Changelog: versione 3.25.1 della suite (accesso dopo l'uscita senza errori).
+
 ## 2026-10-04
 
 - Changelog: versione 3.25.0 della suite (modalità Pianifica, trascinamento, foglio del giorno a salvataggio immediato). Guida turni: Pianifica e salvataggio immediato. Prodotto → Sala: voce «Pianifica».

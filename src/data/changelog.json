@@ -1,6 +1,23 @@
 {
- "updated": "2026-10-04",
+ "updated": "2026-10-05",
  "releases": [
+  {
+   "version": "3.25.1",
+   "date": "2026-10-05",
+   "hotfix": true,
+   "title": "Accesso più affidabile",
+   "highlights": [
+    "Rientro subito dopo l'uscita senza errori"
+   ],
+   "groups": [
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Accesso dopo l'uscita</strong> — Uscendo e rientrando subito poteva comparire «Token CSRF non valido», soprattutto con l'app aperta in un'altra scheda o sul telefono. Ora l'accesso funziona sempre; se la pagina di accesso resta aperta troppo a lungo viene riproposta con il nome utente già inserito."
+     ]
+    }
+   ]
+  },
   {
    "version": "3.25.0",
    "date": "2026-10-04",
