@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-05
 
+- Changelog: versione 3.26.0 della suite (widget Chat in dashboard). Guida: riquadro Chat della dashboard.
 - Changelog: versione 3.25.1 della suite (accesso dopo l'uscita senza errori).
 
 ## 2026-10-04

@@ -2,6 +2,31 @@
  "updated": "2026-10-05",
  "releases": [
   {
+   "version": "3.26.0",
+   "date": "2026-10-05",
+   "hotfix": false,
+   "title": "La chat in dashboard",
+   "highlights": [
+    "Widget Chat in dashboard",
+    "Rispondi senza aprire la chat",
+    "Non letti sempre in vista"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Widget Chat</strong> — In dashboard la chat della sala e le conversazioni più recenti, con i messaggi non letti e chi è online. Leggi gli ultimi messaggi e rispondi al volo; «Apri» porta alla chat completa. I messaggi restano da leggere finché non scegli la conversazione o rispondi."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Dashboard</strong> — I riquadri che si allungano dopo il caricamento non si sovrappongono più a quelli sotto."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.25.1",
    "date": "2026-10-05",
    "hotfix": true,
