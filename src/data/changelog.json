@@ -2,6 +2,39 @@
  "updated": "2026-10-05",
  "releases": [
   {
+   "version": "3.27.0",
+   "date": "2026-10-05",
+   "hotfix": false,
+   "title": "Più fluida, e una chat nuova",
+   "highlights": [
+    "Passaggio fluido tra le pagine",
+    "Calendario turni con «Oggi» e «In arrivo»",
+    "Chat con nuova grafica",
+    "Tastiera su iPhone sistemata in chat"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Movimento</strong> — Cambiando pagina il contenuto si dissolve e il nuovo entra con una leggera salita, mentre i menu restano fermi; i riquadri compaiono a cascata e nelle schede l'evidenziazione scivola sulla scheda scelta. Chi preferisce può ridurre le animazioni dallo Studio di stile.",
+      "<strong>Calendario turni</strong> — Sul computer i giorni sono riquadri arrotondati con oggi in evidenza e, accanto, la colonna «Oggi» con i turni del giorno e «In arrivo» con i tuoi prossimi turni (per il responsabile i turni da coprire)."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Chat rinnovata</strong> — Nuovo sfondo nel colore della sala, bolle raggruppate per persona, data sempre in vista, messaggi nuovi animati e barra di scrittura a pillola, su telefono e computer."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Chat su iPhone</strong> — Con la tastiera aperta la conversazione resta al suo posto: l'intestazione non sparisce e l'ultimo messaggio resta visibile."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.26.0",
    "date": "2026-10-05",
    "hotfix": false,
