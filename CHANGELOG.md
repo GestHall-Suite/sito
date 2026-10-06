@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-06
+
+- Changelog: versione 3.27.1 della suite (stile della barra laterale, notifiche, magazzino bar).
+
 ## 2026-10-05
 
 - Changelog: versione 3.27.0 della suite (movimento, calendario turni con colonna Oggi/In arrivo, chat rinnovata). Guida: turni e chat.

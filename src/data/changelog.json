@@ -1,6 +1,36 @@
 {
- "updated": "2026-10-05",
+ "updated": "2026-10-06",
  "releases": [
+  {
+   "version": "3.27.1",
+   "date": "2026-10-06",
+   "hotfix": true,
+   "title": "Barra laterale a modo tuo",
+   "highlights": [
+    "Barra laterale Scura o con la copertina",
+    "Notifiche nei colori della sala"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Stile della barra laterale</strong> — Nello Studio di stile, scheda Forme, con anteprime: oltre a Standard, Tinta e Con copertina ora ci sono Scura e Copertina piena."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Notifiche</strong> — Le notifiche a comparsa seguono il tema chiaro o scuro e il colore della sala."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Magazzino bar</strong> — La colonna dei pulsanti è di nuovo allineata alle righe."
+     ]
+    }
+   ]
+  },
   {
    "version": "3.27.0",
    "date": "2026-10-05",
