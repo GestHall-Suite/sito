@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-06
 
+- Changelog: versione 3.28.0 della suite (vetro liquido sul computer, barra laterale fluttuante). Guida: Studio di stile.
 - Changelog: versione 3.27.1 della suite (stile della barra laterale, notifiche, magazzino bar).
 
 ## 2026-10-05

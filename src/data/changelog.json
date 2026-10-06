@@ -2,6 +2,26 @@
  "updated": "2026-10-06",
  "releases": [
   {
+   "version": "3.28.0",
+   "date": "2026-10-06",
+   "hotfix": false,
+   "title": "Vetro liquido anche sul computer",
+   "highlights": [
+    "Vetro liquido automatico sui Mac",
+    "Barra laterale fluttuante",
+    "Si sceglie dallo Studio di stile"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Vetro liquido sul computer</strong> — Sui Mac si attiva da solo, come su iPhone e iPad; su ogni computer si può scegliere dallo Studio di stile. Barra laterale, intestazione, finestre, notifiche e menu diventano traslucidi e lasciano intravedere lo sfondo scelto.",
+      "<strong>Barra laterale fluttuante</strong> — Nello Studio di stile, scheda Forme: la barra si stacca dai bordi con gli angoli scelti e, con il vetro liquido, diventa una lastra traslucida."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.27.1",
    "date": "2026-10-06",
    "hotfix": true,
