@@ -94,6 +94,7 @@ export const confronto: Gruppo[] = [
     { voce: 'Notifiche push e avvisi automatici', v: [false, true, true, true] },
     { voce: 'Logo e colori della sala', v: [false, false, true, true] },
     { voce: 'Studio di stile completo per ogni persona (colori, copertine, foto, sfondi)', v: [false, false, true, true] },
+    { voce: 'Stile della sala e pagina di accesso personalizzata', v: [false, false, true, true] },
     { voce: 'Più sale con un solo accesso', v: [false, false, false, true] },
     { voce: 'Supporto prioritario', v: [false, false, true, true] },
   ]},

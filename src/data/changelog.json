@@ -1,6 +1,26 @@
 {
- "updated": "2026-10-06",
+ "updated": "2026-10-07",
  "releases": [
+  {
+   "version": "3.29.0",
+   "date": "2026-10-07",
+   "hotfix": false,
+   "title": "Stile della sala e pagina di accesso",
+   "highlights": [
+    "Aspetto iniziale dell'app per tutti",
+    "Anteprima su computer e telefono",
+    "Pagina di accesso con foto o copertina"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Stile della sala</strong> — Da Impostazioni → Stile della sala il responsabile sceglie l'aspetto con cui tutti trovano l'app: tema, copertina, sfondo, angoli, carattere, barra laterale, vetro liquido o un tema pronto, con l'anteprima dal vivo su computer e telefono. Ognuno poi lo cambia per sé con il proprio Studio di stile; «Ripristina» riporta allo stile della sala.",
+      "<strong>Pagina di accesso personalizzata</strong> — Disposizione centrata, divisa o con la scheda di lato; sfondo con la copertina della sala o una vostra foto; scheda in vetro, tema chiaro o scuro, titolo e messaggio di benvenuto. Resta una pagina di sistema: la decide la sala, non le preferenze dei singoli."
+     ]
+    }
+   ]
+  },
   {
    "version": "3.28.0",
    "date": "2026-10-06",
