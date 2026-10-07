@@ -2,6 +2,24 @@
  "updated": "2026-10-07",
  "releases": [
   {
+   "version": "3.29.1",
+   "date": "2026-10-07",
+   "hotfix": false,
+   "title": "Sala e aspetto in un'unica pagina",
+   "highlights": [
+    "Nome, logo, colori e stile insieme",
+    "Schede Sala, Aspetto dell'app, Pagina di accesso"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Sala e aspetto</strong> — In Impostazioni una sola pagina raccoglie nome, logo, contatti e colore della sala, l'aspetto iniziale dell'app per tutti e la pagina di accesso, in tre schede, con l'anteprima dal vivo."
+     ]
+    }
+   ]
+  },
+  {
    "version": "3.29.0",
    "date": "2026-10-07",
    "hotfix": false,

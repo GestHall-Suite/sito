@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-07
 
+- Changelog: versione 3.29.1 della suite (Sala e aspetto in un'unica pagina). Guida: percorso «Impostazioni → Sala e aspetto».
 - Changelog: versione 3.29.0 della suite (stile della sala, pagina di accesso personalizzata). Guida: Stile della sala. Prodotto → Sala e piani: stile della sala.
 
 ## 2026-10-06
