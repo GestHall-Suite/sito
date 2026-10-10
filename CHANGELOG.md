@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-10
+
+- Changelog: versione 3.30.0 della suite (giornaliero da telefono e computer insieme). Guida: «Telefono e computer insieme». Prodotto → Cassa e turni: riquadro aggiornato.
+
 ## 2026-10-07
 
 - Changelog: versione 3.29.1 della suite (Sala e aspetto in un'unica pagina). Guida: percorso «Impostazioni → Sala e aspetto».
