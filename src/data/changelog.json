@@ -1,6 +1,32 @@
 {
- "updated": "2026-10-07",
+ "updated": "2026-10-10",
  "releases": [
+  {
+   "version": "3.30.0",
+   "date": "2026-10-10",
+   "hotfix": false,
+   "title": "Giornaliero da telefono e computer insieme",
+   "highlights": [
+    "Scassetti dal telefono, la cassa resta sul computer",
+    "Ogni dispositivo salva solo la sua parte",
+    "Aggiornamento automatico senza ricaricare"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Telefono e computer sullo stesso turno</strong> — Il turno è diviso in cassa, scassettamenti e ticket: ogni dispositivo salva solo la parte che ha modificato. Puoi contare la cassa al computer, scassettare dal telefono e tornare al computer: gli scassettamenti compaiono da soli, i contanti restano e il salvataggio non dà più avvisi.",
+      "<strong>Avvisi solo quando servono</strong> — Se la stessa parte è stata modificata in due posti l'app dice chi e quando e ti lascia scegliere se tenere i tuoi valori o vedere quelli salvati, senza toccare il resto."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "Salvando dal computer dopo aver scassettato dal telefono gli scassettamenti non vengono più riportati ai valori precedenti."
+     ]
+    }
+   ]
+  },
   {
    "version": "3.29.1",
    "date": "2026-10-07",
