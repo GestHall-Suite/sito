@@ -12,6 +12,13 @@ Ogni modifica è tracciata:
 - **Modifiche al sito stesso** → `CHANGELOG.md`.
 - Dopo le modifiche: `npm run build` senza errori, nessuno scorrimento orizzontale a 390 px, tema chiaro e scuro.
 
+## Lingue (.it / .com)
+
+- Il sito si scrive in **italiano**. `npm run build` esegue anche `scripts/lingue.mjs`: `dist/` → gesthallsuite.it (inglese in `/en/`), `dist-com/` → gesthallsuite.com (italiano in `/it/`). Pubblicare le due cartelle sui due domini.
+- Inglese = dizionario `i18n/en.json` («testo italiano»: «traduzione», `{1}` per le parti variabili). **Testo nuovo o cambiato → aggiungerlo al dizionario**: `node scripts/lingue.mjs --mancanti` (dopo la build) elenca ciò che manca e deve restare vuoto (tranne email/indirizzi).
+- Contenuti diversi per lingua: elementi con `data-solo="it"` / `data-solo="en"` (es. changelog). Release del changelog: campo `en` con `title`, `highlights`, `groups` (lo legge anche la suite per il riquadro Novità in inglese).
+- Privacy e termini: testo solo in italiano (versione vincolante) con nota in inglese.
+
 ## Stile
 
 - Grafica: token e componenti in `src/styles/site.css` (stessi colori e raggi della suite). Niente font o script esterni. Nuovi blocchi = classi esistenti (`.split`, `.card`, `.grid`, `.facts`, `.faq`, `.cta`…) prima di scrivere CSS di pagina.

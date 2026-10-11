@@ -7,7 +7,8 @@ Sito di presentazione e vendita di GestHall Suite (`gesthallsuite.it`). **Astro 
 ```bash
 npm install
 npm run dev      # http://localhost:4321
-npm run build    # sito statico in dist/
+npm run build    # dist/ (gesthallsuite.it, + /en/) e dist-com/ (gesthallsuite.com, + /it/)
+node scripts/lingue.mjs --mancanti   # testi senza traduzione inglese (i18n/en.json)
 ```
 
 Per provare anche il modulo contatti: `cd dist && php -S 127.0.0.1:4400`.

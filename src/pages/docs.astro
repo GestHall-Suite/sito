@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import changelog from '../data/changelog.json';
 import { ICONE } from '../data/aree';
 const last = changelog.releases.find((r) => r.highlights.length) ?? changelog.releases[0];
+const lastEn = changelog.releases.find((r) => r.en?.highlights?.length);
 const capitoli = [
   ['accesso', 'Primo accesso e ruoli'], ['cassa', 'Cassa giornaliera'], ['dashboard', 'Dashboard'], ['report', 'Report'],
   ['turni', 'Turni'], ['macchine', 'Macchine'], ['ticket', 'Ticket assistenza'], ['bar', 'Bar'],
@@ -43,7 +44,8 @@ const capitoli = [
       <a href="/changelog" class="card res">
         <div class="icon" set:html={ICONE.aggiorna}></div>
         <h3>Novità</h3>
-        <p>Versione {last.version}: {last.highlights.join(' · ')}.</p>
+        <p data-solo="it">Versione {last.version}: {last.highlights.join(' · ')}.</p>
+        {lastEn && <p data-solo="en">Version {lastEn.version}: {lastEn.en.highlights.join(' · ')}.</p>}
         <span class="link">Tutte le versioni <span aria-hidden="true">→</span></span>
       </a>
       <a href="/cliente/" class="card res">

@@ -1,6 +1,45 @@
 {
- "updated": "2026-10-10",
+ "updated": "2026-10-11",
  "releases": [
+  {
+   "version": "3.31.0",
+   "date": "2026-10-11",
+   "hotfix": false,
+   "title": "L'app parla inglese",
+   "highlights": [
+    "App in inglese: accesso, cassa, turni e dashboard",
+    "Lingua per la sala e per ogni persona",
+    "Sito anche su gesthallsuite.com"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>App in inglese</strong> — Accesso, menu, dashboard, giornaliero, turni, Il mio spazio, Studio di stile e Sala e aspetto sono disponibili in English. Le altre pagine arrivano nelle prossime versioni.",
+      "<strong>Una lingua per la sala, una per ogni persona</strong> — Il responsabile sceglie la lingua predefinita in Impostazioni → Sala e aspetto; ognuno può cambiarla per sé nello Studio di stile o dalla pagina di accesso.",
+      "<strong>Sito in inglese</strong> — gesthallsuite.com presenta GestHall Suite in inglese; da ogni pagina si passa all'altra lingua."
+     ]
+    }
+   ],
+   "en": {
+    "title": "The app speaks English",
+    "highlights": [
+     "App in English: sign-in, cash, shifts and dashboard",
+     "A language for the hall and for each person",
+     "Website also on gesthallsuite.com"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>App in English</strong> — Sign-in, menus, dashboard, daily sheet, shifts, My space, Style Studio and Hall and look are available in English. The other pages follow in the next versions.",
+       "<strong>A language for the hall, one for each person</strong> — The manager chooses the default language in Settings → Hall and look; everyone can change it for themselves in the Style Studio or from the sign-in page.",
+       "<strong>English website</strong> — gesthallsuite.com presents GestHall Suite in English; every page links to the other language."
+      ]
+     }
+    ]
+   }
+  },
   {
    "version": "3.30.0",
    "date": "2026-10-10",
@@ -25,7 +64,30 @@
       "Salvando dal computer dopo aver scassettato dal telefono gli scassettamenti non vengono più riportati ai valori precedenti."
      ]
     }
-   ]
+   ],
+   "en": {
+    "title": "Daily sheet on phone and computer together",
+    "highlights": [
+     "Collect cash on the phone, count the till on the computer",
+     "Each device saves only its own part",
+     "Automatic updates without reloading"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Phone and computer on the same shift</strong> — A shift is split into cash, cash collections and tickets: each device saves only the part it changed. Count the till on the computer, do the cash collection on the phone and go back to the computer: the collections appear by themselves, your counted cash stays and saving no longer shows warnings.",
+       "<strong>Warnings only when needed</strong> — If the same part was changed in two places, the app tells you who and when and lets you keep your values or see the saved ones, without touching the rest."
+      ]
+     },
+     {
+      "type": "fix",
+      "items": [
+       "Saving from the computer after collecting cash on the phone no longer brings the collections back to their old values."
+      ]
+     }
+    ]
+   }
   },
   {
    "version": "3.29.1",
@@ -43,7 +105,22 @@
       "<strong>Sala e aspetto</strong> — In Impostazioni una sola pagina raccoglie nome, logo, contatti e colore della sala, l'aspetto iniziale dell'app per tutti e la pagina di accesso, in tre schede, con l'anteprima dal vivo."
      ]
     }
-   ]
+   ],
+   "en": {
+    "title": "Hall and look on a single page",
+    "highlights": [
+     "Name, logo, colours and style together",
+     "Hall, App look and Sign-in page tabs"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Hall and look</strong> — In Settings a single page now holds the hall's name, logo, contacts and colour, the starting app look for everyone and the sign-in page, in three tabs, with a live preview."
+      ]
+     }
+    ]
+   }
   },
   {
    "version": "3.29.0",
@@ -63,7 +140,24 @@
       "<strong>Pagina di accesso personalizzata</strong> — Disposizione centrata, divisa o con la scheda di lato; sfondo con la copertina della sala o una vostra foto; scheda in vetro, tema chiaro o scuro, titolo e messaggio di benvenuto. Resta una pagina di sistema: la decide la sala, non le preferenze dei singoli."
      ]
     }
-   ]
+   ],
+   "en": {
+    "title": "Hall style and sign-in page",
+    "highlights": [
+     "Starting app look for everyone",
+     "Preview on computer and phone",
+     "Sign-in page with photo or cover"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Hall style</strong> — The manager chooses the look everyone finds in the app: theme, cover, background, corners, font, sidebar, liquid glass or a ready-made theme, with a live preview on computer and phone. Everyone can then change it with their own Style Studio; «Reset» brings back the hall style.",
+       "<strong>Custom sign-in page</strong> — Centred, split or side-card layout; background with the hall cover or your own photo; glass card, light or dark theme, title and welcome message. It stays a system page: the hall decides it, not individual preferences."
+      ]
+     }
+    ]
+   }
   },
   {
    "version": "3.28.0",

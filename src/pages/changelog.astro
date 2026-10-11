@@ -3,7 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import changelog from '../data/changelog.json';
 
 const LABEL = { add: 'Novità', change: 'Migliorato', fix: 'Corretto' };
-const fmt = (d) => new Date(d + 'T12:00:00').toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
+const LABEL_EN = { add: 'New', change: 'Improved', fix: 'Fixed' };
+const fmt = (d, l = 'it-IT') => new Date(d + 'T12:00:00').toLocaleDateString(l, { day: 'numeric', month: 'long', year: 'numeric' });
+/* Versione inglese (sito .com e /en/): solo le release con il campo «en»; le altre restano nella cronologia italiana.
+   data-solo="it|en" = blocco di una sola lingua (scripts/lingue.mjs). */
 ---
 <Layout page="Changelog" description="Tutte le novità di GestHall Suite: nuove funzionalità, miglioramenti e correzioni release per release.">
 
@@ -19,8 +22,8 @@ const fmt = (d) => new Date(d + 'T12:00:00').toLocaleDateString('it-IT', { day: 
 <section class="cl-body">
   <div class="container">
     <div class="cl-feed">
-      {changelog.releases.map((r) => (
-        <div class="cl-entry" id={'v' + r.version}>
+      {changelog.releases.map((r) => (<>
+        <div class="cl-entry" id={'v' + r.version} data-solo="it">
           <div class="cl-entry-head">
             <a class="cl-ver" href={'#v' + r.version}>v{r.version}</a>
             <time class="cl-date" datetime={r.date}>{fmt(r.date)}</time>
@@ -38,7 +41,27 @@ const fmt = (d) => new Date(d + 'T12:00:00').toLocaleDateString('it-IT', { day: 
             ))}
           </div>
         </div>
-      ))}
+        {r.en && (
+        <div class="cl-entry" id={'v' + r.version} data-solo="en">
+          <div class="cl-entry-head">
+            <a class="cl-ver" href={'#v' + r.version}>v{r.version}</a>
+            <time class="cl-date" datetime={r.date}>{fmt(r.date, 'en-GB')}</time>
+            {r.hotfix && <span class="cl-hotfix">Hotfix</span>}
+            {r.en.title && <span class="cl-title">{r.en.title}</span>}
+          </div>
+          <div class="cl-entry-body">
+            {r.en.groups.map((g) => (
+              <div class="cl-group">
+                <span class={'cl-badge cl-badge-' + g.type}>{LABEL_EN[g.type]}</span>
+                <ul class="cl-list">
+                  {g.items.map((it) => <li set:html={it} />)}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>)}
+      </>))}
+      <p class="cl-note" data-solo="en">Earlier release notes are available in Italian: <a href="https://gesthallsuite.it/changelog">full history</a>.</p>
     </div>
 
     <div class="cl-footer">

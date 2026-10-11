@@ -19,7 +19,10 @@ function esci(bool $ok, string $msg, int $code = 200): never {
         header('Cache-Control: no-store');
         echo json_encode(['ok' => $ok, 'msg' => $msg], JSON_UNESCAPED_UNICODE);
     } else {
-        header('Location: /contatti?' . ($ok ? 'inviato=1' : 'errore=' . rawurlencode($msg)) . '#modulo', true, 303);
+        /* torna alla pagina contatti della lingua da cui si è inviato (/contatti, /en/contatti, /it/contatti) */
+        $da = (string)parse_url((string)($_SERVER['HTTP_REFERER'] ?? ''), PHP_URL_PATH);
+        $pag = preg_match('#^(/(?:en|it))?/contatti/?$#', $da, $mm) ? ($mm[1] ?? '') . '/contatti' : '/contatti';
+        header('Location: ' . $pag . '?' . ($ok ? 'inviato=1' : 'errore=' . rawurlencode($msg)) . '#modulo', true, 303);
     }
     exit;
 }
