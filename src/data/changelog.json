@@ -2,6 +2,57 @@
  "updated": "2026-10-11",
  "releases": [
   {
+   "version": "3.32.0",
+   "date": "2026-10-11",
+   "hotfix": false,
+   "title": "Una guida nuova, con i video",
+   "highlights": [
+    "Benvenuto al primo accesso",
+    "Giro guidato su ogni pagina principale",
+    "Video brevi in italiano e inglese"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Benvenuto</strong> — Al primo accesso ognuno trova un saluto con tre scelte: il giro della pagina, un video breve o la personalizzazione dell'app.",
+      "<strong>Giro guidato</strong> — Dashboard, cassa giornaliera, turni, Il mio spazio e Sala e aspetto si presentano un elemento alla volta, con passi diversi per operatori, responsabili e revisori. Funziona anche sul telefono.",
+      "<strong>Pulsante «?»</strong> — In ogni pagina riapre il giro, i video e la guida completa."
+     ]
+    },
+    {
+     "type": "add",
+     "items": [
+      "<strong>Video brevi</strong> — Sei video dalla sala dimostrativa (chiusura della cassa, scassettamenti dal telefono, turni, dashboard, personalizzazione, Sala e aspetto), in italiano e in inglese secondo la lingua dell'app. Li trovi anche in Risorse sul sito."
+     ]
+    }
+   ],
+   "en": {
+    "title": "A new guide, with videos",
+    "highlights": [
+     "Welcome on first sign-in",
+     "Guided tour of every main page",
+     "Short videos in Italian and English"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Welcome</strong> — On their first sign-in everyone gets a greeting with three choices: the page tour, a short video or personalising the app.",
+       "<strong>Guided tour</strong> — Dashboard, daily sheet, shifts, My space and Hall and look are introduced one element at a time, with different steps for operators, managers and auditors. It works on the phone too.",
+       "<strong>«?» button</strong> — On every page it reopens the tour, the videos and the full guide."
+      ]
+     },
+     {
+      "type": "add",
+      "items": [
+       "<strong>Short videos</strong> — Six videos from the demo hall (closing the cash, collecting cash from the phone, shifts, dashboard, personalisation, Hall and look), in Italian and English according to the app language. You also find them under Resources on the website."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.31.0",
    "date": "2026-10-11",
    "hotfix": false,
