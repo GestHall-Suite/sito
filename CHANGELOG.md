@@ -2,6 +2,11 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-11
+
+- **Sito in due lingue**: `scripts/lingue.mjs` (dopo `astro build`) crea `dist/` per gesthallsuite.it (italiano, inglese in `/en/`) e `dist-com/` per gesthallsuite.com (inglese, italiano in `/it/`) traducendo l'HTML con il dizionario `i18n/en.json`; hreflang, canonical, selettore di lingua nel menu (`data-lang-sw`), sitemap del .com. Blocchi di una sola lingua con `data-solo="it|en"`. Privacy e termini restano in italiano (versione vincolante) con una nota in inglese. Il modulo contatti torna alla pagina della lingua da cui si è scritto.
+- Changelog: versione 3.31.0 della suite (app in inglese); campo `en` delle release (titolo, highlights, gruppi) per la pagina inglese e per il riquadro Novità della suite in inglese; tradotte le release 3.29.0–3.31.0.
+
 ## 2026-10-10
 
 - Changelog: versione 3.30.0 della suite (giornaliero da telefono e computer insieme). Guida: «Telefono e computer insieme». Prodotto → Cassa e turni: riquadro aggiornato.
