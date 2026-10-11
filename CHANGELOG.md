@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-11
 
+- Corretto `scripts/lingue.mjs`: la copia verso `dist-com/` escludeva anche le sottocartelle `video/en` e `video/it` (il .com restava senza video); ora esclude solo `/en/` e `/it/` alla radice.
 - **Video brevi**: `public/video/{it,en}/*.mp4` + copertine `.webp` (sei video registrati dalla sala demo con `suite/tools/video/registra.js`), letti dalla guida della suite (gesthallsuite.it per l'italiano, gesthallsuite.com per l'inglese) e mostrati in Risorse (sezione «Video brevi», blocchi `data-solo`).
 - Changelog: versione 3.32.0 della suite (guida rifatta, video). Guida: «Benvenuto e guida» al posto del vecchio tour.
 - **Sito in due lingue**: `scripts/lingue.mjs` (dopo `astro build`) crea `dist/` per gesthallsuite.it (italiano, inglese in `/en/`) e `dist-com/` per gesthallsuite.com (inglese, italiano in `/it/`) traducendo l'HTML con il dizionario `i18n/en.json`; hreflang, canonical, selettore di lingua nel menu (`data-lang-sw`), sitemap del .com. Blocchi di una sola lingua con `data-solo="it|en"`. Privacy e termini restano in italiano (versione vincolante) con una nota in inglese. Il modulo contatti torna alla pagina della lingua da cui si è scritto.

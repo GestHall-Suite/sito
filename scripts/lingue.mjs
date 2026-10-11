@@ -133,7 +133,7 @@ if (process.argv.includes('--mancanti')) {
 }
 fs.rmSync(COM, { recursive: true, force: true });
 /* .com: tutto il sito (risorse, api, guida…) poi le pagine in inglese alla radice */
-copia(DIST, COM, s => !/\/(en|it)$/.test(s));
+copia(DIST, COM, s => s !== path.join(DIST, 'en') && s !== path.join(DIST, 'it'));
 const originali = new Map(elenco.map(rel => [rel, fs.readFileSync(path.join(DIST, rel), 'utf8')]));
 for (const [rel, html] of originali) {
   const pag = url(rel), en = traduci(html);
