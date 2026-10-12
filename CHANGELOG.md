@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-12
 
+- Changelog: versione 3.37.1 della suite (arrotondamento del versamento in Cassa giornaliera).
+
 - Changelog: versione 3.37.0 della suite (calcoli dal telefono, sezione Cassa giornaliera, turno in corso).
 
 - Changelog: versione 3.36.1 della suite (testata della cassa giornaliera rifinita).
