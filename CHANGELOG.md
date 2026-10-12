@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-12
 
+- Changelog: versione 3.34.0 della suite (intestazioni uniformi, giornaliero, Buste paga).
 - Changelog: versione 3.33.0 della suite (tutta l'app in inglese, lingua per persona, video con voce). Risorse: quattro video nuovi (report, bar, chat, lingua), video con voce narrante e musica. Guida: lingua per profilo.
 
 ## 2026-10-11

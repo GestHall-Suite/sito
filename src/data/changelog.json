@@ -2,6 +2,47 @@
  "updated": "2026-10-12",
  "releases": [
   {
+   "version": "3.34.0",
+   "date": "2026-10-12",
+   "hotfix": false,
+   "title": "Intestazioni uguali in tutte le pagine",
+   "highlights": [
+    "Stessa intestazione in ogni pagina",
+    "Cassa giornaliera con titolo e azioni in alto",
+    "Buste paga allineata a Il mio spazio"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Intestazioni uguali ovunque</strong> — In ogni pagina il titolo è a sinistra e le azioni a destra; filtri, ricerca e schede stanno in una riga sotto. I titoli non ripetono più il nome della sala.",
+      "<strong>Cassa giornaliera</strong> — In alto il titolo con la data e lo stato della giornata, a destra Salva e Chiudi; sotto i giorni e i turni.",
+      "<strong>Sul telefono</strong> — Titoli più puliti nella barra dell'app e filtri dei report in una riga che scorre.",
+      "<strong>Buste paga</strong> — Stessa colonna e stesso aspetto delle altre schede di Il mio spazio."
+     ]
+    }
+   ],
+   "en": {
+    "title": "The same header on every page",
+    "highlights": [
+     "Same header on every page",
+     "Daily cash sheet with title and actions at the top",
+     "Payslips aligned with My space"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Same headers everywhere</strong> — On every page the title is on the left and the actions on the right; filters, search and tabs sit in a row below. Titles no longer repeat the hall name.",
+       "<strong>Daily cash sheet</strong> — At the top the title with the date and the day's status, Save and Close on the right; days and shifts below.",
+       "<strong>On the phone</strong> — Cleaner titles in the app bar and report filters in a scrolling row.",
+       "<strong>Payslips</strong> — Same column and look as the other My space tabs."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.33.0",
    "date": "2026-10-12",
    "hotfix": false,
