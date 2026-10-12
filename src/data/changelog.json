@@ -2,6 +2,55 @@
  "updated": "2026-10-12",
  "releases": [
   {
+   "version": "3.35.1",
+   "date": "2026-10-12",
+   "hotfix": false,
+   "title": "Calendario dei turni: Giorno, Mese e Anno",
+   "highlights": [
+    "Viste Giorno, Mese e Anno nel calendario",
+    "Foto e avatar personali nei turni",
+    "Meno colori, più leggibile"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Calendario Giorno · Mese · Anno</strong> — Nella pagina Turni scegli la vista. <strong>Giorno</strong>: i turni sulla linea del tempo, con l'avatar di chi li fa e l'ora attuale. <strong>Mese</strong>: la griglia di sempre in un unico riquadro. <strong>Anno</strong>: i dodici mesi in piccolo, con i tuoi turni in evidenza e quelli da coprire segnati."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Avatar nel calendario</strong> — Tornano le foto profilo e il colore dell'avatar che ognuno sceglie nello Studio di stile.",
+      "<strong>Meno colori</strong> — Il colore principale per i tuoi turni, l'ambra per quelli da coprire, un tono neutro per gli altri."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Shift calendar: Day, Month and Year",
+    "highlights": [
+     "Day, Month and Year views in the calendar",
+     "Photos and personal avatars on shifts",
+     "Fewer colours, easier to read"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Day · Month · Year calendar</strong> — On the Shifts page choose the view. <strong>Day</strong>: shifts on a timeline, with the avatar of who works them and the current time. <strong>Month</strong>: the usual grid in a single card. <strong>Year</strong>: twelve small months, with your shifts highlighted and the ones to cover marked."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Avatars in the calendar</strong> — Profile photos are back, along with the avatar colour each person picks in the Style Studio.",
+       "<strong>Fewer colours</strong> — The main colour for your shifts, amber for the ones to cover, a neutral tone for the others."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.35.0",
    "date": "2026-10-12",
    "hotfix": false,

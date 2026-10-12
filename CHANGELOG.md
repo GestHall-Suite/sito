@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-12
 
+- Changelog: versione 3.35.1 della suite (calendario Giorno · Mese · Anno, avatar nei turni).
+
 - Changelog: versione 3.35.0 della suite (calendario dei turni a colori, grafici uniformi, note e cose da fare, intestazioni come riquadri).
 
 - Changelog: versione 3.34.0 della suite (intestazioni uniformi, giornaliero, Buste paga).
