@@ -2,6 +2,43 @@
  "updated": "2026-10-12",
  "releases": [
   {
+   "version": "3.36.1",
+   "date": "2026-10-12",
+   "hotfix": false,
+   "title": "Cassa giornaliera: testata rifinita",
+   "highlights": [
+    "Schede dei turni più compatte, con l'orario",
+    "Turno terminato segnato da una spunta",
+    "Pulsanti più comodi su telefono"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Schede dei turni</strong> — Più compatte, con l'orario su ogni scheda e una spunta verde quando il turno è terminato.",
+      "<strong>Su telefono</strong> — Salva, Chiudi e il cambio giorno hanno un'altezza più comoda."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Daily cash sheet: refined header",
+    "highlights": [
+     "More compact shift tabs, with times",
+     "Finished shifts marked with a tick",
+     "Handier buttons on the phone"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Shift tabs</strong> — More compact, with the times on every tab and a green tick when the shift is finished.",
+       "<strong>On the phone</strong> — Save, Close and the day switcher have a more comfortable height."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.36.0",
    "date": "2026-10-12",
    "hotfix": false,
