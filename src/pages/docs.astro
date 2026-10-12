@@ -11,12 +11,16 @@ const capitoli = [
   ['push', 'App e notifiche'], ['impostazioni', 'Impostazioni'], ['sicurezza', 'Sicurezza'], ['problemi', 'Problemi comuni'],
 ];
 const video = [
-  ['giornaliero', 'Chiudere la cassa di un turno', "Closing a shift's cash", '0:25'],
-  ['telefono', 'Scassettare dal telefono', 'Collecting cash from your phone', '0:15'],
-  ['turni', 'Turni: calendario e Pianifica', 'Shifts: calendar and Plan', '0:17'],
-  ['dashboard', 'La dashboard e Il mio spazio', 'The dashboard and My space', '0:15'],
-  ['studio', "Personalizzare l'app", 'Personalising the app', '0:19'],
-  ['sala', 'Sala e aspetto: lo stile per tutti', 'Hall and look: the style for everyone', '0:18'],
+  ['giornaliero', 'Chiudere la cassa di un turno', "Closing a shift's cash", '0:33'],
+  ['telefono', 'Scassettare dal telefono', 'Collecting cash from your phone', '0:20'],
+  ['turni', 'Turni: calendario e Pianifica', 'Shifts: calendar and Plan', '0:21'],
+  ['dashboard', 'La dashboard e Il mio spazio', 'The dashboard and My space', '0:16'],
+  ['studio', "Personalizzare l'app", 'Personalising the app', '0:18'],
+  ['report', 'Report e incassi del mese', 'Reports and monthly takings', '0:18'],
+  ['bar', 'Il banco del bar', 'The bar counter', '0:18'],
+  ['chat', 'La chat della sala', 'The hall chat', '0:14'],
+  ['lingua', 'Scegliere la lingua', 'Choosing the language', '0:12'],
+  ['sala', 'Sala e aspetto: lo stile per tutti', 'Hall and look: the style for everyone', '0:16'],
 ];
 ---
 <Layout page="Risorse" description="Guida all'uso di GestHall Suite, novità delle versioni, area clienti e documentazione per installatori.">
@@ -49,7 +53,7 @@ const video = [
 <section class="section-tight">
   <div class="container">
     <h2 class="vids-h">Video brevi</h2>
-    <p class="lead vids-lead">Le operazioni di ogni giorno in meno di mezzo minuto, registrate dalla sala dimostrativa. Gli stessi video sono nell'app, nel pulsante «?».</p>
+    <p class="lead vids-lead">Le operazioni di ogni giorno in meno di un minuto, con voce narrante, registrate dalla sala dimostrativa. Gli stessi video sono nell'app, nel pulsante «?».</p>
     <div class="grid g3 vids" data-solo="it">
       {video.map((v) => <figure class="vid"><video controls preload="none" playsinline poster={`/video/it/${v[0]}.webp`} src={`/video/it/${v[0]}.mp4`}></video><figcaption>{v[1]} <span>{v[3]}</span></figcaption></figure>)}
     </div>

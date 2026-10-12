@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-12
+
+- Changelog: versione 3.33.0 della suite (tutta l'app in inglese, lingua per persona, video con voce). Risorse: quattro video nuovi (report, bar, chat, lingua), video con voce narrante e musica. Guida: lingua per profilo.
+
 ## 2026-10-11
 
 - Corretto `scripts/lingue.mjs`: la copia verso `dist-com/` escludeva anche le sottocartelle `video/en` e `video/it` (il .com restava senza video); ora esclude solo `/en/` e `/it/` alla radice.
