@@ -2,6 +2,39 @@
  "updated": "2026-10-12",
  "releases": [
   {
+   "version": "3.37.1",
+   "date": "2026-10-12",
+   "hotfix": false,
+   "title": "Impostazioni: arrotondamento del versamento in Cassa giornaliera",
+   "highlights": [
+    "Arrotondamento del versamento in «Cassa giornaliera»",
+    "Tutte le opzioni del giornaliero in un posto solo"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Versamento arrotondato a multipli di 5</strong> — L'opzione passa da Turni a Impostazioni → Cassa giornaliera, insieme alle altre opzioni del giornaliero. La scelta già fatta resta invariata."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Settings: deposit rounding moved to Daily cash",
+    "highlights": [
+     "Deposit rounding now in «Daily cash»",
+     "All daily register options in one place"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Deposit rounded to multiples of 5</strong> — The option moves from Shifts to Settings → Daily cash, together with the other daily register options. Your current choice is kept."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.37.0",
    "date": "2026-10-12",
    "hotfix": false,
