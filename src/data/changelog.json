@@ -1,6 +1,61 @@
 {
- "updated": "2026-10-11",
+ "updated": "2026-10-12",
  "releases": [
+  {
+   "version": "3.33.0",
+   "date": "2026-10-12",
+   "hotfix": false,
+   "title": "Tutta l'app in inglese, video con la voce",
+   "highlights": [
+    "Tutta l'app anche in inglese",
+    "Lingua scelta per ogni persona",
+    "Email e notifiche nella lingua di chi le riceve",
+    "Video con voce narrante e musica"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Tutta l'app in inglese</strong> — Report, bar, ticket, documenti, chat, impostazioni, utenti, buste paga e ogni messaggio sono tradotti: chi lavora in inglese non trova più pagine in italiano.",
+      "<strong>Una lingua per ogni persona</strong> — Ognuno la sceglie dal proprio profilo; il responsabile può impostarla per ogni utente dall'elenco Utenti.",
+      "<strong>Email e notifiche nella lingua giusta</strong> — Reset della password, codice di accesso, riepilogo di chiusura, buste paga e avvisi arrivano nella lingua di chi li riceve.",
+      "<strong>Video con la voce</strong> — Dieci video brevi con voce narrante in italiano o in inglese e musica leggera di sottofondo, anche su report, bar, chat e scelta della lingua."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Video della guida</strong> — Se un dominio del sito non risponde, l'app li carica dall'altro."
+     ]
+    }
+   ],
+   "en": {
+    "title": "The whole app in English, videos with a voice",
+    "highlights": [
+     "The whole app also in English",
+     "Language chosen for each person",
+     "Emails and notifications in the recipient's language",
+     "Videos with narration and music"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>The whole app in English</strong> — Reports, bar, tickets, documents, chat, settings, users, payslips and every message are translated: people working in English no longer find pages in Italian.",
+       "<strong>A language for each person</strong> — Everyone chooses it from their own profile; the manager can set it for each user from the Users list.",
+       "<strong>Emails and notifications in the right language</strong> — Password reset, access code, closing summary, payslips and alerts arrive in the recipient's language.",
+       "<strong>Videos with a voice</strong> — Ten short videos narrated in Italian or English with light background music, including reports, bar, chat and choosing the language."
+      ]
+     },
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Guide videos</strong> — If one of the website's domains does not respond, the app loads them from the other."
+      ]
+     }
+    ]
+   }
+  },
   {
    "version": "3.32.0",
    "date": "2026-10-11",
