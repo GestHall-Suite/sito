@@ -2,6 +2,75 @@
  "updated": "2026-10-12",
  "releases": [
   {
+   "version": "3.35.0",
+   "date": "2026-10-12",
+   "hotfix": false,
+   "title": "Calendario a colori, grafici nuovi e cose da fare",
+   "highlights": [
+    "Calendario dei turni a colori per persona",
+    "Grafici con lo stesso aspetto ovunque",
+    "Note e cose da fare in dashboard",
+    "Intestazioni come riquadri, animazioni più fluide"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Calendario dei turni a colori</strong> — Il mese in un unico riquadro: ogni persona ha il suo colore e le sue iniziali nei turni. Sotto il calendario c'è la squadra: tocchi una persona e vedi solo i suoi turni.",
+      "<strong>Note e cose da fare</strong> — Il widget delle note in dashboard ha anche una lista con le spunte: aggiungi con Invio, spunta, togli le voci fatte. Si salva da solo e lo vedi solo tu."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Grafici rinnovati</strong> — Tutti i grafici hanno lo stesso aspetto: barre sottili e arrotondate, linee morbide, suggerimenti chiari e colori leggibili anche da chi ha difficoltà con i colori e in tema scuro.",
+      "<strong>Intestazioni come riquadri</strong> — Sul computer l'intestazione di ogni pagina è un riquadro arrotondato come il resto dell'app.",
+      "<strong>Animazioni più fluide</strong> — Passaggi tra le pagine più puliti e senza scatti."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "Con la barra laterale chiusa la dashboard usa tutta la larghezza.",
+      "La barra di scorrimento del menu laterale compare solo passandoci sopra con il mouse."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Colour calendar, new charts and to-dos",
+    "highlights": [
+     "Shift calendar coloured by person",
+     "Charts with the same look everywhere",
+     "Notes and to-dos on the dashboard",
+     "Headers as cards, smoother animations"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Colour shift calendar</strong> — The month in a single card: each person has their own colour and initials on their shifts. Below the calendar is the team: tap a person to see only their shifts.",
+       "<strong>Notes and to-dos</strong> — The dashboard notes widget now has a checklist too: add with Enter, tick, clear the completed items. It saves by itself and only you can see it."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Refreshed charts</strong> — All charts share the same look: thin rounded bars, smooth lines, clear tooltips and colours that stay readable for colour-blind users and in dark mode.",
+       "<strong>Headers as cards</strong> — On the computer every page header is a rounded card like the rest of the app.",
+       "<strong>Smoother animations</strong> — Cleaner page transitions, without stutters."
+      ]
+     },
+     {
+      "type": "fix",
+      "items": [
+       "With the sidebar collapsed the dashboard uses the full width.",
+       "The sidebar scrollbar only appears when you hover over it with the mouse."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.34.0",
    "date": "2026-10-12",
    "hotfix": false,
