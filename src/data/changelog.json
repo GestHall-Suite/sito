@@ -2,6 +2,67 @@
  "updated": "2026-10-12",
  "releases": [
   {
+   "version": "3.35.2",
+   "date": "2026-10-12",
+   "hotfix": false,
+   "title": "Calendario: vista Settimana e navigazione uguale ovunque",
+   "highlights": [
+    "Nuova vista Settimana",
+    "Giorno e Settimana scorrono sull'intera giornata",
+    "Stessa navigazione per giorno, settimana, mese e anno"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Vista Settimana</strong> — Sette colonne con i turni alla loro ora e l'avatar di chi li fa; tocchi un giorno per aprirlo."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Navigazione uguale ovunque</strong> — ‹ Oggi › e il periodo mostrato, per giorno, settimana, mese e anno.",
+      "<strong>Giornata intera</strong> — Giorno e Settimana mostrano tutte le ore e scorrono su e giù; all'apertura vanno al primo turno o all'ora attuale."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "Nelle viste Giorno e Anno le frecce ora cambiano davvero giorno e anno."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Calendar: Week view and the same navigation everywhere",
+    "highlights": [
+     "New Week view",
+     "Day and Week scroll through the whole day",
+     "Same navigation for day, week, month and year"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Week view</strong> — Seven columns with shifts at their time and the avatar of who works them; tap a day to open it."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Same navigation everywhere</strong> — ‹ Today › and the period shown, for day, week, month and year.",
+       "<strong>Whole day</strong> — Day and Week show every hour and scroll up and down; they open on the first shift or the current time."
+      ]
+     },
+     {
+      "type": "fix",
+      "items": [
+       "In the Day and Year views the arrows now really change the day and the year."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.35.1",
    "date": "2026-10-12",
    "hotfix": false,
