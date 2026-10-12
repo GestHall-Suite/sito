@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-12
 
+- Changelog: versione 3.35.3 della suite (testata della cassa giornaliera).
+
 - Changelog: versione 3.35.2 della suite (vista Settimana, navigazione del calendario).
 
 - Changelog: versione 3.35.1 della suite (calendario Giorno · Mese · Anno, avatar nei turni).

@@ -2,6 +2,43 @@
  "updated": "2026-10-12",
  "releases": [
   {
+   "version": "3.35.3",
+   "date": "2026-10-12",
+   "hotfix": false,
+   "title": "Cassa giornaliera: testata più chiara",
+   "highlights": [
+    "Testata della cassa rifatta",
+    "Data in un solo punto, con il cambio giorno",
+    "Schede dei turni più pulite"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Testata della cassa giornaliera</strong> — La data compare una volta sola, nel controllo del giorno con le frecce e l'ora.",
+      "<strong>Schede dei turni</strong> — Riquadri chiari con avatar, orario, chi fa il turno e il suo stato. Sotto c'è una barra sottile che mostra l'avanzamento, e la scheda aperta è evidenziata nel colore della sala."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Daily cash sheet: a clearer header",
+    "highlights": [
+     "Daily cash header redesigned",
+     "Date in one place, with the day switcher",
+     "Cleaner shift tabs"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Daily cash sheet header</strong> — The date appears only once, in the day switcher with the arrows and the time.",
+       "<strong>Shift tabs</strong> — Clean cards with avatar, times, who works the shift and its status. A thin bar below shows progress, and the open tab is highlighted in the hall's colour."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.35.2",
    "date": "2026-10-12",
    "hotfix": false,
