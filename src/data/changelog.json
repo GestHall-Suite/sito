@@ -2,6 +2,67 @@
  "updated": "2026-10-12",
  "releases": [
   {
+   "version": "3.37.0",
+   "date": "2026-10-12",
+   "hotfix": false,
+   "title": "Cassa giornaliera: calcoli dal telefono e impostazioni in ordine",
+   "highlights": [
+    "Somme e sottrazioni sopra la tastiera numerica",
+    "Il giornaliero di oggi si apre sul turno in corso",
+    "Nuova sezione «Cassa giornaliera» nelle impostazioni"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Calcoli dal telefono</strong> — Nei campi della cassa giornaliera compare sopra la tastiera numerica una barra con −, + e =: si scrive 120, si tocca +, si scrive 35 e il campo diventa 155."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Impostazioni → Cassa giornaliera</strong> — Una sezione unica per il giornaliero: vista da telefono (solo da computer, solo scassettamenti o cassa completa), campi facoltativi, verifica dump, layout e checklist del passaggio consegne. Permessi contiene solo cosa possono fare operatori e revisori.",
+      "<strong>Turno in corso</strong> — Aprendo il giornaliero di oggi si apre la scheda del turno dell'ora attuale; gli altri giorni partono dal primo turno."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Calcoli dal computer</strong> — I tasti + e − nei campi numerici si possono concatenare (120 + 35 − 5)."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Daily cash: phone calculations and tidier settings",
+    "highlights": [
+     "Additions and subtractions above the number pad",
+     "Today's register opens on the current shift",
+     "New «Daily cash» section in the settings"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Phone calculations</strong> — In the daily cash fields a bar with −, + and = appears above the number pad: type 120, tap +, type 35 and the field becomes 155."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Settings → Daily cash</strong> — One section for the daily register: phone view (computer only, machine collections only or full register), optional fields, dump check, layout and handover checklist. Permissions now only covers what operators and auditors can do.",
+       "<strong>Current shift</strong> — Opening today's register opens the tab of the current shift; other days start from the first shift."
+      ]
+     },
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Computer calculations</strong> — The + and − keys in number fields can now be chained (120 + 35 − 5)."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.36.1",
    "date": "2026-10-12",
    "hotfix": false,
