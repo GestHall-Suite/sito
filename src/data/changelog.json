@@ -2,6 +2,43 @@
  "updated": "2026-10-12",
  "releases": [
   {
+   "version": "3.36.0",
+   "date": "2026-10-12",
+   "hotfix": false,
+   "title": "Grafici nuovi, in stile pannello finanziario",
+   "highlights": [
+    "Barre a pillola con il valore attuale in evidenza",
+    "Suggerimenti a fumetto più leggibili",
+    "Ciambelle e linee più morbide"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Grafici rinnovati</strong> — Barre a pillola su una traccia chiara, con il valore più recente in evidenza. Passandoci sopra appare un fumetto scuro con il valore in grassetto.",
+      "<strong>Linee e ciambelle</strong> — Aree più sfumate, griglia leggera tratteggiata, segmenti delle ciambelle arrotondati. Funziona anche in tema scuro."
+     ]
+    }
+   ],
+   "en": {
+    "title": "New charts, in a finance dashboard style",
+    "highlights": [
+     "Pill bars with the current value highlighted",
+     "Clearer bubble tooltips",
+     "Softer donuts and lines"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Refreshed charts</strong> — Pill-shaped bars on a light track, with the most recent value highlighted. Hovering shows a dark bubble with the value in bold.",
+       "<strong>Lines and donuts</strong> — Softer areas, a light dashed grid and rounded donut segments. Works in dark mode too."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.35.3",
    "date": "2026-10-12",
    "hotfix": false,
