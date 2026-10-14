@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-14
 
+- Changelog: versione 3.41.0 della suite (turni a mano libera, orari in un solo posto); Cassa e turni: testo aggiornato.
 - Changelog: versione 3.40.0 della suite (orari dei turni per periodo e giornate tipo); Cassa e turni: testo sui turni flessibili aggiornato.
 - Changelog: versione 3.39.0 della suite (dashboard bento con formati fissi).
 

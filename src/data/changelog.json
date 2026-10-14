@@ -2,6 +2,61 @@
  "updated": "2026-10-14",
  "releases": [
   {
+   "version": "3.41.0",
+   "date": "2026-10-14",
+   "hotfix": false,
+   "title": "Turni a mano libera",
+   "highlights": [
+    "Scrivi i turni del giorno come servono",
+    "Ripeti l'orario su altri giorni fino a una data",
+    "Salva un orario come giornata tipo",
+    "Niente più modelli nelle impostazioni"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>A mano libera</strong> — Nel foglio di ogni giorno scrivi i turni come servono: inizio, fine e, se vuoi, un nome. Oppure dividi l'orario di apertura (es. 13–03) in due, tre o quattro turni e ritocchi gli orari. Chi è già assegnato resta al suo posto.",
+      "<strong>Ripeti su altri giorni</strong> — Lo stesso orario si applica in un colpo ai giorni della settimana che scegli, fino a una data. Le giornate con la cassa già compilata restano come sono.",
+      "<strong>Salva come giornata tipo</strong> — Un orario fatto a mano si salva e si riusa con un tocco, o in automatico per un periodo."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Un solo posto per gli orari</strong> — I modelli di turno spariscono dalle impostazioni: diventano da soli un orario «Da sempre», con gli stessi turni e le stesse assegnazioni. Da qui in poi tutto si gestisce dalla pagina Turni.",
+      "<strong>Compenso per tipo di turno</strong> — Il prezzo si dà al nome del turno, quindi vale anche per i turni fatti a mano."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Freehand shifts",
+    "highlights": [
+     "Write the day's shifts the way you need them",
+     "Repeat the hours on other days up to a date",
+     "Save hours as a day pattern",
+     "No more templates in the settings"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Freehand</strong> — In each day's sheet write the shifts as you need them: start, end and, if you like, a name. Or split the opening hours (e.g. 13–03) into two, three or four shifts and fine-tune the times. Whoever is already assigned keeps their place.",
+       "<strong>Repeat on other days</strong> — The same hours apply in one go to the weekdays you choose, up to a date. Days with the till already filled in stay as they are.",
+       "<strong>Save as a day pattern</strong> — Freehand hours can be saved and reused with one tap, or automatically for a period."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>One place for hours</strong> — Shift templates disappear from the settings: they automatically become “Always” hours, with the same shifts and the same assignments. From now on everything is managed from the Shifts page.",
+       "<strong>Pay by shift type</strong> — The price is set on the shift name, so it also works for freehand shifts."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.40.0",
    "date": "2026-10-14",
    "hotfix": false,
