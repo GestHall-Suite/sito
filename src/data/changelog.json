@@ -2,6 +2,59 @@
  "updated": "2026-10-14",
  "releases": [
   {
+   "version": "3.43.0",
+   "date": "2026-10-14",
+   "hotfix": false,
+   "title": "Barra in alto o barra laterale: scegli tu",
+   "highlights": [
+    "Nuova disposizione con la barra in alto",
+    "Niente doppioni: il profilo resta dove lo cerchi",
+    "La guida sempre a portata",
+    "Titoli dei riquadri sempre in vista"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Barra in alto</strong> — Sul computer, dallo Studio di stile, puoi passare a una barra orizzontale: logo, sezioni a tendina, guida, notifiche e il tuo profilo con la copertina. Le pagine usano tutta la larghezza."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Profilo dove lo cerchi</strong> — Con la barra laterale il profilo e l'uscita restano in basso a sinistra; in alto a destra solo guida e notifiche. La scheda del profilo mostra sempre la tua copertina.",
+      "<strong>Guida in ogni pagina</strong> — Il pulsante «?» c'è sempre.",
+      "<strong>Riquadri più ordinati</strong> — Se un riquadro scorre, il titolo resta in vista; se manca pochissimo spazio non scorre più. Tolta la scritta «LIVE»: i numeri si aggiornano comunque da soli."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Top bar or sidebar: your choice",
+    "highlights": [
+     "New layout with a top bar",
+     "No duplicates: your profile stays where you look for it",
+     "Help always at hand",
+     "Tile titles always in view"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Top bar</strong> — On the computer, from the Style studio, you can switch to a horizontal bar: logo, drop-down sections, help, notifications and your profile with its cover. Pages use the full width."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Profile where you look for it</strong> — With the sidebar, profile and sign-out stay at the bottom left; at the top right only help and notifications. The profile card always shows your cover.",
+       "<strong>Help on every page</strong> — The “?” button is always there.",
+       "<strong>Tidier tiles</strong> — When a tile scrolls its title stays in view; if only a little space is missing it no longer scrolls. The “LIVE” label is gone: figures still update by themselves."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.42.0",
    "date": "2026-10-14",
    "hotfix": false,
