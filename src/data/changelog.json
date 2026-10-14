@@ -1,6 +1,75 @@
 {
- "updated": "2026-10-12",
+ "updated": "2026-10-14",
  "releases": [
+  {
+   "version": "3.38.0",
+   "date": "2026-10-14",
+   "hotfix": false,
+   "title": "Dashboard bento, nuovi grafici e menu utente sul telefono",
+   "highlights": [
+    "Dashboard bento: riquadri da ¼ a tutta riga",
+    "Nuovi grafici: fornitori e giorno della settimana",
+    "Verifica VLT spostata in Bet/Win",
+    "Notifiche nel menu utente sul telefono"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Dashboard «bento»</strong> — I riquadri possono essere larghi ¼, ⅓, ½, ⅔ o tutta la riga e si incastrano senza spazi vuoti. Sul telefono i riquadri piccoli stanno due per riga.",
+      "<strong>Nuovi grafici</strong> — Incasso per fornitore degli ultimi 30 giorni e media per giorno della settimana degli ultimi 90.",
+      "<strong>Menu utente sul telefono</strong> — Toccando il proprio avatar in basso si aprono Notifiche, Il mio spazio, Profilo, Personalizza ed Esci; il numero di notifiche da leggere compare sull'avatar."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Verifica VLT in Bet/Win</strong> — Addebito, SISAL e assegni del borderò si inseriscono nella pagina Bet/Win della settimana; il Settimanale è solo da consultare.",
+      "<strong>Performance macchine</strong> — Mostra le prime 8 macchine; «Tutte le macchine» le elenca senza allungare la pagina.",
+      "<strong>Telefono</strong> — Barra dell'app e intestazioni delle pagine diventano card come sul computer, in vetro liquido se attivo."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Grafici</strong> — Con la radio attiva i grafici del Settimanale e delle altre pagine compaiono subito, senza dover aggiornare la pagina."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Bento dashboard, new charts and a user menu on the phone",
+    "highlights": [
+     "Bento dashboard: tiles from ¼ to full width",
+     "New charts: suppliers and day of the week",
+     "VLT check moved to Bet/Win",
+     "Notifications in the user menu on the phone"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Bento dashboard</strong> — Tiles can be ¼, ⅓, ½, ⅔ or full width and fit together without gaps. On the phone small tiles sit two per row.",
+       "<strong>New charts</strong> — Takings by supplier over the last 30 days and the average by day of the week over the last 90.",
+       "<strong>User menu on the phone</strong> — Tapping your avatar at the bottom opens Notifications, My space, Profile, Customise and Sign out; the number of unread notifications shows on the avatar."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>VLT check in Bet/Win</strong> — Debit, SISAL and cheques from the statement are entered on the week's Bet/Win page; the Weekly report is view-only.",
+       "<strong>Machine performance</strong> — Shows the top 8 machines; «All machines» lists them without making the page longer.",
+       "<strong>Phone</strong> — The app bar and page headers become cards as on the computer, in liquid glass when enabled."
+      ]
+     },
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Charts</strong> — With the radio on, charts on the Weekly report and other pages appear straight away, without reloading the page."
+      ]
+     }
+    ]
+   }
+  },
   {
    "version": "3.37.1",
    "date": "2026-10-12",
