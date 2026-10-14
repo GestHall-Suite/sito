@@ -2,6 +2,59 @@
  "updated": "2026-10-14",
  "releases": [
   {
+   "version": "3.40.0",
+   "date": "2026-10-14",
+   "hotfix": false,
+   "title": "Orari dei turni per periodo",
+   "highlights": [
+    "Giornate tipo: come dividi la giornata in turni",
+    "Orari in vigore dal… al…",
+    "Cambia la giornata con un tocco dal foglio del giorno",
+    "Chi è assegnato resta al suo posto"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Giornate tipo</strong> — Salvi i modi in cui dividi la giornata: «Due turni» 10–18:30 e 18:30–03, «5 h + 12 h» 10–15 e 15–03, «Tre turni» 10–15, 15–21 e 21–03. «Dividi» spezza l'orario di apertura in 2, 3 o 4 turni uguali, poi ritocchi gli orari.",
+      "<strong>Orari in vigore</strong> — Indichi quale giornata tipo vale da una data all'altra, o da una data in poi, anche solo in alcuni giorni della settimana. Così l'orario estivo, quello provvisorio e quello nuovo convivono nello stesso mese. Puoi anche lasciare i giorni senza turni e deciderli uno per uno.",
+      "<strong>Un tocco per cambiare un giorno</strong> — Nel foglio del giorno scegli come dividere la giornata: i turni cambiano subito e chi era assegnato resta, nell'ordine dei turni. Le giornate con la cassa già compilata non vengono toccate."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Orari al posto di Struttura</strong> — Il pannello «Struttura dei turni» lascia il posto a «Orari»; i modelli di Impostazioni → Turni restano validi quando non c'è un orario."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Shift hours by period",
+    "highlights": [
+     "Day patterns: how you split the day into shifts",
+     "Hours in force from… to…",
+     "Change a day with one tap from the day sheet",
+     "Whoever is assigned keeps their place"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Day patterns</strong> — Save the ways you split the day: “Two shifts” 10–18:30 and 18:30–03, “5 h + 12 h” 10–15 and 15–03, “Three shifts” 10–15, 15–21 and 21–03. “Split” divides the opening hours into 2, 3 or 4 equal shifts, then you fine-tune the times.",
+       "<strong>Hours in force</strong> — Choose which day pattern applies from one date to another, or from a date onwards, even only on some weekdays. Summer hours, temporary hours and new hours can live in the same month. You can also leave days without shifts and decide them one by one.",
+       "<strong>One tap to change a day</strong> — In the day sheet choose how to split the day: shifts change at once and whoever was assigned stays, in shift order. Days with the till already filled in are left untouched."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Hours instead of Structure</strong> — The “Shift structure” panel makes way for “Hours”; the templates in Settings → Shifts still apply when there are no hours."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.39.0",
    "date": "2026-10-14",
    "hotfix": false,
