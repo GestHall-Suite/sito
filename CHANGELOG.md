@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-14
 
+- Changelog: versione 3.38.1 della suite (dashboard più ordinata, menu utente sul telefono).
+
 - Changelog: versione 3.38.0 della suite (dashboard bento, nuovi grafici, Verifica VLT in Bet/Win, menu utente sul telefono).
 
 ## 2026-10-12
