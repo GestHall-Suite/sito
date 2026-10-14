@@ -2,6 +2,47 @@
  "updated": "2026-10-14",
  "releases": [
   {
+   "version": "3.39.0",
+   "date": "2026-10-14",
+   "hotfix": false,
+   "title": "Dashboard bento con formati fissi",
+   "highlights": [
+    "Riquadri con formati fissi: piccolo, largo, alto, grande",
+    "Composizioni pensate per ogni ruolo",
+    "Personalizza direttamente sulla griglia",
+    "Trascina anche sul telefono tenendo premuto"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Formati fissi</strong> — Ogni riquadro ha misure adatte al suo contenuto, come i widget del telefono: piccolo, largo, alto, grande, intero. Un riquadro non si allunga più per stare accanto a uno più alto; ciò che non ci sta scorre dentro.",
+      "<strong>Composizioni per ruolo</strong> — Responsabile, operatore e revisore partono da una disposizione ordinata, con righe che si incastrano; sul telefono i riquadri piccoli stanno due per riga.",
+      "<strong>Personalizza</strong> — Si modifica direttamente la dashboard: trascina un riquadro (sul telefono tenendolo premuto), scegli il formato tra quelli adatti, nascondi o rimetti i riquadri, ripristina la disposizione iniziale."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Bento dashboard with fixed sizes",
+    "highlights": [
+     "Tiles with fixed sizes: small, wide, tall, large",
+     "Layouts designed for each role",
+     "Customise directly on the grid",
+     "Drag on the phone too by pressing and holding"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Fixed sizes</strong> — Each tile has sizes suited to its content, like phone widgets: small, wide, tall, large, full width. A tile no longer stretches to match a taller neighbour; what doesn't fit scrolls inside.",
+       "<strong>Layouts by role</strong> — Manager, operator and auditor start from a tidy layout with rows that fit together; on the phone small tiles sit two per row.",
+       "<strong>Customise</strong> — Edit the dashboard directly: drag a tile (on the phone press and hold), pick a size among those that suit it, hide or bring back tiles, restore the starting layout."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.38.1",
    "date": "2026-10-14",
    "hotfix": false,
