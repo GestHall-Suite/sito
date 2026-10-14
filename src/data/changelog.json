@@ -2,6 +2,57 @@
  "updated": "2026-10-14",
  "releases": [
   {
+   "version": "3.38.1",
+   "date": "2026-10-14",
+   "hotfix": false,
+   "title": "Dashboard più ordinata",
+   "highlights": [
+    "Righe allineate: grafico principale + riquadro laterale",
+    "Stato della giornata nella prima tessera",
+    "Menu utente sul telefono sempre funzionante"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Dashboard</strong> — Righe allineate con un riquadro principale e uno laterale (incasso 30 giorni e fornitori, andamento 6 mesi e giorno della settimana, macchine e versamenti…); i grafici riempiono il riquadro e gli elenchi lunghi scorrono al suo interno.",
+      "<strong>Oggi in una tessera</strong> — La prima tessera mostra incasso, stato della giornata e apre la cassa: niente più ripetizioni dell'incasso di oggi.",
+      "<strong>Telefono</strong> — I riquadri piccoli (fornitori, giorno della settimana, assistenze, radio, obiettivo) stanno due per riga."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Menu utente sul telefono</strong> — Con la radio attiva si apriva solo la prima volta."
+     ]
+    }
+   ],
+   "en": {
+    "title": "A tidier dashboard",
+    "highlights": [
+     "Aligned rows: main chart + side tile",
+     "Today's status in the first tile",
+     "User menu on the phone always works"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Dashboard</strong> — Aligned rows with a main tile and a side tile (30-day takings and suppliers, 6-month trend and day of the week, machines and deposits…); charts fill their tile and long lists scroll inside it.",
+       "<strong>Today in one tile</strong> — The first tile shows takings and the day's status and opens the register: today's takings are no longer repeated.",
+       "<strong>Phone</strong> — Small tiles (suppliers, day of the week, assistance, radio, goal) sit two per row."
+      ]
+     },
+     {
+      "type": "fix",
+      "items": [
+       "<strong>User menu on the phone</strong> — With the radio on it only opened the first time."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.38.0",
    "date": "2026-10-14",
    "hotfix": false,
