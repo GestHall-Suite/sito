@@ -2,6 +2,71 @@
  "updated": "2026-10-14",
  "releases": [
   {
+   "version": "3.42.0",
+   "date": "2026-10-14",
+   "hotfix": false,
+   "title": "Dashboard da app e la tua copertina ovunque",
+   "highlights": [
+    "Card più pulite con icone e variazioni a colpo d'occhio",
+    "Indicatori anche per gli operatori",
+    "La tua copertina sempre in vista, su ogni pagina",
+    "Niente più riquadri tagliati sul telefono"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>La tua barra in ogni pagina</strong> — Sul computer, a destra di ogni intestazione, trovi le notifiche e una pillola con la tua copertina, la foto e il ruolo: un clic apre il tuo menu.",
+      "<strong>Indicatori per gli operatori</strong> — In cima alla dashboard: turni del mese, ore lavorate rispetto al mese scorso, prossimo turno e scostamento medio."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Card più pulite</strong> — Ogni riquadro ha un'icona e un titolo leggibile; gli indicatori mostrano la variazione in una pillola verde o rossa. «Prossimi turni» ha il giorno in evidenza e le ore di ogni turno.",
+      "<strong>Copertina sul profilo</strong> — Lo stile della barra laterale con copertina ora colora la tua scheda in basso; sul telefono la copertina affiora nella barra in alto."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Telefono</strong> — I riquadri non vengono più tagliati, la copertina non esce dallo schermo, il calendario del mese è leggibile e le scritte dei grafici su iPhone hanno il carattere giusto."
+     ]
+    }
+   ],
+   "en": {
+    "title": "App-like dashboard and your cover everywhere",
+    "highlights": [
+     "Cleaner cards with icons and changes at a glance",
+     "Indicators for operators too",
+     "Your cover always in view, on every page",
+     "No more cut-off tiles on the phone"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Your bar on every page</strong> — On the computer, at the right of every header, you find notifications and a pill with your cover, photo and role: one click opens your menu.",
+       "<strong>Indicators for operators</strong> — At the top of the dashboard: shifts this month, hours worked compared with last month, next shift and average difference."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Cleaner cards</strong> — Every tile has an icon and a readable title; indicators show the change in a green or red pill. “Next shifts” highlights the day and the hours of each shift.",
+       "<strong>Cover on profile</strong> — The sidebar style with cover now colours your card at the bottom; on the phone the cover shows through in the top bar."
+      ]
+     },
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Phone</strong> — Tiles are no longer cut off, the cover no longer runs off the screen, the month calendar is readable and chart labels on iPhone use the right font."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.41.0",
    "date": "2026-10-14",
    "hotfix": false,
