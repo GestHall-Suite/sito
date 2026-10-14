@@ -173,7 +173,6 @@
  "Dashboard, settimanale, mensile, annuale": "Dashboard, weekly, monthly, yearly",
  "Database": "Database",
  "Database salvato e copia dei file che cambiano, prima di toccare qualsiasi cosa.": "Database saved and a copy of the files that change, before touching anything.",
- "Definisci i modelli di turno con orari e giorni della settimana; il calendario li applica da solo. Un giorno speciale si personalizza a mano, un turno in più si aggiunge dal giornaliero.": "Define shift templates with times and days of the week; the calendar applies them by itself. A special day is customised by hand, an extra shift is added from the daily sheet.",
  "Demo sui tuoi numeri": "A demo with your numbers",
  "Demo, domande sui piani, migrazione dei dati o programma rivenditori: scrivici e ti rispondiamo entro un giorno lavorativo.": "Demo, questions about plans, data migration or the reseller programme: write to us and we reply within one working day.",
  "Di cosa hai bisogno?": "What do you need?",
@@ -683,5 +682,6 @@
  "€99 + IVA": "€99 + VAT",
  "€990 + IVA (–17%)": "€990 + VAT (–17%)",
  "Video brevi": "Short videos",
- "Le operazioni di ogni giorno in meno di un minuto, con voce narrante, registrate dalla sala dimostrativa. Gli stessi video sono nell'app, nel pulsante «?».": "Everyday tasks in under a minute, with a narrator, recorded in the demo hall. The same videos are in the app, behind the «?» button."
+ "Le operazioni di ogni giorno in meno di un minuto, con voce narrante, registrate dalla sala dimostrativa. Gli stessi video sono nell'app, nel pulsante «?».": "Everyday tasks in under a minute, with a narrator, recorded in the demo hall. The same videos are in the app, behind the «?» button.",
+ "Prepara le tue giornate tipo (due turni 10–18:30 e 18:30–03, tre turni, 5 + 12 ore…) e decidi da quando vale ciascuna: il calendario le applica da solo. Un giorno diverso si cambia con un tocco, e chi è già assegnato resta al suo posto.": "Set up your day patterns (two shifts 10–18:30 and 18:30–03, three shifts, 5 + 12 hours…) and decide from when each one applies: the calendar applies them by itself. A different day changes with one tap, and whoever is already assigned keeps their place."
 }
