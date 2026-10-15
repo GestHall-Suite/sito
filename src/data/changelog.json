@@ -2,6 +2,41 @@
  "updated": "2026-10-15",
  "releases": [
   {
+   "version": "3.45.0",
+   "date": "2026-10-15",
+   "hotfix": false,
+   "title": "Studio di stile: le barre in una scheda sola",
+   "highlights": [
+    "Nuova scheda «Barre» nello Studio di stile",
+    "Anteprima della disposizione",
+    "Barra laterale, vetro e barra del telefono insieme"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Scheda «Barre»</strong> — Nello Studio di stile disposizione (barra laterale o in alto, con anteprima), stile e forma della barra laterale, vetro liquido e voci della barra in basso del telefono sono ora in un'unica scheda. «Forme» e «Menu» sono più corte e ordinate."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Style studio: all bars in one tab",
+    "highlights": [
+     "New «Bars» tab in the Style studio",
+     "Layout preview",
+     "Sidebar, glass and phone bar together"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>«Bars» tab</strong> — In the Style studio, layout (sidebar or top bar, with a preview), sidebar style and shape, liquid glass and the phone's bottom bar items are now in a single tab. «Shapes» and «Menu» are shorter and tidier."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.44.1",
    "date": "2026-10-15",
    "hotfix": true,
