@@ -2,6 +2,55 @@
  "updated": "2026-10-15",
  "releases": [
   {
+   "version": "3.47.0",
+   "date": "2026-10-15",
+   "hotfix": false,
+   "title": "Sottocartelle nei documenti, email su misura",
+   "highlights": [
+    "Cartelle dentro le cartelle nei Documenti",
+    "Email di notifica attivabili e disattivabili",
+    "Menu dei Documenti più ordinato"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Sottocartelle</strong> — Nei Documenti puoi creare cartelle dentro le cartelle e spostarle dove vuoi: in cima alla pagina vedi tutto il percorso e puoi trascinare un file su qualsiasi livello.",
+      "<strong>Email su misura</strong> — Nel profilo le email hanno gli stessi interruttori delle notifiche: puoi spegnere il riepilogo della giornata chiusa o l'avviso della nuova busta paga. Le email di sicurezza (codice di accesso, password) arrivano sempre."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Menu dei Documenti</strong> — Il menu ⋯ ora si apre anche nella vista a elenco e ha le voci allineate."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Subfolders in documents, email your way",
+    "highlights": [
+     "Folders inside folders in Documents",
+     "Notification emails can be turned on and off",
+     "Tidier Documents menu"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Subfolders</strong> — In Documents you can create folders inside folders and move them wherever you like: the full path is shown at the top and you can drop a file on any level.",
+       "<strong>Email your way</strong> — In your profile emails have the same switches as notifications: you can turn off the closed-day summary or the new payslip notice. Security emails (sign-in code, password) are always sent."
+      ]
+     },
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Documents menu</strong> — The ⋯ menu now opens in list view too, with aligned items."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.46.0",
    "date": "2026-10-15",
    "hotfix": false,
