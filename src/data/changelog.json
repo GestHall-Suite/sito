@@ -2,6 +2,59 @@
  "updated": "2026-10-15",
  "releases": [
   {
+   "version": "3.44.1",
+   "date": "2026-10-15",
+   "hotfix": true,
+   "title": "Notifiche più chiare e intestazioni su una riga",
+   "highlights": [
+    "Centro notifiche rinnovato",
+    "Ricerca accanto ai pulsanti",
+    "Turni da coprire nella dashboard dell'operatore",
+    "Riquadri che si spostano riga per riga"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Centro notifiche</strong> — Si apre sotto la campanella, con icone colorate per tipo, un pallino sulle non lette e il numero delle nuove.",
+      "<strong>Intestazioni su una riga</strong> — Nelle pagine elenco ricerca, schede e filtri stanno accanto ai pulsanti.",
+      "<strong>Dashboard dell'operatore</strong> — Al posto delle ore (già nella copertina) c'è il numero di turni ancora da coprire nei prossimi 14 giorni."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Personalizza la dashboard</strong> — Con le frecce la striscia degli indicatori sale e scende di una riga alla volta."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Clearer notifications and one-line headers",
+    "highlights": [
+     "Refreshed notification centre",
+     "Search next to the buttons",
+     "Shifts to cover on the operator dashboard",
+     "Tiles move one row at a time"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Notification centre</strong> — It opens under the bell, with coloured icons by type, a dot on unread items and the number of new ones.",
+       "<strong>One-line headers</strong> — On list pages, search, tabs and filters sit next to the buttons.",
+       "<strong>Operator dashboard</strong> — Instead of hours (already in the cover) it shows how many shifts still need covering in the next 14 days."
+      ]
+     },
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Customise the dashboard</strong> — With the arrows the indicator strip moves up and down one row at a time."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.44.0",
    "date": "2026-10-15",
    "hotfix": false,

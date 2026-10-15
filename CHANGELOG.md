@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-15
 
+- Changelog: versione 3.44.1 della suite (centro notifiche, intestazioni su una riga, dashboard dell'operatore).
 - Changelog: versione 3.44.0 della suite (dashboard senza scorrimenti inutili, barra in alto sempre visibile, intestazioni uniformi).
 
 ## 2026-10-14
