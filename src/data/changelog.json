@@ -2,6 +2,39 @@
  "updated": "2026-10-15",
  "releases": [
   {
+   "version": "3.47.1",
+   "date": "2026-10-15",
+   "hotfix": true,
+   "title": "Notifiche ed email in una sola tabella",
+   "highlights": [
+    "Notifiche ed email in un'unica tabella",
+    "Colonne App ed Email per ogni notifica"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Notifiche nel profilo</strong> — Notifiche ed email ora sono in un'unica tabella: per ogni avviso scegli con due interruttori se riceverlo nell'app e per email. Le email di sicurezza sono raccolte in fondo, sempre attive."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Notifications and emails in one table",
+    "highlights": [
+     "Notifications and emails in a single table",
+     "App and Email columns for each notification"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Notifications in your profile</strong> — Notifications and emails are now in a single table: for each alert two switches let you choose whether to get it in the app and by email. Security emails are grouped at the bottom and always on."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.47.0",
    "date": "2026-10-15",
    "hotfix": false,
