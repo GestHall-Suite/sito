@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-15
+
+- Changelog: versione 3.44.0 della suite (dashboard senza scorrimenti inutili, barra in alto sempre visibile, intestazioni uniformi).
+
 ## 2026-10-14
 
 - Changelog: versione 3.43.0 della suite (barra in alto o barra laterale, guida sempre presente).

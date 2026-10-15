@@ -1,6 +1,49 @@
 {
- "updated": "2026-10-14",
+ "updated": "2026-10-15",
  "releases": [
+  {
+   "version": "3.44.0",
+   "date": "2026-10-15",
+   "hotfix": false,
+   "title": "Pagine più ordinate e barra in alto sempre visibile",
+   "highlights": [
+    "Dashboard senza scorrimenti inutili",
+    "Barra in alto sempre visibile",
+    "Intestazioni uguali in tutte le pagine elenco",
+    "Chat e Impostazioni rinnovate"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Dashboard</strong> — I riquadri crescono con il loro contenuto: scorrono solo gli elenchi lunghi e la chat, senza spazi vuoti.",
+      "<strong>Barra in alto sempre visibile</strong> — Con la disposizione «Barra in alto» la barra resta ferma in cima mentre scorri, e le intestazioni delle pagine si fermano subito sotto.",
+      "<strong>Intestazioni coerenti</strong> — Macchine, Contatti, Utenti, Clienti, Documenti, Prestiti, Ticket e Magazzino bar hanno la stessa disposizione: titolo e contatori a sinistra, azioni a destra, ricerca e filtri sotto. In Macchine schede e pulsanti «Aggiungi» sono nell'intestazione.",
+      "<strong>Chat e Impostazioni</strong> — L'elenco delle conversazioni e il menu delle Impostazioni sono riquadri come il resto dell'app, anche con la barra in alto."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Tidier pages and an always-visible top bar",
+    "highlights": [
+     "Dashboard without needless scrolling",
+     "Top bar always visible",
+     "Same headers on every list page",
+     "Refreshed Chat and Settings"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Dashboard</strong> — Tiles grow with their content: only long lists and the chat scroll, with no empty gaps.",
+       "<strong>Top bar always visible</strong> — With the «Top bar» layout the bar stays at the top while you scroll, and page headers stop right below it.",
+       "<strong>Consistent headers</strong> — Machines, Contacts, Users, Customers, Documents, Loans, Tickets and Bar stock share the same layout: title and counters on the left, actions on the right, search and filters below. In Machines the tabs and «Add» buttons are in the header.",
+       "<strong>Chat and Settings</strong> — The conversation list and the Settings menu are cards like the rest of the app, including with the top bar."
+      ]
+     }
+    ]
+   }
+  },
   {
    "version": "3.43.0",
    "date": "2026-10-14",
