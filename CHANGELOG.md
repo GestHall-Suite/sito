@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-15
 
+- Changelog: versione 3.48.0 della suite (vista a griglia, cartelle nel colore principale).
 - Changelog: versione 3.47.1 della suite (notifiche ed email in una sola tabella).
 - Changelog: versione 3.47.0 della suite (sottocartelle nei Documenti, email disattivabili, menu ⋯ corretto).
 - Changelog: versione 3.46.0 della suite (Documenti file manager, notifiche, contatti sincronizzati, Refill AWP).

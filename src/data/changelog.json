@@ -2,6 +2,53 @@
  "updated": "2026-10-15",
  "releases": [
   {
+   "version": "3.48.0",
+   "date": "2026-10-15",
+   "hotfix": false,
+   "title": "Vista a griglia e cartelle nel tuo colore",
+   "highlights": [
+    "Vista a griglia in Macchine, Utenti, Contatti e Clienti",
+    "Macchine con la loro icona",
+    "Cartelle dei Documenti nel tuo colore"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Griglia o elenco</strong> — In Macchine, Utenti, Contatti e Anagrafica clienti puoi scegliere tra elenco e griglia: a griglia ogni persona ha il suo riquadro con l'avatar grande e ogni macchina la sua icona. L'app ricorda la scelta per ogni pagina."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Cartelle nel tuo colore</strong> — Le cartelle dei Documenti seguono il colore principale scelto, come il resto dell'app."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Grid view and folders in your colour",
+    "highlights": [
+     "Grid view in Machines, Users, Contacts and Customers",
+     "Machines with their own icon",
+     "Documents folders in your colour"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Grid or list</strong> — In Machines, Users, Contacts and Customer records you can switch between list and grid: in the grid each person has a tile with a large avatar and each machine its own icon. The app remembers your choice for each page."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Folders in your colour</strong> — Documents folders follow your main colour, like the rest of the app."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.47.1",
    "date": "2026-10-15",
    "hotfix": true,
