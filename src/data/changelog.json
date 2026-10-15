@@ -2,6 +2,63 @@
  "updated": "2026-10-15",
  "releases": [
   {
+   "version": "3.46.0",
+   "date": "2026-10-15",
+   "hotfix": false,
+   "title": "Documenti come un file manager, notifiche su misura",
+   "highlights": [
+    "Documenti con cartelle a riquadri, griglia ed elenco",
+    "Tutte le notifiche disattivabili ed eliminabili",
+    "Contatti dello staff sincronizzati con i profili",
+    "Refill AWP più semplice"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Notifiche su misura</strong> — Nel profilo trovi tutte le notifiche che l'app invia (turni, cassa, assistenze, bar, buste paga, chat) e puoi spegnere quelle che non ti servono. Puoi eliminarle una per una, tutte le lette o farle sparire da sole dopo 7, 30 o 90 giorni.",
+      "<strong>Contatti e profili insieme</strong> — Ogni persona dello staff ha il suo contatto, con la foto: nome, telefono ed email restano allineati con il profilo, in tutte le sale."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Documenti</strong> — Cartelle colorate da aprire, file a griglia con anteprima o in elenco, ricerca in tutti i documenti e trascinamento dei file nelle cartelle.",
+      "<strong>Refill AWP</strong> — Un riquadro per turno con il totale, righe da aggiungere quando servono, macchine suggerite e ora compilata da sola.",
+      "<strong>Macchine</strong> — Per gli operatori la pagina usa tutta la larghezza, con ricerca.",
+      "<strong>Turni</strong> — Rinominando un turno in una giornata tipo il nome cambia anche nel calendario."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Documents as a file manager, notifications your way",
+    "highlights": [
+     "Documents with folder tiles, grid and list",
+     "Every notification can be switched off or deleted",
+     "Staff contacts synced with profiles",
+     "Simpler AWP refills"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Notifications your way</strong> — Your profile lists every notification the app sends (shifts, cash, support, bar, payslips, chat) and you can switch off the ones you don't need. Delete them one by one, all the read ones, or let them disappear after 7, 30 or 90 days.",
+       "<strong>Contacts and profiles together</strong> — Every staff member has their own contact, with photo: name, phone and email stay in sync with the profile, in every venue."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Documents</strong> — Coloured folders to open, files as a grid with previews or as a list, search across all documents and drag files into folders.",
+       "<strong>AWP refills</strong> — One card per shift with its total, rows added when needed, suggested machines and time filled in automatically.",
+       "<strong>Machines</strong> — For operators the page uses the full width, with search.",
+       "<strong>Shifts</strong> — Renaming a shift in a day template also renames it in the calendar."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.45.0",
    "date": "2026-10-15",
    "hotfix": false,
