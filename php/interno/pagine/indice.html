@@ -103,111 +103,10 @@ a { text-decoration:none }
   </style>
   <script>(function(){var t=localStorage.getItem('gd-theme');if(t)document.documentElement.dataset.theme=t;})()</script>
   <style>
-/* ── Login gate ─────────────────────────────────────────── */
-#protected-content { display: none }
-
-#login-gate {
-  position:fixed;inset:0;z-index:999;
-  display:flex;align-items:center;justify-content:center;
-  background:var(--bg);
-  padding:24px
-}
-
-.lg-card {
-  width:100%;max-width:380px;
-  background:var(--surface);border:1px solid var(--border);border-radius:12px;
-  padding:36px 32px;
-  box-shadow:0 8px 40px rgba(0,0,0,.18)
-}
-
-.lg-logo {
-  display:flex;align-items:center;gap:10px;margin-bottom:28px
-}
-
-.lg-logo svg { border-radius:7px;flex-shrink:0 }
-
-.lg-logo-name { font-size:15px;font-weight:700;letter-spacing:-.01em;color:var(--text) }
-.lg-logo-sub  { font-size:11px;color:var(--muted);margin-top:1px }
-
-.lg-title {
-  font-size:22px;font-weight:800;letter-spacing:-.02em;
-  margin-bottom:6px;color:var(--text)
-}
-
-.lg-sub {
-  font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.5
-}
-
-.lg-field { margin-bottom:16px }
-
-.lg-field label {
-  display:block;font-size:11px;font-weight:700;
-  letter-spacing:.05em;text-transform:uppercase;
-  color:var(--muted);margin-bottom:6px
-}
-
-.lg-field input {
-  width:100%;padding:10px 13px;
-  border:1px solid var(--border);border-radius:8px;
-  background:var(--surface2);color:var(--text);font-size:14px;
-  font-family:inherit;outline:none;transition:border-color .15s
-}
-
-.lg-field input:focus { border-color:var(--teal) }
-
-.lg-btn {
-  width:100%;padding:11px;margin-top:4px;
-  background:var(--teal);color:#fff;border:none;border-radius:8px;
-  font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;
-  transition:opacity .12s
-}
-
-.lg-btn:hover { opacity:.88 }
-
-.lg-error {
-  margin-top:12px;font-size:12.5px;font-weight:600;
-  color:#ef4444;text-align:center;display:none
-}
-
-.lg-footer {
-  margin-top:24px;text-align:center;font-size:11.5px;color:var(--faint)
-}
-
-.lg-footer a { color:var(--teal);text-decoration:none }
-  </style>
+</style>
 </head>
 <body>
 
-<!-- ── Login gate ─────────────────────────────────────────── -->
-<div id="login-gate">
-  <div class="lg-card">
-    <div class="lg-logo">
-      <svg width="34" height="34" viewBox="0 0 34 34">
-        <rect width="34" height="34" rx="8" fill="#00c391"/>
-        <rect x="6" y="6" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
-        <rect x="19" y="6" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
-        <rect x="6" y="19" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
-        <rect x="19" y="19" width="9" height="10" rx="2" fill="rgba(0,0,0,0.72)"/>
-      </svg>
-      <div>
-        <div class="lg-logo-name">GestHall Suite</div>
-        <div class="lg-logo-sub">Area riservata</div>
-      </div>
-    </div>
-    <h1 class="lg-title">Accesso team</h1>
-    <p class="lg-sub">Documentazione interna, business plan e risorse riservate al team e ai partner.</p>
-    <form id="login-form" autocomplete="off">
-      <div class="lg-field">
-        <label for="lg-pass">Password</label>
-        <input type="password" id="lg-pass" placeholder="••••••••" autofocus autocomplete="current-password">
-      </div>
-      <button type="submit" class="lg-btn">Accedi</button>
-      <div class="lg-error" id="lg-error">Password errata. Riprova.</div>
-    </form>
-    <p class="lg-footer">Non sei del team? <a href="/">Torna al sito</a></p>
-  </div>
-</div>
-<!-- ── /Login gate ──────────────────────────────────────── -->
 
 <div id="protected-content">
 
@@ -269,7 +168,7 @@ a { text-decoration:none }
         <span class="dc-tag">Licenza</span>
         <span class="dc-tag">Architettura</span>
       </div>
-      <a class="dc-link" href="docs.html">Apri documentazione &rarr;</a>
+      <a class="dc-link" href="/interno/?p=docs">Apri documentazione &rarr;</a>
     </div>
 
     <div class="doc-card">
@@ -281,7 +180,7 @@ a { text-decoration:none }
         <span class="dc-tag">Backup</span>
         <span class="dc-tag">Manutenzione</span>
       </div>
-      <a class="dc-link" href="manutenzione.html">Apri la guida &rarr;</a>
+      <a class="dc-link" href="/interno/?p=manutenzione">Apri la guida &rarr;</a>
     </div>
 
     <div class="doc-card">
@@ -294,7 +193,7 @@ a { text-decoration:none }
         <span class="dc-tag">Contratti</span>
         <span class="dc-tag">GDPR</span>
       </div>
-      <a class="dc-link" href="vendita.html">Apri la guida &rarr;</a>
+      <a class="dc-link" href="/interno/?p=vendita">Apri la guida &rarr;</a>
     </div>
     <div class="doc-card">
       <div class="dc-icon">📊</div>
@@ -305,7 +204,7 @@ a { text-decoration:none }
         <span class="dc-tag">Proiezioni</span>
         <span class="dc-tag">Investor</span>
       </div>
-      <a class="dc-link" href="business-plan.html">Apri business plan &rarr;</a>
+      <a class="dc-link" href="/interno/?p=business-plan">Apri business plan &rarr;</a>
     </div>
 
   </div>
@@ -313,22 +212,22 @@ a { text-decoration:none }
   <!-- QUICK ACCESS -->
   <div class="sec-h">Accesso rapido sezioni</div>
   <div class="quick-grid">
-    <a class="quick-link" href="docs.html#overview"><span class="ql-icon">🏠</span> Stato del progetto</a>
-    <a class="quick-link" href="docs.html#changelog"><span class="ql-icon">📋</span> Versioni</a>
-    <a class="quick-link" href="docs.html#licenza"><span class="ql-icon">🔑</span> Licenza e sola lettura</a>
-    <a class="quick-link" href="docs.html#hub-installazioni"><span class="ql-icon">🖥</span> Installazioni nell'hub</a>
-    <a class="quick-link" href="docs.html#deploy"><span class="ql-icon">🚀</span> Installare una sala</a>
-    <a class="quick-link" href="docs.html#superadmin"><span class="ql-icon">⚡</span> Assistenza remota</a>
-    <a class="quick-link" href="manutenzione.html#pacchetto"><span class="ql-icon">📦</span> Pubblicare una versione</a>
-    <a class="quick-link" href="manutenzione.html#backup"><span class="ql-icon">💾</span> Backup del database</a>
-    <a class="quick-link" href="manutenzione.html#problemi"><span class="ql-icon">🩺</span> Problemi e soluzioni</a>
-    <a class="quick-link" href="vendita.html#demo"><span class="ql-icon">🎬</span> Server demo</a>
-    <a class="quick-link" href="vendita.html#prova"><span class="ql-icon">⏳</span> Prova di 14 giorni</a>
-    <a class="quick-link" href="vendita.html#pagamenti"><span class="ql-icon">💳</span> Pagamenti</a>
-    <a class="quick-link" href="vendita.html#contratti"><span class="ql-icon">✍️</span> Contratti</a>
-    <a class="quick-link" href="vendita.html#privacy"><span class="ql-icon">🛡</span> Privacy e GDPR</a>
-    <a class="quick-link" href="vendita.html#mancante"><span class="ql-icon">📋</span> Cosa manca</a>
-    <a class="quick-link" href="business-plan.html#proiezioni"><span class="ql-icon">📈</span> Proiezioni MRR</a>
+    <a class="quick-link" href="/interno/?p=docs#overview"><span class="ql-icon">🏠</span> Stato del progetto</a>
+    <a class="quick-link" href="/interno/?p=docs#changelog"><span class="ql-icon">📋</span> Versioni</a>
+    <a class="quick-link" href="/interno/?p=docs#licenza"><span class="ql-icon">🔑</span> Licenza e sola lettura</a>
+    <a class="quick-link" href="/interno/?p=docs#hub-installazioni"><span class="ql-icon">🖥</span> Installazioni nell'hub</a>
+    <a class="quick-link" href="/interno/?p=docs#deploy"><span class="ql-icon">🚀</span> Installare una sala</a>
+    <a class="quick-link" href="/interno/?p=docs#superadmin"><span class="ql-icon">⚡</span> Assistenza remota</a>
+    <a class="quick-link" href="/interno/?p=manutenzione#pacchetto"><span class="ql-icon">📦</span> Pubblicare una versione</a>
+    <a class="quick-link" href="/interno/?p=manutenzione#backup"><span class="ql-icon">💾</span> Backup del database</a>
+    <a class="quick-link" href="/interno/?p=manutenzione#problemi"><span class="ql-icon">🩺</span> Problemi e soluzioni</a>
+    <a class="quick-link" href="/interno/?p=vendita#demo"><span class="ql-icon">🎬</span> Server demo</a>
+    <a class="quick-link" href="/interno/?p=vendita#prova"><span class="ql-icon">⏳</span> Prova di 14 giorni</a>
+    <a class="quick-link" href="/interno/?p=vendita#pagamenti"><span class="ql-icon">💳</span> Pagamenti</a>
+    <a class="quick-link" href="/interno/?p=vendita#contratti"><span class="ql-icon">✍️</span> Contratti</a>
+    <a class="quick-link" href="/interno/?p=vendita#privacy"><span class="ql-icon">🛡</span> Privacy e GDPR</a>
+    <a class="quick-link" href="/interno/?p=vendita#mancante"><span class="ql-icon">📋</span> Cosa manca</a>
+    <a class="quick-link" href="/interno/?p=business-plan#proiezioni"><span class="ql-icon">📈</span> Proiezioni MRR</a>
   </div>
 
   <div class="int-footer">
@@ -349,49 +248,5 @@ function toggleTheme() {
 
 </div><!-- /#protected-content -->
 
-<script>
-/* ── Password gate ──────────────────────────────────────────────────────
-   SHA-256 della password. Per cambiarla:
-   node -e "require('crypto').createHash('sha256').update('NUOVA_PASSWORD').digest('hex')" | pbcopy
-   Sostituire il valore di HASH_ATTESO con l'output.
-──────────────────────────────────────────────────────────────────────── */
-var HASH_ATTESO = '876e951b1d0ff3134435e325f3cae3a8fe14ef34dff95fc74835b825314d6ff6';
-var SESSION_KEY = 'gh_interno_auth';
-
-async function sha256hex(str) {
-  var buf  = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
-  return Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
-}
-
-function unlock() {
-  document.getElementById('login-gate').style.display = 'none';
-  document.getElementById('protected-content').style.display = 'block';
-}
-
-(function() {
-  if (sessionStorage.getItem(SESSION_KEY) === '1') { unlock(); return; }
-
-  var form  = document.getElementById('login-form');
-  var input = document.getElementById('lg-pass');
-  var err   = document.getElementById('lg-error');
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var pwd = input.value;
-    if (!pwd) return;
-    sha256hex(pwd).then(function(hash) {
-      if (hash === HASH_ATTESO) {
-        sessionStorage.setItem(SESSION_KEY, '1');
-        unlock();
-      } else {
-        err.style.display = 'block';
-        input.value = '';
-        input.focus();
-        setTimeout(function(){ err.style.display = 'none'; }, 3000);
-      }
-    });
-  });
-})();
-</script>
 </body>
 </html>

@@ -170,7 +170,6 @@ p code, li code, td code, .step-desc code { overflow-wrap:anywhere }
 .plain-p { font-size:14px;margin:8px 0 14px;line-height:1.65 }
 @media (max-width: 480px) { .tb-badge { display: none } .tb-logo { white-space: nowrap } }
   </style>
-  <script>if(sessionStorage.getItem('gh_interno_auth')!=='1')location.replace('/interno/');</script>
   <script>(function(){var t=localStorage.getItem('gd-theme');if(t)document.documentElement.dataset.theme=t;})()</script>
 </head>
 <body>
@@ -179,11 +178,11 @@ p code, li code, td code, .step-desc code { overflow-wrap:anywhere }
   <button class="ham-btn" onclick="toggleSidebar()" aria-label="Menu">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
   </button>
-  <a class="tb-back" href="index.html">
+  <a class="tb-back" href="/interno/?p=index">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
     Interno
   </a>
-  <a class="tb-logo" href="index.html">
+  <a class="tb-logo" href="/interno/?p=index">
     <svg class="tb-mark" viewBox="0 0 34 34">
       <rect width="34" height="34" rx="8" fill="#00c391"/>
       <rect x="6" y="6" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
@@ -236,13 +235,13 @@ p code, li code, td code, .step-desc code { overflow-wrap:anywhere }
     <a class="sb-link" href="#deploy" onclick="closeMobile()"><span class="sb-icon">🚀</span> Installare una sala</a>
     <a class="sb-link" href="#architettura" onclick="closeMobile()"><span class="sb-icon">🏗</span> Architettura</a>
     <a class="sb-link" href="#test" onclick="closeMobile()"><span class="sb-icon">🧪</span> Test e CI</a>
-    <a class="sb-link" href="manutenzione.html"><span class="sb-icon">🔄</span> Aggiornamenti e backup &rarr;</a>
-    <a class="sb-link" href="vendita.html"><span class="sb-icon">💳</span> Vendita e legale &rarr;</a>
+    <a class="sb-link" href="/interno/?p=manutenzione"><span class="sb-icon">🔄</span> Aggiornamenti e backup &rarr;</a>
+    <a class="sb-link" href="/interno/?p=vendita"><span class="sb-icon">💳</span> Vendita e legale &rarr;</a>
   </div>
   <div class="sb-group">
     <span class="sb-group-label">Roadmap</span>
     <a class="sb-link" href="#roadmap" onclick="closeMobile()"><span class="sb-icon">🗺</span> Roadmap</a>
-    <a class="sb-link" href="business-plan.html"><span class="sb-icon">📊</span> Business plan &rarr;</a>
+    <a class="sb-link" href="/interno/?p=business-plan"><span class="sb-icon">📊</span> Business plan &rarr;</a>
   </div>
 </nav>
 
@@ -502,7 +501,7 @@ GET /api/aggiornamento.php?key=CHIAVE&amp;v=3.11.0&amp;ripara=1     stessa versi
 <div class="section" id="hub-rivenditori">
   <div class="sec-h2"><span class="sec-num">17</span> Rivenditori e portale clienti</div>
   <ul class="plain">
-    <li><strong>Rivenditori</strong>: accedono all'hub con le proprie credenziali e vedono solo le loro installazioni e i loro numeri; niente accesso ghost, niente cambi di piano. Le condizioni economiche vanno nel contratto rivenditore (vedi <a href="vendita.html#pagamenti">Vendita e legale</a>).</li>
+    <li><strong>Rivenditori</strong>: accedono all'hub con le proprie credenziali e vedono solo le loro installazioni e i loro numeri; niente accesso ghost, niente cambi di piano. Le condizioni economiche vanno nel contratto rivenditore (vedi <a href="/interno/?p=vendita#pagamenti">Vendita e legale</a>).</li>
     <li><strong>Portale clienti</strong> (<code>gesthallsuite.it/cliente/</code>): dalla suite, Impostazioni → Piano → «Gestisci piano online» genera un link firmato valido 1 ora (<code>hash_hmac(installation_key|ts, superadmin_key)</code>). Il portale chiede all'hub (<code>/api/sito.php</code>) nome, piano e scadenza e invia la richiesta di cambio piano. Senza parametri mostra una pagina informativa «Area clienti».</li>
   </ul>
 </div>
@@ -513,7 +512,7 @@ GET /api/aggiornamento.php?key=CHIAVE&amp;v=3.11.0&amp;ripara=1     stessa versi
   <ul class="plain">
     <li><strong>Accesso ghost</strong>: dalla scheda installazione dell'hub, link firmato HMAC con la <code>superadmin_key</code> della sala e scadenza breve; entra come responsabile senza codice di verifica; ogni azione resta nel registro attività con <code>[GHOST]</code>. In emergenza, senza hub: <code>account/ghost_generate.php</code> sulla sala con la <code>superadmin_key</code>.</li>
     <li><strong>Query per installazioni vecchie</strong>: quelle del CHANGELOG, eseguite da phpMyAdmin dell'hosting o da noi via accesso ghost + strumenti dell'hosting.</li>
-    <li><strong>Backup</strong>: lo fa l'app (settimanale, prima di ogni aggiornamento, a mano). Niente <code>mysqldump</code> né cron sui server dei clienti. Dettagli in <a href="manutenzione.html#backup">Aggiornamenti e backup</a>.</li>
+    <li><strong>Backup</strong>: lo fa l'app (settimanale, prima di ogni aggiornamento, a mano). Niente <code>mysqldump</code> né cron sui server dei clienti. Dettagli in <a href="/interno/?p=manutenzione#backup">Aggiornamenti e backup</a>.</li>
     <li><strong>Errore 500</strong>: <code>tools/diagnosi.php</code> copiato nella cartella dell'app, poi cancellato. File mancanti o rovinati: Impostazioni → Sistema → Verifica file → «Ripara automaticamente».</li>
   </ul>
   <div class="callout warn"><span class="callout-ico">🔒</span><p><code>superadmin_key</code> e <code>installation_key</code> di ogni sala vanno solo nel password manager. Un link ghost non si inoltra a nessuno.</p></div>
@@ -580,7 +579,7 @@ GitHub                    codice + Actions (controlli, rilasci); l'hub legge le 
   </table></div>
 </div>
 
-<div class="section" style="text-align:center;color:var(--faint);font-size:12px">GestHall Suite · Documentazione interna · ottobre 2026 · <a href="index.html">Sezione interna</a> · <a href="business-plan.html">Business plan</a></div>
+<div class="section" style="text-align:center;color:var(--faint);font-size:12px">GestHall Suite · Documentazione interna · ottobre 2026 · <a href="/interno/?p=index">Sezione interna</a> · <a href="/interno/?p=business-plan">Business plan</a></div>
 
 </main>
 </div>

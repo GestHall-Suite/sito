@@ -2,6 +2,11 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-17
+
+- Sicurezza: l'area riservata non è più fatta di pagine HTML pubbliche protette da uno script nel browser (il contenuto si leggeva dal sorgente). Le pagine sono in `php/interno/pagine/` e le serve `php/interno/index.php` solo dopo l'accesso: password con hash in `config.php` (fuori da git), codice dell'app di autenticazione (TOTP), 5 tentativi per IP in 15 minuti con attesa crescente, registro degli accessi, sessione HttpOnly/SameSite=Strict con scadenza, CSRF. Tolti `public/interno/*`; `.gitignore` con `php/interno/config.php`, `php/interno/dati/`, `.astro/`, `.impeccable/`.
+- Area clienti: niente cache, `Referrer-Policy: no-referrer`, niente iframe; il link firmato viene tolto dalla barra degli indirizzi dopo l'apertura; email e piano validati prima di inviare la richiesta all'hub.
+
 ## 2026-10-15
 
 - Changelog: versione 3.48.0 della suite (vista a griglia, cartelle nel colore principale).

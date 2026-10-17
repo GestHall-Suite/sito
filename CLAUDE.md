@@ -23,3 +23,8 @@ Ogni modifica è tracciata:
 
 - Grafica: token e componenti in `src/styles/site.css` (stessi colori e raggi della suite). Niente font o script esterni. Nuovi blocchi = classi esistenti (`.split`, `.card`, `.grid`, `.facts`, `.faq`, `.cta`…) prima di scrivere CSS di pagina.
 - Testi: italiano professionale e concreto, dal punto di vista del gestore. Niente testimonianze, numeri di clienti o statistiche inventati; ogni funzione descritta deve esistere nella suite e nel piano indicato.
+
+## Sicurezza
+
+- Area riservata solo in `php/interno/` (pagine servite da `index.php` dopo password + TOTP): **mai pagine interne in `public/`**, niente protezioni fatte solo in JavaScript. `config.php` e `dati/` non vanno su git.
+- Pagine PHP pubbliche (`public/api/`, `public/cliente/`): input validato e con limiti, niente segreti nell'HTML, intestazioni `no-store`/`no-referrer` dove passano chiavi o firme.

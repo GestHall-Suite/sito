@@ -4,3 +4,10 @@ node_modules/
 .env.*
 .DS_Store
 dist-com/
+
+# Area interna: configurazione e dati sul server, mai su git
+php/interno/config.php
+php/interno/dati/
+# File generati
+.astro/
+.impeccable/

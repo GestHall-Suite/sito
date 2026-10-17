@@ -51,11 +51,21 @@ public/
 ├── og.png                   Anteprima social 1200×630
 ├── .htaccess                Redirect 301 dei vecchi indirizzi /funzionalita/*
 ├── cliente/index.php        Area clienti (piano e cambio piano, link firmato dall'app; senza link mostra come entrare)
-├── docs/guida/              Guida all'uso (HTML statico)
-└── interno/                 Area riservata (accesso con password): index, docs (tecnica), manutenzione
-                             (aggiornamenti e backup), vendita (vendita, pagamenti, documenti legali), business-plan
-php/interno                  Accesso all'area interna: si carica a parte in /interno/
+└── docs/guida/              Guida all'uso (HTML statico)
+php/interno/                 Area riservata, caricata a parte in /interno/ (NON nel build: niente HTML pubblico)
+├── index.php                Accesso (password + codice dell'app di autenticazione), sessione, elenco pagine
+├── config.esempio.php       Da copiare in config.php sul server (hash della password, segreto TOTP)
+├── .htaccess                Nega l'accesso diretto a pagine/, dati/, config.php e ai file .html
+└── pagine/                  indice, stato, docs (tecnica), manutenzione, vendita, business-plan
 ```
+
+## Area riservata (`/interno/`)
+
+Le pagine interne non sono più file pubblici: le serve solo `php/interno/index.php` (`/interno/?p=docs`) dopo l'accesso.
+
+1. Sul server: caricare `php/interno/` in `/interno/` (con `.htaccess`), copiare `config.esempio.php` in `config.php` e scrivere `password_hash` (`php -r "echo password_hash('…', PASSWORD_DEFAULT);"`).
+2. Primo accesso con la sola password: la pagina propone un segreto TOTP da inserire nell'app di autenticazione e in `totp_segreto`; da quel momento serve anche il codice di 6 cifre.
+3. Protezioni: 5 tentativi falliti per IP in 15 minuti con attesa crescente, registro in `dati/accessi.log`, sessione HttpOnly/SameSite=Strict che scade dopo 2 ore di inattività (8 ore al massimo), CSRF sui moduli.
 
 ## Sistema grafico
 
@@ -86,7 +96,7 @@ npm run build
 # caricare il contenuto di dist/ (compresi .htaccess e api/) nella cartella pubblica del dominio
 ```
 
-L'area clienti è compresa nel build (`dist/cliente/index.php`); l'accesso all'area interna (`php/interno/`) resta nella sua cartella sul server.
+L'area clienti è compresa nel build (`dist/cliente/index.php`: il link firmato viene tolto dalla barra degli indirizzi, niente Referer né cache); l'area interna (`php/interno/`) si carica a parte in `/interno/` (vedi sopra) e dai server vanno tolti i vecchi file `/interno/*.html`.
 
 ## Regola operativa
 

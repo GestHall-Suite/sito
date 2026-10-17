@@ -169,7 +169,6 @@ ul.plain, ol.plain { margin:8px 0 16px 20px;display:flex;flex-direction:column;g
 p code, li code, td code, .step-desc code { overflow-wrap:anywhere }
 @media (max-width: 480px) { .tb-badge { display: none } .tb-logo { white-space: nowrap } }
   </style>
-  <script>if(sessionStorage.getItem('gh_interno_auth')!=='1')location.replace('/interno/');</script>
   <script>(function(){var t=localStorage.getItem('gd-theme');if(t)document.documentElement.dataset.theme=t;})()</script>
 </head>
 <body>
@@ -178,11 +177,11 @@ p code, li code, td code, .step-desc code { overflow-wrap:anywhere }
   <button class="ham-btn" onclick="toggleSidebar()" aria-label="Menu">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
   </button>
-  <a class="tb-back" href="index.html">
+  <a class="tb-back" href="/interno/?p=index">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
     Interno
   </a>
-  <a class="tb-logo" href="index.html">
+  <a class="tb-logo" href="/interno/?p=index">
     <svg class="tb-mark" viewBox="0 0 34 34">
       <rect width="34" height="34" rx="8" fill="#00c391"/>
       <rect x="6" y="6" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
@@ -223,7 +222,7 @@ p code, li code, td code, .step-desc code { overflow-wrap:anywhere }
     <a class="sb-link" href="#manuale" onclick="closeMobile()"><span class="sb-icon">🗃</span> Aggiornare a mano</a>
     <a class="sb-link" href="#checklist" onclick="closeMobile()"><span class="sb-icon">✅</span> Checklist di rilascio</a>
     <a class="sb-link" href="#problemi" onclick="closeMobile()"><span class="sb-icon">🩺</span> Problemi e soluzioni</a>
-    <a class="sb-link" href="docs.html"><span class="sb-icon">📚</span> Documentazione &rarr;</a>
+    <a class="sb-link" href="/interno/?p=docs"><span class="sb-icon">📚</span> Documentazione &rarr;</a>
   </div>
 </nav>
 
@@ -323,7 +322,7 @@ SUITE della sala (Impostazioni → Sistema → Aggiornamenti)
   <div class="sec-h3">Riparare i file (Verifica file)</div>
   <p>Impostazioni → Sistema → <strong>Verifica file</strong> confronta ogni file con <code>install/file_attesi.json</code>. Se trova file mancanti o diversi, <strong>Ripara automaticamente</strong> riscarica dall'hub il pacchetto della <em>stessa</em> versione installata (<code>&amp;ripara=1</code>: funziona anche con la versione ritirata o la licenza scaduta), controlla le impronte e riscrive solo quei file, con la copia di sicurezza come in un aggiornamento. Serve la chiave d'installazione collegata.</p>
   <div class="sec-h3">Demo</div>
-  <p>Le installazioni del server demo (<code>config.php</code> con <code>'demo' =&gt; true</code>) rifiutano aggiornamenti e installazioni da file: si aggiornano solo dal server con <code>php cli.php aggiorna-modello</code> (vedi <a href="vendita.html#demo">Vendita e legale → Demo</a> e <code>tools/demo/README.md</code>).</p>
+  <p>Le installazioni del server demo (<code>config.php</code> con <code>'demo' =&gt; true</code>) rifiutano aggiornamenti e installazioni da file: si aggiornano solo dal server con <code>php cli.php aggiorna-modello</code> (vedi <a href="/interno/?p=vendita#demo">Vendita e legale → Demo</a> e <code>tools/demo/README.md</code>).</p>
   <div class="callout warn"><span class="callout-ico">⚠️</span><p>Nessuna migrazione automatica del database: le colonne e le tabelle nuove si creano da sole al primo uso; se una versione richiede query, vanno nelle note del rilascio e nel CHANGELOG.</p></div>
 </div>
 
@@ -403,7 +402,7 @@ SUITE della sala (Impostazioni → Sistema → Aggiornamenti)
   <div class="sec-h3">Export per il commercialista</div>
   <p>Cassa → Mensile → «Per il commercialista»: Excel con fogli Riepilogo, Incassi (turno di chiusura, per piattaforma), Versamenti confermati e Bar. Responsabile e revisore.</p>
   <div class="sec-h3">Promemoria di scadenza</div>
-  <p>Dai 15 giorni prima della scadenza (in prova: sempre, con i giorni rimasti) il responsabile vede un avviso con il link a Piano e licenza; si può nascondere per la giornata. Dopo la scadenza: 15 giorni di tolleranza (la prova: nessuna), poi <strong>sola lettura</strong> con banner fisso per tutti. In sola lettura restano permessi aggiornamenti, backup, verifica e riparazione dei file, rinnovo della licenza. L'hub manda le email di promemoria (vedi <a href="vendita.html#scadenza">Vendita e legale</a>).</p>
+  <p>Dai 15 giorni prima della scadenza (in prova: sempre, con i giorni rimasti) il responsabile vede un avviso con il link a Piano e licenza; si può nascondere per la giornata. Dopo la scadenza: 15 giorni di tolleranza (la prova: nessuna), poi <strong>sola lettura</strong> con banner fisso per tutti. In sola lettura restano permessi aggiornamenti, backup, verifica e riparazione dei file, rinnovo della licenza. L'hub manda le email di promemoria (vedi <a href="/interno/?p=vendita#scadenza">Vendita e legale</a>).</p>
 </div>
 
 <!-- 10. MANUALE -->

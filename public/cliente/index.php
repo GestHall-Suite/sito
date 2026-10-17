@@ -12,6 +12,12 @@ declare(strict_types=1);
 
 const HUB_API_URL = 'https://hub.gesthallsuite.it/api/sito.php';
 
+/* Il link porta la chiave dell'installazione e la firma: niente cache, niente Referer verso altri siti, niente iframe. */
+header('Cache-Control: no-store');
+header('Referrer-Policy: no-referrer');
+header('X-Frame-Options: DENY');
+header('X-Content-Type-Options: nosniff');
+
 $h      = fn(mixed $v) => htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8');
 $key    = trim($_GET['key']   ?? $_POST['key']   ?? '');
 $ts     = (int) ($_GET['ts'] ?? $_POST['ts']     ?? 0);
@@ -77,6 +83,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$paramsMissing) {
 
     if ($pianoRich === '' || $email === '') {
         $error = 'Compila tutti i campi obbligatori.';
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) || !preg_match('/^(essenziale|pro|suite|multisala)$/', (string)$pianoRich)) {
+        $error = 'Controlla l\'indirizzo email e il piano scelto.';
     } else {
         $res = hub_post(HUB_API_URL, [
             'az'    => 'richiesta',
@@ -587,5 +595,6 @@ $saleAttuali = max(1, (int)($inst['sale_max'] ?? 1));
 
   <p class="cl-footer">GestHall Suite &middot; Portale riservato ai clienti attivi</p>
 </div>
+<script>if (location.search && history.replaceState) history.replaceState(null, '', location.pathname);</script>
 </body>
 </html>

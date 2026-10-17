@@ -170,7 +170,6 @@ p code, li code, td code, .step-desc code { overflow-wrap:anywhere }
 .plain-p { font-size:14px;margin:8px 0 14px;line-height:1.65 }
 @media (max-width: 480px) { .tb-badge { display: none } .tb-logo { white-space: nowrap } }
   </style>
-  <script>if(sessionStorage.getItem('gh_interno_auth')!=='1')location.replace('/interno/');</script>
   <script>(function(){var t=localStorage.getItem('gd-theme');if(t)document.documentElement.dataset.theme=t;})()</script>
 </head>
 <body>
@@ -179,11 +178,11 @@ p code, li code, td code, .step-desc code { overflow-wrap:anywhere }
   <button class="ham-btn" onclick="toggleSidebar()" aria-label="Menu">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
   </button>
-  <a class="tb-back" href="index.html">
+  <a class="tb-back" href="/interno/?p=index">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
     Interno
   </a>
-  <a class="tb-logo" href="index.html">
+  <a class="tb-logo" href="/interno/?p=index">
     <svg class="tb-mark" viewBox="0 0 34 34">
       <rect width="34" height="34" rx="8" fill="#00c391"/>
       <rect x="6" y="6" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
@@ -229,7 +228,7 @@ p code, li code, td code, .step-desc code { overflow-wrap:anywhere }
     <span class="sb-group-label">Da fare</span>
     <a class="sb-link" href="#mancante" onclick="closeMobile()"><span class="sb-icon">📋</span> Cosa manca</a>
     <a class="sb-link" href="#calendario" onclick="closeMobile()"><span class="sb-icon">🗓</span> Routine</a>
-    <a class="sb-link" href="manutenzione.html"><span class="sb-icon">🛠</span> Aggiornamenti e backup &rarr;</a>
+    <a class="sb-link" href="/interno/?p=manutenzione"><span class="sb-icon">🛠</span> Aggiornamenti e backup &rarr;</a>
   </div>
 </nav>
 

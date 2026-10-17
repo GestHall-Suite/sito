@@ -1,0 +1,15 @@
+# Area interna: si entra solo da index.php. Pagine, dati e configurazione non sono raggiungibili dal web.
+Options -Indexes
+DirectoryIndex index.php
+Header always set X-Robots-Tag "noindex, nofollow"
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^(pagine|dati)(/|$) - [F,L]
+  RewriteRule ^config(\.esempio)?\.php$ - [F,L]
+  RewriteRule \.html$ - [F,L]
+</IfModule>
+<FilesMatch "^(config|config\.esempio)\.php$|\.(html|json|log)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</FilesMatch>
