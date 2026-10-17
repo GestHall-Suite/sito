@@ -1,6 +1,71 @@
 {
- "updated": "2026-10-15",
+ "updated": "2026-10-17",
  "releases": [
+  {
+   "version": "3.49.0",
+   "date": "2026-10-17",
+   "hotfix": false,
+   "title": "Accessi più sicuri",
+   "highlights": [
+    "Accessi attivi nel profilo, con uscita da remoto",
+    "Verifica in due passaggi con app di autenticazione",
+    "Password robuste e accesso protetto dai tentativi ripetuti"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Accessi attivi</strong> — Nel profilo vedi tutti i dispositivi da cui sei collegato e puoi scollegarne uno o tutti gli altri con un tocco. Quando cambi la password gli altri dispositivi si scollegano da soli.",
+      "<strong>Verifica in due passaggi con app</strong> — Dal profilo puoi collegare un'app di autenticazione (Google Authenticator, Microsoft Authenticator, 1Password…): all'accesso, dopo la password, l'app ti dà il codice. Ricevi 10 codici di riserva per quando non hai il telefono. Per i responsabili è obbligatoria (la sala può cambiarlo in Impostazioni → Sistema); se qualcuno perde il telefono, il responsabile la azzera da Utenti.",
+      "<strong>Password robuste</strong> — Almeno 12 caratteri con maiuscole, minuscole, numeri e simboli; le password troppo comuni o già comparse in violazioni di dati vengono rifiutate. Mentre scrivi vedi quanto è forte e quali regole mancano."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Accesso protetto</strong> — Dopo alcuni tentativi sbagliati l'accesso chiede un controllo anti-bot e attese crescenti, e ogni tentativo fallito finisce nel registro attività. Limiti anche sulla richiesta di nuova password e sulla segnalazione guasti.",
+      "<strong>Controlli più severi</strong> — Ogni pagina verifica sul server che il tuo piano e i moduli attivi la includano, non solo il menu."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Correzioni di sicurezza</strong> — Chiusi alcuni accessi tecnici che non dovevano essere raggiungibili dal web e reso monouso il link con cui l'assistenza GestHall entra nella tua sala. Dopo l'aggiornamento i link per reimpostare la password inviati prima non valgono più: basta richiederne uno nuovo."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Safer sign-in",
+    "highlights": [
+     "Active sessions in your profile, with remote sign-out",
+     "Two-step verification with an authenticator app",
+     "Strong passwords and sign-in protected from repeated attempts"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Active sessions</strong> — Your profile lists every device you're signed in from, and you can sign out one or all the others with a tap. When you change your password the other devices are signed out automatically.",
+       "<strong>Two-step verification with an app</strong> — From your profile you can link an authenticator app (Google Authenticator, Microsoft Authenticator, 1Password…): at sign-in, after your password, the app gives you the code. You get 10 backup codes for when you don't have your phone. It's required for managers (the venue can change this in Settings → System); if someone loses their phone, a manager resets it from Users.",
+       "<strong>Strong passwords</strong> — At least 12 characters with uppercase and lowercase letters, numbers and symbols; passwords that are too common or already appeared in data breaches are rejected. While typing you see how strong it is and which rules are missing."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Protected sign-in</strong> — After a few wrong attempts sign-in asks for an anti-bot check and increasing waits, and every failed attempt goes into the activity log. Limits also apply to password reset requests and fault reports.",
+       "<strong>Stricter checks</strong> — Every page checks on the server that your plan and active modules include it, not just the menu."
+      ]
+     },
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Security fixes</strong> — Closed some technical endpoints that shouldn't have been reachable from the web and made the link GestHall support uses to enter your venue single-use. After the update, password reset links sent before no longer work: just request a new one."
+      ]
+     }
+    ]
+   }
+  },
   {
    "version": "3.48.0",
    "date": "2026-10-15",
