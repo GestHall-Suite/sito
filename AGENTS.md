@@ -10,6 +10,7 @@ Ogni modifica è tracciata:
 - **Funzionalità nuove o cambiate** → pagine `src/pages/prodotto/*` (aree in `src/data/aree.ts`), `src/pages/sicurezza.astro` se tocca dati/accessi/aggiornamenti, guida `public/docs/guida/index.html`; prezzi, piani e tabella di confronto solo in `src/data/piani.ts`.
 - **Schermate** → `public/img/prodotto/*.webp` (reali, dalla sala dimostrativa): rifarle quando l'interfaccia cambia in modo visibile.
 - **Modifiche al sito stesso** → `CHANGELOG.md`.
+- **Pubblicazione**: ogni push su `main` va online da solo (`.github/workflows/pubblica.yml`): non lasciare su `main` lavori a metà.
 - Dopo le modifiche: `npm run build` senza errori, nessuno scorrimento orizzontale a 390 px, tema chiaro e scuro.
 
 ## Lingue (.it / .com)

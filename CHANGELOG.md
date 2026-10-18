@@ -2,6 +2,11 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-18
+
+- Pubblicazione automatica su SiteGround a ogni push su `main` (`.github/workflows/pubblica.yml`: build, `rsync` via SSH di `dist/`, `dist-com/` e `php/interno/`, `config.php` dell'area interna dai segreti `INTERNO_PASSWORD`/`INTERNO_TOTP`). Istruzioni nel README.
+- Area interna: se `password_hash` in `config.php` non è un hash valido (tipico: incollato tra virgolette doppie, che fanno sparire i `$`) la pagina di accesso lo dice invece di rispondere «password non corretta»; `config.esempio.php` spiega come generarlo senza errori.
+
 ## 2026-10-17
 
 - Istruzioni di lavoro spostate in `AGENTS.md` (`CLAUDE.md` lo importa), come nella suite.

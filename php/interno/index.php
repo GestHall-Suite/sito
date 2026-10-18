@@ -23,7 +23,13 @@ header('Cache-Control: no-store');
 
 $cfgFile = __DIR__ . '/config.php';
 $cfg = is_file($cfgFile) ? (array)require $cfgFile : [];
-$hashPw = (string)($cfg['password_hash'] ?? '');
+$hashPw = trim((string)($cfg['password_hash'] ?? ''));
+/* Errori di configurazione comuni: hash incollato tra virgolette doppie (i $ vengono «mangiati» da PHP) o creato
+   con la shell che ha interpretato i caratteri speciali della password. Il messaggio non rivela nulla del contenuto. */
+$cfgErrore = '';
+if (!is_file($cfgFile)) $cfgErrore = 'Area non configurata: manca interno/config.php (si crea da config.esempio.php o con la pubblicazione automatica).';
+elseif ($hashPw === '') $cfgErrore = 'In interno/config.php manca password_hash.';
+elseif (password_get_info($hashPw)['algo'] === null) $cfgErrore = 'Il valore di password_hash in interno/config.php non è un hash valido: rigeneralo (vedi config.esempio.php) e incollalo tra apici singoli \' \'.';
 $totp = strtoupper(preg_replace('/[^A-Za-z2-7]/', '', (string)($cfg['totp_segreto'] ?? '')));
 
 $https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || strtolower((string)($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '')) === 'https';
@@ -93,7 +99,7 @@ if (empty($_SESSION['ok']) && ($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
         $errore = 'Troppi tentativi falliti. Riprova tra 15 minuti.';
     } elseif ($attesa > 0) {
         $errore = 'Troppi tentativi ravvicinati: riprova tra ' . $attesa . ' secondi.';
-    } elseif ($hashPw !== '' && password_verify((string)($_POST['password'] ?? ''), $hashPw)
+    } elseif ($cfgErrore === '' && password_verify((string)($_POST['password'] ?? ''), $hashPw)
               && ($totp === '' || interno_totp_ok($totp, (string)($_POST['codice'] ?? '')))) {
         session_regenerate_id(true);
         $_SESSION = ['ok' => true, 'dal' => time(), 'ultimo' => time(), 'csrf' => bin2hex(random_bytes(16)), 'totp_ultimo' => intdiv(time(), 30) + 1];
@@ -153,7 +159,7 @@ function interno_b32(): string {
 <form method="post" autocomplete="on">
   <h1>Area interna</h1>
   <p>Documenti riservati di GestHall Suite.</p>
-  <?php if ($hashPw === ''): ?><div class="err">Area non configurata: crea <code>interno/config.php</code> da <code>config.esempio.php</code>.</div><?php endif; ?>
+  <?php if ($cfgErrore !== ''): ?><div class="err"><?= $h($cfgErrore) ?></div><?php endif; ?>
   <?php if ($errore !== ''): ?><div class="err"><?= $h($errore) ?></div><?php endif; ?>
   <input type="hidden" name="csrf" value="<?= $h($_SESSION['csrf']) ?>">
   <label for="pw">Password</label>
