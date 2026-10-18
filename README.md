@@ -96,11 +96,11 @@ I vecchi indirizzi `/funzionalita/*` portano alle nuove pagine: `redirects` in `
 1. **SiteGround → Site Tools → Devs → SSH Keys Manager → Create**: dai un nome, scegli una passphrase, poi **Actions → Private Key** e copia la chiave; dalla stessa pagina (**SSH Credentials**) annota host, utente e porta (18765).
 2. **GitHub → repository → Settings → Secrets and variables → Actions → New repository secret**:
    `SSH_HOST`, `SSH_PORT` (`18765`), `SSH_USER`, `SSH_KEY` (la chiave privata intera, righe BEGIN/END comprese), `SSH_PASSPHRASE`,
-   `PATH_IT` (cartella pubblica di gesthallsuite.it, es. `www/gesthallsuite.it/public_html`), `PATH_COM` (quella di gesthallsuite.com, facoltativo),
+   `PATH_IT` (cartella pubblica di gesthallsuite.it, es. `www/gesthallsuite.it/public_html`), `PATH_COM` (quella di gesthallsuite.com, facoltativo; su SiteGround ogni sito ha il suo utente SSH, quindi se il .com è un sito a parte servono anche `COM_SSH_HOST`, `COM_SSH_USER`, `COM_SSH_KEY`, `COM_SSH_PASSPHRASE` presi dalle SSH Keys del sito .com),
    `INTERNO_PASSWORD` (password dell'area interna: la pubblicazione crea `interno/config.php` con l'hash) e, se vuoi il codice dell'app, `INTERNO_TOTP`.
 3. Actions → Pubblica → Run workflow. Ogni push successivo su `main` (per esempio il changelog di una nuova versione della suite) va online da solo in un paio di minuti.
 
-Cosa fa: `npm ci` + `npm run build`, poi copia `dist/` nella cartella di gesthallsuite.it e `dist-com/` in quella di gesthallsuite.com (senza cancellare nulla di quello che c'è già) e `php/interno/` in `/interno/` di ciascun dominio **cancellando** i file che non ci sono più (così spariscono i vecchi `/interno/*.html`); `dati/` sul server non si tocca, `config.php` solo se c'è il segreto `INTERNO_PASSWORD`. Senza i segreti il workflow costruisce soltanto.
+Cosa fa: `npm ci` + `npm run build`, poi copia `dist/` nella cartella di gesthallsuite.it e `dist-com/` in quella di gesthallsuite.com (senza cancellare nulla di quello che c'è già) e `php/interno/` in `/interno/` di ciascun dominio **cancellando** i file che non ci sono più (così spariscono i vecchi `/interno/*.html`); `dati/` sul server non si tocca, `config.php` solo se c'è il segreto `INTERNO_PASSWORD`. Senza i segreti il workflow costruisce soltanto. Un errore su un dominio non blocca l'altro: il log dice quale cartella o quale utente SSH non va.
 
 ## Deploy a mano
 

@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-18
 
+- Pubblicazione: il .com può avere credenziali SSH proprie (`COM_SSH_*`, ogni sito SiteGround ha il suo utente); prima di copiare si controlla che la cartella esista, e un errore su un dominio non blocca l'altro.
 - Pubblicazione automatica su SiteGround a ogni push su `main` (`.github/workflows/pubblica.yml`: build, `rsync` via SSH di `dist/`, `dist-com/` e `php/interno/`, `config.php` dell'area interna dai segreti `INTERNO_PASSWORD`/`INTERNO_TOTP`). Istruzioni nel README.
 - Area interna: se `password_hash` in `config.php` non è un hash valido (tipico: incollato tra virgolette doppie, che fanno sparire i `$`) la pagina di accesso lo dice invece di rispondere «password non corretta»; `config.esempio.php` spiega come generarlo senza errori.
 

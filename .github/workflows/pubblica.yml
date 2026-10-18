@@ -2,7 +2,8 @@
 # Segreti del repository (Settings → Secrets and variables → Actions):
 #   SSH_HOST, SSH_PORT (SiteGround: 18765), SSH_USER, SSH_KEY (chiave privata), SSH_PASSPHRASE (se la chiave ne ha una)
 #   PATH_IT  = cartella pubblica di gesthallsuite.it  (es. www/gesthallsuite.it/public_html)
-#   PATH_COM = cartella pubblica di gesthallsuite.com (facoltativo)
+#   PATH_COM = cartella pubblica di gesthallsuite.com (facoltativo). Su SiteGround ogni sito ha il suo utente SSH:
+#     se il .com è un sito a parte servono anche COM_SSH_HOST, COM_SSH_USER, COM_SSH_KEY, COM_SSH_PASSPHRASE (COM_SSH_PORT)
 #   INTERNO_PASSWORD (facoltativo) = password dell'area interna; INTERNO_TOTP (facoltativo) = segreto dell'app
 # Senza i segreti SSH il sito viene solo costruito (nessun errore).
 name: Pubblica
@@ -15,26 +16,34 @@ jobs:
   pubblica:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
       - run: npm ci
       - run: npm run build
-      - name: Chiave SSH
+      - name: Chiavi SSH
         id: ssh
         env:
           SSH_KEY: ${{ secrets.SSH_KEY }}
           SSH_PASSPHRASE: ${{ secrets.SSH_PASSPHRASE }}
           SSH_HOST: ${{ secrets.SSH_HOST }}
           SSH_PORT: ${{ secrets.SSH_PORT }}
+          COM_SSH_KEY: ${{ secrets.COM_SSH_KEY }}
+          COM_SSH_PASSPHRASE: ${{ secrets.COM_SSH_PASSPHRASE }}
+          COM_SSH_HOST: ${{ secrets.COM_SSH_HOST }}
+          COM_SSH_PORT: ${{ secrets.COM_SSH_PORT }}
         run: |
           if [ -z "$SSH_KEY" ] || [ -z "$SSH_HOST" ]; then echo "Segreti SSH mancanti: niente pubblicazione."; echo "ok=0" >> "$GITHUB_OUTPUT"; exit 0; fi
           mkdir -p ~/.ssh && chmod 700 ~/.ssh
-          printf '%s\n' "$SSH_KEY" > ~/.ssh/id && chmod 600 ~/.ssh/id
-          if [ -n "$SSH_PASSPHRASE" ]; then ssh-keygen -p -P "$SSH_PASSPHRASE" -N "" -f ~/.ssh/id >/dev/null; fi
-          ssh-keyscan -p "${SSH_PORT:-18765}" "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          chiave() {
+            printf '%s\n' "$1" > ~/.ssh/$2 && chmod 600 ~/.ssh/$2
+            if [ -n "$3" ]; then ssh-keygen -p -P "$3" -N "" -f ~/.ssh/$2 >/dev/null; fi
+            ssh-keyscan -p "$5" "$4" >> ~/.ssh/known_hosts 2>/dev/null || true
+          }
+          chiave "$SSH_KEY" id "$SSH_PASSPHRASE" "$SSH_HOST" "${SSH_PORT:-18765}"
+          if [ -n "$COM_SSH_KEY" ]; then chiave "$COM_SSH_KEY" id_com "$COM_SSH_PASSPHRASE" "${COM_SSH_HOST:-$SSH_HOST}" "${COM_SSH_PORT:-${SSH_PORT:-18765}}"; fi
           echo "ok=1" >> "$GITHUB_OUTPUT"
       - name: config.php dell'area interna
         if: steps.ssh.outputs.ok == '1'
@@ -52,21 +61,32 @@ jobs:
           SSH_HOST: ${{ secrets.SSH_HOST }}
           SSH_PORT: ${{ secrets.SSH_PORT }}
           SSH_USER: ${{ secrets.SSH_USER }}
+          COM_SSH_HOST: ${{ secrets.COM_SSH_HOST }}
+          COM_SSH_PORT: ${{ secrets.COM_SSH_PORT }}
+          COM_SSH_USER: ${{ secrets.COM_SSH_USER }}
+          COM_SSH_KEY: ${{ secrets.COM_SSH_KEY }}
           PATH_IT: ${{ secrets.PATH_IT }}
           PATH_COM: ${{ secrets.PATH_COM }}
         run: |
-          set -e
-          E="ssh -i $HOME/.ssh/id -p ${SSH_PORT:-18765} -o StrictHostKeyChecking=accept-new"
-          R="$SSH_USER@$SSH_HOST"
           # area interna: --delete toglie i vecchi /interno/*.html; config.php e dati/ restano sul server se non li crea la pubblicazione
           INT_EXCL="--exclude=dati/"; [ -f php/interno/config.php ] || INT_EXCL="$INT_EXCL --exclude=config.php"
-          pubblica() {
-            dest="$1"; src="$2"
-            [ -n "$dest" ] || return 0
-            echo "→ $dest"
-            rsync -rlz --checksum -e "$E" "$src"/ "$R:$dest/"
-            rsync -rlz --checksum --delete $INT_EXCL -e "$E" php/interno/ "$R:$dest/interno/"
+          ERR=0
+          pubblica() {  # nome, cartella, sorgente, utente@host, porta, chiave
+            [ -n "$2" ] || { echo "$1: cartella non impostata, salto."; return 0; }
+            E="ssh -i $HOME/.ssh/$6 -p $5 -o StrictHostKeyChecking=accept-new"
+            if ! $E "$4" "test -d '$2'"; then
+              echo "::error::$1: la cartella «$2» non esiste per l'utente SSH ${4%@*} (controlla il percorso o, se è un altro sito SiteGround, i segreti COM_SSH_*)."
+              ERR=1; return 0
+            fi
+            rsync -rlz --checksum -e "$E" "$3"/ "$4:$2/" \
+              && rsync -rlz --checksum --delete $INT_EXCL -e "$E" php/interno/ "$4:$2/interno/" \
+              && echo "$1: pubblicato in $2" || { echo "::error::$1: copia non riuscita"; ERR=1; }
           }
-          pubblica "$PATH_IT" dist
-          pubblica "$PATH_COM" dist-com
-          echo "Pubblicato $(date -u +%FT%TZ) — versione suite nel changelog: $(node -e 'console.log(require("./src/data/changelog.json").releases[0].version)')"
+          pubblica gesthallsuite.it "$PATH_IT" dist "$SSH_USER@$SSH_HOST" "${SSH_PORT:-18765}" id
+          if [ -n "$COM_SSH_KEY" ]; then
+            pubblica gesthallsuite.com "$PATH_COM" dist-com "${COM_SSH_USER:-$SSH_USER}@${COM_SSH_HOST:-$SSH_HOST}" "${COM_SSH_PORT:-${SSH_PORT:-18765}}" id_com
+          else
+            pubblica gesthallsuite.com "$PATH_COM" dist-com "$SSH_USER@$SSH_HOST" "${SSH_PORT:-18765}" id
+          fi
+          echo "Versione della suite nel changelog: $(node -e 'console.log(require("./src/data/changelog.json").releases[0].version)')"
+          exit $ERR
