@@ -48,7 +48,6 @@
  "Aggiornamenti dall'app": "Updates from the app",
  "Aggiornamenti e nuove funzionalità": "Updates and new features",
  "Al mese": "Per month",
- "Alla chiusura della giornata i revisori ricevono un'email con il riepilogo e l'importo da ritirare. Al ritiro confermano dall'app: l'importo, la firma tracciata sullo schermo, la data, l'ora e il dispositivo restano registrati.": "When the day is closed, auditors receive an email with the summary and the amount to collect. On collection they confirm in the app: the amount, the signature drawn on screen, date, time and device are recorded.",
  "Altro": "Other",
  "Anagrafica": "Customer records",
  "Anagrafica dei clienti della sala e del bar, con contatti e note. Se usi i prestiti, ogni cliente ha il suo saldo.": "Records of the hall's and bar's customers, with contacts and notes. If you use loans, every customer has their own balance.",
@@ -314,7 +313,6 @@
  "LUL e buste paga digitali": "Payslip register and digital payslips",
  "La cassa della sala, chiusa in pochi minuti. E i conti tornano.": "The hall's cash, closed in a few minutes. And the numbers add up.",
  "La cassa di ogni turno, chiusa senza sorprese.": "Every shift's cash, closed without surprises.",
- "La chiude l'operatore a fine serata e il turno di chiusura si fissa da solo. Riaprire una giornata chiusa resta un permesso del responsabile.": "The operator closes it at the end of the evening and the closing shift is set automatically. Reopening a closed day remains the manager's permission.",
  "La giacenza si calcola dai movimenti: carichi, vendite, omaggi, scarti e rettifiche. Nessun numero da aggiornare a mano. Ciò che compri resta separato da ciò che vendi: ogni drink ha la sua ricetta.": "Stock is calculated from movements: deliveries, sales, complimentary items, waste and adjustments. No number to update by hand. What you buy stays separate from what you sell: every drink has its recipe.",
  "La pagina che cerchi non esiste o è stata spostata.": "The page you are looking for does not exist or has been moved.",
  "La pagina che cerchi non esiste o è stata spostata. Torna alla home o usa la navigazione in alto.": "The page you are looking for does not exist or has been moved. Go back to the home page or use the navigation at the top.",
@@ -442,7 +440,6 @@
  "Pro": "Pro",
  "Pro · €69/mese": "Pro · €69/month",
  "Problemi comuni": "Common problems",
- "Procedure, licenze, manuali e moduli in cartelle, sempre a portata di operatore. Si caricano e si stampano dall'app.": "Procedures, licences, manuals and forms in folders, always within the operator's reach. Uploaded and printed from the app.",
  "Prodotto": "Product",
  "Programma rivenditori": "Reseller programme",
  "Programma rivenditori GestHall Suite: un gestionale per sale giochi da proporre ai tuoi clienti, con pannello centrale per installazioni, licenze, accesso di assistenza e aggiornamenti automatici.": "GestHall Suite reseller programme: gaming hall software to offer your customers, with a central panel for installations, licences, support access and automatic updates.",
@@ -687,5 +684,8 @@
  "Accessi attivi": "Active sessions",
  "Ognuno vede dal profilo i dispositivi da cui è collegato e può scollegarli. Cambiando la password gli altri dispositivi escono da soli.": "Everyone sees in their profile the devices they're signed in from and can sign them out. Changing the password signs out the other devices automatically.",
  "Dove stanno i dati di GestHall Suite e come sono protetti: database sul tuo spazio web, backup settimanale, verifica in due passaggi con app, accessi attivi, blocco dei tentativi, registro attività, aggiornamenti verificati.": "Where GestHall Suite's data lives and how it is protected: database on your web space, weekly backup, two-step verification with an app, active sessions, attempt lockout, activity log, verified updates.",
- "Macchina per macchina, raggruppati per piattaforma con il totale di ciascuna. Dal telefono, il «Giro macchine» mostra una VLT alla volta nell'ordine della sala con un tastierino grande, salva ogni importo da solo e avvisa se un importo è lontano dal solito. Accanto all'importo, se serve, la lettura del dump.": "Machine by machine, grouped by platform with a total for each. On the phone, the “Machine round” shows one VLT at a time in the venue's order with a big keypad, saves each amount by itself and warns you if an amount is far from usual. Next to the amount, if needed, the dump reading."
+ "Macchina per macchina, raggruppati per piattaforma con il totale di ciascuna. Dal telefono, il «Giro macchine» mostra una VLT alla volta nell'ordine della sala con un tastierino grande, salva ogni importo da solo e avvisa se un importo è lontano dal solito. Accanto all'importo, se serve, la lettura del dump.": "Machine by machine, grouped by platform with a total for each. On the phone, the “Machine round” shows one VLT at a time in the venue's order with a big keypad, saves each amount by itself and warns you if an amount is far from usual. Next to the amount, if needed, the dump reading.",
+ "Alla chiusura della giornata revisori e responsabili ricevono un'email con il riepilogo, l'importo da ritirare e le scansioni delle chiusure allegate. Al ritiro i revisori confermano dall'app: l'importo, la firma tracciata sullo schermo, la data, l'ora e il dispositivo restano registrati.": "When the day is closed, auditors and managers receive an email with the summary, the amount to collect and the scans of the closings attached. On collection auditors confirm in the app: the amount, the signature drawn on screen, the date, the time and the device are recorded.",
+ "La chiude l'operatore a fine serata dopo un resoconto finale, allegando le scansioni o i PDF delle chiusure; il turno di chiusura si fissa da solo. Riaprire una giornata chiusa resta un permesso del responsabile.": "The operator closes it at the end of the evening after a final summary, attaching the scans or PDFs of the closings; the closing shift is set automatically. Reopening a closed day remains a manager permission.",
+ "Procedure, licenze, manuali e moduli in cartelle, sempre a portata di operatore. Ogni persona ha anche la sua cartella per HACCP, formazione e sicurezza, con le scadenze.": "Procedures, licences, manuals and forms in folders, always at hand for operators. Each person also has their own folder for HACCP, training and safety, with expiry dates."
 }

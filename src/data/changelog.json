@@ -2,6 +2,56 @@
  "updated": "2026-10-19",
  "releases": [
   {
+   "version": "3.53.0",
+   "date": "2026-10-19",
+   "title": "Chiusura con documenti e documenti del personale",
+   "highlights": [
+    "Alla chiusura: resoconto e scansioni allegate all'email",
+    "Documenti personali: HACCP, formazione, sicurezza",
+    "Giro macchine: «Aggiungi» o «È il totale»"
+   ],
+   "groups": [
+    {
+     "type": "new",
+     "items": [
+      "<strong>Chiusura della giornata</strong> — «Chiudi» mostra il resoconto della giornata (scassettamenti, bancomat, ticket, versamento contanti, scostamento) e permette di allegare scansioni e PDF delle chiusure, ricevute e scontrini. I documenti arrivano allegati all'email di chiusura, che ora ricevono anche i responsabili, e restano consultabili nella cassa del giorno.",
+      "<strong>Documenti personali</strong> — In Il mio spazio → Documenti ognuno carica attestati HACCP, corsi di formazione e sicurezza e altri documenti, con la data di scadenza. Nella sezione Documenti il responsabile trova una cartella per ogni persona e vede subito cosa sta per scadere.",
+      "<strong>Revisori</strong> — Nuovo permesso per decidere se i revisori vedono Bet/Win, Verifica VLT e Borderò (attivo di default)."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Giro macchine</strong> — Se una macchina ha già un importo, scegli «+ Aggiungi» per sommare quello che hai contato o «= È il totale» se hai scritto il totale: prima il nuovo valore sostituiva quello già scritto."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Closing with documents and staff documents",
+    "highlights": [
+     "At closing: summary and scans attached to the email",
+     "Personal documents: HACCP, training, safety",
+     "Machine round: “Add” or “It's the total”"
+    ],
+    "groups": [
+     {
+      "type": "new",
+      "items": [
+       "<strong>Closing the day</strong> — “Close” shows the day's summary (collections, card payments, tickets, cash deposit, difference) and lets you attach scans and PDFs of the closings, receipts and slips. The documents are attached to the closing email, which managers now receive too, and stay available in the day's till.",
+       "<strong>Personal documents</strong> — In My space → Documents everyone uploads HACCP certificates, training and safety courses and other documents, with the expiry date. In the Documents section the manager finds a folder for each person and sees right away what is about to expire.",
+       "<strong>Auditors</strong> — New permission to decide whether auditors see Bet/Win, VLT check and borderò (on by default)."
+      ]
+     },
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Machine round</strong> — If a machine already has an amount, choose “+ Add” to add what you counted or “= It's the total” if you wrote the total: before, the new value replaced the one already written."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.52.0",
    "date": "2026-10-19",
    "title": "Giro macchine: salva da solo",
