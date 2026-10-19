@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-19
 
+- Changelog: versione 3.53.0 della suite (chiusura con documenti, documenti personali, Bet/Win per i revisori, giro somma/totale); Cassa e turni e Sala aggiornate.
 - Changelog: versione 3.52.0 della suite (giro macchine con salvataggio automatico e riquadro di pausa); Cassa e turni: scheda Scassettamenti VLT aggiornata.
 - Changelog: versione 3.51.2 della suite (giro macchine che si riapriva da solo).
 - Changelog: versione 3.51.1 della suite (giro macchine avviato dal computer con un QR, salvataggio dal giro).
