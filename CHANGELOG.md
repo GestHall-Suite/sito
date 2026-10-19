@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-19
 
+- Changelog: versione 3.51.0 della suite (Giro macchine dal telefono); Cassa e turni: scheda Scassettamenti VLT aggiornata.
 - Changelog: versione 3.50.0 della suite (micro suoni disattivabili).
 
 ## 2026-10-18

@@ -2,6 +2,47 @@
  "updated": "2026-10-19",
  "releases": [
   {
+   "version": "3.51.0",
+   "date": "2026-10-19",
+   "hotfix": false,
+   "title": "Giro macchine dal telefono",
+   "highlights": [
+    "Una VLT alla volta, nell'ordine della sala",
+    "Tastierino grande e passaggio automatico",
+    "Avviso se un importo è lontano dal solito",
+    "Importo anche a voce"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Giro macchine</strong> — Per scassettare col telefono in mano: dal pannello degli scassettamenti «Giro macchine» mostra una VLT alla volta nell'ordine della sala, con il codice in grande e un tastierino sempre aperto. Scrivi quello che hai contato e Avanti passa da solo alla macchina successiva; alla fine un riepilogo con le macchine fatte, quelle da fare e il totale.",
+      "<strong>Controllo immediato</strong> — Accanto a ogni macchina vedi quanto incassa di solito: se l'importo è molto diverso (per esempio uno zero in più) l'app ti chiede di controllare prima di andare avanti. Se la macchina era già stata scassettata in un turno precedente, il nuovo conteggio si somma.",
+      "<strong>Importo a voce</strong> — Dove il telefono lo permette, attivi il microfono e dici l'importo («centottanta»): niente da toccare con i soldi in mano."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Machine round from the phone",
+    "highlights": [
+     "One VLT at a time, in the venue's order",
+     "Big keypad and automatic next",
+     "Warning when an amount is far from usual",
+     "Amount by voice too"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Machine round</strong> — For collecting with the phone in hand: from the collections panel, “Machine round” shows one VLT at a time in the venue's order, with the code in large type and a keypad always open. Type what you counted and Next moves to the following machine; at the end a summary with machines done, still to do and the total.",
+       "<strong>Instant check</strong> — Next to each machine you see what it usually takes: if the amount is very different (say an extra zero) the app asks you to check before moving on. If the machine was already collected in an earlier shift, the new count is added.",
+       "<strong>Amount by voice</strong> — Where the phone allows it, turn on the microphone and say the amount: nothing to tap with cash in your hands."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.50.0",
    "date": "2026-10-19",
    "hotfix": false,
