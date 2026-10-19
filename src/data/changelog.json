@@ -2,6 +2,45 @@
  "updated": "2026-10-19",
  "releases": [
   {
+   "version": "3.51.1",
+   "date": "2026-10-19",
+   "hotfix": true,
+   "title": "Giro macchine: dal computer al telefono",
+   "highlights": [
+    "Dal computer un QR apre il giro sul telefono",
+    "Si salva direttamente dal riepilogo del giro",
+    "«Solo scassettamenti» diventa «Giro macchine»"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Giro solo dal telefono</strong> — Sul computer il pulsante diventa «Giro dal telefono» e mostra un QR: lo inquadri e sul telefono si apre il giro macchine dello stesso turno.",
+      "<strong>Salva dal giro</strong> — Alla fine del giro «Salva il turno» salva tutto senza tornare alla pagina della cassa.",
+      "<strong>Impostazioni</strong> — In Cassa giornaliera → Sul telefono, «Solo scassettamenti» diventa «Giro macchine»: dal telefono la cassa si apre direttamente nel giro."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Machine round: from computer to phone",
+    "highlights": [
+     "From the computer a QR code opens the round on the phone",
+     "Save straight from the round summary",
+     "“Collections only” becomes “Machine round”"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Round on the phone only</strong> — On the computer the button becomes “Round from the phone” and shows a QR code: scan it and the machine round for the same shift opens on the phone.",
+       "<strong>Save from the round</strong> — At the end of the round “Save the shift” saves everything without going back to the till page.",
+       "<strong>Settings</strong> — In Daily till → On the phone, “Collections only” becomes “Machine round”: on the phone the till opens straight into the round."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.51.0",
    "date": "2026-10-19",
    "hotfix": false,
