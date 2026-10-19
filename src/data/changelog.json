@@ -2,6 +2,37 @@
  "updated": "2026-10-19",
  "releases": [
   {
+   "version": "3.56.1",
+   "date": "2026-10-19",
+   "hotfix": true,
+   "title": "Menu degli utenti sempre visibile",
+   "highlights": [
+    "Il menu delle azioni sugli utenti non esce più dallo schermo"
+   ],
+   "groups": [
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Utenti</strong> — Il menu ⋯ delle azioni si apre verso l'alto quando sotto non c'è spazio (per esempio sull'ultima riga) e non viene più tagliato."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Users menu always visible",
+    "highlights": [
+     "The users action menu no longer goes off screen"
+    ],
+    "groups": [
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Users</strong> — The ⋯ action menu opens upwards when there is no room below (for example on the last row) and is no longer cut off."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.56.0",
    "date": "2026-10-19",
    "title": "Spazio usato nel riquadro del piano",
