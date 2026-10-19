@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-19
 
+- Changelog: versione 3.51.2 della suite (giro macchine che si riapriva da solo).
 - Changelog: versione 3.51.1 della suite (giro macchine avviato dal computer con un QR, salvataggio dal giro).
 - Changelog: versione 3.51.0 della suite (Giro macchine dal telefono); Cassa e turni: scheda Scassettamenti VLT aggiornata.
 - Changelog: versione 3.50.0 della suite (micro suoni disattivabili).

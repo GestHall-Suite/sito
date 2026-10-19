@@ -2,6 +2,37 @@
  "updated": "2026-10-19",
  "releases": [
   {
+   "version": "3.51.2",
+   "date": "2026-10-19",
+   "hotfix": true,
+   "title": "Giro macchine: chiusura corretta",
+   "highlights": [
+    "Chiudendo il giro con la X non si riapre più da solo"
+   ],
+   "groups": [
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Giro macchine</strong> — Sul telefono, chiudendo il giro con la X o con il tasto indietro a volte la pagina si ricaricava e il giro ripartiva, impedendo di usare il resto dell'app. Ora si chiude e basta; una volta chiuso o salvato non si riapre da solo fino al giorno dopo (resta il pulsante «Giro macchine»)."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Machine round: proper closing",
+    "highlights": [
+     "Closing the round with the X no longer reopens it"
+    ],
+    "groups": [
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Machine round</strong> — On the phone, closing the round with the X or the back button sometimes reloaded the page and restarted the round, blocking the rest of the app. Now it simply closes; once closed or saved it doesn't reopen by itself until the next day (the “Machine round” button stays)."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.51.1",
    "date": "2026-10-19",
    "hotfix": true,
