@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-19
 
+- Changelog: versione 3.56.1 della suite (menu degli utenti non più tagliato).
 - Changelog: versione 3.56.0 della suite (spazio usato nel riquadro del piano).
 - Changelog: versione 3.55.1 della suite (spazio usato comprimibile).
 - Changelog: versioni 3.55.0 (spazio usato nella barra laterale e per persona) e 3.54.1 (spazio con l'hosting del cliente) della suite; pagina interna Spazio e costi aggiornata.
