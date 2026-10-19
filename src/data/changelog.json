@@ -2,6 +2,38 @@
  "updated": "2026-10-19",
  "releases": [
   {
+   "version": "3.56.0",
+   "date": "2026-10-19",
+   "title": "Spazio usato nel riquadro del piano",
+   "highlights": [
+    "Anello dello spazio usato nel riquadro del piano",
+    "Colore che avvisa quando lo spazio sta finendo"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Spazio nel riquadro del piano</strong> — Per il responsabile l'anello del riquadro del piano nella barra laterale mostra la percentuale di spazio usato, con i GB sotto; diventa giallo dal 75% e rosso dal 90%. Operatori e revisori continuano a vedere lo spazio dei propri file."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Storage used in the plan box",
+    "highlights": [
+     "Storage ring in the plan box",
+     "Colour warning when storage is running out"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Storage in the plan box</strong> — For the manager, the ring in the sidebar plan box shows the percentage of storage used, with the GB below; it turns yellow from 75% and red from 90%. Staff and auditors still see the storage of their own files."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.55.1",
    "date": "2026-10-19",
    "hotfix": true,
