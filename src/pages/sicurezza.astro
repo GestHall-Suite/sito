@@ -4,14 +4,14 @@ import Shot from '../components/Shot.astro';
 import Cta from '../components/Cta.astro';
 import { ICONE } from '../data/aree';
 ---
-<Layout page="Sicurezza e dati" description="Dove stanno i dati di GestHall Suite e come sono protetti: database sul tuo spazio web, backup settimanale, verifica in due passaggi con app, accessi attivi, blocco dei tentativi, registro attività, aggiornamenti verificati.">
+<Layout page="Sicurezza e dati" description="Dove stanno i dati di GestHall Suite e come sono protetti: database separato per ogni sala (sul tuo spazio web o sul nostro), backup settimanale, verifica in due passaggi con app, accessi attivi, blocco dei tentativi, registro attività, aggiornamenti verificati.">
 
 <section class="page-hero">
   <div class="container">
     <nav class="crumbs" aria-label="Percorso"><a href="/">Home</a><span aria-hidden="true">/</span><span>Sicurezza e dati</span></nav>
     <span class="eyebrow">Sicurezza e dati</span>
     <h1>I numeri della sala sono tuoi. E restano al sicuro.</h1>
-    <p class="lead">GestHall Suite gira sul tuo spazio web, con il tuo database. Backup, accessi, tracciabilità e aggiornamenti sono progettati per chi maneggia contanti ogni giorno e deve poterlo dimostrare.</p>
+    <p class="lead">GestHall Suite gira con un database tutto per la tua sala, sul tuo spazio web o sul nostro. Backup, accessi, tracciabilità e aggiornamenti sono progettati per chi maneggia contanti ogni giorno e deve poterlo dimostrare.</p>
   </div>
 </section>
 
@@ -32,7 +32,7 @@ import { ICONE } from '../data/aree';
       <div>
         <span class="eyebrow">Dove sono i dati</span>
         <h2>Sul tuo server, non su un cloud condiviso.</h2>
-        <p class="lead">L'app e il database MySQL stanno nello spazio web della sala (un normale hosting PHP o un tuo server). Nessun altro cliente condivide il tuo database e nessun servizio esterno legge i movimenti di cassa.</p>
+        <p class="lead">L'app e il database MySQL stanno in uno spazio web dedicato alla sala: il tuo (un normale hosting PHP o un tuo server) oppure il nostro. Nessun altro cliente condivide il tuo database e nessun servizio esterno legge i movimenti di cassa.</p>
         <ul class="checks">
           <li><strong>Il nostro server</strong> riceve solo la verifica della licenza: chiave dell'installazione e versione installata.</li>
           <li><strong>L'assistenza</strong> entra solo con un link firmato valido 15 minuti, e l'accesso finisce nel registro attività della sala.</li>

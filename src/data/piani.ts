@@ -93,7 +93,7 @@ export const confronto: Gruppo[] = [
   { titolo: 'Sistema', righe: [
     { voce: 'App installabile su telefono, anche offline', v: [true, true, true, true] },
     { voce: 'Backup settimanale e aggiornamenti con un clic', v: [true, true, true, true] },
-    { voce: 'Spazio per documenti, foto e allegati', v: ['2 GB', '5 GB', '10 GB', '10 GB per sala'] },
+    { voce: 'Spazio per documenti, foto e allegati (sul nostro hosting)', v: ['2 GB', '5 GB', '10 GB', '10 GB per sala'] },
     { voce: 'Verifica in due passaggi e registro attività', v: [true, true, true, true] },
     { voce: 'Notifiche push e avvisi automatici', v: [false, true, true, true] },
     { voce: 'Logo e colori della sala', v: [false, false, true, true] },
