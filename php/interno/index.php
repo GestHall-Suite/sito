@@ -11,6 +11,7 @@ declare(strict_types=1);
 const INTERNO_PAGINE = [
     'indice' => 'indice.html', 'stato' => 'stato.php', 'docs' => 'docs.html',
     'manutenzione' => 'manutenzione.html', 'vendita' => 'vendita.html', 'business-plan' => 'business-plan.html',
+    'spazio' => 'spazio.html',
 ];
 const INTERNO_MAX = 5;
 const INTERNO_FINESTRA = 900;

@@ -17,6 +17,9 @@ export interface Piano {
 
 export const PROVA_GIORNI = 14;
 export const SALA_EXTRA = 49;
+/** Spazio per documenti, foto e allegati (GB per sala) e pacchetto extra: allineati a PIANO_SPAZIO_GB (suite) e HUB_SPAZIO_GB (hub) */
+export const SPAZIO_GB: Record<PianoId, number> = { essenziale: 2, pro: 5, suite: 10, multisala: 10 };
+export const SPAZIO_PACCHETTO = { gb: 10, mese: 5 };
 
 export const piani: Piano[] = [
   {
@@ -90,6 +93,7 @@ export const confronto: Gruppo[] = [
   { titolo: 'Sistema', righe: [
     { voce: 'App installabile su telefono, anche offline', v: [true, true, true, true] },
     { voce: 'Backup settimanale e aggiornamenti con un clic', v: [true, true, true, true] },
+    { voce: 'Spazio per documenti, foto e allegati', v: ['2 GB', '5 GB', '10 GB', '10 GB per sala'] },
     { voce: 'Verifica in due passaggi e registro attività', v: [true, true, true, true] },
     { voce: 'Notifiche push e avvisi automatici', v: [false, true, true, true] },
     { voce: 'Logo e colori della sala', v: [false, false, true, true] },
