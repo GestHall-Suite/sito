@@ -2,6 +2,37 @@
  "updated": "2026-10-19",
  "releases": [
   {
+   "version": "3.56.2",
+   "date": "2026-10-19",
+   "hotfix": true,
+   "title": "Caricamento dei documenti più chiaro",
+   "highlights": [
+    "Messaggio chiaro quando un file è troppo grande per il server"
+   ],
+   "groups": [
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Caricamento dei documenti</strong> — Se il file supera il limite del tuo hosting, il documento personale o quello della chiusura non spariscono più con un errore generico: l'app mostra subito il limite reale e cosa fare. In Impostazioni → Sistema un avviso spiega come alzare il limite se è basso."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Clearer document uploads",
+    "highlights": [
+     "Clear message when a file is too large for the server"
+    ],
+    "groups": [
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Document uploads</strong> — If a file exceeds your hosting limit, personal and closing documents no longer fail with a generic error: the app shows the real limit and what to do. In Settings → System a notice explains how to raise the limit if it is low."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.56.1",
    "date": "2026-10-19",
    "hotfix": true,
