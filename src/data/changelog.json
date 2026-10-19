@@ -2,6 +2,39 @@
  "updated": "2026-10-19",
  "releases": [
   {
+   "version": "3.56.3",
+   "date": "2026-10-19",
+   "hotfix": true,
+   "title": "Caricamenti chiari in tutta l'app",
+   "highlights": [
+    "Limite reale del server in ogni caricamento",
+    "Messaggio chiaro anche in chat, borderò, documenti e logo"
+   ],
+   "groups": [
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Caricamenti</strong> — Borderò, documenti della sala, chat (foto e vocali), buste paga, import Bet/Win, logo, copertina, backup e aggiornamenti mostrano il limite reale del tuo hosting e un messaggio chiaro quando un file è troppo grande, invece di fallire in silenzio."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Clear uploads across the app",
+    "highlights": [
+     "Real server limit on every upload",
+     "Clear message in chat, statements, documents and logo too"
+    ],
+    "groups": [
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Uploads</strong> — Statements, venue documents, chat (photos and voice), payslips, Bet/Win import, logo, cover, backups and updates show your hosting's real limit and a clear message when a file is too large, instead of failing silently."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.56.2",
    "date": "2026-10-19",
    "hotfix": true,
