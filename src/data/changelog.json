@@ -2,6 +2,37 @@
  "updated": "2026-10-19",
  "releases": [
   {
+   "version": "3.55.1",
+   "date": "2026-10-19",
+   "hotfix": true,
+   "title": "Spazio usato comprimibile",
+   "highlights": [
+    "Lo spazio usato nella barra laterale si riduce a una riga"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Spazio usato</strong> — Il riquadro nella barra laterale si può comprimere in una sola riga con il valore e una barra corta; la scelta resta sul dispositivo."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Collapsible storage used",
+    "highlights": [
+     "Storage used in the sidebar collapses to one line"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Storage used</strong> — The sidebar box can be collapsed to a single line with the value and a short bar; the choice is kept on the device."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.55.0",
    "date": "2026-10-19",
    "title": "Spazio usato sempre in vista",
