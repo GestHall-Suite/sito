@@ -2,6 +2,52 @@
  "updated": "2026-10-19",
  "releases": [
   {
+   "version": "3.54.0",
+   "date": "2026-10-19",
+   "title": "Spazio usato e spazio incluso nei piani",
+   "highlights": [
+    "Impostazioni → Sistema mostra lo spazio usato",
+    "Spazio incluso: 2, 5 o 10 GB a seconda del piano",
+    "Foto dei documenti personali ridotte prima dell'invio"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Spazio usato</strong> — In Impostazioni → Sistema il responsabile vede quanto occupano documenti, foto, chat, buste paga e backup rispetto allo spazio incluso nel piano (2 GB Essenziale, 5 GB Pro, 10 GB Suite, 10 GB per sala con Multi-sala), con un avviso quando si avvicina al limite. Lo spazio si può ampliare con pacchetti da 10 GB."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Documenti personali</strong> — Le foto degli attestati vengono ridotte prima dell'invio: caricamento più veloce e meno spazio occupato."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Storage used and storage included in plans",
+    "highlights": [
+     "Settings → System shows the storage used",
+     "Included storage: 2, 5 or 10 GB depending on the plan",
+     "Photos of personal documents reduced before upload"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Storage used</strong> — In Settings → System the manager sees how much documents, photos, chat, payslips and backups take compared with the storage included in the plan (2 GB Essential, 5 GB Pro, 10 GB Suite, 10 GB per venue with Multi-hall), with a warning near the limit. Storage can be expanded with 10 GB packs."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Personal documents</strong> — Photos of certificates are reduced before upload: faster uploads and less storage used."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.53.1",
    "date": "2026-10-19",
    "hotfix": true,

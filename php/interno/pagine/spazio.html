@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GestHall Suite · Spazio e costi</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+:root {
+  --teal: #00c391;
+  --teal-dk: #008f6a;
+  --teal-dim: rgba(0,195,145,0.10);
+  --teal-dim2: rgba(0,195,145,0.18);
+  --bg: #0b1410;
+  --surface: #111a16;
+  --surface2: #162119;
+  --border: #1e3028;
+  --text: #ddf0e8;
+  --muted: #6aaa8e;
+  --faint: #2f4d40;
+  --r: 8px;
+}
+[data-theme="light"] {
+  --bg: #f5f7f6; --surface: #fff; --surface2: #f0f4f2;
+  --border: #dde8e3; --text: #0c1c17; --muted: #506b5f; --faint: #8eaaa0;
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0 }
+html { scroll-behavior: smooth; scroll-padding-top: 60px }
+body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; min-height: 100vh }
+a { text-decoration: none }
+
+.topbar {
+  position: sticky; top: 0; z-index: 10; height: 52px;
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 12px; padding: 0 24px;
+}
+.tb-back { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); padding: 4px 8px; border-radius: 5px; transition: background .12s }
+.tb-back:hover { background: var(--teal-dim); color: var(--text) }
+.tb-logo { display: flex; align-items: center; gap: 8px; color: var(--text); font-weight: 700; font-size: 15px; letter-spacing: -.01em }
+.tb-mark { width: 24px; height: 24px; border-radius: 5px; flex-shrink: 0 }
+.tb-sep { color: var(--faint); margin: 0 2px }
+.tb-section { font-size: 13px; font-weight: 500; color: var(--muted) }
+.tb-spacer { flex: 1 }
+.tb-badge { white-space: nowrap; font-size: 11px; background: rgba(239,68,68,.12); color: #f87171; border: 1px solid rgba(239,68,68,.25); border-radius: 20px; padding: 2px 10px; font-weight: 600 }
+.theme-btn { width: 30px; height: 30px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface2); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--muted); transition: background .15s }
+.theme-btn:hover { background: var(--teal-dim) }
+
+.main { max-width: 900px; margin: 0 auto; padding: 52px clamp(16px,4vw,48px) 80px }
+
+.hero-block {
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dk) 100%);
+  border-radius: var(--r); padding: clamp(32px,5vw,52px); margin-bottom: 52px; color: #fff;
+}
+.hb-eye { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .7; margin-bottom: 10px }
+.hb-h1 { font-size: clamp(24px,4vw,38px); font-weight: 800; letter-spacing: -.02em; margin-bottom: 10px; text-wrap: balance }
+.hb-sub { font-size: 15px; opacity: .85; line-height: 1.7; max-width: 560px; margin-bottom: 24px }
+.hb-chips { display: flex; gap: 8px; flex-wrap: wrap }
+.hb-chip { background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25); border-radius: 20px; padding: 3px 12px; font-size: 12px; font-weight: 500 }
+
+.section { margin-bottom: 60px }
+.sec-label { font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px }
+.sec-h2 { font-size: clamp(20px,3vw,26px); font-weight: 800; letter-spacing: -.02em; margin-bottom: 8px }
+.sec-lead { font-size: 14.5px; color: var(--muted); margin-bottom: 24px; line-height: 1.7 }
+.sec-h3 { font-size: 15px; font-weight: 700; margin: 24px 0 8px; letter-spacing: -.01em }
+
+p { margin-bottom: 12px; font-size: 14.5px; line-height: 1.7 }
+p:last-child { margin-bottom: 0 }
+
+.kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 32px }
+.kpi { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 18px 20px }
+.kpi-val { font-size: 28px; font-weight: 800; letter-spacing: -.02em; color: var(--teal); line-height: 1 }
+.kpi-label { font-size: 12px; color: var(--muted); margin-top: 4px; font-weight: 500 }
+.kpi-note { font-size: 11px; color: var(--faint); margin-top: 2px }
+
+.tbl-wrap { overflow-x: auto; margin: 14px 0; border-radius: var(--r); border: 1px solid var(--border) }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px }
+th { background: var(--surface2); font-weight: 600; padding: 10px 14px; text-align: left; color: var(--muted); font-size: 11.5px; letter-spacing: .04em; text-transform: uppercase; border-bottom: 1px solid var(--border) }
+td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top }
+tr:last-child td { border-bottom: none }
+tr:hover td { background: var(--teal-dim) }
+.td-right { text-align: right; font-variant-numeric: tabular-nums }
+
+.callout { border-radius: var(--r); padding: 14px 16px; margin: 16px 0; font-size: 13.5px; line-height: 1.6; display: flex; gap: 12px; align-items: flex-start }
+.callout.info  { background: var(--teal-dim); border: 1px solid var(--teal-dim2) }
+.callout.warn  { background: rgba(245,158,11,.08); border: 1px solid rgba(245,158,11,.22) }
+.callout p { margin: 0 }
+.callout-ico { font-size: 16px; flex-shrink: 0; line-height: 1.4 }
+
+.mrr-table { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin: 14px 0 }
+.mrr-table table { width: 100%; border-collapse: collapse; font-size: 13px }
+.mrr-table th { background: var(--surface2); padding: 10px 14px; text-align: left; font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border) }
+.mrr-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums }
+.mrr-table tr:last-child td { border-bottom: none; font-weight: 700 }
+.cell-base { color: var(--muted) }
+.cell-opt  { color: var(--teal) }
+
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 14px 0 }
+.plan { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 20px 22px }
+.plan.featured { border-color: var(--teal); box-shadow: 0 0 0 1px var(--teal) }
+.plan-name { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); margin-bottom: 8px }
+.plan-price { font-size: 32px; font-weight: 800; letter-spacing: -.02em }
+.plan-price span { font-size: 15px; font-weight: 500; color: var(--muted) }
+.plan-desc { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.6 }
+.plan-note { font-size: 11px; color: var(--faint); margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border) }
+
+.risk-row { display: flex; flex-direction: column; gap: 0 }
+.risk { display: grid; grid-template-columns: 2fr 1fr 3fr; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 13.5px; align-items: baseline }
+.risk:last-child { border-bottom: none }
+.risk-name { font-weight: 600 }
+.risk-level { font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 4px; display: inline-block; width: fit-content }
+.risk-level.hi  { background: rgba(239,68,68,.12); color: #f87171 }
+.risk-level.mid { background: rgba(245,158,11,.12); color: #fbbf24 }
+.risk-level.lo  { background: var(--teal-dim); color: var(--teal-dk) }
+.risk-mit { color: var(--muted) }
+
+.roadmap-grid { display: flex; flex-direction: column; gap: 0 }
+.roadmap-row { display: grid; grid-template-columns: 100px 80px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); align-items: baseline; font-size: 13.5px }
+.roadmap-row:last-child { border-bottom: none }
+.rm-date { color: var(--faint); font-size: 12px }
+.rm-status { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px }
+.rm-status.done  { background: rgba(34,197,94,.12); color: #4ade80 }
+.rm-status.wip   { background: var(--teal-dim); color: var(--teal-dk) }
+.rm-status.todo  { background: var(--surface2); color: var(--muted) }
+
+ul.plain { margin: 8px 0 16px 18px; display: flex; flex-direction: column; gap: 6px; font-size: 14px }
+ul.plain li::marker { color: var(--teal) }
+
+.exec-card { background: var(--surface); border: 1px solid var(--teal-dim2); border-radius: var(--r); padding: 28px 28px 24px; margin-bottom: 28px }
+.ec-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); margin-bottom: 16px }
+.ec-p { font-size: 14.5px; line-height: 1.75; color: var(--text) }
+
+.divider { height: 1px; background: var(--border); margin: 52px 0 }
+
+.page-footer { text-align: center; color: var(--faint); font-size: 12px; padding-top: 24px; border-top: 1px solid var(--border) }
+@media (max-width: 560px) { .tb-sep, .tb-section, .tb-badge { display: none } .mrr-table { overflow-x: auto } }
+  </style>
+  <script>(function(){var t=localStorage.getItem('gd-theme');if(t)document.documentElement.dataset.theme=t;})()</script>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="tb-back" href="/interno/?p=index">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Interno
+  </a>
+  <a class="tb-logo" href="/interno/?p=index">
+    <svg class="tb-mark" viewBox="0 0 34 34">
+      <rect width="34" height="34" rx="8" fill="#00c391"/>
+      <rect x="6" y="6" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
+      <rect x="19" y="6" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
+      <rect x="6" y="19" width="9" height="10" rx="2" fill="rgba(0,0,0,0.32)"/>
+      <rect x="19" y="19" width="9" height="10" rx="2" fill="rgba(0,0,0,0.72)"/>
+    </svg>
+    GestHall Suite
+  </a>
+  <span class="tb-sep">/</span>
+  <span class="tb-section">Spazio e costi di archiviazione</span>
+  <div class="tb-spacer"></div>
+  <span class="tb-badge">Riservato</span>
+  <button class="theme-btn" onclick="toggleTheme()" aria-label="Cambia tema">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+  </button>
+</div>
+
+<div class="main">
+
+
+  <div class="hero-block">
+    <div class="hb-eye">Documento interno · Ottobre 2026 · suite 3.54</div>
+    <h1 class="hb-h1">Spazio e costi di archiviazione</h1>
+    <p class="hb-sub">Quanto spazio web occupa una sala in un anno (foto, documenti, allegati della chiusura, chat, backup), quanto costa ospitarlo e come è legato ai piani.</p>
+    <div class="hb-chips">
+      <span class="hb-chip">~0,65 GB/anno sala tipica</span>
+      <span class="hb-chip">~2 GB/anno uso intenso</span>
+      <span class="hb-chip">Database &lt; 10 MB/anno</span>
+    </div>
+  </div>
+
+  <div class="section" id="ipotesi">
+    <div class="sec-label">Ipotesi</div>
+    <h2 class="sec-h2">Una sala tipica</h2>
+    <p class="sec-lead">8 persone, 12 VLT, 2 turni al giorno, 365 giorni di apertura. Dimensioni ricavate dai limiti reali dell'app e dalla sala dimostrativa (3 sale, ~600 giornate di cassa: database 4 MB, backup compresso 0,2 MB).</p>
+  </div>
+
+  <div class="section" id="stima">
+    <div class="sec-label">Stima per sala e per anno</div>
+    <h2 class="sec-h2">Dove va lo spazio</h2>
+    <div class="tbl-wrap"><table>
+      <tr><th>Voce</th><th>Ipotesi</th><th class="td-right">Tipico</th><th class="td-right">Intenso</th></tr>
+      <tr><td>Documenti della chiusura (v3.53)</td><td>3 file al giorno da ~300 KB (foto ridotte a JPEG 2000 px, PDF delle piattaforme); intenso 6 da ~500 KB</td><td class="td-right">330 MB</td><td class="td-right">1,1 GB</td></tr>
+      <tr><td>Chat (solo Suite)</td><td>Foto ridotte a 1200 px WebP ~150 KB, vocali ~150 KB; 3 al giorno, intenso 10</td><td class="td-right">160 MB</td><td class="td-right">550 MB</td></tr>
+      <tr><td>Borderò PDF</td><td>~12 al mese da ~300 KB</td><td class="td-right">45 MB</td><td class="td-right">100 MB</td></tr>
+      <tr><td>Documenti personali</td><td>HACCP, formazione, sicurezza: ~4 a persona; foto ridotte nel browser (v3.54)</td><td class="td-right">30 MB</td><td class="td-right">100 MB</td></tr>
+      <tr><td>Documenti della sala</td><td>Procedure, licenze, manuali (una tantum)</td><td class="td-right">20 MB</td><td class="td-right">100 MB</td></tr>
+      <tr><td>Buste paga LUL</td><td>8 × 12 PDF da ~150 KB</td><td class="td-right">15 MB</td><td class="td-right">30 MB</td></tr>
+      <tr><td>Foto profilo e copertine</td><td>Profilo max 2 MB, copertina max 5 MB</td><td class="td-right">10 MB</td><td class="td-right">30 MB</td></tr>
+      <tr><td>Database</td><td>Cassa, turni, bar, registro, notifiche</td><td class="td-right">5 MB</td><td class="td-right">15 MB</td></tr>
+      <tr><td>Backup</td><td>8 copie compresse conservate</td><td class="td-right">10 MB</td><td class="td-right">30 MB</td></tr>
+      <tr><td><strong>Totale annuo</strong></td><td></td><td class="td-right"><strong>~0,65 GB</strong></td><td class="td-right"><strong>~2 GB</strong></td></tr>
+    </table></div>
+    <div class="callout warn">
+      <span class="callout-ico">📌</span>
+      <p>Lo spazio si accumula: tipico ~2 GB dopo 3 anni, ~3,3 GB dopo 5. Base fissa ~35 MB (programma ~12 MB più le copie per tornare alla versione precedente). Piano Essenziale (senza chat e LUL): ~0,4 GB/anno. La voce che pesa di più è la chiusura con documenti, circa metà del totale.</p>
+    </div>
+  </div>
+
+  <div class="section" id="email">
+    <div class="sec-label">Email</div>
+    <h2 class="sec-h2">Gli allegati non occupano spazio web</h2>
+    <p class="sec-lead">L'email di chiusura parte con <code>mail()</code> e non viene salvata sul server. Gli allegati occupano la casella di chi la riceve: ~330 MB all'anno a persona con l'uso tipico. Oltre 15 MB per email i file restano solo nell'app (con il link). Attenzione ai limiti d'invio dell'hosting e alle caselle piccole dei clienti.</p>
+  </div>
+
+  <div class="section" id="costi">
+    <div class="sec-label">Costi</div>
+    <h2 class="sec-h2">Quanto costa ospitare lo spazio</h2>
+    <p class="sec-lead">Prezzi indicativi da verificare con il fornitore al momento dell'acquisto.</p>
+    <div class="tbl-wrap"><table>
+      <tr><th>Scenario</th><th>Costo spazio per sala</th><th>Note</th></tr>
+      <tr><td>Hosting del cliente</td><td class="td-right">€0 per noi</td><td>Lo paga il cliente: consigliare almeno 10 GB</td></tr>
+      <tr><td>Hosting condiviso nostro (es. piano da 20 GB)</td><td class="td-right">~€10–20 il 1° anno, ~€35–50/anno dal 3°</td><td>Indicativamente €15–25 per GB/anno; 20 GB reggono ~10 sale per 3 anni</td></tr>
+      <tr><td>VPS o archiviazione cloud</td><td class="td-right">pochi euro/anno</td><td>Molto meno per GB; richiede più gestione</td></tr>
+    </table></div>
+    <p class="sec-lead">Confronto con il ricavo: il piano più economico vale €468/anno (€39 × 12). Su hosting condiviso nostro lo spazio pesa meno del 10% del ricavo per sala, anche dopo qualche anno.</p>
+  </div>
+
+  <div class="section" id="piani">
+    <div class="sec-label">Piani</div>
+    <h2 class="sec-h2">Spazio incluso e pacchetti</h2>
+    <div class="tbl-wrap"><table>
+      <tr><th>Piano</th><th class="td-right">Spazio incluso</th><th>Copre (uso tipico)</th></tr>
+      <tr><td>Essenziale €39</td><td class="td-right">2 GB</td><td>~5 anni</td></tr>
+      <tr><td>Pro €69</td><td class="td-right">5 GB</td><td>~7 anni</td></tr>
+      <tr><td>Suite €99</td><td class="td-right">10 GB</td><td>~10 anni (anche con chat)</td></tr>
+      <tr><td>Multi-sala €149+</td><td class="td-right">10 GB per sala</td><td>~10 anni per sala</td></tr>
+      <tr><td>Pacchetto extra</td><td class="td-right">+10 GB a €5/mese</td><td>Per le sale con uso intenso</td></tr>
+    </table></div>
+    <p class="sec-lead">Dove sta: <code>sito/src/data/piani.ts</code> (<code>SPAZIO_GB</code>, <code>SPAZIO_PACCHETTO</code>), hub <code>HUB_SPAZIO_GB</code> / <code>HUB_SPAZIO_PACCHETTO</code> (pacchetti nella scheda installazione, campo «Spazio in più», contano nell'MRR), suite <code>PIANO_SPAZIO_GB</code>. L'hub manda <code>spazio_gb</code> con la licenza; la suite lo mostra in Impostazioni → Sistema → Spazio usato (avviso oltre il 75% e il 90%, nessun blocco dei caricamenti).</p>
+  </div>
+
+  <div class="section" id="controllo">
+    <div class="sec-label">Controllo</div>
+    <h2 class="sec-h2">Come tenerlo sotto controllo</h2>
+    <p class="sec-lead">Spazio usato per sala: Impostazioni → Sistema (dettaglio per voce, cache 6 ore, «Ricalcola»). Le foto vengono ridotte nel browser in chiusura, chat e documenti personali. I documenti della chiusura e personali non vengono cancellati in automatico: per la cassa possono servire per anni (conservazione fiscale), quindi meglio aggiungere spazio che cancellare.</p>
+  </div>
+
+</div>
+
+<script>
+function toggleTheme() {
+  var r = document.documentElement;
+  var cur = r.dataset.theme || 'dark';
+  var next = cur === 'dark' ? 'light' : 'dark';
+  r.dataset.theme = next;
+  localStorage.setItem('gd-theme', next);
+}
+</script>
+</body>
+</html>

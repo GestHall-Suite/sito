@@ -4,6 +4,9 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-19
 
+- Changelog: versione 3.54.0 della suite (spazio usato, spazio incluso nei piani).
+- Prezzi: spazio per documenti, foto e allegati nella tabella di confronto (`SPAZIO_GB`, `SPAZIO_PACCHETTO` in `piani.ts`) e domanda «Quanto spazio mi serve?».
+- Area interna: nuova pagina «Spazio e costi di archiviazione» (`php/interno/pagine/spazio.html`), voce nell'indice e riga nei costi del business plan.
 - Changelog: versione 3.53.1 della suite (documenti cliccabili nell'email di chiusura).
 - Changelog: versione 3.53.0 della suite (chiusura con documenti, documenti personali, Bet/Win per i revisori, giro somma/totale); Cassa e turni e Sala aggiornate.
 - Changelog: versione 3.52.0 della suite (giro macchine con salvataggio automatico e riquadro di pausa); Cassa e turni: scheda Scassettamenti VLT aggiornata.
