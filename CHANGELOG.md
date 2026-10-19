@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-19
+
+- Changelog: versione 3.50.0 della suite (micro suoni disattivabili).
+
 ## 2026-10-18
 
 - Pubblicazione: il .com può avere credenziali SSH proprie (`COM_SSH_*`, ogni sito SiteGround ha il suo utente); prima di copiare si controlla che la cartella esista, e un errore su un dominio non blocca l'altro.

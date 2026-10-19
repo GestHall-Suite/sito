@@ -1,6 +1,41 @@
 {
- "updated": "2026-10-17",
+ "updated": "2026-10-19",
  "releases": [
+  {
+   "version": "3.50.0",
+   "date": "2026-10-19",
+   "hotfix": false,
+   "title": "Micro suoni",
+   "highlights": [
+    "Piccoli suoni a tocchi, salvataggi e avvisi",
+    "Un accordo quando la cassa torna",
+    "Si spengono dallo Studio di stile"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Micro suoni</strong> — Brevi e a volume basso: quando tocchi un pulsante o un interruttore, apri un foglio, salvi, ricevi un avviso o una notifica. Nella cassa giornaliera un piccolo accordo ti dice che il turno è tornato in quadratura mentre scrivi. Ognuno può spegnerli da Studio di stile → Forme → Suoni; su iPhone e iPad seguono il tasto silenzioso."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Micro sounds",
+    "highlights": [
+     "Small sounds on taps, saves and alerts",
+     "A chime when the till balances",
+     "Turn them off in the Style studio"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Micro sounds</strong> — Short and quiet: when you tap a button or a switch, open a sheet, save, get an alert or a notification. In the daily till a small chime tells you the shift balances while you type. Everyone can turn them off in Style studio → Shapes → Sounds; on iPhone and iPad they follow the silent switch."
+      ]
+     }
+    ]
+   }
+  },
   {
    "version": "3.49.0",
    "date": "2026-10-17",
