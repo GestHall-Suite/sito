@@ -2,6 +2,40 @@
  "updated": "2026-10-19",
  "releases": [
   {
+   "version": "3.52.0",
+   "date": "2026-10-19",
+   "title": "Giro macchine: salva da solo",
+   "highlights": [
+    "Il giro macchine salva ogni importo da solo",
+    "Chiuso il giro: «Riprendi» o «Torna alla dashboard», niente giornaliero sotto"
+   ],
+   "groups": [
+    {
+     "type": "new",
+     "items": [
+      "<strong>Salvataggio automatico nel giro macchine</strong> — Ogni importo confermato con Avanti si salva subito, senza pulsante «Salva». In alto vedi «Salvataggio…» e poi «Salvato»; senza rete il giro continua e salva appena la connessione torna. Si salvano solo gli scassettamenti del turno: contanti e ticket inseriti al computer non vengono toccati, e se un altro dispositivo ha salvato nel frattempo i valori vengono uniti macchina per macchina.",
+      "<strong>Riquadro di pausa</strong> — Sul telefono, chiudendo il giro non si torna più al giornaliero con il rischio di modificare altri valori: resta un riquadro con le macchine fatte, il totale contato e lo stato del salvataggio, con «Riprendi giro macchine» e «Torna alla dashboard»."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Machine round: saves by itself",
+    "highlights": [
+     "The machine round saves each amount by itself",
+     "Round closed: “Resume” or “Back to the dashboard”, no daily sheet underneath"
+    ],
+    "groups": [
+     {
+      "type": "new",
+      "items": [
+       "<strong>Automatic saving in the machine round</strong> — Each amount confirmed with Next is saved right away, with no “Save” button. At the top you see “Saving…” and then “Saved”; without a connection the round goes on and saves as soon as the connection is back. Only the shift's collections are saved: cash and tickets entered on the computer are not touched, and if another device saved in the meantime the values are merged machine by machine.",
+       "<strong>Pause card</strong> — On the phone, closing the round no longer takes you back to the daily sheet with the risk of changing other values: a card shows the machines done, the counted total and the saving status, with “Resume machine round” and “Back to the dashboard”."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.51.2",
    "date": "2026-10-19",
    "hotfix": true,
