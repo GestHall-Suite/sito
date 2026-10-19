@@ -2,6 +2,37 @@
  "updated": "2026-10-19",
  "releases": [
   {
+   "version": "3.53.1",
+   "date": "2026-10-19",
+   "hotfix": true,
+   "title": "Email di chiusura: documenti cliccabili",
+   "highlights": [
+    "Nell'email di chiusura i documenti si aprono anche con un tocco"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Email di chiusura</strong> — I nomi dei documenti nell'elenco aprono il documento nell'app (dopo l'accesso, se serve). I file restano anche allegati all'email."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Closing email: clickable documents",
+    "highlights": [
+     "In the closing email documents also open with a tap"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Closing email</strong> — The document names in the list open the document in the app (after signing in, if needed). The files are still attached to the email."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.53.0",
    "date": "2026-10-19",
    "title": "Chiusura con documenti e documenti del personale",
@@ -12,7 +43,7 @@
    ],
    "groups": [
     {
-     "type": "new",
+     "type": "add",
      "items": [
       "<strong>Chiusura della giornata</strong> — «Chiudi» mostra il resoconto della giornata (scassettamenti, bancomat, ticket, versamento contanti, scostamento) e permette di allegare scansioni e PDF delle chiusure, ricevute e scontrini. I documenti arrivano allegati all'email di chiusura, che ora ricevono anche i responsabili, e restano consultabili nella cassa del giorno.",
       "<strong>Documenti personali</strong> — In Il mio spazio → Documenti ognuno carica attestati HACCP, corsi di formazione e sicurezza e altri documenti, con la data di scadenza. Nella sezione Documenti il responsabile trova una cartella per ogni persona e vede subito cosa sta per scadere.",
@@ -35,7 +66,7 @@
     ],
     "groups": [
      {
-      "type": "new",
+      "type": "add",
       "items": [
        "<strong>Closing the day</strong> — “Close” shows the day's summary (collections, card payments, tickets, cash deposit, difference) and lets you attach scans and PDFs of the closings, receipts and slips. The documents are attached to the closing email, which managers now receive too, and stay available in the day's till.",
        "<strong>Personal documents</strong> — In My space → Documents everyone uploads HACCP certificates, training and safety courses and other documents, with the expiry date. In the Documents section the manager finds a folder for each person and sees right away what is about to expire.",
@@ -61,7 +92,7 @@
    ],
    "groups": [
     {
-     "type": "new",
+     "type": "add",
      "items": [
       "<strong>Salvataggio automatico nel giro macchine</strong> — Ogni importo confermato con Avanti si salva subito, senza pulsante «Salva». In alto vedi «Salvataggio…» e poi «Salvato»; senza rete il giro continua e salva appena la connessione torna. Si salvano solo gli scassettamenti del turno: contanti e ticket inseriti al computer non vengono toccati, e se un altro dispositivo ha salvato nel frattempo i valori vengono uniti macchina per macchina.",
       "<strong>Riquadro di pausa</strong> — Sul telefono, chiudendo il giro non si torna più al giornaliero con il rischio di modificare altri valori: resta un riquadro con le macchine fatte, il totale contato e lo stato del salvataggio, con «Riprendi giro macchine» e «Torna alla dashboard»."
@@ -76,7 +107,7 @@
     ],
     "groups": [
      {
-      "type": "new",
+      "type": "add",
       "items": [
        "<strong>Automatic saving in the machine round</strong> — Each amount confirmed with Next is saved right away, with no “Save” button. At the top you see “Saving…” and then “Saved”; without a connection the round goes on and saves as soon as the connection is back. Only the shift's collections are saved: cash and tickets entered on the computer are not touched, and if another device saved in the meantime the values are merged machine by machine.",
        "<strong>Pause card</strong> — On the phone, closing the round no longer takes you back to the daily sheet with the risk of changing other values: a card shows the machines done, the counted total and the saving status, with “Resume machine round” and “Back to the dashboard”."
