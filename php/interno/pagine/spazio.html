@@ -234,7 +234,11 @@ ul.plain li::marker { color: var(--teal) }
       <tr><td>Multi-sala €149+</td><td class="td-right">10 GB per sala</td><td>~10 anni per sala</td></tr>
       <tr><td>Pacchetto extra</td><td class="td-right">+10 GB a €5/mese</td><td>Per le sale con uso intenso</td></tr>
     </table></div>
-    <p class="sec-lead">Dove sta: <code>sito/src/data/piani.ts</code> (<code>SPAZIO_GB</code>, <code>SPAZIO_PACCHETTO</code>), hub <code>HUB_SPAZIO_GB</code> / <code>HUB_SPAZIO_PACCHETTO</code> (pacchetti nella scheda installazione, campo «Spazio in più», contano nell'MRR), suite <code>PIANO_SPAZIO_GB</code>. L'hub manda <code>spazio_gb</code> con la licenza; la suite lo mostra in Impostazioni → Sistema → Spazio usato (avviso oltre il 75% e il 90%, nessun blocco dei caricamenti).</p>
+    <p class="sec-lead">Dove sta: <code>sito/src/data/piani.ts</code> (<code>SPAZIO_GB</code>, <code>SPAZIO_PACCHETTO</code>), hub <code>HUB_SPAZIO_GB</code> / <code>HUB_SPAZIO_PACCHETTO</code> (pacchetti nella scheda installazione, campo «Spazio in più», contano nell'MRR), suite <code>PIANO_SPAZIO_GB</code>. L'hub manda <code>spazio_gb</code> e <code>hosting</code> con la licenza; la suite lo mostra in Impostazioni → Sistema → Spazio usato (avviso oltre il 75% e il 90%, nessun blocco dei caricamenti).</p>
+    <div class="callout warn">
+      <span class="callout-ico">🏠</span>
+      <p><strong>Hosting flessibile.</strong> Ogni sala può stare sul nostro spazio o su quello del cliente: si sceglie nell'hub, scheda installazione → «Dove è ospitata». Sul nostro spazio valgono lo spazio incluso e i pacchetti (che contano nell'MRR). Sull'hosting del cliente i pacchetti non si vendono: la suite mostra solo lo spazio occupato, senza quota, e il limite è il piano di hosting del cliente (consigliare almeno 10 GB). Le installazioni già presenti nell'hub partono come «sul nostro spazio»: correggere quelle sull'hosting del cliente.</p>
+    </div>
   </div>
 
   <div class="section" id="controllo">

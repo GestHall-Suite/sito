@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-19
 
+- Hosting flessibile: home, prezzi (prova, server, spazio, disdetta, costi), contatti, sicurezza, prodotto, report e rivenditori dicono che la sala può stare sullo spazio web del cliente o sul nostro; riga dello spazio nel confronto «(sul nostro hosting)»; pagina interna Spazio e costi con il campo «Dove è ospitata» dell'hub. Traduzioni aggiornate.
 - Changelog: versione 3.54.0 della suite (spazio usato, spazio incluso nei piani).
 - Prezzi: spazio per documenti, foto e allegati nella tabella di confronto (`SPAZIO_GB`, `SPAZIO_PACCHETTO` in `piani.ts`) e domanda «Quanto spazio mi serve?».
 - Area interna: nuova pagina «Spazio e costi di archiviazione» (`php/interno/pagine/spazio.html`), voce nell'indice e riga nei costi del business plan.
