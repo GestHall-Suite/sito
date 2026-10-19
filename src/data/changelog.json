@@ -2,6 +2,73 @@
  "updated": "2026-10-19",
  "releases": [
   {
+   "version": "3.55.0",
+   "date": "2026-10-19",
+   "title": "Spazio usato sempre in vista",
+   "highlights": [
+    "Spazio usato nella barra laterale",
+    "Ognuno vede quanto occupano i propri file",
+    "Spazio diviso per persona nelle Impostazioni"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Spazio nella barra laterale</strong> — Il responsabile vede sempre quanto spazio usa la sala, con una barra che diventa gialla e poi rossa quando si avvicina al limite; ogni altra persona vede quanto occupano i propri file. Sul telefono è nel menu del profilo.",
+      "<strong>Spazio per persona</strong> — In Impostazioni → Sistema l'elenco di chi occupa spazio, con il dettaglio di documenti personali, buste paga, documenti della chiusura, chat e foto."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Storage used always in sight",
+    "highlights": [
+     "Storage used in the sidebar",
+     "Everyone sees how much their own files take",
+     "Storage broken down by person in Settings"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Storage in the sidebar</strong> — The manager always sees how much storage the venue uses, with a bar that turns yellow and then red near the limit; everyone else sees how much their own files take. On the phone it is in the profile menu.",
+       "<strong>Storage by person</strong> — In Settings → System, the list of who uses storage, with personal documents, payslips, closing documents, chat and photos."
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "version": "3.54.1",
+   "date": "2026-10-19",
+   "hotfix": true,
+   "title": "Spazio usato sul tuo hosting",
+   "highlights": [
+    "Spazio usato anche con la sala sul tuo hosting"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Spazio usato</strong> — Se la sala è sul tuo spazio web, Impostazioni → Sistema mostra quanto occupano i file senza la quota del piano: lo spazio disponibile dipende dal tuo hosting."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Storage used on your hosting",
+    "highlights": [
+     "Storage used also when the venue is on your hosting"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Storage used</strong> — If the venue is on your web space, Settings → System shows how much the files take without the plan quota: the available space depends on your hosting."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.54.0",
    "date": "2026-10-19",
    "title": "Spazio usato e spazio incluso nei piani",
