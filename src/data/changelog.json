@@ -2,6 +2,42 @@
  "updated": "2026-10-20",
  "releases": [
   {
+   "version": "3.58.0",
+   "date": "2026-10-20",
+   "title": "Mappa della sala",
+   "highlights": [
+    "Mappa della sala: pianta 2D e vista 3D",
+    "Stato delle assistenze e incasso di ogni VLT sulla mappa",
+    "Macchine spostabili trascinandole, con la planimetria sotto"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Mappa della sala</strong> — Nella sezione Macchine c'è la mappa della sala: il responsabile disegna la pianta (muri, cassa, bar, ingresso, colonne) e posiziona le VLT e le AWP trascinandole, anche con la planimetria come sfondo. Tutti la vedono in pianta o in vista 3D, con lo zoom e la rotazione.",
+      "<strong>Stato e incasso a colpo d'occhio</strong> — Sulla mappa si può colorare ogni macchina per assistenze aperte o per incasso degli ultimi 30 giorni; toccando una macchina si apre la sua scheda con lo storico."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Venue map",
+    "highlights": [
+     "Venue map: 2D plan and 3D view",
+     "Service tickets and takings of every VLT on the map",
+     "Machines moved by dragging, over the floor plan"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Venue map</strong> — The Machines section now has a map of the venue: the manager draws the plan (walls, cash desk, bar, entrance, pillars) and places VLTs and AWPs by dragging them, also over the floor plan image. Everyone can see it in plan or 3D view, with zoom and rotation.",
+       "<strong>Status and takings at a glance</strong> — On the map each machine can be coloured by open service tickets or by the last 30 days' takings; tapping a machine opens its card with the history."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.57.1",
    "date": "2026-10-20",
    "hotfix": true,

@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-20
 
+- Changelog: versione 3.58.0 della suite (mappa della sala in 2D e 3D); prodotto → Sala: card «Mappa della sala».
 - Changelog: versione 3.57.1 della suite (nuova grafica dello spazio usato).
 - Changelog: versione 3.57.0 della suite (più accessi per i revisori); prodotto → Sala: il revisore consulta documenti, contatti e, se attivato, macchine.
 
