@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-20
 
+- Changelog: versione 3.60.1 della suite (Menu nel cerchio a destra della barra del telefono).
 - Changelog: versione 3.60.0 della suite (barra del telefono a pillola, giro macchine che salva sempre, Dashboard con la casa).
 - Changelog: versione 3.59.0 della suite (pistola per codici a barre); prodotto → Cassa e turni e Bar e clienti: lettura dei ticket e del codice fiscale.
 - Changelog: versione 3.58.0 della suite (mappa della sala in 2D e 3D); prodotto → Sala: card «Mappa della sala».
