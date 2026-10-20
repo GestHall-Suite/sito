@@ -2,6 +2,44 @@
  "updated": "2026-10-20",
  "releases": [
   {
+   "version": "3.59.0",
+   "date": "2026-10-20",
+   "title": "Pistola per codici a barre",
+   "highlights": [
+    "Ticket letti con la pistola nel giornaliero",
+    "Ticket già pagato segnalato subito",
+    "Codice fiscale e documento del cliente letti in anagrafica"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Ticket letti con la pistola</strong> — Nel giornaliero spari il codice a barre del ticket, scegli la piattaforma e scrivi l'importo (non è nel codice): importo e numero di ticket della piattaforma si aggiornano e si salvano da soli. Dopo le prime letture l'app riconosce da sola la piattaforma. Funziona anche con il numero scritto a mano o, sui telefoni Android, con la fotocamera.",
+      "<strong>Ticket già pagato</strong> — Un ticket letto una seconda volta, anche in un altro giorno, viene segnalato in rosso con data, turno, operatore e importo: niente pagamenti doppi.",
+      "<strong>Documento del cliente</strong> — In anagrafica leggi il codice fiscale dalla tessera sanitaria o dal retro della carta d'identità elettronica: l'app lo controlla, ricava data di nascita e sesso e apre il cliente se c'è già. Le pistole che leggono le righe in basso dei documenti compilano anche nome, numero e scadenza."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Barcode scanner",
+    "highlights": [
+     "Tickets scanned in the daily cash",
+     "Ticket already paid flagged at once",
+     "Customer tax code and ID read in the register"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Tickets scanned</strong> — In the daily cash you scan the ticket barcode, choose the platform and type the amount (it is not in the code): the platform's amount and ticket count update and save by themselves. After the first scans the app recognises the platform by itself. It also works with the number typed by hand or, on Android phones, with the camera.",
+       "<strong>Ticket already paid</strong> — A ticket scanned a second time, even on another day, is flagged in red with date, shift, operator and amount: no double payments.",
+       "<strong>Customer document</strong> — In the register you read the tax code from the health card or the back of the electronic ID card: the app checks it, works out date of birth and sex and opens the customer if already there. Scanners that read the bottom lines of documents also fill in name, number and expiry."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.58.0",
    "date": "2026-10-20",
    "title": "Mappa della sala",
