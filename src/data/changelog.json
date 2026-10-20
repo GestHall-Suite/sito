@@ -2,6 +2,54 @@
  "updated": "2026-10-20",
  "releases": [
   {
+   "version": "3.60.0",
+   "date": "2026-10-20",
+   "title": "Nuova barra del telefono",
+   "highlights": [
+    "Barra in basso a pillola sul telefono",
+    "Giro macchine: ogni importo si salva anche tornando indietro",
+    "Dashboard con l'icona della casa"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Barra in basso a pillola</strong> — Sul telefono le voci stanno in una capsula: quella in cui sei mostra icona e nome, le altre solo l'icona. Il tuo profilo è un cerchio a parte sulla destra. Colori e vetro restano quelli scelti nello Studio di stile.",
+      "<strong>Dashboard</strong> — Nel menu e nella barra in basso la Dashboard ha l'icona della casa."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Giro macchine</strong> — L'importo scritto si salva anche se torni alla macchina prima, apri l'elenco, ne scegli un'altra, chiudi il giro o esci dall'app: puoi fare il giro al contrario o in qualsiasi ordine senza premere «Avanti». Un importo insolito non ti ferma: compare un avviso e la macchina resta segnalata nell'elenco."
+     ]
+    }
+   ],
+   "en": {
+    "title": "New phone bar",
+    "highlights": [
+     "Pill-shaped bottom bar on the phone",
+     "Machine round: every amount saves even when going back",
+     "Dashboard with the house icon"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Pill-shaped bottom bar</strong> — On the phone the items sit in a capsule: the one you are on shows icon and name, the others only the icon. Your profile is a separate circle on the right. Colours and glass stay as chosen in the Style studio.",
+       "<strong>Dashboard</strong> — In the menu and the bottom bar the Dashboard has the house icon."
+      ]
+     },
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Machine round</strong> — The amount you type is saved even if you go back to the previous machine, open the list, pick another one, close the round or leave the app: you can do the round backwards or in any order without pressing \"Next\". An unusual amount does not stop you: a warning appears and the machine stays flagged in the list."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.59.0",
    "date": "2026-10-20",
    "title": "Pistola per codici a barre",
