@@ -1,6 +1,40 @@
 {
- "updated": "2026-10-19",
+ "updated": "2026-10-20",
  "releases": [
+  {
+   "version": "3.57.0",
+   "date": "2026-10-20",
+   "title": "Più accessi per i revisori",
+   "highlights": [
+    "Revisori: documenti e contatti della sala nel menu",
+    "Revisori: macchine e assistenze in sola lettura, se attivato"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Documenti e contatti per i revisori</strong> — I revisori trovano Documenti e Contatti della sala nel loro menu e li consultano in sola lettura.",
+      "<strong>Macchine per i revisori</strong> — Da Impostazioni → Permessi puoi dare ai revisori l'accesso a VLT, AWP, assistenze e storico delle macchine, sempre in sola lettura. È spento finché non lo attivi."
+     ]
+    }
+   ],
+   "en": {
+    "title": "More access for auditors",
+    "highlights": [
+     "Auditors: venue documents and contacts in the menu",
+     "Auditors: machines and service tickets read-only, if enabled"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Documents and contacts for auditors</strong> — Auditors find the venue's Documents and Contacts in their menu and view them read-only.",
+       "<strong>Machines for auditors</strong> — From Settings → Permissions you can give auditors access to VLTs, AWPs, service tickets and machine history, always read-only. It stays off until you enable it."
+      ]
+     }
+    ]
+   }
+  },
   {
    "version": "3.56.3",
    "date": "2026-10-19",
