@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-20
 
+- Changelog: versione 3.60.3 della suite (icone ridisegnate in un solo stile).
 - Changelog: versione 3.60.2 della suite (icone di Dashboard e Cassa giornaliera).
 - Changelog: versione 3.60.1 della suite (Menu nel cerchio a destra della barra del telefono).
 - Changelog: versione 3.60.0 della suite (barra del telefono a pillola, giro macchine che salva sempre, Dashboard con la casa).

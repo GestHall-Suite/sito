@@ -2,6 +2,37 @@
  "updated": "2026-10-20",
  "releases": [
   {
+   "version": "3.60.3",
+   "date": "2026-10-20",
+   "hotfix": true,
+   "title": "Icone nuove",
+   "highlights": [
+    "Tutte le icone ridisegnate in un solo stile"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Icone</strong> — Tutte le icone del menu e della barra del telefono sono state ridisegnate nello stesso stile, con linee morbide, e ogni sezione ha la sua: niente più icone uguali per Utenti, Contatti e Anagrafica."
+     ]
+    }
+   ],
+   "en": {
+    "title": "New icons",
+    "highlights": [
+     "All icons redrawn in one style"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Icons</strong> — All icons in the menu and the phone bar have been redrawn in the same style, with soft lines, and every section has its own: no more identical icons for Users, Contacts and Customer register."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.60.2",
    "date": "2026-10-20",
    "hotfix": true,
