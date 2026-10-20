@@ -2,6 +2,37 @@
  "updated": "2026-10-20",
  "releases": [
   {
+   "version": "3.57.1",
+   "date": "2026-10-20",
+   "hotfix": true,
+   "title": "Spazio usato più chiaro",
+   "highlights": [
+    "Nuova grafica dello spazio usato nella barra laterale"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Spazio usato</strong> — Nella barra laterale lo spazio ha una grafica nuova e più leggibile: un anello che si colora di giallo e di rosso quando lo spazio sta finendo, i GB ben in vista e il dettaglio sotto. Per il responsabile è dentro il riquadro del piano."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Clearer storage used",
+    "highlights": [
+     "New look for storage used in the sidebar"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Storage used</strong> — In the sidebar, storage has a new, more readable look: a ring that turns yellow and red when space is running out, the GB clearly visible and the detail below. For the manager it sits inside the plan box."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.57.0",
    "date": "2026-10-20",
    "title": "Più accessi per i revisori",
