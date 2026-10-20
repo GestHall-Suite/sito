@@ -2,6 +2,37 @@
  "updated": "2026-10-20",
  "releases": [
   {
+   "version": "3.60.2",
+   "date": "2026-10-20",
+   "hotfix": true,
+   "title": "Icone più chiare",
+   "highlights": [
+    "Nuove icone per Dashboard e Cassa giornaliera"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Icone</strong> — La Dashboard ha una casa nuova e la Cassa giornaliera un registratore di cassa: non si confonde più con i Turni, nel menu e nella barra del telefono."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Clearer icons",
+    "highlights": [
+     "New icons for Dashboard and Daily cash"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Icons</strong> — The Dashboard has a new house and the Daily cash a cash register: it no longer looks like Shifts, in the menu and in the phone bar."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.60.1",
    "date": "2026-10-20",
    "hotfix": true,
