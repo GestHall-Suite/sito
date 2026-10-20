@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-20
+
+- Changelog: versione 3.57.0 della suite (più accessi per i revisori); prodotto → Sala: il revisore consulta documenti, contatti e, se attivato, macchine.
+
 ## 2026-10-19
 
 - Changelog: versione 3.56.3 della suite (caricamenti chiari in tutta l'app).
