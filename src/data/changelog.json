@@ -2,6 +2,37 @@
  "updated": "2026-10-20",
  "releases": [
   {
+   "version": "3.60.1",
+   "date": "2026-10-20",
+   "hotfix": true,
+   "title": "Menu sempre a portata",
+   "highlights": [
+    "Menu nel cerchio a destra della barra del telefono"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Barra del telefono</strong> — Il Menu è nel cerchio a destra, sempre sotto il pollice; il tuo profilo è l'ultima voce della barra, con la foto e il pallino delle notifiche."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Menu always at hand",
+    "highlights": [
+     "Menu in the circle on the right of the phone bar"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Phone bar</strong> — The Menu is in the circle on the right, always under your thumb; your profile is the last item of the bar, with your photo and the notification dot."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.60.0",
    "date": "2026-10-20",
    "title": "Nuova barra del telefono",
