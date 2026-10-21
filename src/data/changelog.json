@@ -2,6 +2,54 @@
  "updated": "2026-10-21",
  "releases": [
   {
+   "version": "3.63.0",
+   "date": "2026-10-21",
+   "title": "Cassa giornaliera su misura",
+   "highlights": [
+    "Personalizza la cassa giornaliera",
+    "Ordine dei riquadri a scelta",
+    "Azioni del turno nella sua scheda"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Personalizza la cassa giornaliera</strong> — Dal pulsante «Personalizza» nella testata scegli layout, icone e densità (comoda o compatta); nel layout avanzato anche il resoconto a sinistra o a destra, i fornitori affiancati o uno sotto l'altro e l'ordine dei riquadri. Le scelte si vedono subito e valgono solo per te."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Azioni del turno</strong> — «Imposta come turno di chiusura» e «Rimuovi turno» sono nel menu ⋯ della scheda del turno: niente più riga di pulsanti sopra la cassa.",
+      "<strong>Layout avanzato più ordinato</strong> — Titoli dei riquadri come nel resto della suite e nomi delle VLT sempre leggibili anche con la verifica del dump."
+     ]
+    }
+   ],
+   "en": {
+    "title": "A daily till your way",
+    "highlights": [
+     "Customise the daily till",
+     "Choose the panel order",
+     "Shift actions in the shift tab"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Customise the daily till</strong> — From the «Customise» button in the header choose layout, icons and density (comfortable or compact); in the advanced layout also the summary on the left or right, suppliers side by side or stacked, and the panel order. Your choices apply at once and only for you."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Shift actions</strong> — «Set as closing shift» and «Remove shift» are in the ⋯ menu of the shift tab: no more row of buttons above the till.",
+       "<strong>Tidier advanced layout</strong> — Panel titles as in the rest of the suite and VLT names always readable, even with dump checking."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.62.0",
    "date": "2026-10-21",
    "title": "Cassa avanzata, icone e movimenti fluidi",

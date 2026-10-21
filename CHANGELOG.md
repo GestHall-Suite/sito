@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-21
 
+- Changelog: tappa 3.63.0 della suite (cassa giornaliera su misura).
 - Changelog: tappa 3.62.0 della suite (cassa avanzata, icone e movimenti fluidi).
 - Changelog raggruppato in 15 tappe (una per tema, con le versioni intermedie dentro): titolo, highlights e testo in italiano e inglese per ogni tappa; la pagina mostra l'intervallo di versioni e tiene le ancore delle versioni vecchie. Regola in AGENTS.md: una voce per tappa rilasciata.
 - Changelog: versione 3.61.0 della suite (avanzamento dei caricamenti).
