@@ -2,6 +2,58 @@
  "updated": "2026-10-21",
  "releases": [
   {
+   "version": "3.62.0",
+   "date": "2026-10-21",
+   "title": "Cassa avanzata, icone e movimenti fluidi",
+   "highlights": [
+    "Layout avanzato della cassa con il resoconto sempre in vista",
+    "Icone nella cassa giornaliera",
+    "Menu in vetro liquido",
+    "Icone uniformi in tutta l'app"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Icone nella cassa giornaliera</strong> — Come nei riquadri della dashboard, un'icona tonda nel colore della sala accanto ai titoli, ai campi (fondo cassa, monete, bancomat…), a ogni VLT e a ogni taglio dei contanti. Il responsabile sceglie se mostrarle in Impostazioni → Cassa giornaliera; ognuno può accenderle o spegnerle dal pulsante del layout."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Layout avanzato della cassa</strong> — Sul computer il resoconto del turno resta sempre in vista a destra: scostamento con lo stato scritto (in quadratura, da controllare, non torna), incasso VLT, contanti, monete, fondo, totale cassa, cassetto e versamenti. Gli scassettamenti stanno in alto con i fornitori affiancati, sotto valori, contanti e ticket, poi note e passaggio consegne.",
+      "<strong>Menu in vetro liquido</strong> — Cambiando pagina la scritta della voce resta al suo posto e sotto scivola una lente trasparente che si allunga mentre corre, nella barra laterale e nella barra del telefono.",
+      "<strong>Icone uniformi</strong> — Tutte le icone dell'app hanno lo stesso tratto e le stesse forme arrotondate del menu."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Advanced till, icons and fluid motion",
+    "highlights": [
+     "Advanced till layout with the summary always in view",
+     "Icons in the daily till",
+     "Liquid glass menu",
+     "Consistent icons across the app"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Icons in the daily till</strong> — As on the dashboard cards, a round icon in the venue colour next to titles, fields (float, coins, card payments…), every VLT and every cash denomination. The manager decides whether to show them in Settings → Daily till; everyone can turn them on or off from the layout button."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Advanced till layout</strong> — On the computer the shift summary stays in view on the right: variance with its status in words (balanced, to check, doesn't balance), VLT takings, cash, coins, float, till total, drawer and deposits. Cash-box collections sit at the top with suppliers side by side, then values, cash and tickets, then notes and handover.",
+       "<strong>Liquid glass menu</strong> — When you change page the item label stays in place and a transparent lens slides underneath, stretching as it moves, in the sidebar and in the phone bar.",
+       "<strong>Consistent icons</strong> — Every icon in the app has the same stroke and rounded shapes as the menu."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.61.0",
    "date": "2026-10-21",
    "from": "3.58.0",
