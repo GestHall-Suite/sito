@@ -1,6 +1,38 @@
 {
- "updated": "2026-10-20",
+ "updated": "2026-10-21",
  "releases": [
+  {
+   "version": "3.61.0",
+   "date": "2026-10-21",
+   "title": "Caricamenti con avanzamento",
+   "highlights": [
+    "Barra di avanzamento su ogni caricamento",
+    "Esito chiaro: caricato o il motivo dell'errore"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Avanzamento dei caricamenti</strong> — Quando carichi un file (documenti personali, Documenti, borderò, foto del profilo, logo, planimetria, copertina, documenti della chiusura, backup) compare una notifica con il nome del file, la barra, i MB inviati e la percentuale; poi l'esito: caricato, oppure il motivo per cui non è andato (file troppo grande, permessi, connessione). Resta visibile anche sopra le finestre aperte."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Uploads with progress",
+    "highlights": [
+     "Progress bar on every upload",
+     "Clear result: uploaded or the reason it failed"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Upload progress</strong> — When you upload a file (personal documents, Documents, statements, profile photo, logo, floor plan, cover, closing documents, backups) a notification shows the file name, the bar, the MB sent and the percentage; then the result: uploaded, or the reason it failed (file too large, permissions, connection). It stays visible even above open windows."
+      ]
+     }
+    ]
+   }
+  },
   {
    "version": "3.60.3",
    "date": "2026-10-20",
