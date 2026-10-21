@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-21
+
+- Changelog: versione 3.61.0 della suite (avanzamento dei caricamenti).
+
 ## 2026-10-20
 
 - Changelog: versione 3.60.3 della suite (icone ridisegnate in un solo stile).
