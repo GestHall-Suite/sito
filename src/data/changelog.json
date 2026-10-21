@@ -2,6 +2,68 @@
  "updated": "2026-10-21",
  "releases": [
   {
+   "version": "3.65.0",
+   "date": "2026-10-21",
+   "title": "Sonos ovunque",
+   "highlights": [
+    "Collega il tuo account Sonos",
+    "Musica comandabile da ovunque",
+    "Preferiti Sonos nel player",
+    "Cose da fare sempre in vista"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Sonos con il tuo account</strong> — In Impostazioni → Musica SONOS premi «Collega Sonos», entri con l'email e la password dell'app Sonos e scegli l'altoparlante da controllare. Da lì la suite comanda la musica della sala da qualunque posto, anche se la suite è su internet: play, pausa, brani, volume e copertina.",
+      "<strong>Preferiti Sonos</strong> — Nel player trovi le radio e le playlist salvate nell'app Sonos: un tocco e partono."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Cose da fare sempre in vista</strong> — Nella testata della cassa giornaliera il pulsante «Cose da fare» mostra quante cose restano e apre la bacheca intera; nel riquadro della pagina l'elenco scorre al suo interno e le liste come apertura e chiusura si ripiegano, con l'avanzamento e la prossima voce."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Player Sonos</strong> — Niente più errore aprendo il player dal riquadro della dashboard quando il piano non include Sonos; se gli altoparlanti non si raggiungono, il player spiega perché."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Sonos anywhere",
+    "highlights": [
+     "Connect your Sonos account",
+     "Music you can control from anywhere",
+     "Sonos favourites in the player",
+     "To-dos always in sight"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Sonos with your account</strong> — In Settings → SONOS music press «Connect Sonos», sign in with the email and password of the Sonos app and choose the speaker to control. From then on the suite controls the hall's music from anywhere, even with the suite on the internet: play, pause, tracks, volume and artwork.",
+       "<strong>Sonos favourites</strong> — The player lists the radios and playlists saved in the Sonos app: one tap and they start."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>To-dos always in sight</strong> — In the daily till header the «To-dos» button shows how many are left and opens the whole board; in the page panel the list scrolls inside it and lists such as opening and closing fold up, with progress and the next item."
+      ]
+     },
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Sonos player</strong> — No more error opening the player from the dashboard panel when the plan doesn't include Sonos; if the speakers can't be reached, the player explains why."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.64.0",
    "date": "2026-10-21",
    "title": "Versamenti, cose da fare e documenti",
