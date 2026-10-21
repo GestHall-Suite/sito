@@ -6,7 +6,7 @@ Sito Astro statico (vedi README.md). Tono e pubblico in PRODUCT.md.
 
 Ogni modifica è tracciata:
 
-- **Novità del prodotto** → `src/data/changelog.json` (fonte unica: pagina `/changelog`, feed `/changelog.json` letto dalla suite, riquadro della Documentazione). Una release per ogni versione della suite (`GH_VERSION` in `suite/includes/lib.php`), testo per i clienti, 2-5 `highlights` brevi.
+- **Novità del prodotto** → `src/data/changelog.json` (fonte unica: pagina `/changelog`, feed `/changelog.json` letto dalla suite, riquadro della Documentazione). Una voce per ogni **tappa** rilasciata della suite (`GH_VERSION` in `suite/includes/lib.php`; regola tappe in `suite/AGENTS.md`), con un titolo che dica il tema, testo per i clienti, 2-5 `highlights` brevi; nessuna voce per i ritocchi non rilasciati. Le tappe passate che uniscono più versioni hanno `from` (prima versione) e `include` (versioni intermedie, ancore per i vecchi link).
 - **Funzionalità nuove o cambiate** → pagine `src/pages/prodotto/*` (aree in `src/data/aree.ts`), `src/pages/sicurezza.astro` se tocca dati/accessi/aggiornamenti, guida `public/docs/guida/index.html`; prezzi, piani e tabella di confronto solo in `src/data/piani.ts`.
 - **Schermate** → `public/img/prodotto/*.webp` (reali, dalla sala dimostrativa): rifarle quando l'interfaccia cambia in modo visibile.
 - **Modifiche al sito stesso** → `CHANGELOG.md`.

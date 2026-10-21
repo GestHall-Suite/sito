@@ -8,14 +8,14 @@ const fmt = (d, l = 'it-IT') => new Date(d + 'T12:00:00').toLocaleDateString(l, 
 /* Versione inglese (sito .com e /en/): solo le release con il campo «en»; le altre restano nella cronologia italiana.
    data-solo="it|en" = blocco di una sola lingua (scripts/lingue.mjs). */
 ---
-<Layout page="Changelog" description="Tutte le novità di GestHall Suite: nuove funzionalità, miglioramenti e correzioni release per release.">
+<Layout page="Changelog" description="Tutte le novità di GestHall Suite: nuove funzionalità, miglioramenti e correzioni tappa per tappa.">
 
 <section class="page-hero">
   <div class="container">
     <nav class="crumbs" aria-label="Percorso"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/docs">Risorse</a><span aria-hidden="true">/</span><span>Novità</span></nav>
     <span class="eyebrow">Novità</span>
     <h1>Cosa c'è di nuovo in GestHall Suite.</h1>
-    <p class="lead">Ogni versione, dalla più recente: nuove funzioni, miglioramenti e correzioni che cambiano il lavoro di ogni giorno.</p>
+    <p class="lead">Le tappe della suite, dalla più recente: ogni rilascio raccoglie nuove funzioni, miglioramenti e correzioni attorno a un tema.</p>
   </div>
 </section>
 
@@ -25,7 +25,8 @@ const fmt = (d, l = 'it-IT') => new Date(d + 'T12:00:00').toLocaleDateString(l, 
       {changelog.releases.map((r) => (<>
         <div class="cl-entry" id={'v' + r.version} data-solo="it">
           <div class="cl-entry-head">
-            <a class="cl-ver" href={'#v' + r.version}>v{r.version}</a>
+            {(r.include || []).map((x) => <span id={'v' + x} class="cl-anchor" />)}
+            <a class="cl-ver" href={'#v' + r.version}>{r.from ? 'v' + r.from + ' – ' + r.version : 'v' + r.version}</a>
             <time class="cl-date" datetime={r.date}>{fmt(r.date)}</time>
             {r.hotfix && <span class="cl-hotfix">Hotfix</span>}
             {r.title && <span class="cl-title">{r.title}</span>}
@@ -44,7 +45,7 @@ const fmt = (d, l = 'it-IT') => new Date(d + 'T12:00:00').toLocaleDateString(l, 
         {r.en && (
         <div class="cl-entry" id={'v' + r.version} data-solo="en">
           <div class="cl-entry-head">
-            <a class="cl-ver" href={'#v' + r.version}>v{r.version}</a>
+            <a class="cl-ver" href={'#v' + r.version}>{r.from ? 'v' + r.from + ' – ' + r.version : 'v' + r.version}</a>
             <time class="cl-date" datetime={r.date}>{fmt(r.date, 'en-GB')}</time>
             {r.hotfix && <span class="cl-hotfix">Hotfix</span>}
             {r.en.title && <span class="cl-title">{r.en.title}</span>}
@@ -61,7 +62,7 @@ const fmt = (d, l = 'it-IT') => new Date(d + 'T12:00:00').toLocaleDateString(l, 
           </div>
         </div>)}
       </>))}
-      <p class="cl-note" data-solo="en">Earlier release notes are available in Italian: <a href="https://gesthallsuite.it/changelog">full history</a>.</p>
+      <p class="cl-note" data-solo="en">The detailed notes of earlier milestones are available in Italian: <a href="https://gesthallsuite.it/changelog">full history</a>.</p>
     </div>
 
     <div class="cl-footer">
@@ -82,8 +83,9 @@ const fmt = (d, l = 'it-IT') => new Date(d + 'T12:00:00').toLocaleDateString(l, 
 .cl-feed { display: grid; gap: 16px; max-width: 860px }
 .cl-entry { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-l); padding: clamp(20px, 3vw, 28px) }
 .cl-entry-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-bottom: 16px }
-.cl-ver { font-size: 22px; font-weight: 750; letter-spacing: -.02em }
+.cl-ver { font-variant-numeric: tabular-nums; font-size: 22px; font-weight: 750; letter-spacing: -.02em }
 .cl-ver:hover { color: var(--accent-ink) }
+.cl-anchor { position: relative; top: -80px; width: 0; height: 0; overflow: hidden }
 .cl-date { font-size: 13.5px; color: var(--muted); padding: 3px 10px; border-radius: 99px; background: var(--surface-2); border: 1px solid var(--border) }
 .cl-hotfix { font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 99px; background: var(--amber-weak); color: var(--amber) }
 .cl-title { font-weight: 650; color: var(--text) }
