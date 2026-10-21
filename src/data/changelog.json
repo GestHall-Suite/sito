@@ -2,6 +2,44 @@
  "updated": "2026-10-21",
  "releases": [
   {
+   "version": "3.66.0",
+   "date": "2026-10-21",
+   "title": "Testate in ordine",
+   "highlights": [
+    "Indietro sempre in alto a sinistra",
+    "Cassa giornaliera più pulita",
+    "Salva e Chiudi vicini"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Tornare indietro</strong> — In tutta l'app il tasto per tornare alla pagina precedente (documenti, impostazioni, macchine, assistenze, profilo) è un pulsante tondo in alto a sinistra, prima del titolo; sul telefono sta nella barra dell'app, al posto del logo.",
+      "<strong>Cassa giornaliera più pulita</strong> — Le note e le cose da fare non occupano più un riquadro della pagina: si aprono dal pulsante «Cose da fare» della testata, che mostra sempre quante cose restano. I ticket pagati salgono sotto i valori di cassa.",
+      "<strong>Testata in ordine</strong> — Prima i comandi secondari (Personalizza, Cose da fare), poi Salva e Chiudi vicini in fondo."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Tidy headers",
+    "highlights": [
+     "Back always at the top left",
+     "Cleaner daily till",
+     "Save and Close side by side"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Going back</strong> — Across the app the button to return to the previous page (documents, settings, machines, service tickets, profile) is a round button at the top left, before the title; on the phone it sits in the app bar, in place of the logo.",
+       "<strong>Cleaner daily till</strong> — Notes and to-dos no longer take a panel on the page: they open from the «To-dos» button in the header, which always shows how many are left. Paid tickets move up under the till values.",
+       "<strong>Tidy header</strong> — Secondary commands first (Customise, To-dos), then Save and Close side by side at the end."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.65.0",
    "date": "2026-10-21",
    "title": "Sonos ovunque",
