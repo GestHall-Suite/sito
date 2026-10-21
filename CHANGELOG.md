@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-21
 
+- Changelog: tappa 3.66.0 della suite (testate in ordine).
 - Changelog: tappa 3.65.0 della suite (Sonos ovunque). Pagina Sala: Sonos con l'account Sonos e i preferiti.
 - Changelog: tappa 3.64.0 della suite (versamenti, cose da fare e documenti). Piani e pagine prodotto: versamenti, note e cose da fare (al posto del passaggio consegne, in tutti i piani), documenti da scrivere e visore PDF.
 - Changelog: tappa 3.63.0 della suite (cassa giornaliera su misura).
