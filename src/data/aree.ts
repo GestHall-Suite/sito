@@ -54,7 +54,7 @@ export const aree: Area[] = [
   {
     slug: 'sala', nome: 'Sala e personale', breve: 'Turni, assistenze, chat, documenti, LUL',
     titolo: 'Il lavoro di tutti, organizzato in un posto solo.',
-    sintesi: 'Calendario turni, ticket assistenza per macchina, chat della sala, documenti, buste paga digitali e passaggio consegne: quello che oggi passa da WhatsApp e bacheche.',
+    sintesi: 'Calendario turni, ticket assistenza per macchina, chat della sala, documenti da scrivere e stampare, buste paga digitali: quello che oggi passa da WhatsApp e bacheche.',
     icon: ICONE.sala, shot: 'turni',
   },
   {

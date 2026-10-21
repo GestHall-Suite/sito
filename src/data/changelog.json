@@ -2,6 +2,64 @@
  "updated": "2026-10-21",
  "releases": [
   {
+   "version": "3.64.0",
+   "date": "2026-10-21",
+   "title": "Versamenti, cose da fare e documenti",
+   "highlights": [
+    "Nuova sezione Versamenti",
+    "Note e cose da fare della giornata",
+    "Liste «da fare sempre»",
+    "Documenti da scrivere e stampare",
+    "PDF aperti nell'app"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Versamenti</strong> — Nuova sezione nel menu Cassa per tutti: le giornate da versare, i versamenti in attesa di conferma e quelli confermati. Chi va a versare sceglie una o più giornate, indica modo (banca, cassa continua, ritiro di persona, portavalori), importo, numero di distinta e la foto della ricevuta; chi controlla conferma quando i soldi arrivano. In Impostazioni → Versamenti scegli quali ruoli registrano e quali confermano, con eccezioni per singola persona da Utenti.",
+      "<strong>Note e cose da fare della giornata</strong> — Al posto della nota del turno e del passaggio consegne, una bacheca uguale in tutti i turni del giornaliero: note per i colleghi e cose da fare da spuntare, con chi le ha scritte e chi le ha fatte. Quello che non viene fatto passa da solo al giorno dopo.",
+      "<strong>Cose da fare sempre</strong> — In Impostazioni → «Cose da fare sempre» prepari le liste di ogni giorno (apertura, chiusura, pulizie, controlli): compaiono nella bacheca da spuntare, con l'avanzamento.",
+      "<strong>Documenti da scrivere</strong> — In Documenti «+ Scrivi» apre un editor con barra di formattazione, anteprima e modelli pronti (procedura, verbale, avviso, lista di controllo). Il documento sta nelle cartelle come gli altri e si stampa con un tocco.",
+      "<strong>Visore dei documenti</strong> — PDF, immagini e documenti scritti si aprono dentro l'app, anche dal telefono, con zoom e stampa del solo documento."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Conferma del ritiro</strong> — La conferma dalla dashboard del revisore registra un versamento «ritiro di persona»: tutto lo storico dei versamenti è in un solo posto, e le giornate già versate non compaiono più tra quelle da ritirare."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Deposits, to-dos and documents",
+    "highlights": [
+     "New Deposits section",
+     "Notes and to-dos for the day",
+     "«Always to do» lists",
+     "Documents to write and print",
+     "PDFs opened in the app"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Deposits</strong> — New section in the Till menu for everyone: days to deposit, deposits awaiting confirmation and confirmed ones. Whoever goes to deposit picks one or more days and enters the method (bank, night safe, collected in person, cash-in-transit), amount, slip number and a photo of the receipt; whoever checks confirms when the money arrives. In Settings → Deposits choose which roles record and which confirm, with exceptions per person from Users.",
+       "<strong>Notes and to-dos for the day</strong> — Instead of the shift note and the handover, one board shared by every shift of the daily till: notes for colleagues and to-dos to tick, with who wrote them and who did them. Whatever isn't done moves to the next day by itself.",
+       "<strong>Always to do</strong> — In Settings → «Always to do» prepare the lists for every day (opening, closing, cleaning, checks): they appear on the board to tick, with progress.",
+       "<strong>Documents to write</strong> — In Documents «+ Write» opens an editor with a formatting bar, preview and ready templates (procedure, minutes, notice, checklist). The document sits in folders like the others and prints with one tap.",
+       "<strong>Document viewer</strong> — PDFs, images and written documents open inside the app, phone included, with zoom and printing of the document only."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Pickup confirmation</strong> — Confirming from the auditor dashboard records an «in person» deposit: the whole deposit history is in one place, and days already deposited no longer appear among those to collect."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.63.0",
    "date": "2026-10-21",
    "title": "Cassa giornaliera su misura",

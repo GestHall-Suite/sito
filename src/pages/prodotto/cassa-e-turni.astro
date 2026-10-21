@@ -17,7 +17,7 @@ import { ICONE } from '../../data/aree';
       <div class="card reveal"><div class="icon" set:html={ICONE.euro}></div><h3>Contanti per taglio</h3><p>Pezzi per ogni banconota, monete a parte, fondo cassa del turno. Il totale contanti è sempre sotto gli occhi.</p></div>
       <div class="card reveal"><div class="icon" set:html={ICONE.ticket}></div><h3>Ticket e bancomat</h3><p>Ticket pagati per piattaforma, con il numero di ticket convalidati se lo vuoi registrare. Con una pistola per codici a barre leggi ogni ticket: scrivi solo l'importo e un ticket già pagato viene segnalato. Bancomat, differenze, rientri e seconda cassa.</p></div>
       <div class="card reveal"><div class="icon" set:html={ICONE.aggiorna}></div><h3>Refill AWP</h3><p>Ricariche delle AWP con numero macchina e ora: entrano nel cassetto del turno e nello storico della macchina.</p></div>
-      <div class="card reveal"><div class="icon" set:html={ICONE.doc}></div><h3>Note al turno dopo</h3><p>Quello che il collega deve sapere resta sul turno. Con il passaggio consegne si aggiunge una checklist da spuntare.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.doc}></div><h3>Note e cose da fare</h3><p>Una bacheca per la giornata, uguale in ogni turno: note per i colleghi e cose da fare da spuntare, con chi e quando. Quello che non si fa passa al giorno dopo; apertura, chiusura e pulizie diventano liste che compaiono ogni giorno.</p></div>
       <div class="card reveal"><div class="icon" set:html={ICONE.offline}></div><h3>Telefono e computer insieme</h3><p>Scassetti dal telefono mentre la cassa è aperta sul computer: ognuno salva la sua parte e l'altro si aggiorna da solo. Anche senza rete: le modifiche partono appena torna la connessione.</p></div>
     </div>
   </div>
@@ -47,11 +47,12 @@ import { ICONE } from '../../data/aree';
   <div class="container">
     <div class="split rev reveal">
       <div>
-        <span class="eyebrow">Versamento firmato · Pro</span>
-        <h2>Chi ritira il versamento lo conferma. Con firma.</h2>
-        <p class="lead">Alla chiusura della giornata revisori e responsabili ricevono un'email con il riepilogo, l'importo da ritirare e le scansioni delle chiusure allegate. Al ritiro i revisori confermano dall'app: l'importo, la firma tracciata sullo schermo, la data, l'ora e il dispositivo restano registrati.</p>
+        <span class="eyebrow">Versamenti</span>
+        <h2>Chi versa lo registra, chi controlla lo conferma.</h2>
+        <p class="lead">Ogni sala si organizza a modo suo: l'operatore che porta in banca una o più giornate, il revisore che ritira di persona, la cassa continua, il portavalori. Chi versa sceglie le giornate, scrive importo e distinta e fotografa la ricevuta; chi controlla conferma quando i soldi arrivano. Tutti vedono cosa è da versare, cosa è in attesa e cosa è confermato.</p>
         <ul class="checks">
-          <li><strong>Pannello del revisore</strong> con le giornate da confermare e la copertura del mese.</li>
+          <li><strong>Permessi su misura</strong>: decidi quali ruoli registrano e quali confermano, con eccezioni per singola persona.</li>
+          <li><strong>Ritiro con firma · Pro</strong>: al ritiro di persona il revisore conferma dall'app con la firma tracciata sullo schermo, data, ora e dispositivo.</li>
           <li><strong>Badge «confermato»</strong> visibile a operatori e responsabile sul giornaliero.</li>
           <li><strong>Notifica</strong> agli operatori della giornata quando il versamento è confermato.</li>
         </ul>
