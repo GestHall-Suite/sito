@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-22
 
+- Changelog: tappa 3.67.0 della suite (chiusura completa e impostazioni in ordine). Guida: nuova struttura delle Impostazioni.
 - Changelog: correzione 3.66.3 della suite (Sonos: si capisce cosa manca).
 - Changelog: correzione 3.66.2 della suite (Collega Sonos con il modulo spento).
 - Changelog: correzione 3.66.1 della suite (Collega Sonos senza errori).

@@ -2,6 +2,66 @@
  "updated": "2026-10-22",
  "releases": [
   {
+   "version": "3.67.0",
+   "date": "2026-10-22",
+   "title": "Chiusura completa e impostazioni in ordine",
+   "highlights": [
+    "APay e altri pagamenti come il Bancomat",
+    "Riepilogo di chiusura in email e PDF",
+    "Ancora da versare tra sala e bar",
+    "Fondo cassa e versamento del bar",
+    "Impostazioni con i sottomenu"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Altri metodi di pagamento</strong> — Oltre al Bancomat il responsabile aggiunge le piattaforme della sala, come APay o Satispay: ognuna ha il suo campo nel giornaliero, si toglie dal versamento come il Bancomat e ha la sua colonna in report ed export. Anche il Bancomat ora si può spegnere.",
+      "<strong>Riepilogo di chiusura completo</strong> — Alla chiusura responsabili e revisori ricevono entrate e uscite VLT per piattaforma e per macchina, pagamenti, versamenti, fondo cassa e, se scelto, il bar: nel testo dell'email, in un PDF allegato o in entrambi. Prima di chiudere si vedono l'anteprima dell'email e del PDF.",
+      "<strong>Ancora da versare</strong> — Alla prima chiusura la suite chiede quanto contante è ancora da versare; da lì tiene il conto da sola, separato tra sala e bar, nel riepilogo e nella pagina Versamenti.",
+      "<strong>Cassa del bar</strong> — Fondo cassa iniziale e versamento del bar (lo scontrinato, diviso tra contanti e POS), con un versamento del bar da registrare a parte."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Chiudi la giornata</strong> — Il dialogo mostra in alto quanto versare oggi e quanto resta da versare, poi Cassa, VLT e Bar come nell'email; avvisa se la cassa del bar non è compilata.",
+      "<strong>Impostazioni in ordine</strong> — Gruppi La sala, Persone, Funzionalità e Account, ogni sezione con il suo sottomenu. Cassa giornaliera raccoglie campi, pagamenti, riepilogo, liste e guida di chiusura; Sicurezza ha una sezione sua.",
+      "<strong>Musica</strong> — Una sola sezione per scegliere tra Sonos e Web radio, con le loro impostazioni; la firma del versamento è in Cassa giornaliera."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Complete closing and tidy settings",
+    "highlights": [
+     "APay and other payments like debit cards",
+     "Closing summary by email and PDF",
+     "Still to deposit, hall and bar",
+     "Bar float and deposit",
+     "Settings with submenus"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Other payment methods</strong> — Besides debit cards the manager adds the hall's platforms, such as APay or Satispay: each has its own field on the daily till, is subtracted from the deposit like debit cards and has its own column in reports and exports. Debit cards can now be turned off too.",
+       "<strong>Complete closing summary</strong> — At closing, managers and auditors receive VLT takings and payouts by platform and by machine, payments, deposits, the float and, if chosen, the bar: in the email body, in an attached PDF or both. Before closing you can preview the email and the PDF.",
+       "<strong>Still to deposit</strong> — At the first closing the suite asks how much cash is still to be deposited; from then on it keeps the balance itself, split between hall and bar, in the summary and on the Deposits page.",
+       "<strong>Bar till</strong> — Opening float and bar deposit (receipted sales, split between cash and POS), with a bar deposit recorded separately."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Close the day</strong> — The dialog shows at the top how much to deposit today and how much is still to deposit, then Till, VLT and Bar as in the email; it warns if the bar till hasn't been filled in.",
+       "<strong>Tidy settings</strong> — Groups The hall, People, Features and Account, each section with its own submenu. Daily till gathers fields, payments, summary, lists and the closing guide; Security has its own section.",
+       "<strong>Music</strong> — One section to choose between Sonos and Web radio, with their settings; the deposit signature is in Daily till."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.66.3",
    "date": "2026-10-22",
    "title": "Sonos: si capisce cosa manca",
