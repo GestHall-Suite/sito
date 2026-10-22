@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-22
 
+- Changelog: correzione 3.66.2 della suite (Collega Sonos con il modulo spento).
 - Changelog: correzione 3.66.1 della suite (Collega Sonos senza errori).
 
 ## 2026-10-21
