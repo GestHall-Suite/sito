@@ -1,6 +1,38 @@
 {
- "updated": "2026-10-21",
+ "updated": "2026-10-22",
  "releases": [
+  {
+   "version": "3.66.1",
+   "date": "2026-10-22",
+   "title": "Collega Sonos senza errori",
+   "highlights": [
+    "Collega Sonos funziona sempre",
+    "Errori spiegati"
+   ],
+   "groups": [
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Collega Sonos</strong> — In alcune sale il pulsante «Collega Sonos» portava a una pagina di errore (403). Ora il collegamento parte sempre e, se qualcosa non va, le Impostazioni spiegano il motivo."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Connect Sonos without errors",
+    "highlights": [
+     "Connect Sonos always works",
+     "Errors explained"
+    ],
+    "groups": [
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Connect Sonos</strong> — In some halls the «Connect Sonos» button led to an error page (403). Now the connection always starts and, if something is wrong, Settings explain why."
+      ]
+     }
+    ]
+   }
+  },
   {
    "version": "3.66.0",
    "date": "2026-10-21",
