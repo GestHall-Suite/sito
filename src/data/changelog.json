@@ -2,6 +2,50 @@
  "updated": "2026-10-22",
  "releases": [
   {
+   "version": "3.66.3",
+   "date": "2026-10-22",
+   "title": "Sonos: si capisce cosa manca",
+   "highlights": [
+    "Motivo se non trovi altoparlanti",
+    "Impostazioni Sonos solo se attivo"
+   ],
+   "groups": [
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Altoparlanti Sonos</strong> — Se dopo il collegamento la suite non trova altoparlanti, Impostazioni → Musica SONOS spiega perché: per esempio un account Sonos diverso da quello dell'app o altoparlanti non raggiungibili."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Impostazioni più ordinate</strong> — La sezione Musica SONOS compare solo quando il modulo SONOS è acceso in Impostazioni → Moduli."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Sonos: see what is missing",
+    "highlights": [
+     "The reason when no speakers are found",
+     "Sonos settings only when on"
+    ],
+    "groups": [
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Sonos speakers</strong> — If after connecting the suite finds no speakers, Settings → SONOS music explains why: for example a Sonos account different from the app's, or speakers that cannot be reached."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Tidier settings</strong> — The SONOS music section appears only when the SONOS module is on in Settings → Modules."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.66.2",
    "date": "2026-10-22",
    "title": "Collega Sonos con il modulo spento",
