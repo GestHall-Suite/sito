@@ -2,6 +2,78 @@
  "updated": "2026-10-22",
  "releases": [
   {
+   "version": "3.68.0",
+   "date": "2026-10-22",
+   "title": "Il bar diventa un gestionale",
+   "highlights": [
+    "Spese e fatture del bar con foto e scadenze",
+    "Uscite di cassa segnate dal banco",
+    "Fornitori e ordini che caricano il magazzino",
+    "Modalità Solo bar",
+    "Scassettamenti delle AWP nei conti"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Spese e fatture del bar</strong> — Ogni spesa con categoria, fornitore, numero e foto o PDF del documento, pagata in contanti, con carta, con bonifico o da pagare entro una scadenza. Le fatture aperte restano in evidenza finché non le segni pagate; totali per categoria ed export CSV.",
+      "<strong>Uscita di cassa al banco</strong> — Dal tablet si segnano il ghiaccio, il latte o un fornitore pagati con i contanti del bar, con la foto dello scontrino: escono da soli dai contanti attesi, dal riepilogo di chiusura e da quelli da versare.",
+      "<strong>Fornitori e ordini</strong> — L'ordine parte dagli articoli sotto la scorta minima, si manda per email o WhatsApp e, quando arriva la merce, le quantità entrano in magazzino e la fattura tra le spese.",
+      "<strong>Conto del periodo</strong> — Il report del bar mostra venduto, costo del venduto, omaggi e scarti, spese per categoria e il risultato.",
+      "<strong>Solo bar</strong> — Per un locale senza sala giochi: macchine e cassa della sala spariscono e all'accesso si apre il banco.",
+      "<strong>Scassettamenti delle AWP</strong> — Facoltativi: se le AWP vengono scassettate gli importi entrano nei conti della cassa e nel riepilogo di chiusura, insieme ai refill, che si segnano sempre e si scelgono tra le AWP registrate."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Impostazioni con le schede</strong> — Ogni sezione ha le sue schede in cima, come «Sala e aspetto», sul computer e sul telefono."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Contante del bar ancora da versare</strong> — Ora conta lo scontrinato in contanti del bar (meno le uscite di cassa), non solo il conto di partenza."
+     ]
+    }
+   ],
+   "en": {
+    "title": "The bar becomes a full management tool",
+    "highlights": [
+     "Bar expenses and invoices with photos and due dates",
+     "Cash outflows recorded at the counter",
+     "Suppliers and orders that restock",
+     "Bar only mode",
+     "AWP collections in the till"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Bar expenses and invoices</strong> — Every expense with category, supplier, number and a photo or PDF of the document, paid in cash, by card, by bank transfer or due by a date. Open invoices stay highlighted until you mark them paid; totals by category and CSV export.",
+       "<strong>Cash outflow at the counter</strong> — On the tablet you record ice, milk or a supplier paid with the bar's cash, with a photo of the receipt: they come off the expected cash, the closing summary and the cash to deposit automatically.",
+       "<strong>Suppliers and orders</strong> — Orders start from items below minimum stock, are sent by email or WhatsApp and, when the goods arrive, the quantities go into stock and the invoice into expenses.",
+       "<strong>Period statement</strong> — The bar report shows sales, cost of goods sold, freebies and waste, expenses by category and the result.",
+       "<strong>Bar only</strong> — For a venue without a gaming hall: machines and the hall's till disappear and the counter opens at sign-in.",
+       "<strong>AWP collections</strong> — Optional: if AWPs are collected, the amounts enter the till accounts and the closing summary together with refills, which are always recorded and chosen from the registered AWPs."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Settings with tabs</strong> — Each section has its own tabs at the top, like «Hall and look», on computer and phone."
+      ]
+     },
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Bar cash still to deposit</strong> — It now counts the bar's receipted cash sales (minus cash outflows), not just the starting balance."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.67.0",
    "date": "2026-10-22",
    "title": "Chiusura completa e impostazioni in ordine",

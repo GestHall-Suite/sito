@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-22
 
+- Changelog: tappa 3.68.0 della suite (il bar diventa un gestionale).
 - Prodotto → Bar e clienti: uscita di cassa al banco, nuova sezione «Spese, fornitori e ordini» e opzione Solo bar.
 - Changelog: tappa 3.67.0 della suite (chiusura completa e impostazioni in ordine). Guida: nuova struttura delle Impostazioni.
 - Changelog: correzione 3.66.3 della suite (Sonos: si capisce cosa manca).
