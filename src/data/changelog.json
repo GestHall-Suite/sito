@@ -2,6 +2,36 @@
  "updated": "2026-10-22",
  "releases": [
   {
+   "version": "3.66.2",
+   "date": "2026-10-22",
+   "title": "Collega Sonos con il modulo spento",
+   "highlights": [
+    "Collega Sonos anche col modulo spento"
+   ],
+   "groups": [
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Collega Sonos</strong> — Se il modulo SONOS non era ancora acceso in Impostazioni → Moduli, «Collega Sonos» portava a una pagina di errore. Ora il collegamento funziona e accende da solo il modulo."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Connect Sonos with the module off",
+    "highlights": [
+     "Connect Sonos even with the module off"
+    ],
+    "groups": [
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Connect Sonos</strong> — If the SONOS module was not yet turned on in Settings → Modules, «Connect Sonos» led to an error page. Now the connection works and turns the module on by itself."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.66.1",
    "date": "2026-10-22",
    "title": "Collega Sonos senza errori",
