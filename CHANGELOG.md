@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-22
+
+- Changelog: correzione 3.66.1 della suite (Collega Sonos senza errori).
+
 ## 2026-10-21
 
 - Changelog: tappa 3.66.0 della suite (testate in ordine).
