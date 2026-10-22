@@ -17,6 +17,7 @@ import { ICONE } from '../../data/aree';
           <li><strong>Banco e premium</strong> divisi, con ricerca per nome.</li>
           <li><strong>Prezzo cambiato al banco</strong> solo per quella vendita, o salvato a listino dal responsabile.</li>
           <li><strong>Chiusura RT</strong>: il totale del registratore confrontato con lo scontrinato.</li>
+          <li><strong>Uscita di cassa</strong>: il ghiaccio o il latte pagati con i contanti del bar, con la foto dello scontrino; escono da soli dai contanti da versare.</li>
         </ul>
       </div>
       <div class="center-phone"><Phone src="m-bar" alt="Il banco del bar su telefono" /></div>
@@ -37,6 +38,22 @@ import { ICONE } from '../../data/aree';
       <div class="card reveal"><div class="icon" set:html={ICONE.doc}></div><h3>Menu stampabile</h3><p>Un menu A4 con il tuo logo in tre stili, generato dal listino e scaricabile in PDF anche senza connessione.</p></div>
     </div>
     <div class="reveal" style="margin-top:40px"><Shot src="bar-report" alt="Report del bar del mese con venduto, scontrinato, margine e dettaglio per prodotto" /></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Spese, fornitori e ordini</span>
+      <h2>Quello che entra e quello che esce, nello stesso posto.</h2>
+      <p>Al banco, dal tablet, si segnano vendite e uscite di cassa; dal computer si tengono fatture, fornitori e ordini. Il conto del periodo dice quanto resta davvero.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card reveal"><div class="icon" set:html={ICONE.doc}></div><h3>Spese e fatture</h3><p>Ogni spesa con categoria, fornitore, numero e foto o PDF del documento. Pagata in contanti, con carta, con bonifico o da pagare entro una scadenza: le fatture aperte restano in evidenza finché non le segni pagate.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.bar}></div><h3>Ordini ai fornitori</h3><p>L'ordine parte dagli articoli scesi sotto la scorta minima. Lo mandi per email o WhatsApp e, quando arriva la merce, controlli le quantità: entrano in magazzino e la fattura finisce tra le spese.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.report}></div><h3>Conto del periodo</h3><p>Venduto, costo del venduto, omaggi e scarti, spese per categoria: il risultato del bar mese per mese. La merce pesa quando si vende, non quando si paga la fattura.</p></div>
+    </div>
+    <p class="reveal" style="margin-top:24px">Gestisci solo un bar? Con l'opzione <strong>Solo bar</strong> spariscono macchine e cassa della sala e all'accesso si apre il banco.</p>
   </div>
 </section>
 

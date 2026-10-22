@@ -737,5 +737,21 @@
  "Versamenti": "Deposits",
  "Versamenti registrati da chi versa e confermati da chi controlla": "Deposits recorded by whoever deposits and confirmed by whoever checks",
  "Versamenti: chi versa e chi conferma": "Deposits: who deposits and who confirms",
- "Web Radio con le stazioni italiane e le tue, oppure gli altoparlanti Sonos della sala: colleghi l'account Sonos una volta e li comandi dalla suite, con i tuoi preferiti, da qualunque posto.": "Web Radio with Italian stations and your own, or the hall's Sonos speakers: connect the Sonos account once and control them from the suite, with your favourites, from anywhere."
+ "Web Radio con le stazioni italiane e le tue, oppure gli altoparlanti Sonos della sala: colleghi l'account Sonos una volta e li comandi dalla suite, con i tuoi preferiti, da qualunque posto.": "Web Radio with Italian stations and your own, or the hall's Sonos speakers: connect the Sonos account once and control them from the suite, with your favourites, from anywhere.",
+ ": il ghiaccio o il latte pagati con i contanti del bar, con la foto dello scontrino; escono da soli dai contanti da versare.": ": ice or milk paid with the bar's cash, with a photo of the receipt; they come off the cash to deposit automatically.",
+ "Al banco, dal tablet, si segnano vendite e uscite di cassa; dal computer si tengono fatture, fornitori e ordini. Il conto del periodo dice quanto resta davvero.": "At the counter, on the tablet, you record sales and cash outflows; on the computer you keep invoices, suppliers and orders. The period statement shows what is really left.",
+ "Banco, magazzino, spese, ordini, prestiti": "Counter, stock, expenses, orders, loans",
+ "Conto del periodo": "Period statement",
+ "Gestisci solo un bar? Con l'opzione": "Running just a bar? With the",
+ "L'ordine parte dagli articoli scesi sotto la scorta minima. Lo mandi per email o WhatsApp e, quando arriva la merce, controlli le quantità: entrano in magazzino e la fattura finisce tra le spese.": "The order starts from the items below minimum stock. Send it by email or WhatsApp and, when the goods arrive, check the quantities: they go into stock and the invoice lands among the expenses.",
+ "Ogni spesa con categoria, fornitore, numero e foto o PDF del documento. Pagata in contanti, con carta, con bonifico o da pagare entro una scadenza: le fatture aperte restano in evidenza finché non le segni pagate.": "Every expense with category, supplier, number and a photo or PDF of the document. Paid in cash, by card, by bank transfer or due by a date: open invoices stay highlighted until you mark them paid.",
+ "Ordini ai fornitori": "Supplier orders",
+ "Quello che entra e quello che esce, nello stesso posto.": "What comes in and what goes out, in the same place.",
+ "Solo bar": "Bar only",
+ "Spese e fatture": "Expenses and invoices",
+ "Spese, fornitori e ordini": "Expenses, suppliers and orders",
+ "Uscita di cassa": "Cash outflow",
+ "Vendite al banco in due tocchi, giacenze e scorte, spese e fatture, ordini ai fornitori, menu stampabile, chiusura del registratore. E l'anagrafica dei clienti abituali con prestiti e rientri.": "Counter sales in two taps, stock and minimum levels, expenses and invoices, supplier orders, a printable menu, register closing. And a register of regular customers with loans and repayments.",
+ "Venduto, costo del venduto, omaggi e scarti, spese per categoria: il risultato del bar mese per mese. La merce pesa quando si vende, non quando si paga la fattura.": "Sales, cost of goods sold, freebies and waste, expenses by category: the bar's result month by month. Goods count when they are sold, not when the invoice is paid.",
+ "spariscono macchine e cassa della sala e all'accesso si apre il banco.": "option the machines and the hall's till disappear and the counter opens at sign-in."
 }

@@ -58,9 +58,9 @@ export const aree: Area[] = [
     icon: ICONE.sala, shot: 'turni',
   },
   {
-    slug: 'bar-e-clienti', nome: 'Bar e clienti', breve: 'Banco, magazzino, menu, prestiti',
+    slug: 'bar-e-clienti', nome: 'Bar e clienti', breve: 'Banco, magazzino, spese, ordini, prestiti',
     titolo: 'Il bar con il suo magazzino, i clienti con il loro storico.',
-    sintesi: 'Vendite al banco in due tocchi, giacenze e scorte, menu stampabile, chiusura del registratore. E l\'anagrafica dei clienti abituali con prestiti e rientri.',
+    sintesi: 'Vendite al banco in due tocchi, giacenze e scorte, spese e fatture, ordini ai fornitori, menu stampabile, chiusura del registratore. E l\'anagrafica dei clienti abituali con prestiti e rientri.',
     icon: ICONE.bar, shot: 'bar',
   },
   {
