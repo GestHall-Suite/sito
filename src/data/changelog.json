@@ -2,6 +2,38 @@
  "updated": "2026-10-23",
  "releases": [
   {
+   "version": "3.72.0",
+   "date": "2026-10-23",
+   "title": "Permessi in un posto solo",
+   "highlights": [
+    "Permessi di una persona in una sola voce",
+    "Ruolo, versamenti, bar e sale insieme"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Permessi in un posto solo</strong> — In Utenti il menu ⋯ ha una sola voce «Permessi»: ruolo, permessi sui versamenti, gestore del bar e sale abilitate si vedono e si cambiano insieme, con un solo salvataggio."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Permissions in one place",
+    "highlights": [
+     "A person's permissions in one entry",
+     "Role, deposits, bar and venues together"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Permissions in one place</strong> — In Users the ⋯ menu has a single «Permissions» entry: role, deposit permissions, bar manager and enabled venues are seen and changed together, with a single save."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.71.0",
    "date": "2026-10-23",
    "title": "Fondo cassa fisso o progressivo",
