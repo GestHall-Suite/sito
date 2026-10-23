@@ -1,6 +1,52 @@
 {
- "updated": "2026-10-22",
+ "updated": "2026-10-23",
  "releases": [
+  {
+   "version": "3.69.0",
+   "date": "2026-10-23",
+   "title": "Il riepilogo come il foglio cassa",
+   "highlights": [
+    "Riepilogo di chiusura come il foglio cassa",
+    "Cassa del giorno precedente in alto",
+    "Avanzo o ammanco scritti tra entrate e uscite",
+    "Bar con entrate, uscite e offerte",
+    "PDF su una sola pagina"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Riepilogo di chiusura come il foglio cassa</strong> — Email e PDF partono dalla cassa del giorno precedente (fondo cassa più il non versato) e mostrano cassa del giorno ed esito a parole: «In quadra», «Avanzo» o «Ammanco», con il contato e l'atteso. Sotto, entrate a sinistra e uscite a destra, con i refill sempre presenti; l'avanzo o l'ammanco dell'operatore è una riga del conto, così la cassa del giorno coincide con il totale contato.",
+      "<strong>Banconote e totale di cassa</strong> — Taglio per pezzi, monete e non versato fino al totale di cassa; intestazione con LOCK, operatore che chiude, data e ora.",
+      "<strong>Bar diviso in entrate e uscite</strong> — Dal fondo cassa del bar ai contanti attesi, con il registratore e le offerte del giorno solo per informazione.",
+      "<strong>Una pagina, nessun falso allarme</strong> — Il PDF sta sempre su una pagina, anche con molte macchine, e non usa più il rosso: nulla nel riepilogo sembra un errore.",
+      "<strong>Elenco macchine</strong> — Nel menu Macchine la voce «VLT» diventa «Elenco macchine», con tutte le macchine comprese le AWP; «AWP» resta per i refill."
+     ]
+    }
+   ],
+   "en": {
+    "title": "The closing summary as the till sheet",
+    "highlights": [
+     "Closing summary shaped like the till sheet",
+     "Previous day's till at the top",
+     "Surplus or shortfall written between income and outgoings",
+     "Bar with income, outgoings and treats",
+     "One-page PDF"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Closing summary as the till sheet</strong> — Email and PDF start from the previous day's till (float plus cash not yet banked) and show today's till and the result in words: «Balanced», «Surplus» or «Shortfall», with counted and expected amounts. Below, income on the left and outgoings on the right, refills always included; the operator's surplus or shortfall is a line of the account, so today's till matches the counted total.",
+       "<strong>Banknotes and till total</strong> — Denomination by pieces, coins and cash not yet banked up to the till total; header with LOCK, closing operator, date and time.",
+       "<strong>Bar split into income and outgoings</strong> — From the bar float to the expected cash, with the cash register and the day's treats for information only.",
+       "<strong>One page, no false alarms</strong> — The PDF always fits on one page, even with many machines, and no longer uses red: nothing in the summary looks like an error.",
+       "<strong>Machine list</strong> — In the Machines menu the «VLT» item becomes «Machine list», with every machine including AWPs; «AWP» stays for refills."
+      ]
+     }
+    ]
+   }
+  },
   {
    "version": "3.68.0",
    "date": "2026-10-22",

@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-23
+
+- Changelog: tappa 3.69.0 della suite (il riepilogo come il foglio cassa). Prodotto → Cassa e turni: riepilogo di chiusura.
+
 ## 2026-10-22
 
 - Changelog: tappa 3.68.0 della suite (il bar diventa un gestionale).
