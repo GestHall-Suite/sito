@@ -2,6 +2,56 @@
  "updated": "2026-10-23",
  "releases": [
   {
+   "version": "3.70.0",
+   "date": "2026-10-23",
+   "title": "Il bar ha il suo gestore",
+   "highlights": [
+    "Gestore bar per un operatore",
+    "Ordini scritti da chi lavora al banco",
+    "Articoli extra fuori magazzino",
+    "Stessi termini in cassa e nel riepilogo"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Gestore bar</strong> — Il responsabile può affidare il bar a un operatore: resta operatore per cassa e turni e in più vede e gestisce tutto il bar, cioè spese e fatture, fornitori, ordini, magazzino, menu e report.",
+      "<strong>Ordini dal banco</strong> — Chi lavora al bar scrive l'ordine quando qualcosa sta finendo, anche per articoli che non sono in magazzino (ghiaccio, limoni, bicchieri). Il gestore del bar riceve l'avviso, lo manda al fornitore e carica la merce quando arriva."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Stessi termini ovunque</strong> — Giornaliero, chiusura della giornata, email e PDF usano le stesse parole: scassettamento (non più «scarico»), «In quadra», «Avanzo», «Ammanco», «Totale di cassa», «Ticket pagati»."
+     ]
+    }
+   ],
+   "en": {
+    "title": "The bar gets its own manager",
+    "highlights": [
+     "Bar manager role for an operator",
+     "Orders written from the counter",
+     "Extra items not in stock",
+     "Same words in the till and the summary"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Bar manager</strong> — The manager can hand the bar over to an operator: they stay an operator for the till and shifts and also see and manage the whole bar: expenses and invoices, suppliers, orders, stock, menu and report.",
+       "<strong>Orders from the counter</strong> — Whoever works at the bar writes the order when something is running out, even for items not in stock (ice, lemons, glasses). The bar manager gets a notice, sends it to the supplier and loads the goods when they arrive."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Same words everywhere</strong> — The daily till, day closing, email and PDF use the same words: collection (no longer «unloading»), «Balanced», «Surplus», «Shortfall», «Till total», «Tickets paid»."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.69.0",
    "date": "2026-10-23",
    "title": "Il riepilogo come il foglio cassa",
