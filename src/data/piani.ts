@@ -38,7 +38,7 @@ export const piani: Piano[] = [
     id: 'suite', nome: 'Suite', mese: 99, anno: 990,
     per: 'La sala strutturata che vuole il proprio marchio e meno carta.',
     nota: 'Utenti illimitati',
-    include: ['Tutto Pro', 'Il tuo logo e i tuoi colori', 'Studio di stile completo per ognuno', 'Chat interna con foto e vocali', 'LUL e buste paga digitali', 'Layout avanzato del giornaliero', 'Musica: Web Radio e SONOS', 'Supporto prioritario'],
+    include: ['Tutto Pro', 'Il tuo logo e i tuoi colori', 'Studio di stile completo per ognuno', 'Chat interna con foto, vocali e file', 'LUL e buste paga digitali', 'Layout avanzato del giornaliero', 'Musica: Web Radio e SONOS', 'Supporto prioritario'],
   },
   {
     id: 'multisala', nome: 'Multi-sala', mese: 149, anno: null,
