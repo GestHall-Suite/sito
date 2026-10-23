@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-23
 
+- Changelog: tappa 3.74.0 della suite (fondo cassa che si aggiorna da solo).
 - Changelog: tappa 3.73.0 della suite (condividi in chat e menu contestuale). Prodotto → Sala: chat con file e «Invia in chat»; piani: chat con file.
 - Changelog: tappa 3.72.0 della suite (permessi in un posto solo).
 - Changelog: tappa 3.71.0 della suite (fondo cassa fisso o progressivo). Prodotto → Cassa e turni: fondo progressivo.

@@ -2,6 +2,40 @@
  "updated": "2026-10-23",
  "releases": [
   {
+   "version": "3.74.0",
+   "date": "2026-10-23",
+   "title": "Fondo cassa che si aggiorna da solo",
+   "highlights": [
+    "Fondo dei giorni successivi sempre giusto",
+    "Si aggiorna a ogni chiusura e versamento",
+    "Vale anche per le giornate già chiuse"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Fondo cassa automatico</strong> — Con il fondo progressivo non serve più riallineare a mano: quando si chiude una giornata, si corregge una giornata chiusa o si registra (o annulla) un versamento, il fondo di tutti i giorni successivi si aggiorna da solo, anche di quelli già chiusi."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Till float that updates itself",
+    "highlights": [
+     "Following days' float always right",
+     "Updated at every closing and deposit",
+     "Also for days already closed"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Automatic till float</strong> — With the progressive float there is no need to realign by hand: when a day is closed, a closed day is corrected or a deposit is registered (or cancelled), the float of all following days updates itself, including days already closed."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.73.0",
    "date": "2026-10-23",
    "title": "Condividi in chat e menu contestuale",
