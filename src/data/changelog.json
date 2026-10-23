@@ -2,6 +2,58 @@
  "updated": "2026-10-23",
  "releases": [
   {
+   "version": "3.71.0",
+   "date": "2026-10-23",
+   "title": "Fondo cassa fisso o progressivo",
+   "highlights": [
+    "Fondo cassa fisso o progressivo",
+    "Vale anche per le chiusure già fatte",
+    "Esito della cassa con colori coerenti",
+    "Scorte basse al gestore del bar"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Fondo cassa progressivo</strong> — Ogni sala sceglie come riparte la cassa. Fisso: ogni giorno lo stesso fondo e il contante in più va in cassaforte. Progressivo: il contante resta in cassa e il fondo di domani è quello contato alla chiusura di oggi, finché si versa in banca e si riparte dalla cifra lasciata. Il giornaliero propone il fondo giusto, la chiusura dice quanto resta in cassa e Versamenti quanto versare per tornare al fondo.",
+      "<strong>Anche per le chiusure già fatte</strong> — Si sceglie da che giorno vale il fondo progressivo: le chiusure da quel giorno si riallineano con un clic, dopo un backup automatico."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Esito della cassa coerente</strong> — Verde solo quando la cassa è in quadra, ambra per un avanzo o un ammanco entro la tolleranza, rosso oltre.",
+      "<strong>Scorte basse al gestore del bar</strong> — L'avviso dei prodotti sotto la scorta minima arriva anche a chi gestisce il bar."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Fixed or progressive till float",
+    "highlights": [
+     "Fixed or progressive till float",
+     "Also for past closings",
+     "Consistent till result colours",
+     "Low stock to the bar manager"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Progressive till float</strong> — Each venue chooses how the till restarts. Fixed: the same float every day, with the extra cash going to the safe. Progressive: the cash stays in the till and tomorrow's float is what was counted at today's closing, until you bank and restart from the amount left. The daily till suggests the right float, the closing shows what stays in the till and Deposits how much to bank to get back to the float.",
+       "<strong>Also for past closings</strong> — You choose from which day the progressive float applies: closings from that day are realigned with one click, after an automatic backup."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Consistent till result</strong> — Green only when the till is balanced, amber for a surplus or shortfall within the tolerance, red beyond it.",
+       "<strong>Low stock to the bar manager</strong> — The notice for products below minimum stock also goes to whoever manages the bar."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.70.0",
    "date": "2026-10-23",
    "title": "Il bar ha il suo gestore",
