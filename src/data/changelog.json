@@ -2,6 +2,48 @@
  "updated": "2026-10-23",
  "releases": [
   {
+   "version": "3.73.0",
+   "date": "2026-10-23",
+   "title": "Condividi in chat e menu contestuale",
+   "highlights": [
+    "File PDF, Word ed Excel in chat",
+    "Inoltra qualsiasi messaggio",
+    "«Invia in chat» da documenti, contatti, ticket e turni",
+    "Tasto destro e pressione lunga ovunque"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>File in chat</strong> — Oltre a foto e vocali si mandano PDF, Word, Excel, PowerPoint e fogli CSV, anche trascinandoli nella conversazione. I PDF si aprono subito, gli altri si scaricano col loro nome.",
+      "<strong>Inoltra</strong> — Qualsiasi messaggio (testo, foto, vocale, file o scheda) si inoltra a un'altra conversazione con un tocco.",
+      "<strong>Invia in chat da ogni pagina</strong> — Documenti, contatti, ticket di assistenza, clienti e turni si mandano a un collega o al gruppo della sala da dove sono, con due righe di messaggio. Chi riceve un documento lo apre direttamente nel visore.",
+      "<strong>Menu contestuale</strong> — Sul computer il tasto destro, sul telefono il dito tenuto premuto aprono le azioni della riga o della scheda: aprire, chiamare, scrivere un'email, copiare, inviare in chat, modificare, eliminare. In documenti, chat, utenti, contatti, clienti, ticket, macchine, turni, bar e notifiche."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Share in chat and context menu",
+    "highlights": [
+     "PDF, Word and Excel files in chat",
+     "Forward any message",
+     "«Send to chat» from documents, contacts, tickets and shifts",
+     "Right click and long press everywhere"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Files in chat</strong> — Besides photos and voice messages you can send PDF, Word, Excel, PowerPoint and CSV files, also by dragging them into the conversation. PDFs open right away, the others download with their name.",
+       "<strong>Forward</strong> — Any message (text, photo, voice, file or card) can be forwarded to another conversation with one tap.",
+       "<strong>Send to chat from every page</strong> — Documents, contacts, support tickets, customers and shifts are sent to a colleague or to the hall group from where they are, with a short message. Whoever receives a document opens it straight in the viewer.",
+       "<strong>Context menu</strong> — On the computer the right click, on the phone a long press open the actions of the row or card: open, call, email, copy, send to chat, edit, delete. In documents, chat, users, contacts, customers, tickets, machines, shifts, bar and notifications."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.72.0",
    "date": "2026-10-23",
    "title": "Permessi in un posto solo",
