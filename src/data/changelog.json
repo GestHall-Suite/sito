@@ -2,6 +2,54 @@
  "updated": "2026-10-23",
  "releases": [
   {
+   "version": "3.76.0",
+   "date": "2026-10-24",
+   "title": "Magazzino del bar da Excel",
+   "highlights": [
+    "Magazzino caricato da un file Excel",
+    "Anteprima e backup prima di salvare",
+    "Svuota e riparti da zero"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Importa da Excel</strong> — Nel magazzino del bar scarichi il modello (vuoto, o con i prodotti che hai già), lo compili con prodotti, prezzi, costi, giacenze e ricette e lo ricarichi. L'app controlla il file riga per riga, mostra un'anteprima e salva solo quando confermi, dopo un backup del database.",
+      "<strong>Svuota il magazzino</strong> — Per ripartire da zero: prodotti, giacenze e ricette vengono tolti; quelli già venduti restano archiviati, così i report dei giorni passati restano giusti."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Banco sul computer</strong> — Le sezioni dei prodotti vanno a capo invece di scorrere, così si raggiungono tutte anche con il mouse."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Bar stock from Excel",
+    "highlights": [
+     "Stock uploaded from an Excel file",
+     "Preview and backup before saving",
+     "Empty and start over"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Import from Excel</strong> — In the bar stock you download the template (blank, or with the products you already have), fill it in with products, prices, costs, stock levels and recipes and upload it again. The app checks the file row by row, shows a preview and only saves when you confirm, after a database backup.",
+       "<strong>Empty the stock</strong> — To start over: products, stock and recipes are removed; those already sold stay archived, so past reports stay correct."
+      ]
+     },
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Counter on the computer</strong> — Product sections wrap instead of scrolling, so all of them are reachable with the mouse too."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.75.0",
    "date": "2026-10-24",
    "title": "Banco del bar per il tablet",

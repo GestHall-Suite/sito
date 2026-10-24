@@ -759,5 +759,7 @@
  "Pensato per il tablet al banco: tocchi i prodotti, l'ordine si compone a destra e un tocco su Contanti o POS registra la vendita. Le offerte ai clienti hanno la loro modalità e il loro conteggio, separato dal venduto.": "Designed for the tablet at the counter: tap the products, the order builds up on the right and one tap on Cash or Card records the sale. Treats for customers have their own mode and count, separate from sales.",
  "Prodotti per sezione": "Products by section",
  "del menu, con i più usati in cima e la ricerca per nome.": "of the menu, with the most used at the top and search by name.",
- ": il cliente servito o offerto, scelto tra gli abituali o scritto a mano, con una nota.": ": the customer served or treated, picked from the regulars or typed in, with a note."
+ ": il cliente servito o offerto, scelto tra gli abituali o scritto a mano, con una nota.": ": the customer served or treated, picked from the regulars or typed in, with a note.",
+ "Magazzino da Excel": "Stock from Excel",
+ ": scarichi il modello, lo compili e lo ricarichi con anteprima e backup prima di salvare.": ": download the template, fill it in and upload it again, with a preview and a backup before saving."
 }
