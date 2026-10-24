@@ -2,6 +2,56 @@
  "updated": "2026-10-23",
  "releases": [
   {
+   "version": "3.77.0",
+   "date": "2026-10-24",
+   "title": "Amministratore e Responsabile",
+   "highlights": [
+    "Nuovo ruolo Amministratore",
+    "Il Responsabile gestisce la sala, non il sistema",
+    "Menu a tendina nel modello Excel del bar",
+    "Contanti e POS sempre a portata"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Amministratore e Responsabile</strong> — Chi gestisce la piattaforma è l'Amministratore: aggiornamenti, backup, sicurezza, piano e moduli. Il Responsabile gestisce la sala come prima, anche su più sale, ma senza la parte di sistema e con il registro attività in sola lettura. Solo un amministratore può nominare o modificare un altro amministratore.",
+      "<strong>Menu a tendina nel modello Excel</strong> — Nel modello del magazzino del bar categoria, Sì/No e unità si scelgono da un menu; sezioni e unità di acquisto sono proposte; nelle ricette prodotto e ingrediente si scelgono tra quelli del foglio Prodotti."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Banco con tanti articoli</strong> — Il riquadro dell'ordine sta nello schermo: scorrono solo le righe e Contanti e POS restano sempre visibili."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Administrator and Manager",
+    "highlights": [
+     "New Administrator role",
+     "The Manager runs the venue, not the system",
+     "Drop-down menus in the bar Excel template",
+     "Cash and card always at hand"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Administrator and Manager</strong> — Whoever runs the platform is the Administrator: updates, backups, security, plan and modules. The Manager runs the venue as before, across several venues too, but without the system part and with a read-only activity log. Only an administrator can appoint or change another administrator.",
+       "<strong>Drop-down menus in the Excel template</strong> — In the bar stock template category, yes/no and units are picked from a menu; sections and purchase units are suggested; in recipes product and ingredient are picked from the Products sheet."
+      ]
+     },
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Counter with many items</strong> — The order panel fits the screen: only the lines scroll and Cash and Card stay visible."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.76.0",
    "date": "2026-10-24",
    "title": "Magazzino del bar da Excel",

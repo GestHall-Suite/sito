@@ -79,10 +79,10 @@ import { ICONE } from '../data/aree';
       <h2>Chi entra, cosa vede, cosa ha cambiato.</h2>
     </div>
     <div class="grid g3">
-      <div class="card reveal"><div class="icon" set:html={ICONE.chiave}></div><h3>Verifica in due passaggi</h3><p>Con un'app di autenticazione e 10 codici di riserva, obbligatoria per i responsabili e attivabile da tutti. In alternativa un codice via email; i dispositivi attendibili non lo chiedono per 30 giorni.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.chiave}></div><h3>Verifica in due passaggi</h3><p>Con un'app di autenticazione e 10 codici di riserva, obbligatoria per amministratori e responsabili e attivabile da tutti. In alternativa un codice via email; i dispositivi attendibili non lo chiedono per 30 giorni.</p></div>
       <div class="card reveal"><div class="icon" set:html={ICONE.scudo}></div><h3>Blocco dei tentativi</h3><p>Dopo alcuni errori l'accesso chiede un controllo anti-bot e attese crescenti, poi si blocca per indirizzo e per utente. Password di almeno 12 caratteri, mai tra le più comuni, salvate solo in forma cifrata.</p></div>
       <div class="card reveal"><div class="icon" set:html={ICONE.chiave}></div><h3>Accessi attivi</h3><p>Ognuno vede dal profilo i dispositivi da cui è collegato e può scollegarli. Cambiando la password gli altri dispositivi escono da soli.</p></div>
-      <div class="card reveal"><div class="icon" set:html={ICONE.utenti}></div><h3>Ruoli e permessi</h3><p>Operatore, responsabile, revisore. Cosa può fare un operatore da telefono, se può modificare turni già salvati, se il revisore vede i turni: lo decidi tu.</p></div>
+      <div class="card reveal"><div class="icon" set:html={ICONE.utenti}></div><h3>Ruoli e permessi</h3><p>Amministratore, responsabile, revisore, operatore. Aggiornamenti, backup e impostazioni di sistema restano all'amministratore; il responsabile gestisce la sala. Cosa può fare un operatore da telefono, se può modificare turni già salvati, se il revisore vede i turni: lo decidi tu.</p></div>
       <div class="card reveal"><div class="icon" set:html={ICONE.occhio}></div><h3>Registro attività</h3><p>Salvataggi, chiusure e riaperture, eliminazioni, cambi di impostazione e accessi del supporto, con utente, ora e indirizzo.</p></div>
       <div class="card reveal"><div class="icon" set:html={ICONE.firma}></div><h3>Versamenti firmati</h3><p>Importo, firma, data, ora e dispositivo di chi ritira. Una prova a tutela degli operatori quanto della proprietà.</p></div>
       <div class="card reveal"><div class="icon" set:html={ICONE.campana}></div><h3>Avvisi automatici</h3><p>Scostamenti di cassa oltre soglia, scorte del bar e assistenze ferme arrivano al responsabile come notifica.</p></div>
@@ -96,7 +96,7 @@ import { ICONE } from '../data/aree';
       <div>
         <span class="eyebrow">Aggiornamenti</span>
         <h2>Nuove versioni con un clic. E un clic per tornare indietro.</h2>
-        <p class="lead">Ogni versione passa controlli e test automatici prima di essere pubblicata. Quando è pronta il responsabile la trova in Impostazioni → Aggiornamenti, con le novità spiegate.</p>
+        <p class="lead">Ogni versione passa controlli e test automatici prima di essere pubblicata. Quando è pronta l'amministratore la trova in Impostazioni → Aggiornamenti, con le novità spiegate.</p>
       </div>
       <ol class="flow">
         <li><b>Verifica</b><span>Il pacchetto arriva con la sua impronta SHA-256 e ogni file viene controllato prima di essere scritto.</span></li>
