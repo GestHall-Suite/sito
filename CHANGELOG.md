@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-24
 
+- Changelog: tappa 3.76.0 della suite (magazzino del bar da Excel). Prodotto → Bar e clienti: importazione da Excel.
 - Changelog: tappa 3.75.0 della suite (banco del bar per il tablet). Prodotto → Bar e clienti: banco per il tablet.
 
 ## 2026-10-23
