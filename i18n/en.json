@@ -753,5 +753,11 @@
  "Uscita di cassa": "Cash outflow",
  "Vendite al banco in due tocchi, giacenze e scorte, spese e fatture, ordini ai fornitori, menu stampabile, chiusura del registratore. E l'anagrafica dei clienti abituali con prestiti e rientri.": "Counter sales in two taps, stock and minimum levels, expenses and invoices, supplier orders, a printable menu, register closing. And a register of regular customers with loans and repayments.",
  "Venduto, costo del venduto, omaggi e scarti, spese per categoria: il risultato del bar mese per mese. La merce pesa quando si vende, non quando si paga la fattura.": "Sales, cost of goods sold, freebies and waste, expenses by category: the bar's result month by month. Goods count when they are sold, not when the invoice is paid.",
- "spariscono macchine e cassa della sala e all'accesso si apre il banco.": "option the machines and the hall's till disappear and the counter opens at sign-in."
+ "spariscono macchine e cassa della sala e all'accesso si apre il banco.": "option the machines and the hall's till disappear and the counter opens at sign-in.",
+ "A chi": "For whom",
+ "Il banco del bar con prodotti, ordine, pagamento e documento": "The bar counter with products, order, payment and receipt",
+ "Pensato per il tablet al banco: tocchi i prodotti, l'ordine si compone a destra e un tocco su Contanti o POS registra la vendita. Le offerte ai clienti hanno la loro modalità e il loro conteggio, separato dal venduto.": "Designed for the tablet at the counter: tap the products, the order builds up on the right and one tap on Cash or Card records the sale. Treats for customers have their own mode and count, separate from sales.",
+ "Prodotti per sezione": "Products by section",
+ "del menu, con i più usati in cima e la ricerca per nome.": "of the menu, with the most used at the top and search by name.",
+ ": il cliente servito o offerto, scelto tra gli abituali o scritto a mano, con una nota.": ": the customer served or treated, picked from the regulars or typed in, with a note."
 }
