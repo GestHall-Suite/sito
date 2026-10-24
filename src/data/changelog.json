@@ -2,6 +2,46 @@
  "updated": "2026-10-23",
  "releases": [
   {
+   "version": "3.75.0",
+   "date": "2026-10-24",
+   "title": "Banco del bar per il tablet",
+   "highlights": [
+    "Banco rifatto per il tablet",
+    "Contanti o POS con un tocco",
+    "Offerte e «a chi» in un attimo",
+    "Banconote riprese dalla chiusura"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Nuovo Banco del bar</strong> — Pensato per il tablet al banco: prodotti grandi divisi per sezione con i più usati in cima, l'ordine sempre visibile a destra, un tocco su Contanti o POS e la vendita è registrata. Riepilogo del giorno e cassa del bar sono schede a parte.",
+      "<strong>Offerte e clienti</strong> — Si passa da Vendita a Offerta con un tocco; «A chi» propone i clienti serviti più spesso, cerca nell'anagrafica o accetta un nome libero con una nota. Il cliente resta segnato anche sulle vendite.",
+      "<strong>Banconote già pronte</strong> — Con il fondo progressivo il giorno nuovo parte anche con banconote e monete contate alla chiusura precedente (se nel frattempo non c'è stato un versamento): basta ricontarle e correggere quelle cambiate."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Bar counter for the tablet",
+    "highlights": [
+     "Counter redesigned for the tablet",
+     "Cash or card in one tap",
+     "Treats and «for whom» in a moment",
+     "Notes carried over from the closing"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>New bar counter</strong> — Designed for the tablet at the counter: large products by section with the most used at the top, the order always visible on the right, one tap on Cash or Card and the sale is recorded. The day's summary and the bar till are separate tabs.",
+       "<strong>Treats and customers</strong> — Switch from Sale to Treat with one tap; «For whom» suggests the customers served most often, searches the customer list or takes a free name with a note. The customer is also recorded on sales.",
+       "<strong>Notes ready to go</strong> — With the progressive float the new day also starts with the notes and coins counted at the previous closing (if no deposit was made in between): just recount them and fix the ones that changed."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.74.0",
    "date": "2026-10-23",
    "title": "Fondo cassa che si aggiorna da solo",

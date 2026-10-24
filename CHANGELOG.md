@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-24
+
+- Changelog: tappa 3.75.0 della suite (banco del bar per il tablet). Prodotto → Bar e clienti: banco per il tablet.
+
 ## 2026-10-23
 
 - Changelog: tappa 3.74.0 della suite (fondo cassa che si aggiorna da solo).
