@@ -2,6 +2,38 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.81.6",
+   "date": "2026-10-25",
+   "title": "«Da versare nel cassetto» corretto una volta sola",
+   "highlights": [
+    "Nessuna seconda correzione dopo una chiusura",
+    "Mai valori sotto zero nel cassetto"
+   ],
+   "groups": [
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Da versare nel cassetto</strong> — Chiudendo una giornata, il giorno dopo non riceve più una seconda correzione se il valore era già stato sistemato a mano, e non va mai sotto zero."
+     ]
+    }
+   ],
+   "en": {
+    "title": "«To deposit in the drawer» corrected only once",
+    "highlights": [
+     "No second correction after a closing",
+     "Never below zero in the drawer"
+    ],
+    "groups": [
+     {
+      "type": "fix",
+      "items": [
+       "<strong>To deposit in the drawer</strong> — Closing a day no longer applies a second correction to the next day if the value had already been fixed by hand, and it never goes below zero."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.81.5",
    "date": "2026-10-25",
    "title": "Il turno dopo parte da tutti i dati",
