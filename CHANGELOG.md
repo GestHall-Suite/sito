@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-25
 
+- Changelog: voce 3.81.8 (testata leggibile su schermi più piccoli).
+
 - Changelog: versione 3.81.7 della suite (testata del giornaliero).
 - Changelog: versione 3.81.6 della suite (da versare nel cassetto).
 - Changelog: versione 3.81.5 della suite (riporto al turno dopo).
