@@ -2,6 +2,64 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.81.2",
+   "date": "2026-10-25",
+   "title": "Giro macchine più sicuro e riquadri richiudibili",
+   "highlights": [
+    "Il giro macchine salva solo gli scassettamenti",
+    "Riquadri del giornaliero richiudibili",
+    "Layout classico senza spazi vuoti"
+   ],
+   "groups": [
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Giro macchine</strong> — Salvando gli scassettamenti dal giro su un turno nuovo non vengono più scritti banconote, fondo e ticket solo proposti dal turno o dalla chiusura precedenti."
+     ]
+    },
+    {
+     "type": "add",
+     "items": [
+      "<strong>Riquadri richiudibili</strong> — Nel giornaliero ogni riquadro si chiude dal titolo e da chiuso mostra solo il totale: utile per gli scassettamenti, che servono a fine giornata. La scelta resta ricordata."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Layout classico</strong> — Ticket e Note stanno sotto Contanti: niente più spazio vuoto e nomi delle piattaforme leggibili."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Safer machine round and collapsible panels",
+    "highlights": [
+     "The machine round saves only the collections",
+     "Collapsible daily-till panels",
+     "Classic layout without empty space"
+    ],
+    "groups": [
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Machine round</strong> — Saving collections from the round on a new shift no longer writes banknotes, float and tickets that were only suggested from the previous shift or closing."
+      ]
+     },
+     {
+      "type": "add",
+      "items": [
+       "<strong>Collapsible panels</strong> — In the daily till every panel closes from its title and shows only its total when closed: handy for collections, needed at the end of the day. The choice is remembered."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Classic layout</strong> — Tickets and Notes sit under Cash: no more empty space and readable platform names."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.81.1",
    "date": "2026-10-25",
    "title": "Popup più affidabili e note del turno",
