@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-25
 
+- Changelog: versione 3.81.5 della suite (riporto al turno dopo).
 - Changelog: versione 3.81.4 della suite (giornaliero «Tutto in vista»).
 - Changelog: versione 3.81.3 della suite (contante in cassaforte e parole della cassa).
 - Changelog: versione 3.81.2 della suite (giro macchine e riquadri richiudibili).
