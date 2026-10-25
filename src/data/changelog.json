@@ -2,6 +2,38 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.81.5",
+   "date": "2026-10-25",
+   "title": "Il turno dopo parte da tutti i dati",
+   "highlights": [
+    "Il turno che entra trova tutti i valori del turno prima",
+    "Anche monete, Bancomat, differenze e rientri"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Cambio turno</strong> — Il turno che entra trova già tutti i valori dell'ultimo turno salvato, comprese monete, Bancomat e altri pagamenti, differenze e rientri: chi entra controlla e corregge solo quello che cambia."
+     ]
+    }
+   ],
+   "en": {
+    "title": "The next shift starts from all the data",
+    "highlights": [
+     "The incoming shift finds all values of the previous one",
+     "Coins, card payments, differences and returns too"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Shift change</strong> — The incoming shift already finds all values of the last saved shift, including coins, card and other payments, differences and returns: whoever comes in only checks and fixes what changes."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.81.4",
    "date": "2026-10-25",
    "title": "Giornaliero «Tutto in vista»",
