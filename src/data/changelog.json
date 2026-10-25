@@ -2,6 +2,46 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.81.0",
+   "date": "2026-10-25",
+   "title": "Chiusure: documenti ed email anche dopo",
+   "highlights": [
+    "Giornate chiuse sfogliabili per mese",
+    "Documenti aggiunti a giornate già chiuse",
+    "Email di chiusura inviate di nuovo",
+    "Documenti anche nell'email riepilogativa"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Giornate chiuse</strong> — In Chiusure si sfogliano le giornate chiuse mese per mese, con chi le ha chiuse e quanti documenti hanno.",
+      "<strong>Documenti dopo la chiusura</strong> — A una giornata già chiusa si aggiungono documenti in qualsiasi momento: si può chiudere subito e completare con calma.",
+      "<strong>Email di nuovo</strong> — Si sceglie una o più giornate chiuse e se ne invia di nuovo l'email: una sola riepilogativa, con il PDF e i documenti di ognuna, o una per giornata."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Closings: documents and emails later too",
+    "highlights": [
+     "Closed days browsable by month",
+     "Documents added to days already closed",
+     "Closing emails sent again",
+     "Documents in the summary email too"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Closed days</strong> — In Closings you browse closed days month by month, with who closed them and how many documents they have.",
+       "<strong>Documents after closing</strong> — Documents can be added to a closed day at any time: close now and complete later.",
+       "<strong>Email again</strong> — Pick one or more closed days and send their email again: a single summary with each day's PDF and documents, or one per day."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.80.0",
    "date": "2026-10-25",
    "title": "Chiusure in un punto solo",

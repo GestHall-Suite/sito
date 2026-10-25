@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-25
 
+- Changelog: tappa 3.81.0 della suite (documenti ed email dopo la chiusura).
 - Changelog: tappa 3.80.0 della suite (chiusure in un punto solo).
 - Changelog: tappa 3.79.0 della suite (cassetto, cassaforte e distinta).
 - Changelog: tappa 3.78.0 della suite (fondo cassa e non versato).
