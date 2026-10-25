@@ -2,6 +2,54 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.81.1",
+   "date": "2026-10-25",
+   "title": "Popup più affidabili e note del turno",
+   "highlights": [
+    "I popup non si richiudono più da soli",
+    "Note di nuovo in ogni turno",
+    "Cose da fare solo con le cose da fare"
+   ],
+   "groups": [
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Popup</strong> — Un popup chiuso con la X a volte si richiudeva da solo alla riapertura successiva: ora resta aperto."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Note del turno</strong> — Nel giornaliero ogni turno ha di nuovo il suo campo Note.",
+      "<strong>Cose da fare</strong> — La bacheca della giornata contiene solo le cose da fare."
+     ]
+    }
+   ],
+   "en": {
+    "title": "More reliable pop-ups and shift notes",
+    "highlights": [
+     "Pop-ups no longer close by themselves",
+     "Notes back in every shift",
+     "To-dos only in the to-do board"
+    ],
+    "groups": [
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Pop-ups</strong> — A pop-up closed with the X sometimes closed again by itself when reopened: now it stays open."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Shift notes</strong> — In the daily till every shift has its Notes field again.",
+       "<strong>To-dos</strong> — The day's board holds only the things to do."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.81.0",
    "date": "2026-10-25",
    "title": "Chiusure: documenti ed email anche dopo",
