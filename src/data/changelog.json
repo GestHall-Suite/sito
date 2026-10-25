@@ -2,6 +2,40 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.81.10",
+   "date": "2026-10-25",
+   "title": "Chiusure più ordinate",
+   "highlights": [
+    "Una riga per giornata con numeri ed esito",
+    "Giornate divise per mese",
+    "Bar ripiegabile e azioni a pillola"
+   ],
+   "groups": [
+    {
+     "title": "Modificato",
+     "items": [
+      "La pagina Chiusure è più compatta: ogni giornata da chiudere sta in una riga con data, operatori, scassettamento VLT, totale di cassa, atteso ed esito; le giornate sono divise per mese, la parte del bar resta chiusa nei giorni senza vendite e le azioni (documenti, giornaliero, anteprima PDF, riapri) hanno tutte lo stesso aspetto, anche sul telefono."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Tidier Closings page",
+    "highlights": [
+     "One row per day with figures and result",
+     "Days grouped by month",
+     "Collapsible bar section and pill actions"
+    ],
+    "groups": [
+     {
+      "title": "Changed",
+      "items": [
+       "The Closings page is more compact: each day to close fits in one row with date, operators, VLT cash-outs, cash total, expected amount and result; days are grouped by month, the bar section stays collapsed on days without sales and the actions (documents, daily sheet, PDF preview, reopen) all look the same, on phones too."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.81.9",
    "date": "2026-10-25",
    "title": "Scassettamenti per piattaforma nella testata",
