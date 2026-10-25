@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-25
 
+- Changelog: versione 3.81.2 della suite (giro macchine e riquadri richiudibili).
 - Changelog: versione 3.81.1 della suite (popup e note del turno).
 - Changelog: tappa 3.81.0 della suite (documenti ed email dopo la chiusura).
 - Changelog: tappa 3.80.0 della suite (chiusure in un punto solo).
