@@ -2,6 +2,54 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.81.3",
+   "date": "2026-10-25",
+   "title": "Contante in cassaforte e parole della cassa più chiare",
+   "highlights": [
+    "Il contante in cassaforte non si conta nel cassetto",
+    "Il Salva non scrive i turni futuri",
+    "«Contante incassato» e «Atteso dalle macchine»"
+   ],
+   "groups": [
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Contante in cassaforte</strong> — Se la giornata prima non è ancora chiusa, il primo turno non propone più come «da versare nel cassetto» il contante messo in cassaforte: niente ammanchi che non esistono.",
+      "<strong>Turni futuri</strong> — Salvando la cassa, i turni non ancora iniziati non vengono più scritti con i valori solo proposti."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Parole della cassa</strong> — In testata al giornaliero e nei report le due cifre si chiamano «Contante incassato» e «Atteso dalle macchine»: la differenza è l'avanzo o l'ammanco."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Safe cash and clearer till terms",
+    "highlights": [
+     "Cash in the safe is not counted in the drawer",
+     "Save no longer writes future shifts",
+     "«Cash taken» and «Expected from machines»"
+    ],
+    "groups": [
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Cash in the safe</strong> — If the previous day is not closed yet, the first shift no longer proposes the cash put in the safe as «to deposit in the drawer»: no shortages that do not exist.",
+       "<strong>Future shifts</strong> — Saving the till no longer writes shifts that have not started with values that were only suggested."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Till terms</strong> — In the daily-till header and in reports the two figures are called «Cash taken» and «Expected from machines»: their difference is the surplus or shortage."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.81.2",
    "date": "2026-10-25",
    "title": "Giro macchine più sicuro e riquadri richiudibili",
