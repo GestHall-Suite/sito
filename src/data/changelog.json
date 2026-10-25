@@ -2,6 +2,58 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.80.0",
+   "date": "2026-10-25",
+   "title": "Chiusure in un punto solo",
+   "highlights": [
+    "Nuova sezione Chiusure per cassa e bar",
+    "Più giornate chiuse insieme",
+    "Un'email riepilogativa con un PDF per giornata",
+    "Giornate vecchie chiuse in blocco"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Sezione Chiusure</strong> — Nel menu Cassa un solo posto per chiudere la cassa e il bar: per ogni giornata esito, totale di cassa, dove resta il contante, registratore del bar e documenti. Se ne scelgono una o più e si chiudono insieme.",
+      "<strong>Email riepilogativa</strong> — Chiudendo più giornate parte una sola email con la tabella di tutte e il PDF di ognuna; in alternativa un'email per giornata o nessuna.",
+      "<strong>Giornate vecchie</strong> — Le giornate mai chiuse si chiudono tutte insieme senza email, e dove è rimasto il contante viene proposto da quello che risulta il giorno dopo."
+     ]
+    },
+    {
+     "type": "fix",
+     "items": [
+      "<strong>Fondo cassa del turno</strong> — Un turno salvato solo dal giro macchine ora parte con fondo cassa e contante da versare già scritti."
+     ]
+    }
+   ],
+   "en": {
+    "title": "All closings in one place",
+    "highlights": [
+     "New Closings section for till and bar",
+     "Several days closed together",
+     "One summary email with a PDF per day",
+     "Old days closed in one go"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Closings section</strong> — In the Till menu one place to close the till and the bar: for each day the result, cash total, where the cash stays, bar register and documents. Choose one or more and close them together.",
+       "<strong>Summary email</strong> — Closing several days sends one email with a table of all of them and the PDF of each; alternatively one email per day or none.",
+       "<strong>Old days</strong> — Days never closed are closed all together with no email, and where the cash stayed is suggested from what is recorded the next day."
+      ]
+     },
+     {
+      "type": "fix",
+      "items": [
+       "<strong>Shift float</strong> — A shift saved only by the machine round now starts with float and cash to deposit already filled in."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.79.0",
    "date": "2026-10-25",
    "title": "Cassetto, cassaforte e distinta",
