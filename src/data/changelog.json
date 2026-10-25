@@ -2,6 +2,50 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.81.7",
+   "date": "2026-10-25",
+   "title": "Testata del giornaliero che si spiega da sola",
+   "highlights": [
+    "Le due somme della cassa sempre in vista",
+    "Spiegazione di ogni voce con un tocco"
+   ],
+   "groups": [
+    {
+     "type": "change",
+     "items": [
+      "<strong>Testata del giornaliero</strong> — Al centro due righe mostrano come si arriva a «Contante incassato» (banconote + monete − da versare − fondo) e ad «Atteso dalle macchine» (scassettamenti − Bancomat − ticket)."
+     ]
+    },
+    {
+     "type": "add",
+     "items": [
+      "<strong>Spiegazioni</strong> — Passando sopra o toccando una voce della testata compare cosa significa e come si calcola."
+     ]
+    }
+   ],
+   "en": {
+    "title": "A daily-till header that explains itself",
+    "highlights": [
+     "Both till sums always in view",
+     "Explanation of every item with one tap"
+    ],
+    "groups": [
+     {
+      "type": "change",
+      "items": [
+       "<strong>Daily-till header</strong> — Two rows in the middle show how «Cash taken» (banknotes + coins − to deposit − float) and «Expected from machines» (collections − card − tickets) are reached."
+      ]
+     },
+     {
+      "type": "add",
+      "items": [
+       "<strong>Explanations</strong> — Hovering or tapping an item in the header shows what it means and how it is calculated."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.81.6",
    "date": "2026-10-25",
    "title": "«Da versare nel cassetto» corretto una volta sola",
