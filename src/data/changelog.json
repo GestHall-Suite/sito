@@ -2,6 +2,38 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.81.8",
+   "date": "2026-10-25",
+   "title": "Testata leggibile anche su schermi più piccoli",
+   "highlights": [
+    "Su schermi più stretti esito e totali stanno in alto, le somme sotto",
+    "Nessuna scritta sovrapposta o fuori dal riquadro"
+   ],
+   "groups": [
+    {
+     "title": "Corretto",
+     "items": [
+      "Sui computer con lo schermo più stretto la testata del giornaliero mette esito e totali sulla prima riga e le due somme (Contante · Macchine) sotto a tutta larghezza: le scritte non si sovrappongono più e le etichette lunghe vanno a capo dentro il loro riquadro."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Readable header on smaller screens",
+    "highlights": [
+     "On narrower screens result and totals sit on top, the sums below",
+     "No overlapping text or labels spilling out of their box"
+    ],
+    "groups": [
+     {
+      "title": "Fixed",
+      "items": [
+       "On computers with a narrower screen the daily sheet header puts the result and totals on the first row and the two sums (Cash · Machines) below at full width: text no longer overlaps and long labels wrap inside their box."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.81.7",
    "date": "2026-10-25",
    "title": "Testata del giornaliero che si spiega da sola",
