@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-25
 
+- Changelog: tappa 3.79.0 della suite (cassetto, cassaforte e distinta).
 - Changelog: tappa 3.78.0 della suite (fondo cassa e non versato).
 
 ## 2026-10-24

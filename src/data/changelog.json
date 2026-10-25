@@ -2,6 +2,60 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.79.0",
+   "date": "2026-10-25",
+   "title": "Cassetto, cassaforte e distinta",
+   "highlights": [
+    "Da versare nel cassetto e in cassaforte",
+    "Prendi e metti in cassaforte",
+    "Alla chiusura scegli dove resta il contante",
+    "Distinta di versamento con firma"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Contante da versare, ovunque sia</strong> — Il fondo cassa resta sempre nel cassetto; il contante dei giorni prima non ancora versato si segue da solo, nel cassetto o in cassaforte. Il giornaliero propone ogni giorno quanto ce n'è nel cassetto e i conti della cassa non cambiano.",
+      "<strong>Prendi e metti in cassaforte</strong> — Quando servono contanti, o il cassetto è troppo pieno, un pulsante registra lo spostamento con chi e quando: la cassaforte ha sempre il suo saldo e il registro dei movimenti.",
+      "<strong>Chiusura</strong> — Si sceglie se il contante in più resta nel cassetto, va in cassaforte o in parte; il riepilogo mostra cassetto, cassaforte e totale da versare.",
+      "<strong>Distinta di versamento</strong> — Chi versa dice da dove escono i soldi, conta banconote e monete, firma sul telefono e stampa la distinta; la ricevuta della banca si carica anche dopo."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Impostazioni più chiare</strong> — Al posto di «Fisso» e «Progressivo» un solo interruttore con la spiegazione di come funziona, il saldo della cassaforte e gli ultimi movimenti."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Drawer, safe and deposit slip",
+    "highlights": [
+     "Cash to deposit in the drawer and in the safe",
+     "Take from and put in the safe",
+     "At closing choose where the cash stays",
+     "Deposit slip with signature"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Cash to deposit, wherever it is</strong> — The float always stays in the drawer; cash from previous days not yet deposited is tracked automatically, in the drawer or in the safe. The daily sheet proposes how much is in the drawer every day and the till figures do not change.",
+       "<strong>Take from and put in the safe</strong> — When cash is needed, or the drawer is too full, one button records the move with who and when: the safe always has its balance and its movement log.",
+       "<strong>Closing</strong> — Choose whether the extra cash stays in the drawer, goes to the safe or partly; the summary shows drawer, safe and total to deposit.",
+       "<strong>Deposit slip</strong> — The depositor says where the money comes from, counts banknotes and coins, signs on the phone and prints the slip; the bank receipt can be uploaded later."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Clearer settings</strong> — Instead of «Fixed» and «Progressive» a single switch explaining how it works, the safe balance and the latest movements."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.78.0",
    "date": "2026-10-25",
    "title": "Fondo cassa e non versato",
