@@ -2,6 +2,38 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.81.9",
+   "date": "2026-10-25",
+   "title": "Scassettamenti per piattaforma nella testata",
+   "highlights": [
+    "Nella testata del giornaliero il totale scassettato di ogni piattaforma",
+    "La somma delle piattaforme è lo scassettamento del turno"
+   ],
+   "groups": [
+    {
+     "title": "Aggiunto",
+     "items": [
+      "La fascia della testata del giornaliero ha una riga «VLT» con il totale scassettato nel turno per ogni piattaforma (Novoline, Inspired…), con la spiegazione al passaggio del mouse."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Cash-outs by platform in the header",
+    "highlights": [
+     "The daily sheet header shows the cash-out total of each platform",
+     "The platforms add up to the shift's cash-outs"
+    ],
+    "groups": [
+     {
+      "title": "Added",
+      "items": [
+       "The daily sheet header band has a «VLT» row with the shift's cash-out total for each platform (Novoline, Inspired…), with an explanation on hover."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.81.8",
    "date": "2026-10-25",
    "title": "Testata leggibile anche su schermi più piccoli",
