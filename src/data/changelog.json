@@ -2,6 +2,52 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.81.4",
+   "date": "2026-10-25",
+   "title": "Giornaliero «Tutto in vista»",
+   "highlights": [
+    "Nuova disposizione «Tutto in vista»",
+    "Cassa del turno in una schermata, senza scorrere",
+    "Scassettamenti chiusi restano al loro posto"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Tutto in vista</strong> — Sul computer il giornaliero può stare tutto in una schermata: valori e AWP, contanti con ticket e note, scassettamenti in tre colonne alte quanto lo schermo, ognuna con il suo scorrimento."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Scassettamenti chiusi</strong> — Chiudendo il riquadro degli scassettamenti la colonna resta al suo posto, più stretta, con il totale in vista."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Daily till «All in view»",
+    "highlights": [
+     "New «All in view» layout",
+     "The shift's till on one screen, no scrolling",
+     "Closed collections stay in place"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>All in view</strong> — On the computer the daily till can fit one screen: values and AWP, cash with tickets and notes, collections in three full-height columns, each scrolling on its own."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Closed collections</strong> — Closing the collections panel keeps its column in place, narrower, with the total in view."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.81.3",
    "date": "2026-10-25",
    "title": "Contante in cassaforte e parole della cassa più chiare",
