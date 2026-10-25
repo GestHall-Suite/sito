@@ -1,6 +1,54 @@
 {
- "updated": "2026-10-23",
+ "updated": "2026-10-25",
  "releases": [
+  {
+   "version": "3.78.0",
+   "date": "2026-10-25",
+   "title": "Fondo cassa e non versato",
+   "highlights": [
+    "Fondo cassa minimo e «Non versato»",
+    "Cambio di metodo da un giorno preciso",
+    "Foglio cassa con fondo e non versato"
+   ],
+   "groups": [
+    {
+     "type": "add",
+     "items": [
+      "<strong>Non versato</strong> — Con il fondo cassa progressivo il contante lasciato in cassa si divide in «Fondo cassa», il minimo che resta sempre, e «Non versato», il contante dei giorni prima ancora da versare. Il giornaliero li propone da soli a ogni giorno nuovo e i conti della cassa restano gli stessi.",
+      "<strong>Riepilogo di chiusura</strong> — La cassa del giorno precedente è scritta come fondo più non versato e la chiusura mostra cosa resta in cassa per domani."
+     ]
+    },
+    {
+     "type": "change",
+     "items": [
+      "<strong>Cambio di metodo</strong> — Si sceglie il giorno da cui il non versato resta in cassa: i giorni prima restano con il fondo fisso e il contante messo da parte resta da versare. Il fondo segue anche le giornate non ancora chiuse."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Float and amount not deposited",
+    "highlights": [
+     "Minimum float and «Not deposited»",
+     "Switch method from a set day",
+     "Cash sheet with float and amount not deposited"
+    ],
+    "groups": [
+     {
+      "type": "add",
+      "items": [
+       "<strong>Not deposited</strong> — With the progressive float, the cash left in the till is split into «Float», the minimum that always stays, and «Not deposited», the cash from previous days still to be deposited. The daily sheet fills them in on each new day and the till figures stay the same.",
+       "<strong>Closing summary</strong> — The previous day's cash is shown as float plus amount not deposited, and the closing shows what stays in the till for tomorrow."
+      ]
+     },
+     {
+      "type": "change",
+      "items": [
+       "<strong>Method switch</strong> — You choose the day from which the amount not deposited stays in the till: earlier days keep the fixed float and the cash set aside stays to be deposited. The float also follows days that have not been closed yet."
+      ]
+     }
+    ]
+   }
+  },
   {
    "version": "3.77.0",
    "date": "2026-10-24",

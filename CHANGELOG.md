@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-25
+
+- Changelog: tappa 3.78.0 della suite (fondo cassa e non versato).
+
 ## 2026-10-24
 
 - Changelog: tappa 3.77.0 della suite (Amministratore e Responsabile, menu a tendina nel modello Excel del bar).
