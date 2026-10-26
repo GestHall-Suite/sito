@@ -2,6 +2,54 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.81.13",
+   "date": "2026-10-26",
+   "title": "Giornate chiuse bloccate e bar ai soli gestori",
+   "highlights": [
+    "Una giornata chiusa si modifica solo dopo «Riapri», anche dal responsabile",
+    "Giornata chiusa con il lucchetto e i valori in sola lettura",
+    "Il bar è dei gestori del bar: responsabili e revisori ne vedono il report"
+   ],
+   "groups": [
+    {
+     "title": "Modificato",
+     "items": [
+      "Una giornata chiusa non si modifica più, nemmeno dal responsabile: per correggerla va prima riaperta. Nel giornaliero i valori restano tutti visibili ma senza campi da compilare, con un avviso con il lucchetto.",
+      "Il bar è riservato ai gestori del bar (operatori o responsabili con il permesso «Gestore bar»): responsabili e revisori che non lo sono vedono solo il report del bar, gli altri operatori non vedono il bar."
+     ]
+    },
+    {
+     "title": "Corretto",
+     "items": [
+      "Nel layout «Tutto in vista», sugli schermi più stretti, i contanti stanno su una colonna e i pezzi non si sovrappongono più agli importi."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Closed days locked and bar for bar managers only",
+    "highlights": [
+     "A closed day can only be changed after «Reopen», even by the manager",
+     "Closed day with a padlock and read-only values",
+     "The bar belongs to bar managers: managers and auditors see its report"
+    ],
+    "groups": [
+     {
+      "title": "Changed",
+      "items": [
+       "A closed day can no longer be changed, not even by the manager: it must be reopened first. In the daily sheet all values stay visible but without fields to fill in, with a padlock notice.",
+       "The bar is reserved for bar managers (operators or managers with the «Bar manager» permission): managers and auditors who are not see only the bar report, other operators do not see the bar."
+      ]
+     },
+     {
+      "title": "Fixed",
+      "items": [
+       "In the «Everything in view» layout, on narrower screens, cash is in one column and the note counts no longer overlap the amounts."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.81.12",
    "date": "2026-10-26",
    "title": "Testata del giornaliero come il riepilogo",

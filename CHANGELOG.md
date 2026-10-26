@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-26
 
+- Changelog: voce 3.81.13 (giornate chiuse bloccate e bar ai soli gestori).
+
 - Changelog: voce 3.81.12 (testata del giornaliero come il riepilogo).
 
 - Changelog: voce 3.81.11 (versamento, differenze e note in chiaro).
