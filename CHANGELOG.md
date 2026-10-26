@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-26
 
+- Changelog: voce 3.81.15 (da versare che dice cosa fare).
+
 - Changelog: voce 3.81.14 (da versare nella testata).
 
 - Changelog: voce 3.81.13 (giornate chiuse bloccate e bar ai soli gestori).
