@@ -2,6 +2,56 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.81.11",
+   "date": "2026-10-26",
+   "title": "Versamento, differenze e note in chiaro",
+   "highlights": [
+    "Nel giornaliero «Vers. contanti» e «Versamento» al posto di «Atteso dalle macchine»",
+    "Note dei turni nell'email e nel PDF di chiusura",
+    "Differenze e rientri sempre nel riepilogo",
+    "Chiusure con un pannello laterale e il totale da versare"
+   ],
+   "groups": [
+    {
+     "title": "Modificato",
+     "items": [
+      "Nella testata del giornaliero tornano «Vers. contanti» (banconote e monete oltre il fondo) e «Versamento» (il contante incassato da versare): sono diversi solo se nel turno ci sono refill, differenze o rientri, che ora si vedono come voci separate.",
+      "La pagina Chiusure ha un pannello a destra con le giornate scelte, il totale del versamento, la scelta dell'email e «Chiudi le giornate»; ogni giornata mostra il suo versamento."
+     ]
+    },
+    {
+     "title": "Aggiunto",
+     "items": [
+      "Le note dei turni arrivano nell'email e nel PDF di chiusura e nella pagina Chiusure, accanto a differenze e rientri: chi controlla vede subito il motivo (es. contanti presi dal cassetto per una fattura)."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Deposit, differences and notes at a glance",
+    "highlights": [
+     "«Cash dep.» and «Deposit» in the daily sheet instead of «Expected from machines»",
+     "Shift notes in the closing email and PDF",
+     "Differences and returns always in the summary",
+     "Closings with a side panel and the total to deposit"
+    ],
+    "groups": [
+     {
+      "title": "Changed",
+      "items": [
+       "The daily sheet header shows «Cash dep.» (notes and coins above the float) and «Deposit» (the cash taken to deposit) again: they differ only when the shift has refills, differences or returns, now shown as separate items.",
+       "The Closings page has a panel on the right with the chosen days, the total deposit, the email choice and «Close the days»; each day shows its deposit."
+      ]
+     },
+     {
+      "title": "Added",
+      "items": [
+       "Shift notes reach the closing email and PDF and the Closings page, next to differences and returns: whoever checks sees the reason straight away (e.g. cash taken from the drawer for an invoice)."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.81.10",
    "date": "2026-10-25",
    "title": "Chiusure più ordinate",

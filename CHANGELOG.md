@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-26
+
+- Changelog: voce 3.81.11 (versamento, differenze e note in chiaro).
+
 ## 2026-10-25
 
 - Changelog: voce 3.81.10 (chiusure più ordinate).
