@@ -2,6 +2,45 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.81.15",
+   "date": "2026-10-26",
+   "title": "Da versare che dice cosa fare",
+   "highlights": [
+    "«Da mettere in cassaforte» o «Da versare nel cassetto» secondo la scelta della chiusura",
+    "«Da prendere» dalla cassaforte quando il contante è sotto il fondo",
+    "Testata leggibile su ogni schermo, importi con il punto delle migliaia"
+   ],
+   "groups": [
+    {
+     "title": "Cassa giornaliera",
+     "items": [
+      "Il riquadro «Da versare» cambia nome e frase secondo la situazione: «Da mettere in cassaforte» o «Da versare nel cassetto» (lasciando il fondo cassa), «Da prendere» dalla cassaforte se il contante è sotto il fondo.",
+      "Le scritte della testata non si sovrappongono più su schermi medi e larghi.",
+      "Gli importi hanno sempre il punto delle migliaia (8.175,63)."
+     ]
+    }
+   ],
+   "en": {
+    "title": "To deposit, with what to do",
+    "highlights": [
+     "«To put in the safe» or «To deposit, in the drawer» according to the closing choice",
+     "«To take» from the safe when the cash is below the float",
+     "Header readable on every screen, amounts with thousands separators"
+    ],
+    "groups": [
+     {
+      "title": "Daily till",
+      "items": [
+       "The «To deposit» box changes its name and sentence to fit the situation: «To put in the safe» or «To deposit, in the drawer» (leaving the float), «To take» from the safe when the cash is below the float.",
+       "Header texts no longer overlap on medium and wide screens.",
+       "Amounts always have the thousands separator."
+      ]
+     }
+    ]
+   },
+   "summary": "Il riquadro «Da versare» della cassa giornaliera dice cosa fare con il contante: metterlo in cassaforte, lasciarlo nel cassetto o prenderlo dalla cassaforte per riportare il fondo."
+  },
+  {
    "version": "3.81.14",
    "date": "2026-10-26",
    "title": "Da versare nella testata",
