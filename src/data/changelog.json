@@ -2,6 +2,40 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.81.12",
+   "date": "2026-10-26",
+   "title": "Testata del giornaliero come il riepilogo",
+   "highlights": [
+    "Entrate e uscite del turno con le voci del riepilogo di chiusura",
+    "«Cassa attesa» e «Totale di cassa» al posto dei versamenti",
+    "Esito «Contato · atteso» come nel PDF"
+   ],
+   "groups": [
+    {
+     "title": "Modificato",
+     "items": [
+      "La testata del giornaliero usa le stesse voci e la stessa disposizione del riepilogo di chiusura: una riga Entrate (scassettamento per piattaforma, AWP, rientri) e una riga Uscite (ticket per piattaforma, Bancomat, APay, refill, differenze), ognuna con il suo totale; a destra la cassa attesa (cassa precedente + entrate − uscite) e il totale di cassa (banconote + monete). Così quello che si vede durante il turno è quello che arriva nell'email e nel PDF."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Daily sheet header like the summary",
+    "highlights": [
+     "Shift income and outgoings with the closing summary items",
+     "«Expected cash» and «Cash total» instead of deposits",
+     "Result «Counted · expected» as in the PDF"
+    ],
+    "groups": [
+     {
+      "title": "Changed",
+      "items": [
+       "The daily sheet header uses the same items and layout as the closing summary: an Income row (cash-outs by platform, AWP, returns) and an Outgoings row (tickets by platform, card, APay, refills, differences), each with its total; on the right the expected cash (previous cash + income − outgoings) and the cash total (notes + coins). What you see during the shift is what reaches the email and the PDF."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.81.11",
    "date": "2026-10-26",
    "title": "Versamento, differenze e note in chiaro",
