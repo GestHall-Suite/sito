@@ -2,6 +2,40 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.81.14",
+   "date": "2026-10-26",
+   "title": "Da versare nella testata",
+   "highlights": [
+    "Nella testata del giornaliero quanto contante c'è da versare",
+    "Diviso tra giorni precedenti e oggi",
+    "Il fondo cassa resta nel cassetto"
+   ],
+   "groups": [
+    {
+     "title": "Aggiunto",
+     "items": [
+      "La testata del giornaliero mostra in evidenza «Da versare»: il contante oltre il fondo cassa, da togliere dal cassetto e versare o mettere in cassaforte. Sotto, quanto viene dai giorni precedenti e quanto da oggi."
+     ]
+    }
+   ],
+   "en": {
+    "title": "To deposit in the header",
+    "highlights": [
+     "The daily sheet header shows how much cash there is to deposit",
+     "Split between previous days and today",
+     "The float stays in the drawer"
+    ],
+    "groups": [
+     {
+      "title": "Added",
+      "items": [
+       "The daily sheet header shows «To deposit» in evidence: the cash above the float, to take out of the drawer and deposit or put in the safe. Below, how much comes from previous days and how much from today."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.81.13",
    "date": "2026-10-26",
    "title": "Giornate chiuse bloccate e bar ai soli gestori",
