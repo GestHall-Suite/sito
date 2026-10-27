@@ -2,6 +2,65 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.82.0",
+   "date": "2026-10-27",
+   "title": "Dettagli che si sentono",
+   "highlights": [
+    "Ctrl K per cercare pagine e comandi",
+    "«Annulla» al posto delle conferme",
+    "Notifiche e pagine che si aprono subito",
+    "Nessun modulo inviato due volte"
+   ],
+   "groups": [
+    {
+     "title": "Interfaccia",
+     "items": [
+      "Menu dei comandi: Ctrl K (⌘ K su Mac) cerca tra tutte le pagine e le azioni della pagina aperta, con le scorciatoie di ogni voce.",
+      "Eliminare una cosa da fare o ripristinare la dashboard non chiede più conferma: compare «Annulla» per qualche secondo.",
+      "Notifiche e cose da fare si vedono subito e si aggiornano da sole, anche quando si torna sulla scheda o torna la rete.",
+      "Le pagine si preparano al passaggio del mouse e si aprono quasi all'istante.",
+      "Sul telefono i fogli dal basso seguono il dito e si chiudono con un colpo veloce; i comandi piccoli si toccano più facilmente.",
+      "Le foto della chat occupano subito il loro spazio, con un'anteprima sfocata mentre si caricano."
+     ]
+    },
+    {
+     "title": "Affidabilità",
+     "items": [
+      "Un doppio clic o una rete lenta non registrano due volte la stessa operazione: il server riconosce l'invio ripetuto."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Details you can feel",
+    "highlights": [
+     "Ctrl K to search pages and commands",
+     "«Undo» instead of confirmations",
+     "Notifications and pages that open instantly",
+     "No form submitted twice"
+    ],
+    "groups": [
+     {
+      "title": "Interface",
+      "items": [
+       "Command menu: Ctrl K (⌘ K on Mac) searches all pages and the actions of the open page, showing each item's shortcut.",
+       "Deleting a to-do or resetting the dashboard no longer asks for confirmation: «Undo» appears for a few seconds.",
+       "Notifications and to-dos show up instantly and refresh on their own, also when you return to the tab or the network comes back.",
+       "Pages get ready when you hover a link and open almost instantly.",
+       "On the phone bottom sheets follow your finger and close with a quick flick; small controls are easier to tap.",
+       "Chat photos take their space right away, with a blurred preview while they load."
+      ]
+     },
+     {
+      "title": "Reliability",
+      "items": [
+       "A double click or a slow network no longer records the same operation twice: the server recognises the repeated request."
+      ]
+     }
+    ]
+   },
+   "summary": "Menu dei comandi, Annulla al posto delle conferme, notifiche e pagine subito, nessun doppio invio."
+  },
+  {
    "version": "3.81.17",
    "date": "2026-10-27",
    "title": "Tabelle nuove in tutta l'app",
