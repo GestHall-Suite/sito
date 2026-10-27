@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-27
 
+- Changelog: voce 3.81.17 (tabelle nuove in tutta l'app).
+
 - Changelog: voce 3.81.16 (testata più bassa e più chiara).
 
 ## 2026-10-26

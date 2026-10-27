@@ -2,6 +2,45 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.81.17",
+   "date": "2026-10-27",
+   "title": "Tabelle nuove in tutta l'app",
+   "highlights": [
+    "Un solo aspetto per tutte le tabelle",
+    "Stati a pillola con il pallino colorato",
+    "Pulsanti di riga tondi e righe più ariose"
+   ],
+   "groups": [
+    {
+     "title": "Interfaccia",
+     "items": [
+      "Tabelle in card leggere con intestazioni piccole senza fondo e righe ariose, in elenchi, report e impostazioni.",
+      "Stati come «Attivo», «In corso» o «Risolto» in pillole con il pallino del loro colore.",
+      "Il menu ⋯ e i pulsanti di riga sono tondi; sul telefono le righe restano schede."
+     ]
+    }
+   ],
+   "en": {
+    "title": "New tables across the app",
+    "highlights": [
+     "One look for every table",
+     "Statuses as pills with a coloured dot",
+     "Round row buttons and roomier rows"
+    ],
+    "groups": [
+     {
+      "title": "Interface",
+      "items": [
+       "Tables in light cards with small unfilled headers and roomy rows, in lists, reports and settings.",
+       "Statuses such as «Active», «In progress» or «Solved» in pills with a dot in their colour.",
+       "The ⋯ menu and row buttons are round; on the phone rows stay cards."
+      ]
+     }
+    ]
+   },
+   "summary": "Tutte le tabelle della suite hanno lo stesso aspetto, più leggero e più facile da leggere: elenchi, report, registro attività, bar e backup."
+  },
+  {
    "version": "3.81.16",
    "date": "2026-10-27",
    "title": "Testata più bassa e più chiara",
