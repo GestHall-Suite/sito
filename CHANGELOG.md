@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-27
+
+- Changelog: voce 3.81.16 (testata più bassa e più chiara).
+
 ## 2026-10-26
 
 - Changelog: voce 3.81.15 (da versare che dice cosa fare).
