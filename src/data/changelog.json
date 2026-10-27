@@ -2,6 +2,45 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.81.16",
+   "date": "2026-10-27",
+   "title": "Testata più bassa e più chiara",
+   "highlights": [
+    "Entrate e Uscite su una riga, con il totale sempre a destra",
+    "«Dovrebbe esserci» e «C'è in cassa» con il conto scritto sotto",
+    "Più spazio per la cassa, meno per la testata"
+   ],
+   "groups": [
+    {
+     "title": "Cassa giornaliera",
+     "items": [
+      "Entrate e Uscite stanno su una riga ciascuna: le voci scorrono di lato (anche con la rotellina) e il totale resta fermo a destra.",
+      "I due numeri della cassa si chiamano «Dovrebbe esserci» (partenza + entrate − uscite) e «C'è in cassa» (banconote + monete), con il conto scritto sotto.",
+      "Il messaggio dell'esito non viene più tagliato."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Lower, clearer header",
+    "highlights": [
+     "Income and Outgoings on one line each, total always on the right",
+     "«Should be there» and «In the till» with the sum written below",
+     "More room for the till, less for the header"
+    ],
+    "groups": [
+     {
+      "title": "Daily till",
+      "items": [
+       "Income and Outgoings fit on one line each: items scroll sideways (also with the mouse wheel) and the total stays on the right.",
+       "The two till figures are «Should be there» (start + income − outgoings) and «In the till» (banknotes + coins), with the sum written below.",
+       "The result message is no longer cut off."
+      ]
+     }
+    ]
+   },
+   "summary": "La testata della cassa giornaliera occupa meno spazio e si legge a colpo d'occhio: entrate e uscite su una riga ciascuna, e due numeri chiari per quello che dovrebbe esserci e quello che c'è in cassa."
+  },
+  {
    "version": "3.81.15",
    "date": "2026-10-26",
    "title": "Da versare che dice cosa fare",
