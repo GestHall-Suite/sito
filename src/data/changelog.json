@@ -2,6 +2,39 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.83.5",
+   "date": "2026-10-29",
+   "title": "Cassaforte alla chiusura",
+   "highlights": [
+    "La cassaforte parte dal saldo prima della chiusura",
+    "Il contante preso per il fondo del cassetto si vede come prelievo della chiusura"
+   ],
+   "groups": [
+    {
+     "title": "Cassa",
+     "items": [
+      "Nel riepilogo di chiusura il conto della cassaforte parte dal saldo prima della chiusura, mostra il contante preso per riportare il fondo del cassetto e arriva al saldo dopo la chiusura."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Safe at closing",
+    "highlights": [
+     "The safe starts from the balance before closing",
+     "Cash taken for the drawer float shows as a closing withdrawal"
+    ],
+    "groups": [
+     {
+      "title": "Cash",
+      "items": [
+       "In the closing summary the safe account starts from the balance before closing, shows the cash taken to restore the drawer float and ends with the balance after closing."
+      ]
+     }
+    ]
+   },
+   "summary": "Il conto della cassaforte nel riepilogo parte dal saldo prima della chiusura e mostra il prelievo per il fondo."
+  },
+  {
    "version": "3.83.4",
    "date": "2026-10-29",
    "title": "Cassaforte con i movimenti del giorno",

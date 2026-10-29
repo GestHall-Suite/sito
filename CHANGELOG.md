@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-29
 
+- Changelog: voce 3.83.5 (cassaforte alla chiusura).
 - Changelog: voce 3.83.4 (cassaforte con i movimenti del giorno).
 - Changelog: voce 3.83.3 (ripristino del fondo fuori dalle entrate).
 
