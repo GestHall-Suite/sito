@@ -2,6 +2,39 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.83.4",
+   "date": "2026-10-29",
+   "title": "Cassaforte con i movimenti del giorno",
+   "highlights": [
+    "Il riepilogo parte dal saldo della cassaforte a inizio giornata",
+    "Il contante preso per il cassetto si vede anche nel conto della cassaforte"
+   ],
+   "groups": [
+    {
+     "title": "Cassa",
+     "items": [
+      "Nel riepilogo di chiusura il conto della cassaforte parte dal saldo di inizio giornata e mostra ogni prelievo o versamento del giorno (per esempio il contante preso per riportare il fondo), poi il saldo prima della chiusura."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Safe with the day's movements",
+    "highlights": [
+     "The summary starts from the safe balance at the start of the day",
+     "Cash taken for the drawer now also shows in the safe account"
+    ],
+    "groups": [
+     {
+      "title": "Cash",
+      "items": [
+       "In the closing summary the safe account starts from the balance at the start of the day and lists every withdrawal or deposit of the day (for example cash taken to restore the float), then the balance before closing."
+      ]
+     }
+    ]
+   },
+   "summary": "Il conto della cassaforte nel riepilogo parte dal saldo di inizio giornata e mostra i movimenti del giorno."
+  },
+  {
    "version": "3.83.3",
    "date": "2026-10-29",
    "title": "Ripristino del fondo fuori dalle entrate",
