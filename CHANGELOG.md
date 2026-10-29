@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-29
 
+- Changelog: voce 3.83.3 (ripristino del fondo fuori dalle entrate).
+
 - Changelog: voce 3.83.2 (risultato della giornata e testi interi).
 
 - Changelog: voce 3.83.1 (contante preso dalla cassaforte nel riepilogo).
