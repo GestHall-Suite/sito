@@ -2,6 +2,41 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.83.1",
+   "date": "2026-10-29",
+   "title": "Contante preso dalla cassaforte nel riepilogo",
+   "highlights": [
+    "I soldi presi dalla cassaforte durante la giornata si vedono come entrata",
+    "Riepilogo «Cassa generale» predefinito"
+   ],
+   "groups": [
+    {
+     "title": "Cassa",
+     "items": [
+      "Se durante la giornata si prende contante dalla cassaforte (per esempio per riportare il fondo dopo un ammanco), il riepilogo di chiusura e la testata del giornaliero lo mostrano come entrata «Preso dalla cassaforte», con la nota scritta; prima finiva nascosto nella cassa di partenza. Lo stesso per il contante messo in cassaforte o versato dal cassetto.",
+      "Il riepilogo di chiusura usa ora come predefinito il layout «Cassa generale»."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Cash taken from the safe in the summary",
+    "highlights": [
+     "Money taken from the safe during the day shows as income",
+     "«Overall cash» summary by default"
+    ],
+    "groups": [
+     {
+      "title": "Cash",
+      "items": [
+       "If cash is taken from the safe during the day (for example to restore the float after a shortfall), the closing summary and the daily header show it as «Taken from the safe» income with its note; before, it was hidden in the starting cash. The same applies to cash put in the safe or deposited from the drawer.",
+       "The closing summary now uses the «Overall cash» layout by default."
+      ]
+     }
+    ]
+   },
+   "summary": "Contante preso dalla cassaforte visibile nel riepilogo; «Cassa generale» predefinito."
+  },
+  {
    "version": "3.83.0",
    "date": "2026-10-29",
    "title": "Monete, arrotondamenti e riepilogo per il titolare",
