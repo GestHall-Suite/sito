@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-29
+
+- Changelog: voce 3.83.0 (monete, arrotondamenti e riepilogo per il titolare).
+
 ## 2026-10-27
 
 - Changelog: voce 3.82.0 (dettagli che si sentono).

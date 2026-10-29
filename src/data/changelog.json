@@ -2,6 +2,49 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.83.0",
+   "date": "2026-10-29",
+   "title": "Monete, arrotondamenti e riepilogo per il titolare",
+   "highlights": [
+    "Riepilogo «Cassa generale» con la cassa generale al centro",
+    "Monete contate per taglio da 2 €, 1 € e 0,50 €",
+    "Versamento arrotondato a 0,50 € o a 5 €",
+    "Ticket residui per piattaforma"
+   ],
+   "groups": [
+    {
+     "title": "Cassa",
+     "items": [
+      "Il riepilogo di chiusura ha un secondo layout: cassa del giorno, cassa generale in grande al centro (cassa del giorno più cassaforte) ed esito; sotto uscite a sinistra ed entrate a destra, con i totali datati. Si sceglie nelle Impostazioni o al momento della chiusura.",
+      "Le monete si possono contare per taglio (2 €, 1 €, 0,50 €) come le banconote: il totale va da solo nel campo Monete e i tagli compaiono anche nel riepilogo.",
+      "L'arrotondamento dell'importo da versare è ora nelle impostazioni della Cassa giornaliera: a 5 €, a 0,50 € (per chi ha il pagatore che arrotonda a 50 centesimi) o ai centesimi esatti.",
+      "Nuovo riquadro «Ticket residui»: per ogni piattaforma la somma dei ticket di pochi centesimi lasciati dai giocatori. Non cambiano i conti e si vedono nel riepilogo."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Coins, rounding and an owner's summary",
+    "highlights": [
+     "«Overall cash» summary with the overall cash in the middle",
+     "Coins counted by denomination: €2, €1 and €0.50",
+     "Deposit rounded to €0.50 or €5",
+     "Leftover tickets per platform"
+    ],
+    "groups": [
+     {
+      "title": "Cash",
+      "items": [
+       "The closing summary has a second layout: day's cash, overall cash large in the middle (day's cash plus safe) and the result; below, expenses on the left and income on the right with dated totals. Choose it in Settings or when closing.",
+       "Coins can be counted by denomination (€2, €1, €0.50) like notes: the total fills the Coins field and the denominations also appear in the summary.",
+       "Rounding of the amount to deposit is now in the Daily cash settings: to €5, to €0.50 (for payout machines rounding to 50 cents) or exact cents.",
+       "New «Leftover tickets» box: per platform, the total of few-cent tickets left by players. They do not change the count and appear in the summary."
+      ]
+     }
+    ]
+   },
+   "summary": "Riepilogo «Cassa generale», monete per taglio, versamento arrotondato a 0,50 € o 5 €, ticket residui."
+  },
+  {
    "version": "3.82.0",
    "date": "2026-10-27",
    "title": "Dettagli che si sentono",
