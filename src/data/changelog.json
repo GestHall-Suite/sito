@@ -2,6 +2,45 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.83.2",
+   "date": "2026-10-29",
+   "title": "Riepilogo: risultato della giornata e testi interi",
+   "highlights": [
+    "Risultato della giornata con la copertura dalla cassaforte",
+    "Cassa generale per prima, poi cassa del giorno e cassaforte",
+    "Nel PDF nessun testo tagliato"
+   ],
+   "groups": [
+    {
+     "title": "Cassa",
+     "items": [
+      "Il riepilogo di chiusura dice quanto ha dato la giornata in più o in meno e, se è mancato contante, quanto è stato preso dalla cassaforte per riportare il fondo.",
+      "Nel layout «Cassa generale» il primo riquadro è la cassa generale, seguito da cassa del giorno, cassaforte ed esito.",
+      "Nel PDF le note e le voci lunghe vanno a capo invece di essere tagliate."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Summary: result of the day and full texts",
+    "highlights": [
+     "Result of the day with cover from the safe",
+     "Overall cash first, then day's cash and safe",
+     "No truncated text in the PDF"
+    ],
+    "groups": [
+     {
+      "title": "Cash",
+      "items": [
+       "The closing summary states how much the day was over or short and, if cash was missing, how much was taken from the safe to restore the float.",
+       "In the «Overall cash» layout the first box is the overall cash, followed by day's cash, safe and result.",
+       "In the PDF long notes and items wrap instead of being cut."
+      ]
+     }
+    ]
+   },
+   "summary": "Risultato della giornata nel riepilogo, cassa generale per prima, PDF senza testi tagliati."
+  },
+  {
    "version": "3.83.1",
    "date": "2026-10-29",
    "title": "Contante preso dalla cassaforte nel riepilogo",
