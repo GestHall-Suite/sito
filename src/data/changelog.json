@@ -2,6 +2,39 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.83.3",
+   "date": "2026-10-29",
+   "title": "Ripristino del fondo fuori dalle entrate",
+   "highlights": [
+    "Il contante preso dalla cassaforte non è più un'entrata",
+    "Ripristino del fondo come riga a parte nel conto"
+   ],
+   "groups": [
+    {
+     "title": "Cassa",
+     "items": [
+      "Entrate e uscite contano solo gli incassi e le spese della sala: il contante preso dalla cassaforte per riportare il fondo, messo in cassaforte o versato dal cassetto compare a parte nel conto della cassa del giorno, nel riepilogo e nella testata del giornaliero."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Float restore no longer counted as income",
+    "highlights": [
+     "Cash taken from the safe is no longer income",
+     "Float restore as a separate line in the count"
+    ],
+    "groups": [
+     {
+      "title": "Cash",
+      "items": [
+       "Income and expenses only count the hall's takings and spending: cash taken from the safe to restore the float, put in the safe or deposited from the drawer appears separately in the day's cash count, in the summary and in the daily header."
+      ]
+     }
+    ]
+   },
+   "summary": "Il ripristino del fondo dalla cassaforte non è più un'entrata."
+  },
+  {
    "version": "3.83.2",
    "date": "2026-10-29",
    "title": "Riepilogo: risultato della giornata e testi interi",
