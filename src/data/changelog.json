@@ -2,6 +2,61 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.84.0",
+   "date": "2026-10-30",
+   "title": "Un sistema visivo più pulito",
+   "highlights": [
+    "Icone a linea, tutte della stessa famiglia",
+    "Spaziature regolari e testo senza maiuscolo",
+    "Ogni numero con il confronto col periodo prima",
+    "Grafici con linee sottili e assi più leggibili"
+   ],
+   "groups": [
+    {
+     "title": "Aspetto",
+     "items": [
+      "Tutta l'app usa le stesse misure: spazi regolari, due soli pesi del carattere e niente testi in maiuscolo.",
+      "Tutte le icone sono a linea e della stessa famiglia, anche quelle che prima erano emoji o simboli (chiudi, avviso, allegato, stampa, scarica).",
+      "I numeri non hanno più decorazioni: sotto ogni indicatore c'è il confronto col dato precedente, per esempio «ieri € 1.234 · +12%». Il riepilogo annuale confronta ogni voce con l'anno prima, il mensile con il mese prima, il settimanale con la settimana prima.",
+      "I grafici hanno linee e barre sottili, una sola tinta per serie e assi più leggibili."
+     ]
+    },
+    {
+     "title": "Correzioni",
+     "items": [
+      "Riepilogo mensile: la riga del Bancomat mostrava anche gli altri metodi di pagamento."
+     ]
+    }
+   ],
+   "en": {
+    "title": "A cleaner visual system",
+    "highlights": [
+     "Line icons, all from the same family",
+     "Regular spacing and no all-caps text",
+     "Every number compared with the previous period",
+     "Charts with thin lines and clearer axes"
+    ],
+    "groups": [
+     {
+      "title": "Look",
+      "items": [
+       "The whole app uses the same measures: regular spacing, only two font weights and no all-caps text.",
+       "All icons are line icons from the same family, including those that used to be emoji or symbols (close, warning, attachment, print, download).",
+       "Numbers have no decorations: under each indicator there is the comparison with the previous figure, for example «yesterday € 1,234 · +12%». The yearly summary compares every item with the previous year, the monthly one with the previous month, the weekly one with the previous week.",
+       "Charts have thin lines and bars, a single colour per series and clearer axes."
+      ]
+     },
+     {
+      "title": "Fixes",
+      "items": [
+       "Monthly summary: the card payments row also showed the other payment methods."
+      ]
+     }
+    ]
+   },
+   "summary": "Spaziature a multipli di 8, icone a linea tutte della stessa famiglia, due pesi senza maiuscolo, numeri col confronto e grafici sottili."
+  },
+  {
    "version": "3.83.5",
    "date": "2026-10-29",
    "title": "Cassaforte alla chiusura",

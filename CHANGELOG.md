@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-10-30
+
+- Changelog: voce 3.84.0 (un sistema visivo più pulito).
+
 ## 2026-10-29
 
 - Changelog: voce 3.83.5 (cassaforte alla chiusura).
