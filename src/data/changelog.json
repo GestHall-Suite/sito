@@ -2,6 +2,43 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.84.4",
+   "date": "2026-10-30",
+   "title": "Testata del giornaliero: rispetto al fondo",
+   "highlights": [
+    "Quanto mancava al fondo resta scritto anche dopo averlo sistemato",
+    "Quanto hai preso o messo in cassaforte e quanto resta, in un colpo d’occhio",
+    "«Atteso in cassa» al posto di «Dovrebbe esserci»"
+   ],
+   "groups": [
+    {
+     "title": "Cassa",
+     "items": [
+      "Nella testata del giornaliero il primo numero a destra dice quanto mancava al fondo cassa (o quanto c’era in più) prima di prendere o mettere contante nella cassaforte; sotto, quanto hai già spostato e quanto resta da spostare. Dopo aver sistemato il cassetto il numero resta come promemoria.",
+      "«Dovrebbe esserci» si chiama «Atteso in cassa» e mostra un conto più semplice: fondo, entrate, uscite e contante della cassaforte."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Daily cash header: compared with the float",
+    "highlights": [
+     "How much was missing from the float stays visible after you fix it",
+     "How much you took from or put in the safe and what is left, at a glance",
+     "«Expected in the till» instead of «Should be there»"
+    ],
+    "groups": [
+     {
+      "title": "Cash",
+      "items": [
+       "In the daily cash header the first figure on the right shows how much was missing from the float (or how much extra there was) before taking or putting cash in the safe; below it, how much you have already moved and how much is left. After you fix the drawer the figure stays as a reminder.",
+       "«Should be there» is now «Expected in the till», with a simpler breakdown: float, income, expenses and cash from the safe."
+      ]
+     }
+    ]
+   },
+   "summary": "La testata del giornaliero ricorda quanto mancava al fondo e quanto è stato spostato con la cassaforte."
+  },
+  {
    "version": "3.84.3",
    "date": "2026-10-30",
    "title": "Movimenti della cassaforte nel loro turno",
