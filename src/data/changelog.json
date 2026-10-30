@@ -2,6 +2,57 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.84.1",
+   "date": "2026-10-30",
+   "title": "Pesi più netti e correzioni grafiche",
+   "highlights": [
+    "Titoli, numeri e totali più marcati",
+    "Bet/Win e riepilogo annuale di nuovo in ordine",
+    "Spunta dei turni e pulsanti di chiusura a linea"
+   ],
+   "groups": [
+    {
+     "title": "Aspetto",
+     "items": [
+      "Le cose importanti (titoli, numeri, totali, pulsanti) sono più marcate; il testo normale e le etichette piccole restano leggeri."
+     ]
+    },
+    {
+     "title": "Correzioni",
+     "items": [
+      "Bet/Win: le tabelle dei giorni non escono più dalla scheda e i campi Giocato e Pagato sono di nuovo larghi.",
+      "Riepilogo annuale: gli importi grandi restano dentro il loro riquadro.",
+      "La spunta dei turni finiti e i pulsanti di chiusura sono icone a linea come le altre."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Clearer weights and visual fixes",
+    "highlights": [
+     "Bolder titles, numbers and totals",
+     "Bet/Win and yearly summary tidy again",
+     "Line icons for finished shifts and close buttons"
+    ],
+    "groups": [
+     {
+      "title": "Look",
+      "items": [
+       "Important things (titles, numbers, totals, buttons) are bolder; regular text and small labels stay light."
+      ]
+     },
+     {
+      "title": "Fixes",
+      "items": [
+       "Bet/Win: the daily tables no longer overflow their card and the Played and Paid fields are wide again.",
+       "Yearly summary: large amounts stay inside their box.",
+       "The check for finished shifts and the close buttons are line icons like the others."
+      ]
+     }
+    ]
+   },
+   "summary": "Pesi 400/700 più distinti, Bet/Win e Annuale in ordine, spunta e chiusure a linea."
+  },
+  {
    "version": "3.84.0",
    "date": "2026-10-30",
    "title": "Un sistema visivo più pulito",
