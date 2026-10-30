@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-30
 
+- Changelog: voce 3.85.0 (una dashboard che dice cosa guardare).
 - Changelog: voce 3.84.4 (testata del giornaliero: rispetto al fondo).
 - Changelog: voce 3.84.3 (movimenti della cassaforte nel loro turno).
 - Changelog: voce 3.84.2 (da versare nel cassetto mai negativo).
