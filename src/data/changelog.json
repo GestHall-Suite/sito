@@ -2,6 +2,39 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.84.2",
+   "date": "2026-10-30",
+   "title": "Da versare nel cassetto mai negativo",
+   "highlights": [
+    "Una giornata chiusa sotto il fondo non lascia niente da versare al giorno dopo",
+    "Niente più cifre sbagliate nel primo turno del giorno dopo"
+   ],
+   "groups": [
+    {
+     "title": "Cassa",
+     "items": [
+      "Se una giornata finisce con il cassetto sotto il fondo cassa (anche dopo aver preso contante dalla cassaforte), il giorno dopo parte con 0 da versare nel cassetto. Correggere quella giornata non aggiunge più una cifra sbagliata al primo turno del giorno dopo."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Cash to deposit in the drawer never negative",
+    "highlights": [
+     "A day closed below the float leaves nothing to deposit the next day",
+     "No more wrong amounts in the next day's first shift"
+    ],
+    "groups": [
+     {
+      "title": "Cash",
+      "items": [
+       "If a day ends with the drawer below the float (even after taking cash from the safe), the next day starts with nothing to deposit in the drawer. Correcting that day no longer adds a wrong amount to the next day's first shift."
+      ]
+     }
+    ]
+   },
+   "summary": "Una giornata chiusa sotto il fondo non lascia niente da versare al giorno dopo."
+  },
+  {
    "version": "3.84.1",
    "date": "2026-10-30",
    "title": "Pesi più netti e correzioni grafiche",
