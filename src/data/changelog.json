@@ -2,6 +2,39 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.84.3",
+   "date": "2026-10-30",
+   "title": "Movimenti della cassaforte nel loro turno",
+   "highlights": [
+    "Prendi e Metti in cassaforte si vedono solo nel turno in cui sono stati fatti",
+    "Il turno successivo e il giorno dopo partono dai numeri giusti"
+   ],
+   "groups": [
+    {
+     "title": "Cassa",
+     "items": [
+      "«Prendi dalla cassaforte» e «Metti in cassaforte» restano nel turno in cui sono stati fatti: si vedono solo lì e non passano da soli agli altri turni o al giorno dopo. Il turno successivo parte dal «da versare nel cassetto» del turno prima, il giorno dopo dalla chiusura."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Safe movements in their own shift",
+    "highlights": [
+     "Take and Put in the safe only show in the shift where they were made",
+     "The next shift and the next day start from the right figures"
+    ],
+    "groups": [
+     {
+      "title": "Cash",
+      "items": [
+       "«Take from the safe» and «Put in the safe» stay in the shift where they were made: they only show there and no longer move by themselves to other shifts or to the next day. The next shift starts from the previous shift's cash to deposit in the drawer, the next day from the closing."
+      ]
+     }
+    ]
+   },
+   "summary": "I movimenti della cassaforte restano nel turno in cui sono stati fatti."
+  },
+  {
    "version": "3.84.2",
    "date": "2026-10-30",
    "title": "Da versare nel cassetto mai negativo",
