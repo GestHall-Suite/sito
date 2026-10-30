@@ -2,6 +2,45 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.85.1",
+   "date": "2026-10-30",
+   "title": "Angoli, animazioni dei grafici e menu utente",
+   "highlights": [
+    "Grafici e riquadri seguono di nuovo gli angoli scelti nello Studio di stile",
+    "I grafici si animano all'apertura, anche quelli più in basso nella pagina",
+    "Il menu utente non esce più dallo schermo"
+   ],
+   "groups": [
+    {
+     "title": "Aspetto",
+     "items": [
+      "Barre, ciambelle e fumetti dei grafici, card e indicatori della dashboard seguono gli angoli scelti nello Studio di stile: con «Morbidi» le barre tornano a pillola e la ciambella ha i pezzi arrotondati e staccati.",
+      "All'apertura le barre crescono una dopo l'altra e i grafici più in basso nella pagina si animano quando ci arrivi; tornano l'anello e la linea animati nella copertina della dashboard.",
+      "Il menu utente resta dentro lo schermo anche sui monitor bassi."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Corners, chart animations and user menu",
+    "highlights": [
+     "Charts and cards follow the corners chosen in the Style studio again",
+     "Charts animate when they open, including those further down the page",
+     "The user menu no longer goes off screen"
+    ],
+    "groups": [
+     {
+      "title": "Look",
+      "items": [
+       "Chart bars, donuts and tooltips, dashboard cards and indicators follow the corners chosen in the Style studio: with «Soft» bars are pill-shaped again and donut segments are rounded and separated.",
+       "When a page opens, bars grow one after the other and charts further down the page animate when you reach them; the animated ring and line are back on the dashboard cover.",
+       "The user menu stays on screen even on short displays."
+      ]
+     }
+    ]
+   },
+   "summary": "Grafici e riquadri seguono gli angoli dello Studio, tornano le animazioni dei grafici e il menu utente resta nello schermo."
+  },
+  {
    "version": "3.85.0",
    "date": "2026-10-30",
    "title": "Una dashboard che dice cosa guardare",
