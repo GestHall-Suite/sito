@@ -2,6 +2,75 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.85.0",
+   "date": "2026-10-30",
+   "title": "Una dashboard che dice cosa guardare",
+   "highlights": [
+    "Indicatori con icona, freccia colorata della variazione e andamento a puntini",
+    "«Da guardare»: giornate da chiudere, versamenti da confermare, assistenze ferme, turni scoperti",
+    "Turni del personale e attività recente nella dashboard",
+    "Grafici con le barre per fornitore, «Oggi» e la media",
+    "Cose da fare della giornata con l'avanzamento a passi"
+   ],
+   "groups": [
+    {
+     "title": "Dashboard",
+     "items": [
+      "Ogni indicatore ha la sua icona, la variazione rispetto al periodo prima con una freccia verde o rossa e l'andamento a puntini (ultimi 14 giorni, giorni del mese, mesi dell'anno). La variazione di oggi compare a giornata chiusa.",
+      "Nuovo riquadro «Da guardare» per il responsabile: giornate da chiudere, versamenti da confermare, assistenze ferme, turni scoperti nei prossimi 7 giorni, articoli del bar sotto scorta e documenti del personale in scadenza, ognuno con il collegamento alla pagina giusta.",
+      "Nuovi riquadri «Turni del personale» (turni fatti sul totale del mese e ore per persona) e «Attività recente» (chiusure, turni, assistenze, versamenti e cassaforte degli ultimi 7 giorni)."
+     ]
+    },
+    {
+     "title": "Grafici e report",
+     "items": [
+      "L'incasso degli ultimi 30 giorni è diviso per fornitore, con «Oggi» e la media tratteggiata; l'andamento mensile ha i punti, il giorno della settimana segna oggi, la ciambella dei fornitori mostra importi e percentuali.",
+      "Annuale e settimanale usano gli stessi indicatori; l'anno in corso si confronta con lo stesso periodo dell'anno prima."
+     ]
+    },
+    {
+     "title": "Cassa",
+     "items": [
+      "Le cose da fare della giornata mostrano l'avanzamento a passi («4 di 5 fatte») e lo stato di ogni voce: da fare, fatta, nota, riportata."
+     ]
+    }
+   ],
+   "en": {
+    "title": "A dashboard that tells you what to check",
+    "highlights": [
+     "Indicators with an icon, a coloured change arrow and a dotted trend",
+     "«Needs attention»: days to close, deposits to confirm, stalled service tickets, uncovered shifts",
+     "Staff shifts and recent activity on the dashboard",
+     "Charts with bars by provider, «Today» and the average",
+     "Daily to-dos with step-by-step progress"
+    ],
+    "groups": [
+     {
+      "title": "Dashboard",
+      "items": [
+       "Every indicator has its icon, the change from the previous period with a green or red arrow and a dotted trend (last 14 days, days of the month, months of the year). Today's change appears once the day is closed.",
+       "New «Needs attention» card for managers: days to close, deposits to confirm, stalled service tickets, uncovered shifts in the next 7 days, bar items below stock and expiring staff documents, each linking to the right page.",
+       "New «Staff shifts» (shifts done out of the month's total and hours per person) and «Recent activity» (closings, shifts, service tickets, deposits and safe movements of the last 7 days) cards."
+      ]
+     },
+     {
+      "title": "Charts and reports",
+      "items": [
+       "Takings for the last 30 days are split by provider, with «Today» and a dashed average; the monthly trend has points, the day-of-week chart marks today, the provider donut shows amounts and percentages.",
+       "Yearly and weekly reports use the same indicators; the current year is compared with the same period of the previous year."
+      ]
+     },
+     {
+      "title": "Cash",
+      "items": [
+       "The day's to-dos show step-by-step progress («4 of 5 done») and the status of each item: to do, done, note, carried over."
+      ]
+     }
+    ]
+   },
+   "summary": "Indicatori più chiari, un riquadro con quello che aspetta qualcuno e grafici con «Oggi» e la media."
+  },
+  {
    "version": "3.84.4",
    "date": "2026-10-30",
    "title": "Testata del giornaliero: rispetto al fondo",
