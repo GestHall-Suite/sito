@@ -2,6 +2,63 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.85.2",
+   "date": "2026-10-30",
+   "title": "Dashboard più viva e giornaliero in sezioni",
+   "highlights": [
+    "«Cerca» in cima al menu, con la scorciatoia Ctrl K",
+    "Indicatori della dashboard ognuno con il suo colore",
+    "Note del turno sempre in cima al giornaliero",
+    "Ticket pagati e residui nello stesso riquadro"
+   ],
+   "groups": [
+    {
+     "title": "Dashboard",
+     "items": [
+      "In cima al menu laterale c'è «Cerca» con la scorciatoia Ctrl K (⌘ K sul Mac): trova pagine e comandi.",
+      "Ogni indicatore ha il suo colore; l'andamento a puntini riempie il riquadro e mostra gli ultimi 30 giorni. I titoli dei riquadri hanno un sottotitolo grigio al posto dell'icona.",
+      "La copertina personalizzata del responsabile dice in una frase cosa c'è da guardare (giornate da chiudere, versamenti da confermare…)."
+     ]
+    },
+    {
+     "title": "Cassa",
+     "items": [
+      "Le note del turno stanno in una riga in cima al turno, sempre in vista in ogni layout.",
+      "Ticket pagati e ticket residui sono nello stesso riquadro; le AWP stanno sotto gli scassettamenti VLT, con le altre macchine, e hanno un'icona propria.",
+      "Il layout «Tutto in vista» è stato tolto: chi lo usava torna al Classico."
+     ]
+    }
+   ],
+   "en": {
+    "title": "A livelier dashboard and the daily cash in sections",
+    "highlights": [
+     "«Search» at the top of the menu, with the Ctrl K shortcut",
+     "Each dashboard indicator has its own colour",
+     "Shift notes always at the top of the daily cash",
+     "Paid and leftover tickets in the same box"
+    ],
+    "groups": [
+     {
+      "title": "Dashboard",
+      "items": [
+       "«Search» is at the top of the side menu with the Ctrl K shortcut (⌘ K on Mac): it finds pages and commands.",
+       "Each indicator has its own colour; the dotted trend fills the card and shows the last 30 days. Card titles have a grey subtitle instead of the icon.",
+       "The manager's personalised cover says in one sentence what needs attention (days to close, deposits to confirm…)."
+      ]
+     },
+     {
+      "title": "Cash",
+      "items": [
+       "Shift notes are a single row at the top of the shift, always visible in every layout.",
+       "Paid and leftover tickets share one box; AWPs sit under the VLT counts, with the other machines, and have their own icon.",
+       "The «Everything in view» layout has been removed: anyone using it goes back to Classic."
+      ]
+     }
+    ]
+   },
+   "summary": "Cerca nel menu, indicatori colorati, note del turno in cima e ticket insieme nel giornaliero."
+  },
+  {
    "version": "3.85.1",
    "date": "2026-10-30",
    "title": "Angoli, animazioni dei grafici e menu utente",
