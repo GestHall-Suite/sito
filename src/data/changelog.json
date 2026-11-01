@@ -2,6 +2,41 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.85.5",
+   "date": "2026-11-01",
+   "title": "Orari dei turni anche a cassa iniziata",
+   "highlights": [
+    "Orari dei turni di oggi modificabili anche con la cassa iniziata",
+    "Persone e note restano sui loro turni"
+   ],
+   "groups": [
+    {
+     "title": "Turni",
+     "items": [
+      "Con la mano libera o una giornata tipo si cambiano nomi e orari dei turni anche in una giornata con la cassa già iniziata, se il numero di turni resta lo stesso; chi fa ogni turno e le note restano.",
+      "Se il numero di turni cambia, il messaggio spiega cosa fare: «Aggiungi turno» per uno in più, o toccare l'orario di un singolo turno."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Shift times even after the cash has started",
+    "highlights": [
+     "Today's shift times can be changed even after the cash has started",
+     "People and notes stay on their shifts"
+    ],
+    "groups": [
+     {
+      "title": "Shifts",
+      "items": [
+       "With the free-hand layout or a day template you can change shift names and times even on a day whose cash has already started, as long as the number of shifts stays the same; who works each shift and the notes stay.",
+       "If the number of shifts changes, the message explains what to do: «Add shift» for an extra one, or tap the time of a single shift."
+      ]
+     }
+    ]
+   },
+   "summary": "Orari dei turni modificabili anche a cassa iniziata, con lo stesso numero di turni."
+  },
+  {
    "version": "3.85.4",
    "date": "2026-11-01",
    "title": "Turni gestiti anche dagli operatori",
