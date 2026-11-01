@@ -2,6 +2,41 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.85.3",
+   "date": "2026-11-01",
+   "title": "Riepilogo di chiusura più chiaro",
+   "highlights": [
+    "Entrate a sinistra e uscite a destra nel riepilogo",
+    "«Totale contanti in sala» al posto di «Cassa generale»"
+   ],
+   "groups": [
+    {
+     "title": "Chiusura",
+     "items": [
+      "Nel riepilogo di chiusura (email, PDF e anteprima) le entrate stanno sempre a sinistra e le uscite a destra, in tutti e due i layout.",
+      "Il riquadro grande del layout «Cassa generale» si chiama «Totale contanti in sala»: cassa del giorno più cassaforte."
+     ]
+    }
+   ],
+   "en": {
+    "title": "A clearer closing summary",
+    "highlights": [
+     "Income on the left and expenses on the right in the summary",
+     "«Total cash in the room» instead of «Overall cash»"
+    ],
+    "groups": [
+     {
+      "title": "Closing",
+      "items": [
+       "In the closing summary (email, PDF and preview) income is always on the left and expenses on the right, in both layouts.",
+       "The large box of the «Overall cash» layout is now called «Total cash in the room»: the day's cash plus the safe."
+      ]
+     }
+    ]
+   },
+   "summary": "Entrate a sinistra, uscite a destra e «Totale contanti in sala» nel riepilogo di chiusura."
+  },
+  {
    "version": "3.85.2",
    "date": "2026-10-30",
    "title": "Dashboard più viva e giornaliero in sezioni",
