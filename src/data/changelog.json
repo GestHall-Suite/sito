@@ -2,6 +2,55 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.85.4",
+   "date": "2026-11-01",
+   "title": "Turni gestiti anche dagli operatori",
+   "highlights": [
+    "Con il permesso, gli operatori gestiscono i turni come il responsabile",
+    "Orari, turni nuovi ed eliminazioni anche per gli operatori",
+    "Layout del riepilogo «Totale contanti in sala»"
+   ],
+   "groups": [
+    {
+     "title": "Turni",
+     "items": [
+      "Con «Modifica calendario turni» attivo gli operatori fanno sul calendario tutto quello che fa il responsabile: chi fa ogni turno, note, orari e nomi dei turni, turni aggiunti o tolti, giornate tipo e mano libera.",
+      "L'opzione separata «Eliminazione turni dal calendario» non serve più ed è stata tolta dai Permessi."
+     ]
+    },
+    {
+     "title": "Chiusura",
+     "items": [
+      "Il layout del riepilogo «Cassa generale» si chiama ora «Totale contanti in sala», come il suo riquadro principale."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Shifts managed by operators too",
+    "highlights": [
+     "With the permission, operators manage shifts like the manager",
+     "Times, new shifts and deletions for operators too",
+     "«Total cash in the room» summary layout"
+    ],
+    "groups": [
+     {
+      "title": "Shifts",
+      "items": [
+       "With «Edit shift calendar» on, operators can do everything the manager does on the calendar: who works each shift, notes, shift times and names, shifts added or removed, day templates and free-hand layout.",
+       "The separate «Delete shifts from the calendar» option is no longer needed and has been removed from Permissions."
+      ]
+     },
+     {
+      "title": "Closing",
+      "items": [
+       "The «Overall cash» summary layout is now called «Total cash in the room», like its main box."
+      ]
+     }
+    ]
+   },
+   "summary": "Gli operatori con il permesso gestiscono i turni come il responsabile; layout «Totale contanti in sala»."
+  },
+  {
    "version": "3.85.3",
    "date": "2026-11-01",
    "title": "Riepilogo di chiusura più chiaro",
