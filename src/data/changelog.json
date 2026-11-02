@@ -2,6 +2,40 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.87.4",
+   "date": "2026-11-02",
+   "title": "Riepilogo: prima la cassa precedente",
+   "highlights": [
+    "Nel riepilogo la cassa precedente viene prima",
+    "Poi il totale dei contanti in sala alla chiusura"
+   ],
+   "groups": [
+    {
+     "title": "Riepilogo di chiusura",
+     "items": [
+      "<strong>Prima → dopo</strong> — Nell'email e nel PDF i riquadri in alto si leggono da sinistra: Cassa precedente, Totale contanti in sala alla chiusura, Cassaforte, Esito."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Summary: previous cash first",
+    "highlights": [
+     "The previous cash comes first in the summary",
+     "Then the total cash in the room at closing"
+    ],
+    "groups": [
+     {
+      "title": "Closing summary",
+      "items": [
+       "<strong>Before → after</strong> — In the email and PDF the top boxes read from the left: Previous cash, Total cash in the room at closing, Safe, Result."
+      ]
+     }
+    ],
+    "summary": "In the closing summary the previous cash comes before the total at closing."
+   },
+   "summary": "Nel riepilogo di chiusura la cassa precedente viene prima del totale alla chiusura."
+  },
+  {
    "version": "3.87.3",
    "date": "2026-11-02",
    "title": "Turno notturno dopo mezzanotte",
