@@ -2,6 +2,46 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.87.1",
+   "date": "2026-11-02",
+   "title": "Cassaforte per tagli",
+   "highlights": [
+    "Prendi e Metti in cassaforte con i pezzi per taglio",
+    "Banconote e monete del turno si aggiornano da sole",
+    "La cassa resta in quadra senza ricontare"
+   ],
+   "groups": [
+    {
+     "title": "Cassa giornaliera",
+     "items": [
+      "<strong>Pezzi per taglio</strong> — In «Prendi dalla cassaforte», «Metti in cassaforte» e «Uscita dalla cassaforte» scrivi quante banconote e monete di ogni taglio: l'importo si calcola da solo.",
+      "<strong>Tutto aggiornato</strong> — Con Prendi e Metti banconote e monete del turno cambiano da sole e la cassa resta in quadra; annullando il movimento tornano come prima. Prima di mettere in cassaforte si controlla che nel cassetto ci siano quei pezzi.",
+      "<strong>Movimenti</strong> — I tagli si vedono nell'elenco dei movimenti del turno e nella pagina della cassaforte."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Safe by denomination",
+    "highlights": [
+     "Take from and put in the safe by denomination",
+     "Shift notes and coins update by themselves",
+     "The cash stays balanced without recounting"
+    ],
+    "groups": [
+     {
+      "title": "Daily cash",
+      "items": [
+       "<strong>Pieces per denomination</strong> — In «Take from the safe», «Put in the safe» and «Out of the safe» enter how many notes and coins of each denomination: the amount is calculated for you.",
+       "<strong>Everything updated</strong> — With Take and Put the shift notes and coins change by themselves and the cash stays balanced; cancelling the movement puts them back. Before putting cash in the safe the drawer is checked for those pieces.",
+       "<strong>Movements</strong> — Denominations show in the shift movement list and on the safe page."
+      ]
+     }
+    ],
+    "summary": "Safe movements by denomination: shift notes and coins update by themselves."
+   },
+   "summary": "Movimenti della cassaforte per tagli: banconote e monete del turno si aggiornano da sole."
+  },
+  {
    "version": "3.87.0",
    "date": "2026-11-02",
    "title": "Un giornaliero su misura",
