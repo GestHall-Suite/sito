@@ -33,10 +33,10 @@ import { ICONE } from '../../data/aree';
         <p class="muted">Il dato della giornata è quello del <strong>turno di chiusura</strong>: ogni turno riparte dai valori del precedente, quindi i turni non si sommano tra loro. Se nella tua sala ogni turno chiude per conto suo, basta un'impostazione.</p>
       </div>
       <div class="formula card">
-        <div><span>Cassetto</span><code>contanti + refill AWP + differenze − 2ª cassa − rientri</code></div>
+        <div><span>Cassetto</span><code>contanti + refill AWP + uscite − 2ª cassa − entrate</code></div>
         <div><span>Versamento</span><code>scassettamenti − bancomat − ticket pagati</code></div>
         <div><span>Totale cassa</span><code>cassetto + monete − versamento</code></div>
-        <div class="f-res"><span>Scostamento</span><code>totale cassa − fondo cassa</code></div>
+        <div class="f-res"><span>Scostamento</span><code>contanti in sala − (cassa precedente + entrate − uscite)</code></div>
         <ul class="sem"><li><i class="ok"></i>sotto 4 €</li><li><i class="warn"></i>da 4 a 5 €</li><li><i class="bad"></i>oltre 5 €</li></ul>
       </div>
     </div>
@@ -71,7 +71,7 @@ import { ICONE } from '../../data/aree';
     </div>
     <div class="grid g3">
       <div class="card reveal"><h3>Turni oltre la mezzanotte</h3><p>Un turno 21–02 appartiene alla giornata in cui è cominciato: alle 00:30 l'app apre ancora la cassa di ieri.</p></div>
-      <div class="card reveal"><h3>Chiusura della giornata</h3><p>Il fondo cassa può essere fisso, con il contante in più in cassaforte, o progressivo, con il contante che resta in cassa fino al versamento. La chiude l'operatore a fine serata dopo un resoconto finale, allegando le scansioni o i PDF delle chiusure; il turno di chiusura si fissa da solo. Responsabili e revisori ricevono il riepilogo come il foglio cassa, nel testo dell'email o in un PDF di una pagina: cassa del giorno precedente, entrate e uscite, banconote, avanzo o ammanco, bar e offerte. Riaprire una giornata chiusa resta un permesso del responsabile.</p></div>
+      <div class="card reveal"><h3>Chiusura della giornata</h3><p>I conti partono dalla cassa precedente, cioè i contanti in sala all'apertura tra cassetto e cassaforte, e arrivano ai contanti in sala alla chiusura; il contante in più può restare nel cassetto o andare in cassaforte, e i movimenti della cassaforte si consultano dal giornaliero. La chiude l'operatore a fine serata dopo un resoconto finale, allegando le scansioni o i PDF delle chiusure; il turno di chiusura si fissa da solo. Responsabili e revisori ricevono il riepilogo come il foglio cassa, nel testo dell'email o in un PDF di una pagina: cassa precedente, entrate e uscite, contanti in sala, banconote, avanzo o ammanco, bar e offerte. Riaprire una giornata chiusa resta un permesso del responsabile.</p></div>
       <div class="card reveal"><h3>Layout a scelta · Suite</h3><p>Classico o avanzato, con gli scassettamenti sempre in vista e i risultati fissi in basso. Ognuno sceglie il suo.</p></div>
     </div>
     <p style="margin-top:28px"><a href="/prodotto/sala" class="link">Il calendario turni del personale <span aria-hidden="true">→</span></a></p>

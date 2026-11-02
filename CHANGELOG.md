@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-30
 
+- Changelog: voce 3.86.0 (cassa precedente e cassaforte); guida, pagine Cassa e Bar e clienti, piani: uscite/entrate, Prestiti, cassa precedente.
 - Changelog: voce 3.85.5 (orari dei turni anche a cassa iniziata).
 - Changelog: voce 3.85.4 (turni gestiti anche dagli operatori).
 - Changelog: voce 3.85.3 (riepilogo di chiusura più chiaro).
