@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-30
 
+- Changelog: voce 3.87.10 (foto in PDF a scelta).
 - Changelog: voce 3.87.9 (documenti delle chiusure).
 - Changelog: voce 3.87.8 (riepilogo in due righe).
 - Changelog: voce 3.87.7 (documenti delle giornate chiuse).

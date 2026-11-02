@@ -2,6 +2,38 @@
  "updated": "2026-11-02",
  "releases": [
   {
+   "version": "3.87.10",
+   "date": "2026-11-02",
+   "title": "Foto in PDF a scelta",
+   "highlights": [
+    "Interruttore «Foto unite in un PDF» nelle chiusure"
+   ],
+   "groups": [
+    {
+     "title": "Chiusure",
+     "items": [
+      "<strong>Foto in PDF a scelta</strong> — In Chiusure l'interruttore «Foto unite in un PDF» decide cosa succede alle foto dei documenti: acceso diventano un solo PDF, spento restano foto separate. In tutti e due i casi sono ridotte prima dell'invio. La scelta resta salvata sul dispositivo."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Photos as PDF, your choice",
+    "highlights": [
+     "«Photos combined in a PDF» switch in closings"
+    ],
+    "groups": [
+     {
+      "title": "Closings",
+      "items": [
+       "<strong>Photos as PDF, your choice</strong> — In Closings the «Photos combined in a PDF» switch decides what happens to document photos: on, they become one PDF; off, they stay separate photos. Either way they are reduced before upload. The choice is remembered on the device."
+      ]
+     }
+    ],
+    "summary": "Choose whether closing photos become one PDF or stay separate."
+   },
+   "summary": "Scegli se le foto delle chiusure diventano un PDF o restano separate."
+  },
+  {
    "version": "3.87.9",
    "date": "2026-11-02",
    "title": "Documenti delle chiusure: elimina e foto in PDF",
