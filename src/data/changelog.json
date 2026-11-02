@@ -2,6 +2,63 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.86.0",
+   "date": "2026-11-02",
+   "title": "Cassa precedente e cassaforte",
+   "highlights": [
+    "I conti partono dalla cassa precedente: i contanti in sala all'apertura",
+    "Contanti in sala alla chiusura: cassetto più cassaforte",
+    "Uscite ed entrate al posto di differenze e rientri",
+    "Movimenti della cassaforte visibili a tutti dal giornaliero"
+   ],
+   "groups": [
+    {
+     "title": "Cassa",
+     "items": [
+      "Il riepilogo di chiusura e la testata del giornaliero partono dalla cassa precedente, cioè i contanti che c'erano in sala all'apertura (nel cassetto e in cassaforte), e arrivano ai contanti in sala alla chiusura. Il fondo del cassetto resta solo un'informazione.",
+      "Spostare contante tra cassetto e cassaforte non cambia i conti; quello che viene versato esce dalla sala e si vede nel riepilogo.",
+      "I campi «Differenze» e «Rientri» si chiamano «Uscite» ed «Entrate», anche nei report e nelle esportazioni.",
+      "Nelle giornate chiuse l'avviso in alto dice quanto c'era in cassaforte alla chiusura."
+     ]
+    },
+    {
+     "title": "Cassaforte e prestiti",
+     "items": [
+      "Nuova pagina con tutti i movimenti della cassaforte mese per mese e il saldo dopo ogni movimento, aperta dal giornaliero anche dagli operatori.",
+      "Il modulo «Prestiti e rientri» si chiama «Prestiti»: il prestito è un'uscita del giornaliero, la restituzione un'entrata."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Previous cash and the safe",
+    "highlights": [
+     "The count starts from the previous cash: the cash in the room at opening",
+     "Cash in the room at closing: drawer plus safe",
+     "Cash out and in instead of differences and returns",
+     "Safe movements visible to everyone from the daily cash"
+    ],
+    "groups": [
+     {
+      "title": "Cash",
+      "items": [
+       "The closing summary and the daily cash header start from the previous cash, i.e. the cash that was in the room at opening (in the drawer and in the safe), and end with the cash in the room at closing. The drawer float is just information.",
+       "Moving cash between drawer and safe does not change the count; what is deposited leaves the room and shows in the summary.",
+       "The «Differences» and «Returns» fields are now «Out» and «In», also in reports and exports.",
+       "On closed days the banner at the top shows how much was in the safe at closing."
+      ]
+     },
+     {
+      "title": "Safe and loans",
+      "items": [
+       "New page with every safe movement month by month and the balance after each one, opened from the daily cash by operators too.",
+       "The «Loans and returns» module is now «Loans»: a loan is a daily cash outflow, a repayment an inflow."
+      ]
+     }
+    ]
+   },
+   "summary": "Conti dalla cassa precedente ai contanti in sala, uscite ed entrate, Prestiti e movimenti della cassaforte per tutti."
+  },
+  {
    "version": "3.85.5",
    "date": "2026-11-01",
    "title": "Orari dei turni anche a cassa iniziata",

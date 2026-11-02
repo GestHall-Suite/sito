@@ -32,7 +32,7 @@ export const piani: Piano[] = [
     id: 'pro', nome: 'Pro', mese: 69, anno: 690, evidenza: true,
     per: 'La sala con bar, clienti abituali e più operatori.',
     nota: 'Utenti illimitati',
-    include: ['Tutto Essenziale', 'Firma digitale del versamento', 'Bar: banco, magazzino e report', 'Ticket assistenza macchine', 'Clienti, prestiti e rientri', 'Documenti della sala: scrivi, apri e stampa', 'Contatti della sala', 'Notifiche push e avvisi automatici', 'Confronto tra periodi'],
+    include: ['Tutto Essenziale', 'Firma digitale del versamento', 'Bar: banco, magazzino e report', 'Ticket assistenza macchine', 'Clienti e prestiti', 'Documenti della sala: scrivi, apri e stampa', 'Contatti della sala', 'Notifiche push e avvisi automatici', 'Confronto tra periodi'],
   },
   {
     id: 'suite', nome: 'Suite', mese: 99, anno: 990,
@@ -87,7 +87,7 @@ export const confronto: Gruppo[] = [
   { titolo: 'Sala', righe: [
     { voce: 'Ticket assistenza macchine con QR', v: [false, true, true, true] },
     { voce: 'Bar: banco, magazzino, menu, report', v: [false, true, true, true] },
-    { voce: 'Clienti, prestiti e rientri', v: [false, true, true, true] },
+    { voce: 'Clienti e prestiti', v: [false, true, true, true] },
     { voce: 'Documenti e contatti', v: [false, true, true, true] },
     { voce: 'Documenti da scrivere, visore PDF e stampa veloce', v: [false, true, true, true] },
     { voce: 'Web Radio e SONOS', v: [false, false, true, true] },

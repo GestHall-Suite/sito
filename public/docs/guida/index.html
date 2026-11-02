@@ -277,7 +277,7 @@ pre code { background:none;border:none;padding:0;font-size:13px;line-height:1.6 
   <div class="sec-h3">Workflow apertura turno (mattino)</div>
   <div class="steps">
     <div class="step"><div class="step-n">1</div><div><div class="step-t">Apri Cassa → Giornaliero</div><div class="step-d">La giornata odierna si crea automaticamente e si apre sul primo turno (anche quando si cambia giorno); dopo un salvataggio resti sul turno su cui stavi lavorando. In alto c'è una scheda per ogni turno del giorno; con <strong>+</strong> si aggiunge un turno non previsto.</div></div></div>
-    <div class="step"><div class="step-n">2</div><div><div class="step-t">Inserisci il fondo cassa</div><div class="step-d">Il fondo ricevuto dal turno precedente.</div></div></div>
+    <div class="step"><div class="step-n">2</div><div><div class="step-t">Controlla il cassetto di apertura</div><div class="step-d">I contanti con cui si apre il cassetto, proposti dal turno precedente. I conti partono dalla <strong>cassa precedente</strong>: i contanti in sala all'apertura, nel cassetto e in cassaforte.</div></div></div>
     <div class="step"><div class="step-n">3</div><div><div class="step-t">Compila i contanti per taglio</div><div class="step-d">Banconote da 5€, 10€, 20€ ecc. Il totale si calcola automaticamente.</div></div></div>
     <div class="step"><div class="step-n">4</div><div><div class="step-t">Salva turno</div><div class="step-d">Usa il bottone "Salva turno" in basso. Il form si salva anche automaticamente ogni 500 ms.</div></div></div>
   </div>
@@ -287,7 +287,7 @@ pre code { background:none;border:none;padding:0;font-size:13px;line-height:1.6 
     <span class="tag t">Scassettamenti VLT per macchina</span>
     <span class="tag t">Refill AWP con orario e importo</span>
     <span class="tag t">Ticket vincita per fornitore</span>
-    <span class="tag t">Bancomat e differenze/rientri</span>
+    <span class="tag t">Bancomat, uscite ed entrate del cassetto</span>
     <span class="tag t">Numero di ticket convalidati per piattaforma</span>
   </div>
 
@@ -307,10 +307,11 @@ pre code { background:none;border:none;padding:0;font-size:13px;line-height:1.6 
   </table></div>
 
   <div class="sec-h3">Formule di riconciliazione</div>
-  <pre><code>Cassetto      = Contanti + Refill AWP + Differenze − II Cassa − Rientri
+  <pre><code>Cassetto      = Contanti + Refill AWP + Uscite − II Cassa − Entrate
 Versamento    = Scassettamenti VLT − Bancomat − Ticket vincita
 Totale cassa  = Cassetto + Monete − Versamento
-Scostamento   = Totale cassa − Fondo cassa</code></pre>
+Scostamento   = Totale cassa − Cassetto di apertura</code></pre>
+  <p>Nel riepilogo di chiusura lo stesso conto si legge sui contanti in sala: <strong>cassa precedente</strong> (cassetto + cassaforte all'apertura) + entrate − uscite = atteso, confrontato con i contanti in sala alla chiusura. Spostare contante tra cassetto e cassaforte non cambia il conto; i movimenti della cassaforte si vedono dal giornaliero con «Tutti i movimenti della cassaforte».</p>
   <p>Lo scostamento ideale è 0€. Piccoli scostamenti (&lt;4€) sono normali.</p>
 
   <div class="sec-h3">Salvataggio automatico</div>
@@ -541,10 +542,10 @@ Scostamento   = Totale cassa − Fondo cassa</code></pre>
 
 <!-- 13. PRESTITI -->
 <div class="section" id="prestiti">
-  <div class="sec-h2"><span class="sec-num">13</span> Prestiti e rientri</div>
+  <div class="sec-h2"><span class="sec-num">13</span> Prestiti</div>
   <p class="sec-lead">Gestione prestiti verso i clienti. <strong>Clienti → Prestiti</strong> (Piano Pro+).</p>
 
-  <p>Per ogni cliente: registra prestiti con data e importo, registra i rientri. Il <strong>saldo corrente</strong> si calcola automaticamente. I rientri si riflettono automaticamente sul giornaliero della giornata corrispondente.</p>
+  <p>Per ogni cliente: registra prestiti e restituzioni con data e importo. Il <strong>saldo corrente</strong> si calcola automaticamente. Il prestito finisce tra le uscite del giornaliero della giornata, la restituzione tra le entrate.</p>
 </div>
 
 <!-- 13b. BAR -->
