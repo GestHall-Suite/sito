@@ -2,6 +2,42 @@
  "updated": "2026-11-02",
  "releases": [
   {
+   "version": "3.87.11",
+   "date": "2026-11-02",
+   "title": "Documenti delle chiusure: più insieme e dal giornaliero",
+   "highlights": [
+    "Più documenti eliminati insieme",
+    "Documenti eliminabili anche dal giornaliero"
+   ],
+   "groups": [
+    {
+     "title": "Chiusure",
+     "items": [
+      "<strong>Più documenti insieme</strong> — Ogni documento di una giornata chiusa ha la sua casella: scegli quelli sbagliati e premi «Elimina i documenti scelti».",
+      "<strong>Anche dal giornaliero</strong> — Nel giornaliero di una giornata chiusa il riquadro «Documenti della chiusura» ha lo stesso cestino e la stessa scelta multipla."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Closing documents: several at once and from the daily sheet",
+    "highlights": [
+     "Delete several documents at once",
+     "Delete documents from the daily sheet too"
+    ],
+    "groups": [
+     {
+      "title": "Closings",
+      "items": [
+       "<strong>Several documents at once</strong> — Each document of a closed day has its own checkbox: pick the wrong ones and press «Delete the chosen documents».",
+       "<strong>From the daily sheet too</strong> — On the daily sheet of a closed day the «Closing documents» box has the same bin and the same multiple choice."
+      ]
+     }
+    ],
+    "summary": "Delete closing documents several at once, also from the daily sheet."
+   },
+   "summary": "Documenti delle chiusure eliminabili più insieme, anche dal giornaliero."
+  },
+  {
    "version": "3.87.10",
    "date": "2026-11-02",
    "title": "Foto in PDF a scelta",
