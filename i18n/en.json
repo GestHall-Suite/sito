@@ -770,5 +770,8 @@
  "Ogni prestito e ogni restituzione con data, quantità e operatore, tra le uscite e le entrate del giornaliero. Il saldo «dare» di ciascun cliente è sempre aggiornato.": "Every loan and every repayment with date, amount and operator, among the daily cash outflows and inflows. Each customer's outstanding balance is always up to date.",
  "Vendite al banco in due tocchi, giacenze e scorte, spese e fatture, ordini ai fornitori, menu stampabile, chiusura del registratore. E l'anagrafica dei clienti abituali con i loro prestiti.": "Counter sales in two taps, stock and reorder levels, expenses and invoices, supplier orders, printable menu, register closing. And the regular customer records with their loans.",
  "contanti + refill AWP + uscite − 2ª cassa − entrate": "cash + AWP refill + out − 2nd till − in",
- "contanti in sala − (cassa precedente + entrate − uscite)": "cash in the room − (previous cash + in − out)"
+ "contanti in sala − (cassa precedente + entrate − uscite)": "cash in the room − (previous cash + in − out)",
+ "Cassa su misura · Suite": "Cash your way · Suite",
+ "Giornaliero personalizzabile": "Customisable daily cash",
+ "Ognuno sceglie cosa vedere nella testata, l'ordine dei riquadri e il resoconto del turno a lato, come nella dashboard.": "Everyone chooses what to see in the header, the panel order and the shift summary on the side, like on the dashboard."
 }

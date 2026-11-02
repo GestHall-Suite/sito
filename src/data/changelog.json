@@ -2,6 +2,48 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.87.0",
+   "date": "2026-11-02",
+   "title": "Un giornaliero su misura",
+   "highlights": [
+    "Un solo layout del giornaliero, da personalizzare come la dashboard",
+    "Scegli quali riquadri vedere nella testata",
+    "«Atteso in sala» nascosto di base",
+    "Testata leggibile anche sul telefono"
+   ],
+   "groups": [
+    {
+     "title": "Cassa giornaliera",
+     "items": [
+      "<strong>Un solo layout</strong> — Classico e Avanzato diventano uno: dal pulsante «Personalizza» ognuno sceglie l'ordine dei riquadri, la densità, le icone, il resoconto del turno a lato e i fornitori affiancati o in colonna.",
+      "<strong>Testata su misura</strong> — Un interruttore per ogni riquadro della testata: Cassa precedente, Atteso in sala, Contanti in sala, Cassetto di apertura, Entrate e uscite. «Atteso in sala» è nascosto di base: l'esito mostra già contato e atteso.",
+      "<strong>Telefono</strong> — La testata mette i riquadri due per riga e il pannello Personalizza si apre come foglio sopra la barra in basso."
+     ]
+    }
+   ],
+   "en": {
+    "title": "A daily cash that fits you",
+    "highlights": [
+     "One daily cash layout, customised like the dashboard",
+     "Choose which boxes to see in the header",
+     "«Expected in the room» hidden by default",
+     "Header readable on the phone too"
+    ],
+    "groups": [
+     {
+      "title": "Daily cash",
+      "items": [
+       "<strong>One layout</strong> — Classic and Advanced become one: from «Customise» everyone chooses panel order, density, icons, the shift summary on the side and suppliers side by side or in a column.",
+       "<strong>Custom header</strong> — A switch for each header box: Previous cash, Expected in the room, Cash in the room, Opening drawer, In and out. «Expected in the room» is hidden by default: the result already shows counted and expected.",
+       "<strong>Phone</strong> — The header shows two boxes per row and the Customise panel opens as a sheet above the bottom bar."
+      ]
+     }
+    ],
+    "summary": "One daily cash layout that everyone customises: header boxes, panel order, density."
+   },
+   "summary": "Un solo layout del giornaliero che ognuno personalizza: riquadri della testata, ordine dei riquadri, densità."
+  },
+  {
    "version": "3.86.1",
    "date": "2026-11-02",
    "title": "Uscite dalla cassaforte",

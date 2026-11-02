@@ -38,7 +38,7 @@ export const piani: Piano[] = [
     id: 'suite', nome: 'Suite', mese: 99, anno: 990,
     per: 'La sala strutturata che vuole il proprio marchio e meno carta.',
     nota: 'Utenti illimitati',
-    include: ['Tutto Pro', 'Il tuo logo e i tuoi colori', 'Studio di stile completo per ognuno', 'Chat interna con foto, vocali e file', 'LUL e buste paga digitali', 'Layout avanzato del giornaliero', 'Musica: Web Radio e SONOS', 'Supporto prioritario'],
+    include: ['Tutto Pro', 'Il tuo logo e i tuoi colori', 'Studio di stile completo per ognuno', 'Chat interna con foto, vocali e file', 'LUL e buste paga digitali', 'Giornaliero personalizzabile', 'Musica: Web Radio e SONOS', 'Supporto prioritario'],
   },
   {
     id: 'multisala', nome: 'Multi-sala', mese: 149, anno: null,
@@ -70,7 +70,7 @@ export const confronto: Gruppo[] = [
     { voce: 'Note e cose da fare della giornata, con liste ricorrenti', v: [true, true, true, true] },
     { voce: 'Bet/Win dichiarato e archivio borderò', v: [true, true, true, true] },
     { voce: 'Firma digitale del versamento', v: [false, true, true, true] },
-    { voce: 'Layout avanzato del giornaliero', v: [false, false, true, true] },
+    { voce: 'Giornaliero personalizzabile', v: [false, false, true, true] },
   ]},
   { titolo: 'Report', righe: [
     { voce: 'Dashboard, settimanale, mensile, annuale', v: [true, true, true, true] },
