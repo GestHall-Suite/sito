@@ -2,6 +2,40 @@
  "updated": "2026-11-02",
  "releases": [
   {
+   "version": "3.87.8",
+   "date": "2026-11-02",
+   "title": "Riepilogo in due righe",
+   "highlights": [
+    "Riepilogo con cassa precedente e cassa del giorno in alto",
+    "Risultato della giornata ed esito nella seconda riga"
+   ],
+   "groups": [
+    {
+     "title": "Riepilogo di chiusura",
+     "items": [
+      "<strong>Due righe da due riquadri</strong> — Nel riepilogo «Totale contanti in sala» (email e PDF) in alto ci sono la cassa precedente e la cassa del giorno, con cassetto e cassaforte; sotto il risultato della giornata e l'esito della cassa. Il riquadro della cassaforte non c'è più: è già nella cassa del giorno."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Summary in two rows",
+    "highlights": [
+     "Summary with previous cash and day's cash at the top",
+     "Result of the day and outcome in the second row"
+    ],
+    "groups": [
+     {
+      "title": "Closing summary",
+      "items": [
+       "<strong>Two rows of two boxes</strong> — In the «Total cash in the room» summary (email and PDF) the top row shows the previous cash and the day's cash, with drawer and safe; below, the result of the day and the cash outcome. The safe box is gone: it is already in the day's cash."
+      ]
+     }
+    ],
+    "summary": "Closing summary in two rows: previous and day's cash, then result and outcome."
+   },
+   "summary": "Riepilogo in due righe: cassa precedente e del giorno, poi risultato ed esito."
+  },
+  {
    "version": "3.87.7",
    "date": "2026-11-02",
    "title": "Documenti delle giornate chiuse",
