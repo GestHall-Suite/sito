@@ -2,6 +2,46 @@
  "updated": "2026-11-02",
  "releases": [
   {
+   "version": "3.87.6",
+   "date": "2026-11-02",
+   "title": "Testata o resoconto a lato",
+   "highlights": [
+    "Conti del turno nella testata o nel resoconto a lato",
+    "Scassettamenti di nuovo stretti, in una colonna",
+    "Riquadri chiusi senza sovrapposizioni"
+   ],
+   "groups": [
+    {
+     "title": "Cassa giornaliera",
+     "items": [
+      "<strong>Testata o resoconto a lato</strong> — In Personalizza → Riepilogo del turno scegli dove leggere i conti: nella testata fissa oppure nel resoconto a sinistra o a destra (la testata resta con giorno e turni).",
+      "<strong>Scassettamenti stretti</strong> — Gli scassettamenti stanno in una colonna come gli altri riquadri; con «Larghi» tornano su tutta la riga con i fornitori affiancati.",
+      "<strong>Riquadri chiusi</strong> — Chiudendo AWP e Ticket residui sugli schermi larghi i riquadri non si sovrappongono più."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Header or side summary",
+    "highlights": [
+     "Shift totals in the header or in the side summary",
+     "VLT collections narrow again, in one column",
+     "Collapsed boxes no longer overlap"
+    ],
+    "groups": [
+     {
+      "title": "Daily cash sheet",
+      "items": [
+       "<strong>Header or side summary</strong> — In Customize → Shift summary choose where to read the totals: in the fixed header or in the summary on the left or right (the header keeps the day and shifts).",
+       "<strong>Narrow VLT collections</strong> — VLT collections sit in one column like the other boxes; choose «Wide» to spread them across the row with providers side by side.",
+       "<strong>Collapsed boxes</strong> — Collapsing AWP and leftover tickets on wide screens no longer makes the boxes overlap."
+      ]
+     }
+    ],
+    "summary": "Shift totals in the header or in the side summary; narrow VLT collections."
+   },
+   "summary": "Conti del turno nella testata o nel resoconto a lato; scassettamenti stretti."
+  },
+  {
    "version": "3.87.5",
    "date": "2026-11-02",
    "title": "Giornaliero senza spazi vuoti",
