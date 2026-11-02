@@ -1,6 +1,40 @@
 {
- "updated": "2026-10-25",
+ "updated": "2026-11-02",
  "releases": [
+  {
+   "version": "3.87.5",
+   "date": "2026-11-02",
+   "title": "Giornaliero senza spazi vuoti",
+   "highlights": [
+    "I riquadri del giornaliero si incastrano a mosaico",
+    "Niente più spazi bianchi sotto i riquadri corti"
+   ],
+   "groups": [
+    {
+     "title": "Cassa giornaliera",
+     "items": [
+      "<strong>Riquadri a mosaico</strong> — Sul computer ogni riquadro è alto quanto il suo contenuto e quello successivo sale a riempire la colonna: niente più spazi vuoti sotto Contanti, Ticket o AWP, e i fornitori degli scassettamenti non si allungano a vuoto."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Daily cash sheet without empty gaps",
+    "highlights": [
+     "Daily cash sheet boxes fit together like a mosaic",
+     "No more white space under short boxes"
+    ],
+    "groups": [
+     {
+      "title": "Daily cash sheet",
+      "items": [
+       "<strong>Mosaic boxes</strong> — On the computer each box is as tall as its content and the next one moves up to fill the column: no more empty space under Cash, Tickets or AWP, and the VLT provider columns no longer stretch."
+      ]
+     }
+    ],
+    "summary": "Daily cash sheet boxes fit together without empty gaps."
+   },
+   "summary": "I riquadri del giornaliero si incastrano senza spazi vuoti."
+  },
   {
    "version": "3.87.4",
    "date": "2026-11-02",
