@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-30
 
+- Changelog: voce 3.87.1 (cassaforte per tagli).
 - Changelog: voce 3.87.0 (un giornaliero su misura); piani, guida e pagina Cassa: giornaliero personalizzabile al posto dei layout Classico/Avanzato.
 - Changelog: voce 3.86.1 (uscite dalla cassaforte).
 - Changelog: voce 3.86.0 (cassa precedente e cassaforte); guida, pagine Cassa e Bar e clienti, piani: uscite/entrate, Prestiti, cassa precedente.
