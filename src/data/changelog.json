@@ -2,6 +2,44 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.87.3",
+   "date": "2026-11-02",
+   "title": "Turno notturno dopo mezzanotte",
+   "highlights": [
+    "Dopo mezzanotte la cassa resta sulla giornata del turno notturno",
+    "Anche se l'orario del turno è appena finito",
+    "La dashboard mostra e apre la stessa giornata"
+   ],
+   "groups": [
+    {
+     "title": "Cassa giornaliera",
+     "items": [
+      "<strong>Turno notturno</strong> — Chi scassetta e conta dopo mezzanotte, anche dopo la fine dell'orario del turno, apre la cassa sulla giornata del turno notturno finché la giornata è aperta (fino alle 6 del mattino).",
+      "<strong>Dashboard</strong> — Incasso di oggi, stato della giornata e «Apri cassa» del responsabile seguono la stessa giornata."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Night shift after midnight",
+    "highlights": [
+     "After midnight the daily cash stays on the night shift's day",
+     "Even if the shift has just ended",
+     "The dashboard shows and opens the same day"
+    ],
+    "groups": [
+     {
+      "title": "Daily cash",
+      "items": [
+       "<strong>Night shift</strong> — Whoever collects and counts after midnight, even after the shift's end time, opens the daily cash on the night shift's day while that day is open (until 6 a.m.).",
+       "<strong>Dashboard</strong> — The manager's today takings, day status and «Open cash» follow the same day."
+      ]
+     }
+    ],
+    "summary": "After midnight the daily cash stays on the night shift's day."
+   },
+   "summary": "Dopo mezzanotte la cassa resta sulla giornata del turno notturno."
+  },
+  {
    "version": "3.87.2",
    "date": "2026-11-02",
    "title": "Ticket residui in un riquadro",
