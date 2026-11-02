@@ -2,6 +2,44 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.87.2",
+   "date": "2026-11-02",
+   "title": "Ticket residui in un riquadro",
+   "highlights": [
+    "Ticket residui separati dai ticket pagati",
+    "Stesse righe dei ticket pagati",
+    "Riquadro spostabile e richiudibile"
+   ],
+   "groups": [
+    {
+     "title": "Cassa giornaliera",
+     "items": [
+      "<strong>Ticket residui a parte</strong> — I ticket residui hanno un riquadro tutto loro dopo i ticket pagati, con le stesse righe: piattaforma, importo allineato e totale in fondo.",
+      "<strong>Come gli altri riquadri</strong> — Si sposta dall'ordine dei riquadri in Personalizza e si chiude toccando il titolo."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Ticket remainders in their own panel",
+    "highlights": [
+     "Ticket remainders separate from paid tickets",
+     "Same rows as paid tickets",
+     "Panel can be moved and collapsed"
+    ],
+    "groups": [
+     {
+      "title": "Daily cash",
+      "items": [
+       "<strong>Ticket remainders on their own</strong> — Ticket remainders have their own panel after paid tickets, with the same rows: platform, aligned amount and total at the bottom.",
+       "<strong>Like the other panels</strong> — Move it from the panel order in Customise and collapse it by tapping the title."
+      ]
+     }
+    ],
+    "summary": "Ticket remainders in their own panel, with the same rows as paid tickets."
+   },
+   "summary": "Ticket residui in un riquadro a sé, con le stesse righe dei ticket pagati."
+  },
+  {
    "version": "3.87.1",
    "date": "2026-11-02",
    "title": "Cassaforte per tagli",
