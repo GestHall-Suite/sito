@@ -2,6 +2,38 @@
  "updated": "2026-11-02",
  "releases": [
   {
+   "version": "3.87.7",
+   "date": "2026-11-02",
+   "title": "Documenti delle giornate chiuse",
+   "highlights": [
+    "I documenti di una giornata chiusa si caricano appena scelti"
+   ],
+   "groups": [
+    {
+     "title": "Chiusure",
+     "items": [
+      "<strong>Documenti caricati subito</strong> — In Chiusure → Chiuse i file scelti con «+ Documenti» si aggiungono subito alla giornata, con la barra di avanzamento: non serve più premere «Allega documenti» in fondo alla pagina e ricaricando non si perdono."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Documents for closed days",
+    "highlights": [
+     "Documents for a closed day upload as soon as you pick them"
+    ],
+    "groups": [
+     {
+      "title": "Closings",
+      "items": [
+       "<strong>Documents uploaded right away</strong> — In Closings → Closed the files picked with «+ Documents» are added to the day straight away, with the progress bar: no need to press «Attach documents» at the bottom, and reloading no longer loses them."
+      ]
+     }
+    ],
+    "summary": "Documents for closed days upload as soon as you pick them."
+   },
+   "summary": "I documenti delle giornate chiuse si caricano appena scelti."
+  },
+  {
    "version": "3.87.6",
    "date": "2026-11-02",
    "title": "Testata o resoconto a lato",

@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-30
 
+- Changelog: voce 3.87.7 (documenti delle giornate chiuse).
 - Changelog: voce 3.87.6 (testata o resoconto a lato).
 - Changelog: voce 3.87.5 (giornaliero senza spazi vuoti).
 - Changelog: voce 3.87.4 (riepilogo: prima la cassa precedente).
