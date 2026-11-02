@@ -2,6 +2,48 @@
  "updated": "2026-10-25",
  "releases": [
   {
+   "version": "3.86.1",
+   "date": "2026-11-02",
+   "title": "Uscite dalla cassaforte",
+   "highlights": [
+    "«Uscita dalla cassaforte» per i contanti che escono dalla sala",
+    "L'uscita compare tra le uscite del giornaliero e del riepilogo",
+    "«Altro contante nel cassetto» si aggiorna da solo",
+    "Avanzo e ammanco senza il nome dell'operatore"
+   ],
+   "groups": [
+    {
+     "title": "Cassa",
+     "items": [
+      "Nuovo pulsante «Uscita dalla cassaforte» nel giornaliero, con la nota di a chi o per cosa: l'importo esce dalla sala ed è scritto tra le uscite del giorno, nella testata e nel riepilogo di chiusura.",
+      "Il campo «Da versare nel cassetto» si chiama «Altro contante nel cassetto» e si aggiorna da solo con Prendi e Metti: l'operatore non deve toccarlo.",
+      "Nel riepilogo avanzo e ammanco non ripetono il nome dell'operatore, già scritto in alto."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Outflows from the safe",
+    "summary": "Cash taken from the safe that leaves the room is recorded as an outflow, so the next day's count adds up.",
+    "highlights": [
+     "«Out of the safe» for cash that leaves the room",
+     "The outflow appears among the daily cash and summary expenses",
+     "«Other cash in the drawer» updates by itself",
+     "Surplus and shortage without the operator's name"
+    ],
+    "groups": [
+     {
+      "title": "Cash",
+      "items": [
+       "New «Out of the safe» button in the daily cash, with a note of to whom or for what: the amount leaves the room and is listed among the day's expenses, in the header and in the closing summary.",
+       "The «To deposit in the drawer» field is now «Other cash in the drawer» and updates by itself with Take and Put: the operator doesn't need to touch it.",
+       "In the summary, surplus and shortage no longer repeat the operator's name, already shown at the top."
+      ]
+     }
+    ]
+   },
+   "summary": "I contanti presi dalla cassaforte che escono dalla sala si registrano come uscita e i conti del giorno dopo tornano."
+  },
+  {
    "version": "3.86.0",
    "date": "2026-11-02",
    "title": "Cassa precedente e cassaforte",
