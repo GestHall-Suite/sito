@@ -2,6 +2,44 @@
  "updated": "2026-11-02",
  "releases": [
   {
+   "version": "3.93.0",
+   "date": "2026-11-03",
+   "title": "Settimanale semplificato",
+   "summary": "Nel Settimanale c'è una vista semplificata con solo incasso VLT, ticket pagati e differenza; CSV e Stampa chiedono se esportare tutto o solo questi totali.",
+   "highlights": [
+    "Vista semplificata del Settimanale",
+    "Incasso VLT − ticket pagati",
+    "Export completo o semplificato"
+   ],
+   "groups": [
+    {
+     "title": "Report",
+     "items": [
+      "Nel Settimanale il selettore Completa · Semplificata mostra solo incasso VLT, uscite (ticket pagati) e la differenza, per giornata e in totale.",
+      "CSV e Stampa chiedono se esportare la versione completa o quella semplificata."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Simplified weekly report",
+    "summary": "The weekly report has a simplified view with only VLT takings, tickets paid and the difference; CSV and Print ask whether to export everything or just these totals.",
+    "highlights": [
+     "Simplified weekly view",
+     "VLT takings − tickets paid",
+     "Full or simplified export"
+    ],
+    "groups": [
+     {
+      "title": "Reports",
+      "items": [
+       "In the weekly report the Full · Simplified switch shows only VLT takings, outgoings (tickets paid) and the difference, per day and in total.",
+       "CSV and Print ask whether to export the full or the simplified version."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.92.0",
    "date": "2026-11-03",
    "title": "Banco a passi",
