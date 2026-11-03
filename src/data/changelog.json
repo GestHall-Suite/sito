@@ -2,6 +2,45 @@
  "updated": "2026-11-02",
  "releases": [
   {
+   "version": "3.89.0",
+   "date": "2026-11-03",
+   "title": "Contanti del bar: cassetto e cassaforte",
+   "highlights": [
+    "Contanti del bar nel cassetto, in cassaforte o in parte",
+    "Stessa cassaforte della sala, senza toccarne i conti",
+    "Fondo del bar del giorno dopo proposto da solo"
+   ],
+   "groups": [
+    {
+     "title": "Bar e chiusure",
+     "items": [
+      "In Chiusure, nel riquadro del bar, si sceglie dove restano i contanti come per la sala: tutto nel cassetto del bar, in cassaforte (nel cassetto resta il fondo di apertura) o in parte, scrivendo quanto resta.",
+      "La parte del bar entra nella cassaforte della sala e compare nei movimenti come «Bar, chiusura del …», senza cambiare i conti della sala di quel giorno.",
+      "Il giorno dopo il fondo del bar è proposto da solo nel Banco e in Chiusure; il riepilogo di chiusura dice quanto è andato in cassaforte e quanto resta nel cassetto del bar."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Bar cash: drawer and safe",
+    "highlights": [
+     "Bar cash in the drawer, in the safe or split",
+     "Same safe as the hall, without changing its figures",
+     "Next day's bar float suggested automatically"
+    ],
+    "groups": [
+     {
+      "title": "Bar and closings",
+      "items": [
+       "In Closings, in the bar box, you choose where the cash stays, as for the hall: all in the bar drawer, in the safe (the opening float stays in the drawer) or split, writing how much stays.",
+       "The bar's share goes into the hall safe and appears in the movements as «Bar, closing of …», without changing the hall figures of that day.",
+       "The next day the bar float is suggested automatically at the counter and in Closings; the closing summary shows how much went into the safe and how much stays in the bar drawer."
+      ]
+     }
+    ]
+   },
+   "summary": "Alla chiusura del bar si sceglie se i contanti restano nel cassetto del bar o vanno nella cassaforte della sala, e il giorno dopo il fondo del bar è proposto da solo."
+  },
+  {
    "version": "3.88.0",
    "date": "2026-11-03",
    "title": "Menu del bar: tre impaginazioni e nomi generali",
