@@ -2,6 +2,60 @@
  "updated": "2026-11-02",
  "releases": [
   {
+   "version": "3.94.0",
+   "date": "2026-11-03",
+   "title": "Report semplificati e anteprima dei reinvii",
+   "summary": "Mensile e Annuale hanno la vista semplificata come il Settimanale (incasso VLT, ticket pagati e differenza) e ogni export chiede completo o semplificato. Prima di inviare di nuovo l'email delle giornate chiuse se ne vede l'anteprima, e con Maiusc + clic si scelgono tante giornate di seguito.",
+   "highlights": [
+    "Mensile e Annuale semplificati",
+    "Export completo o semplificato ovunque",
+    "Anteprima dell'email prima del reinvio",
+    "Maiusc + clic per scegliere più giornate"
+   ],
+   "groups": [
+    {
+     "title": "Report",
+     "items": [
+      "Nel Mensile e nell'Annuale il selettore Completa · Semplificata mostra solo incasso VLT, uscite (ticket pagati) e differenza, per giorno o per mese.",
+      "CSV, Excel e Stampa chiedono se esportare la versione completa o quella semplificata."
+     ]
+    },
+    {
+     "title": "Chiusure",
+     "items": [
+      "«Anteprima email» nelle giornate chiuse mostra a chi arriva, l'oggetto, gli allegati e il testo, anche per un'email per giornata.",
+      "Maiusc + clic su una giornata sceglie anche tutte quelle in mezzo (giornate da chiudere, chiuse e da versare)."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Simplified reports and resend preview",
+    "summary": "The monthly and yearly reports get the same simplified view as the weekly one (VLT takings, tickets paid and difference), and every export asks for full or simplified. Before resending the email of closed days you see a preview, and Shift + click selects many days in a row.",
+    "highlights": [
+     "Simplified monthly and yearly",
+     "Full or simplified export everywhere",
+     "Email preview before resending",
+     "Shift + click to select many days"
+    ],
+    "groups": [
+     {
+      "title": "Reports",
+      "items": [
+       "In the monthly and yearly reports the Full · Simplified switch shows only VLT takings, outgoings (tickets paid) and difference, per day or per month.",
+       "CSV, Excel and Print ask whether to export the full or the simplified version."
+      ]
+     },
+     {
+      "title": "Closings",
+      "items": [
+       "«Email preview» on closed days shows recipients, subject, attachments and text, also for one email per day.",
+       "Shift + click on a day also selects all the ones in between (days to close, closed and to deposit)."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.93.0",
    "date": "2026-11-03",
    "title": "Settimanale semplificato",

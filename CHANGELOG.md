@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-30
 
+- Changelog: voce 3.94.0 (Report semplificati e anteprima dei reinvii).
 - Changelog: voce 3.93.0 (Settimanale semplificato).
 - Changelog: voce 3.92.0 (Banco a passi).
 - Changelog: voce 3.91.0 (Banco e Ordini più semplici).
