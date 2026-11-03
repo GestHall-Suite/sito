@@ -2,6 +2,47 @@
  "updated": "2026-11-02",
  "releases": [
   {
+   "version": "3.88.0",
+   "date": "2026-11-03",
+   "title": "Menu del bar: tre impaginazioni e nomi generali",
+   "highlights": [
+    "Menu del bar in tre impaginazioni: elenco, fasce di prezzo, listino",
+    "Una pagina o fronte e retro",
+    "«Nome nel menu» per un menu generale, con le marche nei report",
+    "Listino con varianti e colonne Shot e Bicchiere"
+   ],
+   "groups": [
+    {
+     "title": "Bar",
+     "items": [
+      "Il menu stampabile si impagina in tre modi: Elenco (un prodotto per riga con i puntini), Fasce di prezzo (il prezzo una volta e i prodotti sotto) e Listino (varianti sotto il prodotto, come «Gin tonic · premium 8», e colonne Shot e Bicchiere per amari e distillati).",
+      "Il menu può stare su una pagina o su due, fronte e retro.",
+      "Ogni prodotto ha un «Nome nel menu»: prodotti della stessa sezione con lo stesso nome nel menu e lo stesso prezzo diventano una riga (Tanqueray e Bombay → «Gin premium»). Il menu resta generale anche se cambiate marca, mentre al banco e nei report di vendite e offerte si segna il prodotto preciso. Il campo è anche nel modello Excel del magazzino."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Bar menu: three layouts and general names",
+    "highlights": [
+     "Bar menu in three layouts: list, price bands, price list",
+     "One page or front and back",
+     "«Name on the menu» for a general menu, with brands in the reports",
+     "Price list with variants and Shot and Glass columns"
+    ],
+    "groups": [
+     {
+      "title": "Bar",
+      "items": [
+       "The printable menu has three layouts: List (one product per line with dot leaders), Price bands (the price once and the products below) and Price list (variants under the product, like «Gin tonic · premium 8», and Shot and Glass columns for liqueurs and spirits).",
+       "The menu can fit on one page or on two, front and back.",
+       "Each product has a «Name on the menu»: products in the same section with the same menu name and price become one line (Tanqueray and Bombay → «Premium gin»). The menu stays general even if you change brand, while at the counter and in the sales and offers reports the exact product is recorded. The field is also in the warehouse Excel template."
+      ]
+     }
+    ]
+   },
+   "summary": "Il menu stampabile del bar si impagina in tre modi (elenco, fasce di prezzo, listino) su una pagina o fronte e retro, e può restare generale («Gin premium») mentre al banco si segna la marca."
+  },
+  {
    "version": "3.87.12",
    "date": "2026-11-03",
    "title": "Menu del bar su una pagina",

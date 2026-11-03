@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-30
 
+- Changelog: voce 3.88.0 (menu del bar: tre impaginazioni e nomi generali).
 - Changelog: voce 3.87.12 (menu del bar su una pagina).
 - Changelog: voce 3.87.11 (documenti delle chiusure, eliminazione multipla).
 - Changelog: voce 3.87.10 (foto in PDF a scelta).
