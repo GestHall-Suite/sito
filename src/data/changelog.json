@@ -2,6 +2,43 @@
  "updated": "2026-11-02",
  "releases": [
   {
+   "version": "3.87.12",
+   "date": "2026-11-03",
+   "title": "Menu del bar su una pagina",
+   "highlights": [
+    "Prodotti con lo stesso prezzo in una riga nel menu",
+    "Menu lunghi su un A4 leggibile",
+    "Misura («330 ml») accanto al nome nel menu e al Banco"
+   ],
+   "groups": [
+    {
+     "title": "Bar",
+     "items": [
+      "Nel menu stampabile i prodotti di una sezione con lo stesso prezzo diventano una riga: il prezzo una volta e i nomi in fila (nella sezione Shot senza ripetere «Shot»). Di base succede solo quando il menu non ci sta in una pagina; si sceglie nelle impostazioni del menu.",
+      "Il contenuto del prodotto («330 ml») compare da solo, in piccolo, accanto al nome nel menu e sui riquadri del Banco: non serve più scriverlo nel nome."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Bar menu on one page",
+    "highlights": [
+     "Products with the same price on one line in the menu",
+     "Long menus on a readable A4",
+     "Size («330 ml») next to the name in the menu and at the counter"
+    ],
+    "groups": [
+     {
+      "title": "Bar",
+      "items": [
+       "In the printable menu, products in a section with the same price become one line: the price once and the names in a row (in the Shot section without repeating «Shot»). By default this happens only when the menu doesn't fit on one page; it can be chosen in the menu settings.",
+       "The product size («330 ml») appears on its own, small, next to the name in the menu and on the counter tiles: no need to write it in the name any more."
+      ]
+     }
+    ]
+   },
+   "summary": "Il menu stampabile del bar mette in una riga i prodotti con lo stesso prezzo, così anche un menu lungo sta su un A4; la misura dei prodotti compare da sola accanto al nome."
+  },
+  {
    "version": "3.87.11",
    "date": "2026-11-02",
    "title": "Documenti delle chiusure: più insieme e dal giornaliero",
