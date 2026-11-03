@@ -2,6 +2,55 @@
  "updated": "2026-11-02",
  "releases": [
   {
+   "version": "3.90.0",
+   "date": "2026-11-03",
+   "title": "Bar: Banco e Premium",
+   "summary": "Tutto il bar è ordinato come un albero dei prodotti (reparto, famiglia, tipo) e diviso in Banco e Premium: il Banco si può offrire o far pagare, il Premium si paga sempre. Banco, Magazzino, Ordini e Report hanno la ricerca, e il Report si legge come il riepilogo di chiusura.",
+   "highlights": [
+    "Prodotti divisi in Banco (si offre o si fa pagare) e Premium (si paga sempre)",
+    "Banco per tablet: famiglie, tipi e ricerca",
+    "Magazzino e Ordini con ricerca e filtri",
+    "Report del bar con entrate e uscite, come la chiusura"
+   ],
+   "groups": [
+    {
+     "title": "Bar",
+     "items": [
+      "I prodotti stanno in un albero: reparto (Beverage, Salatini ai clienti, Magazzino), famiglia (Caffetteria, Distillati, Birre, Bollicina, Vino, Analcolici), tipo (Gin, Vodka, Prosecco…) e Banco o Premium.",
+      "Un prodotto Banco si può offrire al cliente o far pagare, un Premium si paga sempre: al Banco in modalità Offerta i Premium sono spenti.",
+      "Al Banco in alto la ricerca, sotto le famiglie e i tipi, e i prodotti divisi in Banco e Premium; tutti i comandi sono grandi per il tablet.",
+      "Il Magazzino è un elenco unico per famiglia e tipo, con ricerca e filtri Tutti, Banco, Premium e Da riordinare; un tocco sul nome apre il prodotto.",
+      "Negli Ordini si cerca nel magazzino per nome, famiglia, tipo o Banco/Premium, con la giacenza e il minimo accanto.",
+      "Il Report ha «Cassa del bar» e «Guadagno del periodo» scritti con entrate e uscite, come il riepilogo di chiusura, e «Venduto e offerto» per famiglia e tipo.",
+      "Nel file Excel del magazzino «Banco o Premium» è la seconda colonna, con Reparto, Famiglia e Tipo."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Bar: Counter and Premium",
+    "highlights": [
+     "Products split into Counter (free or charged) and Premium (always paid)",
+     "Counter for tablets: families, types and search",
+     "Stock and Orders with search and filters",
+     "Bar report with income and outgoings, like the closing"
+    ],
+    "groups": [
+     {
+      "title": "Bar",
+      "items": [
+       "Products sit in a tree: department (Beverage, Snacks for customers, Stock), family (Coffee bar, Spirits, Beers, Sparkling, Wine, Soft drinks), type (Gin, Vodka, Prosecco…) and Counter or Premium.",
+       "A Counter product can be given free or charged, a Premium one is always paid: in Free mode at the counter Premium products are off.",
+       "At the counter the search is on top, then families and types, and products split into Counter and Premium; every control is large for tablets.",
+       "The Stock is a single list by family and type, with search and All, Counter, Premium and To reorder filters; tapping the name opens the product.",
+       "In Orders you search the stock by name, family, type or Counter/Premium, with stock and minimum alongside.",
+       "The Report has «Bar till» and «Profit for the period» written as income and outgoings, like the closing summary, and «Sold and given free» by family and type.",
+       "In the stock Excel file «Counter or Premium» is the second column, with Department, Family and Type."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.89.1",
    "date": "2026-11-03",
    "title": "Cassa del bar nel Report",
