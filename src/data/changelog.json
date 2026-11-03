@@ -2,6 +2,50 @@
  "updated": "2026-11-02",
  "releases": [
   {
+   "version": "3.92.0",
+   "date": "2026-11-03",
+   "title": "Banco a passi",
+   "summary": "Al Banco si sceglie un passo alla volta con riquadri grandi: famiglia, tipo, prodotto. Ricerca e percorso restano in alto, Offri, Contanti e POS restano in basso.",
+   "highlights": [
+    "Famiglia → tipo → prodotto a riquadri grandi",
+    "Un tocco aggiunge, il − sul riquadro toglie",
+    "Ricerca e percorso sempre in vista",
+    "Il Banco riapre dove eri"
+   ],
+   "groups": [
+    {
+     "title": "Bar",
+     "items": [
+      "Al Banco si sceglie prima la famiglia (con «Più usati» per primo), poi il tipo (Gin, Vodka, Rum…) e infine il prodotto, tutto a riquadri grandi pensati per il tablet.",
+      "Un tocco sul prodotto aggiunge uno, il «−» sul riquadro toglie e il numero in alto dice quanti ne hai messi; i prodotti restano divisi in Banco e Premium.",
+      "La ricerca e il percorso («Tutto › Distillati › Gin», con la freccia per tornare indietro) restano fermi in alto mentre si scorre; Offri, Contanti e POS restano fermi in basso.",
+      "Dopo una vendita il Banco riapre al passo in cui eri, così il giro successivo è più veloce."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Counter in steps",
+    "summary": "At the counter you choose one step at a time with large tiles: family, type, product. Search and path stay at the top, Give free, Cash and Card stay at the bottom.",
+    "highlights": [
+     "Family → type → product with large tiles",
+     "One tap adds, the − on the tile removes",
+     "Search and path always in view",
+     "The counter reopens where you were"
+    ],
+    "groups": [
+     {
+      "title": "Bar",
+      "items": [
+       "At the counter you first pick the family (with «Most used» first), then the type (Gin, Vodka, Rum…) and finally the product, all with large tiles made for tablets.",
+       "One tap on a product adds one, the «−» on the tile removes one and the number at the top shows how many you added; products stay split into Counter and Premium.",
+       "Search and path («All › Spirits › Gin», with the arrow to go back) stay fixed at the top while scrolling; Give free, Cash and Card stay fixed at the bottom.",
+       "After a sale the counter reopens at the step you were on, so the next round is faster."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.91.0",
    "date": "2026-11-03",
    "title": "Bar: Banco e Ordini più semplici",
