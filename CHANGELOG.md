@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-10-30
 
+- Changelog: voce 3.90.0 (Bar: Banco e Premium).
 - Changelog: voce 3.89.1 (cassa del bar nel Report).
 - Changelog: voce 3.89.0 (contanti del bar: cassetto e cassaforte).
 - Changelog: voce 3.88.0 (menu del bar: tre impaginazioni e nomi generali).
