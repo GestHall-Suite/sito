@@ -2,6 +2,52 @@
  "updated": "2026-11-02",
  "releases": [
   {
+   "version": "3.91.0",
+   "date": "2026-11-03",
+   "title": "Bar: Banco e Ordini più semplici",
+   "summary": "Banco e Ordini del bar hanno lo stesso schema pensato per il tablet: famiglie a sinistra, prodotti come righe grandi con + e −, una sola barra in basso. Al Banco si sceglie alla fine tra Offri, Contanti e POS; negli Ordini si parte da ciò che va riordinato.",
+   "highlights": [
+    "Banco a righe: un tocco aggiunge, − e + sulla riga",
+    "Offri · Contanti · POS in un tocco, senza scegliere prima",
+    "Ordini: «Da riordinare» con le quantità proposte",
+    "Salva l'ordine o salvalo e invialo subito"
+   ],
+   "groups": [
+    {
+     "title": "Bar",
+     "items": [
+      "Al Banco le famiglie sono in colonna a sinistra e i prodotti sono righe grandi: un tocco aggiunge uno, − e + sono sulla riga, «Nell'ordine» mostra solo ciò che hai scelto.",
+      "Non si sceglie più prima tra Vendita e Offerta: alla fine si tocca Offri, Contanti o POS. «Offri» si accende solo con prodotti Banco; con un Premium la barra ricorda di far pagare.",
+      "Toccando il totale si apre il riepilogo con i prezzi da cambiare per quella vendita e il documento (scontrino, fattura o senza).",
+      "Negli Ordini la scheda «Prepara» funziona come il Banco e parte da «Da riordinare»: il primo tocco mette la quantità proposta, oppure si aggiungono tutte insieme.",
+      "Dalla ricerca si aggiunge anche un articolo fuori magazzino (limoni, bicchieri…); in fondo si sceglie il fornitore e si salva la bozza o la si salva e invia subito per email o WhatsApp."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Bar: simpler Counter and Orders",
+    "summary": "Counter and Orders share the same tablet layout: families on the left, products as large rows with + and −, a single bar at the bottom. At the counter you choose at the end between Give free, Cash and Card; Orders start from what needs reordering.",
+    "highlights": [
+     "Counter as rows: one tap adds, − and + on the row",
+     "Give free · Cash · Card in one tap, no mode to choose first",
+     "Orders: «To reorder» with suggested quantities",
+     "Save the order or save and send it right away"
+    ],
+    "groups": [
+     {
+      "title": "Bar",
+      "items": [
+       "At the counter families are in a column on the left and products are large rows: one tap adds one, − and + are on the row, «In the order» shows only what you picked.",
+       "No more choosing Sale or Free first: at the end you tap Give free, Cash or Card. «Give free» lights up only with Counter products; with a Premium the bar reminds you to charge.",
+       "Tapping the total opens the summary with prices to change for that sale and the document (receipt, invoice or none).",
+       "In Orders the «Prepare» tab works like the counter and starts from «To reorder»: the first tap sets the suggested quantity, or add them all at once.",
+       "From the search you can also add an item outside the stock (lemons, glasses…); at the bottom you pick the supplier and save the draft or save and send it right away by email or WhatsApp."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.90.0",
    "date": "2026-11-03",
    "title": "Bar: Banco e Premium",
