@@ -2,6 +2,41 @@
  "updated": "2026-11-02",
  "releases": [
   {
+   "version": "3.89.1",
+   "date": "2026-11-03",
+   "title": "Cassa del bar nel Report",
+   "highlights": [
+    "Cassa del bar dal fondo iniziale ai contanti nel cassetto",
+    "Colonna «Fondo» nel Report per giornata"
+   ],
+   "groups": [
+    {
+     "title": "Bar",
+     "items": [
+      "Nel Report del bar il riquadro «Cassa del bar» parte dal fondo iniziale e arriva ai contanti nel cassetto, con vendite in contanti, spese pagate con la cassa e contanti messi in cassaforte.",
+      "La tabella «Per giornata» mostra il fondo di ogni giorno."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Bar till in the Report",
+    "highlights": [
+     "Bar till from the opening float to the cash in the drawer",
+     "«Float» column in the daily Report"
+    ],
+    "groups": [
+     {
+      "title": "Bar",
+      "items": [
+       "In the bar Report the «Bar till» box starts from the opening float and ends with the cash in the drawer, with cash sales, expenses paid from the till and cash put in the safe.",
+       "The «By day» table shows each day's float."
+      ]
+     }
+    ]
+   },
+   "summary": "Il Report del bar mostra la cassa del bar dal fondo iniziale ai contanti nel cassetto, e il fondo di ogni giorno."
+  },
+  {
    "version": "3.89.0",
    "date": "2026-11-03",
    "title": "Contanti del bar: cassetto e cassaforte",
