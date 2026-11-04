@@ -2,6 +2,76 @@
  "updated": "2026-11-02",
  "releases": [
   {
+   "version": "3.95.0",
+   "date": "2026-11-04",
+   "title": "App più veloce",
+   "summary": "Le pagine si aprono prima: i file dell'app restano sul dispositivo fino al prossimo aggiornamento, le pagine chiedono molti meno dati al database, notifiche e chat si aggiornano con una sola richiesta e notifiche ed email partono senza far aspettare. Quando qualcosa tarda compare subito la sua forma, e l'amministratore vede quanto ci mettono davvero le pagine sui telefoni e sui computer della sala.",
+   "highlights": [
+    "Pagine più veloci, soprattutto sul telefono",
+    "Forma della pagina mentre arriva",
+    "Notifiche ed email senza attese",
+    "Velocità reale in Impostazioni → Sistema"
+   ],
+   "groups": [
+    {
+     "title": "Velocità",
+     "items": [
+      "I file dell'app restano nel browser fino al prossimo aggiornamento e viaggiano compressi: dalla seconda pagina in poi si scarica quasi solo il contenuto.",
+      "Dashboard, Chiusure e Versamenti chiedono molti meno dati al database.",
+      "Notifiche, messaggi della chat e presenza online si aggiornano con una sola richiesta ogni 20 secondi, anche cambiando pagina.",
+      "Studio di stile e guida si caricano solo quando li apri.",
+      "Notifiche push ed email di chiusura partono dopo aver salvato: chi lavora non aspetta."
+     ]
+    },
+    {
+     "title": "Attese più chiare",
+     "items": [
+      "Se una pagina tarda compare subito la sua forma (dashboard, giornaliero, turni e le altre), come negli elenchi della chat, nelle viste dei turni, nei grafici e nelle anteprime."
+     ]
+    },
+    {
+     "title": "Sistema",
+     "items": [
+      "Impostazioni → Sistema → Velocità: quanto ci mettono le pagine sui telefoni e sui computer della sala negli ultimi 7 giorni, dalla più lenta."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Faster app",
+    "summary": "Pages open sooner: the app's files stay on the device until the next update, pages ask the database for far less, notifications and chat update with a single request, and notifications and emails are sent without making anyone wait. When something is slow its shape appears right away, and the administrator can see how long pages really take on the venue's phones and computers.",
+    "highlights": [
+     "Faster pages, especially on phones",
+     "Page shape while it loads",
+     "Notifications and emails without waiting",
+     "Real speed in Settings → System"
+    ],
+    "groups": [
+     {
+      "title": "Speed",
+      "items": [
+       "The app's files stay in the browser until the next update and travel compressed: from the second page on, almost only the content is downloaded.",
+       "Dashboard, Closings and Deposits ask the database for far less data.",
+       "Notifications, chat messages and online presence update with a single request every 20 seconds, even when changing page.",
+       "Style studio and guide load only when you open them.",
+       "Push notifications and closing emails are sent after saving: whoever is working never waits."
+      ]
+     },
+     {
+      "title": "Clearer waiting",
+      "items": [
+       "If a page is slow its shape appears right away (dashboard, daily sheet, shifts and the others), as in chat lists, shift views, charts and previews."
+      ]
+     },
+     {
+      "title": "System",
+      "items": [
+       "Settings → System → Speed: how long pages take on the venue's phones and computers over the last 7 days, slowest first."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.94.0",
    "date": "2026-11-03",
    "title": "Report semplificati e anteprima dei reinvii",
