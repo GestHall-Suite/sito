@@ -2,6 +2,44 @@
  "updated": "2026-11-02",
  "releases": [
   {
+   "version": "3.96.0",
+   "date": "2026-11-05",
+   "title": "Report che partono dal semplice",
+   "summary": "Settimanale, Mensile e Annuale si aprono con i tre numeri che contano; la vista completa spiega ogni colonna.",
+   "highlights": [
+    "I report si aprono nella vista semplificata",
+    "«Cosa sono questi valori» nella vista completa",
+    "Spiegazione sulle intestazioni delle colonne"
+   ],
+   "groups": [
+    {
+     "title": "Report",
+     "items": [
+      "Settimanale, Mensile e Annuale si aprono nella vista semplificata: incasso VLT, ticket pagati e differenza. La vista completa è a un clic e resta scelta cambiando settimana, mese o anno.",
+      "Sotto la tabella completa il riquadro «Cosa sono questi valori» spiega ogni colonna (incasso VLT, ticket, Bancomat, uscite, entrate, banconote oltre il fondo, contante incassato…); la stessa spiegazione compare passando sull'intestazione."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Reports that start simple",
+    "summary": "Weekly, Monthly and Yearly open with the three numbers that matter; the full view explains every column.",
+    "highlights": [
+     "Reports open in the simplified view",
+     "\"What these values mean\" in the full view",
+     "Explanations on column headers"
+    ],
+    "groups": [
+     {
+      "title": "Reports",
+      "items": [
+       "Weekly, Monthly and Yearly open in the simplified view: VLT takings, tickets paid and the difference. The full view is one click away and stays selected when you change week, month or year.",
+       "Below the full table, the \"What these values mean\" box explains every column (VLT takings, tickets, debit card, outgoings, incomings, banknotes above the float, cash taken…); the same explanation appears when hovering a header."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.95.0",
    "date": "2026-11-04",
    "title": "App più veloce",
