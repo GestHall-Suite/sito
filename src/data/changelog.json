@@ -1,6 +1,38 @@
 {
- "updated": "2026-11-02",
+ "updated": "2026-11-09",
  "releases": [
+  {
+   "version": "3.97.1",
+   "date": "2026-11-09",
+   "title": "Correzione del riepilogo di chiusura",
+   "summary": "Il salvataggio del modello del riepilogo di chiusura nelle Impostazioni dava un errore: ora funziona.",
+   "highlights": [
+    "Salvataggio del modello del riepilogo di chiusura"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "Impostazioni → Cassa giornaliera → Riepilogo di chiusura: scegliere e salvare il modello («Totale contanti in sala» o «Excel BNRD») non dà più un errore."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Closing summary fix",
+    "summary": "Saving the closing summary template in Settings returned an error: it now works.",
+    "highlights": [
+     "Saving the closing summary template"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "Settings → Daily cash → Closing summary: choosing and saving the template («Totale contanti in sala» or «Excel BNRD») no longer returns an error."
+      ]
+     }
+    ]
+   }
+  },
   {
    "version": "3.97.0",
    "date": "2026-11-09",

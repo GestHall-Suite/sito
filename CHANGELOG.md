@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-11-09
+
+- Changelog: voce 3.97.1 (correzione del salvataggio del modello del riepilogo di chiusura).
+
 ## 2026-10-30
 
 - Changelog: voce 3.97.0 (chiusure più chiare e modello Excel); pagina Cassa e turni: i due modelli del riepilogo; skill Ponytail in .claude/skills e regola in AGENTS.md.
