@@ -2,6 +2,90 @@
  "updated": "2026-11-02",
  "releases": [
   {
+   "version": "3.97.0",
+   "date": "2026-11-09",
+   "title": "Chiusure più chiare e modello Excel",
+   "summary": "Il riepilogo di chiusura può arrivare come il foglio Excel della sala, la pagina Chiusure è più semplice e il giornaliero non sposta più i riquadri.",
+   "highlights": [
+    "Riepilogo di chiusura come il foglio Excel della sala",
+    "Parti del riepilogo a scelta",
+    "Pagina Chiusure con sala e bar affiancati",
+    "Conteggio del cassetto del bar",
+    "Giornaliero con riquadri fermi e Risultato della giornata"
+   ],
+   "groups": [
+    {
+     "title": "Riepilogo di chiusura",
+     "items": [
+      "Nuovo modello «Excel BNRD»: email e PDF identici al foglio Excel della sala, con il Report Cassa VLT (scarichi e pagamenti per piattaforma, POS, altri metodi, refill, precassa, fatture, versamenti, banconote, cassaforte, differenza) e il Report Cassa Bar.",
+      "Nel modello «Totale contanti in sala» si sceglie cosa mostrare: note dei turni, banconote e monete, contanti in sala, ticket residui, offerte del bar, elenco dei documenti, oltre al dettaglio delle macchine e ai dati del bar.",
+      "Il vecchio «Foglio cassa» è stato tolto: chi lo usava passa a «Totale contanti in sala»."
+     ]
+    },
+    {
+     "title": "Chiusure",
+     "items": [
+      "Due schede, «Da chiudere» e «Chiuse»; ogni giornata mostra sala e bar affiancati con gli stessi passi e la domanda «Dove restano per domani?» in un solo controllo.",
+      "Alla chiusura si contano banconote e monete del cassetto del bar: il totale e l'eventuale avanzo o ammanco si vedono mentre si scrive."
+     ]
+    },
+    {
+     "title": "Cassa giornaliera",
+     "items": [
+      "I riquadri restano nella loro colonna: quando uno cresce o si chiude non salta più dall'altra parte della pagina.",
+      "Nella testata «Risultato della giornata» (entrate − uscite con avanzo o ammanco) prende il posto di «Cassetto di apertura»: prendere o mettere contante in cassaforte non lo cambia, e se i conti non tornano lo dice il riquadro dell'esito."
+     ]
+    },
+    {
+     "title": "Più leggera",
+     "items": [
+      "Tolto codice grafico non più usato e spostati in cache gli script del menu: pagine più leggere da scaricare."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Clearer closings and Excel template",
+    "summary": "The closing summary can arrive like the venue's Excel sheet, the Closings page is simpler and the daily till no longer moves its boxes.",
+    "highlights": [
+     "Closing summary like the venue's Excel sheet",
+     "Choose the parts of the summary",
+     "Closings page with venue and bar side by side",
+     "Bar drawer count",
+     "Daily till with fixed boxes and Result of the day"
+    ],
+    "groups": [
+     {
+      "title": "Closing summary",
+      "items": [
+       "New «Excel BNRD» template: email and PDF identical to the venue's Excel sheet, with the VLT Cash Report (collections and payouts per platform, POS, other methods, refills, pre-cash, invoices, deposits, banknotes, safe, difference) and the Bar Cash Report.",
+       "In the «Total cash in the venue» template you choose what to show: shift notes, banknotes and coins, cash in the venue, leftover tickets, bar giveaways, list of documents, besides the machine detail and the bar data.",
+       "The old «Cash sheet» template was removed: whoever used it moves to «Total cash in the venue»."
+      ]
+     },
+     {
+      "title": "Closings",
+      "items": [
+       "Two tabs, «To close» and «Closed»; each day shows venue and bar side by side with the same steps and the question «Where does it stay for tomorrow?» in a single control.",
+       "At closing you count the banknotes and coins in the bar drawer: the total and any surplus or shortfall appear as you type."
+      ]
+     },
+     {
+      "title": "Daily till",
+      "items": [
+       "Boxes stay in their column: when one grows or is collapsed it no longer jumps to the other side of the page.",
+       "In the header «Result of the day» (incomings − outgoings with surplus or shortfall) replaces «Opening drawer»: taking or putting cash in the safe does not change it, and if the figures do not add up the outcome box says so."
+      ]
+     },
+     {
+      "title": "Lighter",
+      "items": [
+       "Removed unused styling code and moved the menu scripts to the cache: lighter pages to download."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.96.0",
    "date": "2026-11-05",
    "title": "Report che partono dal semplice",
