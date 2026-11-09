@@ -13,6 +13,10 @@ Ogni modifica è tracciata:
 - **Pubblicazione**: ogni push su `main` va online da solo (`.github/workflows/pubblica.yml`): non lasciare su `main` lavori a metà.
 - Dopo le modifiche: `npm run build` senza errori, nessuno scorrimento orizzontale a 390 px, tema chiaro e scuro.
 
+## Ponytail
+
+Prima di ogni lavoro usare la skill `ponytail` (`.claude/skills/ponytail/SKILL.md`, MIT, da github.com/DietrichGebert/ponytail): la modifica più piccola che risolve tutto, togliere prima di aggiungere. Le regole di questo file restano sopra la skill.
+
 ## Lingue (.it / .com)
 
 - Il sito si scrive in **italiano**. `npm run build` esegue anche `scripts/lingue.mjs`: `dist/` → gesthallsuite.it (inglese in `/en/`), `dist-com/` → gesthallsuite.com (italiano in `/it/`). Pubblicare le due cartelle sui due domini.
