@@ -2,6 +2,38 @@
  "updated": "2026-11-10",
  "releases": [
   {
+   "version": "3.98.1",
+   "date": "2026-11-10",
+   "title": "Correzione della testata del giornaliero",
+   "summary": "I riquadri nascosti della testata restano nascosti anche aprendo il giornaliero da un'altra pagina.",
+   "highlights": [
+    "Testata del giornaliero come l'hai personalizzata"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "Aprendo il giornaliero da un'altra pagina con la radio attiva la testata mostrava anche i riquadri nascosti in Personalizza: ora segue sempre le tue scelte."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Daily sheet header fix",
+    "summary": "Hidden header boxes stay hidden when the daily sheet is opened from another page.",
+    "highlights": [
+     "Daily sheet header as you customised it"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "Opening the daily sheet from another page with the radio on showed the header boxes hidden in Customise: it now always follows your choices."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.98.0",
    "date": "2026-11-10",
    "title": "Cassaforte più semplice",
