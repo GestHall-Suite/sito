@@ -2,6 +2,38 @@
  "updated": "2026-11-10",
  "releases": [
   {
+   "version": "3.99.2",
+   "date": "2026-11-10",
+   "title": "Correzione della cassaforte delle giornate chiuse insieme",
+   "summary": "Cassa precedente e contanti in sala sono giusti anche quando più giornate si chiudono insieme qualche giorno dopo.",
+   "highlights": [
+    "Cassaforte giusta anche chiudendo più giornate insieme"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "Chiudendo più giornate insieme, il giorno dopo non vedeva in cassaforte il contante messo dalla chiusura del giorno prima: cassa precedente e contanti in sala del giornaliero, riepilogo di chiusura e foglio Excel BNRD ora contano le chiusure per giornata."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Safe fix for days closed together",
+    "summary": "Previous cash and cash on site are right even when several days are closed together a few days later.",
+    "highlights": [
+     "Correct safe even when closing several days together"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "When several days were closed together, the next day did not see in the safe the cash put there by the previous day's closing: previous cash and cash on site in the daily sheet, the closing summary and the Excel BNRD sheet now count closings by day."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.99.1",
    "date": "2026-11-10",
    "title": "Il «cosa fare» nella testata",
