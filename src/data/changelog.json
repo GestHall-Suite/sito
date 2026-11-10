@@ -2,6 +2,58 @@
  "updated": "2026-11-10",
  "releases": [
   {
+   "version": "4.0.0",
+   "date": "2026-11-10",
+   "title": "Nuovo marchio e «Chiedi all'AI»",
+   "summary": "Un marchio nuovo per tutta la suite e un assistente che spiega come si fa una cosa nell'app, senza ricevere dati della sala.",
+   "highlights": [
+    "Chiedi all'AI da «Cerca»: ti spiega come si fa",
+    "Nessun dato della sala esce verso l'assistente",
+    "Nuovo marchio «In quadra»"
+   ],
+   "groups": [
+    {
+     "title": "Novità",
+     "items": [
+      "Chiedi all'AI: apri «Cerca» nella barra laterale (Ctrl K), scrivi la domanda e scegli «Chiedi all'AI». Risponde su come si usa GestHall Suite, partendo dalla guida e dalle novità delle versioni. Si apre anche dal pulsante «?», dal benvenuto e, sul telefono, dal menu del profilo.",
+      "All'assistente arrivano solo la domanda, la pagina in cui sei e il tuo ruolo: mai importi, nomi o altri dati della sala."
+     ]
+    },
+    {
+     "title": "Modifiche",
+     "items": [
+      "Nuovo marchio «In quadra»: due pezzi che si incastrano e chiudono un quadrato, come la cassa che torna. Lo trovi nella barra laterale, nell'accesso, nell'icona dell'app sul telefono e sul sito.",
+      "Le videoguide sono state tolte: al loro posto c'è «Chiedi all'AI», sempre aggiornato con l'app."
+     ]
+    }
+   ],
+   "en": {
+    "title": "New brand and «Ask the AI»",
+    "summary": "A new brand across the suite and an assistant that explains how to do something in the app, without receiving any hall data.",
+    "highlights": [
+     "Ask the AI from «Search»: it explains how",
+     "No hall data goes to the assistant",
+     "New «In quadra» brand"
+    ],
+    "groups": [
+     {
+      "title": "New",
+      "items": [
+       "Ask the AI: open «Search» in the sidebar (Ctrl K), type your question and choose «Ask the AI». It answers on how to use GestHall Suite, based on the guide and the release notes. It also opens from the «?» button, the welcome screen and, on the phone, the profile menu.",
+       "The assistant only receives your question, the page you are on and your role: never amounts, names or other hall data."
+      ]
+     },
+     {
+      "title": "Changes",
+      "items": [
+       "New «In quadra» brand: two pieces that fit together and close a square, like a cash count that adds up. You will find it in the sidebar, at sign-in, in the phone app icon and on the website.",
+       "The video guides have been removed: «Ask the AI» takes their place, always up to date with the app."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.99.2",
    "date": "2026-11-10",
    "title": "Correzione della cassaforte delle giornate chiuse insieme",

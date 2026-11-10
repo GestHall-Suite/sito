@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-11-10
 
+- Changelog: voce 4.0.0 (nuovo marchio e «Chiedi all'AI»). Tolti i video brevi da Risorse (`docs.astro`) e la cartella `public/video/`: nell'app li sostituisce «Chiedi all'AI»; guida aggiornata (benvenuto, «?» e Cerca).
 - Nuovo marchio «In quadra»: logo, favicon, icona per iOS (`apple-touch-icon`), immagine di condivisione `og.png`, pagine interne e guida; kit del marchio con guida all'uso in `public/brand/`.
 
 - Changelog: voce 3.99.2 (cassaforte delle giornate chiuse insieme).
