@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-11-10
 
+- Changelog: voce 3.99.1 (il «cosa fare» nella testata).
 - Changelog: voce 3.99.0 (una sola regola per cassetto e cassaforte).
 - Changelog: voce 3.98.2 (correzione di «Inizia turno»).
 - Changelog: voce 3.98.1 (correzione della testata del giornaliero).
