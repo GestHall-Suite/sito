@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-11-10
 
+- Nuovo marchio «In quadra»: logo, favicon, icona per iOS (`apple-touch-icon`), immagine di condivisione `og.png`, pagine interne e guida; kit del marchio con guida all'uso in `public/brand/`.
+
 - Changelog: voce 3.99.2 (cassaforte delle giornate chiuse insieme).
 - Changelog: voce 3.99.1 (il «cosa fare» nella testata).
 - Changelog: voce 3.99.0 (una sola regola per cassetto e cassaforte).
