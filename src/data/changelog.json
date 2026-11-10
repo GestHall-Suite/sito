@@ -2,6 +2,38 @@
  "updated": "2026-11-10",
  "releases": [
   {
+   "version": "3.99.1",
+   "date": "2026-11-10",
+   "title": "Il «cosa fare» nella testata",
+   "summary": "Nel turno di chiusura la testata del giornaliero dice quanto mettere in cassaforte o prendere alla chiusura.",
+   "highlights": [
+    "Cosa fare alla chiusura nella testata"
+   ],
+   "groups": [
+    {
+     "title": "Giornaliero",
+     "items": [
+      "Nel riquadro «Contanti in sala» della testata, nel turno di chiusura, una riga in grassetto dice quanto mettere in cassaforte o prendere alla chiusura. Il riquadro della cassaforte tiene saldo, movimenti e «Uscita dalla cassaforte» per fatture e consegne."
+     ]
+    }
+   ],
+   "en": {
+    "title": "What to do, in the header",
+    "summary": "In the closing shift the daily sheet header says how much to put in the safe or take out at closing.",
+    "highlights": [
+     "What to do at closing, in the header"
+    ],
+    "groups": [
+     {
+      "title": "Daily sheet",
+      "items": [
+       "In the «Cash on site» header box, in the closing shift, a bold line says how much to put in the safe or take out at closing. The safe box keeps the balance, the movements and «Out of the safe» for invoices and handovers."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.99.0",
    "date": "2026-11-10",
    "title": "Una sola regola per cassetto e cassaforte",
