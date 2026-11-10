@@ -2,6 +2,48 @@
  "updated": "2026-11-10",
  "releases": [
   {
+   "version": "3.99.0",
+   "date": "2026-11-10",
+   "title": "Una sola regola per cassetto e cassaforte",
+   "summary": "Si conta il cassetto, si salva e si chiude: la chiusura riporta il cassetto al fondo e mette in cassaforte, o prende dalla cassaforte, la differenza da sola, per la sala e per il bar.",
+   "highlights": [
+    "Cassetto al fondo a ogni chiusura, senza pulsanti",
+    "Stessa regola per sala e bar",
+    "Chiusure senza domande sul contante"
+   ],
+   "groups": [
+    {
+     "title": "Cassetto e cassaforte",
+     "items": [
+      "Nel turno di chiusura il giornaliero dice quanto mettere in cassaforte o prendere per tornare al fondo: lo registra la chiusura, senza premere «Prendi» o «Metti».",
+      "Nelle Chiusure, al posto della domanda «Dove restano per domani?», una frase dice cosa succede chiudendo, per la sala e per il bar.",
+      "Il bar segue la stessa regola: il suo cassetto torna al fondo, la differenza va in cassaforte o si prende da lì.",
+      "La regola si sceglie una volta in Impostazioni → Cassa giornaliera → Fondo cassa e vale per sala e bar."
+     ]
+    }
+   ],
+   "en": {
+    "title": "One rule for drawer and safe",
+    "summary": "Count the drawer, save and close: the closing brings the drawer back to the float and puts the difference in the safe, or takes it from the safe, on its own, for the venue and the bar.",
+    "highlights": [
+     "Drawer back to the float at every closing, no buttons",
+     "Same rule for venue and bar",
+     "Closings without cash questions"
+    ],
+    "groups": [
+     {
+      "title": "Drawer and safe",
+      "items": [
+       "In the closing shift the daily sheet says how much to put in the safe or take out to get back to the float: the closing records it, no «Take» or «Put» to press.",
+       "In Closings, instead of «Where does it stay for tomorrow?», a sentence says what happens on closing, for the venue and the bar.",
+       "The bar follows the same rule: its drawer goes back to its float, the difference goes in the safe or is taken from it.",
+       "The rule is chosen once in Settings → Daily cash → Float and applies to venue and bar."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.98.2",
    "date": "2026-11-10",
    "title": "Correzione di «Inizia turno»",
