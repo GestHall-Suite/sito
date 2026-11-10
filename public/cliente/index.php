@@ -433,13 +433,7 @@ $saleAttuali = max(1, (int)($inst['sale_max'] ?? 1));
 <div class="wrap">
 
   <header class="cl-header">
-    <svg class="cl-logo" viewBox="0 0 42 42" aria-hidden="true">
-      <rect width="42" height="42" rx="10" fill="#00c391"/>
-      <rect x="7" y="7" width="11" height="12" rx="2.5" fill="rgba(0,0,0,0.28)"/>
-      <rect x="24" y="7" width="11" height="12" rx="2.5" fill="rgba(0,0,0,0.28)"/>
-      <rect x="7" y="23" width="11" height="12" rx="2.5" fill="rgba(0,0,0,0.28)"/>
-      <rect x="24" y="23" width="11" height="12" rx="2.5" fill="rgba(0,0,0,0.72)"/>
-    </svg>
+    <svg class="cl-logo" viewBox="0 0 256 256" aria-hidden="true"><rect width="256" height="256" rx="56" fill="#00c391"/><g transform="translate(43.5 43.5) scale(.66)"><path fill="rgba(0,0,0,.62)" d="M38 28L218 28A10 10 0 0 1 228 38L228 78A10 10 0 0 1 218 88L98 88A10 10 0 0 0 88 98L88 218A10 10 0 0 1 78 228L38 228A10 10 0 0 1 28 218L28 38A10 10 0 0 1 38 28Z"/><path fill="#fff" d="M228 118L228 218A10 10 0 0 1 218 228L118 228A10 10 0 0 1 108 218L108 178A10 10 0 0 1 118 168L158 168A10 10 0 0 0 168 158L168 118A10 10 0 0 1 178 108L218 108A10 10 0 0 1 228 118Z"/></g></svg>
     <div class="cl-header-text">
       <strong>GestHall Suite</strong>
       <span>Area clienti</span>

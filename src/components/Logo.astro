@@ -2,19 +2,13 @@
 const { size = 30 } = Astro.props;
 ---
 <span class="logo">
-  <svg width={size} height={size} viewBox="0 0 36 36" aria-hidden="true">
-    <rect width="36" height="36" rx="9" fill="#00c391"/>
-    <rect x="6" y="6" width="10.5" height="11" rx="2.5" fill="rgba(0,0,0,.28)"/>
-    <rect x="19.5" y="6" width="10.5" height="11" rx="2.5" fill="rgba(0,0,0,.28)"/>
-    <rect x="6" y="19" width="10.5" height="11" rx="2.5" fill="rgba(0,0,0,.28)"/>
-    <rect x="19.5" y="19" width="10.5" height="11" rx="2.5" fill="rgba(0,0,0,.62)"/>
-  </svg>
-  <span class="logo-name">GestHall <b>Suite</b></span>
+  <svg width={size} height={size} viewBox="0 0 256 256" aria-hidden="true"><rect width="256" height="256" rx="56" fill="#00c391"/><g transform="translate(43.5 43.5) scale(.66)"><path fill="rgba(0,0,0,.62)" d="M38 28L218 28A10 10 0 0 1 228 38L228 78A10 10 0 0 1 218 88L98 88A10 10 0 0 0 88 98L88 218A10 10 0 0 1 78 228L38 228A10 10 0 0 1 28 218L28 38A10 10 0 0 1 38 28Z"/><path fill="#fff" d="M228 118L228 218A10 10 0 0 1 218 228L118 228A10 10 0 0 1 108 218L108 178A10 10 0 0 1 118 168L158 168A10 10 0 0 0 168 158L168 118A10 10 0 0 1 178 108L218 108A10 10 0 0 1 228 118Z"/></g></svg>
+  <span class="logo-name"><b>GestHall</b> Suite</span>
 </span>
 
 <style>
 .logo { display: inline-flex; align-items: center; gap: 10px }
 .logo svg { flex: none }
-.logo-name { font-size: 18px; letter-spacing: -.02em; font-weight: 450; white-space: nowrap }
-.logo-name b { font-weight: 750 }
+.logo-name { font-size: 18px; letter-spacing: -.02em; font-weight: 400; white-space: nowrap }
+.logo-name b { font-weight: 650 }
 </style>
