@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-11-10
 
+- Home: parte alta sulla linea del marchio, a tutta larghezza su fondo inchiostro con i due pezzi «In quadra» agli angoli, titolo grande al centro e il video (o le schermate, in inglese) grande sotto, che scende sulla sezione dopo.
 - Home: nella parte alta (versione italiana) il video di 20 secondi di GestHall Suite (`public/video/gesthall-suite.mp4` + copertina `.jpg`), senza audio finché non si preme «Attiva l'audio», fermo con «riduci movimento»; la versione inglese tiene le schermate.
 - Changelog: voce 4.0.0 (nuovo marchio e «Chiedi all'AI»). Tolti i video brevi da Risorse (`docs.astro`) e la cartella `public/video/`: nell'app li sostituisce «Chiedi all'AI»; guida aggiornata (benvenuto, «?» e Cerca).
 - Nuovo marchio «In quadra»: logo, favicon, icona per iOS (`apple-touch-icon`), immagine di condivisione `og.png`, pagine interne e guida; kit del marchio con guida all'uso in `public/brand/`.
