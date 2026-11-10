@@ -2,6 +2,38 @@
  "updated": "2026-11-10",
  "releases": [
   {
+   "version": "3.98.2",
+   "date": "2026-11-10",
+   "title": "Correzione di «Inizia turno»",
+   "summary": "«Inizia turno» non prende più il turno assegnato a un altro operatore.",
+   "highlights": [
+    "«Inizia turno» solo sui propri turni o su quelli liberi"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "Premendo «Inizia turno» su un turno assegnato a un altro, il turno passava a chi premeva e nelle Chiusure compariva il nome sbagliato: ora si prende solo un turno proprio o libero, per gli altri c'è «Vai alla cassa»."
+     ]
+    }
+   ],
+   "en": {
+    "title": "«Start shift» fix",
+    "summary": "«Start shift» no longer takes a shift assigned to another operator.",
+    "highlights": [
+     "«Start shift» only on your own or free shifts"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "Pressing «Start shift» on a shift assigned to someone else moved the shift to whoever pressed it and Closings showed the wrong name: now only your own or a free shift can be taken, for the others there is «Go to the cash desk»."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "3.98.1",
    "date": "2026-11-10",
    "title": "Correzione della testata del giornaliero",
