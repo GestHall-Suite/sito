@@ -1,6 +1,60 @@
 {
- "updated": "2026-11-09",
+ "updated": "2026-11-10",
  "releases": [
+  {
+   "version": "3.98.0",
+   "date": "2026-11-10",
+   "title": "Cassaforte più semplice",
+   "summary": "Il contante messo in cassaforte non viene più contato due volte, alla chiusura il giornaliero dice quanto mettere o prendere per riportare il cassetto al fondo e la cassaforte si esporta in Excel.",
+   "highlights": [
+    "Riporta il cassetto al fondo con un tocco",
+    "Niente contante contato due volte in cassaforte",
+    "Excel BNRD con le banconote prima dei movimenti",
+    "Export della cassaforte in Excel"
+   ],
+   "groups": [
+    {
+     "title": "Cassaforte",
+     "items": [
+      "Un «Metti in cassaforte» registrato dopo aver salvato il turno di chiusura non viene più contato una seconda volta dalla chiusura.",
+      "Nel turno di chiusura il giornaliero mostra quanto c'è nel cassetto e un pulsante «Metti in cassaforte» o «Prendi dalla cassaforte» con l'importo già scritto per riportarlo al fondo.",
+      "Movimenti della cassaforte esportabili in Excel, per mese o tutto il registro, con il saldo dopo ogni movimento."
+     ]
+    },
+    {
+     "title": "Riepilogo di chiusura",
+     "items": [
+      "Nel modello «Excel BNRD» banconote e cassaforte sono quelle di prima dei movimenti della chiusura, come nel foglio della sala."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Simpler safe",
+    "summary": "Cash put in the safe is no longer counted twice, at closing the daily sheet tells how much to put in or take out to bring the drawer back to the float, and the safe can be exported to Excel.",
+    "highlights": [
+     "Bring the drawer back to the float with one tap",
+     "No cash counted twice in the safe",
+     "Excel BNRD with banknotes before the movements",
+     "Safe export to Excel"
+    ],
+    "groups": [
+     {
+      "title": "Safe",
+      "items": [
+       "A «Put in the safe» recorded after saving the closing shift is no longer counted again by the closing.",
+       "In the closing shift the daily sheet shows how much is in the drawer and a «Put in the safe» or «Take from the safe» button with the amount already filled in to bring it back to the float.",
+       "Safe movements can be exported to Excel, by month or the whole register, with the balance after each movement."
+      ]
+     },
+     {
+      "title": "Closing summary",
+      "items": [
+       "In the «Excel BNRD» template banknotes and safe are shown as before the closing movements, like the venue's sheet."
+      ]
+     }
+    ]
+   }
+  },
   {
    "version": "3.97.1",
    "date": "2026-11-09",

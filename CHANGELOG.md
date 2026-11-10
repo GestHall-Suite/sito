@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-11-10
+
+- Changelog: voce 3.98.0 (cassaforte più semplice).
+
 ## 2026-11-09
 
 - Changelog: voce 3.97.1 (correzione del salvataggio del modello del riepilogo di chiusura).
