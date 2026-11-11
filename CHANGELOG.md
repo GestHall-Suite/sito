@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-11-11
 
+- Changelog: voce 4.3.1 (riepilogo PDF con i documenti).
 - Changelog: voce 4.3.0 (riepilogo con le voci giuste e un solo PDF).
 - Changelog: voce 4.2.1 (anteprima PDF delle giornate chiuse senza il bar).
 - Changelog: voce 4.2.0 (email delle giornate chiuse).
