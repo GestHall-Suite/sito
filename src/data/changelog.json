@@ -2,6 +2,38 @@
  "updated": "2026-11-11",
  "releases": [
   {
+   "version": "4.2.1",
+   "date": "2026-11-11",
+   "title": "Correzione: anteprima PDF delle giornate chiuse senza il bar",
+   "summary": "Nelle giornate chiuse l'anteprima PDF segue la casella «Dati del bar nel riepilogo» e il modello scelto.",
+   "highlights": [
+    "Anteprima PDF delle giornate chiuse senza il bar quando lo togli"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "Nella scheda Chiuse, togliendo «Dati del bar nel riepilogo» o cambiando modello, l'anteprima PDF della giornata restava con la scelta di partenza: ora segue la scelta."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Fix: PDF preview of closed days without the bar",
+    "summary": "For closed days the PDF preview follows the «Bar data in the summary» box and the chosen template.",
+    "highlights": [
+     "PDF preview of closed days without the bar when you remove it"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "In the Closed tab, unticking «Bar data in the summary» or changing template left the day's PDF preview with the starting choice: it now follows the choice."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.2.0",
    "date": "2026-11-11",
    "title": "Email delle giornate chiuse",
