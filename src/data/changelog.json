@@ -2,6 +2,38 @@
  "updated": "2026-11-11",
  "releases": [
   {
+   "version": "4.3.2",
+   "date": "2026-11-11",
+   "title": "Riepilogo PDF sempre con i documenti",
+   "summary": "Il riepilogo PDF delle Chiusure si apre sempre con i documenti della chiusura dopo il riepilogo.",
+   "highlights": [
+    "Riepilogo PDF sempre con i documenti della chiusura"
+   ],
+   "groups": [
+    {
+     "title": "Migliorie",
+     "items": [
+      "Il pulsante del riepilogo PDF nelle Chiusure apre sempre il riepilogo seguito dai documenti della chiusura; «Un solo PDF» resta la scelta per l'email."
+     ]
+    }
+   ],
+   "en": {
+    "title": "PDF summary always with the documents",
+    "summary": "The PDF summary in Closings always opens with the closing documents after the summary.",
+    "highlights": [
+     "PDF summary always with the closing documents"
+    ],
+    "groups": [
+     {
+      "title": "Improvements",
+      "items": [
+       "The PDF summary button in Closings always opens the summary followed by the closing documents; «One PDF» remains the choice for the email."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.3.1",
    "date": "2026-11-11",
    "title": "Correzione: riepilogo PDF con i documenti",
