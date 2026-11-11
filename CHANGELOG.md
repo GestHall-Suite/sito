@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-11-11
 
+- Changelog: voce 4.1.0 (chiusure più semplici).
 - Changelog: voce 4.0.1 (fatture del bar nel riepilogo di chiusura).
 
 ## 2026-11-10
