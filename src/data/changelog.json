@@ -2,6 +2,58 @@
  "updated": "2026-11-11",
  "releases": [
   {
+   "version": "4.1.0",
+   "date": "2026-11-11",
+   "title": "Chiusure più semplici",
+   "summary": "La pagina Chiusure è più ordinata: ogni giornata da chiudere si legge in un colpo d'occhio e le giornate chiuse sono una tabella.",
+   "highlights": [
+    "Giornate da chiudere più compatte",
+    "Giornate chiuse in una tabella",
+    "«Dati del bar» spento toglie davvero il bar dal riepilogo"
+   ],
+   "groups": [
+    {
+     "title": "Novità",
+     "items": [
+      "Da chiudere: per ogni giornata una riga per la sala e una per il bar, con i numeri principali e una pillola che dice dove va il contante (al fondo, in cassaforte, quanto manca). Fondo e registratore del bar si aprono solo quando servono.",
+      "Le scelte dell'email e del modello del riepilogo sono ripiegate: il titolo dice cosa partirà, e si aprono solo per cambiarle.",
+      "Chiuse: le giornate chiuse sono una tabella con chi le ha chiuse, i documenti e le azioni (riepilogo PDF, giornaliero, riapri), anche col tasto destro; sul telefono diventano schede."
+     ]
+    },
+    {
+     "title": "Correzioni",
+     "items": [
+      "Togliendo la spunta a «Dati del bar nel riepilogo» il bar restava comunque nell'email e nel PDF, anche nel Report Cassa Bar del modello Excel BNRD: ora viene tolto davvero."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Simpler closings",
+    "summary": "The Closings page is tidier: each day to close reads at a glance and closed days are a table.",
+    "highlights": [
+     "More compact days to close",
+     "Closed days in a table",
+     "Turning off «Bar data» really removes the bar from the summary"
+    ],
+    "groups": [
+     {
+      "title": "New",
+      "items": [
+       "To close: for each day one row for the hall and one for the bar, with the main figures and a pill saying where the cash goes (at the float, to the safe, how much is missing). The bar float and till open only when needed.",
+       "The email and summary template choices are folded away: the title says what will be sent, and they open only to change them.",
+       "Closed: closed days are a table with who closed them, the documents and the actions (PDF summary, daily sheet, reopen), also with right click; on the phone they become cards."
+      ]
+     },
+     {
+      "title": "Fixes",
+      "items": [
+       "Unticking «Bar data in the summary» still left the bar in the email and PDF, including the Bar Cash Report of the Excel BNRD template: it is now really removed."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.0.1",
    "date": "2026-11-11",
    "title": "Correzione: fatture del bar nel riepilogo di chiusura",
