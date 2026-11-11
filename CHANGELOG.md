@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-11-11
+
+- Changelog: voce 4.0.1 (fatture del bar nel riepilogo di chiusura).
+
 ## 2026-11-10
 
 - Home: parte alta sulla linea del marchio, a tutta larghezza su fondo inchiostro con i due pezzi «In quadra» agli angoli, titolo grande al centro e il video (o le schermate, in inglese) grande sotto, che scende sulla sezione dopo.

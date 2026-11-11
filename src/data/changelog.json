@@ -1,6 +1,40 @@
 {
- "updated": "2026-11-10",
+ "updated": "2026-11-11",
  "releases": [
+  {
+   "version": "4.0.1",
+   "date": "2026-11-11",
+   "title": "Correzione: fatture del bar nel riepilogo di chiusura",
+   "summary": "Il riepilogo di chiusura riporta tutte le fatture del bar del giorno, anche quelle pagate con carta o bonifico.",
+   "highlights": [
+    "Tutte le fatture del bar nel riepilogo di chiusura"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "Nella parte bar del riepilogo di chiusura comparivano solo le spese pagate con la cassa del bar: ora ci sono tutte le fatture del giorno, con il modo di pagamento accanto. Quelle pagate con carta, bonifico o ancora da pagare non tolgono contanti dalla cassa del bar.",
+      "Scaricando un backup la pagina non resta più grigia per qualche secondo."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Fix: bar invoices in the closing summary",
+    "summary": "The closing summary shows all of the day's bar invoices, including those paid by card or bank transfer.",
+    "highlights": [
+     "All bar invoices in the closing summary"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "The bar section of the closing summary only showed expenses paid from the bar till: it now lists all of the day's invoices, with the payment method next to them. Those paid by card, bank transfer or still to be paid do not take cash out of the bar till.",
+       "Downloading a backup no longer leaves the page greyed out for a few seconds."
+      ]
+     }
+    ]
+   }
+  },
   {
    "version": "4.0.0",
    "date": "2026-11-10",
