@@ -2,6 +2,38 @@
  "updated": "2026-11-11",
  "releases": [
   {
+   "version": "4.3.1",
+   "date": "2026-11-11",
+   "title": "Correzione: riepilogo PDF con i documenti",
+   "summary": "Con «Un solo PDF» il riepilogo PDF delle Chiusure si apre con i documenti della chiusura, come nell'email.",
+   "highlights": [
+    "Riepilogo PDF con i documenti della chiusura"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "Con «Un solo PDF con i documenti» acceso, il pulsante del riepilogo PDF apriva solo il riepilogo: ora apre lo stesso PDF dell'email, con i documenti dopo il riepilogo."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Fix: PDF summary with the documents",
+    "summary": "With «One PDF» the PDF summary in Closings opens with the closing documents, as in the email.",
+    "highlights": [
+     "PDF summary with the closing documents"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "With «One PDF with the documents» on, the PDF summary button only opened the summary: now it opens the same PDF as the email, with the documents after the summary."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.3.0",
    "date": "2026-11-11",
    "title": "Riepilogo con le voci giuste e un solo PDF",
