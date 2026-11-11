@@ -2,6 +2,46 @@
  "updated": "2026-11-11",
  "releases": [
   {
+   "version": "4.2.0",
+   "date": "2026-11-11",
+   "title": "Email delle giornate chiuse",
+   "summary": "Nella scheda Chiuse si vede per ogni giornata se l'email di chiusura è partita, quando e come, e si rimanda con un pannello come quello delle giornate da chiudere.",
+   "highlights": [
+    "Per ogni giornata chiusa: email inviata o no, quando e come",
+    "Anteprima dell'email dalla riga della giornata",
+    "«Chiuse» con il pannello a destra"
+   ],
+   "groups": [
+    {
+     "title": "Novità",
+     "items": [
+      "Colonna Email nelle giornate chiuse: «Inviata il …» con il modo (email della giornata o insieme ad altre giornate) e, passando sopra, modello del riepilogo, bar, destinatari e quante volte è stata inviata; altrimenti «Non inviata».",
+      "Anteprima email anche dalla riga della giornata, per vedere e inviare solo quella.",
+      "La scheda Chiuse ha il pannello a destra come «Da chiudere»: giornate scelte, opzioni dell'email ripiegate, «Anteprima email» e «Invia», che diventa «Invia di nuovo» se tra le scelte c'è una giornata già inviata."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Emails of closed days",
+    "summary": "In the Closed tab each day shows whether the closing email was sent, when and how, and it can be sent again from a panel like the one for days to close.",
+    "highlights": [
+     "For each closed day: email sent or not, when and how",
+     "Email preview from the day's row",
+     "«Closed» with the panel on the right"
+    ],
+    "groups": [
+     {
+      "title": "New",
+      "items": [
+       "Email column for closed days: «Sent on …» with how (the day's own email or together with other days) and, on hover, summary template, bar, recipients and how many times it was sent; otherwise «Not sent».",
+       "Email preview from the day's row too, to see and send just that day.",
+       "The Closed tab has the panel on the right like «To close»: selected days, folded email options, «Email preview» and «Send», which becomes «Send again» if a selected day was already sent."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.1.0",
    "date": "2026-11-11",
    "title": "Chiusure più semplici",
