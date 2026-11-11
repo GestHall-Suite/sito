@@ -2,6 +2,56 @@
  "updated": "2026-11-11",
  "releases": [
   {
+   "version": "4.3.0",
+   "date": "2026-11-11",
+   "title": "Riepilogo con le voci giuste e un solo PDF",
+   "summary": "Il riepilogo Excel BNRD scrive ogni voce per quello che è, il Bancomat prende il nome che scegli e l'email di chiusura può arrivare con un solo PDF.",
+   "highlights": [
+    "Un solo PDF con riepilogo e documenti della chiusura",
+    "Nome del Bancomat a scelta (es. «POS»)",
+    "Excel BNRD: uscite dalla cassaforte con la causale intera"
+   ],
+   "groups": [
+    {
+     "title": "Novità",
+     "items": [
+      "In Chiusure, «Un solo PDF con i documenti» manda il riepilogo e i documenti della chiusura in un unico PDF, uno dopo l'altro; le foto diventano pagine. La scelta resta per le volte dopo.",
+      "Il Bancomat si può chiamare come vuoi (Impostazioni → Cassa giornaliera → Metodi di pagamento): il nome compare nel giornaliero, nel riepilogo di chiusura, nei report e negli export."
+     ]
+    },
+    {
+     "title": "Migliorie",
+     "items": [
+      "Nel modello Excel BNRD le uscite dalla cassaforte compaiono come «Uscita cassaforte» con la causale intera, che va a capo invece di essere tagliata; Bancomat e altri metodi di pagamento hanno il loro nome e spariscono le righe che non hanno mai dati."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Summary with the right items and a single PDF",
+    "summary": "The Excel BNRD summary writes every item for what it is, the debit card takes the name you choose and the closing email can arrive as one PDF.",
+    "highlights": [
+     "One PDF with the closing summary and documents",
+     "Debit card name of your choice (e.g. «POS»)",
+     "Excel BNRD: safe withdrawals with the full reason"
+    ],
+    "groups": [
+     {
+      "title": "New",
+      "items": [
+       "In Closings, «One PDF with the documents» sends the summary and the closing documents in a single PDF, one after the other; photos become pages. The choice is remembered.",
+       "The debit card can be named as you like (Settings → Daily till → Payment methods): the name appears in the daily till, the closing summary, reports and exports."
+      ]
+     },
+     {
+      "title": "Improvements",
+      "items": [
+       "In the Excel BNRD model withdrawals from the safe appear as «Safe withdrawal» with the full reason, wrapping instead of being cut; the debit card and other payment methods carry their own name and rows that never have data are gone."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.2.1",
    "date": "2026-11-11",
    "title": "Correzione: anteprima PDF delle giornate chiuse senza il bar",
