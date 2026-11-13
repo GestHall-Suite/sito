@@ -2,6 +2,38 @@
  "updated": "2026-11-11",
  "releases": [
   {
+   "version": "4.6.1",
+   "date": "2026-11-13",
+   "title": "Correzione: ticket avanzo nel risultato della giornata",
+   "summary": "Il ticket avanzo conta nel «Risultato della giornata», nel giornaliero e nel riepilogo di chiusura.",
+   "highlights": [
+    "Ticket avanzo nel risultato della giornata"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "Nella testata del giornaliero e nel riepilogo «Totale contanti in sala» il «Risultato della giornata» comprende il ticket avanzo, con una riga che lo indica."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Fix: leftover tickets in the day result",
+    "summary": "Leftover tickets count in the «Day result», in the daily till and in the closing summary.",
+    "highlights": [
+     "Leftover tickets in the day result"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "In the daily till header and in the «Total cash in the hall» summary the «Day result» includes leftover tickets, with a line showing them."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.6.0",
    "date": "2026-11-13",
    "title": "Offerte del bar nel riepilogo",
