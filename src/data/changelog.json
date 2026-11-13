@@ -2,6 +2,44 @@
  "updated": "2026-11-11",
  "releases": [
   {
+   "version": "4.5.1",
+   "date": "2026-11-13",
+   "title": "Correzione: anteprima del bar con i valori scritti",
+   "summary": "In Chiusure l'anteprima PDF del bar usa il conteggio, il fondo e la scelta appena scritti; il giornaliero conta il ticket avanzo in quello che va in cassaforte.",
+   "highlights": [
+    "Anteprima PDF del bar con i valori appena scritti",
+    "Ticket avanzo nella frase della cassaforte del giornaliero"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "L'anteprima PDF di una giornata da chiudere usa fondo, registratore, scelta del contante e conteggio del cassetto del bar scritti nella pagina, anche prima di chiudere.",
+      "Nel modello Excel BNRD le entrate del bar si chiamano «Vendite in contanti» e «Vendite con POS».",
+      "Nel giornaliero la frase «alla chiusura metti in cassaforte» comprende anche il ticket avanzo."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Fix: bar preview with the values just entered",
+    "summary": "In Closings the bar PDF preview uses the count, float and choice just entered; the daily till counts leftover tickets in what goes into the safe.",
+    "highlights": [
+     "Bar PDF preview with the values just entered",
+     "Leftover tickets in the daily till safe hint"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "The PDF preview of a day to close uses the bar float, register total, cash choice and drawer count entered on the page, even before closing.",
+       "In the Excel BNRD model bar income is «Cash sales» and «Card sales».",
+       "In the daily till «at closing put in the safe» includes leftover tickets."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.5.0",
    "date": "2026-11-13",
    "title": "Contanti del bar a scelta e giornate chiuse in ordine",
