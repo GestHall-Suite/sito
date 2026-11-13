@@ -2,6 +2,84 @@
  "updated": "2026-11-11",
  "releases": [
   {
+   "version": "4.5.0",
+   "date": "2026-11-13",
+   "title": "Contanti del bar a scelta e giornate chiuse in ordine",
+   "summary": "Alla chiusura scegli dove restano i contanti del bar; il riepilogo standard usa le stesse voci dell'Excel BNRD e il giornaliero di una giornata chiusa si apre in ordine.",
+   "highlights": [
+    "Contanti del bar: niente, oltre il fondo o una parte in cassaforte",
+    "Riepilogo standard con le stesse voci del BNRD",
+    "Giornata chiusa con i riquadri chiusi"
+   ],
+   "groups": [
+    {
+     "title": "Migliorie",
+     "items": [
+      "In Chiusure scegli per il bar «Niente in cassaforte», «Oltre il fondo in cassaforte» o «Una parte»: riepilogo, Banco e Report del bar seguono la scelta.",
+      "Nel riepilogo «Totale contanti in sala» l'avanzo della cassa è «Arrotondamento ticket» e il ticket avanzo messo in cassaforte è indicato a parte.",
+      "Aprendo il giornaliero di una giornata chiusa tutti i riquadri sono chiusi, con il totale in vista."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Bar cash by choice and tidy closed days",
+    "summary": "At closing choose where the bar cash stays; the standard summary uses the same items as the Excel BNRD and a closed day opens tidy.",
+    "highlights": [
+     "Bar cash: nothing, above the float or part in the safe",
+     "Standard summary with the BNRD items",
+     "Closed day with collapsed panels"
+    ],
+    "groups": [
+     {
+      "title": "Improvements",
+      "items": [
+       "In Closings choose for the bar «Nothing in the safe», «Above the float in the safe» or «Part of it»: summary, Counter and bar Report follow the choice.",
+       "In the «Total cash in the hall» summary the till surplus is «Ticket rounding» and leftover tickets put in the safe are shown apart.",
+       "Opening the daily till of a closed day all panels are collapsed, with the total in view."
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "version": "4.4.0",
+   "date": "2026-11-13",
+   "title": "Ticket avanzo in cassaforte",
+   "summary": "I ticket residui diventano il «Ticket avanzo»: si incassano come una vincita e alla chiusura vanno in cassaforte.",
+   "highlights": [
+    "Ticket avanzo tra le entrate del riepilogo",
+    "Alla chiusura il ticket avanzo va in cassaforte",
+    "Avanzo della cassa scritto come «Arrotondamento ticket»"
+   ],
+   "groups": [
+    {
+     "title": "Migliorie",
+     "items": [
+      "I ticket residui si chiamano «Ticket avanzo»: alla chiusura la loro somma va in cassaforte insieme al resto.",
+      "Nel modello Excel BNRD il ticket avanzo è tra le entrate, l'avanzo della cassa si scrive come «Arrotondamento ticket» e «Avanzo cassa» resta vuoto: la differenza torna a zero."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Leftover tickets into the safe",
+    "summary": "Leftover tickets become «Leftover tickets» income: they are cashed like a win and go into the safe at closing.",
+    "highlights": [
+     "Leftover tickets among the summary income",
+     "At closing leftover tickets go into the safe",
+     "Till surplus written as «Ticket rounding»"
+    ],
+    "groups": [
+     {
+      "title": "Improvements",
+      "items": [
+       "Leftover tickets go into the safe at closing together with the rest.",
+       "In the Excel BNRD model leftover tickets are income, the till surplus is written as «Ticket rounding» and «Till surplus» stays empty: the difference is back to zero."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.3.2",
    "date": "2026-11-11",
    "title": "Riepilogo PDF sempre con i documenti",
