@@ -2,6 +2,42 @@
  "updated": "2026-11-11",
  "releases": [
   {
+   "version": "4.6.0",
+   "date": "2026-11-13",
+   "title": "Offerte del bar nel riepilogo",
+   "summary": "Il riepilogo di chiusura elenca le offerte del bar a importo zero, con a chi sono state offerte.",
+   "highlights": [
+    "Offerte del bar nel riepilogo, a importo zero",
+    "A chi è stata fatta l'offerta, nelle note"
+   ],
+   "groups": [
+    {
+     "title": "Novità",
+     "items": [
+      "Nel modello Excel BNRD ogni offerta del bar è una riga a € 0 con i pezzi e, nelle note, a chi è stata offerta (cliente o nome scritto al Banco).",
+      "Nel riepilogo «Totale contanti in sala» le offerte riportano a chi sono state fatte."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Bar giveaways in the summary",
+    "summary": "The closing summary lists the bar giveaways at zero amount, with who received them.",
+    "highlights": [
+     "Bar giveaways in the summary at zero",
+     "Who received the giveaway, in the notes"
+    ],
+    "groups": [
+     {
+      "title": "New",
+      "items": [
+       "In the Excel BNRD model each bar giveaway is a € 0 row with the pieces and, in the notes, who received it (customer or name entered at the Counter).",
+       "In the «Total cash in the hall» summary giveaways show who received them."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.5.1",
    "date": "2026-11-13",
    "title": "Correzione: anteprima del bar con i valori scritti",
