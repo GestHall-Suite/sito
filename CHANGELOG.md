@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-11-13
 
+- Changelog: voce 4.6.1 (ticket avanzo nel risultato della giornata).
 - Changelog: voce 4.6.0 (offerte del bar nel riepilogo).
 - Changelog: voce 4.5.1 (anteprima del bar con i valori scritti).
 - Changelog: voci 4.4.0 (ticket avanzo in cassaforte) e 4.5.0 (contanti del bar a scelta).
