@@ -2,6 +2,42 @@
  "updated": "2026-11-11",
  "releases": [
   {
+   "version": "4.8.4",
+   "date": "2026-11-15",
+   "title": "Correzione: cassaforte del bar separata",
+   "summary": "La cassaforte del bar e quella della sala hanno ora saldi separati.",
+   "highlights": [
+    "Cassaforte del bar separata da quella della sala"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "I contanti del bar messi in cassaforte non si sommano più alla cassaforte della sala.",
+      "Nella pagina Cassaforte le schede Sala e Bar mostrano i due saldi e i loro movimenti.",
+      "Il versamento del bar esce dalla cassaforte del bar."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Fix: separate bar safe",
+    "summary": "The bar safe and the hall safe now have separate balances.",
+    "highlights": [
+     "Bar safe separate from the hall safe"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "Bar cash put in the safe is no longer added to the hall safe.",
+       "On the Safe page, the Hall and Bar tabs show the two balances and their movements.",
+       "The bar deposit comes out of the bar safe."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.8.3",
    "date": "2026-11-15",
    "title": "Correzione: Report Cassa Bar come quello delle VLT",
