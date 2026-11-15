@@ -2,6 +2,40 @@
  "updated": "2026-11-11",
  "releases": [
   {
+   "version": "4.8.2",
+   "date": "2026-11-15",
+   "title": "Correzione: report del bar dal cassetto contato",
+   "summary": "Il report del bar segue il cassetto contato alla chiusura, come la cassa della sala.",
+   "highlights": [
+    "Report del bar dal cassetto contato"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "Nella cassa del bar del periodo i contanti alla fine vengono dal cassetto contato alla chiusura.",
+      "Avanzi e ammanchi dei conteggi del cassetto sono voci a sé, separate dai fondi corretti a mano."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Fix: bar report from the counted drawer",
+    "summary": "The bar report follows the drawer counted at closing, like the hall cash.",
+    "highlights": [
+     "Bar report from the counted drawer"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "In the period's bar cash, the closing cash comes from the drawer counted at closing.",
+       "Drawer count surpluses and shortfalls are separate lines, apart from floats changed by hand."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.8.1",
    "date": "2026-11-15",
    "title": "Correzione: fondo del bar dalla chiusura precedente",
