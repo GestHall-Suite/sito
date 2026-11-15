@@ -2,6 +2,42 @@
  "updated": "2026-11-11",
  "releases": [
   {
+   "version": "4.8.3",
+   "date": "2026-11-15",
+   "title": "Correzione: Report Cassa Bar come quello delle VLT",
+   "summary": "Nel modello Excel BNRD il Report Cassa Bar segue la stessa logica del Report Cassa Vlt.",
+   "highlights": [
+    "Report Cassa Bar con la logica delle VLT"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "La cassa del giorno prima del bar comprende anche la parte messa in cassaforte, e la cassa del giorno parte da lì.",
+      "Il POS del bar compare anche tra le uscite, perché non resta in cassa.",
+      "Il totale di cassa è il cassetto contato più la parte del bar in cassaforte."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Fix: Bar cash report like the VLT one",
+    "summary": "In the BNRD Excel layout the Bar cash report follows the same logic as the VLT cash report.",
+    "highlights": [
+     "Bar cash report with the VLT logic"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "The bar's previous-day cash includes the part put in the safe, and the day's cash starts from it.",
+       "The bar card terminal also appears among outgoings, since it doesn't stay in the drawer.",
+       "The cash total is the counted drawer plus the bar's part in the safe."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.8.2",
    "date": "2026-11-15",
    "title": "Correzione: report del bar dal cassetto contato",
