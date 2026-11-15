@@ -2,6 +2,40 @@
  "updated": "2026-11-11",
  "releases": [
   {
+   "version": "4.8.1",
+   "date": "2026-11-15",
+   "title": "Correzione: fondo del bar dalla chiusura precedente",
+   "summary": "Il fondo del bar riparte sempre da quello rimasto alla chiusura del giorno prima, come la cassa della sala.",
+   "highlights": [
+    "Fondo del bar dalla chiusura precedente"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "Il fondo del bar di un giorno è quello rimasto nel cassetto alla chiusura del giorno prima, anche se la mattina era stato scritto un fondo diverso prima di chiudere.",
+      "Nel riepilogo la cassa del giorno prima del bar è quella della chiusura precedente, anche la parte messa in cassaforte."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Fix: bar float from the previous closing",
+    "summary": "The bar float always starts from what was left at the previous day's closing, like the hall cash.",
+    "highlights": [
+     "Bar float from the previous closing"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "A day's bar float is what was left in the drawer at the previous day's closing, even if a different float was entered in the morning before closing.",
+       "In the summary the bar's previous-day cash is the previous closing's, including the part put in the safe."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.8.0",
    "date": "2026-11-15",
    "title": "Bar: vendite non battute e registratore automatico",
