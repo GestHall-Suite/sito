@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-11-15
 
+- Changelog: voce 4.8.1 (fondo del bar dalla chiusura precedente).
 - Changelog: voce 4.8.0 (bar: vendite non battute e registratore automatico).
 - Changelog: voce 4.7.0 (cronologia dei salvataggi del turno).
 
