@@ -2,6 +2,46 @@
  "updated": "2026-11-11",
  "releases": [
   {
+   "version": "4.7.0",
+   "date": "2026-11-15",
+   "title": "Cronologia dei salvataggi del turno",
+   "summary": "Ogni turno del giornaliero tiene la storia dei suoi salvataggi: si vede com'era la cassa a ogni salvataggio e si possono rimettere i valori di prima.",
+   "highlights": [
+    "Cronologia dei salvataggi di ogni turno",
+    "Risultato della cassa di ogni salvataggio",
+    "«Ripristina» i valori di prima"
+   ],
+   "groups": [
+    {
+     "title": "Novità",
+     "items": [
+      "Dal menu ⋯ della scheda del turno, «Cronologia dei salvataggi»: ora, chi ha salvato, risultato della cassa di quel momento (In quadra, Avanzo, Ammanco) e i campi diversi da adesso.",
+      "«Ripristina» rimette quei valori nel giornaliero, con «Annulla»; per tenerli basta premere Salva. Utile quando un valore viene cambiato per sbaglio.",
+      "La cronologia parte dal primo salvataggio dopo l'aggiornamento."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Shift save history",
+    "summary": "Every shift in the daily cash sheet keeps the history of its saves: see what the cash looked like at each save and put earlier values back.",
+    "highlights": [
+     "Save history for every shift",
+     "Cash result of each save",
+     "«Restore» earlier values"
+    ],
+    "groups": [
+     {
+      "title": "New",
+      "items": [
+       "From the shift tab ⋯ menu, «Save history»: time, who saved, the cash result at that moment (Balanced, Surplus, Shortfall) and the fields that differ from now.",
+       "«Restore» puts those values back in the daily sheet, with «Undo»; press Save to keep them. Useful when a value was changed by mistake.",
+       "The history starts from the first save after the update."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.6.1",
    "date": "2026-11-13",
    "title": "Correzione: ticket avanzo nel risultato della giornata",

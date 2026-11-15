@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-11-15
+
+- Changelog: voce 4.7.0 (cronologia dei salvataggi del turno).
+
 ## 2026-11-13
 
 - Changelog: voce 4.6.1 (ticket avanzo nel risultato della giornata).
