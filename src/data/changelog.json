@@ -2,6 +2,46 @@
  "updated": "2026-11-11",
  "releases": [
   {
+   "version": "4.8.0",
+   "date": "2026-11-15",
+   "title": "Bar: vendite non battute e registratore automatico",
+   "summary": "Alla chiusura il bar distingue le vendite battute da quelle non battute, calcola da solo il registratore e conta il cassetto come la cassa della sala.",
+   "highlights": [
+    "Vendite non battute a parte, in contanti e con POS",
+    "Registratore calcolato da solo: si scrive solo la differenza",
+    "Cassetto del bar contato come la cassa della sala"
+   ],
+   "groups": [
+    {
+     "title": "Novità",
+     "items": [
+      "Nel riepilogo del bar, tra le entrate, le vendite non battute (senza scontrino né fattura) sono separate da quelle battute, sia in contanti sia con POS.",
+      "Il totale del registratore è lo scontrinato del giorno: in Chiusure si scrive solo l'eventuale differenza.",
+      "Il cassetto del bar si conta tutto alla chiusura, prima di mettere qualcosa in cassaforte: l'avanzo o l'ammanco è la differenza con l'atteso, come nel giornaliero, e la scelta decide quanto del contato va in cassaforte."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Bar: sales not rung up and automatic register total",
+    "summary": "At closing the bar separates sales rung up from those not rung up, works out the register total by itself and counts the drawer like the hall cash.",
+    "highlights": [
+     "Sales not rung up shown apart, cash and card",
+     "Register total worked out automatically: only enter the difference",
+     "Bar drawer counted like the hall cash"
+    ],
+    "groups": [
+     {
+      "title": "New",
+      "items": [
+       "In the bar summary, sales not rung up (no receipt or invoice) are listed apart from those rung up, both cash and card.",
+       "The register total is the day's receipts: in Closings you only enter any difference.",
+       "The bar drawer is counted in full at closing, before putting anything in the safe: the surplus or shortfall is the difference from the expected amount, as in the daily sheet, and your choice decides how much of the counted cash goes in the safe."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.7.0",
    "date": "2026-11-15",
    "title": "Cronologia dei salvataggi del turno",
