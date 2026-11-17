@@ -2,6 +2,46 @@
  "updated": "2026-11-11",
  "releases": [
   {
+   "version": "4.9.0",
+   "date": "2026-11-17",
+   "title": "Spese del bar pagate con la carta personale",
+   "summary": "Una spesa del bar pagata con la carta personale resta da rimborsare finché chi l'ha pagata non riprende i contanti dalla cassaforte del bar.",
+   "highlights": [
+    "Spese pagate con la carta personale",
+    "Rimborso dalla cassaforte del bar",
+    "Rimborsi nel riepilogo di chiusura"
+   ],
+   "groups": [
+    {
+     "title": "Novità",
+     "items": [
+      "Nuovo modo di pagamento delle spese del bar: «Carta personale (da rimborsare)». La spesa non toglie contanti finché non viene rimborsata.",
+      "In Bar → Spese il riquadro «Da rimborsare» elenca queste spese: con «Rimborsa» i contanti escono dalla cassaforte del bar nel giorno scelto. Il rimborso si può annullare.",
+      "Il giorno del rimborso compare tra le uscite del Report Cassa Bar e del riepilogo «Totale contanti in sala»."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Bar expenses paid with a personal card",
+    "summary": "A bar expense paid with a personal card stays to be refunded until whoever paid takes the cash back from the bar safe.",
+    "highlights": [
+     "Expenses paid with a personal card",
+     "Refund from the bar safe",
+     "Refunds in the closing summary"
+    ],
+    "groups": [
+     {
+      "title": "New",
+      "items": [
+       "New payment method for bar expenses: «Personal card (to be refunded)». The expense takes no cash until it is refunded.",
+       "In Bar → Expenses the «To refund» box lists these expenses: «Refund» takes the cash out of the bar safe on the chosen day. The refund can be cancelled.",
+       "On the refund day it appears among the outgoings of the Bar cash report and of the «Total cash on site» summary."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.8.6",
    "date": "2026-11-17",
    "title": "Correzione: spese dalla cassaforte del bar nel riepilogo",
