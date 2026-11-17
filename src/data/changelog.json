@@ -2,6 +2,40 @@
  "updated": "2026-11-11",
  "releases": [
   {
+   "version": "4.8.6",
+   "date": "2026-11-17",
+   "title": "Correzione: spese dalla cassaforte del bar nel riepilogo",
+   "summary": "Nel riepilogo «Totale contanti in sala» le spese pagate con la cassaforte del bar sono tra le uscite.",
+   "highlights": [
+    "Spese dalla cassaforte del bar tra le uscite del riepilogo"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "Nel riepilogo «Totale contanti in sala» le spese pagate con la cassaforte del bar sono tra le uscite del bar e ne cambiano il totale.",
+      "I contanti attesi nel cassetto del bar restano giusti."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Fix: bar safe expenses in the summary",
+    "summary": "In the «Total cash on site» summary, expenses paid from the bar safe are among outgoings.",
+    "highlights": [
+     "Bar safe expenses among the summary's outgoings"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "In the «Total cash on site» summary, expenses paid from the bar safe are among the bar's outgoings and change their total.",
+       "The cash expected in the bar drawer stays correct."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.8.5",
    "date": "2026-11-17",
    "title": "Correzione: spese del bar pagate con la cassaforte",
