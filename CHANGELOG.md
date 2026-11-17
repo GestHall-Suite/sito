@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-11-17
+
+- Changelog: voce 4.8.5 (spese del bar pagate con la cassaforte).
+
 ## 2026-11-15
 
 - Changelog: voce 4.8.4 (cassaforte del bar separata).

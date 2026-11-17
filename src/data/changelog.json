@@ -2,6 +2,40 @@
  "updated": "2026-11-11",
  "releases": [
   {
+   "version": "4.8.5",
+   "date": "2026-11-17",
+   "title": "Correzione: spese del bar pagate con la cassaforte",
+   "summary": "Una spesa del bar si può pagare con i contanti della cassaforte del bar, che si aggiorna da sola.",
+   "highlights": [
+    "Spese del bar pagate con la cassaforte del bar"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "Nuovo modo di pagamento «Contanti dalla cassaforte del bar»: la spesa esce dalla cassaforte del bar e non dal cassetto.",
+      "Il Report Cassa Bar conta la spesa tra le uscite e mostra la cassaforte già aggiornata."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Fix: bar expenses paid from the safe",
+    "summary": "A bar expense can be paid with cash from the bar safe, which updates by itself.",
+    "highlights": [
+     "Bar expenses paid from the bar safe"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "New payment method «Cash from the bar safe»: the expense comes out of the bar safe, not the drawer.",
+       "The Bar cash report counts the expense among outgoings and shows the updated safe."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.8.4",
    "date": "2026-11-15",
    "title": "Correzione: cassaforte del bar separata",
