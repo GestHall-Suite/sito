@@ -2,6 +2,46 @@
  "updated": "2026-11-11",
  "releases": [
   {
+   "version": "4.10.0",
+   "date": "2026-11-18",
+   "title": "Turni da Excel",
+   "summary": "Il calendario dei turni si può caricare da un modello Excel, anche già compilato con il mese.",
+   "highlights": [
+    "Turni caricati da Excel",
+    "Modello già compilato con il mese",
+    "Anteprima prima di salvare"
+   ],
+   "groups": [
+    {
+     "title": "Novità",
+     "items": [
+      "In Turni → ⋯ → «Importa da Excel» si scarica il modello: vuoto con esempi, o già compilato con i turni del mese da modificare.",
+      "Una riga per turno con data, nome, inizio, fine, persona (dal menu a tendina) e nota.",
+      "Prima di salvare un'anteprima mostra giorni e turni ed eventuali errori riga per riga; ogni giorno del file sostituisce i turni di quel giorno e quelli con la cassa già iniziata non si toccano."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Shifts from Excel",
+    "summary": "The shift calendar can be loaded from an Excel template, even one already filled in with the month.",
+    "highlights": [
+     "Shifts loaded from Excel",
+     "Template already filled in with the month",
+     "Preview before saving"
+    ],
+    "groups": [
+     {
+      "title": "New",
+      "items": [
+       "In Shifts → ⋯ → «Import from Excel» you download the template: empty with examples, or already filled in with the month's shifts to edit.",
+       "One row per shift with date, name, start, end, person (from a drop-down) and note.",
+       "Before saving, a preview shows days, shifts and any errors row by row; each day in the file replaces that day's shifts and days whose till has started are left untouched."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.9.0",
    "date": "2026-11-17",
    "title": "Spese del bar pagate con la carta personale",

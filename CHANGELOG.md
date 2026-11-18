@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-11-18
+
+- Changelog: voce 4.10.0 (turni da Excel).
+
 ## 2026-11-17
 
 - Changelog: voce 4.9.0 (spese del bar pagate con la carta personale).
