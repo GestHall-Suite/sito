@@ -2,6 +2,38 @@
  "updated": "2026-11-11",
  "releases": [
   {
+   "version": "4.10.1",
+   "date": "2026-11-18",
+   "title": "Correzione: turni da Excel e giorni senza cassa",
+   "summary": "Un giorno senza cassa salvata non viene più considerato con la cassa iniziata.",
+   "highlights": [
+    "Turni da Excel anche nei giorni con il turno di chiusura scelto in anticipo"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "Un giorno in cui era stato solo scelto in anticipo il turno di chiusura risultava con la cassa iniziata: l'import da Excel lo saltava e i suoi orari non si potevano cambiare."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Fix: shifts from Excel and days without a till",
+    "summary": "A day with no saved till is no longer treated as having its till started.",
+    "highlights": [
+     "Shifts from Excel also on days with the closing shift chosen in advance"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "A day where the closing shift had only been chosen in advance was treated as having its till started: the Excel import skipped it and its times could not be changed."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.10.0",
    "date": "2026-11-18",
    "title": "Turni da Excel",
