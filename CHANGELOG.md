@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-11-18
 
+- Changelog: voce 4.11.0 (cassetto del bar contato nel Banco).
 - Changelog: voce 4.10.1 (turni da Excel e giorni senza cassa).
 - Changelog: voce 4.10.0 (turni da Excel).
 

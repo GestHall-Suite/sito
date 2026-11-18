@@ -1,6 +1,46 @@
 {
- "updated": "2026-11-11",
+ "updated": "2026-11-18",
  "releases": [
+  {
+   "version": "4.11.0",
+   "date": "2026-11-18",
+   "title": "Cassetto del bar contato nel Banco",
+   "summary": "Il cassetto del bar si conta nella cassa del bar del Banco, come le banconote nel giornaliero; la chiusura riporta il conteggio.",
+   "highlights": [
+    "Conteggio del cassetto del bar nel Banco",
+    "Avanzo o ammanco mentre si conta",
+    "Le Chiusure riportano il conteggio"
+   ],
+   "groups": [
+    {
+     "title": "Migliorie",
+     "items": [
+      "Banconote e monete del cassetto del bar si contano nella scheda «Cassa del bar» del Banco, con l'atteso, il contato e l'esito mentre si scrive, come nel giornaliero delle VLT.",
+      "Nelle Chiusure il riquadro del bar mostra il conteggio fatto (o che manca) con il collegamento per contarlo o correggerlo; dove resta il contante parte da lì.",
+      "A giornata chiusa il conteggio non si modifica: va prima riaperta."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Bar drawer counted at the counter",
+    "summary": "The bar drawer is counted in the counter's bar till, like the banknotes in the daily sheet; the closing reports the count.",
+    "highlights": [
+     "Bar drawer count at the counter",
+     "Surplus or shortfall while counting",
+     "Closings report the count"
+    ],
+    "groups": [
+     {
+      "title": "Improvements",
+      "items": [
+       "Banknotes and coins in the bar drawer are counted in the «Bar till» tab of the counter, with expected, counted and result as you type, like the VLT daily sheet.",
+       "In Closings the bar box shows the count made (or missing) with a link to count or correct it; where the cash stays starts from there.",
+       "Once the day is closed the count can't be changed: reopen it first."
+      ]
+     }
+    ]
+   }
+  },
   {
    "version": "4.10.1",
    "date": "2026-11-18",
