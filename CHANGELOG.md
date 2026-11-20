@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-11-20
+
+- Changelog: voce 4.11.1 (note del turno nel riepilogo Excel BNRD).
+
 ## 2026-11-18
 
 - Changelog: voce 4.11.0 (cassetto del bar contato nel Banco).

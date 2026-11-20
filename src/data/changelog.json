@@ -1,6 +1,38 @@
 {
- "updated": "2026-11-18",
+ "updated": "2026-11-20",
  "releases": [
+  {
+   "version": "4.11.1",
+   "date": "2026-11-20",
+   "title": "Correzione: note del turno nel riepilogo Excel BNRD",
+   "summary": "Nel riepilogo «Excel BNRD» le sovvenzioni per precassa riportano le note del turno.",
+   "highlights": [
+    "Note del turno accanto alle sovvenzioni per precassa"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "Nel Report Cassa Vlt del riepilogo «Excel BNRD» la riga «Sovvenzioni per precassa» mostra a fianco le note scritte nei turni, che spiegano a cosa sono serviti i contanti."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Fix: shift notes in the Excel BNRD summary",
+    "summary": "In the «Excel BNRD» summary the till float handouts show the shift notes.",
+    "highlights": [
+     "Shift notes beside the till float handouts"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "In the VLT cash report of the «Excel BNRD» summary, the «Sovvenzioni per precassa» row shows the notes written in the shifts beside it, explaining what the cash was used for."
+      ]
+     }
+    ]
+   }
+  },
   {
    "version": "4.11.0",
    "date": "2026-11-18",
