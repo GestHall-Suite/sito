@@ -1,6 +1,50 @@
 {
- "updated": "2026-11-20",
+ "updated": "2026-11-22",
  "releases": [
+  {
+   "version": "4.12.0",
+   "date": "2026-11-22",
+   "title": "Grafica più sobria",
+   "summary": "Pulsanti a tinta unita, niente aloni colorati, grafici più leggibili e un'entrata delle pagine più breve.",
+   "highlights": [
+    "Pulsanti e colori a tinta unita",
+    "Grafici con griglia leggera e cifre allineate",
+    "Entrata delle pagine più breve"
+   ],
+   "groups": [
+    {
+     "title": "Migliorie",
+     "items": [
+      "Pulsanti e riquadri nel colore della sala a tinta unita, senza sfumature; le sfumature restano nelle copertine scelte dalla sala o da ognuno.",
+      "Niente più aloni e ombre colorate: le superfici si distinguono per tono e linee sottili.",
+      "Grafici con la griglia tratteggiata leggera e i valori degli assi in cifre allineate; con più linee quella principale ha il colore della sala e le altre restano in grigio.",
+      "All'apertura di una pagina entrano solo i primi riquadri, uno dopo l'altro e in meno di mezzo secondo; con «Animazioni ridotte» non si muove niente.",
+      "Le animazioni continue restano solo dove indicano qualcosa in corso: caricamento, registrazione, musica in riproduzione."
+     ]
+    }
+   ],
+   "en": {
+    "title": "A quieter look",
+    "summary": "Solid buttons, no colored glows, clearer charts and a shorter page entrance.",
+    "highlights": [
+     "Solid buttons and colors",
+     "Charts with a light grid and aligned figures",
+     "Shorter page entrance"
+    ],
+    "groups": [
+     {
+      "title": "Improvements",
+      "items": [
+       "Buttons and panels in the venue's color are solid, without gradients; gradients stay in the covers chosen by the venue or by each person.",
+       "No more colored glows and shadows: surfaces stand apart through tone and thin lines.",
+       "Charts with a light dashed grid and axis values in aligned figures; with several lines the main one takes the venue's color and the others stay grey.",
+       "When a page opens only the first panels come in, one after another, in under half a second; with «Reduced motion» nothing moves.",
+       "Continuous animations remain only where something is in progress: loading, recording, music playing."
+      ]
+     }
+    ]
+   }
+  },
   {
    "version": "4.11.1",
    "date": "2026-11-20",
