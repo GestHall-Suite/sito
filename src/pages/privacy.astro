@@ -98,7 +98,7 @@ import Layout from '../layouts/Layout.astro';
 .doc-inner { max-width: 800px }
 
 .doc-header { margin-bottom: 56px; padding-bottom: 32px; border-bottom: 1px solid var(--border-sub) }
-.doc-header h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 800; margin-bottom: 12px }
+.doc-header h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 700; margin-bottom: 12px }
 .doc-meta { font-size: 14px; color: var(--faint) }
 
 .doc-body { display: flex; flex-direction: column; gap: 0 }
@@ -114,7 +114,7 @@ import Layout from '../layouts/Layout.astro';
   margin-bottom: 16px;
 }
 .doc-section h3 {
-  font-size: 1rem; font-weight: 600; color: var(--muted);
+  font-size: 1rem; font-weight: 700; color: var(--muted);
   margin: 20px 0 8px;
 }
 .doc-section h3:first-of-type { margin-top: 0 }
@@ -125,7 +125,7 @@ import Layout from '../layouts/Layout.astro';
 }
 .doc-section p:last-child { margin-bottom: 0 }
 .doc-section a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px }
-.doc-section strong { color: var(--text); font-weight: 600 }
+.doc-section strong { color: var(--text); font-weight: 700 }
 
 .doc-list {
   display: flex; flex-direction: column; gap: 10px;
@@ -146,8 +146,7 @@ import Layout from '../layouts/Layout.astro';
 .doc-table th {
   text-align: left; padding: 10px 16px;
   background: var(--surface); color: var(--muted);
-  font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em;
-  border-bottom: 1px solid var(--border-sub);
+  font-weight: 700; font-size: 12px; border-bottom: 1px solid var(--border-sub);
 }
 .doc-table td {
   padding: 12px 16px; color: var(--muted); vertical-align: top;

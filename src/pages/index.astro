@@ -29,7 +29,7 @@ import { PROVA_GIORNI } from '../data/piani';
     </div>
     <div class="hero-visual" data-solo="it">
       <figure class="hero-video">
-        <video src="/video/gesthall-suite.mp4" poster="/video/gesthall-suite.jpg" muted loop playsinline preload="metadata" aria-label="Video di GestHall Suite: la cassa del turno in quadra, la chiusura delle giornate e «Chiedi all'AI»"></video>
+        <video src="/video/gesthall-suite.mp4" poster="/video/gesthall-suite.jpg" muted loop playsinline preload="metadata" aria-label="Video di GestHall Suite: la cassa del turno in quadra, la chiusura delle giornate e Quadra, l'assistente"></video>
         <button type="button" class="hero-audio" aria-pressed="false">Attiva l'audio</button>
       </figure>
     </div>
@@ -106,7 +106,7 @@ import { PROVA_GIORNI } from '../data/piani';
         <h2>Il mese della sala in una pagina. Per te e per il commercialista.</h2>
         <p class="lead">Incasso VLT per giorno e per piattaforma, ticket, bancomat e versamenti, sempre calcolati sul turno di chiusura. Confronto tra periodi, storico di ogni macchina, export in Excel.</p>
         <ul class="checks">
-          <li><strong>Dashboard in tempo reale</strong> con i grafici di 30 giorni e 6 mesi.</li>
+          <li><strong>Dashboard per ruolo</strong>: indicatori, «Da guardare» e grafici, con i riquadri dello stesso argomento raggruppati da sfogliare.</li>
           <li><strong>File per il commercialista</strong>: incassi, versamenti confermati e bar in un unico Excel.</li>
           <li><strong>Bet/Win e borderò</strong> dei fornitori archiviati e separati dall'incasso reale.</li>
         </ul>
@@ -119,13 +119,31 @@ import { PROVA_GIORNI } from '../data/piani';
       <div>
         <span class="eyebrow">Turni e personale</span>
         <h2>Chi lavora, quando, e cosa ha lasciato al collega.</h2>
-        <p class="lead">Calendario dei turni con orari diversi per giorno della settimana, turni scoperti in evidenza, operatori che si prendono i turni liberi dal telefono. Poi chat della sala, note e cose da fare della giornata e buste paga digitali.</p>
+        <p class="lead">Calendario dei turni con orari diversi per giorno della settimana, turni scoperti in evidenza, operatori che si prendono i turni liberi dal telefono. Ognuno preme «Inizia turno» e «Termina turno»: le ore effettive del mese si contano da sole, e un orario sbagliato si corregge in un attimo. Poi chat della sala, cose da fare della giornata e buste paga digitali.</p>
         <p style="margin-top:22px"><a href="/prodotto/sala" class="link">Sala e personale <span aria-hidden="true">→</span></a></p>
       </div>
       <div class="duo">
         <Shot src="turni" alt="Calendario mensile dei turni con operatori assegnati" />
         <div class="duo-phone"><Phone src="m-turni" alt="Elenco dei turni su telefono" /></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="split rev reveal">
+      <div>
+        <span class="eyebrow">Quadra, l'assistente</span>
+        <h2>Non sai come si fa? Chiedilo a Quadra.</h2>
+        <p class="lead">Quadra risponde su come si usa la suite: chiudere più giornate, registrare un versamento, cambiare gli orari dei turni. La trovi nella dashboard con le domande pensate per il tuo ruolo, e da «Cerca» in ogni pagina.</p>
+        <ul class="checks">
+          <li><strong>Risposte dalla guida</strong> e dalle novità della suite, sempre aggiornate.</li>
+          <li><strong>Nessun dato della sala</strong>: a Quadra non arrivano importi, nomi né giornate.</li>
+          <li><strong>Inclusa in ogni piano</strong>, senza costi in più.</li>
+        </ul>
+      </div>
+      <figure class="fig-widget"><img src="/img/prodotto/quadra.webp" alt="Il riquadro di Quadra nella dashboard, con le domande suggerite e il campo per chiedere" width="566" height="734" loading="lazy" decoding="async" /></figure>
     </div>
   </div>
 </section>
@@ -210,7 +228,7 @@ import { PROVA_GIORNI } from '../data/piani';
 <style>
 /* Hero sulla linea del marchio: fondo inchiostro con i due pezzi «In quadra», testo al centro, video grande che scende sulla sezione dopo */
 .hero { position: relative; padding: clamp(56px, 8vw, 112px) 0 0; overflow: hidden; color: #fff;
-  background: radial-gradient(60% 50% at 50% 0%, rgba(0, 195, 145, .28), transparent 70%), linear-gradient(#0b3b33, #0b3b33) top / 100% calc(100% - clamp(80px, 12vw, 200px)) no-repeat }
+  background: linear-gradient(#0b3b33, #0b3b33) top / 100% calc(100% - clamp(80px, 12vw, 200px)) no-repeat }
 .hero-deco { position: absolute; pointer-events: none }
 .hero-deco.d1 { width: clamp(220px, 30vw, 460px); left: -4vw; top: 6% ; fill: rgba(255, 255, 255, .045) }
 .hero-deco.d2 { width: clamp(140px, 19vw, 290px); right: -2vw; top: clamp(260px, 28vw, 420px); fill: rgba(0, 195, 145, .16) }
@@ -227,7 +245,7 @@ import { PROVA_GIORNI } from '../data/piani';
 .hero-shots { padding-left: 64px; text-align: left }
 .hero-video { position: relative; margin: 0 }
 .hero-video video { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: calc(var(--r-l) + 6px); border: 1px solid rgba(255, 255, 255, .14); box-shadow: 0 40px 100px -20px rgba(0, 0, 0, .55), 0 0 0 8px rgba(255, 255, 255, .04); background: #0b3b33 }
-.hero-audio { position: absolute; right: 16px; bottom: 16px; min-height: 40px; padding: 0 16px; border: 0; border-radius: 999px; background: rgba(15, 23, 32, .72); color: #fff; font: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer; backdrop-filter: blur(8px) }
+.hero-audio { position: absolute; right: 16px; bottom: 16px; min-height: 40px; padding: 0 16px; border: 0; border-radius: 999px; background: rgba(15, 23, 32, .72); color: #fff; font: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer; backdrop-filter: blur(8px) }
 .hero-phone { position: absolute; left: 0; bottom: 8px; width: 170px }
 .hero-phone  :global(.phone) { width: 100%; border-radius: 30px; padding: 7px }
 .hero-phone :global(.phone img) { border-radius: 24px }
@@ -241,7 +259,7 @@ import { PROVA_GIORNI } from '../data/piani';
 .area p { flex: 1; margin-bottom: 18px }
 .center-link { text-align: center; margin-top: 28px }
 .steps { counter-reset: s }
-.step-n { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: var(--text); color: var(--bg); font-weight: 750; margin-bottom: 16px }
+.step-n { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: var(--text); color: var(--bg); font-weight: 700; margin-bottom: 16px }
 @media (max-width: 980px) {
   .hero-shots { padding-left: 0 }
   .hero-deco { display: none }

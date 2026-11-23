@@ -2,6 +2,38 @@
  "updated": "2026-11-23",
  "releases": [
   {
+   "version": "4.14.2",
+   "date": "2026-11-23",
+   "title": "Riquadro di Quadra più leggibile",
+   "summary": "Il titolo del riquadro di Quadra nella dashboard torna bianco sul verde.",
+   "highlights": [
+    "Titolo di Quadra leggibile"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "Nel riquadro di Quadra della dashboard il titolo era scuro sul verde: ora è bianco, e le domande suggerite su due righe hanno più respiro."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Easier-to-read Quadra panel",
+    "summary": "The Quadra panel title in the dashboard is white on green again.",
+    "highlights": [
+     "Readable Quadra title"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "In the dashboard Quadra panel the title was dark on green: it is now white, and two-line suggested questions have more room."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.14.1",
    "date": "2026-11-23",
    "title": "Foto delle segnalazioni dal QR",
