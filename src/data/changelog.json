@@ -2,6 +2,38 @@
  "updated": "2026-11-23",
  "releases": [
   {
+   "version": "4.14.1",
+   "date": "2026-11-23",
+   "title": "Foto delle segnalazioni dal QR",
+   "summary": "Le foto mandate con la segnalazione dal QR prima della 4.13 compaiono nel dettaglio dell'assistenza.",
+   "highlights": [
+    "Foto delle vecchie segnalazioni dal QR recuperate"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "Le foto allegate alle segnalazioni dal QR prima della 4.13 erano salvate ma non si vedevano: ora vengono collegate da sole alla loro assistenza."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Photos from QR reports",
+    "summary": "Photos sent with QR fault reports before 4.13 now show in the service ticket details.",
+    "highlights": [
+     "Photos of older QR reports recovered"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "Photos attached to QR fault reports before 4.13 were saved but not shown: they are now linked to their ticket automatically."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.14.0",
    "date": "2026-11-23",
    "title": "Riquadri a tema e tempo del turno",
