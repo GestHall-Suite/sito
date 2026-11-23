@@ -2,6 +2,46 @@
  "updated": "2026-11-23",
  "releases": [
   {
+   "version": "4.14.0",
+   "date": "2026-11-23",
+   "title": "Riquadri a tema e tempo del turno",
+   "summary": "I riquadri della dashboard si raggruppano per argomento e il tempo del turno si gestisce anche dal giornaliero, con l'orario correggibile.",
+   "highlights": [
+    "Riquadri a tema da sfogliare",
+    "Inizia e Termina turno nel giornaliero",
+    "Orario del turno correggibile"
+   ],
+   "groups": [
+    {
+     "title": "Novità",
+     "items": [
+      "Dashboard con i riquadri a tema: Turni, Incassi e Versamenti nel tempo raccolgono i riquadri dello stesso argomento, da sfogliare con le schede o col dito. Da «Personalizza» si possono separare di nuovo.",
+      "Nel giornaliero, in cima a ogni turno: «Inizia turno», le ore in corso, «Termina turno» e, a turno finito, da che ora a che ora.",
+      "«Correggi l'orario»: chi ha avviato il turno o il responsabile sistema l'inizio (e la fine) se il pulsante è stato premuto in ritardo. Ogni correzione resta nel registro attività."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Themed panels and shift time",
+    "summary": "Dashboard panels group by topic and shift time is handled from the daily till too, with correctable times.",
+    "highlights": [
+     "Themed panels to swipe through",
+     "Start and End shift in the daily till",
+     "Correctable shift times"
+    ],
+    "groups": [
+     {
+      "title": "New",
+      "items": [
+       "Dashboard with themed panels: Shifts, Takings and Deposits over time gather the panels on the same topic, to browse with tabs or by swiping. They can be split again from «Customize».",
+       "In the daily till, at the top of each shift: «Start shift», the hours so far, «End shift» and, once finished, from what time to what time.",
+       "«Correct the times»: whoever started the shift or the manager fixes the start (and the end) if the button was pressed late. Every correction stays in the activity log."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.13.1",
    "date": "2026-11-23",
    "title": "Dashboard che scorre e «Inizia turno»",
