@@ -1,6 +1,66 @@
 {
- "updated": "2026-11-22",
+ "updated": "2026-11-23",
  "releases": [
+  {
+   "version": "4.13.0",
+   "date": "2026-11-23",
+   "title": "Turno effettivo e Quadra",
+   "summary": "Le ore vere di ogni turno, la foto nelle assistenze, i turni nella dashboard e un'assistente con un nome.",
+   "highlights": [
+    "«Termina turno» e ore effettive",
+    "Foto nelle assistenze",
+    "Turni di oggi e calendario nella dashboard",
+    "Quadra, l'assistente dell'app"
+   ],
+   "groups": [
+    {
+     "title": "Novità",
+     "items": [
+      "«Termina turno» nella dashboard e nei Turni: insieme a «Inizia turno» misura il turno effettivo. Le ore effettive compaiono nel riepilogo per persona, nell'export e in Il mio spazio.",
+      "Assistenze con la foto del guasto: si allega aprendo il ticket, dalla segnalazione con il QR o dopo, e si vede nel dettaglio.",
+      "Nella dashboard il riquadro «Turni»: chi lavora oggi con lo stato del turno e il calendario del mese con i tuoi turni e quelli da coprire.",
+      "L'assistente si chiama Quadra e ha il suo riquadro nella dashboard, con domande suggerite per ruolo. Come prima, non riceve dati della sala.",
+      "Il mio spazio più personale: saluto con soprannome, emoji e frase scelti nello Studio, ore effettive e calendario dei tuoi turni."
+     ]
+    },
+    {
+     "title": "Migliorie",
+     "items": [
+      "Un giro di tutta l'app: importi che non vanno più a capo o fuori dai riquadri, un solo contatore della chat, pannello di Chiusure che non copre lo schermo del telefono, barra di Versamenti solo quando servono giornate scelte, plurali corretti.",
+      "«Inizia turno» su un turno di un altro operatore ora lo dice, invece di aprire la cassa."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Actual shift time and Quadra",
+    "summary": "The real hours of every shift, photos in service tickets, shifts on the dashboard and an assistant with a name.",
+    "highlights": [
+     "«End shift» and actual hours",
+     "Photos in service tickets",
+     "Today's shifts and calendar on the dashboard",
+     "Quadra, the app's assistant"
+    ],
+    "groups": [
+     {
+      "title": "New",
+      "items": [
+       "«End shift» on the dashboard and in Shifts: together with «Start shift» it measures the actual shift time. Actual hours show in the per-person summary, in the export and in My space.",
+       "Service tickets with a photo of the fault: attach it when opening the ticket, from the QR report or later, and see it in the details.",
+       "The «Shifts» panel on the dashboard: who works today with the shift status, and the month calendar with your shifts and those to cover.",
+       "The assistant is called Quadra and has its own dashboard panel, with suggested questions for each role. As before, it receives no venue data.",
+       "A more personal My space: greeting with the nickname, emoji and phrase chosen in the Studio, actual hours and the calendar of your shifts."
+      ]
+     },
+     {
+      "title": "Improvements",
+      "items": [
+       "A pass over the whole app: amounts no longer wrap or overflow panels, a single chat counter, the Closures panel no longer covers the phone screen, the Deposits bar appears only when days are selected, correct plurals.",
+       "«Start shift» on another operator's shift now says so instead of opening the till."
+      ]
+     }
+    ]
+   }
+  },
   {
    "version": "4.12.0",
    "date": "2026-11-22",

@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-11-23
+
+- Changelog: voce 4.13.0 (turno effettivo e Quadra).
+
 ## 2026-11-22
 
 - Changelog: voce 4.12.0 (grafica più sobria).
