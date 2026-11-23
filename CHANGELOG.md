@@ -4,6 +4,8 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-11-23
 
+- Menu su iPad: il foglio del menu (`nav-sheet`) è fuori dalla barra in alto, che con `backdrop-filter` in Safari ne diventava il contenitore e lo schiacciava; «Prodotto» si apre al passaggio solo col mouse (`pointerenter` con `pointerType`), così un tocco non lo apre e richiude subito.
+- Schermate più leggibili: solo il contenuto dell'app senza barra laterale, a 2× e più grande nel riquadro; presentate su un fondo tenue del colore principale con la trama a puntini (`.stage` in `Shot.astro`, anche per il riquadro di Quadra).
 - Grafica allineata all'app 4.12+: pesi 400/700, niente maiuscolo né spaziatura tra le lettere, pulsanti e riquadri a tinta unita senza sfumature né ingrandimenti, ombre più piccole, etichette a pillola.
 - Nuove schermate dalla sala dimostrativa (dashboard con Quadra, giornaliero, turni, mensile, banco e report del bar, chat, ticket, backup e telefono) e nuovo video della home con Quadra e la correzione dell'orario del turno.
 - Home: sezione «Quadra, l'assistente»; turno effettivo e riquadri a tema in home, Sala e personale, Report e guida; foto del guasto nei ticket.
