@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-11-23
 
+- Changelog: voce 4.13.1 (dashboard che scorre e «Inizia turno»).
 - Changelog: voce 4.13.0 (turno effettivo e Quadra).
 
 ## 2026-11-22

@@ -2,6 +2,56 @@
  "updated": "2026-11-23",
  "releases": [
   {
+   "version": "4.13.1",
+   "date": "2026-11-23",
+   "title": "Dashboard che scorre e «Inizia turno»",
+   "summary": "La dashboard scorre anche con il mouse sopra i riquadri e «Inizia turno» riconosce il turno già avviato.",
+   "highlights": [
+    "La dashboard scorre con la rotella ovunque",
+    "«Inizia turno» sul turno che è tuo in calendario",
+    "Prossimi turni nel riquadro Turni"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "Con il mouse sopra un riquadro della dashboard la pagina non scorreva: ora scorre, e un elenco lungo scorre dentro e poi prosegue con la pagina.",
+      "«Inizia turno» non si blocca più se un collega aveva già salvato la cassa di quel turno: basta che il turno sia tuo in calendario. Premuto di nuovo non cambia l'ora d'inizio, e la dashboard mostra il turno già avviato con «Termina turno»."
+     ]
+    },
+    {
+     "title": "Migliorie",
+     "items": [
+      "I tuoi prossimi turni sono dentro il riquadro «Turni» della dashboard, sotto i turni del giorno."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Dashboard scrolling and «Start shift»",
+    "summary": "The dashboard scrolls with the mouse over any panel and «Start shift» recognizes a shift already started.",
+    "highlights": [
+     "The dashboard scrolls with the wheel everywhere",
+     "«Start shift» on the shift that is yours in the calendar",
+     "Upcoming shifts in the Shifts panel"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "With the mouse over a dashboard panel the page did not scroll: now it does, and a long list scrolls inside and then continues with the page.",
+       "«Start shift» no longer stops if a colleague had already saved the till of that shift: it is enough that the shift is yours in the calendar. Pressed again it does not change the start time, and the dashboard shows the shift already started with «End shift»."
+      ]
+     },
+     {
+      "title": "Improvements",
+      "items": [
+       "Your upcoming shifts are inside the dashboard's «Shifts» panel, below the day's shifts."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.13.0",
    "date": "2026-11-23",
    "title": "Turno effettivo e Quadra",
