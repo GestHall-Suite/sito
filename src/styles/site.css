@@ -175,6 +175,10 @@ a.card:hover { border-color: var(--accent-line); box-shadow: var(--sh-2) }
 .shot-bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--border-strong) }
 .shot-bar span { margin-left: 10px; font-size: 12px; color: var(--faint); overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
 .shot img { width: 100%; height: auto; background: #f4f5f7 }
+.stage { position: relative; padding: 40px 0 0 40px; border-radius: var(--r-l); background: var(--accent-weak); overflow: hidden; isolation: isolate }
+.stage::before { content: ''; position: absolute; inset: 0; z-index: -1; background-image: radial-gradient(color-mix(in srgb, var(--accent) 22%, transparent) 1px, transparent 1.5px); background-size: 16px 16px; opacity: .7 }
+.stage .shot { border-radius: var(--r-m) 0 0 0; border-right: 0; border-bottom: 0; box-shadow: 0 8px 24px rgba(15, 23, 42, .10) }
+:root[data-theme="dark"] .stage { background: color-mix(in srgb, var(--accent) 14%, var(--surface)) }
 .phone { width: min(300px, 78vw); border-radius: 38px; padding: 9px; background: #0c1424; box-shadow: var(--sh-3), inset 0 0 0 1.5px #2a3446 }
 .phone img { border-radius: 30px; width: 100%; height: auto }
 .figure-cap { margin-top: 14px; font-size: 14px; color: var(--faint); text-align: center }
@@ -276,9 +280,12 @@ a.card:hover { border-color: var(--accent-line); box-shadow: var(--sh-2) }
   .table th, .table td { padding: 11px 12px; font-size: 14px }
   .cta .actions .btn { flex: 1 1 100% }
   .shot-bar { height: 26px }
+  .stage { padding: 16px 0 0 16px }
+  .stage-c { padding: 24px }
   .shot-bar span { display: none }
 }
 .ilink { color: var(--accent-ink); font-weight: 700; text-decoration: underline; text-underline-offset: 3px }
 
 .fig-widget { margin: 0 auto; max-width: 320px; }
+.stage-c { padding: 40px; display: grid; place-items: center }
 .fig-widget img { display: block; width: 100%; height: auto; border-radius: var(--r-l); box-shadow: var(--sh-3); }

@@ -1,8 +1,10 @@
 ---
-interface Props { src: string; alt: string; url?: string; eager?: boolean; w?: number; h?: number }
-const { src, alt, url = 'app.salaaurora.it', eager = false, w = 1600, h = 1000 } = Astro.props;
+interface Props { src: string; alt: string; url?: string; eager?: boolean; w?: number; h?: number; stage?: boolean }
+const { src, alt, url = 'app.salaaurora.it', eager = false, w = 1600, h = 1000, stage = true } = Astro.props;
 ---
-<figure class="shot">
-  <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>{url}</span></div>
-  <img src={`/img/prodotto/${src}.webp`} alt={alt} width={w} height={h} loading={eager ? 'eager' : 'lazy'} decoding="async" fetchpriority={eager ? 'high' : undefined} />
-</figure>
+<div class:list={['shot-wrap', { stage }]}>
+  <figure class="shot">
+    <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>{url}</span></div>
+    <img src={`/img/prodotto/${src}.webp`} alt={alt} width={w} height={h} loading={eager ? 'eager' : 'lazy'} decoding="async" fetchpriority={eager ? 'high' : undefined} />
+  </figure>
+</div>

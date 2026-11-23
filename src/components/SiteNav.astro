@@ -49,8 +49,9 @@ const on = (p: string) => (path === p || path.startsWith(p + '/')) ? 'page' : un
       </button>
     </div>
   </div>
+</header>
 
-  <div class="nav-sheet" id="nav-sheet" hidden>
+<div class="nav-sheet" id="nav-sheet" hidden>
     <div class="container">
       <p class="nav-sheet-h">Prodotto</p>
       <a href="/prodotto" class="nav-sheet-a">Panoramica</a>
@@ -65,8 +66,7 @@ const on = (p: string) => (path === p || path.startsWith(p + '/')) ? 'page' : un
       <a href="/en" class="nav-sheet-a" data-lang-sw hreflang="en">English</a>
       <a href="/contatti?motivo=demo" class="btn btn-primary btn-block btn-lg nav-sheet-cta">Richiedi una demo</a>
     </div>
-  </div>
-</header>
+</div>
 
 <style>
 .nav-lang { font-size: 13px; font-weight: 700; color: var(--muted); padding: 8px 10px; border-radius: 10px; text-decoration: none }
@@ -107,7 +107,7 @@ const on = (p: string) => (path === p || path.startsWith(p + '/')) ? 'page' : un
 .nav-burger span:last-child { top: 23px }
 .nav-burger[aria-expanded="true"] span:first-child { top: 19.5px; transform: rotate(45deg) }
 .nav-burger[aria-expanded="true"] span:last-child { top: 19.5px; transform: rotate(-45deg) }
-.nav-sheet { position: fixed; inset: 68px 0 0; background: var(--bg); overflow-y: auto; padding: 8px 0 32px; border-top: 1px solid var(--border) }
+.nav-sheet { position: fixed; inset: 68px 0 0; z-index: 99; background: var(--bg); overflow-y: auto; padding: 8px 0 32px; border-top: 1px solid var(--border) }
 .nav-sheet-h { font-size: 12.5px; font-weight: 400; color: var(--faint); margin: 20px 0 6px }
 .nav-sheet-a { display: block; padding: 12px 0; font-size: 18px; font-weight: 700; border-bottom: 1px solid var(--border) }
 .nav-sheet-cta { margin-top: 28px }
@@ -131,11 +131,11 @@ const on = (p: string) => (path === p || path.startsWith(p + '/')) ? 'page' : un
   const dd = btn.parentElement!;
   let t: number | undefined;
   const set = (open: boolean) => { btn.setAttribute('aria-expanded', String(open)); panel.classList.toggle('open', open); };
-  btn.addEventListener('click', () => set(btn.getAttribute('aria-expanded') !== 'true'));
-  if (matchMedia('(hover: hover)').matches) {
-    dd.addEventListener('mouseenter', () => { clearTimeout(t); set(true); });
-    dd.addEventListener('mouseleave', () => { t = window.setTimeout(() => set(false), 160); });
-  }
+  // solo il mouse apre al passaggio: su iPad un tocco simula mouseenter e poi click, che richiudeva il menu
+  let viaMouse = false;
+  btn.addEventListener('click', () => { if (viaMouse) { viaMouse = false; set(true); return; } set(btn.getAttribute('aria-expanded') !== 'true'); });
+  dd.addEventListener('pointerenter', e => { if (e.pointerType !== 'mouse') return; clearTimeout(t); viaMouse = !panel.classList.contains('open'); set(true); });
+  dd.addEventListener('pointerleave', e => { if (e.pointerType !== 'mouse') return; viaMouse = false; t = window.setTimeout(() => set(false), 160); });
   document.addEventListener('click', e => { if (!dd.contains(e.target as Node)) set(false); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') { set(false); closeSheet(); } });
 
