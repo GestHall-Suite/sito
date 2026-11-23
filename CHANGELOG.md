@@ -4,6 +4,10 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-11-23
 
+- Grafica allineata all'app 4.12+: pesi 400/700, niente maiuscolo né spaziatura tra le lettere, pulsanti e riquadri a tinta unita senza sfumature né ingrandimenti, ombre più piccole, etichette a pillola.
+- Nuove schermate dalla sala dimostrativa (dashboard con Quadra, giornaliero, turni, mensile, banco e report del bar, chat, ticket, backup e telefono) e nuovo video della home con Quadra e la correzione dell'orario del turno.
+- Home: sezione «Quadra, l'assistente»; turno effettivo e riquadri a tema in home, Sala e personale, Report e guida; foto del guasto nei ticket.
+- Changelog: voce 4.14.2 (titolo di Quadra leggibile).
 - Changelog: voce 4.14.1 (foto delle segnalazioni dal QR).
 - Changelog: voce 4.14.0 (riquadri a tema e tempo del turno).
 - Changelog: voce 4.13.1 (dashboard che scorre e «Inizia turno»).
