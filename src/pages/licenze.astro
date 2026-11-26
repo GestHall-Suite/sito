@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout page="Licenze" description="Componenti open source usati da GestHall Suite e le loro licenze.">
+
+<article class="doc-page">
+  <div class="container doc-inner">
+
+    <header class="doc-header">
+      <h1>Licenze</h1>
+      <p class="doc-meta">Versione 1.0 · Aggiornata il [DATA DI PUBBLICAZIONE]</p>
+      <p class="doc-meta" data-solo="en"><strong>This document is published in Italian, which is the binding version.</strong> An English translation is available on request.</p>
+    </header>
+
+    <div class="doc-body">
+
+      <section class="doc-section">
+        <h2>1. Componenti di terze parti nell'app</h2>
+        <p>GestHall Suite contiene questi componenti open source. Ognuno resta dei suoi autori e si usa secondo la sua licenza; il testo completo di ogni licenza è distribuito con l'app nella cartella <code>assets/vendor/</code>.</p>
+        <div class="doc-scroll"><table class="doc-table">
+          <thead><tr><th>Componente</th><th>A cosa serve</th><th>Licenza</th><th>Diritti</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Chart.js</strong></td><td>Grafici</td><td>MIT</td><td>2014-2023 Chart.js Contributors</td></tr>
+            <tr><td><strong>QRCode.js</strong></td><td>Codici QR</td><td>MIT</td><td>2012 davidshimjs</td></tr>
+            <tr><td><strong>PDF.js</strong></td><td>Lettura dei PDF</td><td>Apache 2.0</td><td>Mozilla Foundation</td></tr>
+            <tr><td><strong>pdf-lib</strong></td><td>Creazione e unione dei PDF</td><td>MIT</td><td>2019 Andrew Dillon</td></tr>
+            <tr><td><strong>jsPDF</strong></td><td>PDF del menu del bar</td><td>MIT</td><td>2010-2021 James Hall, yWorks GmbH</td></tr>
+            <tr><td><strong>html2canvas</strong></td><td>PDF del menu del bar</td><td>MIT</td><td>2012 Niklas von Hertzen</td></tr>
+            <tr><td><strong>zxcvbn</strong></td><td>Misura della forza delle password</td><td>MIT</td><td>2012-2016 Dan Wheeler e Dropbox, Inc.</td></tr>
+            <tr><td><strong>Lucide</strong></td><td>Icone</td><td>ISC (parti MIT da Feather)</td><td>Lucide Contributors, Cole Bemis</td></tr>
+            <tr><td><strong>Motion</strong></td><td>Animazioni</td><td>MIT</td><td>Motion B.V.</td></tr>
+            <tr><td><strong>Inter</strong></td><td>Carattere del menu del bar</td><td>SIL Open Font License 1.1</td><td>2020 The Inter Project Authors</td></tr>
+            <tr><td><strong>Playfair Display</strong></td><td>Carattere del menu del bar</td><td>SIL Open Font License 1.1</td><td>2017 The Playfair Display Project Authors</td></tr>
+            <tr><td><strong>Elenco delle password più comuni</strong></td><td>Controllo delle password</td><td>[LICENZA DELL'ELENCO]</td><td>[FONTE DELL'ELENCO]</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section class="doc-section">
+        <h2>2. Sito</h2>
+        <p>Il sito è costruito con <strong>Astro</strong> (licenza MIT) e non carica librerie, caratteri o script di terze parti.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>3. Marchi</h2>
+        <p>GestHall Suite e il suo logo sono di [NOME E COGNOME DEL TITOLARE]. Gli altri nomi citati (per esempio Sonos, Google, Apple) sono dei rispettivi proprietari e indicano solo la compatibilità.</p>
+      </section>
+
+    </div>
+  </div>
+</article>
+
+</Layout>
+
+<style>
+.doc-page { padding: 56px 0 96px }
+.doc-inner { max-width: 800px }
+
+.doc-header { margin-bottom: 56px; padding-bottom: 32px; border-bottom: 1px solid var(--border-sub) }
+.doc-header h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 700; margin-bottom: 12px }
+.doc-meta { font-size: 14px; color: var(--faint) }
+
+.doc-body { display: flex; flex-direction: column; gap: 0 }
+
+.doc-section {
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border-sub);
+}
+.doc-section:last-child { border-bottom: none }
+
+.doc-section h2 {
+  font-size: 1.2rem; font-weight: 700; color: var(--text);
+  margin-bottom: 16px;
+}
+.doc-section h3 {
+  font-size: 1rem; font-weight: 700; color: var(--muted);
+  margin: 20px 0 8px;
+}
+.doc-section h3:first-of-type { margin-top: 0 }
+
+.doc-section p {
+  font-size: 15px; color: var(--muted); line-height: 1.8;
+  max-width: 68ch; margin-bottom: 12px;
+}
+.doc-section p:last-child { margin-bottom: 0 }
+.doc-section a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px }
+.doc-section strong { color: var(--text); font-weight: 700 }
+
+.doc-list {
+  display: flex; flex-direction: column; gap: 10px;
+  margin: 12px 0;
+}
+.doc-list li {
+  font-size: 15px; color: var(--muted); line-height: 1.6;
+  padding-left: 20px; position: relative;
+}
+.doc-list li::before {
+  content: '–'; position: absolute; left: 0; color: var(--accent-ink); font-weight: 700;
+}
+
+.doc-table {
+  width: 100%; border-collapse: collapse; margin: 12px 0;
+  font-size: 14px;
+}
+.doc-table th {
+  text-align: left; padding: 10px 16px;
+  background: var(--surface); color: var(--muted);
+  font-weight: 700; font-size: 12px; border-bottom: 1px solid var(--border-sub);
+}
+.doc-table td {
+  padding: 12px 16px; color: var(--muted); vertical-align: top;
+  border-bottom: 1px solid var(--border-sub); line-height: 1.6;
+}
+.doc-table tr:last-child td { border-bottom: none }
+
+.doc-bozza { margin-top: 16px; padding: 16px; border-radius: var(--r-m); background: color-mix(in srgb, #d97706 12%, var(--surface)); border: 1px solid color-mix(in srgb, #d97706 40%, var(--border-sub)); font-size: 14px; line-height: 1.6; color: var(--text) }
+.doc-scroll { overflow-x: auto; margin: 12px 0 }
+.doc-scroll .doc-table { margin: 0; min-width: 560px }
+
+@media (max-width: 640px) {
+  .doc-page { padding: 40px 0 64px }
+  .doc-table { font-size: 13px }
+  .doc-table th, .doc-table td { padding: 8px 12px }
+}
+</style>

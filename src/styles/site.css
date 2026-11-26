@@ -19,12 +19,12 @@ table { border-collapse: collapse }
   --border-strong: #d0d5dd;
   --text: #101828;
   --muted: #5d6679;
-  --faint: #98a2b3;
+  --faint: #646d7f;
   --accent: #00c391;
   --accent-ink: #00785a;
   --accent-weak: #e3f7f0;
   --accent-line: rgba(0, 195, 145, .32);
-  --on-accent: #ffffff;
+  --on-accent: #0b1220;
   --amber: #b54708;
   --amber-weak: #fef0c7;
   --red: #d92d20;
@@ -65,7 +65,7 @@ table { border-collapse: collapse }
   --border-strong: #2e3d57;
   --text: #e8edf5;
   --muted: #a3adbf;
-  --faint: #6b778c;
+  --faint: #8794a8;
   --accent-ink: #4fe0b7;
   --accent-weak: rgba(0, 195, 145, .14);
   --accent-line: rgba(0, 195, 145, .4);

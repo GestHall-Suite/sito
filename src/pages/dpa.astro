@@ -1,0 +1,178 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout page="Accordo sul trattamento dei dati" description="Accordo sul trattamento dei dati personali (art. 28 GDPR) tra la sala e GestHall Suite.">
+
+<article class="doc-page">
+  <div class="container doc-inner">
+
+    <header class="doc-header">
+      <h1>Accordo sul trattamento dei dati</h1>
+      <p class="doc-meta">Art. 28 GDPR · Versione 1.0 · In vigore dal [DATA DI PUBBLICAZIONE]</p>
+      <p class="doc-bozza"><strong>Bozza da far rivedere a un professionista.</strong> Questo testo è stato preparato sulla base di come il servizio funziona davvero e va verificato da un legale prima della pubblicazione definitiva. Le parti tra parentesi quadre sono da completare.</p>
+      <p class="doc-meta" data-solo="en"><strong>This document is published in Italian, which is the binding version.</strong> An English translation is available on request.</p>
+    </header>
+
+    <div class="doc-body">
+
+      <section class="doc-section">
+        <h2>1. Parti e oggetto</h2>
+        <p>Questo accordo, ai sensi dell'art. 28 del Regolamento (UE) 2016/679 (GDPR), fa parte del contratto per il servizio GestHall Suite (i <a href="/termini">Termini di servizio</a>) tra il <strong>Cliente</strong>, titolare del trattamento, e <strong>[NOME E COGNOME DEL TITOLARE]</strong>, partita IVA [PARTITA IVA], con sede in [INDIRIZZO COMPLETO DELLA SEDE], PEC [INDIRIZZO PEC], <strong>responsabile del trattamento</strong> («Responsabile»).</p>
+        <p>Riguarda solo i dati personali che il Cliente e i suoi utenti inseriscono nell'app. I dati che il Responsabile tratta per conto proprio (contratto, fatture, assistenza) sono descritti nell'<a href="/privacy">informativa privacy</a>.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>2. Cosa trattiamo e perché</h2>
+        <div class="doc-scroll"><table class="doc-table">
+          <thead><tr><th>Interessati</th><th>Dati</th></tr></thead>
+          <tbody>
+            <tr><td>Personale della sala (utenti dell'app)</td><td>Nome, username, email, telefono, codice fiscale, foto, ruolo; turni, presenze e ore; buste paga caricate (LUL) e presa visione; documenti personali (formazione, HACCP, sicurezza); messaggi della chat; firme dei versamenti; registro delle attività e degli accessi (con IP e browser)</td></tr>
+            <tr><td>Clienti della sala</td><td>Anagrafica (nome, data e luogo di nascita, codice fiscale, residenza, documento d'identità), contatti, note, prestiti, vendite del bar collegate</td></tr>
+            <tr><td>Fornitori, tecnici e altri contatti</td><td>Nome, telefono, email, note</td></tr>
+          </tbody>
+        </table></div>
+        <p><strong>Finalità</strong>: fornire il Servizio (registrare cassa, turni, personale, clienti e bar della sala), farne i backup, gli aggiornamenti e l'assistenza tecnica chiesta dal Cliente. <strong>Natura</strong>: conservazione, consultazione, elaborazione e cancellazione su server. <strong>Durata</strong>: quella del contratto, più il periodo del punto 9.</p>
+        <p>Il Servizio non è pensato per categorie particolari di dati (salute, opinioni, dati giudiziari): il Cliente non ne inserisce, salvo quanto gli impongono gli obblighi di legge e sotto la sua responsabilità.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>3. Istruzioni del Cliente</h2>
+        <p>Il Responsabile tratta i dati solo secondo le istruzioni documentate del Cliente: questi termini, le impostazioni scelte nell'app e le richieste scritte (email o PEC). Se un'istruzione gli sembra contraria al GDPR, lo segnala subito. Il Responsabile non usa i dati per fini propri, non li vende e non li comunica a terzi, salvo obbligo di legge (che segnala al Cliente quando la legge lo consente).</p>
+        <p>Il Cliente resta responsabile della base giuridica dei trattamenti, delle informative al personale e ai clienti della sala, dei tempi di conservazione che sceglie e degli accessi che crea.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>4. Riservatezza</h2>
+        <p>Accedono ai dati solo le persone autorizzate dal Responsabile, quando serve (assistenza chiesta dal Cliente, risoluzione di un guasto, aggiornamenti), con un impegno di riservatezza. Ogni accesso remoto dell'assistenza avviene con un collegamento personale valido 5 minuti, usabile una volta, ed è registrato nel registro delle attività della sala.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>5. Misure di sicurezza (art. 32)</h2>
+        <ul class="doc-list">
+          <li>Database separato per ogni installazione, connessioni solo in HTTPS.</li>
+          <li>Password robuste conservate solo come hash, verifica in due passaggi obbligatoria per i responsabili, limiti ai tentativi di accesso, sessioni revocabili.</li>
+          <li>Ruoli e permessi controllati sul server, file caricati serviti solo a chi ha accesso, registro delle attività.</li>
+          <li>Backup automatici settimanali e prima di ogni aggiornamento; aggiornamenti verificati con impronta e ritorno alla versione precedente.</li>
+          <li>Sul nostro hosting: server nell'Unione europea ([FORNITORE DI HOSTING], [PAESE DEL DATA CENTER]), con le misure del fornitore.</li>
+        </ul>
+        <p>Il Responsabile aggiorna le misure con l'evoluzione della tecnica. Se l'installazione è sull'hosting del Cliente, sicurezza del server, copie e accessi all'hosting restano del Cliente.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>6. Sub-responsabili</h2>
+        <p>Il Cliente autorizza in modo generale il Responsabile a usare questi sub-responsabili, vincolati da obblighi equivalenti:</p>
+        <div class="doc-scroll"><table class="doc-table">
+          <thead><tr><th>Fornitore</th><th>Per cosa</th><th>Dove</th></tr></thead>
+          <tbody>
+            <tr><td>SiteGround Spain S.L.</td><td>Hosting dell'app (solo se la sala è sul nostro spazio)</td><td>Unione europea</td></tr>
+            <tr><td>[FORNITORE DELLA CASELLA EMAIL]</td><td>Invio delle email dell'app (riepiloghi, buste paga, codici di accesso)</td><td>[PAESE]</td></tr>
+            <tr><td>Servizi di notifica dei browser (Google, Apple, Mozilla)</td><td>Consegna delle notifiche push: il contenuto è cifrato e loro non possono leggerlo</td><td>Stati Uniti (Data Privacy Framework)</td></tr>
+          </tbody>
+        </table></div>
+        <p>Non ricevono dati della sala: l'assistente Quadra (le domande non includono dati della sala e l'app non ne aggiunge), il controllo delle password violate (riceve solo l'inizio di un'impronta cifrata della password), la verifica della licenza (riceve solo la chiave dell'installazione e la versione).</p>
+        <p>Il Responsabile avvisa per email almeno 30 giorni prima di aggiungere o sostituire un sub-responsabile; il Cliente può opporsi per motivi legati alla protezione dei dati e, se non si trova una soluzione, disdire senza penali.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>7. Diritti degli interessati e collaborazione</h2>
+        <p>L'app permette al Cliente di consultare, correggere, esportare e cancellare i dati (anche con la richiesta di cancellazione che ogni utente può inviare dal proprio profilo). Se un interessato scrive al Responsabile, la richiesta viene girata al Cliente senza rispondere nel merito. Il Responsabile aiuta il Cliente, per quanto possibile, nelle valutazioni d'impatto e nei rapporti con il Garante.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>8. Violazioni dei dati</h2>
+        <p>Il Responsabile avvisa il Cliente senza ingiustificato ritardo, e comunque entro [NUMERO] ore da quando ne viene a conoscenza, di ogni violazione dei dati personali, con le informazioni disponibili (cosa è successo, quali dati e quanti interessati, cosa è stato fatto) per permettergli di notificarla al Garante entro 72 ore se necessario.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>9. Fine del contratto</h2>
+        <p>Alla fine del contratto il Cliente può esportare tutti i dati per 30 giorni (app in sola lettura) o chiedere una copia completa del database. Poi, sul nostro hosting, il Responsabile cancella i dati e, entro [NUMERO] giorni, le copie di backup, salvo obblighi di legge di conservazione. Su richiesta conferma per iscritto la cancellazione.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>10. Verifiche</h2>
+        <p>Il Responsabile mette a disposizione del Cliente le informazioni necessarie a dimostrare il rispetto di questo accordo e consente verifiche, con un preavviso ragionevole di almeno [NUMERO] giorni, a spese del Cliente e senza compromettere la sicurezza degli altri clienti.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>11. Trasferimenti fuori dall'Unione europea</h2>
+        <p>I dati della sala restano nell'Unione europea, salvo i sub-responsabili indicati sopra, per i quali il trasferimento si basa sulla decisione di adeguatezza UE-USA (Data Privacy Framework) o sulle clausole contrattuali standard della Commissione europea.</p>
+      </section>
+
+    </div>
+  </div>
+</article>
+
+</Layout>
+
+<style>
+.doc-page { padding: 56px 0 96px }
+.doc-inner { max-width: 800px }
+
+.doc-header { margin-bottom: 56px; padding-bottom: 32px; border-bottom: 1px solid var(--border-sub) }
+.doc-header h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 700; margin-bottom: 12px }
+.doc-meta { font-size: 14px; color: var(--faint) }
+
+.doc-body { display: flex; flex-direction: column; gap: 0 }
+
+.doc-section {
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border-sub);
+}
+.doc-section:last-child { border-bottom: none }
+
+.doc-section h2 {
+  font-size: 1.2rem; font-weight: 700; color: var(--text);
+  margin-bottom: 16px;
+}
+.doc-section h3 {
+  font-size: 1rem; font-weight: 700; color: var(--muted);
+  margin: 20px 0 8px;
+}
+.doc-section h3:first-of-type { margin-top: 0 }
+
+.doc-section p {
+  font-size: 15px; color: var(--muted); line-height: 1.8;
+  max-width: 68ch; margin-bottom: 12px;
+}
+.doc-section p:last-child { margin-bottom: 0 }
+.doc-section a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px }
+.doc-section strong { color: var(--text); font-weight: 700 }
+
+.doc-list {
+  display: flex; flex-direction: column; gap: 10px;
+  margin: 12px 0;
+}
+.doc-list li {
+  font-size: 15px; color: var(--muted); line-height: 1.6;
+  padding-left: 20px; position: relative;
+}
+.doc-list li::before {
+  content: '–'; position: absolute; left: 0; color: var(--accent-ink); font-weight: 700;
+}
+
+.doc-table {
+  width: 100%; border-collapse: collapse; margin: 12px 0;
+  font-size: 14px;
+}
+.doc-table th {
+  text-align: left; padding: 10px 16px;
+  background: var(--surface); color: var(--muted);
+  font-weight: 700; font-size: 12px; border-bottom: 1px solid var(--border-sub);
+}
+.doc-table td {
+  padding: 12px 16px; color: var(--muted); vertical-align: top;
+  border-bottom: 1px solid var(--border-sub); line-height: 1.6;
+}
+.doc-table tr:last-child td { border-bottom: none }
+
+.doc-bozza { margin-top: 16px; padding: 16px; border-radius: var(--r-m); background: color-mix(in srgb, #d97706 12%, var(--surface)); border: 1px solid color-mix(in srgb, #d97706 40%, var(--border-sub)); font-size: 14px; line-height: 1.6; color: var(--text) }
+.doc-scroll { overflow-x: auto; margin: 12px 0 }
+.doc-scroll .doc-table { margin: 0; min-width: 560px }
+
+@media (max-width: 640px) {
+  .doc-page { padding: 40px 0 64px }
+  .doc-table { font-size: 13px }
+  .doc-table th, .doc-table td { padding: 8px 12px }
+}
+</style>

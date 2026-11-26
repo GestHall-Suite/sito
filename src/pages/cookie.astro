@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout page="Cookie" description="Quali cookie e quali dati nel browser usano il sito e l'app GestHall Suite.">
+
+<article class="doc-page">
+  <div class="container doc-inner">
+
+    <header class="doc-header">
+      <h1>Cookie policy</h1>
+      <p class="doc-meta">Versione 1.0 · Aggiornata il [DATA DI PUBBLICAZIONE]</p>
+      <p class="doc-bozza"><strong>Bozza da far rivedere a un professionista.</strong> Questo testo è stato preparato sulla base di come il sito e l'app funzionano davvero e va verificato da un legale prima della pubblicazione definitiva. Le parti tra parentesi quadre sono da completare.</p>
+      <p class="doc-meta" data-solo="en"><strong>This document is published in Italian, which is the binding version.</strong> In short: the website sets no cookies; the app uses only technical cookies, so no consent banner is needed.</p>
+    </header>
+
+    <div class="doc-body">
+
+      <section class="doc-section">
+        <h2>1. In breve</h2>
+        <p>Il sito gesthallsuite.it <strong>non imposta cookie</strong> e non usa strumenti di statistica, pubblicità o profilazione, né contenuti di terze parti (video, mappe, pulsanti social, caratteri da servizi esterni). L'app GestHall Suite e il pannello per clienti e rivenditori usano solo <strong>cookie tecnici</strong>, necessari per entrare e lavorare in sicurezza.</p>
+        <p>Per i cookie tecnici la legge non chiede il consenso (art. 122 del Codice privacy e Linee guida del Garante sui cookie del 10 giugno 2021): per questo non mostriamo un banner. Se in futuro aggiungessimo strumenti che lo richiedono, il banner arriverà prima di loro.</p>
+        <p>Titolare: [NOME E COGNOME DEL TITOLARE], come indicato nell'<a href="/privacy">informativa privacy</a>.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>2. Sito gesthallsuite.it</h2>
+        <div class="doc-scroll"><table class="doc-table">
+          <thead><tr><th>Nome</th><th>Tipo</th><th>A cosa serve</th><th>Durata</th></tr></thead>
+          <tbody>
+            <tr><td><strong>gh-site-theme</strong></td><td>Memoria del browser (localStorage)</td><td>Ricorda se hai scelto il tema chiaro o scuro. Non viene mai inviato a noi.</td><td>Finché non la cancelli</td></tr>
+          </tbody>
+        </table></div>
+        <p>Il server che ospita il sito (SiteGround, nell'Unione europea) registra per sicurezza i dati tecnici di ogni richiesta, come l'indirizzo IP, per [NUMERO] giorni: non sono cookie e non servono a profilarti.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>3. App GestHall Suite</h2>
+        <p>Valgono per chi usa l'app di una sala. Sono tutti cookie di prima parte (del dominio della sala), non leggibili dal JavaScript e inviati solo in HTTPS.</p>
+        <div class="doc-scroll"><table class="doc-table">
+          <thead><tr><th>Nome</th><th>A cosa serve</th><th>Durata</th></tr></thead>
+          <tbody>
+            <tr><td><strong>PHPSESSID</strong></td><td>Tiene aperto l'accesso mentre usi l'app.</td><td>Fino alla chiusura del browser o all'uscita</td></tr>
+            <tr><td><strong>gh_rm</strong></td><td>«Resta connesso»: solo se lo scegli all'accesso.</td><td>30 giorni</td></tr>
+            <tr><td><strong>gh_dev</strong></td><td>Ricorda un dispositivo attendibile per la verifica in due passaggi, solo se lo scegli.</td><td>30 giorni</td></tr>
+            <tr><td><strong>gh_lt</strong></td><td>Protegge il modulo di accesso da invii falsi (sicurezza).</td><td>24 ore</td></tr>
+            <tr><td><strong>gh_lingua</strong></td><td>Ricorda la lingua scelta nella pagina di accesso.</td><td>12 mesi</td></tr>
+          </tbody>
+        </table></div>
+        <p>L'app salva inoltre nella memoria del browser alcune preferenze (tema, vista degli elenchi, riquadri chiusi, bozze non ancora salvate) e, per funzionare senza rete, una copia delle pagine di cassa e turni e dei dati in attesa di invio. Restano sul dispositivo e si cancellano uscendo dall'app o svuotando i dati del sito nel browser.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>4. Pannello per clienti e rivenditori</h2>
+        <div class="doc-scroll"><table class="doc-table">
+          <thead><tr><th>Nome</th><th>A cosa serve</th><th>Durata</th></tr></thead>
+          <tbody>
+            <tr><td><strong>ghub_sess</strong></td><td>Tiene aperto l'accesso al pannello.</td><td>Fino alla chiusura del browser o all'uscita</td></tr>
+          </tbody>
+        </table></div>
+        <p>La pagina «Gestisci piano online» dell'area clienti non imposta cookie: si apre con un collegamento firmato valido un'ora.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>5. Come cancellarli</h2>
+        <p>Puoi cancellare cookie e dati salvati dalle impostazioni del browser (di solito «Privacy» → «Cancella dati di navigazione»). Bloccando i cookie tecnici l'app non riesce a tenerti collegato.</p>
+      </section>
+
+    </div>
+  </div>
+</article>
+
+</Layout>
+
+<style>
+.doc-page { padding: 56px 0 96px }
+.doc-inner { max-width: 800px }
+
+.doc-header { margin-bottom: 56px; padding-bottom: 32px; border-bottom: 1px solid var(--border-sub) }
+.doc-header h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 700; margin-bottom: 12px }
+.doc-meta { font-size: 14px; color: var(--faint) }
+
+.doc-body { display: flex; flex-direction: column; gap: 0 }
+
+.doc-section {
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border-sub);
+}
+.doc-section:last-child { border-bottom: none }
+
+.doc-section h2 {
+  font-size: 1.2rem; font-weight: 700; color: var(--text);
+  margin-bottom: 16px;
+}
+.doc-section h3 {
+  font-size: 1rem; font-weight: 700; color: var(--muted);
+  margin: 20px 0 8px;
+}
+.doc-section h3:first-of-type { margin-top: 0 }
+
+.doc-section p {
+  font-size: 15px; color: var(--muted); line-height: 1.8;
+  max-width: 68ch; margin-bottom: 12px;
+}
+.doc-section p:last-child { margin-bottom: 0 }
+.doc-section a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px }
+.doc-section strong { color: var(--text); font-weight: 700 }
+
+.doc-list {
+  display: flex; flex-direction: column; gap: 10px;
+  margin: 12px 0;
+}
+.doc-list li {
+  font-size: 15px; color: var(--muted); line-height: 1.6;
+  padding-left: 20px; position: relative;
+}
+.doc-list li::before {
+  content: '–'; position: absolute; left: 0; color: var(--accent-ink); font-weight: 700;
+}
+
+.doc-table {
+  width: 100%; border-collapse: collapse; margin: 12px 0;
+  font-size: 14px;
+}
+.doc-table th {
+  text-align: left; padding: 10px 16px;
+  background: var(--surface); color: var(--muted);
+  font-weight: 700; font-size: 12px; border-bottom: 1px solid var(--border-sub);
+}
+.doc-table td {
+  padding: 12px 16px; color: var(--muted); vertical-align: top;
+  border-bottom: 1px solid var(--border-sub); line-height: 1.6;
+}
+.doc-table tr:last-child td { border-bottom: none }
+
+.doc-bozza { margin-top: 16px; padding: 16px; border-radius: var(--r-m); background: color-mix(in srgb, #d97706 12%, var(--surface)); border: 1px solid color-mix(in srgb, #d97706 40%, var(--border-sub)); font-size: 14px; line-height: 1.6; color: var(--text) }
+.doc-scroll { overflow-x: auto; margin: 12px 0 }
+.doc-scroll .doc-table { margin: 0; min-width: 560px }
+
+@media (max-width: 640px) {
+  .doc-page { padding: 40px 0 64px }
+  .doc-table { font-size: 13px }
+  .doc-table th, .doc-table td { padding: 8px 12px }
+}
+</style>

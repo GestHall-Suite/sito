@@ -327,7 +327,7 @@
  "Le comunicazioni di lavoro restano al lavoro.": "Work messages stay at work.",
  "Le condizioni per i rivenditori (sconto o percentuale sugli abbonamenti) si concordano in base al numero di sale.": "Reseller terms (discount or a percentage of subscriptions) are agreed based on the number of halls.",
  "Le nuove versioni si installano dall'app, in Impostazioni → Sistema → Aggiornamenti. Serve aiuto?": "New versions are installed from the app, in Settings → System → Updates. Need help?",
- "Le sale si aggiornano da sole, con backup": "Halls update themselves, with a backup",
+ "Le sale si aggiornano con un clic, con backup": "Halls update in one click, with a backup",
  "Le sue scorciatoie": "Their shortcuts",
  "Legale": "Legal",
  "Licenze automatiche": "Automatic licences",
@@ -640,7 +640,7 @@
  "da 4 a 5 €": "from €4 to €5",
  "dei fornitori archiviati e separati dall'incasso reale.": "from suppliers, archived and kept separate from real takings.",
  "divisi, con ricerca per nome.": "split, with search by name.",
- "e acconsento all'uso dei miei dati per ricevere una risposta.": "and agree to my data being used to receive a reply.",
+ ": i miei dati servono solo a rispondere a questa richiesta.": ": my data is used only to answer this request.",
  "entra solo con un link firmato valido 15 minuti, e l'accesso finisce nel registro attività della sala.": "only gets in with a signed link valid for 15 minutes, and the access is recorded in the hall's activity log.",
  "guida all'uso": "user guide",
  "informativa privacy": "privacy notice",
@@ -804,5 +804,12 @@
  "e dalle novità della suite, sempre aggiornate.": "and the suite's release notes, always up to date.",
  ": ogni turno del mese in Il mio spazio, con l'orario correggibile; se ci si dimentica di terminare, la volta dopo l'app chiede a che ora si è finito.": ": every shift of the month in My space, with times you can correct; if you forget to end it, next time the app asks when you finished.",
  ": un solo pulsante nella dashboard, nei Turni e nel giornaliero; apre la cassa giusta e conta le ore effettive di ognuno.": ": one button in the dashboard, Shifts and the daily sheet; it opens the right till and counts everyone's actual hours.",
- "Le mie ore": "My hours"
+ "Le mie ore": "My hours",
+ "Cookie": "Cookies",
+ "Conferma di aver letto l'informativa privacy.": "Please confirm you have read the privacy notice.",
+ "GestHall Suite è un servizio di [NOME E COGNOME DEL TITOLARE] · P.IVA [PARTITA IVA] · [INDIRIZZO COMPLETO DELLA SEDE] · PEC [INDIRIZZO PEC]": "GestHall Suite is a service of [NOME E COGNOME DEL TITOLARE] · VAT no. [PARTITA IVA] · [INDIRIZZO COMPLETO DELLA SEDE] · PEC [INDIRIZZO PEC]",
+ "Consigliato": "Recommended",
+ "Prezzi IVA esclusa, per sala. L'abbonamento si rinnova da solo alla scadenza; puoi disdirlo quando vuoi, senza penali.": "Prices exclude VAT, per hall. The subscription renews automatically when it expires; you can cancel whenever you like, with no penalty.",
+ "Trattamento dei dati": "Data processing",
+ "Licenze": "Licences"
 }

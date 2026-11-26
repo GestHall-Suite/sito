@@ -593,7 +593,7 @@ $saleAttuali = max(1, (int)($inst['sale_max'] ?? 1));
 
   <?php endif; ?>
 
-  <p class="cl-footer">GestHall Suite &middot; Portale riservato ai clienti attivi</p>
+  <p class="cl-footer">GestHall Suite &middot; Portale riservato ai clienti attivi<br>[NOME E COGNOME DEL TITOLARE] &middot; P.IVA [PARTITA IVA] &middot; <a href="/privacy">Privacy</a> &middot; <a href="/termini">Termini</a></p>
 </div>
 <script>if (location.search && history.replaceState) history.replaceState(null, '', location.pathname);</script>
 </body>

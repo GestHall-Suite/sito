@@ -124,7 +124,7 @@ function copia(src, dst, filtro = () => true) {
 const elenco = pagine(DIST);
 const URLS = new Set(elenco.map(url));
 /* documenti legali: il testo resta in italiano (versione vincolante), tradotti solo menu e piè di pagina */
-const SOLO_IT = new Set(['/privacy', '/termini']);
+const SOLO_IT = new Set(['/privacy', '/termini', '/cookie', '/dpa', '/licenze']);
 if (process.argv.includes('--mancanti')) {
   for (const rel of elenco.filter(r => !SOLO_IT.has(url(r)))) traduci(fs.readFileSync(path.join(DIST, rel), 'utf8'));
   console.log([...mancanti].sort().join('\n'));

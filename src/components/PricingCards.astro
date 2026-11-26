@@ -11,7 +11,7 @@ const { compact = false } = Astro.props;
   <div class={`pr-grid${compact ? ' pr-compact' : ''}`}>
     {piani.map(p => (
       <article class={`pr-card${p.evidenza ? ' pr-hot' : ''}`}>
-        {p.evidenza && <span class="pr-flag">Il più scelto</span>}
+        {p.evidenza && <span class="pr-flag">Consigliato</span>}
         <h3>{p.nome}</h3>
         <p class="pr-per">{p.per}</p>
         <div class="pr-price">
@@ -29,6 +29,7 @@ const { compact = false } = Astro.props;
       </article>
     ))}
   </div>
+  <p class="pr-iva">Prezzi IVA esclusa, per sala. L'abbonamento si rinnova da solo alla scadenza; puoi disdirlo quando vuoi, senza penali. <a href="/termini">Termini di servizio</a></p>
 </div>
 
 <style>
@@ -36,10 +37,12 @@ const { compact = false } = Astro.props;
 .pr-toggle button { height: 38px; padding: 0 16px; border-radius: 9px; font-size: 14.5px; font-weight: 700; color: var(--muted); display: inline-flex; align-items: center; gap: 8px }
 .pr-toggle button[aria-pressed="true"] { background: var(--accent-weak); color: var(--accent-ink) }
 .pr-toggle span { font-size: 12px; font-weight: 700; color: var(--accent-ink) }
+.pr-iva { margin-top: 16px; text-align: center; font-size: 14px; color: var(--muted) }
+.pr-iva a { color: var(--accent-ink); text-decoration: underline }
 .pr-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; align-items: stretch }
 .pr-card { position: relative; display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-l); padding: 26px 22px 22px; box-shadow: var(--sh-1) }
 .pr-hot { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), var(--sh-2) }
-.pr-flag { position: absolute; top: -12px; left: 22px; background: var(--accent); color: #fff; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px }
+.pr-flag { position: absolute; top: -12px; left: 22px; background: var(--accent); color: var(--on-accent); font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px }
 .pr-card h3 { font-size: 20px; margin-bottom: 6px }
 .pr-per { color: var(--muted); font-size: 14.5px; min-height: 44px; margin-bottom: 18px }
 .pr-price b { font-size: 40px; letter-spacing: -.03em; font-weight: 700 }

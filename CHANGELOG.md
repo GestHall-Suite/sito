@@ -2,12 +2,20 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
-## [Non pubblicato] · Messa in regola (punti 1-3)
+## [Non pubblicato] · Messa in regola (punti 1-20)
 
 - Privacy policy riscritta (bozza da far rivedere a un legale, segnaposto tra parentesi quadre): titolare professionista, tabella attività · dati · finalità · base giuridica · conservazione (sito, contatti, demo, clienti, fatturazione, licenza, assistenza remota, rivenditori, Quadra), dati inseriti dalle sale (GestHall responsabile art. 28), fornitori e trasferimenti extra UE (Google Gemini, push, Sonos, HIBP, GitHub), diritti con tempi di risposta, reclamo al Garante, sicurezza, minori; tabelle che scorrono dentro la pagina sul telefono (`.doc-scroll`) e avviso di bozza (`.doc-bozza`).
 - Area clienti: link all'informativa accanto al modulo di richiesta.
 - Termini di servizio riscritti (bozza da far rivedere a un legale): fornitore con segnaposto, solo imprese con partita IVA (niente Codice del Consumo), conclusione del contratto con la conferma di attivazione, prova che non si rinnova da sola, prezzi e spazio letti da `piani.ts`, nessun costo nascosto, rinnovo automatico con promemoria e disdetta senza penali, variazioni di prezzo e di funzioni con diritto di disdetta, sola lettura e cancellazione dei dati dopo 30 giorni (tolta la contraddizione tra «sola lettura» e «cancellazione»), hosting del cliente, Accordo sul trattamento dei dati come parte del contratto, assistenza con tempi indicativi, responsabilità sui 12 mesi, foro, clausole da approvare per iscritto (artt. 1341-1342 c.c.); tolta la frase «conforme alla normativa italiana ed europea».
 - Disdetta (punto 3): riquadro «Disdire l'abbonamento» nell'area clienti (email già pronta con il nome della sala, fine del periodo pagato, 30 giorni in sola lettura) e domanda dei Prezzi «Come si disdice e cosa succede ai dati?» allineata ai termini (prima diceva che i dati non vengono mai cancellati).
+- Cookie policy nuova (`/cookie`, solo in italiano, link nel piè di pagina e nella privacy): il sito non imposta cookie; elenco reale dei cookie tecnici dell'app (sessione, `gh_rm`, `gh_dev`, `gh_lt`, `gh_lingua`) e del pannello (`ghub_sess`); niente banner perché servono solo cookie tecnici.
+- Modulo contatti: la casella dice «Ho letto l'informativa» (la base giuridica è la richiesta, non il consenso); l'email che arriva non contiene più l'indirizzo IP.
+- Prezzi: «IVA esclusa, per sala», rinnovo automatico e disdetta scritti sotto i piani con il link ai termini; «Il più scelto» diventa «Consigliato» (nessun dato lo dimostra).
+- Rivenditori: «Le sale si aggiornano con un clic» al posto di «da sole» (serve il clic del responsabile).
+- Piè di pagina e area clienti: titolare, partita IVA, sede e PEC (segnaposto).
+- Contrasto: testo scuro sui pulsanti verdi (`--on-accent`, prima bianco a 2,3:1), grigio tenue più scuro in chiaro e più chiaro in scuro, etichetta in alto nella home leggibile sul fondo scuro.
+- Licenze: pagina `/licenze` con i componenti di terze parti dell'app e del sito.
+- Accordo sul trattamento dei dati (`/dpa`, bozza art. 28): dati e interessati, istruzioni, riservatezza e accesso remoto, misure di sicurezza, sub-responsabili con preavviso di 30 giorni e diritto di opposizione, violazioni, fine del contratto, verifiche, trasferimenti; collegato da termini, privacy, piè di pagina e dall'accettazione nell'app.
 
 ## 2026-11-26
 

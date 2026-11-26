@@ -45,7 +45,7 @@ $messaggio = $campo('messaggio', 5000);
 
 if ($nome === '' || $messaggio === '') esci(false, 'Indica nome e messaggio.', 422);
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) esci(false, 'L\'indirizzo email non sembra corretto.', 422);
-if (empty($_POST['privacy'])) esci(false, 'Serve il consenso al trattamento dei dati per risponderti.', 422);
+if (empty($_POST['privacy'])) esci(false, 'Conferma di aver letto l\'informativa privacy.', 422);
 
 $ip  = $_SERVER['REMOTE_ADDR'] ?? '0';
 $dir = sys_get_temp_dir() . '/gh_contatti';
@@ -66,7 +66,7 @@ $righe = [
 ];
 $corpo = '';
 foreach ($righe as $k => $v) $corpo .= str_pad($k . ':', 16) . $v . "\n";
-$corpo .= "\n" . $messaggio . "\n\n—\nInviato dal sito il " . date('d/m/Y H:i') . ' · IP ' . $ip . "\n";
+$corpo .= "\n" . $messaggio . "\n\n—\nInviato dal sito il " . date('d/m/Y H:i') . "\n";
 
 $oggetto = '=?UTF-8?B?' . base64_encode('[Sito] ' . MOTIVI[$motivo] . ' — ' . $nome . ($sala ? " ($sala)" : '')) . '?=';
 $headers = implode("\r\n", [

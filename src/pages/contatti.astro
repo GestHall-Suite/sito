@@ -51,7 +51,7 @@ import { piani, PROVA_GIORNI } from '../data/piani';
         </div>
         <div class="hp" aria-hidden="true"><label for="ct-web">Sito web</label><input id="ct-web" name="sito_web" tabindex="-1" autocomplete="off"></div>
         <input type="hidden" name="t" id="ct-t" value="0">
-        <label class="check-line"><input type="checkbox" name="privacy" value="1" required> <span>Ho letto l'<a href="/privacy">informativa privacy</a> e acconsento all'uso dei miei dati per ricevere una risposta.</span></label>
+        <label class="check-line"><input type="checkbox" name="privacy" value="1" required> <span>Ho letto l'<a href="/privacy">informativa privacy</a>: i miei dati servono solo a rispondere a questa richiesta.</span></label>
         <button type="submit" class="btn btn-primary btn-lg" id="ct-btn">Invia la richiesta</button>
       </form>
     </div>
@@ -113,7 +113,7 @@ import { piani, PROVA_GIORNI } from '../data/piani';
     e.preventDefault();
     if (!f.checkValidity()) {
       const bad = f.querySelector<HTMLInputElement>(':invalid');
-      show(err, bad?.name === 'privacy' ? 'Serve il consenso al trattamento dei dati per risponderti.' : bad?.type === 'email' ? 'Controlla l\'indirizzo email.' : 'Compila nome, email e messaggio.');
+      show(err, bad?.name === 'privacy' ? 'Conferma di aver letto l\'informativa privacy.' : bad?.type === 'email' ? 'Controlla l\'indirizzo email.' : 'Compila nome, email e messaggio.');
       bad?.focus(); return;
     }
     btn.disabled = true; btn.textContent = 'Invio…';
