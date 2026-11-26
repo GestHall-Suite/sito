@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-11-26
 
+- Changelog: voce 4.16.0 (dati personali più protetti).
 - Changelog: voce 4.15.0 (presenze semplici, chiusura «Una parte», cronologia del turno unica).
 - Sala e personale e guida: Inizia / Termina turno con un solo riquadro e «Le mie ore».
 

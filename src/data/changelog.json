@@ -2,6 +2,64 @@
  "updated": "2026-11-26",
  "releases": [
   {
+   "version": "4.16.0",
+   "date": "2026-11-26",
+   "title": "Dati personali più protetti",
+   "summary": "Ogni persona può chiedere dal profilo di cancellare il proprio account, le email si possono disattivare dal link in fondo, nessun dato va più a servizi esterni per i caratteri del menu del bar e nella sala giochi non si registrano clienti minorenni. Il riquadro Inizia / Termina turno del giornaliero è più compatto.",
+   "highlights": [
+    "Cancellazione dell'account dal profilo",
+    "Email con il link per disattivarle",
+    "Niente clienti minorenni nella sala giochi",
+    "Inizia / Termina turno in una riga"
+   ],
+   "groups": [
+    {
+     "title": "Novità",
+     "items": [
+      "Il mio spazio → Profilo → «I tuoi dati»: si chiede di cancellare il proprio account; la richiesta arriva ai responsabili della sala, che la eseguono da Utenti.",
+      "In fondo al riepilogo di chiusura e all'avviso della busta paga c'è il link per smettere di riceverli."
+     ]
+    },
+    {
+     "title": "Migliorie",
+     "items": [
+      "Giornaliero: il riquadro Inizia / Termina turno è una riga come le note del turno, con il tempo che scorre accanto e chi ha lavorato nel turno sotto, con «Correggi» a destra.",
+      "Anagrafica clienti: nella sala giochi non si salva un cliente con meno di 18 anni (con «Solo bar» sì).",
+      "Menu del bar: i caratteri arrivano dal server della sala, senza passare da servizi esterni.",
+      "Password: il controllo delle password troppo comuni usa un elenco con licenza nota; le email partono da no-reply@gesthallsuite.it se la sala non imposta un suo indirizzo."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Better protected personal data",
+    "summary": "Everyone can ask from their profile to delete their account, emails can be turned off from the link at the bottom, the bar menu fonts no longer come from external services, and under-18 customers can't be registered in a gaming hall. The daily sheet's Start / End shift panel is more compact.",
+    "highlights": [
+     "Account deletion from the profile",
+     "Emails with a link to turn them off",
+     "No under-18 customers in the gaming hall",
+     "Start / End shift in one row"
+    ],
+    "groups": [
+     {
+      "title": "New",
+      "items": [
+       "My space → Profile → «Your data»: ask to delete your account; the request goes to the hall's managers, who carry it out from Users.",
+       "At the bottom of the closing summary and the payslip notice there is a link to stop receiving them."
+      ]
+     },
+     {
+      "title": "Improvements",
+      "items": [
+       "Daily sheet: the Start / End shift panel is one row like the shift notes, with the running time next to it and who worked the shift below, with «Correct» on the right.",
+       "Customer records: a customer under 18 can't be saved in a gaming hall (it can with «Bar only»).",
+       "Bar menu: fonts come from the hall's own server, without external services.",
+       "Passwords: the too-common password check uses a list with a known licence; emails are sent from no-reply@gesthallsuite.it if the hall doesn't set its own address."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.15.0",
    "date": "2026-11-26",
    "title": "Presenze semplici e chiusura «Una parte»",
