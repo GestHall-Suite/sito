@@ -2,6 +2,11 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## [Non pubblicato] · Messa in regola (punto 1)
+
+- Privacy policy riscritta (bozza da far rivedere a un legale, segnaposto tra parentesi quadre): titolare professionista, tabella attività · dati · finalità · base giuridica · conservazione (sito, contatti, demo, clienti, fatturazione, licenza, assistenza remota, rivenditori, Quadra), dati inseriti dalle sale (GestHall responsabile art. 28), fornitori e trasferimenti extra UE (Google Gemini, push, Sonos, HIBP, GitHub), diritti con tempi di risposta, reclamo al Garante, sicurezza, minori; tabelle che scorrono dentro la pagina sul telefono (`.doc-scroll`) e avviso di bozza (`.doc-bozza`).
+- Area clienti: link all'informativa accanto al modulo di richiesta.
+
 ## 2026-11-26
 
 - Changelog: voce 4.15.0 (presenze semplici, chiusura «Una parte», cronologia del turno unica).

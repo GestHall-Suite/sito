@@ -567,6 +567,7 @@ $saleAttuali = max(1, (int)($inst['sale_max'] ?? 1));
                   placeholder="Motivo del cambio, domande…"></textarea>
       </div>
 
+      <p class="cl-note">Usiamo l'email e le note solo per gestire la richiesta: leggi l'<a href="/privacy">informativa privacy</a>.</p>
       <button type="submit" class="cl-submit">Invia richiesta</button>
     </form>
     <script>
