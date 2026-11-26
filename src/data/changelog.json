@@ -1,6 +1,62 @@
 {
- "updated": "2026-11-23",
+ "updated": "2026-11-26",
  "releases": [
+  {
+   "version": "4.15.0",
+   "date": "2026-11-26",
+   "title": "Presenze semplici e chiusura «Una parte»",
+   "summary": "Inizia e Termina turno diventano un solo riquadro uguale ovunque, con le tue ore sempre a portata di mano; alla chiusura della sala si può lasciare nel cassetto solo una parte del contante; la cronologia del turno è una sola.",
+   "highlights": [
+    "Inizia e Termina turno con un solo riquadro",
+    "Le mie ore in Il mio spazio",
+    "Chiusura della sala: «Una parte» come al bar",
+    "Cronologia del turno unica"
+   ],
+   "groups": [
+    {
+     "title": "Novità",
+     "items": [
+      "Inizia e Termina turno: lo stesso riquadro nella dashboard, nei Turni e nel giornaliero, con il tempo che scorre e le ore di oggi e del mese. Vale per chiunque lavori, anche senza un turno in calendario.",
+      "Turno dimenticato: se non premi «Termina turno», la volta dopo l'app chiede a che ora hai finito, e fino ad allora quel turno non conta nelle ore.",
+      "«Le mie ore» in Il mio spazio: ogni turno del mese con l'orario, da correggere con un tocco. Il responsabile corregge quelli di tutti dal giornaliero.",
+      "Chiusure: anche per la sala, come per il bar, si sceglie giornata per giornata se mettere in cassaforte tutto quello che supera il fondo, niente o solo una parte, scrivendo quanto resta nel cassetto. In Impostazioni → Fondo cassa la stessa scelta come proposta, con la cifra da lasciare."
+     ]
+    },
+    {
+     "title": "Migliorie",
+     "items": [
+      "Cronologia del turno: l'icona del turno e il menu ⋯ aprono la stessa finestra, con i salvataggi e, in mezzo, l'avvio, la fine e la chiusura."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Simple attendance and «A part» at closing",
+    "summary": "Start and End shift become a single panel that's the same everywhere, with your hours always at hand; when closing the hall you can leave only part of the cash in the drawer; the shift history is now one.",
+    "highlights": [
+     "Start and End shift in one panel",
+     "My hours in My space",
+     "Hall closing: «A part» like the bar",
+     "One shift history"
+    ],
+    "groups": [
+     {
+      "title": "New",
+      "items": [
+       "Start and End shift: the same panel in the dashboard, Shifts and the daily sheet, with the running time and today's and this month's hours. It works for anyone on duty, even without a scheduled shift.",
+       "Forgotten shift: if you don't press «End shift», next time the app asks when you finished, and until then that shift doesn't count in your hours.",
+       "«My hours» in My space: every shift of the month with its times, correctable with a tap. The manager corrects everyone's from the daily sheet.",
+       "Closings: for the hall too, as for the bar, you choose day by day whether to put everything above the float in the safe, nothing or only a part, entering how much stays in the drawer. In Settings → Float the same choice as default, with the amount to leave."
+      ]
+     },
+     {
+      "title": "Improvements",
+      "items": [
+       "Shift history: the shift icon and the ⋯ menu open the same window, with saves and, in between, start, end and closing."
+      ]
+     }
+    ]
+   }
+  },
   {
    "version": "4.14.2",
    "date": "2026-11-23",

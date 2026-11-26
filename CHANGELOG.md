@@ -2,6 +2,11 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-11-26
+
+- Changelog: voce 4.15.0 (presenze semplici, chiusura «Una parte», cronologia del turno unica).
+- Sala e personale e guida: Inizia / Termina turno con un solo riquadro e «Le mie ore».
+
 ## 2026-11-23
 
 - Menu su iPad: il foglio del menu (`nav-sheet`) è fuori dalla barra in alto, che con `backdrop-filter` in Safari ne diventava il contenitore e lo schiacciava; «Prodotto» si apre al passaggio solo col mouse (`pointerenter` con `pointerType`), così un tocco non lo apre e richiude subito.

@@ -801,5 +801,8 @@
  "Tutto ciò che è suo in un posto solo: turno in corso, calendario del mese con i suoi turni, ore previste ed effettive, profilo, notifiche e buste paga, a un tocco dalla sua foto nella barra in basso. E le preferenze per lavorare comodi: pagina iniziale, dimensione del testo, voci della barra sul telefono.": "Everything that's theirs in one place: current shift, the month's calendar with their shifts, planned and actual hours, profile, notifications and payslips, one tap from their photo in the bottom bar. And preferences for working comfortably: home page, text size, phone bar items.",
  "allegata al ticket, anche dal QR della macchina, e visibile nel dettaglio.": "attached to the ticket, even from the machine's QR code, and visible in the details.",
  "app.salaaurora.it": "app.salaaurora.it",
- "e dalle novità della suite, sempre aggiornate.": "and the suite's release notes, always up to date."
+ "e dalle novità della suite, sempre aggiornate.": "and the suite's release notes, always up to date.",
+ ": ogni turno del mese in Il mio spazio, con l'orario correggibile; se ci si dimentica di terminare, la volta dopo l'app chiede a che ora si è finito.": ": every shift of the month in My space, with times you can correct; if you forget to end it, next time the app asks when you finished.",
+ ": un solo pulsante nella dashboard, nei Turni e nel giornaliero; apre la cassa giusta e conta le ore effettive di ognuno.": ": one button in the dashboard, Shifts and the daily sheet; it opens the right till and counts everyone's actual hours.",
+ "Le mie ore": "My hours"
 }
