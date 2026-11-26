@@ -1,182 +1,167 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { piani, eur, PROVA_GIORNI, SALA_EXTRA, SPAZIO_GB, SPAZIO_PACCHETTO } from '../data/piani';
 ---
 
-<Layout page="Termini di Servizio" description="Condizioni generali di utilizzo della piattaforma GestHall Suite.">
+<Layout page="Termini di Servizio" description="Condizioni generali del servizio GestHall Suite per le imprese.">
 
 <article class="doc-page">
   <div class="container doc-inner">
 
     <header class="doc-header">
       <h1>Termini di Servizio</h1>
-      <p class="doc-meta">Condizioni generali di utilizzo · Versione 1.1 · Ottobre 2026</p>
+      <p class="doc-meta">Condizioni generali di contratto · Versione 2.0 · In vigore dal [DATA DI PUBBLICAZIONE]</p>
+      <p class="doc-bozza"><strong>Bozza da far rivedere a un professionista.</strong> Questo testo è stato preparato sulla base di come il servizio funziona davvero e va verificato da un legale prima della pubblicazione definitiva. Le parti tra parentesi quadre sono da completare.</p>
       <p class="doc-meta" data-solo="en"><strong>This document is published in Italian, which is the binding version.</strong> An English translation is available on request.</p>
     </header>
 
     <div class="doc-body">
 
       <section class="doc-section">
-        <h2>1. Definizioni</h2>
+        <h2>1. Chi fornisce il servizio</h2>
+        <p>Il servizio GestHall Suite è fornito da <strong>[NOME E COGNOME DEL TITOLARE]</strong>, partita IVA [PARTITA IVA], con sede in [INDIRIZZO COMPLETO DELLA SEDE], PEC [INDIRIZZO PEC], email <a href="mailto:info@gesthallsuite.it">info@gesthallsuite.it</a> (di seguito «Fornitore»).</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>2. A chi si rivolge</h2>
+        <p>Il servizio è riservato a <strong>imprese e professionisti titolari di partita IVA</strong> che lo usano per la propria attività (di seguito «Cliente»). Non è offerto ai consumatori: per questo non si applicano le norme del Codice del Consumo, compreso il diritto di recesso di 14 giorni previsto per i contratti a distanza con i consumatori.</p>
+        <p>Chi accetta questi termini per conto del Cliente dichiara di avere il potere di farlo.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>3. Definizioni</h2>
         <ul class="doc-list">
-          <li><strong>Fornitore</strong> — GestHall Suite, il soggetto che sviluppa e distribuisce il Servizio.</li>
-          <li><strong>Servizio</strong> — la piattaforma software GestHall Suite accessibile tramite browser, comprensiva di tutte le funzionalità incluse nel Piano attivo.</li>
-          <li><strong>Utente</strong> — la persona fisica o giuridica che accede al Servizio e accetta i presenti Termini.</li>
-          <li><strong>Installazione</strong> — una singola istanza del Servizio, corrispondente a un'unica sala giochi e a un unico abbonamento.</li>
-          <li><strong>Piano</strong> — il livello di abbonamento attivo (Essenziale, Pro, Suite o Multi-sala), con le relative funzionalità e limitazioni.</li>
-          <li><strong>Dati dell'Utente</strong> — tutte le informazioni inserite dall'Utente nel Servizio (giornate, scassettamenti, turni, dati macchine, dati operatori, ecc.).</li>
-          <li><strong>White Label</strong> — la personalizzazione del Servizio con logo e colori propri dell'Utente, disponibile sul Piano Suite.</li>
+          <li><strong>Servizio</strong> — il software GestHall Suite usato dal browser, con le funzioni del Piano scelto, l'installazione, la configurazione iniziale, gli aggiornamenti e l'assistenza.</li>
+          <li><strong>Installazione</strong> — una copia del Servizio, dedicata al Cliente, sul nostro hosting o sull'hosting del Cliente.</li>
+          <li><strong>Piano</strong> — Essenziale, Pro, Suite o Multi-sala, con le funzioni e i limiti descritti nella pagina <a href="/prezzi">Prezzi</a>.</li>
+          <li><strong>Utenti</strong> — le persone a cui il Cliente crea un accesso (titolari, responsabili, operatori, revisori).</li>
+          <li><strong>Dati del Cliente</strong> — tutto ciò che il Cliente e i suoi Utenti inseriscono nel Servizio.</li>
         </ul>
       </section>
 
       <section class="doc-section">
-        <h2>2. Accettazione dei Termini</h2>
-        <p>L'accesso e l'utilizzo del Servizio costituiscono accettazione integrale dei presenti Termini di Servizio e dell'<a href="/privacy">Informativa sulla Privacy</a>. Se l'Utente agisce per conto di un'azienda o di un'altra persona giuridica, dichiara di avere l'autorità necessaria a vincolare tale entità ai presenti Termini.</p>
-        <p>L'utilizzo del Servizio da parte di minori di 18 anni non è consentito.</p>
+        <h2>4. Come si conclude il contratto</h2>
+        <p>Il Cliente chiede l'attivazione (dal modulo dei contatti, dalla prova gratuita o con un ordine scritto). Il contratto si conclude quando il Fornitore conferma per email l'attivazione dell'Installazione con il Piano scelto; da quel momento valgono questi termini nella versione indicata nella conferma.</p>
+        <p>Un preventivo o un accordo scritto firmato da entrambe le parti prevale su questi termini per le parti in cui è diverso.</p>
       </section>
 
       <section class="doc-section">
-        <h2>3. Il Servizio</h2>
-        <p>GestHall Suite è una piattaforma gestionale B2B progettata per le sale giochi italiane con macchine VLT e AWP. Il Servizio include, in base al Piano attivo:</p>
-        <ul class="doc-list">
-          <li>Riconciliazione cassa giornaliera e gestione turni operatori, anche senza connessione per cassa giornaliera e calendario turni</li>
-          <li>Registro scassettamenti VLT, refill AWP e ticket vincita</li>
-          <li>Dashboard, report mensili e annuali, confronto periodi, archivio bet/win e borderò dei fornitori</li>
-          <li>Moduli opzionali: anagrafica clienti, prestiti, documenti, ticket assistenza, bar e magazzino, notifiche push, firma digitale, musica (SONOS o web radio)</li>
-          <li>Personalizzazione white label (Piani Suite e Multi-sala)</li>
-          <li>Gestione di più sale nella stessa Installazione (Piano Multi-sala)</li>
-          <li>Installazione come Progressive Web App (PWA)</li>
-        </ul>
-        <p>Il Servizio è sviluppato in Italia ed è conforme alla normativa italiana ed europea applicabile alle attività di gestione sala giochi. L'Utente rimane esclusivamente responsabile della conformità alla normativa ADM, alle disposizioni ADM-vigenti sui VLT e a qualsiasi altra normativa di settore.</p>
+        <h2>5. Prova gratuita</h2>
+        <p>La prova dura {PROVA_GIORNI} giorni, non richiede un metodo di pagamento e non si trasforma da sola in un abbonamento a pagamento. Alla fine, se il Cliente non sceglie un Piano, l'Installazione passa in sola lettura: i dati restano consultabili ed esportabili per 30 giorni, poi vengono cancellati come descritto al punto 13.</p>
       </section>
 
       <section class="doc-section">
-        <h2>4. Account e accesso</h2>
-        <h3>Credenziali</h3>
-        <p>L'Utente è responsabile della riservatezza delle credenziali di accesso di tutti gli account creati all'interno della propria Installazione. È obbligatorio notificare immediatamente il Fornitore in caso di accesso non autorizzato o sospetta compromissione delle credenziali scrivendo a <a href="mailto:info@gesthallsuite.it">info@gesthallsuite.it</a>.</p>
-        <h3>Numero di utenti</h3>
-        <p>Il Piano Essenziale consente un massimo di 4 operatori attivi. I Piani Pro, Suite e Multi-sala non hanno limiti al numero di utenti. Il superamento del limite è tecnicamente prevenuto dal sistema.</p>
-        <h3>Una Installazione per abbonamento</h3>
-        <p>Ogni abbonamento corrisponde a una singola Installazione. Con i Piani Essenziale, Pro e Suite l'Installazione gestisce una sola sala giochi: l'utilizzo di un unico abbonamento per gestire più sedi è vietato e costituisce causa di risoluzione immediata del contratto. Il Piano Multi-sala consente di gestire più sale nella stessa Installazione, entro il numero di sale incluse nell'abbonamento.</p>
-      </section>
-
-      <section class="doc-section">
-        <h2>5. Piani e pagamento</h2>
-        <h3>Piani disponibili</h3>
-        <table class="doc-table">
-          <thead>
-            <tr><th>Piano</th><th>Prezzo mensile</th><th>Prezzo annuale</th></tr>
-          </thead>
+        <h2>6. Piani e prezzi</h2>
+        <div class="doc-scroll"><table class="doc-table">
+          <thead><tr><th>Piano</th><th>Mensile</th><th>Annuale</th><th>Spazio per i file</th></tr></thead>
           <tbody>
-            <tr><td>Essenziale</td><td>€39 + IVA</td><td>€390 + IVA (–17%)</td></tr>
-            <tr><td>Pro</td><td>€69 + IVA</td><td>€690 + IVA (–17%)</td></tr>
-            <tr><td>Suite</td><td>€99 + IVA</td><td>€990 + IVA (–17%)</td></tr>
-            <tr><td>Multi-sala</td><td>€149 + IVA (2 sale incluse) + €49 + IVA per ogni sala aggiuntiva</td><td>Su richiesta</td></tr>
+            {piani.map((p) => (
+              <tr>
+                <td><strong>{p.nome}</strong>{p.id === 'multisala' && <> — 2 sale incluse</>}</td>
+                <td>{eur(p.mese)} + IVA{p.id === 'multisala' && <>, più {eur(SALA_EXTRA)} + IVA per ogni sala in più</>}</td>
+                <td>{p.anno ? <>{eur(p.anno)} + IVA</> : 'Su preventivo'}</td>
+                <td>{SPAZIO_GB[p.id]} GB{p.id === 'multisala' && ' per sala'}</td>
+              </tr>
+            ))}
           </tbody>
-        </table>
-        <h3>Fatturazione</h3>
-        <p>Il corrispettivo è fatturato mensilmente (o annualmente se l'Utente opta per il piano annuale) in anticipo. I prezzi sono espressi in euro, IVA esclusa. L'IVA applicabile è quella vigente in Italia al momento dell'emissione della fattura.</p>
-        <h3>Modalità di pagamento</h3>
-        <p>Il pagamento avviene tramite le modalità indicate al momento dell'attivazione dell'abbonamento. In caso di mancato pagamento entro 15 giorni dalla scadenza, il Servizio passa in sola lettura: i Dati dell'Utente restano consultabili ed esportabili, ma non è possibile inserirne di nuovi fino al rinnovo.</p>
-        <h3>Prova gratuita</h3>
-        <p>La prova gratuita dura 14 giorni, non richiede metodi di pagamento e non comporta alcun obbligo. Al termine, se l'Utente non sceglie un Piano, il Servizio passa in sola lettura; i dati inseriti durante la prova non vengono cancellati.</p>
-        <h3>Modifica dei prezzi</h3>
-        <p>Il Fornitore si riserva il diritto di modificare i prezzi con un preavviso di almeno 30 giorni. Le modifiche non si applicano agli abbonamenti annuali già in corso sino alla relativa scadenza.</p>
-        <h3>Rimborsi</h3>
-        <p>I corrispettivi pagati non sono rimborsabili, salvo diverso accordo scritto o obbligo di legge. In caso di malfunzionamento grave del Servizio per cause imputabili al Fornitore, quest'ultimo potrà riconoscere un credito proporzionale al tempo di inattività, a propria discrezione.</p>
+        </table></div>
+        <p>Il Piano Essenziale ammette fino a 4 utenti attivi; gli altri Piani non hanno limiti di utenti. Sul nostro hosting si possono aggiungere pacchetti da {SPAZIO_PACCHETTO.gb} GB a {eur(SPAZIO_PACCHETTO.mese)} + IVA al mese. Sull'hosting del Cliente lo spazio dipende dal suo piano di hosting.</p>
+        <p>Nel prezzo sono compresi installazione, configurazione iniziale, migrazione dei dati da Excel o da un altro gestionale, aggiornamenti e assistenza via email. Non ci sono costi di attivazione né altri costi oltre a quelli indicati qui; i prezzi sono in euro, IVA esclusa.</p>
+        <p>Con i Piani Essenziale, Pro e Suite un'Installazione serve una sola sala; per più sale serve il Piano Multi-sala, entro il numero di sale pagate.</p>
       </section>
 
       <section class="doc-section">
-        <h2>6. Obblighi e usi vietati</h2>
-        <p>L'Utente si impegna a:</p>
+        <h2>7. Fatturazione e pagamento</h2>
+        <p>Il corrispettivo si paga in anticipo per ogni periodo (mese o anno) con [MODALITÀ DI PAGAMENTO], entro [NUMERO] giorni dalla fattura. La fattura elettronica è emessa a ogni periodo.</p>
+        <p>Se il pagamento non arriva entro 15 giorni dalla scadenza, l'Installazione passa in <strong>sola lettura</strong>: i dati restano consultabili ed esportabili, ma non se ne possono inserire di nuovi finché il pagamento non arriva. Dopo 30 giorni di ritardo il Fornitore può risolvere il contratto con una comunicazione scritta.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>8. Durata, rinnovo e disdetta</h2>
+        <p>L'abbonamento dura un mese o un anno, secondo la scelta del Cliente, e <strong>si rinnova da solo</strong> per un periodo uguale. Prima del rinnovo di un abbonamento annuale il Fornitore manda un promemoria per email almeno 30 giorni prima.</p>
+        <p>Il Cliente può disdire quando vuole, senza penali, scrivendo a <a href="mailto:info@gesthallsuite.it">info@gesthallsuite.it</a> o alla PEC del punto 1: la disdetta ha effetto alla fine del periodo già pagato e il rinnovo non avviene se arriva almeno 7 giorni prima. Il periodo già pagato non viene rimborsato, salvo i casi dei punti 9 e 15.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>9. Variazioni di prezzo</h2>
+        <p>Il Fornitore può cambiare i prezzi avvisando per email almeno 30 giorni prima. Il nuovo prezzo vale dal primo rinnovo dopo il preavviso; gli abbonamenti annuali in corso mantengono il prezzo fino alla loro scadenza. Se non accetta il nuovo prezzo, il Cliente può disdire prima che entri in vigore.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>10. Account e utenti</h2>
+        <p>Il Cliente crea gli accessi dei propri Utenti, decide i loro ruoli e permessi ed è responsabile di come vengono usati. Gli Utenti devono custodire le proprie credenziali; per i responsabili la verifica in due passaggi è obbligatoria. Un accesso sospetto va segnalato subito a <a href="mailto:info@gesthallsuite.it">info@gesthallsuite.it</a>.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>11. Usi non consentiti</h2>
+        <p>Il Cliente non può:</p>
         <ul class="doc-list">
-          <li>Utilizzare il Servizio in modo lecito e in conformità con la normativa applicabile</li>
-          <li>Non consentire l'accesso al Servizio a soggetti non autorizzati</li>
-          <li>Mantenere aggiornate e accurate le informazioni fornite al Fornitore</li>
-          <li>Adottare adeguate misure di sicurezza per proteggere le credenziali di accesso</li>
+          <li>usare il Servizio per attività illecite o per conservare dati senza averne il diritto;</li>
+          <li>cercare di accedere a dati, account o installazioni di altri, o compromettere il funzionamento dei server;</li>
+          <li>decompilare o copiare il software, salvo quanto la legge consente comunque;</li>
+          <li>rivendere o cedere il Servizio a terzi senza un accordo scritto (per i rivenditori c'è un contratto apposito).</li>
         </ul>
-        <p>Sono vietati i seguenti usi:</p>
+        <p>Il Cliente resta il solo responsabile del rispetto delle norme del proprio settore (ADM, antiriciclaggio, lavoro, fisco): il Servizio aiuta a tenere i registri, ma non sostituisce gli obblighi di legge né il consulente del Cliente.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>12. Dati del Cliente e privacy</h2>
+        <p>I Dati del Cliente sono del Cliente. Il Fornitore li usa solo per fornire il Servizio, l'assistenza e i backup, e non li vende né li usa per altri scopi.</p>
+        <p>Per i dati personali inseriti nel Servizio (Utenti, clienti della sala, contatti) il Cliente è <strong>titolare del trattamento</strong> e il Fornitore è <strong>responsabile del trattamento</strong> ai sensi dell'art. 28 del GDPR: i rispettivi compiti sono nell'<strong>Accordo sul trattamento dei dati</strong> ([LINK O ALLEGATO DELL'ACCORDO SUL TRATTAMENTO DEI DATI]), che fa parte del contratto. I dati raccolti dal Fornitore per gestire il rapporto sono descritti nell'<a href="/privacy">informativa privacy</a>.</p>
+        <p>Il Cliente può esportare i propri dati in qualsiasi momento (Excel e CSV dai report, copia completa del database dai backup).</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>13. Fine del contratto e cancellazione dei dati</h2>
+        <p>Quando il contratto finisce, per qualsiasi motivo, l'Installazione passa in sola lettura per <strong>30 giorni</strong>, durante i quali il Cliente può consultare ed esportare tutti i dati e chiedere una copia completa del database. Su richiesta del Cliente la copia viene consegnata anche prima.</p>
+        <p>Sul nostro hosting, finiti i 30 giorni, l'Installazione e i suoi dati vengono cancellati; le copie di backup si cancellano entro [NUMERO] giorni. Restano solo i dati che il Fornitore deve conservare per legge (per esempio le fatture). Sull'hosting del Cliente i dati restano al Cliente, che decide cosa farne.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>14. Hosting del Cliente</h2>
+        <p>Se l'Installazione è sull'hosting del Cliente, il Cliente sceglie e paga il proprio fornitore di hosting ed è responsabile della sicurezza del server, delle copie dei file caricati e del rispetto dei requisiti tecnici indicati dal Fornitore. Il Fornitore risponde del software, non dell'hosting scelto dal Cliente.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>15. Funzioni e aggiornamenti</h2>
+        <p>Il Servizio viene aggiornato di continuo. Se un aggiornamento toglie o riduce in modo importante una funzione compresa nel Piano del Cliente, il Fornitore avvisa almeno 30 giorni prima e il Cliente può disdire senza penali entro quella data, con il rimborso della parte non goduta di un abbonamento annuale.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>16. Disponibilità e assistenza</h2>
+        <p>Il Fornitore lavora perché il Servizio sia sempre disponibile, ma non garantisce un livello di servizio (SLA) misurato. Le manutenzioni programmate si fanno di preferenza fuori dagli orari di apertura delle sale, con un avviso quando è possibile. Cassa giornaliera e turni funzionano anche senza connessione e si sincronizzano al ritorno della rete.</p>
+        <p>L'assistenza è via email a <a href="mailto:info@gesthallsuite.it">info@gesthallsuite.it</a>, nei giorni lavorativi. Rispondiamo di solito entro 24–48 ore lavorative; con i Piani Suite e Multi-sala (supporto prioritario) di solito entro 8 ore lavorative. Sono tempi indicativi, non garantiti.</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>17. Proprietà del software</h2>
+        <p>Il software, la documentazione e il marchio GestHall Suite restano del Fornitore. Il Cliente riceve, per la durata del contratto, una licenza d'uso non esclusiva e non cedibile per la propria attività. Logo e colori della sala usati con la personalizzazione restano del Cliente. Il software contiene componenti open source, ciascuno con la propria licenza (elenco in [LINK ALL'ELENCO DELLE LICENZE]).</p>
+      </section>
+
+      <section class="doc-section">
+        <h2>18. Responsabilità</h2>
+        <p>Il Fornitore risponde dei danni causati da un suo inadempimento. Salvo dolo o colpa grave e nei limiti consentiti dalla legge:</p>
         <ul class="doc-list">
-          <li>Decompilare, fare reverse engineering, modificare o creare opere derivate del codice sorgente del Servizio</li>
-          <li>Utilizzare il Servizio per attività fraudolente o illecite</li>
-          <li>Tentare di accedere a sistemi, dati o account non propri</li>
-          <li>Distribuire, sublicenziare o rivendere il Servizio a terzi senza accordo scritto con il Fornitore</li>
-          <li>Interferire con il funzionamento del Servizio o dei server del Fornitore</li>
+          <li>non risponde di danni indiretti o di mancato guadagno, né delle decisioni che il Cliente prende in base ai dati del Servizio;</li>
+          <li>non risponde di interruzioni dovute a cause che non può controllare (guasti della rete o di fornitori terzi, attacchi informatici nonostante le misure adottate, forza maggiore);</li>
+          <li>la sua responsabilità complessiva è limitata a quanto il Cliente ha pagato nei 12 mesi prima del fatto.</li>
         </ul>
       </section>
 
       <section class="doc-section">
-        <h2>7. Dati dell'Utente e privacy</h2>
-        <h3>Proprietà dei dati</h3>
-        <p>I Dati dell'Utente inseriti nel Servizio rimangono di esclusiva proprietà dell'Utente. Il Fornitore non rivendica alcun diritto su tali dati e non li utilizza per finalità diverse dalla fornitura del Servizio.</p>
-        <h3>Trattamento dei dati personali</h3>
-        <p>Il trattamento dei dati personali degli utenti finali inseriti nel Servizio (es. dati degli operatori, giocatori) è disciplinato dall'<a href="/privacy">Informativa sulla Privacy</a>. Nella misura in cui l'Utente inserisce nel Servizio dati personali di terzi, l'Utente agisce in qualità di Titolare del trattamento e il Fornitore in qualità di Responsabile. Su richiesta è disponibile un Accordo sul Trattamento dei Dati (DPA) conforme all'art. 28 GDPR.</p>
-        <h3>Portabilità ed esportazione</h3>
-        <p>L'Utente può esportare i propri dati in formato CSV o Excel in qualsiasi momento tramite le funzionalità native del Servizio. In caso di risoluzione del contratto il Servizio resta disponibile in sola lettura, per permettere la consultazione e l'esportazione completa dei dati, che restano nel database dell'Utente.</p>
-        <h3>Sicurezza</h3>
-        <p>Il Fornitore adotta misure tecniche e organizzative adeguate per proteggere i Dati dell'Utente da accessi non autorizzati, perdita o divulgazione non consentita. Sono inclusi: autenticazione con hash sicuro (bcrypt), protezione CSRF su tutte le operazioni di scrittura, prepared statement per tutte le query SQL e log di audit completo delle operazioni significative.</p>
+        <h2>19. Modifiche a questi termini</h2>
+        <p>Il Fornitore può aggiornare questi termini avvisando per email almeno 30 giorni prima. Se il Cliente non accetta la nuova versione può disdire prima che entri in vigore, con il rimborso della parte non goduta di un abbonamento annuale; altrimenti la nuova versione vale dal rinnovo successivo. Le versioni precedenti restano disponibili su richiesta.</p>
       </section>
 
       <section class="doc-section">
-        <h2>8. Proprietà intellettuale</h2>
-        <p>Il Servizio, inclusi codice sorgente, interfaccia grafica, documentazione, marchi e loghi di GestHall Suite, è di esclusiva proprietà del Fornitore ed è protetto dalla normativa italiana ed europea in materia di proprietà intellettuale.</p>
-        <p>L'abbonamento conferisce all'Utente una licenza limitata, non esclusiva, non trasferibile e revocabile per accedere e utilizzare il Servizio per le proprie finalità interne. Nessun diritto di proprietà intellettuale viene trasferito all'Utente.</p>
-        <p>La funzionalità White Label (Piano Suite) consente esclusivamente la personalizzazione dell'interfaccia con il logo e i colori dell'Utente, e non trasferisce alcun diritto sul codice sottostante.</p>
+        <h2>20. Legge e foro</h2>
+        <p>Il contratto è regolato dalla legge italiana. Per ogni controversia è competente in via esclusiva il Foro di <strong>[CITTÀ DEL FORO]</strong>.</p>
+        <p>Se una clausola risulta non valida, le altre restano valide. Le comunicazioni tra le parti si fanno per email o PEC agli indirizzi indicati nella conferma di attivazione.</p>
       </section>
 
       <section class="doc-section">
-        <h2>9. Disponibilità e supporto</h2>
-        <h3>Disponibilità</h3>
-        <p>Il Fornitore si impegna a garantire la massima disponibilità del Servizio con ragionevole diligenza, compatibilmente con le risorse disponibili nella fase attuale. Non è garantito alcun livello di servizio (SLA) specifico per il periodo precedente al raggiungimento di 10 installazioni attive.</p>
-        <p>Il Fornitore si riserva di effettuare manutenzioni programmate, preferibilmente in orari notturni, con preavviso via email quando possibile.</p>
-        <h3>Supporto tecnico</h3>
-        <p>Il supporto è disponibile via email a <a href="mailto:info@gesthallsuite.it">info@gesthallsuite.it</a>. Il tempo di risposta target è di 24–48 ore nei giorni lavorativi. Il Piano Suite include supporto prioritario con risposta target di 8 ore lavorative.</p>
-      </section>
-
-      <section class="doc-section">
-        <h2>10. Limitazione di responsabilità</h2>
-        <p>Nei limiti massimi consentiti dalla legge applicabile, il Fornitore non è responsabile per:</p>
-        <ul class="doc-list">
-          <li>Danni indiretti, consequenziali, incidentali o perdita di profitto</li>
-          <li>Perdita di dati causata da errori dell'Utente o da eventi al di fuori del controllo del Fornitore</li>
-          <li>Interruzioni del Servizio dovute a cause di forza maggiore, guasti di infrastrutture di terzi o attacchi informatici</li>
-          <li>Decisioni operative prese dall'Utente sulla base dei dati elaborati dal Servizio</li>
-        </ul>
-        <p>In ogni caso, la responsabilità complessiva del Fornitore verso l'Utente, per qualsiasi causa, è limitata al totale dei corrispettivi pagati dall'Utente nei 3 mesi precedenti all'evento che ha dato origine alla richiesta di risarcimento.</p>
-        <p>Nulla in questi Termini esclude o limita la responsabilità del Fornitore per dolo o colpa grave, o nei casi in cui la limitazione di responsabilità non sia consentita dalla legge applicabile.</p>
-      </section>
-
-      <section class="doc-section">
-        <h2>11. Modifiche al Servizio e ai Termini</h2>
-        <h3>Aggiornamenti del Servizio</h3>
-        <p>Il Fornitore può aggiungere, modificare o rimuovere funzionalità del Servizio in qualsiasi momento. Le modifiche che riducono significativamente le funzionalità incluse nel Piano attivo saranno comunicate con almeno 30 giorni di preavviso, con possibilità di recesso senza penali entro tale termine.</p>
-        <h3>Modifica dei Termini</h3>
-        <p>I presenti Termini possono essere aggiornati. Le modifiche sostanziali saranno comunicate via email con almeno 30 giorni di preavviso. L'utilizzo continuato del Servizio dopo la data di entrata in vigore delle modifiche costituisce accettazione dei nuovi Termini.</p>
-      </section>
-
-      <section class="doc-section">
-        <h2>12. Durata e risoluzione</h2>
-        <h3>Durata</h3>
-        <p>Il contratto ha durata mensile (o annuale se scelto dall'Utente) e si rinnova automaticamente alla scadenza, salvo disdetta comunicata con almeno 7 giorni di preavviso rispetto alla data di rinnovo.</p>
-        <h3>Recesso dell'Utente</h3>
-        <p>L'Utente può recedere dal contratto in qualsiasi momento inviando comunicazione scritta a <a href="mailto:info@gesthallsuite.it">info@gesthallsuite.it</a>. Il Servizio resterà attivo sino alla fine del periodo già fatturato.</p>
-        <h3>Risoluzione per inadempimento</h3>
-        <p>Il Fornitore può risolvere il contratto con effetto immediato e senza rimborso in caso di: violazione grave dei presenti Termini, utilizzo fraudolento del Servizio, mancato pagamento protratto oltre 30 giorni.</p>
-        <h3>Conseguenze della risoluzione</h3>
-        <p>Alla risoluzione del contratto, l'accesso al Servizio viene disattivato. L'Utente ha 30 giorni per esportare i propri dati tramite le funzionalità di export. Trascorso tale termine, i dati possono essere eliminati definitivamente.</p>
-      </section>
-
-      <section class="doc-section">
-        <h2>13. Disposizioni generali</h2>
-        <h3>Legge applicabile</h3>
-        <p>I presenti Termini sono disciplinati dalla legge italiana. Per qualsiasi controversia derivante o connessa ai presenti Termini sarà competente in via esclusiva il Foro di <strong>[CITTÀ — da definire]</strong>.</p>
-        <h3>Contratto rivenditori</h3>
-        <p>I soggetti che desiderano rivendere o distribuire GestHall Suite devono sottoscrivere un separato Contratto di Rivenditore. Scrivere a <a href="mailto:info@gesthallsuite.it">info@gesthallsuite.it</a> per informazioni.</p>
-        <h3>Integrità del contratto</h3>
-        <p>I presenti Termini, unitamente all'Informativa sulla Privacy, costituiscono l'intero accordo tra le parti in relazione al Servizio e sostituiscono qualsiasi accordo precedente. In caso di contrasto tra questi Termini e un accordo commerciale scritto separato, prevale quest'ultimo.</p>
-        <h3>Nullità parziale</h3>
-        <p>Se una clausola dei presenti Termini risultasse nulla o inapplicabile, le restanti clausole rimarranno pienamente valide ed efficaci.</p>
-        <h3>Contatti</h3>
-        <p>Per qualsiasi domanda sui presenti Termini: <a href="mailto:info@gesthallsuite.it">info@gesthallsuite.it</a></p>
+        <h2>21. Approvazione specifica</h2>
+        <p>Ai sensi degli artt. 1341 e 1342 del Codice civile il Cliente approva in modo specifico le clausole: 7 (sola lettura e risoluzione per mancato pagamento), 8 (rinnovo automatico e termine di disdetta), 9 (variazioni di prezzo), 13 (cancellazione dei dati dopo la fine del contratto), 15 (modifica delle funzioni), 18 (limitazioni di responsabilità), 19 (modifiche ai termini), 20 (foro esclusivo). L'approvazione si dà con un'accettazione separata al momento dell'attivazione.</p>
       </section>
 
     </div>
@@ -245,6 +230,10 @@ import Layout from '../layouts/Layout.astro';
   border-bottom: 1px solid var(--border-sub); line-height: 1.6;
 }
 .doc-table tr:last-child td { border-bottom: none }
+
+.doc-bozza { margin-top: 16px; padding: 16px; border-radius: var(--r-m); background: color-mix(in srgb, #d97706 12%, var(--surface)); border: 1px solid color-mix(in srgb, #d97706 40%, var(--border-sub)); font-size: 14px; line-height: 1.6; color: var(--text) }
+.doc-scroll { overflow-x: auto; margin: 12px 0 }
+.doc-scroll .doc-table { margin: 0; min-width: 560px }
 
 @media (max-width: 640px) {
   .doc-page { padding: 40px 0 64px }
