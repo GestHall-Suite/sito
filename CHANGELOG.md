@@ -2,11 +2,12 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
-## [Non pubblicato] · Messa in regola (punti 1-2)
+## [Non pubblicato] · Messa in regola (punti 1-3)
 
 - Privacy policy riscritta (bozza da far rivedere a un legale, segnaposto tra parentesi quadre): titolare professionista, tabella attività · dati · finalità · base giuridica · conservazione (sito, contatti, demo, clienti, fatturazione, licenza, assistenza remota, rivenditori, Quadra), dati inseriti dalle sale (GestHall responsabile art. 28), fornitori e trasferimenti extra UE (Google Gemini, push, Sonos, HIBP, GitHub), diritti con tempi di risposta, reclamo al Garante, sicurezza, minori; tabelle che scorrono dentro la pagina sul telefono (`.doc-scroll`) e avviso di bozza (`.doc-bozza`).
 - Area clienti: link all'informativa accanto al modulo di richiesta.
 - Termini di servizio riscritti (bozza da far rivedere a un legale): fornitore con segnaposto, solo imprese con partita IVA (niente Codice del Consumo), conclusione del contratto con la conferma di attivazione, prova che non si rinnova da sola, prezzi e spazio letti da `piani.ts`, nessun costo nascosto, rinnovo automatico con promemoria e disdetta senza penali, variazioni di prezzo e di funzioni con diritto di disdetta, sola lettura e cancellazione dei dati dopo 30 giorni (tolta la contraddizione tra «sola lettura» e «cancellazione»), hosting del cliente, Accordo sul trattamento dei dati come parte del contratto, assistenza con tempi indicativi, responsabilità sui 12 mesi, foro, clausole da approvare per iscritto (artt. 1341-1342 c.c.); tolta la frase «conforme alla normativa italiana ed europea».
+- Disdetta (punto 3): riquadro «Disdire l'abbonamento» nell'area clienti (email già pronta con il nome della sala, fine del periodo pagato, 30 giorni in sola lettura) e domanda dei Prezzi «Come si disdice e cosa succede ai dati?» allineata ai termini (prima diceva che i dati non vengono mai cancellati).
 
 ## 2026-11-26
 

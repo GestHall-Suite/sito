@@ -586,6 +586,11 @@ $saleAttuali = max(1, (int)($inst['sale_max'] ?? 1));
     </script>
   </div>
 
+  <div class="cl-card">
+    <div class="cl-card-title">Disdire l'abbonamento</div>
+    <p class="cl-note">Puoi disdire quando vuoi, senza penali: scrivi a <a href="mailto:info@gesthallsuite.it?subject=<?= rawurlencode('Disdetta abbonamento · ' . ($inst['nome_sala'] ?? '')) ?>">info@gesthallsuite.it</a>. L'abbonamento finisce alla fine del periodo già pagato e non si rinnova; poi l'app resta in sola lettura per 30 giorni per scaricare backup ed export. Dettagli nei <a href="/termini">termini di servizio</a>.</p>
+  </div>
+
   <?php endif; ?>
 
   <p class="cl-footer">GestHall Suite &middot; Portale riservato ai clienti attivi</p>
