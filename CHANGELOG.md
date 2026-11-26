@@ -16,6 +16,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 - Contrasto: testo scuro sui pulsanti verdi (`--on-accent`, prima bianco a 2,3:1), grigio tenue più scuro in chiaro e più chiaro in scuro, etichetta in alto nella home leggibile sul fondo scuro.
 - Licenze: pagina `/licenze` con i componenti di terze parti dell'app e del sito.
 - Accordo sul trattamento dei dati (`/dpa`, bozza art. 28): dati e interessati, istruzioni, riservatezza e accesso remoto, misure di sicurezza, sub-responsabili con preavviso di 30 giorni e diritto di opposizione, violazioni, fine del contratto, verifiche, trasferimenti; collegato da termini, privacy, piè di pagina e dall'accettazione nell'app.
+- Documenti compilati con i dati noti: titolare Matteo Nini; pagamento con carta tramite un fornitore di pagamenti (segnaposto, es. Stripe) aggiunto tra i fornitori; email e hosting su SiteGround nell'UE; tempi dei registri e dei backup legati a SiteGround e all'app invece di numeri inventati; violazioni dei dati «senza ingiustificato ritardo»; niente foro esclusivo (resta il giudice di legge, tolta la clausola 20 dall'approvazione specifica); elenco delle password SecLists (MIT) in `/licenze`.
 
 ## 2026-11-26
 

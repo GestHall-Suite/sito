@@ -18,7 +18,7 @@ import Layout from '../layouts/Layout.astro';
 
       <section class="doc-section">
         <h2>1. Chi è il titolare del trattamento</h2>
-        <p>Il titolare del trattamento dei dati descritti in questa informativa è <strong>[NOME E COGNOME DEL TITOLARE]</strong>, professionista che offre il servizio GestHall Suite, partita IVA [PARTITA IVA], con sede in [INDIRIZZO COMPLETO DELLA SEDE], PEC [INDIRIZZO PEC].</p>
+        <p>Il titolare del trattamento dei dati descritti in questa informativa è <strong>Matteo Nini</strong>, che offre il servizio GestHall Suite, partita IVA [PARTITA IVA], con sede in [INDIRIZZO COMPLETO DELLA SEDE], PEC [INDIRIZZO PEC].</p>
         <p>Per qualsiasi domanda sui tuoi dati scrivi a <a href="mailto:info@gesthallsuite.it">info@gesthallsuite.it</a> o alla PEC indicata sopra. Non è stato nominato un responsabile della protezione dei dati (DPO), perché non è obbligatorio per questa attività.</p>
       </section>
 
@@ -33,7 +33,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="doc-scroll"><table class="doc-table">
           <thead><tr><th>Attività</th><th>Dati</th><th>Finalità</th><th>Base giuridica</th><th>Conservazione</th></tr></thead>
           <tbody>
-            <tr><td>Navigazione del sito</td><td>Indirizzo IP, tipo di browser, pagina richiesta, data e ora (registri del server web)</td><td>Far funzionare il sito, proteggerlo da attacchi e abusi</td><td>Legittimo interesse alla sicurezza (art. 6.1.f)</td><td>[NUMERO] giorni, secondo le impostazioni del fornitore di hosting</td></tr>
+            <tr><td>Navigazione del sito</td><td>Indirizzo IP, tipo di browser, pagina richiesta, data e ora (registri del server web)</td><td>Far funzionare il sito, proteggerlo da attacchi e abusi</td><td>Legittimo interesse alla sicurezza (art. 6.1.f)</td><td>Per il tempo stabilito da SiteGround per i registri del server</td></tr>
             <tr><td>Modulo di contatto e richiesta demo</td><td>Nome e cognome, email, motivo della richiesta, messaggio; se li indichi telefono, nome della sala o dell'azienda, piano di interesse; un'impronta cifrata dell'indirizzo IP, mai conservato in chiaro</td><td>Rispondere alla tua richiesta; limitare gli invii automatici (al massimo 5 all'ora per indirizzo)</td><td>Misure precontrattuali richieste da te (art. 6.1.b); per l'IP, legittimo interesse alla sicurezza (art. 6.1.f)</td><td>24 mesi dall'ultimo contatto; il conteggio degli invii per IP si azzera dopo un'ora</td></tr>
             <tr><td>Demo su demo.gesthallsuite.it</td><td>Nome della sala (anche di fantasia), città, email se la indichi, indirizzo IP; quello che inserisci nella demo</td><td>Creare la demo e mandarti gli accessi; limitare gli abusi</td><td>Misure precontrattuali (art. 6.1.b); per l'IP, legittimo interesse (art. 6.1.f)</td><td>14 giorni (cancellazione automatica della demo e dei dati), salvo proroga chiesta da te</td></tr>
             <tr><td>Clienti</td><td>Nome della sala, nome ed email del referente, indirizzo web dell'installazione, piano, numero di sale, scadenza, eventuale rivenditore, note sull'assistenza; richieste di cambio piano dall'area clienti (email, piano richiesto)</td><td>Gestire il contratto, la licenza, gli aggiornamenti, i promemoria di scadenza e l'assistenza</td><td>Esecuzione del contratto (art. 6.1.b)</td><td>Per la durata del contratto e 24 mesi dopo; i documenti contabili e fiscali 10 anni (art. 2220 c.c.)</td></tr>
@@ -68,7 +68,8 @@ import Layout from '../layouts/Layout.astro';
           <thead><tr><th>Fornitore</th><th>Per cosa</th><th>Quali dati</th><th>Dove</th></tr></thead>
           <tbody>
             <tr><td>SiteGround Spain S.L.</td><td>Hosting del sito, dell'area clienti, dell'hub, delle demo e delle installazioni sul nostro spazio</td><td>Tutti quelli descritti sopra e al punto 5</td><td>Unione Europea</td></tr>
-            <tr><td>[FORNITORE DELLA CASELLA EMAIL]</td><td>Ricezione e invio delle email (info@gesthallsuite.it)</td><td>Messaggi del modulo di contatto, email ai clienti</td><td>[PAESE]</td></tr>
+            <tr><td>SiteGround Spain S.L.</td><td>Caselle email (info@gesthallsuite.it, no-reply@gesthallsuite.it) e invio delle email dell'app</td><td>Messaggi del modulo di contatto, email ai clienti, email dell'app</td><td>Unione Europea</td></tr>
+            <tr><td>[FORNITORE DEI PAGAMENTI, es. Stripe]</td><td>Pagamento degli abbonamenti con carta</td><td>Nome, email, importi; i dati della carta li tratta solo il fornitore e non arrivano a noi</td><td>[PAESE DEL FORNITORE DEI PAGAMENTI]</td></tr>
             <tr><td>Google (Gemini API)</td><td>Risposte dell'assistente Quadra</td><td>Testo delle domande, pagina, ruolo e lingua (punto 3)</td><td>Stati Uniti</td></tr>
             <tr><td>Google, Apple, Mozilla</td><td>Recapito delle notifiche push dell'app, se l'utente le attiva</td><td>Indirizzo del dispositivo e messaggio cifrato (il fornitore non può leggerlo)</td><td>Stati Uniti</td></tr>
             <tr><td>Sonos</td><td>Controllo della musica, solo se la sala collega il suo account Sonos</td><td>Identificativi della casa e degli altoparlanti</td><td>Stati Uniti</td></tr>

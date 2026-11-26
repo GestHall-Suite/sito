@@ -19,7 +19,7 @@ import { piani, eur, PROVA_GIORNI, SALA_EXTRA, SPAZIO_GB, SPAZIO_PACCHETTO } fro
 
       <section class="doc-section">
         <h2>1. Chi fornisce il servizio</h2>
-        <p>Il servizio GestHall Suite è fornito da <strong>[NOME E COGNOME DEL TITOLARE]</strong>, partita IVA [PARTITA IVA], con sede in [INDIRIZZO COMPLETO DELLA SEDE], PEC [INDIRIZZO PEC], email <a href="mailto:info@gesthallsuite.it">info@gesthallsuite.it</a> (di seguito «Fornitore»).</p>
+        <p>Il servizio GestHall Suite è fornito da <strong>Matteo Nini</strong>, partita IVA [PARTITA IVA], con sede in [INDIRIZZO COMPLETO DELLA SEDE], PEC [INDIRIZZO PEC], email <a href="mailto:info@gesthallsuite.it">info@gesthallsuite.it</a> (di seguito «Fornitore»).</p>
       </section>
 
       <section class="doc-section">
@@ -72,8 +72,8 @@ import { piani, eur, PROVA_GIORNI, SALA_EXTRA, SPAZIO_GB, SPAZIO_PACCHETTO } fro
 
       <section class="doc-section">
         <h2>7. Fatturazione e pagamento</h2>
-        <p>Il corrispettivo si paga in anticipo per ogni periodo (mese o anno) con [MODALITÀ DI PAGAMENTO], entro [NUMERO] giorni dalla fattura. La fattura elettronica è emessa a ogni periodo.</p>
-        <p>Se il pagamento non arriva entro 15 giorni dalla scadenza, l'Installazione passa in <strong>sola lettura</strong>: i dati restano consultabili ed esportabili, ma non se ne possono inserire di nuovi finché il pagamento non arriva. Dopo 30 giorni di ritardo il Fornitore può risolvere il contratto con una comunicazione scritta.</p>
+        <p>Il corrispettivo si paga in anticipo per ogni periodo (mese o anno) con carta di pagamento, tramite [FORNITORE DEI PAGAMENTI, es. Stripe]: l'addebito avviene all'inizio di ogni periodo, anche ai rinnovi. I dati della carta li tratta solo il fornitore dei pagamenti. La fattura è emessa a ogni periodo.</p>
+        <p>Se l'addebito non riesce e il pagamento non arriva entro 15 giorni dalla scadenza, l'Installazione passa in <strong>sola lettura</strong>: i dati restano consultabili ed esportabili, ma non se ne possono inserire di nuovi finché il pagamento non arriva. Dopo 30 giorni di ritardo il Fornitore può risolvere il contratto con una comunicazione scritta.</p>
       </section>
 
       <section class="doc-section">
@@ -114,7 +114,7 @@ import { piani, eur, PROVA_GIORNI, SALA_EXTRA, SPAZIO_GB, SPAZIO_PACCHETTO } fro
       <section class="doc-section">
         <h2>13. Fine del contratto e cancellazione dei dati</h2>
         <p>Quando il contratto finisce, per qualsiasi motivo, l'Installazione passa in sola lettura per <strong>30 giorni</strong>, durante i quali il Cliente può consultare ed esportare tutti i dati e chiedere una copia completa del database. Su richiesta del Cliente la copia viene consegnata anche prima.</p>
-        <p>Sul nostro hosting, finiti i 30 giorni, l'Installazione e i suoi dati vengono cancellati; le copie di backup si cancellano entro [NUMERO] giorni. Restano solo i dati che il Fornitore deve conservare per legge (per esempio le fatture). Sull'hosting del Cliente i dati restano al Cliente, che decide cosa farne.</p>
+        <p>Sul nostro hosting, finiti i 30 giorni, l'Installazione e i suoi dati vengono cancellati; le copie di backup fatte dall'app spariscono con l'Installazione e quelle del fornitore di hosting scadono da sole con i suoi tempi di conservazione. Restano solo i dati che il Fornitore deve conservare per legge (per esempio le fatture). Sull'hosting del Cliente i dati restano al Cliente, che decide cosa farne.</p>
       </section>
 
       <section class="doc-section">
@@ -154,14 +154,14 @@ import { piani, eur, PROVA_GIORNI, SALA_EXTRA, SPAZIO_GB, SPAZIO_PACCHETTO } fro
       </section>
 
       <section class="doc-section">
-        <h2>20. Legge e foro</h2>
-        <p>Il contratto è regolato dalla legge italiana. Per ogni controversia è competente in via esclusiva il Foro di <strong>[CITTÀ DEL FORO]</strong>.</p>
+        <h2>20. Legge applicabile</h2>
+        <p>Il contratto è regolato dalla legge italiana. Per le controversie è competente il giudice indicato dalle norme di legge.</p>
         <p>Se una clausola risulta non valida, le altre restano valide. Le comunicazioni tra le parti si fanno per email o PEC agli indirizzi indicati nella conferma di attivazione.</p>
       </section>
 
       <section class="doc-section">
         <h2>21. Approvazione specifica</h2>
-        <p>Ai sensi degli artt. 1341 e 1342 del Codice civile il Cliente approva in modo specifico le clausole: 7 (sola lettura e risoluzione per mancato pagamento), 8 (rinnovo automatico e termine di disdetta), 9 (variazioni di prezzo), 13 (cancellazione dei dati dopo la fine del contratto), 15 (modifica delle funzioni), 18 (limitazioni di responsabilità), 19 (modifiche ai termini), 20 (foro esclusivo). L'approvazione si dà con un'accettazione separata al momento dell'attivazione.</p>
+        <p>Ai sensi degli artt. 1341 e 1342 del Codice civile il Cliente approva in modo specifico le clausole: 7 (pagamento, sola lettura e risoluzione), 8 (rinnovo automatico e termine di disdetta), 9 (variazioni di prezzo), 13 (cancellazione dei dati dopo la fine del contratto), 15 (modifica delle funzioni), 18 (limitazioni di responsabilità) e 19 (modifiche ai termini). L'approvazione si dà con un'accettazione separata al momento dell'attivazione.</p>
       </section>
 
     </div>
