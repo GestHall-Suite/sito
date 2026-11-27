@@ -2,6 +2,38 @@
  "updated": "2026-11-27",
  "releases": [
   {
+   "version": "4.16.4",
+   "date": "2026-11-27",
+   "title": "Una parte in cassaforte, con il fondo che segue il cassetto",
+   "summary": "Con «Il fondo segue il cassetto» alla chiusura si può mettere in cassaforte qualsiasi cifra del cassetto, ad esempio i pezzi da 100 che il pagatore non accetta.",
+   "highlights": [
+    "In cassaforte qualsiasi cifra del cassetto alla chiusura"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "Chiusure → «Una parte»: con il fondo che segue il cassetto si scrive quanto mettere in cassaforte (anche più di quello entrato oggi) e la frase dice il fondo di domani."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Part of the cash into the safe, with the float following the drawer",
+    "summary": "With «The float follows the drawer», at closing you can put any amount from the drawer into the safe, e.g. the 100 notes the payout machine doesn't accept.",
+    "highlights": [
+     "Any amount from the drawer into the safe at closing"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "Closings → «Part of it»: with the float following the drawer you write how much goes into the safe (even more than today's takings) and the sentence shows tomorrow's float."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.16.3",
    "date": "2026-11-27",
    "title": "Il fondo segue il cassetto",
