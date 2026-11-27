@@ -2,6 +2,10 @@
 
 Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/changelog.json`).
 
+## 2026-11-27
+
+- Changelog: voce 4.16.1 («Una parte» in cassaforte alla chiusura).
+
 ## 2026-11-26
 
 - Changelog: voce 4.16.0 (dati personali più protetti).
