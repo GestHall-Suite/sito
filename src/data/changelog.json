@@ -5,7 +5,7 @@
    "version": "4.16.1",
    "date": "2026-11-27",
    "title": "Una parte in cassaforte alla chiusura",
-   "summary": "Nelle Chiusure, con «Una parte», ora si scrive quanto mettere in cassaforte: prima il campo chiedeva quanto restava nel cassetto e la cassaforte poteva non cambiare.",
+   "summary": "Nelle Chiusure, con «Una parte», ora si scrive quanto mettere in cassaforte, per la sala e per il bar: prima il campo chiedeva quanto restava nel cassetto e la cassaforte poteva non cambiare.",
    "highlights": [
     "«Una parte»: scrivi quanto va in cassaforte"
    ],
@@ -13,13 +13,13 @@
     {
      "title": "Correzioni",
      "items": [
-      "Chiusure: con «Una parte» il campo è «Quanto metti in cassaforte» e mostra quanto c'è oltre il fondo; cassaforte e cassetto del giorno dopo si aggiornano di conseguenza. Una giornata già chiusa con un importo sbagliato si riapre e si richiude."
+      "Chiusure: con «Una parte» il campo è «Quanto metti in cassaforte», per la sala (con quanto c'è oltre il fondo) e per il bar (con quanto c'è nel cassetto del bar); cassaforte e cassetto del giorno dopo si aggiornano di conseguenza. Una giornata già chiusa con un importo sbagliato si riapre e si richiude."
      ]
     }
    ],
    "en": {
     "title": "Part of the cash into the safe at closing",
-    "summary": "In Closings, with «Part of it», you now write how much goes into the safe: the field used to ask how much stayed in the drawer and the safe could stay unchanged.",
+    "summary": "In Closings, with «Part of it», you now write how much goes into the safe, for the hall and for the bar: the field used to ask how much stayed in the drawer and the safe could stay unchanged.",
     "highlights": [
      "«Part of it»: write how much goes into the safe"
     ],
@@ -27,7 +27,7 @@
      {
       "title": "Fixes",
       "items": [
-       "Closings: with «Part of it» the field is «How much goes into the safe» and shows how much is above the float; the safe and the next day's drawer update accordingly. A day already closed with a wrong amount can be reopened and closed again."
+       "Closings: with «Part of it» the field is «How much goes into the safe», for the hall (showing how much is above the float) and for the bar (showing how much is in the bar drawer); the safe and the next day's drawer update accordingly. A day already closed with a wrong amount can be reopened and closed again."
       ]
      }
     ]
