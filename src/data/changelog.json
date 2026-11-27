@@ -2,6 +2,38 @@
  "updated": "2026-11-27",
  "releases": [
   {
+   "version": "4.16.3",
+   "date": "2026-11-27",
+   "title": "Il fondo segue il cassetto",
+   "summary": "Per le sale che tengono tutto il contante nel pagatore: il fondo cassa di ogni giorno può essere il cassetto di apertura, cioè quello che la chiusura del giorno prima ha lasciato.",
+   "highlights": [
+    "Fondo cassa uguale al cassetto di apertura"
+   ],
+   "groups": [
+    {
+     "title": "Novità",
+     "items": [
+      "Impostazioni → Cassa giornaliera → Fondo cassa → «Il fondo segue il cassetto»: ogni giorno il fondo è quello che è rimasto nel cassetto alla chiusura del giorno prima, senza «Altro contante nel cassetto»; alla chiusura si sceglie solo cosa mettere in cassaforte."
+     ]
+    }
+   ],
+   "en": {
+    "title": "The float follows the drawer",
+    "summary": "For halls that keep all their cash in the payout machine: each day's float can be the opening drawer, i.e. what the previous day's closing left.",
+    "highlights": [
+     "Float equal to the opening drawer"
+    ],
+    "groups": [
+     {
+      "title": "New",
+      "items": [
+       "Settings → Daily cash → Float → «The float follows the drawer»: each day the float is what was left in the drawer at the previous day's closing, with no «Other cash in the drawer»; at closing you only choose what goes into the safe."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.16.2",
    "date": "2026-11-27",
    "title": "Monete contate a ogni turno",
