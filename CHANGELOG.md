@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-11-27
 
+- Changelog: voce 4.17.0 (Chiusure in una tabella, presenze disattivabili).
 - Changelog: voce 4.16.4 (una parte in cassaforte con il fondo che segue il cassetto).
 - Changelog: voce 4.16.3 (il fondo segue il cassetto).
 - Changelog: voce 4.16.2 (monete contate a ogni turno).

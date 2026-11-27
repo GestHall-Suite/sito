@@ -2,6 +2,47 @@
  "updated": "2026-11-27",
  "releases": [
   {
+   "version": "4.17.0",
+   "date": "2026-11-27",
+   "title": "Chiusure in una tabella",
+   "summary": "La pagina Chiusure mostra in un'unica tabella le giornate da chiudere e quelle chiuse, con lo stato di ognuna. Le presenze si possono disattivare.",
+   "highlights": [
+    "Chiusure in un'unica tabella con lo stato",
+    "Dettagli della giornata da chiudere sotto la sua riga",
+    "Presenze (Inizia / Termina turno) disattivabili"
+   ],
+   "groups": [
+    {
+     "title": "Novità",
+     "items": [
+      "Chiusure: giornate da chiudere in cima e chiuse del mese sotto, nella stessa tabella, con lo stato a pillola (Da chiudere con l'esito della cassa, Chiusa con data e ora).",
+      "I contanti e il bar di una giornata da chiudere si aprono sotto la sua riga; il pannello a lato propone «Chiudi le giornate» o «Invia l'email» secondo le giornate scelte.",
+      "«Una parte»: il campo dice quanto metti in cassaforte e quanto c'è nel cassetto.",
+      "Impostazioni → Turni → Presenze: spente, Inizia / Termina turno sparisce ovunque; le ore già segnate restano."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Closings in one table",
+    "highlights": [
+     "Days to close and closed days in one table with their status",
+     "Details of a day to close under its row",
+     "Attendance (Start / End shift) can be switched off"
+    ],
+    "groups": [
+     {
+      "title": "New",
+      "items": [
+       "Closings: days to close on top and the month's closed days below, in the same table, with a status pill (To close with the cash result, Closed with date and time).",
+       "Cash and bar of a day to close open under its row; the side panel offers «Close the days» or «Send the email» depending on the days chosen.",
+       "«A part»: the field says how much you put in the safe and how much is in the drawer.",
+       "Settings → Shifts → Attendance: when off, Start / End shift disappears everywhere; hours already recorded are kept."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.16.4",
    "date": "2026-11-27",
    "title": "Una parte in cassaforte, con il fondo che segue il cassetto",
