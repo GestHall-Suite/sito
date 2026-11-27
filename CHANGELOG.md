@@ -4,6 +4,7 @@ Modifiche al sito gesthallsuite.it (le novità del prodotto sono in `src/data/ch
 
 ## 2026-11-27
 
+- Changelog: voce 4.16.2 (monete contate a ogni turno).
 - Changelog: voce 4.16.1 («Una parte» in cassaforte alla chiusura).
 
 ## 2026-11-26

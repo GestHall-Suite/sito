@@ -2,6 +2,38 @@
  "updated": "2026-11-27",
  "releases": [
   {
+   "version": "4.16.2",
+   "date": "2026-11-27",
+   "title": "Monete contate a ogni turno",
+   "summary": "Con il versamento arrotondato a 0,50 € le monete servono a pagare i ticket: il giornaliero non le riprende più dal turno prima e ricorda di contarle prima di salvare.",
+   "highlights": [
+    "Monete da contare a ogni turno con l'arrotondamento a 0,50 €"
+   ],
+   "groups": [
+    {
+     "title": "Correzioni",
+     "items": [
+      "Giornaliero: con il versamento arrotondato a 0,50 € o ai centesimi il campo Monete di un turno nuovo parte vuoto e «Salva» chiede di contarle; prima riprendeva le monete del turno precedente e la cassa segnava un avanzo pari alle monete date per i ticket."
+     ]
+    }
+   ],
+   "en": {
+    "title": "Coins counted every shift",
+    "summary": "With the deposit rounded to €0.50, coins are used to pay tickets: the daily sheet no longer carries them over from the previous shift and reminds you to count them before saving.",
+    "highlights": [
+     "Coins counted every shift with €0.50 rounding"
+    ],
+    "groups": [
+     {
+      "title": "Fixes",
+      "items": [
+       "Daily sheet: with the deposit rounded to €0.50 or to the cent, the Coins field of a new shift starts empty and «Save» asks you to count them; it used to carry over the previous shift's coins, so the till showed a surplus equal to the coins paid out for tickets."
+      ]
+     }
+    ]
+   }
+  },
+  {
    "version": "4.16.1",
    "date": "2026-11-27",
    "title": "Una parte in cassaforte alla chiusura",
